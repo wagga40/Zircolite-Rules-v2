@@ -1,0 +1,6 @@
+[submodule "pySigma-backend-sqlite"]
+	path = pySigma-backend-sqlite
+	url = https://github.com/SigmaHQ/pySigma-backend-sqlite.git
+[submodule "sigma"]
+	path = sigma
+	url = https://github.com/sigmahq/sigma.git

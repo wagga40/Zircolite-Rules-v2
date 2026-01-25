@@ -1,0 +1,15 @@
+[project]
+name = "Zircolite-Rules-v2"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "wagga40", email = "6437862+wagga40@users.noreply.github.com"},
+]
+dependencies = ["pysigma-pipeline-windows>=2.0.0", "pysigma-pipeline-sysmon>=2.0.0", "pysigma>=1.1.0"]
+requires-python = "==3.14.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
