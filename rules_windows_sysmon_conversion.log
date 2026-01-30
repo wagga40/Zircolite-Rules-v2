@@ -1,9 +1,9 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - SYSMON
 ================================================================================
-Timestamp: 2026-01-25 20:29:09
-Total rules processed: 2938
-Successful conversions: 2904
+Timestamp: 2026-01-30 18:44:29
+Total rules processed: 2948
+Successful conversions: 2914
 Failed conversions: 34
 Success rate: 98.8%
 ================================================================================
@@ -182,7 +182,7 @@ ID:    f130a5f1-73ba-42f0-bf1e-b66a8361cb8f
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 ================================================================================
-SUCCESSFUL RULES (2904)
+SUCCESSFUL RULES (2914)
 --------------------------------------------------------------------------------
 sigma/rules/windows/process_access/proc_access_win_lsass_seclogon_access.yml
 sigma/rules/windows/process_access/proc_access_win_lsass_werfault.yml
@@ -433,6 +433,7 @@ sigma/rules/windows/process_creation/proc_creation_win_lolbin_openwith.yml
 sigma/rules/windows/process_creation/proc_creation_win_hktl_pchunter.yml
 sigma/rules/windows/process_creation/proc_creation_win_setres_uncommon_child_process.yml
 sigma/rules/windows/process_creation/proc_creation_win_hktl_sharpsuccessor_execution.yml
+sigma/rules/windows/process_creation/proc_creation_win_credential_guard_registry_tampering.yml
 sigma/rules/windows/process_creation/proc_creation_win_sysinternals_eula_accepted.yml
 sigma/rules/windows/process_creation/proc_creation_win_hktl_sharpview.yml
 sigma/rules/windows/process_creation/proc_creation_win_registry_ie_security_zone_protocol_defaults_downgrade.yml
@@ -518,6 +519,7 @@ sigma/rules/windows/process_creation/proc_creation_win_sc_disable_service.yml
 sigma/rules/windows/process_creation/proc_creation_win_msiexec_dll.yml
 sigma/rules/windows/process_creation/proc_creation_win_squirrel_download.yml
 sigma/rules/windows/process_creation/proc_creation_win_expand_cabinet_files.yml
+sigma/rules/windows/process_creation/proc_creation_win_amsi_registry_tampering.yml
 sigma/rules/windows/process_creation/proc_creation_win_hktl_powersploit_empire_default_schtasks.yml
 sigma/rules/windows/process_creation/proc_creation_win_susp_script_exec_from_env_folder.yml
 sigma/rules/windows/process_creation/proc_creation_win_link_uncommon_parent_process.yml
@@ -742,6 +744,7 @@ sigma/rules/windows/process_creation/proc_creation_win_wmi_persistence_script_ev
 sigma/rules/windows/process_creation/proc_creation_win_pressanykey_lolbin_execution.yml
 sigma/rules/windows/process_creation/proc_creation_win_uac_bypass_trustedpath.yml
 sigma/rules/windows/process_creation/proc_creation_win_lolbin_pester.yml
+sigma/rules/windows/process_creation/proc_creation_win_cmd_launched_with_hidden_start_flag.yml
 sigma/rules/windows/process_creation/proc_creation_win_susp_shell_spawn_susp_program.yml
 sigma/rules/windows/process_creation/proc_creation_win_susp_privilege_escalation_cli_patterns.yml
 sigma/rules/windows/process_creation/proc_creation_win_remote_access_tools_ultraviewer.yml
@@ -865,10 +868,10 @@ sigma/rules/windows/process_creation/proc_creation_win_curl_download_susp_file_s
 sigma/rules/windows/process_creation/proc_creation_win_lolbin_register_app.yml
 sigma/rules/windows/process_creation/proc_creation_win_device_credential_deployment.yml
 sigma/rules/windows/process_creation/proc_creation_win_rar_compression_with_password.yml
-sigma/rules/windows/process_creation/proc_creation_win_bitsadmin_download_uncommon_targetfolder.yml
 sigma/rules/windows/process_creation/proc_creation_win_ntdsutil_usage.yml
 sigma/rules/windows/process_creation/proc_creation_win_java_susp_child_process_2.yml
 sigma/rules/windows/process_creation/proc_creation_win_net_use_mount_share.yml
+sigma/rules/windows/process_creation/proc_creation_win_hvci_registry_tampering.yml
 sigma/rules/windows/process_creation/proc_creation_win_cmd_sticky_keys_replace.yml
 sigma/rules/windows/process_creation/proc_creation_win_browsers_chromium_headless_debugging.yml
 sigma/rules/windows/process_creation/proc_creation_win_logman_disable_eventlog.yml
@@ -1251,6 +1254,7 @@ sigma/rules/windows/process_creation/proc_creation_win_wsl_kali_linux_installati
 sigma/rules/windows/process_creation/proc_creation_win_pua_netscan.yml
 sigma/rules/windows/process_creation/proc_creation_win_sc_sdset_modification.yml
 sigma/rules/windows/process_creation/proc_creation_win_renamed_ftp.yml
+sigma/rules/windows/process_creation/proc_creation_win_user_shell_folders_registry_modification.yml
 sigma/rules/windows/process_creation/proc_creation_win_msbuild_susp_parent_process.yml
 sigma/rules/windows/process_creation/proc_creation_win_wermgr_susp_child_process.yml
 sigma/rules/windows/process_creation/proc_creation_win_powershell_obfuscation_via_utf8.yml
@@ -1271,6 +1275,7 @@ sigma/rules/windows/process_creation/proc_creation_win_mpcmdrun_download_arbitra
 sigma/rules/windows/process_creation/proc_creation_win_powershell_cl_loadassembly.yml
 sigma/rules/windows/process_creation/proc_creation_win_sysinternals_psexec_paexec_escalate_system.yml
 sigma/rules/windows/process_creation/proc_creation_win_susp_recon.yml
+sigma/rules/windows/process_creation/proc_creation_win_vulnerable_driver_blocklist_registry_tampering.yml
 sigma/rules/windows/process_creation/proc_creation_win_susp_eventlog_clear.yml
 sigma/rules/windows/process_creation/proc_creation_win_netsh_packet_capture.yml
 sigma/rules/windows/process_creation/proc_creation_win_conhost_uncommon_parent.yml
@@ -1984,6 +1989,7 @@ sigma/rules/windows/registry/registry_set/registry_set_enable_periodic_backup.ym
 sigma/rules/windows/registry/registry_set/registry_set_asep_reg_keys_modification_wow6432node_classes.yml
 sigma/rules/windows/registry/registry_set/registry_set_disable_system_restore.yml
 sigma/rules/windows/registry/registry_set/registry_set_asep_reg_keys_modification_wow6432node_currentversion.yml
+sigma/rules/windows/registry/registry_set/registry_set_credential_guard_disabled.yml
 sigma/rules/windows/registry/registry_set/registry_set_persistence_office_vsto.yml
 sigma/rules/windows/registry/registry_set/registry_set_bginfo_custom_vbscript.yml
 sigma/rules/windows/registry/registry_set/registry_set_persistence_app_cpmpat_layer_registerapprestart.yml
@@ -2030,6 +2036,7 @@ sigma/rules/windows/registry/registry_set/registry_set_policies_associations_tam
 sigma/rules/windows/registry/registry_set/registry_set_winlogon_allow_multiple_tssessions.yml
 sigma/rules/windows/registry/registry_set/registry_set_lsa_disablerestrictedadmin.yml
 sigma/rules/windows/registry/registry_set/registry_set_uac_bypass_sdclt.yml
+sigma/rules/windows/registry/registry_set/registry_set_amsi_disable.yml
 sigma/rules/windows/registry/registry_set/registry_set_taskcache_entry.yml
 sigma/rules/windows/registry/registry_set/registry_set_disable_security_center_notifications.yml
 sigma/rules/windows/registry/registry_set/registry_set_add_port_monitor.yml
@@ -2135,6 +2142,7 @@ sigma/rules/windows/registry/registry_set/registry_set_uac_bypass_wmp.yml
 sigma/rules/windows/registry/registry_set/registry_set_persistence_app_paths.yml
 sigma/rules/windows/registry/registry_set/registry_set_sentinelone_shell_context_tampering.yml
 sigma/rules/windows/registry/registry_set/registry_set_servicedll_hijack.yml
+sigma/rules/windows/registry/registry_set/registry_set_vulnerable_driver_blocklist_disable.yml
 sigma/rules/windows/registry/registry_set/registry_set_susp_printer_driver.yml
 sigma/rules/windows/registry/registry_set/registry_set_persistence_com_key_linking.yml
 sigma/rules/windows/registry/registry_set/registry_set_devdrv_disallow_antivirus_filter.yml
@@ -2145,6 +2153,7 @@ sigma/rules/windows/registry/registry_delete/registry_delete_defender_context_me
 sigma/rules/windows/registry/registry_delete/registry_delete_removal_com_hijacking_registry_key.yml
 sigma/rules/windows/registry/registry_delete/registry_delete_removal_amsi_registry_key.yml
 sigma/rules/windows/registry/registry_delete/registry_delete_enable_windows_recall.yml
+sigma/rules/windows/registry/registry_delete/registry_delete_disable_credential_guard.yml
 sigma/rules/windows/registry/registry_delete/registry_delete_exploit_guard_protected_folders.yml
 sigma/rules/windows/registry/registry_delete/registry_delete_schtasks_hide_task_via_index_value_removal.yml
 sigma/rules/windows/registry/registry_delete/registry_delete_schtasks_hide_task_via_sd_value_removal.yml
@@ -2886,6 +2895,7 @@ sigma/rules/windows/rules-threat-hunting/windows/powershell/powershell_script/po
 sigma/rules/windows/rules-threat-hunting/windows/powershell/powershell_module/posh_pm_susp_netfirewallrule_recon.yml
 sigma/rules/windows/rules-threat-hunting/windows/file/file_delete/file_delete_win_zone_identifier_ads.yml
 sigma/rules/windows/rules-threat-hunting/windows/file/file_rename/file_rename_win_non_dll_to_dll_ext.yml
+sigma/rules/windows/rules-threat-hunting/windows/file/file_change/file_change_win_date_changed_to_another_year.yml
 sigma/rules/windows/rules-threat-hunting/windows/file/file_access/file_access_win_browsers_credential.yml
 sigma/rules/windows/rules-threat-hunting/windows/file/file_access/file_access_win_susp_reg_and_hive.yml
 sigma/rules/windows/rules-threat-hunting/windows/file/file_access/file_access_win_susp_unattend_xml.yml
@@ -2916,7 +2926,6 @@ sigma/rules/windows/file/file_delete/file_delete_win_delete_iis_access_logs.yml
 sigma/rules/windows/file/file_delete/file_delete_win_unusual_deletion_by_dns_exe.yml
 sigma/rules/windows/file/file_delete/file_delete_win_delete_teamviewer_logs.yml
 sigma/rules/windows/file/file_rename/file_rename_win_ransomware.yml
-sigma/rules/windows/file/file_change/file_change_win_2022_timestomping.yml
 sigma/rules/windows/file/file_change/file_change_win_unusual_modification_by_dns_exe.yml
 sigma/rules/windows/file/file_executable_detected/file_executable_detected_win_susp_embeded_sed_file.yml
 sigma/rules/windows/file/file_access/file_access_win_teams_sensitive_files.yml
@@ -2994,6 +3003,7 @@ sigma/rules/windows/file/file_event/file_event_win_wpbbin_persistence.yml
 sigma/rules/windows/file/file_event/file_event_win_advanced_ip_scanner.yml
 sigma/rules/windows/file/file_event/file_event_win_iso_file_mount.yml
 sigma/rules/windows/file/file_event/file_event_win_creation_unquoted_service_path.yml
+sigma/rules/windows/file/file_event/file_event_win_susp_legitimate_app_dropping_in_uncommon_location.yml
 sigma/rules/windows/file/file_event/file_event_win_uac_bypass_dotnet_profiler.yml
 sigma/rules/windows/file/file_event/file_event_win_uac_bypass_consent_comctl32.yml
 sigma/rules/windows/file/file_event/file_event_win_susp_system_interactive_powershell.yml
