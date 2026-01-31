@@ -16,13 +16,15 @@ import json
 from datetime import datetime
 
 # Paths
-rules_path = r"./sigma/rules/windows/"
+rules_path_windows = r"./sigma/rules/windows/"
+rules_path_linux = r"./sigma/rules/linux/"
 
 # Ruleset configurations
 # Format: (suffix, output_filename_template)
 RULESET_CONFIGS = {
     "sysmon": "rules_windows_sysmon",
-    "generic": "rules_windows_generic"
+    "generic": "rules_windows_generic",
+    "linux": "rules_linux",
 }
 
 # Level configurations for filtering
@@ -88,16 +90,19 @@ def convert_rule(backend, rule):
         }
         return (None, error_info)
 
-def ruleset_generator(name, base_output_name, input_rules, pipelines):
-    """Generate ruleset and return the rules (does not save to file)."""
+def ruleset_generator(name, base_output_name, input_rules, pipelines=None):
+    """Generate ruleset and return the rules (does not save to file).
+    If pipelines is None or empty, no pipeline is used (rules converted as-is)."""
     print(f'[+] Initialisation ruleset : {name}')
-    # Add pipelines to one another
-    combined_pipeline = pipelines[0]
-    for pipeline in pipelines[1:]:
-        combined_pipeline += pipeline
-
-    # Instantiate backend, using our resolved pipeline
-    sqlite_backend = sqliteBackend(combined_pipeline)
+    if pipelines:
+        # Add pipelines to one another
+        combined_pipeline = pipelines[0]
+        for pipeline in pipelines[1:]:
+            combined_pipeline += pipeline
+        sqlite_backend = sqliteBackend(combined_pipeline)
+    else:
+        # No pipeline: convert rules as-is (e.g. for Linux rules)
+        sqlite_backend = sqliteBackend(None)
 
     rules = Path(input_rules)
     if rules.is_dir():
@@ -181,7 +186,7 @@ if __name__ == '__main__':
     sysmon_rules = ruleset_generator(
         "sysmon", 
         RULESET_CONFIGS["sysmon"], 
-        rules_path, 
+        rules_path_windows, 
         [sysmon_pipeline(), windows_logsource_pipeline()]
     )
     save_filtered_rulesets(RULESET_CONFIGS["sysmon"], sysmon_rules)
@@ -192,7 +197,18 @@ if __name__ == '__main__':
     generic_rules = ruleset_generator(
         "generic", 
         RULESET_CONFIGS["generic"], 
-        rules_path, 
+        rules_path_windows, 
         [windows_audit_pipeline(), windows_logsource_pipeline()]
     )
     save_filtered_rulesets(RULESET_CONFIGS["generic"], generic_rules)
+
+    print()  # Separator
+
+    # Generate Linux ruleset (no pipeline)
+    linux_rules = ruleset_generator(
+        "linux",
+        RULESET_CONFIGS["linux"],
+        rules_path_linux,
+        pipelines=None,
+    )
+    save_filtered_rulesets(RULESET_CONFIGS["linux"], linux_rules)
