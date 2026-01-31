@@ -1,7 +1,7 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - LINUX
 ================================================================================
-Timestamp: 2026-01-31 14:30:37
+Timestamp: 2026-01-31 13:38:06
 Total rules processed: 207
 Successful conversions: 179
 Failed conversions: 28
@@ -11,24 +11,29 @@ Success rate: 86.5%
 FAILED RULES (28)
 --------------------------------------------------------------------------------
 
-Path:  sigma/rules/linux/builtin/lnx_file_copy.yml
-Title: Remote File Copy
-ID:    7a14080d-a048-4de8-ae58-604ce58a795b
-Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
-
 Path:  sigma/rules/linux/builtin/lnx_shell_clear_cmd_history.yml
 Title: Linux Command History Tampering
 ID:    fdc88d25-96fb-4b7c-9633-c0e417fdbd4e
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
-Path:  sigma/rules/linux/builtin/lnx_shellshock.yml
-Title: Shellshock Expression
-ID:    c67e0c98-4d39-46ee-8f6b-437ebf6b950e
+Path:  sigma/rules/linux/builtin/lnx_potential_susp_ebpf_activity.yml
+Title: Potential Suspicious BPF Activity - Linux
+ID:    0fadd880-6af3-4610-b1e5-008dc3a11b8a
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
-Path:  sigma/rules/linux/builtin/lnx_apt_equationgroup_lnx.yml
-Title: Equation Group Indicators
-ID:    41e5c73d-9983-4b69-bd03-e13b67e9623c
+Path:  sigma/rules/linux/builtin/lnx_buffer_overflows.yml
+Title: Buffer Overflow Attempts
+ID:    18b042f0-2ecd-4b6e-9f8d-aa7a7e7de781
+Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
+
+Path:  sigma/rules/linux/builtin/lnx_clear_syslog.yml
+Title: Commands to Clear or Remove the Syslog - Builtin
+ID:    e09eb557-96d2-4de9-ba2d-30f712a5afd3
+Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
+
+Path:  sigma/rules/linux/builtin/lnx_shell_susp_log_entries.yml
+Title: Suspicious Log Entries
+ID:    f64b6e9a-5d9d-48a5-8289-e1dd2b3876e1
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 Path:  sigma/rules/linux/builtin/lnx_privileged_user_creation.yml
@@ -36,9 +41,19 @@ Title: Privileged User Has Been Created
 ID:    0ac15ec3-d24f-4246-aa2a-3077bb1cf90e
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
-Path:  sigma/rules/linux/builtin/lnx_buffer_overflows.yml
-Title: Buffer Overflow Attempts
-ID:    18b042f0-2ecd-4b6e-9f8d-aa7a7e7de781
+Path:  sigma/rules/linux/builtin/lnx_shellshock.yml
+Title: Shellshock Expression
+ID:    c67e0c98-4d39-46ee-8f6b-437ebf6b950e
+Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
+
+Path:  sigma/rules/linux/builtin/lnx_susp_jexboss.yml
+Title: JexBoss Command Sequence
+ID:    8ec2c8b4-557a-4121-b87c-5dfb3a602fae
+Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
+
+Path:  sigma/rules/linux/builtin/lnx_ldso_preload_injection.yml
+Title: Code Injection by ld.so Preload
+ID:    7e3c4651-c347-40c4-b1d4-d48590fdf684
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 Path:  sigma/rules/linux/builtin/lnx_symlink_etc_passwd.yml
@@ -51,59 +66,24 @@ Title: Suspicious Reverse Shell Command Line
 ID:    738d9bcf-6999-4fdb-b4ac-3033037db8ab
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
+Path:  sigma/rules/linux/builtin/lnx_file_copy.yml
+Title: Remote File Copy
+ID:    7a14080d-a048-4de8-ae58-604ce58a795b
+Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
+
 Path:  sigma/rules/linux/builtin/lnx_susp_dev_tcp.yml
 Title: Suspicious Use of /dev/tcp
 ID:    6cc5fceb-9a71-4c23-aeeb-963abe0b279c
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
+Path:  sigma/rules/linux/builtin/lnx_apt_equationgroup_lnx.yml
+Title: Equation Group Indicators
+ID:    41e5c73d-9983-4b69-bd03-e13b67e9623c
+Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
+
 Path:  sigma/rules/linux/builtin/lnx_shell_susp_commands.yml
 Title: Suspicious Activity in Shell Commands
 ID:    2aa1440c-9ae9-4d92-84a7-a9e5f5e31695
-Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
-
-Path:  sigma/rules/linux/builtin/lnx_clear_syslog.yml
-Title: Commands to Clear or Remove the Syslog - Builtin
-ID:    e09eb557-96d2-4de9-ba2d-30f712a5afd3
-Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
-
-Path:  sigma/rules/linux/builtin/lnx_ldso_preload_injection.yml
-Title: Code Injection by ld.so Preload
-ID:    7e3c4651-c347-40c4-b1d4-d48590fdf684
-Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
-
-Path:  sigma/rules/linux/builtin/lnx_potential_susp_ebpf_activity.yml
-Title: Potential Suspicious BPF Activity - Linux
-ID:    0fadd880-6af3-4610-b1e5-008dc3a11b8a
-Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
-
-Path:  sigma/rules/linux/builtin/lnx_susp_jexboss.yml
-Title: JexBoss Command Sequence
-ID:    8ec2c8b4-557a-4121-b87c-5dfb3a602fae
-Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
-
-Path:  sigma/rules/linux/builtin/lnx_shell_susp_log_entries.yml
-Title: Suspicious Log Entries
-ID:    f64b6e9a-5d9d-48a5-8289-e1dd2b3876e1
-Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
-
-Path:  sigma/rules/linux/builtin/vsftpd/lnx_vsftpd_susp_error_messages.yml
-Title: Suspicious VSFTPD Error Messages
-ID:    377f33a1-4b36-4ee1-acee-1dbe4b43cfbe
-Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
-
-Path:  sigma/rules/linux/builtin/syslog/lnx_syslog_security_tools_disabling_syslog.yml
-Title: Disabling Security Tools - Builtin
-ID:    49f5dfc1-f92e-4d34-96fa-feba3f6acf36
-Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
-
-Path:  sigma/rules/linux/builtin/syslog/lnx_syslog_susp_named.yml
-Title: Suspicious Named Error
-ID:    c8e35e96-19ce-4f16-aeb6-fd5588dc5365
-Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
-
-Path:  sigma/rules/linux/builtin/sshd/lnx_sshd_susp_ssh.yml
-Title: Suspicious OpenSSH Daemon Error
-ID:    e76b413a-83d0-4b94-8e4c-85db4a5b8bdc
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 Path:  sigma/rules/linux/builtin/guacamole/lnx_guacamole_susp_guacamole.yml
@@ -116,19 +96,34 @@ Title: Relevant ClamAV Message
 ID:    36aa86ca-fd9d-4456-814e-d3b1b8e1e0bb
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
+Path:  sigma/rules/linux/builtin/sshd/lnx_sshd_susp_ssh.yml
+Title: Suspicious OpenSSH Daemon Error
+ID:    e76b413a-83d0-4b94-8e4c-85db4a5b8bdc
+Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
+
+Path:  sigma/rules/linux/builtin/syslog/lnx_syslog_susp_named.yml
+Title: Suspicious Named Error
+ID:    c8e35e96-19ce-4f16-aeb6-fd5588dc5365
+Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
+
+Path:  sigma/rules/linux/builtin/syslog/lnx_syslog_security_tools_disabling_syslog.yml
+Title: Disabling Security Tools - Builtin
+ID:    49f5dfc1-f92e-4d34-96fa-feba3f6acf36
+Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
+
 Path:  sigma/rules/linux/builtin/cron/lnx_cron_crontab_file_modification.yml
 Title: Modifying Crontab
 ID:    af202fd3-7bff-4212-a25a-fb34606cfcbe
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
-Path:  sigma/rules/linux/auditd/execve/lnx_auditd_bpfdoor_port_redirect.yml
-Title: Bpfdoor TCP Ports Redirect
-ID:    70b4156e-50fc-4523-aa50-c9dddf1993fc
+Path:  sigma/rules/linux/builtin/vsftpd/lnx_vsftpd_susp_error_messages.yml
+Title: Suspicious VSFTPD Error Messages
+ID:    377f33a1-4b36-4ee1-acee-1dbe4b43cfbe
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
-Path:  sigma/rules/linux/auditd/execve/lnx_auditd_change_file_time_attr.yml
-Title: File Time Attribute Change - Linux
-ID:    b3cec4e7-6901-4b0d-a02d-8ab2d8eb818b
+Path:  sigma/rules/linux/auditd/execve/lnx_auditd_binary_padding.yml
+Title: Binary Padding - Linux
+ID:    c52a914f-3d8b-4b2a-bb75-b3991e75f8ba
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 Path:  sigma/rules/linux/auditd/execve/lnx_auditd_susp_histfile_operations.yml
@@ -136,9 +131,9 @@ Title: Suspicious History File Operations - Linux
 ID:    eae8ce9f-bde9-47a6-8e79-f20d18419910
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
-Path:  sigma/rules/linux/auditd/execve/lnx_auditd_binary_padding.yml
-Title: Binary Padding - Linux
-ID:    c52a914f-3d8b-4b2a-bb75-b3991e75f8ba
+Path:  sigma/rules/linux/auditd/execve/lnx_auditd_change_file_time_attr.yml
+Title: File Time Attribute Change - Linux
+ID:    b3cec4e7-6901-4b0d-a02d-8ab2d8eb818b
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 Path:  sigma/rules/linux/auditd/execve/lnx_auditd_system_shutdown_reboot.yml
@@ -151,185 +146,190 @@ Title: Credentials In Files - Linux
 ID:    df3fcaea-2715-4214-99c5-0056ea59eb35
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
+Path:  sigma/rules/linux/auditd/execve/lnx_auditd_bpfdoor_port_redirect.yml
+Title: Bpfdoor TCP Ports Redirect
+ID:    70b4156e-50fc-4523-aa50-c9dddf1993fc
+Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
+
 ================================================================================
 SUCCESSFUL RULES (179)
 --------------------------------------------------------------------------------
-sigma/rules/linux/file_event/file_event_lnx_triple_cross_rootkit_persistence.yml
-sigma/rules/linux/file_event/file_event_lnx_susp_filename_with_embedded_base64_command.yml
-sigma/rules/linux/file_event/file_event_lnx_doas_conf_creation.yml
-sigma/rules/linux/file_event/file_event_lnx_persistence_sudoers_files.yml
-sigma/rules/linux/file_event/file_event_lnx_susp_shell_script_under_profile_directory.yml
-sigma/rules/linux/file_event/file_event_lnx_wget_download_file_in_tmp_dir.yml
-sigma/rules/linux/file_event/file_event_lnx_persistence_cron_files.yml
-sigma/rules/linux/file_event/file_event_lnx_triple_cross_rootkit_lock_file.yml
-sigma/rules/linux/auditd/lnx_auditd_system_info_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_services_stop_and_disable.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_nice_shell_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_python_reverse_shell.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_php_reverse_shell.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_awk_shell_spawn.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_permission_change_admin.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_shell_child_process_from_parent_tmp_folder.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_triple_cross_rootkit_install.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_sensitive_file_access.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_java_children.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_userdel.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_history_recon.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_vm_kill.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_pua_trufflehog.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_auditctl_clear_rules.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_wget_download_suspicious_directory.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_crontab_removal.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_system_network_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_hktl_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_touch_susp.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_execution_tmp_folder.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_cap_setuid.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_setgid_setuid.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_remote_system_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_triple_cross_rootkit_execve_hijack.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_system_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_crontab_enumeration.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_container_residence_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_install_suspicious_packages.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_dd_file_overwrite.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_clipboard_collection.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_pipe_shell.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_system_network_connections_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_python_http_server_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_local_account.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_chmod_directories.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_webshell_detection.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_remove_package.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_systemctl_mask_power_settings.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_python_pty_spawn.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_netcat_reverse_shell.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_flock_shell_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_install_root_certificate.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_mkfifo_named_pipe_creation.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_vsan_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_disable_ufw.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_security_tools_disabling.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_process_reading_sudoers.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_base64_shebang_cli.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_vm_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_clear_syslog.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_curl_useragent.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_security_software_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_clear_logs.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_history_delete.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_rsync_shell_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_av_kaspersky_av_disabled.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_base64_decode.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_ruby_reverse_shell.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_vim_shell_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_nohup.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_base64_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_nohup_susp_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_git_shell_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_omigod_scx_runasprovider_executescript.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_apt_shell_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_local_groups.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_groupdel.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_capsh_shell_invocation.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_grep_os_arch_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_network_utilities_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_shell_script_exec_from_susp_location.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_remote_access_tools_teamviewer_incoming_connection.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_cp_passwd_or_shadow_tmp.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_cap_setgid.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_gcc_shell_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_perl_reverse_shell.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_rsync_shell_spawn.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_file_and_directory_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_recon_indicators.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_env_shell_invocation.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_find_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_xterm_reverse_shell.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_user_account_creation.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_git_clone.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_interactive_bash.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_crypto_mining.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_pnscan_binary_cli_pattern.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_python_shell_os_system.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_file_deletion.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_dockerenv_recon.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_ssh_shell_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_at_command.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_capa_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_omigod_scx_runasprovider_executeshellcommand.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_network_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_ssm_agent_abuse.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_bpf_kprob_tracing_enabled.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_bash_interactive_shell.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_system_info_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_schedule_task_job_cron.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_curl_wget_exec_tmp.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_iptables_flush_ufw.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_curl_fileupload.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_find_shell_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_syslog_config_change.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_bpftrace_unsafe_option_usage.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_doas_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_proxy_connection.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_dd_process_injection.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_mount_hidepid.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_chattr_immutable_removal.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_curl_usage.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_mkfifo_named_pipe_creation_susp_location.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_chroot_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_usermod_susp_group.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_malware_gobrat_grep_payload_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_storage_discovery.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_inod_listing.yml
+sigma/rules/linux/network_connection/net_connection_lnx_back_connect_shell_dev.yml
+sigma/rules/linux/network_connection/net_connection_lnx_ngrok_tunnel.yml
+sigma/rules/linux/network_connection/net_connection_lnx_susp_malware_callback_port.yml
+sigma/rules/linux/network_connection/net_connection_lnx_domain_localtonet_tunnel.yml
+sigma/rules/linux/network_connection/net_connection_lnx_crypto_mining_indicators.yml
 sigma/rules/linux/auditd/lnx_auditd_audio_capture.yml
+sigma/rules/linux/auditd/lnx_auditd_system_info_discovery.yml
 sigma/rules/linux/auditd/lnx_auditd_disable_aslr_protection.yml
 sigma/rules/linux/auditd/lnx_auditd_susp_c2_commands.yml
 sigma/rules/linux/auditd/lnx_auditd_password_policy_discovery.yml
 sigma/rules/linux/auditd/lnx_auditd_keylogging_with_pam_d.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_triple_cross_rootkit_execve_hijack.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_storage_discovery.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_bpftrace_unsafe_option_usage.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_ssm_agent_abuse.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_mkfifo_named_pipe_creation.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_curl_usage.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_perl_reverse_shell.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_at_command.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_env_shell_invocation.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_malware_gobrat_grep_payload_discovery.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_java_children.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_cap_setuid.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_find_shell_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_curl_wget_exec_tmp.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_security_tools_disabling.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_local_groups.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_system_network_connections_discovery.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_crontab_removal.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_pnscan_binary_cli_pattern.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_crontab_enumeration.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_execution_tmp_folder.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_doas_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_apt_shell_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_install_root_certificate.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_services_stop_and_disable.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_hktl_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_netcat_reverse_shell.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_base64_shebang_cli.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_file_and_directory_discovery.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_remote_access_tools_teamviewer_incoming_connection.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_awk_shell_spawn.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_python_pty_spawn.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_permission_change_admin.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_auditctl_clear_rules.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_sensitive_file_access.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_curl_useragent.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_clear_syslog.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_security_software_discovery.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_systemctl_mask_power_settings.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_wget_download_suspicious_directory.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_python_reverse_shell.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_cp_passwd_or_shadow_tmp.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_clear_logs.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_file_deletion.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_network_utilities_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_capsh_shell_invocation.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_inod_listing.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_dockerenv_recon.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_git_clone.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_bpf_kprob_tracing_enabled.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_bash_interactive_shell.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_grep_os_arch_discovery.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_shell_script_exec_from_susp_location.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_userdel.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_ssh_shell_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_process_reading_sudoers.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_gcc_shell_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_base64_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_webshell_detection.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_cap_setgid.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_install_suspicious_packages.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_omigod_scx_runasprovider_executeshellcommand.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_nohup_susp_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_php_reverse_shell.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_curl_fileupload.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_system_discovery.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_nohup.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_mkfifo_named_pipe_creation_susp_location.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_find_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_ruby_reverse_shell.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_python_shell_os_system.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_pua_trufflehog.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_schedule_task_job_cron.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_git_shell_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_iptables_flush_ufw.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_usermod_susp_group.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_system_network_discovery.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_network_discovery.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_mount_hidepid.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_touch_susp.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_setgid_setuid.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_rsync_shell_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_chattr_immutable_removal.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_vm_discovery.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_dd_file_overwrite.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_history_delete.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_capa_discovery.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_vm_kill.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_container_residence_discovery.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_python_http_server_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_xterm_reverse_shell.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_recon_indicators.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_remote_system_discovery.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_local_account.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_remove_package.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_shell_child_process_from_parent_tmp_folder.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_nice_shell_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_pipe_shell.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_av_kaspersky_av_disabled.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_crypto_mining.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_omigod_scx_runasprovider_executescript.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_base64_decode.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_proxy_connection.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_clipboard_collection.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_chroot_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_rsync_shell_spawn.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_groupdel.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_user_account_creation.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_vsan_discovery.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_disable_ufw.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_chmod_directories.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_system_info_discovery.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_flock_shell_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_vim_shell_execution.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_history_recon.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_syslog_config_change.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_dd_process_injection.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_interactive_bash.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_triple_cross_rootkit_install.yml
-sigma/rules/linux/network_connection/net_connection_lnx_domain_localtonet_tunnel.yml
-sigma/rules/linux/network_connection/net_connection_lnx_crypto_mining_indicators.yml
-sigma/rules/linux/network_connection/net_connection_lnx_susp_malware_callback_port.yml
-sigma/rules/linux/network_connection/net_connection_lnx_back_connect_shell_dev.yml
-sigma/rules/linux/network_connection/net_connection_lnx_ngrok_tunnel.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_masquerading_crond.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_clipboard_collection.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_dd_delete_file.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_chattr_immutable_removal.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_file_or_folder_permissions.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_steghide_embed_steganography.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_data_compressed.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_screencapture_import.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_coinminer.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_screencaputre_xwd.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_user_discovery.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_modify_system_firewall.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_susp_cmds.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_network_sniffing.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_steghide_extract_steganography.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_capabilities_discovery.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_clipboard_image_collection.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_data_exfil_wget.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_hidden_zip_files_steganography.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_unzip_hidden_zip_files_steganography.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_susp_service_reload_or_restart.yml
-sigma/rules/linux/auditd/execve/lnx_auditd_hidden_files_directories.yml
-sigma/rules/linux/auditd/path/lnx_auditd_hidden_binary_execution.yml
-sigma/rules/linux/auditd/path/lnx_auditd_bpfdoor_file_accessed.yml
-sigma/rules/linux/auditd/path/lnx_auditd_auditing_config_change.yml
-sigma/rules/linux/auditd/path/lnx_auditd_systemd_service_creation.yml
-sigma/rules/linux/auditd/path/lnx_auditd_system_info_discovery2.yml
-sigma/rules/linux/auditd/path/lnx_auditd_logging_config_change.yml
-sigma/rules/linux/auditd/path/lnx_auditd_unix_shell_configuration_modification.yml
-sigma/rules/linux/auditd/path/lnx_auditd_magic_system_request_key.yml
-sigma/rules/linux/auditd/path/lnx_auditd_ld_so_preload_mod.yml
+sigma/rules/linux/file_event/file_event_lnx_persistence_sudoers_files.yml
+sigma/rules/linux/file_event/file_event_lnx_susp_shell_script_under_profile_directory.yml
+sigma/rules/linux/file_event/file_event_lnx_susp_filename_with_embedded_base64_command.yml
+sigma/rules/linux/file_event/file_event_lnx_wget_download_file_in_tmp_dir.yml
+sigma/rules/linux/file_event/file_event_lnx_triple_cross_rootkit_lock_file.yml
+sigma/rules/linux/file_event/file_event_lnx_triple_cross_rootkit_persistence.yml
+sigma/rules/linux/file_event/file_event_lnx_persistence_cron_files.yml
+sigma/rules/linux/file_event/file_event_lnx_doas_conf_creation.yml
 sigma/rules/linux/auditd/service_stop/lnx_auditd_disable_system_firewall.yml
-sigma/rules/linux/auditd/syscall/lnx_auditd_network_service_scanning.yml
-sigma/rules/linux/auditd/syscall/lnx_auditd_clean_disable_dmesg_logs_via_syslog.yml
+sigma/rules/linux/auditd/path/lnx_auditd_system_info_discovery2.yml
+sigma/rules/linux/auditd/path/lnx_auditd_unix_shell_configuration_modification.yml
+sigma/rules/linux/auditd/path/lnx_auditd_auditing_config_change.yml
+sigma/rules/linux/auditd/path/lnx_auditd_hidden_binary_execution.yml
+sigma/rules/linux/auditd/path/lnx_auditd_logging_config_change.yml
+sigma/rules/linux/auditd/path/lnx_auditd_systemd_service_creation.yml
+sigma/rules/linux/auditd/path/lnx_auditd_ld_so_preload_mod.yml
+sigma/rules/linux/auditd/path/lnx_auditd_bpfdoor_file_accessed.yml
+sigma/rules/linux/auditd/path/lnx_auditd_magic_system_request_key.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_screencapture_import.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_hidden_zip_files_steganography.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_susp_cmds.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_dd_delete_file.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_unzip_hidden_zip_files_steganography.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_data_exfil_wget.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_chattr_immutable_removal.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_data_compressed.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_modify_system_firewall.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_susp_service_reload_or_restart.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_steghide_extract_steganography.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_masquerading_crond.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_file_or_folder_permissions.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_screencaputre_xwd.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_clipboard_collection.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_capabilities_discovery.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_network_sniffing.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_user_discovery.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_coinminer.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_clipboard_image_collection.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_hidden_files_directories.yml
+sigma/rules/linux/auditd/execve/lnx_auditd_steghide_embed_steganography.yml
 sigma/rules/linux/auditd/syscall/lnx_auditd_susp_discovery_sysinfo_syscall.yml
-sigma/rules/linux/auditd/syscall/lnx_auditd_load_module_insmod.yml
 sigma/rules/linux/auditd/syscall/lnx_auditd_create_account.yml
+sigma/rules/linux/auditd/syscall/lnx_auditd_network_service_scanning.yml
 sigma/rules/linux/auditd/syscall/lnx_auditd_split_file_into_pieces.yml
 sigma/rules/linux/auditd/syscall/lnx_auditd_susp_exe_folders.yml
+sigma/rules/linux/auditd/syscall/lnx_auditd_load_module_insmod.yml
+sigma/rules/linux/auditd/syscall/lnx_auditd_clean_disable_dmesg_logs_via_syslog.yml
 sigma/rules/linux/auditd/syscall/lnx_auditd_web_rce.yml
 sigma/rules/linux/auditd/syscall/lnx_auditd_susp_special_file_creation_via_mknod_syscall.yml
