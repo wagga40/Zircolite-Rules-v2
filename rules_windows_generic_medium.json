@@ -13751,6 +13751,31 @@
         "eventid": []
     },
     {
+        "title": "Notepad++ Updater DNS Query to Uncommon Domains",
+        "id": "2074e137-1b73-4e2d-88ba-5a3407dbdce0",
+        "status": "experimental",
+        "description": "Detects when the Notepad++ updater (gup.exe) makes DNS queries to domains that are not part of the known legitimate update infrastructure.\nThis could indicate potential exploitation of the updater mechanism or suspicious network activity that warrants further investigation.\n",
+        "author": "Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.collection",
+            "attack.credential-access",
+            "attack.t1195.002",
+            "attack.initial-access",
+            "attack.t1557"
+        ],
+        "falsepositives": [
+            "Some legitimate network misconfigurations or proxy issues causing unexpected DNS queries.",
+            "Other legitimate query to official domains not listed in the filter, needing tuning."
+        ],
+        "level": "medium",
+        "rule": [
+            "SELECT * FROM logs WHERE Image LIKE '%\\\\gup.exe' ESCAPE '\\' AND (NOT QueryName='notepad-plus-plus.org') AND (NOT (QueryName LIKE '%.sourceforge.net' ESCAPE '\\' OR (QueryName LIKE '%.githubusercontent.com' ESCAPE '\\' OR QueryName='github.com') OR QueryName LIKE '%.googleapis.com' ESCAPE '\\'))"
+        ],
+        "filename": "",
+        "channel": [],
+        "eventid": []
+    },
+    {
         "title": "DNS Query Request By Regsvr32.EXE",
         "id": "36e037c4-c228-4866-b6a3-48eb292b9955",
         "status": "test",
@@ -40584,6 +40609,34 @@
         ]
     },
     {
+        "title": "Suspicious Child Process of Notepad++ Updater - GUP.Exe",
+        "id": "bb0e87ce-c89f-4857-84fa-095e4483e9cb",
+        "status": "experimental",
+        "description": "Detects suspicious child process creation by the Notepad++ updater process (gup.exe).\nThis could indicate potential exploitation of the updater component to deliver unwanted malware.\n",
+        "author": "Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.collection",
+            "attack.credential-access",
+            "attack.t1195.002",
+            "attack.initial-access",
+            "attack.t1557"
+        ],
+        "falsepositives": [
+            "Unlikely"
+        ],
+        "level": "high",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (ParentProcessName LIKE '%\\\\gup.exe' ESCAPE '\\' AND ((NewProcessName LIKE '%\\\\cmd.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\powershell.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\pwsh.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\cscript.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\wscript.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\mshta.exe' ESCAPE '\\') OR (CommandLine LIKE '%bitsadmin%' ESCAPE '\\' OR CommandLine LIKE '%certutil%' ESCAPE '\\' OR CommandLine LIKE '%curl%' ESCAPE '\\' OR CommandLine LIKE '%finger%' ESCAPE '\\' OR CommandLine LIKE '%forfiles%' ESCAPE '\\' OR CommandLine LIKE '%regsvr32%' ESCAPE '\\' OR CommandLine LIKE '%rundll32%' ESCAPE '\\' OR CommandLine LIKE '%wget%' ESCAPE '\\'))))"
+        ],
+        "filename": "",
+        "channel": [
+            "Security"
+        ],
+        "eventid": [
+            4688
+        ]
+    },
+    {
         "title": "Suspicious Calculator Usage",
         "id": "737e618a-a410-49b5-bec3-9e55ff7fbc15",
         "status": "test",
@@ -63386,6 +63439,31 @@
         "level": "high",
         "rule": [
             "SELECT * FROM logs WHERE Image LIKE 'C:\\\\WINDOWS\\\\system32\\\\WerFault.exe' ESCAPE '\\' AND (TargetFilename LIKE '%\\\\lsass%' ESCAPE '\\' OR TargetFilename LIKE '%lsass.exe%' ESCAPE '\\')"
+        ],
+        "filename": "",
+        "channel": [],
+        "eventid": []
+    },
+    {
+        "title": "Uncommon File Created by Notepad++ Updater Gup.EXE",
+        "id": "3b8f4c92-6a51-4d7e-9c3a-8e2d1f5a7b09",
+        "status": "experimental",
+        "description": "Detects when the Notepad++ updater (gup.exe) creates files in suspicious or uncommon locations.\nThis could indicate potential exploitation of the updater component to deliver unwanted malware or unwarranted files.\n",
+        "author": "Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.collection",
+            "attack.credential-access",
+            "attack.t1195.002",
+            "attack.initial-access",
+            "attack.t1557"
+        ],
+        "falsepositives": [
+            "Custom or portable Notepad++ installations in non-standard directories.",
+            "Legitimate update processes creating temporary files in unexpected locations."
+        ],
+        "level": "high",
+        "rule": [
+            "SELECT * FROM logs WHERE Image LIKE '%\\\\gup.exe' ESCAPE '\\' AND (NOT ((TargetFilename LIKE 'C:\\\\Program Files\\\\Notepad++\\\\%' ESCAPE '\\' OR TargetFilename LIKE 'C:\\\\Program Files (x86)\\\\Notepad++\\\\%' ESCAPE '\\') OR (TargetFilename LIKE 'C:\\\\Users\\\\%' ESCAPE '\\' AND (TargetFilename LIKE '%\\\\AppData\\\\Local\\\\Temp\\\\%' ESCAPE '\\' AND TargetFilename LIKE '%npp.%' ESCAPE '\\' AND TargetFilename LIKE '%.Installer.%' ESCAPE '\\' AND TargetFilename LIKE '%.exe%' ESCAPE '\\')) OR (TargetFilename LIKE 'C:\\\\Users\\\\%' ESCAPE '\\' AND (TargetFilename LIKE '%\\\\AppData\\\\Local\\\\Temp\\\\%' ESCAPE '\\' AND TargetFilename LIKE '%.zip%' ESCAPE '\\')) OR TargetFilename LIKE 'C:\\\\$Recycle.Bin\\\\S-1-5-21%' ESCAPE '\\'))"
         ],
         "filename": "",
         "channel": [],

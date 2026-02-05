@@ -1,9 +1,9 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - GENERIC
 ================================================================================
-Timestamp: 2026-02-04 03:42:06
-Total rules processed: 2948
-Successful conversions: 2914
+Timestamp: 2026-02-05 03:43:14
+Total rules processed: 2951
+Successful conversions: 2917
 Failed conversions: 34
 Success rate: 98.8%
 ================================================================================
@@ -182,7 +182,7 @@ ID:    f130a5f1-73ba-42f0-bf1e-b66a8361cb8f
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 ================================================================================
-SUCCESSFUL RULES (2914)
+SUCCESSFUL RULES (2917)
 --------------------------------------------------------------------------------
 sigma/rules/windows/process_access/proc_access_win_lsass_seclogon_access.yml
 sigma/rules/windows/process_access/proc_access_win_lsass_werfault.yml
@@ -1124,6 +1124,7 @@ sigma/rules/windows/process_creation/proc_creation_win_schtasks_system.yml
 sigma/rules/windows/process_creation/proc_creation_win_susp_emoji_usage_in_cli_4.yml
 sigma/rules/windows/process_creation/proc_creation_win_powershell_downgrade_attack.yml
 sigma/rules/windows/process_creation/proc_creation_win_rundll32_process_dump_via_comsvcs.yml
+sigma/rules/windows/process_creation/proc_creation_win_gup_susp_child_process.yml
 sigma/rules/windows/process_creation/proc_creation_win_calc_uncommon_exec.yml
 sigma/rules/windows/process_creation/proc_creation_win_office_excel_dcom_lateral_movement.yml
 sigma/rules/windows/process_creation/proc_creation_win_lolbin_vsiisexelauncher.yml
@@ -1440,6 +1441,7 @@ sigma/rules/windows/dns_query/dns_query_win_domain_azurewebsites.yml
 sigma/rules/windows/dns_query/dns_query_win_vscode_tunnel_communication.yml
 sigma/rules/windows/dns_query/dns_query_win_appinstaller.yml
 sigma/rules/windows/dns_query/dns_query_win_teamviewer_domain_query_by_uncommon_app.yml
+sigma/rules/windows/dns_query/dns_query_win_gup_query_to_uncommon_domains.yml
 sigma/rules/windows/dns_query/dns_query_win_kerberos_coercion_via_dns_object_spoofing.yml
 sigma/rules/windows/dns_query/dns_query_win_regsvr32_dns_query.yml
 sigma/rules/windows/dns_query/dns_query_win_cloudflared_communication.yml
@@ -3037,6 +3039,7 @@ sigma/rules/windows/file/file_event/file_event_win_creation_system_file.yml
 sigma/rules/windows/file/file_event/file_event_win_new_files_in_uncommon_appdata_folder.yml
 sigma/rules/windows/file/file_event/file_event_win_hktl_mimikatz_files.yml
 sigma/rules/windows/file/file_event/file_event_win_lsass_werfault_dump.yml
+sigma/rules/windows/file/file_event/file_event_win_gup_uncommon_file_creation.yml
 sigma/rules/windows/file/file_event/file_event_win_impacket_file_indicators.yml
 sigma/rules/windows/file/file_event/file_event_win_cscript_wscript_dropper.yml
 sigma/rules/windows/file/file_event/file_event_win_desktop_ini_created_by_uncommon_process.yml
