@@ -42,7 +42,7 @@ jobs:
         run: |
           # Copy additional rule directories into windows rules
           cp -r ./sigma/rules-threat-hunting/ ./sigma/rules/windows/rules-threat-hunting/ 2>/dev/null || true
-          cp -r ./sigma/rules-emerging-threats/ ./sigma/rules/windows/rules-emerging-threats/ 2>/dev/null || true
+          cp -r ./sigma/rules-emerging-threats/windows/ ./sigma/rules/windows/rules-emerging-threats/windows/ 2>/dev/null || true
           # Remove markdown files to avoid processing issues
           find ./sigma/ -type f -name '*.md' -delete
 
