@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:041563ccc1354c8e05fd160fc200e87d1f217c904fc9ad4603dc44842bfab366"
+content_hash = "sha256:0dddfc995cded1be9b400dc5b37a9c786c0d30c05d0e622e220e9ff54e2e392e"
 
 [[metadata.targets]]
 requires_python = "==3.14.*"
@@ -154,7 +154,7 @@ files = [
 
 [[package]]
 name = "pysigma"
-version = "1.1.0"
+version = "1.1.1"
 requires_python = "<4.0,>=3.10"
 summary = "Sigma rule processing and conversion tools"
 groups = ["default"]
@@ -170,8 +170,8 @@ dependencies = [
     "typing-extensions<5.0.0,>=4.15.0",
 ]
 files = [
-    {file = "pysigma-1.1.0-py3-none-any.whl", hash = "sha256:41eb420dafa1f97f2898732e6849232099833bb3bb7ebf219257fb0596c7ef05"},
-    {file = "pysigma-1.1.0.tar.gz", hash = "sha256:4ff157f2ce0d24beacd89176b74643aab72e6b32f10966e731ab0ddff4f96451"},
+    {file = "pysigma-1.1.1-py3-none-any.whl", hash = "sha256:16206c6787861958d2c7aff67477f732c09e06fd463a61ba51c6d5d6b1da0c33"},
+    {file = "pysigma-1.1.1.tar.gz", hash = "sha256:d0915508133948647e1c36cce917e78db8b34075927950f1380436ac90f1bbbb"},
 ]
 
 [[package]]

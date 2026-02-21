@@ -1,0 +1,58 @@
+RULES REMOVED (no channel): 14
+--------------------------------------------------------------------------------
+
+Title: Previously Installed IIS Module Was Removed
+ID:    9e1a1fdf-ee58-40ce-8e15-b66ca5a80e1f
+Level: low
+
+Title: Suspicious File Access to Browser Credential Storage
+ID:    a1dfd976-4852-41d4-9507-dc6590a3ccd0
+Level: low
+
+Title: New Module Module Added To IIS Server
+ID:    dd857d3e-0c6e-457b-9b48-e82ae7f86bd7
+Level: medium
+
+Title: ETW Logging/Processing Option Disabled On IIS Server
+ID:    a5b40a90-baf5-4bf7-a6f7-373494881d22
+Level: medium
+
+Title: Potential Active Directory Reconnaissance/Enumeration Via LDAP
+ID:    31d68132-4038-47c7-8f8e-635a39a7c174
+Level: medium
+
+Title: Unsigned or Unencrypted SMB Connection to Share Established
+ID:    8d91f6e4-9f3b-4c21-ae41-2c5b7d9f7a12
+Level: medium
+
+Title: Suspicious Appended Extension
+ID:    e3f673b3-65d1-4d80-9146-466f8b63fa99
+Level: medium
+
+Title: Access To Crypto Currency Wallets By Uncommon Applications
+ID:    f41b0311-44f9-44f0-816d-dd45e39d4bc8
+Level: medium
+
+Title: Credential Manager Access By Uncommon Applications
+ID:    407aecb1-e762-4acf-8c7b-d087bcff3bb6
+Level: medium
+
+Title: Access To Potentially Sensitive Sysvol Files By Uncommon Applications
+ID:    d51694fe-484a-46ac-92d6-969e76d60d10
+Level: medium
+
+Title: Access To Windows DPAPI Master Keys By Uncommon Applications
+ID:    46612ae6-86be-4802-bc07-39b59feb1309
+Level: medium
+
+Title: Access To Windows Credential History File By Uncommon Applications
+ID:    7a2a22ea-a203-4cd3-9abf-20eb1c5c6cd2
+Level: medium
+
+Title: Microsoft Teams Sensitive File Access By Uncommon Applications
+ID:    65744385-8541-44a6-8630-ffc824d7d4cc
+Level: medium
+
+Title: HTTP Logging Disabled On IIS Server
+ID:    e8ebd53a-30c2-45bd-81bb-74befba07bdb
+Level: high

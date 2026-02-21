@@ -24,6 +24,7 @@ rules_path_linux = r"./sigma/rules/linux/"
 RULESET_CONFIGS = {
     "sysmon": "rules_windows_sysmon",
     "generic": "rules_windows_generic",
+    "merged": "rules_windows_merged",
     "linux": "rules_linux",
 }
 
@@ -155,6 +156,78 @@ def ruleset_generator(name, base_output_name, input_rules, pipelines=None):
     return ruleset
 
 
+def remove_empty_channel_rules(ruleset, base_output_name):
+    """Remove converted rules that have no channel and log them. Returns the filtered ruleset."""
+    kept = []
+    removed = []
+    for rule in ruleset:
+        if rule.get("channel"):
+            kept.append(rule)
+        else:
+            removed.append(rule)
+    if removed:
+        print(f'[!] Removed {len(removed)} rules with no channel')
+        log_filename = f"{base_output_name}_no_channel.log"
+        with open(log_filename, 'w') as log:
+            log.write(f"RULES REMOVED (no channel): {len(removed)}\n")
+            log.write(f"{'-'*80}\n")
+            for rule in removed:
+                log.write(f"\nTitle: {rule.get('title', 'unknown')}\n")
+                log.write(f"ID:    {rule.get('id', 'unknown')}\n")
+                log.write(f"Level: {rule.get('level', 'unknown')}\n")
+        print(f'[+] No-channel log written to {log_filename}')
+    return kept
+
+
+def merge_rulesets(sysmon_rules, generic_rules):
+    """Merge sysmon and generic rulesets, deduplicating by rule ID.
+    - Same ID, same SQL: keep the generic version only.
+    - Same ID, different SQL: keep both, appending '- Sysmon' / '- Generic' to titles.
+    - Unique to one set: keep as-is."""
+    generic_by_id = {r["id"]: r for r in generic_rules if r.get("id")}
+    sysmon_by_id = {r["id"]: r for r in sysmon_rules if r.get("id")}
+
+    merged = []
+    seen_ids = set()
+    stats = {"generic_only": 0, "sysmon_only": 0, "same_sql": 0, "diff_sql": 0}
+
+    for rule_id, g_rule in generic_by_id.items():
+        seen_ids.add(rule_id)
+        if rule_id in sysmon_by_id:
+            s_rule = sysmon_by_id[rule_id]
+            if g_rule.get("rule") == s_rule.get("rule"):
+                merged.append(g_rule)
+                stats["same_sql"] += 1
+            else:
+                g_copy = dict(g_rule)
+                s_copy = dict(s_rule)
+                g_copy["title"] = g_rule.get("title", "") + " - Generic"
+                s_copy["title"] = s_rule.get("title", "") + " - Sysmon"
+                merged.append(g_copy)
+                merged.append(s_copy)
+                stats["diff_sql"] += 1
+        else:
+            merged.append(g_rule)
+            stats["generic_only"] += 1
+
+    for rule_id, s_rule in sysmon_by_id.items():
+        if rule_id not in seen_ids:
+            merged.append(s_rule)
+            stats["sysmon_only"] += 1
+
+    # Include rules without an ID from both sets
+    merged.extend(r for r in generic_rules if not r.get("id"))
+    merged.extend(r for r in sysmon_rules if not r.get("id"))
+
+    merged = sorted(merged, key=lambda d: LEVEL_ORDER.index(d.get('level', 'informational')))
+
+    print(f'[+] Merged ruleset: {len(merged)} rules')
+    print(f'    Generic only: {stats["generic_only"]}, Sysmon only: {stats["sysmon_only"]}')
+    print(f'    Same SQL (kept generic): {stats["same_sql"]}, Different SQL (kept both): {stats["diff_sql"]}')
+
+    return merged
+
+
 def filter_ruleset_by_level(ruleset, min_level):
     """Filter ruleset to include only rules at or above the minimum level."""
     if min_level is None:
@@ -184,23 +257,31 @@ def save_filtered_rulesets(base_name, ruleset):
 if __name__ == '__main__':
     # Generate sysmon ruleset
     sysmon_rules = ruleset_generator(
-        "sysmon", 
-        RULESET_CONFIGS["sysmon"], 
-        rules_path_windows, 
+        "sysmon",
+        RULESET_CONFIGS["sysmon"],
+        rules_path_windows,
         [sysmon_pipeline(), windows_logsource_pipeline()]
     )
+    sysmon_rules = remove_empty_channel_rules(sysmon_rules, RULESET_CONFIGS["sysmon"])
     save_filtered_rulesets(RULESET_CONFIGS["sysmon"], sysmon_rules)
     
     print()  # Separator
     
     # Generate generic ruleset
     generic_rules = ruleset_generator(
-        "generic", 
-        RULESET_CONFIGS["generic"], 
-        rules_path_windows, 
+        "generic",
+        RULESET_CONFIGS["generic"],
+        rules_path_windows,
         [windows_audit_pipeline(), windows_logsource_pipeline()]
     )
+    generic_rules = remove_empty_channel_rules(generic_rules, RULESET_CONFIGS["generic"])
     save_filtered_rulesets(RULESET_CONFIGS["generic"], generic_rules)
+
+    print()  # Separator
+
+    # Merge sysmon + generic into a combined ruleset
+    merged_rules = merge_rulesets(sysmon_rules, generic_rules)
+    save_filtered_rulesets(RULESET_CONFIGS["merged"], merged_rules)
 
     print()  # Separator
 
