@@ -1,9 +1,9 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - GENERIC
 ================================================================================
-Timestamp: 2026-02-28 03:22:45
-Total rules processed: 2819
-Successful conversions: 2785
+Timestamp: 2026-03-01 03:50:52
+Total rules processed: 2821
+Successful conversions: 2787
 Failed conversions: 34
 Success rate: 98.8%
 ================================================================================
@@ -182,7 +182,7 @@ ID:    293ccb8c-bed8-4868-8296-bef30e303b7e
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 ================================================================================
-SUCCESSFUL RULES (2785)
+SUCCESSFUL RULES (2787)
 --------------------------------------------------------------------------------
 sigma/rules/windows/create_remote_thread/create_remote_thread_win_ttdinjec.yml
 sigma/rules/windows/create_remote_thread/create_remote_thread_win_powershell_lsass.yml
@@ -1016,6 +1016,7 @@ sigma/rules/windows/process_creation/proc_creation_win_query_session_exfil.yml
 sigma/rules/windows/process_creation/proc_creation_win_bitsadmin_download_file_sharing_domains.yml
 sigma/rules/windows/process_creation/proc_creation_win_remote_access_tools_ultraviewer.yml
 sigma/rules/windows/process_creation/proc_creation_win_msedge_proxy_download.yml
+sigma/rules/windows/process_creation/proc_creation_win_reg_system_language_discovery.yml
 sigma/rules/windows/process_creation/proc_creation_win_powershell_disable_defender_av_security_monitoring.yml
 sigma/rules/windows/process_creation/proc_creation_win_netsh_fw_rules_discovery.yml
 sigma/rules/windows/process_creation/proc_creation_win_powershell_cmdline_convertto_securestring.yml
@@ -1210,6 +1211,7 @@ sigma/rules/windows/process_creation/proc_creation_win_cmd_mklink_shadow_copies_
 sigma/rules/windows/process_creation/proc_creation_win_ssh_proxy_execution.yml
 sigma/rules/windows/process_creation/proc_creation_win_wsl_kali_linux_installation.yml
 sigma/rules/windows/process_creation/proc_creation_win_curl_insecure_connection.yml
+sigma/rules/windows/process_creation/proc_creation_win_comodo_ssh_shellhost_cmd_spawn.yml
 sigma/rules/windows/process_creation/proc_creation_win_regasm_regsvcs_uncommon_extension_execution.yml
 sigma/rules/windows/process_creation/proc_creation_win_powershell_download_cradle_obfuscated.yml
 sigma/rules/windows/process_creation/proc_creation_win_sc_query_interesting_services.yml
@@ -2675,7 +2677,6 @@ sigma/rules/windows/powershell/powershell_script/posh_ps_veeam_credential_dumpin
 sigma/rules/windows/powershell/powershell_script/posh_ps_potential_unconstrained_delegation_discovery.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_susp_set_alias.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_disable_psreadline_command_history.yml
-sigma/rules/windows/powershell/powershell_script/posh_ps_exchange_mailbox_smpt_forwarding_rule.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_amsi_bypass_pattern_nov22.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_susp_keywords.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_tamper_windows_defender_set_mp.yml
@@ -2875,6 +2876,7 @@ sigma/rules/windows/file/file_event/file_event_win_cred_dump_tools_dropped_files
 sigma/rules/windows/file/file_event/file_event_win_office_macro_files_created.yml
 sigma/rules/windows/file/file_event/file_event_win_powershell_module_creation.yml
 sigma/rules/windows/file/file_event/file_event_win_wmiexec_default_filename.yml
+sigma/rules/windows/file/file_event/file_event_win_comodo_itsm_potentially_suspicious_file_creation.yml
 sigma/rules/windows/file/file_event/file_event_win_winrar_file_creation_in_startup_folder.yml
 sigma/rules/windows/file/file_event/file_event_win_create_non_existent_dlls.yml
 sigma/rules/windows/file/file_event/file_event_win_werfault_dll_hijacking.yml
