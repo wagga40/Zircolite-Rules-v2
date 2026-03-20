@@ -46206,31 +46206,6 @@
         ]
     },
     {
-        "title": "WerFaultSecure Loading DbgCore or DbgHelp - EDR-Freeze",
-        "id": "8a2f4b1c-3d5e-4f7a-9b2c-1e4f6d8a9c2b",
-        "status": "experimental",
-        "description": "Detects WerFaultSecure.exe loading dbgcore.dll or dbghelp.dll which contains the MiniDumpWriteDump function.\nThe MiniDumpWriteDump function creates a minidump of a process by suspending all threads in the target process to ensure a consistent memory snapshot.\nThe EDR-Freeze technique abuses WerFaultSecure.exe running as a Protected Process Light (PPL) with WinTCB protection level to suspend EDR/AV processes.\nBy leveraging MiniDumpWriteDump's thread suspension behavior, edr-freeze allows malicious activity to execute undetected during the suspension period.\n",
-        "author": "Swachchhanda Shrawan Poudel (Nextron Systems)",
-        "tags": [
-            "attack.defense-evasion",
-            "attack.t1562.001"
-        ],
-        "falsepositives": [
-            "Unknown"
-        ],
-        "level": "medium",
-        "rule": [
-            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=7 AND (Image LIKE '%\\\\WerFaultSecure.exe' ESCAPE '\\' AND (ImageLoaded LIKE '%\\\\dbgcore.dll' ESCAPE '\\' OR ImageLoaded LIKE '%\\\\dbghelp.dll' ESCAPE '\\')))"
-        ],
-        "filename": "",
-        "channel": [
-            "Microsoft-Windows-Sysmon/Operational"
-        ],
-        "eventid": [
-            7
-        ]
-    },
-    {
         "title": "Potential ShellDispatch.DLL Sideloading",
         "id": "844f8eb2-610b-42c8-89a4-47596e089663",
         "status": "test",
@@ -60692,7 +60667,7 @@
         ],
         "level": "high",
         "rule": [
-            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (NewProcessName LIKE '%\\\\wsass.exe' ESCAPE '\\' OR Hashes LIKE '%IMPHASH=32F5095C9BBDCACF28FD4060EB4DFC42%' ESCAPE '\\' OR (CommandLine REGEXP '(?i)\\.exe[\\\"\\']?\\s+.{12,64}[\\\"\\']?\\s+\\d{2,10}' AND CommandLine LIKE '%werfaultsecure%' ESCAPE '\\')))"
+            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (NewProcessName LIKE '%\\\\wsass.exe' ESCAPE '\\' OR Hashes LIKE '%IMPHASH=32F5095C9BBDCACF28FD4060EB4DFC42%' ESCAPE '\\' OR CommandLine REGEXP '(?i)\\.exe[\\\"\\']?\\s+[^\\\"]{0,64}werfaultsecure\\.exe[\\\"\\']?\\s+\\d{2,10}'))"
         ],
         "filename": "",
         "channel": [
@@ -60717,7 +60692,7 @@
         ],
         "level": "high",
         "rule": [
-            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (Image LIKE '%\\\\wsass.exe' ESCAPE '\\' OR Hashes LIKE '%IMPHASH=32F5095C9BBDCACF28FD4060EB4DFC42%' ESCAPE '\\' OR (CommandLine REGEXP '(?i)\\.exe[\\\"\\']?\\s+.{12,64}[\\\"\\']?\\s+\\d{2,10}' AND CommandLine LIKE '%werfaultsecure%' ESCAPE '\\')))"
+            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (Image LIKE '%\\\\wsass.exe' ESCAPE '\\' OR Hashes LIKE '%IMPHASH=32F5095C9BBDCACF28FD4060EB4DFC42%' ESCAPE '\\' OR CommandLine REGEXP '(?i)\\.exe[\\\"\\']?\\s+[^\\\"]{0,64}werfaultsecure\\.exe[\\\"\\']?\\s+\\d{2,10}'))"
         ],
         "filename": "",
         "channel": [
@@ -101437,11 +101412,11 @@
             "attack.t1562.001"
         ],
         "falsepositives": [
-            "Possibly during software installation or update processes"
+            "Unknown"
         ],
         "level": "high",
         "rule": [
-            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=7 AND ((Image LIKE '%:\\\\Perflogs\\\\%' ESCAPE '\\' OR Image LIKE '%:\\\\Temp\\\\%' ESCAPE '\\' OR Image LIKE '%:\\\\Users\\\\Public\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\$Recycle.Bin\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Contacts\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Desktop\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Documents\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Downloads\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Favorites\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Favourites\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\inetpub\\\\wwwroot\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Music\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Pictures\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Start Menu\\\\Programs\\\\Startup\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Users\\\\Default\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Videos\\\\%' ESCAPE '\\') AND (ImageLoaded LIKE '%\\\\dbgcore.dll' ESCAPE '\\' OR ImageLoaded LIKE '%\\\\dbghelp.dll' ESCAPE '\\')))"
+            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=7 AND ((Image LIKE '%:\\\\Perflogs\\\\%' ESCAPE '\\' OR Image LIKE '%:\\\\Temp\\\\%' ESCAPE '\\' OR Image LIKE '%:\\\\Users\\\\Public\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\$Recycle.Bin\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Contacts\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Documents\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Favorites\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Favourites\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\inetpub\\\\wwwroot\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Music\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Pictures\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Start Menu\\\\Programs\\\\Startup\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Users\\\\Default\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Videos\\\\%' ESCAPE '\\') AND (ImageLoaded LIKE '%\\\\dbgcore.dll' ESCAPE '\\' OR ImageLoaded LIKE '%\\\\dbghelp.dll' ESCAPE '\\')))"
         ],
         "filename": "",
         "channel": [

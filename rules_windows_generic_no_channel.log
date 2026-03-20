@@ -1,4 +1,4 @@
-RULES REMOVED (no channel): 635
+RULES REMOVED (no channel): 634
 --------------------------------------------------------------------------------
 
 Title: New PowerShell Instance Created
@@ -519,10 +519,6 @@ Level: medium
 
 Title: Potential Goopdate.DLL Sideloading
 ID:    b6188d2f-b3c4-4d2c-a17d-9706e0851af0
-Level: medium
-
-Title: WerFaultSecure Loading DbgCore or DbgHelp - EDR-Freeze
-ID:    8a2f4b1c-3d5e-4f7a-9b2c-1e4f6d8a9c2b
 Level: medium
 
 Title: Potential ShellDispatch.DLL Sideloading
