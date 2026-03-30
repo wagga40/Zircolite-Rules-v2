@@ -1,14 +1,14 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - GENERIC
 ================================================================================
-Timestamp: 2026-03-29 04:13:26
-Total rules processed: 2820
-Successful conversions: 2786
-Failed conversions: 34
+Timestamp: 2026-03-30 04:20:33
+Total rules processed: 2826
+Successful conversions: 2793
+Failed conversions: 33
 Success rate: 98.8%
 ================================================================================
 
-FAILED RULES (34)
+FAILED RULES (33)
 --------------------------------------------------------------------------------
 
 Path:  sigma/rules/windows/builtin/win_alert_mimikatz_keywords.yml
@@ -126,11 +126,6 @@ Title: ProxyLogon Reset Virtual Directories Based On IIS Log
 ID:    effee1f6-a932-4297-a81f-acb44064fa3a
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
-Path:  sigma/rules/windows/rules-emerging-threats/2025/Malware/Shai-Hulud/github_mal_shai_hulud_npm_attack.yml
-Title: Shai-Hulud NPM Attack GitHub Activity
-ID:    69fa9174-4370-4646-8d48-6a22e2853402
-Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
-
 Path:  sigma/rules/windows/builtin/msexchange/win_exchange_set_oabvirtualdirectory_externalurl.yml
 Title: Exchange Set OabVirtualDirectory ExternalUrl Property
 ID:    9db37458-4df2-46a5-95ab-307e7f29e675
@@ -182,7 +177,7 @@ ID:    18f37338-b9bd-4117-a039-280c81f7a596
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 ================================================================================
-SUCCESSFUL RULES (2786)
+SUCCESSFUL RULES (2793)
 --------------------------------------------------------------------------------
 sigma/rules/windows/pipe_created/pipe_created_susp_malicious_namedpipes.yml
 sigma/rules/windows/pipe_created/pipe_created_powershell_alternate_host_pipe.yml
@@ -1397,6 +1392,7 @@ sigma/rules/windows/process_creation/proc_creation_win_kd_execution.yml
 sigma/rules/windows/process_creation/proc_creation_win_tar_extraction.yml
 sigma/rules/windows/process_creation/proc_creation_win_powershell_dsinternals_cmdlets.yml
 sigma/rules/windows/process_creation/proc_creation_win_curl_download_direct_ip_susp_extensions.yml
+sigma/rules/windows/process_creation/proc_creation_win_susp_script_interpretor_spawn_credential_scanner.yml
 sigma/rules/windows/process_creation/proc_creation_win_winget_add_susp_custom_source.yml
 sigma/rules/windows/process_creation/proc_creation_win_powershell_downgrade_attack.yml
 sigma/rules/windows/process_creation/proc_creation_win_ksetup_password_change_computer.yml
@@ -2014,7 +2010,13 @@ sigma/rules/windows/rules-emerging-threats/2025/Malware/Katz-Stealer/net_dns_kat
 sigma/rules/windows/rules-emerging-threats/2025/Malware/Katz-Stealer/image_load_win_katz_stealer_payloads.yml
 sigma/rules/windows/rules-emerging-threats/2025/Malware/Katz-Stealer/zeek_http_katz_stealer_susp_useragent.yml
 sigma/rules/windows/rules-emerging-threats/2025/Malware/Grixba/proc_creation_win_malware_grixba_recon.yml
+sigma/rules/windows/rules-emerging-threats/2025/Malware/Shai-Hulud/proc_creation_lnx_mal_shai_hulud_indicator.yml
 sigma/rules/windows/rules-emerging-threats/2025/Malware/Shai-Hulud/proc_creation_lnx_mal_shai_hululd_exfiltration.yml
+sigma/rules/windows/rules-emerging-threats/2025/Malware/Shai-Hulud/proc_creation_win_mal_shai_hulud_malicious_npm_package_installation.yml
+sigma/rules/windows/rules-emerging-threats/2025/Malware/Shai-Hulud/proc_creation_win_mal_shai_hulud_indicator.yml
+sigma/rules/windows/rules-emerging-threats/2025/Malware/Shai-Hulud/proc_creation_lnx_mal_shai_hulud_malicious_npm_package_installation.yml
+sigma/rules/windows/rules-emerging-threats/2025/Malware/Shai-Hulud/proc_creation_win_mal_shai_hulud_malicious_node_bun_execution.yml
+sigma/rules/windows/rules-emerging-threats/2025/Malware/Shai-Hulud/proc_creation_lnx_mal_shai_hulud_malicious_node_bun_execution.yml
 sigma/rules/windows/rules-emerging-threats/2025/Malware/Shai-Hulud/file_event_lnx_mal_shai_hulud_workflow.yml
 sigma/rules/windows/rules-emerging-threats/2010/Exploits/CVE-2010-5278/web_cve_2010_5278_exploitation_attempt.yml
 sigma/rules/windows/registry/registry_event/registry_event_mal_azorult.yml

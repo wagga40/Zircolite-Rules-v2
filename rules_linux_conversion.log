@@ -1,9 +1,9 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - LINUX
 ================================================================================
-Timestamp: 2026-03-29 04:13:28
-Total rules processed: 207
-Successful conversions: 179
+Timestamp: 2026-03-30 04:20:34
+Total rules processed: 208
+Successful conversions: 180
 Failed conversions: 28
 Success rate: 86.5%
 ================================================================================
@@ -152,7 +152,7 @@ ID:    377f33a1-4b36-4ee1-acee-1dbe4b43cfbe
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 ================================================================================
-SUCCESSFUL RULES (179)
+SUCCESSFUL RULES (180)
 --------------------------------------------------------------------------------
 sigma/rules/linux/auditd/lnx_auditd_audio_capture.yml
 sigma/rules/linux/auditd/lnx_auditd_system_info_discovery.yml
@@ -183,6 +183,7 @@ sigma/rules/linux/process_creation/proc_creation_lnx_at_command.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_ruby_reverse_shell.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_base64_execution.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_perl_reverse_shell.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_script_interpretor_spawn_credential_scanner.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_awk_shell_spawn.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_susp_curl_fileupload.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_nohup.yml

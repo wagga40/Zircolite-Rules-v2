@@ -1,4 +1,4 @@
-RULES REMOVED (no channel): 634
+RULES REMOVED (no channel): 637
 --------------------------------------------------------------------------------
 
 Title: New PowerShell Instance Created
@@ -1925,8 +1925,20 @@ Title: Katz Stealer Suspicious User-Agent
 ID:    834c6d2f-5e98-4b2a-b453-0c4f234afedd
 Level: high
 
+Title: Shai-Hulud Malware Indicators - Linux
+ID:    11bb9b26-4179-4a06-afcb-1ec31fce1627
+Level: high
+
 Title: Shai-Hulud NPM Package Malicious Exfiltration via Curl
 ID:    efd2eb09-b72e-4a61-8dc7-b1382a1e8983
+Level: high
+
+Title: Shai-Hulud 2.0 Malicious NPM Package Installation - Linux
+ID:    514f533b-f56e-421d-80b0-f7706a3e9d23
+Level: high
+
+Title: Shai-Hulud Malicious Bun Execution - Linux
+ID:    eb827bbd-670a-4d58-8446-c464d8ac2323
 Level: high
 
 Title: Shai-Hulud Malicious GitHub Workflow Creation
