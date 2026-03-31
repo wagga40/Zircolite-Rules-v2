@@ -1,9 +1,9 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - GENERIC
 ================================================================================
-Timestamp: 2026-03-30 04:20:33
-Total rules processed: 2826
-Successful conversions: 2793
+Timestamp: 2026-03-31 04:10:15
+Total rules processed: 2829
+Successful conversions: 2796
 Failed conversions: 33
 Success rate: 98.8%
 ================================================================================
@@ -177,7 +177,7 @@ ID:    18f37338-b9bd-4117-a039-280c81f7a596
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 ================================================================================
-SUCCESSFUL RULES (2793)
+SUCCESSFUL RULES (2796)
 --------------------------------------------------------------------------------
 sigma/rules/windows/pipe_created/pipe_created_susp_malicious_namedpipes.yml
 sigma/rules/windows/pipe_created/pipe_created_powershell_alternate_host_pipe.yml
@@ -696,6 +696,7 @@ sigma/rules/windows/process_creation/proc_creation_win_regsvr32_susp_child_proce
 sigma/rules/windows/process_creation/proc_creation_win_schtasks_change.yml
 sigma/rules/windows/process_creation/proc_creation_win_powershell_base64_frombase64string.yml
 sigma/rules/windows/process_creation/proc_creation_win_hktl_invoke_obfuscation_via_compress.yml
+sigma/rules/windows/process_creation/proc_creation_win_create_new_dmsasvc_account.yml
 sigma/rules/windows/process_creation/proc_creation_win_winrm_execution_via_scripting_api_winrm_vbs.yml
 sigma/rules/windows/process_creation/proc_creation_win_hktl_createminidump.yml
 sigma/rules/windows/process_creation/proc_creation_win_shutdown_execution.yml
@@ -2396,6 +2397,7 @@ sigma/rules/windows/powershell/powershell_script/posh_ps_invoke_obfuscation_via_
 sigma/rules/windows/powershell/powershell_script/posh_ps_potential_invoke_mimikatz.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_web_request_cmd_and_cmdlets.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_set_acl_susp_location.yml
+sigma/rules/windows/powershell/powershell_script/posh_ps_modification_of_dmsa_link_attribute.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_susp_write_eventlog.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_susp_wallpaper.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_amsi_bypass_pattern_nov22.yml
@@ -2446,6 +2448,7 @@ sigma/rules/windows/powershell/powershell_script/posh_ps_malicious_commandlets.y
 sigma/rules/windows/powershell/powershell_script/posh_ps_susp_download.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_install_unsigned_appx_packages.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_import_module_susp_dirs.yml
+sigma/rules/windows/powershell/powershell_script/posh_ps_create_new_dmsasvc_account.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_set_policies_to_unsecure_level.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_dsinternals_cmdlets.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_susp_clear_eventlog.yml

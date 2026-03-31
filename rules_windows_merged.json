@@ -4362,6 +4362,36 @@
         ]
     },
     {
+        "title": "DMSA Link Attributes Modified",
+        "id": "9b111d8e-92e0-4153-88bc-daefc1333aba",
+        "status": "experimental",
+        "description": "Detects modification of dMSA link attributes (msDS-ManagedAccountPrecededByLink) via PowerShell scripts.\nThis command line pattern could be an indicator an attempt to exploit the BadSuccessor privilege escalation vulnerability in Windows Server 2025.\n",
+        "author": "Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.privilege-escalation",
+            "attack.defense-evasion",
+            "attack.persistence",
+            "attack.initial-access",
+            "attack.t1078.002",
+            "attack.t1098"
+        ],
+        "falsepositives": [
+            "Legitimate administrative tasks modifying these attributes."
+        ],
+        "level": "low",
+        "rule": [
+            "SELECT * FROM logs WHERE (Channel='Microsoft-Windows-PowerShell/Operational' OR Channel='PowerShellCore/Operational') AND (EventID=4104 AND (ScriptBlockText LIKE '%.Put(\"msDS-ManagedAccountPrecededByLink%' ESCAPE '\\' AND ScriptBlockText LIKE '%CN=%' ESCAPE '\\'))"
+        ],
+        "filename": "",
+        "channel": [
+            "Microsoft-Windows-PowerShell/Operational",
+            "PowerShellCore/Operational"
+        ],
+        "eventid": [
+            4104
+        ]
+    },
+    {
         "title": "Replace Desktop Wallpaper by Powershell",
         "id": "c5ac6a1e-9407-45f5-a0ce-ca9a0806a287",
         "status": "test",
@@ -11977,6 +12007,64 @@
         "level": "medium",
         "rule": [
             "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((CommandLine LIKE '%new-object%' ESCAPE '\\' AND CommandLine LIKE '%text.encoding]::ascii%' ESCAPE '\\') AND (CommandLine LIKE '%system.io.compression.deflatestream%' ESCAPE '\\' OR CommandLine LIKE '%system.io.streamreader%' ESCAPE '\\' OR CommandLine LIKE '%readtoend(%' ESCAPE '\\')))"
+        ],
+        "filename": "",
+        "channel": [
+            "Microsoft-Windows-Sysmon/Operational"
+        ],
+        "eventid": [
+            1
+        ]
+    },
+    {
+        "title": "New DMSA Service Account Created in Specific OUs - Generic",
+        "id": "0ea8db81-2ff6-4525-9448-33bbe7effc13",
+        "status": "experimental",
+        "description": "Detects the creation of a dMSASvc account using the New-ADServiceAccount cmdlet in certain OUs.\nThe fact that the Cmdlet is used to create a dMSASvc account in a specific OU is highly suspicious.\nIt is a pattern trying to exploit the BadSuccessor privilege escalation vulnerability in Windows Server 2025.\nOn top of that, if the user that is creating the dMSASvc account is not a legitimate administrator or does not have the necessary permissions,\nit is a strong signal of an attempted or successful abuse of the BaDSuccessor vulnerability for privilege escalation within the Windows Server 2025 Active Directory environment.\n",
+        "author": "Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.privilege-escalation",
+            "attack.initial-access",
+            "attack.defense-evasion",
+            "attack.persistence",
+            "attack.t1078.002",
+            "attack.t1098"
+        ],
+        "falsepositives": [
+            "Unknown"
+        ],
+        "level": "medium",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (((NewProcessName LIKE '%\\\\powershell.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\pwsh.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\powershell\\_ise.exe' ESCAPE '\\') OR (OriginalFileName='powershell.exe' OR OriginalFileName='pwsh.dll' OR OriginalFileName LIKE 'powershell\\_ise.exe' ESCAPE '\\')) AND (CommandLine LIKE '%New-ADServiceAccount%' ESCAPE '\\' AND CommandLine LIKE '%-CreateDelegatedServiceAccount%' ESCAPE '\\' AND CommandLine LIKE '%-path%' ESCAPE '\\')))"
+        ],
+        "filename": "",
+        "channel": [
+            "Security"
+        ],
+        "eventid": [
+            4688
+        ]
+    },
+    {
+        "title": "New DMSA Service Account Created in Specific OUs - Sysmon",
+        "id": "0ea8db81-2ff6-4525-9448-33bbe7effc13",
+        "status": "experimental",
+        "description": "Detects the creation of a dMSASvc account using the New-ADServiceAccount cmdlet in certain OUs.\nThe fact that the Cmdlet is used to create a dMSASvc account in a specific OU is highly suspicious.\nIt is a pattern trying to exploit the BadSuccessor privilege escalation vulnerability in Windows Server 2025.\nOn top of that, if the user that is creating the dMSASvc account is not a legitimate administrator or does not have the necessary permissions,\nit is a strong signal of an attempted or successful abuse of the BaDSuccessor vulnerability for privilege escalation within the Windows Server 2025 Active Directory environment.\n",
+        "author": "Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.privilege-escalation",
+            "attack.initial-access",
+            "attack.defense-evasion",
+            "attack.persistence",
+            "attack.t1078.002",
+            "attack.t1098"
+        ],
+        "falsepositives": [
+            "Unknown"
+        ],
+        "level": "medium",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (((Image LIKE '%\\\\powershell.exe' ESCAPE '\\' OR Image LIKE '%\\\\pwsh.exe' ESCAPE '\\' OR Image LIKE '%\\\\powershell\\_ise.exe' ESCAPE '\\') OR (OriginalFileName='powershell.exe' OR OriginalFileName='pwsh.dll' OR OriginalFileName LIKE 'powershell\\_ise.exe' ESCAPE '\\')) AND (CommandLine LIKE '%New-ADServiceAccount%' ESCAPE '\\' AND CommandLine LIKE '%-CreateDelegatedServiceAccount%' ESCAPE '\\' AND CommandLine LIKE '%-path%' ESCAPE '\\')))"
         ],
         "filename": "",
         "channel": [
@@ -40361,6 +40449,36 @@
         "level": "medium",
         "rule": [
             "SELECT * FROM logs WHERE (Channel='Microsoft-Windows-PowerShell/Operational' OR Channel='PowerShellCore/Operational') AND (EventID=4104 AND (ScriptBlockText LIKE '%Import-Module \"$Env:Temp\\\\%' ESCAPE '\\' OR ScriptBlockText LIKE '%Import-Module ''$Env:Temp\\\\%' ESCAPE '\\' OR ScriptBlockText LIKE '%Import-Module $Env:Temp\\\\%' ESCAPE '\\' OR ScriptBlockText LIKE '%Import-Module \"$Env:Appdata\\\\%' ESCAPE '\\' OR ScriptBlockText LIKE '%Import-Module ''$Env:Appdata\\\\%' ESCAPE '\\' OR ScriptBlockText LIKE '%Import-Module $Env:Appdata\\\\%' ESCAPE '\\' OR ScriptBlockText LIKE '%Import-Module C:\\\\Users\\\\Public\\\\%' ESCAPE '\\' OR ScriptBlockText LIKE '%ipmo \"$Env:Temp\\\\%' ESCAPE '\\' OR ScriptBlockText LIKE '%ipmo ''$Env:Temp\\\\%' ESCAPE '\\' OR ScriptBlockText LIKE '%ipmo $Env:Temp\\\\%' ESCAPE '\\' OR ScriptBlockText LIKE '%ipmo \"$Env:Appdata\\\\%' ESCAPE '\\' OR ScriptBlockText LIKE '%ipmo ''$Env:Appdata\\\\%' ESCAPE '\\' OR ScriptBlockText LIKE '%ipmo $Env:Appdata\\\\%' ESCAPE '\\' OR ScriptBlockText LIKE '%ipmo C:\\\\Users\\\\Public\\\\%' ESCAPE '\\'))"
+        ],
+        "filename": "",
+        "channel": [
+            "Microsoft-Windows-PowerShell/Operational",
+            "PowerShellCore/Operational"
+        ],
+        "eventid": [
+            4104
+        ]
+    },
+    {
+        "title": "DMSA Service Account Created in Specific OUs - PowerShell",
+        "id": "02122374-b74e-495c-b285-9e4da973f3d6",
+        "status": "experimental",
+        "description": "Detects the creation of a dMSA service account using the New-ADServiceAccount cmdlet in certain OUs.\nThe fact that the cmdlet is used to create a dMSASvc account in a specific OU is highly suspicious.\nIt is a pattern trying to exploit the BadSuccessor privilege escalation vulnerability in Windows Server 2025.\nOn top of that, if the user that is creating the dMSASvc account is not a legitimate administrator or does not have the necessary permissions,\nit is a strong signal of an attempted or successful abuse of the BaDSuccessor vulnerability for privilege escalation within the Windows Server 2025 Active Directory environment.\n",
+        "author": "Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.privilege-escalation",
+            "attack.initial-access",
+            "attack.defense-evasion",
+            "attack.persistence",
+            "attack.t1078.002",
+            "attack.t1098"
+        ],
+        "falsepositives": [
+            "Unknown"
+        ],
+        "level": "medium",
+        "rule": [
+            "SELECT * FROM logs WHERE (Channel='Microsoft-Windows-PowerShell/Operational' OR Channel='PowerShellCore/Operational') AND (EventID=4104 AND (ScriptBlockText LIKE '%New-ADServiceAccount%' ESCAPE '\\' AND ScriptBlockText LIKE '%-CreateDelegatedServiceAccount%' ESCAPE '\\' AND ScriptBlockText LIKE '%-path%' ESCAPE '\\'))"
         ],
         "filename": "",
         "channel": [
