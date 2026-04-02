@@ -1,4 +1,4 @@
-RULES REMOVED (no channel): 637
+RULES REMOVED (no channel): 645
 --------------------------------------------------------------------------------
 
 Title: New PowerShell Instance Created
@@ -1703,6 +1703,38 @@ Level: high
 
 Title: Potential Bumblebee Remote Thread Creation
 ID:    994cac2b-92c2-44bf-8853-14f6ca39fbda
+Level: high
+
+Title: Axios NPM Compromise File Creation Indicators - MacOS
+ID:    2db0458c-05c9-4069-a26f-77becd9c8c13
+Level: high
+
+Title: Axios NPM Compromise Malicious C2 Domain DNS Query
+ID:    73e5d24f-493f-4092-bd2f-c72cabda40ee
+Level: high
+
+Title: Axios NPM Compromise Indicators - macOS
+ID:    a09ee860-31b3-4586-8a68-0ebd74ce0e5f
+Level: high
+
+Title: Axios NPM Compromise File Creation Indicators - Linux
+ID:    b7cb840c-11f6-47f7-b3ef-5524739c9077
+Level: high
+
+Title: Axios NPM Compromise File Creation Indicators - Windows
+ID:    cd6386fa-bb9a-4b67-b006-786b6ab5d2ba
+Level: high
+
+Title: Axios NPM Compromise Indicators - Linux
+ID:    0a23a62d-c5b3-468b-a072-25064a9a8c87
+Level: high
+
+Title: TeamPCP LiteLLM Supply Chain Attack Persistence Indicators
+ID:    81c0b7f5-81c9-435e-a291-bc32fc2b72cd
+Level: high
+
+Title: LiteLLM / TeamPCP Supply Chain Attack Indicators
+ID:    36603778-030c-43c4-8cbb-cd3c1d1a80c7
 Level: high
 
 Title: Potential Exploitation of CVE-2024-3094 - Suspicious SSH Child Process

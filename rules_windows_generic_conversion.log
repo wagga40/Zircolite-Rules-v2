@@ -1,9 +1,9 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - GENERIC
 ================================================================================
-Timestamp: 2026-04-01 04:24:19
-Total rules processed: 2829
-Successful conversions: 2796
+Timestamp: 2026-04-02 04:03:51
+Total rules processed: 2838
+Successful conversions: 2805
 Failed conversions: 33
 Success rate: 98.8%
 ================================================================================
@@ -177,7 +177,7 @@ ID:    18f37338-b9bd-4117-a039-280c81f7a596
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 ================================================================================
-SUCCESSFUL RULES (2796)
+SUCCESSFUL RULES (2805)
 --------------------------------------------------------------------------------
 sigma/rules/windows/pipe_created/pipe_created_susp_malicious_namedpipes.yml
 sigma/rules/windows/pipe_created/pipe_created_powershell_alternate_host_pipe.yml
@@ -1808,6 +1808,15 @@ sigma/rules/windows/rules-emerging-threats/2022/Malware/Raspberry-Robin/proc_cre
 sigma/rules/windows/rules-emerging-threats/2022/Malware/Raspberry-Robin/proc_creation_win_malware_raspberry_robin_execution.yml
 sigma/rules/windows/rules-emerging-threats/2022/TA/ACTINIUM/proc_creation_win_apt_actinium_persistence.yml
 sigma/rules/windows/rules-emerging-threats/2022/TA/MERCURY/proc_creation_win_apt_mercury.yml
+sigma/rules/windows/rules-emerging-threats/2026/Malware/Axios-NPM-Compromise/file_event_macos_axios_npm_compromise_indicators.yml
+sigma/rules/windows/rules-emerging-threats/2026/Malware/Axios-NPM-Compromise/net_dns_axios_npm_compromise_indicator.yml
+sigma/rules/windows/rules-emerging-threats/2026/Malware/Axios-NPM-Compromise/proc_creation_macos_axios_npm_compromise_indicators.yml
+sigma/rules/windows/rules-emerging-threats/2026/Malware/Axios-NPM-Compromise/proc_creation_win_axios_npm_compromise_indicators.yml
+sigma/rules/windows/rules-emerging-threats/2026/Malware/Axios-NPM-Compromise/file_event_lnx_axios_npm_compromise_indicators.yml
+sigma/rules/windows/rules-emerging-threats/2026/Malware/Axios-NPM-Compromise/file_event_win_axios_npm_compromise_indicators.yml
+sigma/rules/windows/rules-emerging-threats/2026/Malware/Axios-NPM-Compromise/proc_creation_lnx_axios_npm_compromise_indicators.yml
+sigma/rules/windows/rules-emerging-threats/2026/TA/TeamPCP/file_event_lnx_teampcp_litellm_supply_chain_attack_indicators.yml
+sigma/rules/windows/rules-emerging-threats/2026/TA/TeamPCP/proc_creation_lnx_teampcp_litellm_supply_chain_attack_indicators.yml
 sigma/rules/windows/rules-emerging-threats/2024/Exploits/CVE-2024-35250/image_load_exploit_cve_2024_35250_privilege_escalation.yml
 sigma/rules/windows/rules-emerging-threats/2024/Exploits/CVE-2024-37085/proc_creation_win_exploit_cve_2024_37085_esxi_admins_group_creation.yml
 sigma/rules/windows/rules-emerging-threats/2024/Exploits/CVE-2024-1708/file_event_win_exploit_cve_2024_1708_screenconnect.yml
