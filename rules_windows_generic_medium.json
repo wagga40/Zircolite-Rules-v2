@@ -19359,7 +19359,7 @@
         ],
         "level": "medium",
         "rule": [
-            "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (NewProcessName LIKE '%\\\\mshta.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\wscript.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\cscript.exe' ESCAPE '\\'))"
+            "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ((NewProcessName LIKE '%\\\\mshta.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\wscript.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\cscript.exe' ESCAPE '\\') AND (NOT (NewProcessName LIKE '%\\\\wscript.exe' ESCAPE '\\' AND (TargetObject LIKE '%SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Notifications\\\\Data\\\\%' ESCAPE '\\' OR TargetObject LIKE '%\\\\Services\\\\bam\\\\State\\\\UserSettings\\\\S-1-%' ESCAPE '\\' OR TargetObject LIKE '%Software\\\\Microsoft\\\\Windows Script\\\\Settings\\\\Telemetry\\\\wscript.exe\\\\%' ESCAPE '\\' OR TargetObject LIKE '%Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Internet Settings\\\\%' ESCAPE '\\')))))"
         ],
         "filename": "",
         "channel": [

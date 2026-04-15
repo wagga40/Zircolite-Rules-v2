@@ -24212,7 +24212,7 @@
         ],
         "level": "medium",
         "rule": [
-            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 OR EventID=13 OR EventID=14) AND (Image LIKE '%\\\\mshta.exe' ESCAPE '\\' OR Image LIKE '%\\\\wscript.exe' ESCAPE '\\' OR Image LIKE '%\\\\cscript.exe' ESCAPE '\\'))"
+            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 OR EventID=13 OR EventID=14) AND ((Image LIKE '%\\\\mshta.exe' ESCAPE '\\' OR Image LIKE '%\\\\wscript.exe' ESCAPE '\\' OR Image LIKE '%\\\\cscript.exe' ESCAPE '\\') AND (NOT (Image LIKE '%\\\\wscript.exe' ESCAPE '\\' AND (TargetObject LIKE '%SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Notifications\\\\Data\\\\%' ESCAPE '\\' OR TargetObject LIKE '%\\\\Services\\\\bam\\\\State\\\\UserSettings\\\\S-1-%' ESCAPE '\\' OR TargetObject LIKE '%Software\\\\Microsoft\\\\Windows Script\\\\Settings\\\\Telemetry\\\\wscript.exe\\\\%' ESCAPE '\\' OR TargetObject LIKE '%Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Internet Settings\\\\%' ESCAPE '\\')))))"
         ],
         "filename": "",
         "channel": [
