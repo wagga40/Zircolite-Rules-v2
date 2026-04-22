@@ -1,56 +1,56 @@
 RULES REMOVED (no channel): 139
 --------------------------------------------------------------------------------
 
-Title: Suspicious File Access to Browser Credential Storage
-ID:    a1dfd976-4852-41d4-9507-dc6590a3ccd0
-Level: low
-
 Title: Previously Installed IIS Module Was Removed
 ID:    9e1a1fdf-ee58-40ce-8e15-b66ca5a80e1f
 Level: low
 
-Title: Suspicious Appended Extension
-ID:    e3f673b3-65d1-4d80-9146-466f8b63fa99
+Title: Suspicious File Access to Browser Credential Storage
+ID:    a1dfd976-4852-41d4-9507-dc6590a3ccd0
+Level: low
+
+Title: Okta 2023 Breach Indicator Of Compromise
+ID:    00a8e92a-776b-425f-80f2-82d8f8fab2e5
 Level: medium
 
-Title: Microsoft Teams Sensitive File Access By Uncommon Applications
-ID:    65744385-8541-44a6-8630-ffc824d7d4cc
+Title: Potential Peach Sandstorm APT C2 Communication Activity
+ID:    b8225208-81d0-4715-a822-12bcdd583e0f
 Level: medium
 
-Title: Access To Windows Credential History File By Uncommon Applications
-ID:    7a2a22ea-a203-4cd3-9abf-20eb1c5c6cd2
+Title: CVE-2023-22518 Exploitation Attempt - Vulnerable Endpoint Connection (Proxy)
+ID:    27d2cdde-9778-490e-91ec-9bd0be6e8cc6
 Level: medium
 
-Title: Access To Windows DPAPI Master Keys By Uncommon Applications
-ID:    46612ae6-86be-4802-bc07-39b59feb1309
+Title: CVE-2023-22518 Exploitation Attempt - Vulnerable Endpoint Connection (Webserver)
+ID:    a902d249-9b9c-4dc4-8fd0-fbe528ef965c
 Level: medium
 
-Title: Access To Crypto Currency Wallets By Uncommon Applications
-ID:    f41b0311-44f9-44f0-816d-dd45e39d4bc8
+Title: Potential CVE-2023-23397 Exploitation Attempt - SMB
+ID:    de96b824-02b0-4241-9356-7e9b47f04bac
 Level: medium
 
-Title: Credential Manager Access By Uncommon Applications
-ID:    407aecb1-e762-4acf-8c7b-d087bcff3bb6
+Title: CVE-2023-4966 Potential Exploitation Attempt - Citrix ADC Sensitive Information Disclosure - Proxy
+ID:    ff349b81-617f-4af4-924f-dbe8ea9bab41
 Level: medium
 
-Title: Access To Potentially Sensitive Sysvol Files By Uncommon Applications
-ID:    d51694fe-484a-46ac-92d6-969e76d60d10
+Title: CVE-2023-4966 Potential Exploitation Attempt - Citrix ADC Sensitive Information Disclosure - Webserver
+ID:    87c83d8e-5390-44ce-aa4a-d3b37e54d0a0
 Level: medium
 
-Title: Potential Active Directory Reconnaissance/Enumeration Via LDAP
-ID:    31d68132-4038-47c7-8f8e-635a39a7c174
+Title: Potential CVE-2023-46214 Exploitation Attempt
+ID:    04017cd5-621e-4ec4-a762-1f042fe3d3e5
 Level: medium
 
-Title: New Module Module Added To IIS Server
-ID:    dd857d3e-0c6e-457b-9b48-e82ae7f86bd7
+Title: Potential CVE-2023-36884 Exploitation - File Downloads
+ID:    6af1617f-c179-47e3-bd66-b28034a1052d
 Level: medium
 
-Title: ETW Logging/Processing Option Disabled On IIS Server
-ID:    a5b40a90-baf5-4bf7-a6f7-373494881d22
+Title: Potential CVE-2021-27905 Exploitation Attempt
+ID:    0bbcd74b-0596-41a4-94a0-4e88a76ffdb3
 Level: medium
 
-Title: Unsigned or Unencrypted SMB Connection to Share Established
-ID:    8d91f6e4-9f3b-4c21-ae41-2c5b7d9f7a12
+Title: Possible PrintNightmare Print Driver Install - CVE-2021-1675
+ID:    7b33baef-2a75-4ca3-9da4-34f9a15382d8
 Level: medium
 
 Title: Potential CVE-2024-3400 Exploitation - Palo Alto GlobalProtect OS Command Injection - File Creation
@@ -65,136 +65,68 @@ Title: Zimbra Collaboration Suite Email Server Unauthenticated RCE
 ID:    dd218fb6-4d02-42dc-85f0-a0a376072efd
 Level: medium
 
-Title: Suspicious Child Process of SAP NetWeaver - Linux
-ID:    69dea60b-2deb-4c9e-a685-ad542f4367f9
-Level: medium
-
 Title: Potential SAP NetWeaver Webshell Creation - Linux
 ID:    5b91409c-cb18-4ab6-ac75-c5759f998409
+Level: medium
+
+Title: Suspicious Child Process of SAP NetWeaver - Linux
+ID:    69dea60b-2deb-4c9e-a685-ad542f4367f9
 Level: medium
 
 Title: SharePoint ToolShell CVE-2025-53770 Exploitation - Web IIS
 ID:    48d053db-6a56-4866-b60d-0975647050ed
 Level: medium
 
-Title: Okta 2023 Breach Indicator Of Compromise
-ID:    00a8e92a-776b-425f-80f2-82d8f8fab2e5
+Title: Potential Active Directory Reconnaissance/Enumeration Via LDAP
+ID:    31d68132-4038-47c7-8f8e-635a39a7c174
 Level: medium
 
-Title: Potential Peach Sandstorm APT C2 Communication Activity
-ID:    b8225208-81d0-4715-a822-12bcdd583e0f
+Title: ETW Logging/Processing Option Disabled On IIS Server
+ID:    a5b40a90-baf5-4bf7-a6f7-373494881d22
 Level: medium
 
-Title: CVE-2023-4966 Potential Exploitation Attempt - Citrix ADC Sensitive Information Disclosure - Webserver
-ID:    87c83d8e-5390-44ce-aa4a-d3b37e54d0a0
+Title: New Module Module Added To IIS Server
+ID:    dd857d3e-0c6e-457b-9b48-e82ae7f86bd7
 Level: medium
 
-Title: CVE-2023-4966 Potential Exploitation Attempt - Citrix ADC Sensitive Information Disclosure - Proxy
-ID:    ff349b81-617f-4af4-924f-dbe8ea9bab41
+Title: Unsigned or Unencrypted SMB Connection to Share Established
+ID:    8d91f6e4-9f3b-4c21-ae41-2c5b7d9f7a12
 Level: medium
 
-Title: CVE-2023-22518 Exploitation Attempt - Vulnerable Endpoint Connection (Webserver)
-ID:    a902d249-9b9c-4dc4-8fd0-fbe528ef965c
+Title: Access To Windows DPAPI Master Keys By Uncommon Applications
+ID:    46612ae6-86be-4802-bc07-39b59feb1309
 Level: medium
 
-Title: CVE-2023-22518 Exploitation Attempt - Vulnerable Endpoint Connection (Proxy)
-ID:    27d2cdde-9778-490e-91ec-9bd0be6e8cc6
+Title: Access To Potentially Sensitive Sysvol Files By Uncommon Applications
+ID:    d51694fe-484a-46ac-92d6-969e76d60d10
 Level: medium
 
-Title: Potential CVE-2023-46214 Exploitation Attempt
-ID:    04017cd5-621e-4ec4-a762-1f042fe3d3e5
+Title: Microsoft Teams Sensitive File Access By Uncommon Applications
+ID:    65744385-8541-44a6-8630-ffc824d7d4cc
 Level: medium
 
-Title: Potential CVE-2023-36884 Exploitation - File Downloads
-ID:    6af1617f-c179-47e3-bd66-b28034a1052d
+Title: Credential Manager Access By Uncommon Applications
+ID:    407aecb1-e762-4acf-8c7b-d087bcff3bb6
 Level: medium
 
-Title: Potential CVE-2023-23397 Exploitation Attempt - SMB
-ID:    de96b824-02b0-4241-9356-7e9b47f04bac
+Title: Access To Crypto Currency Wallets By Uncommon Applications
+ID:    f41b0311-44f9-44f0-816d-dd45e39d4bc8
 Level: medium
 
-Title: Possible PrintNightmare Print Driver Install - CVE-2021-1675
-ID:    7b33baef-2a75-4ca3-9da4-34f9a15382d8
+Title: Access To Windows Credential History File By Uncommon Applications
+ID:    7a2a22ea-a203-4cd3-9abf-20eb1c5c6cd2
 Level: medium
 
-Title: Potential CVE-2021-27905 Exploitation Attempt
-ID:    0bbcd74b-0596-41a4-94a0-4e88a76ffdb3
+Title: Suspicious Appended Extension
+ID:    e3f673b3-65d1-4d80-9146-466f8b63fa99
 Level: medium
-
-Title: HTTP Logging Disabled On IIS Server
-ID:    e8ebd53a-30c2-45bd-81bb-74befba07bdb
-Level: high
-
-Title: Potential Exploitation of CVE-2024-3094 - Suspicious SSH Child Process
-ID:    9aa27839-e8ba-4d7a-ac1a-746c22c3d1e5
-Level: high
-
-Title: ComRAT Network Communication
-ID:    7857f021-007f-4928-8b2c-7aedbe64bb82
-Level: high
-
-Title: TerraMaster TOS CVE-2020-28188
-ID:    15c312b9-00d0-4feb-8870-7d940a4bdc5e
-Level: high
-
-Title: Cisco ASA FTD Exploit CVE-2020-3452
-ID:    aba47adc-4847-4970-95c1-61dce62a8b29
-Level: high
-
-Title: Oracle WebLogic Exploit CVE-2020-14882
-ID:    85d466b0-d74c-4514-84d3-2bdd3327588b
-Level: high
-
-Title: CVE-2020-0688 Exploitation Attempt
-ID:    7c64e577-d72e-4c3d-9d75-8de6d1f9146a
-Level: high
-
-Title: Potential Centos Web Panel Exploitation Attempt - CVE-2022-44877
-ID:    1b2eeb27-949b-4704-8bfa-d8e5cfa045a1
-Level: high
-
-Title: Potential CVE-2022-21587 Exploitation Attempt
-ID:    d033cb8a-8669-4a8e-a974-48d4185a8503
-Level: high
-
-Title: Atlassian Confluence CVE-2022-26134
-ID:    7fb14105-530e-4e2e-8cfb-99f7d8700b66
-Level: high
-
-Title: Potential CVE-2022-46169 Exploitation Attempt
-ID:    738cb115-881f-4df3-82cc-56ab02fc5192
-Level: high
-
-Title: Potential OWASSRF Exploitation Attempt - Webserver
-ID:    181f49fa-0b21-4665-a98c-a57025ebb8c7
-Level: high
-
-Title: Potential OWASSRF Exploitation Attempt - Proxy
-ID:    1ddf4596-1908-43c9-add2-1d2c2fcc4797
-Level: high
-
-Title: Atlassian Bitbucket Command Injection Via Archive API
-ID:    65c0a0ab-d675-4441-bd6b-d3db226a2685
-Level: high
-
-Title: CVE-2022-31656 VMware Workspace ONE Access Auth Bypass
-ID:    fcf1101d-07c9-49b2-ad81-7e421ff96d80
-Level: high
-
-Title: Apache Spark Shell Command Injection - Weblogs
-ID:    1a9a04fd-02d1-465c-abad-d733fd409f9c
-Level: high
-
-Title: Apache Spark Shell Command Injection - ProcessCreation
-ID:    c8a5f584-cdc8-42cc-8cce-0398e4265de3
-Level: high
-
-Title: Equation Group C2 Communication
-ID:    881834a4-6659-4773-821e-1c151789d873
-Level: high
 
 Title: APT40 Dropbox Tool User Agent
 ID:    5ba715b6-71b7-44fd-8245-f66893e81b3d
+Level: high
+
+Title: Sudo Privilege Escalation CVE-2019-14287
+ID:    f74107df-b6c6-4e80-bf00-4170b658162b
 Level: high
 
 Title: Chafer Malware URL Pattern
@@ -205,124 +137,24 @@ Title: Ursnif Malware Download URL Pattern
 ID:    a36ce77e-30db-4ea0-8795-644d7af5dfb4
 Level: high
 
-Title: Sudo Privilege Escalation CVE-2019-14287
-ID:    f74107df-b6c6-4e80-bf00-4170b658162b
-Level: high
-
-Title: Shai-Hulud 2.0 Malicious NPM Package Installation - Linux
-ID:    514f533b-f56e-421d-80b0-f7706a3e9d23
-Level: high
-
-Title: Shai-Hulud Malware Indicators - Linux
-ID:    11bb9b26-4179-4a06-afcb-1ec31fce1627
-Level: high
-
-Title: Shai-Hulud Malicious GitHub Workflow Creation
-ID:    0aba5685-6db6-486f-88ef-29a99c545cfd
-Level: high
-
-Title: Shai-Hulud NPM Package Malicious Exfiltration via Curl
-ID:    efd2eb09-b72e-4a61-8dc7-b1382a1e8983
-Level: high
-
-Title: Shai-Hulud Malicious Bun Execution - Linux
-ID:    eb827bbd-670a-4d58-8446-c464d8ac2323
-Level: high
-
-Title: Katz Stealer Suspicious User-Agent
-ID:    834c6d2f-5e98-4b2a-b453-0c4f234afedd
-Level: high
-
-Title: DNS Query To Katz Stealer Domains - Network
-ID:    6b0c762f-0e1b-435f-a829-5943b08fe36a
-Level: high
-
-Title: Atomic MacOS Stealer - Persistence Indicators
-ID:    e710a880-1f18-4417-b6a0-b5afdf7e3023
-Level: high
-
-Title: Atomic MacOS Stealer - FileGrabber Activity
-ID:    e710a880-1f18-4417-b6a0-b5afdf7e33da
-Level: high
-
-Title: Linux Suspicious Child Process from Node.js - React2Shell
-ID:    c70834fa-fb9d-4aa0-9e7d-45ceed36f3f7
-Level: high
-
-Title: Potential Java WebShell Upload in SAP NetViewer Server
-ID:    639b893f-f93a-4e53-a7c8-f08cf73fe7f7
-Level: high
-
-Title: Potential SAP NetViewer Webshell Command Execution
-ID:    94e12f41-6cb3-45c5-97b1-c783a7bf2e72
-Level: high
-
-Title: Cisco ASA Exploitation Activity - Proxy
-ID:    15697955-6a29-47ca-92e9-0e05efae3260
-Level: high
-
-Title: Non-Standard Nsswitch.Conf Creation - Potential CVE-2025-32463 Exploitation
-ID:    10ac0730-c24e-4f4c-81f8-b13a1ac95a1d
-Level: high
-
-Title: Potential Exploitation of CVE-2025-4427/4428 Ivanti EPMM Pre-Auth RCE
-ID:    41956f7c-7a6b-46d6-b6bb-da6eb2e83fbe
-Level: high
-
-Title: LiteLLM / TeamPCP Supply Chain Attack Indicators
-ID:    36603778-030c-43c4-8cbb-cd3c1d1a80c7
-Level: high
-
-Title: TeamPCP LiteLLM Supply Chain Attack Persistence Indicators
-ID:    81c0b7f5-81c9-435e-a291-bc32fc2b72cd
-Level: high
-
-Title: Axios NPM Compromise File Creation Indicators - Linux
-ID:    b7cb840c-11f6-47f7-b3ef-5524739c9077
-Level: high
-
-Title: Axios NPM Compromise Malicious C2 Domain DNS Query
-ID:    73e5d24f-493f-4092-bd2f-c72cabda40ee
-Level: high
-
-Title: Axios NPM Compromise Indicators - Linux
-ID:    0a23a62d-c5b3-468b-a072-25064a9a8c87
-Level: high
-
-Title: Axios NPM Compromise File Creation Indicators - MacOS
-ID:    2db0458c-05c9-4069-a26f-77becd9c8c13
-Level: high
-
-Title: Axios NPM Compromise Indicators - macOS
-ID:    a09ee860-31b3-4586-8a68-0ebd74ce0e5f
-Level: high
-
-Title: Potential Compromised 3CXDesktopApp ICO C2 File Download
-ID:    76bc1601-9546-4b75-9419-06e0e8d10651
-Level: high
-
-Title: Potential Compromised 3CXDesktopApp Beaconing Activity - Proxy
-ID:    3c4b3bbf-36b4-470c-b6cf-f07e8b1c7e26
+Title: Potential Operation Triangulation C2 Beaconing Activity - DNS
+ID:    7fc30d63-728d-48d9-ad6f-14d14f4accf7
 Level: high
 
 Title: Potential Operation Triangulation C2 Beaconing Activity - Proxy
 ID:    aa03c712-75c6-438b-8d42-de88f2427e09
 Level: high
 
-Title: Potential Operation Triangulation C2 Beaconing Activity - DNS
-ID:    7fc30d63-728d-48d9-ad6f-14d14f4accf7
-Level: high
-
 Title: UNC4841 - Download Compressed Files From Temp.sh Using Wget
 ID:    60d050c4-e253-4d9a-b673-5ac100cfddfb
 Level: high
 
-Title: UNC4841 - Barracuda ESG Exploitation Indicators
-ID:    5627c337-a9b2-407a-a82d-5fd97035ff39
-Level: high
-
 Title: UNC4841 - Download Tar File From Untrusted Direct IP Via Wget
 ID:    23835beb-ec38-4e74-a5d4-b99af6684e91
+Level: high
+
+Title: UNC4841 - Barracuda ESG Exploitation Indicators
+ID:    5627c337-a9b2-407a-a82d-5fd97035ff39
 Level: high
 
 Title: UNC4841 - Email Exfiltration File Pattern
@@ -333,20 +165,44 @@ Title: UNC4841 - SSL Certificate Exfiltration Via Openssl
 ID:    60911c07-f989-4362-84af-c609828ef829
 Level: high
 
-Title: CVE-2023-4966 Exploitation Attempt - Citrix ADC Sensitive Information Disclosure - Proxy
-ID:    aee7681f-b53d-4594-a9de-ac51e6ad3362
+Title: Potential Compromised 3CXDesktopApp ICO C2 File Download
+ID:    76bc1601-9546-4b75-9419-06e0e8d10651
 Level: high
 
-Title: CVE-2023-4966 Exploitation Attempt - Citrix ADC Sensitive Information Disclosure - Webserver
-ID:    a4e068b5-e27c-4f21-85b3-e69e5a4f7ce1
+Title: Potential Compromised 3CXDesktopApp Beaconing Activity - Proxy
+ID:    3c4b3bbf-36b4-470c-b6cf-f07e8b1c7e26
+Level: high
+
+Title: Potential Information Disclosure CVE-2023-43261 Exploitation - Web
+ID:    a2bcca38-9f3a-4d5e-b603-0c587e8569d7
+Level: high
+
+Title: Potential Information Disclosure CVE-2023-43261 Exploitation - Proxy
+ID:    f48f5368-355c-4a1b-8bf5-11c13d589eaa
+Level: high
+
+Title: Potential CVE-2023-25717 Exploitation Attempt
+ID:    043c1609-0e32-4462-a6f2-5a0c2da3fafe
+Level: high
+
+Title: MOVEit CVE-2023-34362 Exploitation Attempt - Potential Web Shell Request
+ID:    435e41f2-48eb-4c95-8a2b-ed24b50ec30b
 Level: high
 
 Title: CVE-2023-22518 Exploitation Attempt - Suspicious Confluence Child Process (Linux)
 ID:    f8987c03-4290-4c96-870f-55e75ee377f4
 Level: high
 
-Title: MOVEit CVE-2023-34362 Exploitation Attempt - Potential Web Shell Request
-ID:    435e41f2-48eb-4c95-8a2b-ed24b50ec30b
+Title: Potential CVE-2023-25157 Exploitation Attempt
+ID:    c0341543-5ed0-4475-aabc-7eea8c52aa66
+Level: high
+
+Title: CVE-2023-4966 Exploitation Attempt - Citrix ADC Sensitive Information Disclosure - Proxy
+ID:    aee7681f-b53d-4594-a9de-ac51e6ad3362
+Level: high
+
+Title: CVE-2023-4966 Exploitation Attempt - Citrix ADC Sensitive Information Disclosure - Webserver
+ID:    a4e068b5-e27c-4f21-85b3-e69e5a4f7ce1
 Level: high
 
 Title: Exploitation Attempt Of CVE-2023-46214 Using Public POC Code
@@ -357,76 +213,40 @@ Title: Potential CVE-2023-23752 Exploitation Attempt
 ID:    0e1ebc5a-15d0-4bf6-8199-b2535397433a
 Level: high
 
-Title: Potential Information Disclosure CVE-2023-43261 Exploitation - Proxy
-ID:    f48f5368-355c-4a1b-8bf5-11c13d589eaa
-Level: high
-
-Title: Potential Information Disclosure CVE-2023-43261 Exploitation - Web
-ID:    a2bcca38-9f3a-4d5e-b603-0c587e8569d7
+Title: Potential CVE-2023-36884 Exploitation - URL Marker
+ID:    e59f71ff-c042-4f7a-8a82-8f53beea817e
 Level: high
 
 Title: Potential CVE-2303-36884 URL Request Pattern Traffic
 ID:    d9365e39-febd-4a4b-8441-3ca91bb9d333
 Level: high
 
-Title: Potential CVE-2023-36884 Exploitation - URL Marker
-ID:    e59f71ff-c042-4f7a-8a82-8f53beea817e
-Level: high
-
-Title: Potential CVE-2023-25157 Exploitation Attempt
-ID:    c0341543-5ed0-4475-aabc-7eea8c52aa66
-Level: high
-
-Title: Potential CVE-2023-25717 Exploitation Attempt
-ID:    043c1609-0e32-4462-a6f2-5a0c2da3fafe
-Level: high
-
-Title: Rejetto HTTP File Server RCE
-ID:    a133193c-2daa-4a29-8022-018695fcf0ae
+Title: Exchange Exploitation Used by HAFNIUM
+ID:    67bce556-312f-4c81-9162-c3c9ff2599b2
 Level: high
 
 Title: DEWMODE Webshell Access
 ID:    fdf96c90-42d5-4406-8a9c-14a2c9a016b5
 Level: high
 
-Title: Exchange Exploitation Used by HAFNIUM
-ID:    67bce556-312f-4c81-9162-c3c9ff2599b2
-Level: high
-
-Title: Devil Bait Potential C2 Communication Traffic
-ID:    514c50c9-373a-46e5-9012-f0327c526c8f
-Level: high
-
-Title: Goofy Guineapig Backdoor Potential C2 Communication
-ID:    4f573bb6-701a-4b8d-91db-87ae106e9a61
-Level: high
-
-Title: VMware vCenter Server File Upload CVE-2021-22005
-ID:    b014ea07-8ea0-4859-b517-50a4e5b7ecec
-Level: high
-
-Title: Pulse Connect Secure RCE Attack CVE-2021-22893
-ID:    5525edac-f599-4bfd-b926-3fa69860e766
-Level: high
-
-Title: Exchange ProxyShell Pattern
-ID:    23eee45e-933b-49f9-ae1b-df706d2d52ef
-Level: high
-
-Title: Exploitation of CVE-2021-26814 in Wazuh
-ID:    b9888738-29ed-4c54-96a4-f38c57b84bb3
-Level: high
-
-Title: OMIGOD HTTP No Authentication RCE - CVE-2021-38647
-ID:    ab6b1a39-a9ee-4ab4-b075-e83acf6e346b
+Title: SonicWall SSL/VPN Jarrewrite Exploitation
+ID:    6f55f047-112b-4101-ad32-43913f52db46
 Level: high
 
 Title: Sitecore Pre-Auth RCE CVE-2021-42237
 ID:    20c6ed1c-f7f0-4ea3-aa65-4f198e6acb0f
 Level: high
 
-Title: CVE-2021-21972 VSphere Exploitation
-ID:    179ed852-0f9b-4009-93a7-68475910fd86
+Title: Exploitation of CVE-2021-26814 in Wazuh
+ID:    b9888738-29ed-4c54-96a4-f38c57b84bb3
+Level: high
+
+Title: Log4j RCE CVE-2021-44228 in Fields
+ID:    9be472ed-893c-4ec0-94da-312d2765f654
+Level: high
+
+Title: Pulse Connect Secure RCE Attack CVE-2021-22893
+ID:    5525edac-f599-4bfd-b926-3fa69860e766
 Level: high
 
 Title: CVE-2021-41773 Exploitation Attempt
@@ -437,17 +257,261 @@ Title: CVE-2021-21978 Exploitation Attempt
 ID:    77586a7f-7ea4-4c41-b19c-820140b84ca9
 Level: high
 
-Title: SonicWall SSL/VPN Jarrewrite Exploitation
-ID:    6f55f047-112b-4101-ad32-43913f52db46
+Title: CVE-2021-21972 VSphere Exploitation
+ID:    179ed852-0f9b-4009-93a7-68475910fd86
+Level: high
+
+Title: VMware vCenter Server File Upload CVE-2021-22005
+ID:    b014ea07-8ea0-4859-b517-50a4e5b7ecec
+Level: high
+
+Title: Exchange ProxyShell Pattern
+ID:    23eee45e-933b-49f9-ae1b-df706d2d52ef
 Level: high
 
 Title: ADSelfService Exploitation
 ID:    6702b13c-e421-44cc-ab33-42cc25570f11
 Level: high
 
-Title: Log4j RCE CVE-2021-44228 in Fields
-ID:    9be472ed-893c-4ec0-94da-312d2765f654
+Title: OMIGOD HTTP No Authentication RCE - CVE-2021-38647
+ID:    ab6b1a39-a9ee-4ab4-b075-e83acf6e346b
 Level: high
+
+Title: Devil Bait Potential C2 Communication Traffic
+ID:    514c50c9-373a-46e5-9012-f0327c526c8f
+Level: high
+
+Title: Goofy Guineapig Backdoor Potential C2 Communication
+ID:    4f573bb6-701a-4b8d-91db-87ae106e9a61
+Level: high
+
+Title: Equation Group C2 Communication
+ID:    881834a4-6659-4773-821e-1c151789d873
+Level: high
+
+Title: Potential Exploitation of CVE-2024-3094 - Suspicious SSH Child Process
+ID:    9aa27839-e8ba-4d7a-ac1a-746c22c3d1e5
+Level: high
+
+Title: TeamPCP LiteLLM Supply Chain Attack Persistence Indicators
+ID:    81c0b7f5-81c9-435e-a291-bc32fc2b72cd
+Level: high
+
+Title: LiteLLM / TeamPCP Supply Chain Attack Indicators
+ID:    36603778-030c-43c4-8cbb-cd3c1d1a80c7
+Level: high
+
+Title: Axios NPM Compromise Indicators - macOS
+ID:    a09ee860-31b3-4586-8a68-0ebd74ce0e5f
+Level: high
+
+Title: Axios NPM Compromise Malicious C2 Domain DNS Query
+ID:    73e5d24f-493f-4092-bd2f-c72cabda40ee
+Level: high
+
+Title: Axios NPM Compromise File Creation Indicators - MacOS
+ID:    2db0458c-05c9-4069-a26f-77becd9c8c13
+Level: high
+
+Title: Axios NPM Compromise File Creation Indicators - Linux
+ID:    b7cb840c-11f6-47f7-b3ef-5524739c9077
+Level: high
+
+Title: Axios NPM Compromise Indicators - Linux
+ID:    0a23a62d-c5b3-468b-a072-25064a9a8c87
+Level: high
+
+Title: Atlassian Confluence CVE-2022-26134
+ID:    7fb14105-530e-4e2e-8cfb-99f7d8700b66
+Level: high
+
+Title: Potential CVE-2022-46169 Exploitation Attempt
+ID:    738cb115-881f-4df3-82cc-56ab02fc5192
+Level: high
+
+Title: CVE-2022-31656 VMware Workspace ONE Access Auth Bypass
+ID:    fcf1101d-07c9-49b2-ad81-7e421ff96d80
+Level: high
+
+Title: Atlassian Bitbucket Command Injection Via Archive API
+ID:    65c0a0ab-d675-4441-bd6b-d3db226a2685
+Level: high
+
+Title: Potential OWASSRF Exploitation Attempt - Webserver
+ID:    181f49fa-0b21-4665-a98c-a57025ebb8c7
+Level: high
+
+Title: Potential OWASSRF Exploitation Attempt - Proxy
+ID:    1ddf4596-1908-43c9-add2-1d2c2fcc4797
+Level: high
+
+Title: Potential Centos Web Panel Exploitation Attempt - CVE-2022-44877
+ID:    1b2eeb27-949b-4704-8bfa-d8e5cfa045a1
+Level: high
+
+Title: Potential CVE-2022-21587 Exploitation Attempt
+ID:    d033cb8a-8669-4a8e-a974-48d4185a8503
+Level: high
+
+Title: Apache Spark Shell Command Injection - Weblogs
+ID:    1a9a04fd-02d1-465c-abad-d733fd409f9c
+Level: high
+
+Title: Apache Spark Shell Command Injection - ProcessCreation
+ID:    c8a5f584-cdc8-42cc-8cce-0398e4265de3
+Level: high
+
+Title: Linux Suspicious Child Process from Node.js - React2Shell
+ID:    c70834fa-fb9d-4aa0-9e7d-45ceed36f3f7
+Level: high
+
+Title: Potential Exploitation of CVE-2025-4427/4428 Ivanti EPMM Pre-Auth RCE
+ID:    41956f7c-7a6b-46d6-b6bb-da6eb2e83fbe
+Level: high
+
+Title: Cisco ASA Exploitation Activity - Proxy
+ID:    15697955-6a29-47ca-92e9-0e05efae3260
+Level: high
+
+Title: Potential SAP NetViewer Webshell Command Execution
+ID:    94e12f41-6cb3-45c5-97b1-c783a7bf2e72
+Level: high
+
+Title: Potential Java WebShell Upload in SAP NetViewer Server
+ID:    639b893f-f93a-4e53-a7c8-f08cf73fe7f7
+Level: high
+
+Title: Non-Standard Nsswitch.Conf Creation - Potential CVE-2025-32463 Exploitation
+ID:    10ac0730-c24e-4f4c-81f8-b13a1ac95a1d
+Level: high
+
+Title: Shai-Hulud Malicious GitHub Workflow Creation
+ID:    0aba5685-6db6-486f-88ef-29a99c545cfd
+Level: high
+
+Title: Shai-Hulud Malware Indicators - Linux
+ID:    11bb9b26-4179-4a06-afcb-1ec31fce1627
+Level: high
+
+Title: Shai-Hulud NPM Package Malicious Exfiltration via Curl
+ID:    efd2eb09-b72e-4a61-8dc7-b1382a1e8983
+Level: high
+
+Title: Shai-Hulud 2.0 Malicious NPM Package Installation - Linux
+ID:    514f533b-f56e-421d-80b0-f7706a3e9d23
+Level: high
+
+Title: Shai-Hulud Malicious Bun Execution - Linux
+ID:    eb827bbd-670a-4d58-8446-c464d8ac2323
+Level: high
+
+Title: Atomic MacOS Stealer - Persistence Indicators
+ID:    e710a880-1f18-4417-b6a0-b5afdf7e3023
+Level: high
+
+Title: Atomic MacOS Stealer - FileGrabber Activity
+ID:    e710a880-1f18-4417-b6a0-b5afdf7e33da
+Level: high
+
+Title: DNS Query To Katz Stealer Domains - Network
+ID:    6b0c762f-0e1b-435f-a829-5943b08fe36a
+Level: high
+
+Title: Katz Stealer Suspicious User-Agent
+ID:    834c6d2f-5e98-4b2a-b453-0c4f234afedd
+Level: high
+
+Title: Rejetto HTTP File Server RCE
+ID:    a133193c-2daa-4a29-8022-018695fcf0ae
+Level: high
+
+Title: TerraMaster TOS CVE-2020-28188
+ID:    15c312b9-00d0-4feb-8870-7d940a4bdc5e
+Level: high
+
+Title: CVE-2020-0688 Exploitation Attempt
+ID:    7c64e577-d72e-4c3d-9d75-8de6d1f9146a
+Level: high
+
+Title: Cisco ASA FTD Exploit CVE-2020-3452
+ID:    aba47adc-4847-4970-95c1-61dce62a8b29
+Level: high
+
+Title: Oracle WebLogic Exploit CVE-2020-14882
+ID:    85d466b0-d74c-4514-84d3-2bdd3327588b
+Level: high
+
+Title: ComRAT Network Communication
+ID:    7857f021-007f-4928-8b2c-7aedbe64bb82
+Level: high
+
+Title: HTTP Logging Disabled On IIS Server
+ID:    e8ebd53a-30c2-45bd-81bb-74befba07bdb
+Level: high
+
+Title: Confluence Exploitation CVE-2019-3398
+ID:    e9bc39ae-978a-4e49-91ab-5bd481fc668b
+Level: critical
+
+Title: Sudo Privilege Escalation CVE-2019-14287 - Builtin
+ID:    7fcc54cb-f27d-4684-84b7-436af096f858
+Level: critical
+
+Title: Pulse Secure Attack CVE-2019-11510
+ID:    2dbc10d7-a797-49a8-8776-49efa6442e60
+Level: critical
+
+Title: Citrix Netscaler Attack CVE-2019-19781
+ID:    ac5a6409-8c89-44c2-8d64-668c29a2d756
+Level: critical
+
+Title: Ursnif Malware C2 URL Pattern
+ID:    932ac737-33ca-4afd-9869-0d48b391fcc9
+Level: critical
+
+Title: UNC4841 - Potential SEASPY Execution
+ID:    f6a711f3-d032-4f9e-890b-bbe776236c84
+Level: critical
+
+Title: Potential CVE-2023-36884 Exploitation Pattern
+ID:    0066d244-c277-4c3e-88ec-9e7b777cc8bc
+Level: critical
+
+Title: CVE-2021-33766 Exchange ProxyToken Exploitation
+ID:    56973b50-3382-4b56-bdf5-f51a3183797a
+Level: critical
+
+Title: Arcadyan Router Exploitations
+ID:    f0500377-bc70-425d-ac8c-e956cd906871
+Level: critical
+
+Title: Oracle WebLogic Exploit CVE-2021-2109
+ID:    687f6504-7f44-4549-91fc-f07bab065821
+Level: critical
+
+Title: Grafana Path Traversal Exploitation CVE-2021-43798
+ID:    7b72b328-5708-414f-9a2a-6a6867c26e16
+Level: critical
+
+Title: Successful Exchange ProxyShell Attack
+ID:    992be1eb-e5da-437e-9a54-6d13b57bb4d8
+Level: critical
+
+Title: Exchange Exploitation CVE-2021-28480
+ID:    a2a9d722-0acb-4096-bccc-daaf91a5037b
+Level: critical
+
+Title: CVE-2021-40539 Zoho ManageEngine ADSelfService Plus Exploit
+ID:    fcbb4a77-f368-4945-b046-4499a1da69d1
+Level: critical
+
+Title: Fortinet CVE-2021-22123 Exploitation
+ID:    f425637f-891c-4191-a6c4-3bb1b70513b4
+Level: critical
+
+Title: Small Sieve Malware Potential C2 Communication
+ID:    b0422664-37a4-4e78-949a-4a139309eaf0
+Level: critical
 
 Title: CVE-2024-1709 - ScreenConnect Authentication Bypass Exploitation
 ID:    d27eabad-9068-401a-b0d6-9eac744d6e67
@@ -461,6 +525,18 @@ Title: Fortinet CVE-2018-13379 Exploitation
 ID:    a2e97350-4285-43f2-a63f-d0daff291738
 Level: critical
 
+Title: CVE-2010-5278 Exploitation Attempt
+ID:    a4a899e8-fd7a-49dd-b5a8-7044def72d61
+Level: critical
+
+Title: OWASSRF Exploitation Attempt Using Public POC - Proxy
+ID:    fdd7e904-7304-4616-a46a-e32f917c4be4
+Level: critical
+
+Title: OWASSRF Exploitation Attempt Using Public POC - Webserver
+ID:    92d78c63-5a5c-4c40-9b60-463810ffb082
+Level: critical
+
 Title: Solarwinds SUPERNOVA Webshell Access
 ID:    a2cee20b-eacc-459f-861d-c02e5d12f1db
 Level: critical
@@ -469,90 +545,14 @@ Title: Citrix ADS Exploitation CVE-2020-8193 CVE-2020-8195
 ID:    0d0d9a8a-a49e-4e27-b061-7ce4b936cfb7
 Level: critical
 
+Title: CVE-2020-0688 Exchange Exploitation via Web Log
+ID:    fce2c2e2-0fb5-41ab-a14c-5391e1fd70a5
+Level: critical
+
 Title: CVE-2020-5902 F5 BIG-IP Exploitation Attempt
 ID:    44b53b1c-e60f-4a7b-948e-3435a7918478
 Level: critical
 
 Title: CVE-2020-10148 SolarWinds Orion API Auth Bypass
 ID:    5a35116f-43bc-4901-b62d-ef131f42a9af
-Level: critical
-
-Title: CVE-2020-0688 Exchange Exploitation via Web Log
-ID:    fce2c2e2-0fb5-41ab-a14c-5391e1fd70a5
-Level: critical
-
-Title: OWASSRF Exploitation Attempt Using Public POC - Webserver
-ID:    92d78c63-5a5c-4c40-9b60-463810ffb082
-Level: critical
-
-Title: OWASSRF Exploitation Attempt Using Public POC - Proxy
-ID:    fdd7e904-7304-4616-a46a-e32f917c4be4
-Level: critical
-
-Title: Ursnif Malware C2 URL Pattern
-ID:    932ac737-33ca-4afd-9869-0d48b391fcc9
-Level: critical
-
-Title: Sudo Privilege Escalation CVE-2019-14287 - Builtin
-ID:    7fcc54cb-f27d-4684-84b7-436af096f858
-Level: critical
-
-Title: Citrix Netscaler Attack CVE-2019-19781
-ID:    ac5a6409-8c89-44c2-8d64-668c29a2d756
-Level: critical
-
-Title: Confluence Exploitation CVE-2019-3398
-ID:    e9bc39ae-978a-4e49-91ab-5bd481fc668b
-Level: critical
-
-Title: Pulse Secure Attack CVE-2019-11510
-ID:    2dbc10d7-a797-49a8-8776-49efa6442e60
-Level: critical
-
-Title: CVE-2010-5278 Exploitation Attempt
-ID:    a4a899e8-fd7a-49dd-b5a8-7044def72d61
-Level: critical
-
-Title: UNC4841 - Potential SEASPY Execution
-ID:    f6a711f3-d032-4f9e-890b-bbe776236c84
-Level: critical
-
-Title: Potential CVE-2023-36884 Exploitation Pattern
-ID:    0066d244-c277-4c3e-88ec-9e7b777cc8bc
-Level: critical
-
-Title: Small Sieve Malware Potential C2 Communication
-ID:    b0422664-37a4-4e78-949a-4a139309eaf0
-Level: critical
-
-Title: Successful Exchange ProxyShell Attack
-ID:    992be1eb-e5da-437e-9a54-6d13b57bb4d8
-Level: critical
-
-Title: Fortinet CVE-2021-22123 Exploitation
-ID:    f425637f-891c-4191-a6c4-3bb1b70513b4
-Level: critical
-
-Title: Exchange Exploitation CVE-2021-28480
-ID:    a2a9d722-0acb-4096-bccc-daaf91a5037b
-Level: critical
-
-Title: Arcadyan Router Exploitations
-ID:    f0500377-bc70-425d-ac8c-e956cd906871
-Level: critical
-
-Title: Grafana Path Traversal Exploitation CVE-2021-43798
-ID:    7b72b328-5708-414f-9a2a-6a6867c26e16
-Level: critical
-
-Title: CVE-2021-33766 Exchange ProxyToken Exploitation
-ID:    56973b50-3382-4b56-bdf5-f51a3183797a
-Level: critical
-
-Title: CVE-2021-40539 Zoho ManageEngine ADSelfService Plus Exploit
-ID:    fcbb4a77-f368-4945-b046-4499a1da69d1
-Level: critical
-
-Title: Oracle WebLogic Exploit CVE-2021-2109
-ID:    687f6504-7f44-4549-91fc-f07bab065821
 Level: critical
