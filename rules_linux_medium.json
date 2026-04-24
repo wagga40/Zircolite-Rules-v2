@@ -1789,6 +1789,29 @@
         "eventid": []
     },
     {
+        "title": "Python One-Liners with Base64 Decoding - Linux",
+        "id": "55e862a8-dd9c-4651-807a-f21fcad56716",
+        "status": "experimental",
+        "description": "Detects the use of Python's base64 decoding functions in command line executions on Linux systems.\nMalicious scripts often use python one-liners to decode and execute base64-encoded payloads, which is a common technique for obfuscation and evasion.\n",
+        "author": "Hugh Ryan (HueCodes), Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.execution",
+            "attack.t1059.006",
+            "attack.defense-evasion",
+            "attack.t1027.010"
+        ],
+        "falsepositives": [
+            "Legitimate use of Python for decoding data, which is uncommon in typical enterprise environments but possible in development or data analysis contexts."
+        ],
+        "level": "high",
+        "rule": [
+            "SELECT * FROM logs WHERE Image LIKE '%/python%' ESCAPE '\\' AND ((CommandLine LIKE '%import%' ESCAPE '\\' AND CommandLine LIKE '%base64%' ESCAPE '\\' AND CommandLine LIKE '% -c%' ESCAPE '\\') AND (CommandLine LIKE '%.decode%' ESCAPE '\\' OR CommandLine LIKE '%b16decode%' ESCAPE '\\' OR CommandLine LIKE '%b32decode%' ESCAPE '\\' OR CommandLine LIKE '%b32hexdecode%' ESCAPE '\\' OR CommandLine LIKE '%b64decode%' ESCAPE '\\' OR CommandLine LIKE '%b85decode%' ESCAPE '\\' OR CommandLine LIKE '%z85decode%' ESCAPE '\\'))"
+        ],
+        "filename": "",
+        "channel": [],
+        "eventid": []
+    },
+    {
         "title": "OMIGOD SCX RunAsProvider ExecuteShellCommand",
         "id": "21541900-27a9-4454-9c4c-3f0a4240344a",
         "status": "test",

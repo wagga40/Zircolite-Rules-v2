@@ -58436,6 +58436,60 @@
         ]
     },
     {
+        "title": "Python One-Liners with Base64 Decoding - Generic",
+        "id": "50a0aa3d-ab16-4594-a8aa-5145a6e6792b",
+        "status": "experimental",
+        "description": "Detects Python one-liners that use base64 decoding functions in command line executions.\nMalicious scripts or attackers often use python one-liners to decode and execute base64-encoded payloads, which is a common technique for obfuscation and evasion.\n",
+        "author": "Hugh Ryan (HueCodes), Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.execution",
+            "attack.t1059.006",
+            "attack.defense-evasion",
+            "attack.t1027.010"
+        ],
+        "falsepositives": [
+            "Legitimate use of Python for decoding data, which is uncommon in typical enterprise environments but possible in development or data analysis contexts."
+        ],
+        "level": "high",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\python%' ESCAPE '\\' OR OriginalFileName LIKE '%python%' ESCAPE '\\') AND ((CommandLine LIKE '%import%' ESCAPE '\\' AND CommandLine LIKE '%base64%' ESCAPE '\\' AND CommandLine LIKE '% -c%' ESCAPE '\\') AND (CommandLine LIKE '%.decode%' ESCAPE '\\' OR CommandLine LIKE '%b16decode%' ESCAPE '\\' OR CommandLine LIKE '%b32decode%' ESCAPE '\\' OR CommandLine LIKE '%b32hexdecode%' ESCAPE '\\' OR CommandLine LIKE '%b64decode%' ESCAPE '\\' OR CommandLine LIKE '%b85decode%' ESCAPE '\\' OR CommandLine LIKE '%z85decode%' ESCAPE '\\'))))"
+        ],
+        "filename": "",
+        "channel": [
+            "Security"
+        ],
+        "eventid": [
+            4688
+        ]
+    },
+    {
+        "title": "Python One-Liners with Base64 Decoding - Sysmon",
+        "id": "50a0aa3d-ab16-4594-a8aa-5145a6e6792b",
+        "status": "experimental",
+        "description": "Detects Python one-liners that use base64 decoding functions in command line executions.\nMalicious scripts or attackers often use python one-liners to decode and execute base64-encoded payloads, which is a common technique for obfuscation and evasion.\n",
+        "author": "Hugh Ryan (HueCodes), Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.execution",
+            "attack.t1059.006",
+            "attack.defense-evasion",
+            "attack.t1027.010"
+        ],
+        "falsepositives": [
+            "Legitimate use of Python for decoding data, which is uncommon in typical enterprise environments but possible in development or data analysis contexts."
+        ],
+        "level": "high",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((Image LIKE '%\\\\python%' ESCAPE '\\' OR OriginalFileName LIKE '%python%' ESCAPE '\\') AND ((CommandLine LIKE '%import%' ESCAPE '\\' AND CommandLine LIKE '%base64%' ESCAPE '\\' AND CommandLine LIKE '% -c%' ESCAPE '\\') AND (CommandLine LIKE '%.decode%' ESCAPE '\\' OR CommandLine LIKE '%b16decode%' ESCAPE '\\' OR CommandLine LIKE '%b32decode%' ESCAPE '\\' OR CommandLine LIKE '%b32hexdecode%' ESCAPE '\\' OR CommandLine LIKE '%b64decode%' ESCAPE '\\' OR CommandLine LIKE '%b85decode%' ESCAPE '\\' OR CommandLine LIKE '%z85decode%' ESCAPE '\\'))))"
+        ],
+        "filename": "",
+        "channel": [
+            "Microsoft-Windows-Sysmon/Operational"
+        ],
+        "eventid": [
+            1
+        ]
+    },
+    {
         "title": "Uncommon One Time Only Scheduled Task At 00:00 - Generic",
         "id": "970823b7-273b-460a-8afc-3a6811998529",
         "status": "test",
@@ -63800,6 +63854,60 @@
         "level": "high",
         "rule": [
             "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((ParentImage LIKE '%\\\\EQNEDT32.EXE' ESCAPE '\\' OR ParentImage LIKE '%\\\\EXCEL.EXE' ESCAPE '\\' OR ParentImage LIKE '%\\\\MSACCESS.EXE' ESCAPE '\\' OR ParentImage LIKE '%\\\\MSPUB.exe' ESCAPE '\\' OR ParentImage LIKE '%\\\\ONENOTE.EXE' ESCAPE '\\' OR ParentImage LIKE '%\\\\POWERPNT.exe' ESCAPE '\\' OR ParentImage LIKE '%\\\\VISIO.exe' ESCAPE '\\' OR ParentImage LIKE '%\\\\WINWORD.EXE' ESCAPE '\\' OR ParentImage LIKE '%\\\\wordpad.exe' ESCAPE '\\' OR ParentImage LIKE '%\\\\wordview.exe' ESCAPE '\\') AND (((OriginalFileName='bitsadmin.exe' OR OriginalFileName='CertOC.exe' OR OriginalFileName='CertUtil.exe' OR OriginalFileName='Cmd.Exe' OR OriginalFileName='CMSTP.EXE' OR OriginalFileName='cscript.exe' OR OriginalFileName='curl.exe' OR OriginalFileName='HH.exe' OR OriginalFileName='IEExec.exe' OR OriginalFileName='InstallUtil.exe' OR OriginalFileName='javaw.exe' OR OriginalFileName='Microsoft.Workflow.Compiler.exe' OR OriginalFileName='msdt.exe' OR OriginalFileName='MSHTA.EXE' OR OriginalFileName='msiexec.exe' OR OriginalFileName='Msxsl.exe' OR OriginalFileName='odbcconf.exe' OR OriginalFileName='pcalua.exe' OR OriginalFileName='PowerShell.EXE' OR OriginalFileName='RegAsm.exe' OR OriginalFileName='RegSvcs.exe' OR OriginalFileName='REGSVR32.exe' OR OriginalFileName='RUNDLL32.exe' OR OriginalFileName='schtasks.exe' OR OriginalFileName='ScriptRunner.exe' OR OriginalFileName='wmic.exe' OR OriginalFileName='WorkFolders.exe' OR OriginalFileName='wscript.exe') OR (Image LIKE '%\\\\AppVLP.exe' ESCAPE '\\' OR Image LIKE '%\\\\bash.exe' ESCAPE '\\' OR Image LIKE '%\\\\bitsadmin.exe' ESCAPE '\\' OR Image LIKE '%\\\\certoc.exe' ESCAPE '\\' OR Image LIKE '%\\\\certutil.exe' ESCAPE '\\' OR Image LIKE '%\\\\cmd.exe' ESCAPE '\\' OR Image LIKE '%\\\\cmstp.exe' ESCAPE '\\' OR Image LIKE '%\\\\control.exe' ESCAPE '\\' OR Image LIKE '%\\\\cscript.exe' ESCAPE '\\' OR Image LIKE '%\\\\curl.exe' ESCAPE '\\' OR Image LIKE '%\\\\forfiles.exe' ESCAPE '\\' OR Image LIKE '%\\\\hh.exe' ESCAPE '\\' OR Image LIKE '%\\\\ieexec.exe' ESCAPE '\\' OR Image LIKE '%\\\\installutil.exe' ESCAPE '\\' OR Image LIKE '%\\\\javaw.exe' ESCAPE '\\' OR Image LIKE '%\\\\mftrace.exe' ESCAPE '\\' OR Image LIKE '%\\\\Microsoft.Workflow.Compiler.exe' ESCAPE '\\' OR Image LIKE '%\\\\msbuild.exe' ESCAPE '\\' OR Image LIKE '%\\\\msdt.exe' ESCAPE '\\' OR Image LIKE '%\\\\mshta.exe' ESCAPE '\\' OR Image LIKE '%\\\\msidb.exe' ESCAPE '\\' OR Image LIKE '%\\\\msiexec.exe' ESCAPE '\\' OR Image LIKE '%\\\\msxsl.exe' ESCAPE '\\' OR Image LIKE '%\\\\odbcconf.exe' ESCAPE '\\' OR Image LIKE '%\\\\pcalua.exe' ESCAPE '\\' OR Image LIKE '%\\\\powershell.exe' ESCAPE '\\' OR Image LIKE '%\\\\pwsh.exe' ESCAPE '\\' OR Image LIKE '%\\\\regasm.exe' ESCAPE '\\' OR Image LIKE '%\\\\regsvcs.exe' ESCAPE '\\' OR Image LIKE '%\\\\regsvr32.exe' ESCAPE '\\' OR Image LIKE '%\\\\rundll32.exe' ESCAPE '\\' OR Image LIKE '%\\\\schtasks.exe' ESCAPE '\\' OR Image LIKE '%\\\\scrcons.exe' ESCAPE '\\' OR Image LIKE '%\\\\scriptrunner.exe' ESCAPE '\\' OR Image LIKE '%\\\\sh.exe' ESCAPE '\\' OR Image LIKE '%\\\\svchost.exe' ESCAPE '\\' OR Image LIKE '%\\\\verclsid.exe' ESCAPE '\\' OR Image LIKE '%\\\\wmic.exe' ESCAPE '\\' OR Image LIKE '%\\\\workfolders.exe' ESCAPE '\\' OR Image LIKE '%\\\\wscript.exe' ESCAPE '\\')) OR (Image LIKE '%\\\\AppData\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Users\\\\Public\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\ProgramData\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Windows\\\\Tasks\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Windows\\\\Temp\\\\%' ESCAPE '\\' OR Image LIKE '%\\\\Windows\\\\System32\\\\Tasks\\\\%' ESCAPE '\\'))))"
+        ],
+        "filename": "",
+        "channel": [
+            "Microsoft-Windows-Sysmon/Operational"
+        ],
+        "eventid": [
+            1
+        ]
+    },
+    {
+        "title": "HackTool - NetExec Execution - Generic",
+        "id": "7638e5fe-600c-4289-a968-f49dd537ec7d",
+        "status": "experimental",
+        "description": "Detects execution of the hacktool NetExec.\nNetExec (formerly CrackMapExec) is a widely used post-exploitation tool designed for Active Directory penetration testing and network enumeration\nIn enterprise environments, the use of NetExec is considered suspicious or potentially malicious because it enables attackers to enumerate hosts, exploit network services, and move laterally across systems.\nThreat actors and red teams commonly use NetExec to identify vulnerable systems, harvest credentials, and execute commands remotely.\n",
+        "author": "Chirag Damani",
+        "tags": [
+            "attack.discovery",
+            "attack.t1018",
+            "attack.lateral-movement",
+            "attack.t1021"
+        ],
+        "falsepositives": [
+            "Legitimate use of NetExec by security professionals or system administrators for network assessment and management."
+        ],
+        "level": "high",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (NewProcessName LIKE '%\\\\nxc.exe' ESCAPE '\\' AND (CommandLine LIKE '% ftp %' ESCAPE '\\' OR CommandLine LIKE '% ldap %' ESCAPE '\\' OR CommandLine LIKE '% mssql %' ESCAPE '\\' OR CommandLine LIKE '% nfs %' ESCAPE '\\' OR CommandLine LIKE '% rdp %' ESCAPE '\\' OR CommandLine LIKE '% smb %' ESCAPE '\\' OR CommandLine LIKE '% ssh %' ESCAPE '\\' OR CommandLine LIKE '% vnc %' ESCAPE '\\' OR CommandLine LIKE '% winrm %' ESCAPE '\\' OR CommandLine LIKE '% wmi %' ESCAPE '\\')))"
+        ],
+        "filename": "",
+        "channel": [
+            "Security"
+        ],
+        "eventid": [
+            4688
+        ]
+    },
+    {
+        "title": "HackTool - NetExec Execution - Sysmon",
+        "id": "7638e5fe-600c-4289-a968-f49dd537ec7d",
+        "status": "experimental",
+        "description": "Detects execution of the hacktool NetExec.\nNetExec (formerly CrackMapExec) is a widely used post-exploitation tool designed for Active Directory penetration testing and network enumeration\nIn enterprise environments, the use of NetExec is considered suspicious or potentially malicious because it enables attackers to enumerate hosts, exploit network services, and move laterally across systems.\nThreat actors and red teams commonly use NetExec to identify vulnerable systems, harvest credentials, and execute commands remotely.\n",
+        "author": "Chirag Damani",
+        "tags": [
+            "attack.discovery",
+            "attack.t1018",
+            "attack.lateral-movement",
+            "attack.t1021"
+        ],
+        "falsepositives": [
+            "Legitimate use of NetExec by security professionals or system administrators for network assessment and management."
+        ],
+        "level": "high",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (Image LIKE '%\\\\nxc.exe' ESCAPE '\\' AND (CommandLine LIKE '% ftp %' ESCAPE '\\' OR CommandLine LIKE '% ldap %' ESCAPE '\\' OR CommandLine LIKE '% mssql %' ESCAPE '\\' OR CommandLine LIKE '% nfs %' ESCAPE '\\' OR CommandLine LIKE '% rdp %' ESCAPE '\\' OR CommandLine LIKE '% smb %' ESCAPE '\\' OR CommandLine LIKE '% ssh %' ESCAPE '\\' OR CommandLine LIKE '% vnc %' ESCAPE '\\' OR CommandLine LIKE '% winrm %' ESCAPE '\\' OR CommandLine LIKE '% wmi %' ESCAPE '\\')))"
         ],
         "filename": "",
         "channel": [
@@ -96962,6 +97070,34 @@
         "level": "high",
         "rule": [
             "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=11 AND ((Image LIKE '%\\\\WinRAR.exe' ESCAPE '\\' OR Image LIKE '%\\\\Rar.exe' ESCAPE '\\') AND TargetFilename LIKE '%\\\\Start Menu\\\\Programs\\\\Startup\\\\%' ESCAPE '\\'))"
+        ],
+        "filename": "",
+        "channel": [
+            "Microsoft-Windows-Sysmon/Operational"
+        ],
+        "eventid": [
+            11
+        ]
+    },
+    {
+        "title": "HackTool - NetExec File Indicators",
+        "id": "efc21479-9e83-41da-8cf1-122e06ba8db3",
+        "status": "experimental",
+        "description": "Detects file creation events indicating NetExec (nxc.exe) execution on the local machine.\nNetExec is a PyInstaller-bundled binary that extracts its embedded data files to a \"_MEI<random>\" directory\nunder the Temp folder upon execution. Files dropped under the \"\\nxc\\\" sub-directory of that\nextraction path are unique to NetExec and serve as reliable on-disk indicators of execution.\nNetExec (formerly CrackMapExec) is a widely used post-exploitation and lateral movement tool used for\nActive Directory enumeration, credential harvesting, and remote code execution.\n",
+        "author": "Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.execution",
+            "attack.lateral-movement",
+            "attack.discovery",
+            "attack.t1021.002",
+            "attack.t1059.005"
+        ],
+        "falsepositives": [
+            "Unknown"
+        ],
+        "level": "high",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=11 AND (Image LIKE '%\\\\nxc-windows-latest\\\\%' ESCAPE '\\' OR (TargetFilename LIKE '%\\\\Temp\\\\\\_MEI%' ESCAPE '\\' AND TargetFilename LIKE '%\\\\nxc\\\\data\\\\%' ESCAPE '\\')))"
         ],
         "filename": "",
         "channel": [

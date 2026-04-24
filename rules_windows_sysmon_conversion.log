@@ -1,9 +1,9 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - SYSMON
 ================================================================================
-Timestamp: 2026-04-23 04:25:15
-Total rules processed: 2838
-Successful conversions: 2805
+Timestamp: 2026-04-24 04:29:05
+Total rules processed: 2841
+Successful conversions: 2808
 Failed conversions: 33
 Success rate: 98.8%
 ================================================================================
@@ -177,7 +177,7 @@ ID:    5ea8faa8-db8b-45be-89b0-151b84c82702
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 ================================================================================
-SUCCESSFUL RULES (2805)
+SUCCESSFUL RULES (2808)
 --------------------------------------------------------------------------------
 sigma/rules/windows/process_creation/proc_creation_win_office_onenote_susp_child_processes.yml
 sigma/rules/windows/process_creation/proc_creation_win_susp_private_keys_recon.yml
@@ -774,6 +774,7 @@ sigma/rules/windows/process_creation/proc_creation_win_odbcconf_register_dll_reg
 sigma/rules/windows/process_creation/proc_creation_win_reg_write_protect_for_storage_disabled.yml
 sigma/rules/windows/process_creation/proc_creation_win_gup_susp_child_process.yml
 sigma/rules/windows/process_creation/proc_creation_win_rar_susp_greedy_compression.yml
+sigma/rules/windows/process_creation/proc_creation_win_python_base64_encoded_execution.yml
 sigma/rules/windows/process_creation/proc_creation_win_schtasks_one_time_only_midnight_task.yml
 sigma/rules/windows/process_creation/proc_creation_win_csc_susp_dynamic_compilation.yml
 sigma/rules/windows/process_creation/proc_creation_win_chcp_codepage_lookup.yml
@@ -977,6 +978,7 @@ sigma/rules/windows/process_creation/proc_creation_win_pktmon_execution.yml
 sigma/rules/windows/process_creation/proc_creation_win_sysinternals_accesschk_check_permissions.yml
 sigma/rules/windows/process_creation/proc_creation_win_wmic_recon_csproduct.yml
 sigma/rules/windows/process_creation/proc_creation_win_office_susp_child_processes.yml
+sigma/rules/windows/process_creation/proc_creation_win_hktl_netexec.yml
 sigma/rules/windows/process_creation/proc_creation_win_susp_execution_path.yml
 sigma/rules/windows/process_creation/proc_creation_win_uac_bypass_cmstp_com_object_access.yml
 sigma/rules/windows/process_creation/proc_creation_win_java_susp_child_process_2.yml
@@ -1667,6 +1669,7 @@ sigma/rules/windows/file/file_event/file_event_win_powershell_exploit_scripts.ym
 sigma/rules/windows/file/file_event/file_event_win_winrar_file_creation_in_startup_folder.yml
 sigma/rules/windows/file/file_event/file_event_win_powershell_drop_powershell.yml
 sigma/rules/windows/file/file_event/file_event_win_vscode_tunnel_remote_creation_artefacts.yml
+sigma/rules/windows/file/file_event/file_event_win_hktl_netexec_file_indicators.yml
 sigma/rules/windows/file/file_event/file_event_win_msdt_susp_directories.yml
 sigma/rules/windows/file/file_event/file_event_win_notepad_plus_plus_persistence.yml
 sigma/rules/windows/file/file_event/file_event_win_shell_write_susp_directory.yml

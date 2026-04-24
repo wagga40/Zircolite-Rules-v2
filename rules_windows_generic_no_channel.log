@@ -1,4 +1,4 @@
-RULES REMOVED (no channel): 645
+RULES REMOVED (no channel): 646
 --------------------------------------------------------------------------------
 
 Title: New PowerShell Instance Created
@@ -1599,6 +1599,10 @@ Level: high
 
 Title: WinRAR Creating Files in Startup Locations
 ID:    74a2b37d-fea4-41e0-9ac7-c9fbcf1f60cc
+Level: high
+
+Title: HackTool - NetExec File Indicators
+ID:    efc21479-9e83-41da-8cf1-122e06ba8db3
 Level: high
 
 Title: File Creation In Suspicious Directory By Msdt.EXE
