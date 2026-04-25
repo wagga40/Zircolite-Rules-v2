@@ -4190,56 +4190,6 @@
         ]
     },
     {
-        "title": "LSA PPL Protection Disabled Via Reg.EXE - Generic",
-        "id": "8c0eca51-0f88-4db2-9183-fdfb10c703f9",
-        "status": "test",
-        "description": "Detects the usage of the \"reg.exe\" utility to disable PPL protection on the LSA process",
-        "author": "Florian Roth (Nextron Systems)",
-        "tags": [
-            "attack.defense-evasion",
-            "attack.t1562.010"
-        ],
-        "falsepositives": [
-            "Unlikely"
-        ],
-        "level": "high",
-        "rule": [
-            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\reg.exe' ESCAPE '\\' OR OriginalFileName='reg.exe') AND (CommandLine LIKE '%SYSTEM\\\\CurrentControlSet\\\\Control\\\\Lsa%' ESCAPE '\\' AND (CommandLine LIKE '% add %' ESCAPE '\\' AND CommandLine LIKE '% /d 0%' ESCAPE '\\' AND CommandLine LIKE '% /v RunAsPPL %' ESCAPE '\\'))))"
-        ],
-        "filename": "",
-        "channel": [
-            "Security"
-        ],
-        "eventid": [
-            4688
-        ]
-    },
-    {
-        "title": "LSA PPL Protection Disabled Via Reg.EXE - Sysmon",
-        "id": "8c0eca51-0f88-4db2-9183-fdfb10c703f9",
-        "status": "test",
-        "description": "Detects the usage of the \"reg.exe\" utility to disable PPL protection on the LSA process",
-        "author": "Florian Roth (Nextron Systems)",
-        "tags": [
-            "attack.defense-evasion",
-            "attack.t1562.010"
-        ],
-        "falsepositives": [
-            "Unlikely"
-        ],
-        "level": "high",
-        "rule": [
-            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((Image LIKE '%\\\\reg.exe' ESCAPE '\\' OR OriginalFileName='reg.exe') AND (CommandLine LIKE '%SYSTEM\\\\CurrentControlSet\\\\Control\\\\Lsa%' ESCAPE '\\' AND (CommandLine LIKE '% add %' ESCAPE '\\' AND CommandLine LIKE '% /d 0%' ESCAPE '\\' AND CommandLine LIKE '% /v RunAsPPL %' ESCAPE '\\'))))"
-        ],
-        "filename": "",
-        "channel": [
-            "Microsoft-Windows-Sysmon/Operational"
-        ],
-        "eventid": [
-            1
-        ]
-    },
-    {
         "title": "Audit Policy Tampering Via Auditpol - Generic",
         "id": "0a13e132-651d-11eb-ae93-0242ac130002",
         "status": "test",

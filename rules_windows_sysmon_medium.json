@@ -2886,6 +2886,31 @@
         ]
     },
     {
+        "title": "LSA PPL Protection Setting Modification via CommandLine",
+        "id": "8c0eca51-0f88-4db2-9183-fdfb10c703f9",
+        "status": "test",
+        "description": "Detects modification of LSA PPL protection settings via CommandLine.\nIt may indicate an attempt to disable protection and enable credential dumping tools to access LSASS process memory.\n",
+        "author": "Florian Roth (Nextron Systems), Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.defense-evasion",
+            "attack.t1562.010"
+        ],
+        "falsepositives": [
+            "Unlikely"
+        ],
+        "level": "medium",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (((Image LIKE '%\\\\reg.exe' ESCAPE '\\' OR Image LIKE '%\\\\powershell.exe' ESCAPE '\\' OR Image LIKE '%\\\\pwsh.exe' ESCAPE '\\') OR (OriginalFileName='reg.exe' OR OriginalFileName='powershell.exe' OR OriginalFileName='pwsh.dll')) AND ((CommandLine LIKE '%ControlSet%' ESCAPE '\\' AND CommandLine LIKE '%\\\\Control\\\\Lsa%' ESCAPE '\\') AND (CommandLine LIKE '%Set-ItemProperty%' ESCAPE '\\' OR CommandLine LIKE '%New-ItemProperty%' ESCAPE '\\' OR CommandLine LIKE '% add %' ESCAPE '\\')) AND (CommandLine LIKE '%IsPplAutoEnabled%' ESCAPE '\\' OR CommandLine LIKE '%RunAsPPL%' ESCAPE '\\' OR CommandLine LIKE '%RunAsPPLBoot%' ESCAPE '\\')))"
+        ],
+        "filename": "",
+        "channel": [
+            "Microsoft-Windows-Sysmon/Operational"
+        ],
+        "eventid": [
+            1
+        ]
+    },
+    {
         "title": "PUA - TruffleHog Execution",
         "id": "44030449-b0df-4c94-aae1-502359ab28ee",
         "status": "experimental",
@@ -28744,31 +28769,6 @@
         "level": "high",
         "rule": [
             "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((CommandLine LIKE '% --buildcache %' ESCAPE '\\' OR CommandLine LIKE '% --bhdump %' ESCAPE '\\' OR CommandLine LIKE '% --certdump %' ESCAPE '\\' OR CommandLine LIKE '% --dnsdump %' ESCAPE '\\') AND (CommandLine LIKE '% -c %' ESCAPE '\\' OR CommandLine LIKE '% --cachefilename %' ESCAPE '\\' OR CommandLine LIKE '% -o %' ESCAPE '\\' OR CommandLine LIKE '% --outputdirectory%' ESCAPE '\\')))"
-        ],
-        "filename": "",
-        "channel": [
-            "Microsoft-Windows-Sysmon/Operational"
-        ],
-        "eventid": [
-            1
-        ]
-    },
-    {
-        "title": "LSA PPL Protection Disabled Via Reg.EXE",
-        "id": "8c0eca51-0f88-4db2-9183-fdfb10c703f9",
-        "status": "test",
-        "description": "Detects the usage of the \"reg.exe\" utility to disable PPL protection on the LSA process",
-        "author": "Florian Roth (Nextron Systems)",
-        "tags": [
-            "attack.defense-evasion",
-            "attack.t1562.010"
-        ],
-        "falsepositives": [
-            "Unlikely"
-        ],
-        "level": "high",
-        "rule": [
-            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((Image LIKE '%\\\\reg.exe' ESCAPE '\\' OR OriginalFileName='reg.exe') AND (CommandLine LIKE '%SYSTEM\\\\CurrentControlSet\\\\Control\\\\Lsa%' ESCAPE '\\' AND (CommandLine LIKE '% add %' ESCAPE '\\' AND CommandLine LIKE '% /d 0%' ESCAPE '\\' AND CommandLine LIKE '% /v RunAsPPL %' ESCAPE '\\'))))"
         ],
         "filename": "",
         "channel": [

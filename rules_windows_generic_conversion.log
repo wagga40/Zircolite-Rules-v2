@@ -1,7 +1,7 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - GENERIC
 ================================================================================
-Timestamp: 2026-04-24 04:29:48
+Timestamp: 2026-04-25 04:10:54
 Total rules processed: 2841
 Successful conversions: 2808
 Failed conversions: 33
@@ -333,7 +333,6 @@ sigma/rules/windows/process_creation/proc_creation_win_powershell_encoding_patte
 sigma/rules/windows/process_creation/proc_creation_win_renamed_office_processes.yml
 sigma/rules/windows/process_creation/proc_creation_win_hktl_soaphound_execution.yml
 sigma/rules/windows/process_creation/proc_creation_win_powershell_frombase64string_archive.yml
-sigma/rules/windows/process_creation/proc_creation_win_reg_lsa_ppl_protection_disabled.yml
 sigma/rules/windows/process_creation/proc_creation_win_auditpol_susp_execution.yml
 sigma/rules/windows/process_creation/proc_creation_win_renamed_rurat.yml
 sigma/rules/windows/process_creation/proc_creation_win_wget_download_susp_file_sharing_domains.yml
@@ -460,6 +459,7 @@ sigma/rules/windows/process_creation/proc_creation_win_attrib_system_susp_paths.
 sigma/rules/windows/process_creation/proc_creation_win_cmd_net_use_and_exec_combo.yml
 sigma/rules/windows/process_creation/proc_creation_win_java_keytool_susp_child_process.yml
 sigma/rules/windows/process_creation/proc_creation_win_ilasm_il_code_compilation.yml
+sigma/rules/windows/process_creation/proc_creation_win_lsa_ppl_protection_setting_modification_via_cli.yml
 sigma/rules/windows/process_creation/proc_creation_win_powershell_base64_encoded_cmd.yml
 sigma/rules/windows/process_creation/proc_creation_win_sc_sdset_allow_service_changes.yml
 sigma/rules/windows/process_creation/proc_creation_win_wmic_namespace_defender.yml
