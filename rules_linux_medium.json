@@ -262,27 +262,6 @@
         "eventid": []
     },
     {
-        "title": "Chmod Suspicious Directory",
-        "id": "6419afd1-3742-47a5-a7e6-b50386cd15f8",
-        "status": "test",
-        "description": "Detects chmod targeting files in abnormal directory paths.",
-        "author": "Christopher Peacock @SecurePeacock, SCYTHE @scythe_io",
-        "tags": [
-            "attack.defense-evasion",
-            "attack.t1222.002"
-        ],
-        "falsepositives": [
-            "Admin changing file permissions."
-        ],
-        "level": "medium",
-        "rule": [
-            "SELECT * FROM logs WHERE Image LIKE '%/chmod' ESCAPE '\\' AND (CommandLine LIKE '%/tmp/%' ESCAPE '\\' OR CommandLine LIKE '%/.Library/%' ESCAPE '\\' OR CommandLine LIKE '%/etc/%' ESCAPE '\\' OR CommandLine LIKE '%/opt/%' ESCAPE '\\')"
-        ],
-        "filename": "",
-        "channel": [],
-        "eventid": []
-    },
-    {
         "title": "User Has Been Deleted Via Userdel",
         "id": "08f26069-6f80-474b-8d1f-d971c6fedea0",
         "status": "test",
@@ -459,7 +438,7 @@
         "title": "Potential Suspicious Change To Sensitive/Critical Files",
         "id": "86157017-c2b1-4d4a-8c33-93b8e67e4af4",
         "status": "test",
-        "description": "Detects changes of sensitive and critical files. Monitors files that you don't expect to change without planning on Linux system.",
+        "description": "Detects changes of sensitive and critical files. Monitors files that you don't expect to change without planning on Linux system.\nThese files include, but are not limited to, system configuration files, authentication files, and critical application files.\nAttackers often target these files to maintain persistence, escalate privileges, or disrupt system operations.\n",
         "author": "@d4ns4n_ (Wuerth-Phoenix)",
         "tags": [
             "attack.impact",
@@ -470,7 +449,7 @@
         ],
         "level": "medium",
         "rule": [
-            "SELECT * FROM logs WHERE (((Image LIKE '%/cat' ESCAPE '\\' OR Image LIKE '%/echo' ESCAPE '\\' OR Image LIKE '%/grep' ESCAPE '\\' OR Image LIKE '%/head' ESCAPE '\\' OR Image LIKE '%/more' ESCAPE '\\' OR Image LIKE '%/tail' ESCAPE '\\') AND CommandLine LIKE '%>%' ESCAPE '\\') OR (Image LIKE '%/emacs' ESCAPE '\\' OR Image LIKE '%/nano' ESCAPE '\\' OR Image LIKE '%/sed' ESCAPE '\\' OR Image LIKE '%/vi' ESCAPE '\\' OR Image LIKE '%/vim' ESCAPE '\\')) AND (CommandLine LIKE '%/bin/login%' ESCAPE '\\' OR CommandLine LIKE '%/bin/passwd%' ESCAPE '\\' OR CommandLine LIKE '%/boot/%' ESCAPE '\\' OR CommandLine LIKE '%/etc/%.conf%' ESCAPE '\\' OR CommandLine LIKE '%/etc/cron.%' ESCAPE '\\' OR CommandLine LIKE '%/etc/crontab%' ESCAPE '\\' OR CommandLine LIKE '%/etc/hosts%' ESCAPE '\\' OR CommandLine LIKE '%/etc/init.d%' ESCAPE '\\' OR CommandLine LIKE '%/etc/sudoers%' ESCAPE '\\' OR CommandLine LIKE '%/opt/bin/%' ESCAPE '\\' OR CommandLine LIKE '%/sbin%' ESCAPE '\\' OR CommandLine LIKE '%/usr/bin/%' ESCAPE '\\' OR CommandLine LIKE '%/usr/local/bin/%' ESCAPE '\\')"
+            "SELECT * FROM logs WHERE (((Image LIKE '%/cat' ESCAPE '\\' OR Image LIKE '%/echo' ESCAPE '\\' OR Image LIKE '%/grep' ESCAPE '\\' OR Image LIKE '%/head' ESCAPE '\\' OR Image LIKE '%/more' ESCAPE '\\' OR Image LIKE '%/tail' ESCAPE '\\') AND CommandLine LIKE '%>%' ESCAPE '\\') OR (Image LIKE '%/emacs' ESCAPE '\\' OR Image LIKE '%/nano' ESCAPE '\\' OR Image LIKE '%/sed' ESCAPE '\\' OR Image LIKE '%/vi' ESCAPE '\\' OR Image LIKE '%/vim' ESCAPE '\\')) AND (CommandLine LIKE '%/bin/login%' ESCAPE '\\' OR CommandLine LIKE '%/bin/passwd%' ESCAPE '\\' OR CommandLine LIKE '%/boot/%' ESCAPE '\\' OR CommandLine LIKE '%/etc/%.conf%' ESCAPE '\\' OR CommandLine LIKE '%/etc/cron.%' ESCAPE '\\' OR CommandLine LIKE '%/etc/crontab%' ESCAPE '\\' OR CommandLine LIKE '%/etc/hosts%' ESCAPE '\\' OR CommandLine LIKE '%/etc/init.d%' ESCAPE '\\' OR CommandLine LIKE '%/etc/sudoers%' ESCAPE '\\' OR CommandLine LIKE '%/opt/bin/%' ESCAPE '\\' OR CommandLine LIKE '%/sbin%' ESCAPE '\\' OR CommandLine LIKE '%/usr/bin/%' ESCAPE '\\' OR CommandLine LIKE '%/usr/local/bin/%' ESCAPE '\\') AND (NOT (Image LIKE '%/bin/sed' ESCAPE '\\' AND (CommandLine LIKE 'sed -i /^%' ESCAPE '\\' OR CommandLine LIKE 'sed -ne s/^%' ESCAPE '\\') AND CommandLine LIKE '%/etc/mdadm/mdadm.conf' ESCAPE '\\'))"
         ],
         "filename": "",
         "channel": [],
@@ -643,6 +622,27 @@
         "level": "medium",
         "rule": [
             "SELECT * FROM logs WHERE Image LIKE '%/nohup' ESCAPE '\\'"
+        ],
+        "filename": "",
+        "channel": [],
+        "eventid": []
+    },
+    {
+        "title": "Chmod Targeting Sensitive Directories",
+        "id": "6419afd1-3742-47a5-a7e6-b50386cd15f8",
+        "status": "test",
+        "description": "Detects chmod targeting files in sensitive directory paths on Linux systems.\nAttackers may use chmod to change permissions of files in these directories to maintain persistence, escalate privileges, or disrupt system operations.\n",
+        "author": "Christopher Peacock @SecurePeacock, SCYTHE @scythe_io",
+        "tags": [
+            "attack.defense-evasion",
+            "attack.t1222.002"
+        ],
+        "falsepositives": [
+            "Some false positives are to be expected. Apply additional filters as needed before pushing to production."
+        ],
+        "level": "medium",
+        "rule": [
+            "SELECT * FROM logs WHERE (Image LIKE '%/chmod' ESCAPE '\\' AND (CommandLine LIKE '%/tmp/%' ESCAPE '\\' OR CommandLine LIKE '%/.Library/%' ESCAPE '\\' OR CommandLine LIKE '%/etc/%' ESCAPE '\\' OR CommandLine LIKE '%/opt/%' ESCAPE '\\')) AND (NOT ((CommandLine LIKE '%chmod --reference=/etc/shells%' ESCAPE '\\' AND ParentCommandLine LIKE '%/update-shells' ESCAPE '\\') OR (CommandLine LIKE '%/etc/%' ESCAPE '\\' AND (ParentCommandLine LIKE '%/var/lib/dpkg/info/%' ESCAPE '\\' AND ParentCommandLine LIKE '%.postinst configure%' ESCAPE '\\')) OR CommandLine LIKE 'chmod 700 /tmp/apt-key-gpghome.%' ESCAPE '\\' OR CommandLine LIKE 'chmod 755 /var/tmp/mkinitramfs%' ESCAPE '\\' OR CommandLine='chmod 0775 /etc/landscape/' OR CommandLine='chmod 644 /etc/apparmor.d/tunables/home.d/ubuntu'))"
         ],
         "filename": "",
         "channel": [],
@@ -862,10 +862,10 @@
         "eventid": []
     },
     {
-        "title": "Clear Linux Logs",
+        "title": "Linux Logs Clearing Attempts",
         "id": "80915f59-9b56-4616-9de0-fd0dea6c12fe",
         "status": "stable",
-        "description": "Detects attempts to clear logs on the system. Adversaries may clear system logs to hide evidence of an intrusion",
+        "description": "Detects logs clearing attempts on Linux systems via utilities such as 'rm', 'rmdir', 'shred', and 'unlink' targeting log files and directories.\nAdversaries often try to clear logs to cover their tracks after performing malicious activities.\n",
         "author": "\u00d6mer G\u00fcnal, oscd.community",
         "tags": [
             "attack.defense-evasion",
@@ -876,7 +876,7 @@
         ],
         "level": "medium",
         "rule": [
-            "SELECT * FROM logs WHERE (Image LIKE '%/rm' ESCAPE '\\' OR Image LIKE '%/shred' ESCAPE '\\' OR Image LIKE '%/unlink' ESCAPE '\\') AND (CommandLine LIKE '%/var/log%' ESCAPE '\\' OR CommandLine LIKE '%/var/spool/mail%' ESCAPE '\\')"
+            "SELECT * FROM logs WHERE ((Image LIKE '%/rm' ESCAPE '\\' OR Image LIKE '%/rmdir' ESCAPE '\\' OR Image LIKE '%/shred' ESCAPE '\\' OR Image LIKE '%/unlink' ESCAPE '\\') AND (CommandLine LIKE '%/var/log%' ESCAPE '\\' OR CommandLine LIKE '%/var/spool/mail%' ESCAPE '\\')) AND (NOT ((Image LIKE '%/rm' ESCAPE '\\' AND CommandLine LIKE 'rm -f /var/log/sysstat/%' ESCAPE '\\') OR (Image LIKE '%/rm' ESCAPE '\\' AND CommandLine LIKE 'rm -f -- /var/log//dmesg%' ESCAPE '\\')))"
         ],
         "filename": "",
         "channel": [],
@@ -907,17 +907,21 @@
         "title": "Disable Or Stop Services",
         "id": "de25eeb8-3655-4643-ac3a-b662d3f26b6b",
         "status": "test",
-        "description": "Detects the usage of utilities such as 'systemctl', 'service'...etc to stop or disable tools and services",
+        "description": "Detects the usage of utilities such as 'systemctl', 'service'...etc to stop or disable tools and services on Linux systems.\nAttackers may stop or disable security tools and services to evade detection, maintain persistence, or disrupt system operations.\n",
         "author": "Nasreddine Bencherchali (Nextron Systems)",
         "tags": [
-            "attack.defense-evasion"
+            "attack.defense-evasion",
+            "attack.t1562",
+            "attack.impact",
+            "attack.t1489"
         ],
         "falsepositives": [
-            "Legitimate administration activities"
+            "Legitimate administration activities",
+            "Some false positives are to be expected. Apply additional filters as needed before pushing to production."
         ],
         "level": "medium",
         "rule": [
-            "SELECT * FROM logs WHERE (Image LIKE '%/service' ESCAPE '\\' OR Image LIKE '%/systemctl' ESCAPE '\\' OR Image LIKE '%/chkconfig' ESCAPE '\\') AND (CommandLine LIKE '%stop%' ESCAPE '\\' OR CommandLine LIKE '%disable%' ESCAPE '\\')"
+            "SELECT * FROM logs WHERE ((Image LIKE '%/service' ESCAPE '\\' OR Image LIKE '%/systemctl' ESCAPE '\\' OR Image LIKE '%/chkconfig' ESCAPE '\\') AND (CommandLine LIKE '% stop %' ESCAPE '\\' OR CommandLine LIKE '% disable %' ESCAPE '\\')) AND (NOT ((Image LIKE '%/systemctl' ESCAPE '\\' AND (CommandLine LIKE '%--no-reload disable snap-snapd-%' ESCAPE '\\' OR CommandLine LIKE '% stop snap-snapd-%' ESCAPE '\\')) OR (Image LIKE '%/systemctl' ESCAPE '\\' AND ParentCommandLine LIKE '%tmp.ci/preinst upgrade%' ESCAPE '\\' AND (CommandLine LIKE '% stop %' ESCAPE '\\' AND CommandLine LIKE '%ssh.%' ESCAPE '\\')) OR (ParentCommandLine LIKE '%/dpkg/info/ubuntu-pro-client.prerm upgrade%' ESCAPE '\\' AND Image LIKE '%/systemctl' ESCAPE '\\'))) AND (NOT (Image LIKE '%/systemctl' ESCAPE '\\' AND CommandLine LIKE '%snap.amazon-ssm-agent.amazon-ssm-agent.service' ESCAPE '\\'))"
         ],
         "filename": "",
         "channel": [],
@@ -1101,29 +1105,6 @@
         "eventid": []
     },
     {
-        "title": "Persistence Via Cron Files",
-        "id": "6c4e2f43-d94d-4ead-b64d-97e53fa2bd05",
-        "status": "test",
-        "description": "Detects creation of cron file or files in Cron directories which could indicates potential persistence.",
-        "author": "Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research), MSTIC",
-        "tags": [
-            "attack.privilege-escalation",
-            "attack.execution",
-            "attack.persistence",
-            "attack.t1053.003"
-        ],
-        "falsepositives": [
-            "Any legitimate cron file."
-        ],
-        "level": "medium",
-        "rule": [
-            "SELECT * FROM logs WHERE (TargetFilename LIKE '/etc/cron.d/%' ESCAPE '\\' OR TargetFilename LIKE '/etc/cron.daily/%' ESCAPE '\\' OR TargetFilename LIKE '/etc/cron.hourly/%' ESCAPE '\\' OR TargetFilename LIKE '/etc/cron.monthly/%' ESCAPE '\\' OR TargetFilename LIKE '/etc/cron.weekly/%' ESCAPE '\\' OR TargetFilename LIKE '/var/spool/cron/crontabs/%' ESCAPE '\\') OR (TargetFilename LIKE '%/etc/cron.allow%' ESCAPE '\\' OR TargetFilename LIKE '%/etc/cron.deny%' ESCAPE '\\' OR TargetFilename LIKE '%/etc/crontab%' ESCAPE '\\')"
-        ],
-        "filename": "",
-        "channel": [],
-        "eventid": []
-    },
-    {
         "title": "Wget Creating Files in Tmp Directory",
         "id": "35a05c60-9012-49b6-a11f-6bab741c9f74",
         "status": "test",
@@ -1145,23 +1126,23 @@
         "eventid": []
     },
     {
-        "title": "Persistence Via Sudoers Files",
+        "title": "Persistence Via Sudoers.d Files",
         "id": "ddb26b76-4447-4807-871f-1b035b2bfa5d",
         "status": "test",
-        "description": "Detects creation of sudoers file or files in \"sudoers.d\" directory which can be used a potential method to persiste privileges for a specific user.",
+        "description": "Detects the creation or modification of files within the \"sudoers.d\" directory on Linux systems.\nSuch activity may indicate an attempt to establish or maintain privilege escalation by granting specific users elevated permissions.\nUnauthorized changes to sudoers files are a common technique used by attackers to persist administrative access.\n",
         "author": "Nasreddine Bencherchali (Nextron Systems)",
         "tags": [
             "attack.privilege-escalation",
-            "attack.execution",
             "attack.persistence",
-            "attack.t1053.003"
+            "attack.defense-evasion",
+            "attack.t1548.003"
         ],
         "falsepositives": [
-            "Creation of legitimate files in sudoers.d folder part of administrator work"
+            "Creation of legitimate files in sudoers.d folder as part of administrator work"
         ],
         "level": "medium",
         "rule": [
-            "SELECT * FROM logs WHERE TargetFilename LIKE '/etc/sudoers.d/%' ESCAPE '\\'"
+            "SELECT * FROM logs WHERE TargetFilename LIKE '/etc/sudoers.d/%' ESCAPE '\\' AND (NOT (Image LIKE '%/usr/bin/dpkg' ESCAPE '\\' AND TargetFilename='/etc/sudoers.d/README.dpkg-new'))"
         ],
         "filename": "",
         "channel": [],
@@ -1712,14 +1693,14 @@
         "author": "Li Ling, Andy Parkidomo, Robert Rakowski, Blake Hartstein (Bloomberg L.P.)",
         "tags": [
             "attack.execution",
-            "attack.t1059"
+            "attack.t1059.004"
         ],
         "falsepositives": [
             "Github operations such as ghe-backup"
         ],
         "level": "high",
         "rule": [
-            "SELECT * FROM logs WHERE Image LIKE '%/env' ESCAPE '\\' AND (CommandLine LIKE '%/bin/bash' ESCAPE '\\' OR CommandLine LIKE '%/bin/dash' ESCAPE '\\' OR CommandLine LIKE '%/bin/fish' ESCAPE '\\' OR CommandLine LIKE '%/bin/sh' ESCAPE '\\' OR CommandLine LIKE '%/bin/zsh' ESCAPE '\\')"
+            "SELECT * FROM logs WHERE Image LIKE '%/env' ESCAPE '\\' AND (CommandLine LIKE '%/bin/bash%' ESCAPE '\\' OR CommandLine LIKE '%/bin/dash%' ESCAPE '\\' OR CommandLine LIKE '%/bin/fish%' ESCAPE '\\' OR CommandLine LIKE '%/bin/sh%' ESCAPE '\\' OR CommandLine LIKE '%/bin/zsh%' ESCAPE '\\')"
         ],
         "filename": "",
         "channel": [],

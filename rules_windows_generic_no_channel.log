@@ -1,4 +1,4 @@
-RULES REMOVED (no channel): 646
+RULES REMOVED (no channel): 649
 --------------------------------------------------------------------------------
 
 Title: New PowerShell Instance Created
@@ -913,6 +913,10 @@ Title: SharePoint ToolShell CVE-2025-53770 Exploitation - Web IIS
 ID:    48d053db-6a56-4866-b60d-0975647050ed
 Level: medium
 
+Title: Potential Exploitation of CVE-2025-5054 or CVE-2025-4598
+ID:    33b3cfb1-574e-44b9-b527-fbf9303b9d7b
+Level: medium
+
 Title: Okta 2023 Breach Indicator Of Compromise
 ID:    00a8e92a-776b-425f-80f2-82d8f8fab2e5
 Level: medium
@@ -1135,6 +1139,10 @@ Level: high
 
 Title: Potential JLI.dll Side-Loading
 ID:    7a3b6d1f-4a2b-4f8c-9d7e-e9f8cbf21a35
+Level: high
+
+Title: Potential Vcruntime140 DLL Sideloading
+ID:    d7a63acb-1284-49bc-bfea-7771146c8b1c
 Level: high
 
 Title: Fax Service DLL Search Order Hijack
@@ -1703,10 +1711,6 @@ Level: high
 
 Title: Potential File Extension Spoofing Using Right-to-Left Override
 ID:    979baf41-ca44-4540-9d0c-4fcef3b5a3a4
-Level: high
-
-Title: Suspicious Creation TXT File in User Desktop
-ID:    caf02a0a-1e1c-4552-9b48-5e070bd88d11
 Level: high
 
 Title: Suspicious Desktopimgdownldr Target File
@@ -2511,6 +2515,14 @@ Level: critical
 
 Title: Potential SharePoint ToolShell CVE-2025-53770 Exploitation - File Create
 ID:    ba479447-721f-42a9-9af2-6dcd517bbdb3
+Level: critical
+
+Title: RedSun - TieringEngineService.exe Staged in RS-Prefixed Temp Dir
+ID:    f2e4b7d9-5c3a-4f8b-9e1d-7a6c2b3f4e5d
+Level: critical
+
+Title: RedSun - Named Pipe Created
+ID:    9b4e7c2a-3f6d-4a8b-b5e9-1c7d3f2e6a4b
 Level: critical
 
 Title: Malicious DLL Load By Compromised 3CXDesktopApp

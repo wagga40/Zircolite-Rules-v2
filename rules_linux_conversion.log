@@ -1,7 +1,7 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - LINUX
 ================================================================================
-Timestamp: 2026-04-27 04:44:54
+Timestamp: 2026-04-28 04:47:27
 Total rules processed: 209
 Successful conversions: 181
 Failed conversions: 28
@@ -183,7 +183,6 @@ sigma/rules/linux/process_creation/proc_creation_lnx_susp_dockerenv_recon.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_susp_process_reading_sudoers.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_esxcli_user_account_creation.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_susp_recon_indicators.yml
-sigma/rules/linux/process_creation/proc_creation_lnx_susp_chmod_directories.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_triple_cross_rootkit_execve_hijack.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_susp_shell_child_process_from_parent_tmp_folder.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_curl_wget_exec_tmp.yml
@@ -227,6 +226,7 @@ sigma/rules/linux/process_creation/proc_creation_lnx_git_shell_execution.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_netcat_reverse_shell.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_nohup.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_nice_shell_execution.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_chmod_targeting_sensitive_directories.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_cap_setuid.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_base64_shebang_cli.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_proxy_connection.yml
@@ -278,8 +278,8 @@ sigma/rules/linux/process_creation/proc_creation_lnx_base64_execution.yml
 sigma/rules/linux/file_event/file_event_lnx_susp_filename_with_embedded_base64_command.yml
 sigma/rules/linux/file_event/file_event_lnx_doas_conf_creation.yml
 sigma/rules/linux/file_event/file_event_lnx_triple_cross_rootkit_persistence.yml
+sigma/rules/linux/file_event/file_event_lnx_susp_cron_file_created.yml
 sigma/rules/linux/file_event/file_event_lnx_susp_shell_script_under_profile_directory.yml
-sigma/rules/linux/file_event/file_event_lnx_persistence_cron_files.yml
 sigma/rules/linux/file_event/file_event_lnx_triple_cross_rootkit_lock_file.yml
 sigma/rules/linux/file_event/file_event_lnx_wget_download_file_in_tmp_dir.yml
 sigma/rules/linux/file_event/file_event_lnx_persistence_sudoers_files.yml

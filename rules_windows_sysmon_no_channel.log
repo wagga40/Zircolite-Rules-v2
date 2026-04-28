@@ -1,4 +1,4 @@
-RULES REMOVED (no channel): 139
+RULES REMOVED (no channel): 140
 --------------------------------------------------------------------------------
 
 Title: Suspicious File Access to Browser Credential Storage
@@ -75,6 +75,10 @@ Level: medium
 
 Title: SharePoint ToolShell CVE-2025-53770 Exploitation - Web IIS
 ID:    48d053db-6a56-4866-b60d-0975647050ed
+Level: medium
+
+Title: Potential Exploitation of CVE-2025-5054 or CVE-2025-4598
+ID:    33b3cfb1-574e-44b9-b527-fbf9303b9d7b
 Level: medium
 
 Title: Okta 2023 Breach Indicator Of Compromise

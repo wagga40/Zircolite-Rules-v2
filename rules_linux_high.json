@@ -286,14 +286,14 @@
         "author": "Li Ling, Andy Parkidomo, Robert Rakowski, Blake Hartstein (Bloomberg L.P.)",
         "tags": [
             "attack.execution",
-            "attack.t1059"
+            "attack.t1059.004"
         ],
         "falsepositives": [
             "Github operations such as ghe-backup"
         ],
         "level": "high",
         "rule": [
-            "SELECT * FROM logs WHERE Image LIKE '%/env' ESCAPE '\\' AND (CommandLine LIKE '%/bin/bash' ESCAPE '\\' OR CommandLine LIKE '%/bin/dash' ESCAPE '\\' OR CommandLine LIKE '%/bin/fish' ESCAPE '\\' OR CommandLine LIKE '%/bin/sh' ESCAPE '\\' OR CommandLine LIKE '%/bin/zsh' ESCAPE '\\')"
+            "SELECT * FROM logs WHERE Image LIKE '%/env' ESCAPE '\\' AND (CommandLine LIKE '%/bin/bash%' ESCAPE '\\' OR CommandLine LIKE '%/bin/dash%' ESCAPE '\\' OR CommandLine LIKE '%/bin/fish%' ESCAPE '\\' OR CommandLine LIKE '%/bin/sh%' ESCAPE '\\' OR CommandLine LIKE '%/bin/zsh%' ESCAPE '\\')"
         ],
         "filename": "",
         "channel": [],
