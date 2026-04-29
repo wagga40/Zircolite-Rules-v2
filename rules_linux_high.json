@@ -6,8 +6,8 @@
         "description": "Detects the execution of 'auditctl' with the '-D' command line parameter, which deletes all configured audit rules and watches on Linux systems.\nThis technique is commonly used by attackers to disable audit logging and cover their tracks by removing monitoring capabilities.\nRemoval of audit rules can significantly impair detection of malicious activities on the affected system.\n",
         "author": "Mohamed LAKRI",
         "tags": [
-            "attack.defense-evasion",
-            "attack.t1562.012"
+            "attack.defense-impairment",
+            "attack.t1685.004"
         ],
         "falsepositives": [
             "An administrator troubleshooting. Investigate all attempts."
@@ -113,8 +113,8 @@
         "author": "Milad Cheraghi",
         "tags": [
             "attack.execution",
-            "attack.defense-evasion",
-            "attack.t1562.001"
+            "attack.defense-impairment",
+            "attack.t1685"
         ],
         "falsepositives": [
             "System administrator manually stopping Kaspersky services"
@@ -221,8 +221,8 @@
         "description": "Detects execution of a the file \"execve_hijack\" which is used by the Triple Cross rootkit as a way to elevate privileges",
         "author": "Nasreddine Bencherchali (Nextron Systems)",
         "tags": [
-            "attack.defense-evasion",
-            "attack.privilege-escalation"
+            "attack.privilege-escalation",
+            "attack.stealth"
         ],
         "falsepositives": [
             "Unlikely"
@@ -326,8 +326,8 @@
         "description": "Detects specific commands commonly used to remove or empty the syslog. Which is a technique often used by attacker as a method to hide their tracks\n",
         "author": "Max Altgelt (Nextron Systems), Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research), MSTIC",
         "tags": [
-            "attack.defense-evasion",
-            "attack.t1070.002"
+            "attack.defense-impairment",
+            "attack.t1685.006"
         ],
         "falsepositives": [
             "Log rotation.",
@@ -370,8 +370,8 @@
         "author": "Hugh Ryan (HueCodes), Swachchhanda Shrawan Poudel (Nextron Systems)",
         "tags": [
             "attack.execution",
+            "attack.stealth",
             "attack.t1059.006",
-            "attack.defense-evasion",
             "attack.t1027.010"
         ],
         "falsepositives": [
@@ -825,7 +825,7 @@
         "description": "Detects default install commands of the Triple Cross eBPF rootkit based on the \"deployer.sh\" script",
         "author": "Nasreddine Bencherchali (Nextron Systems)",
         "tags": [
-            "attack.defense-evasion",
+            "attack.stealth",
             "attack.t1014"
         ],
         "falsepositives": [
@@ -847,8 +847,8 @@
         "author": "@kostastsale",
         "tags": [
             "attack.execution",
+            "attack.stealth",
             "attack.t1059.004",
-            "attack.defense-evasion",
             "attack.t1027"
         ],
         "falsepositives": [
@@ -872,7 +872,6 @@
             "attack.privilege-escalation",
             "attack.execution",
             "attack.persistence",
-            "attack.defense-evasion",
             "attack.t1053.003"
         ],
         "falsepositives": [
@@ -893,7 +892,7 @@
         "description": "Detects the creation of the file \"rootlog\" which is used by the TripleCross rootkit as a way to check if the backdoor is already running.",
         "author": "Nasreddine Bencherchali (Nextron Systems)",
         "tags": [
-            "attack.defense-evasion"
+            "attack.stealth"
         ],
         "falsepositives": [
             "Unlikely"
@@ -914,8 +913,9 @@
         "author": "Milad Cheraghi",
         "tags": [
             "attack.privilege-escalation",
-            "attack.defense-evasion",
-            "attack.t1562.001",
+            "attack.stealth",
+            "attack.defense-impairment",
+            "attack.t1685",
             "attack.t1055.009"
         ],
         "falsepositives": [
@@ -1052,8 +1052,8 @@
         "description": "Detects disabling of system firewalls which could be used by adversaries to bypass controls that limit usage of the network.",
         "author": "Pawel Mazur",
         "tags": [
-            "attack.t1562.004",
-            "attack.defense-evasion"
+            "attack.defense-impairment",
+            "attack.t1686"
         ],
         "falsepositives": [
             "Admin activity"
@@ -1117,8 +1117,8 @@
         "description": "Detect changes in auditd configuration files",
         "author": "Mikhail Larin, oscd.community",
         "tags": [
-            "attack.defense-evasion",
-            "attack.t1562.006"
+            "attack.defense-impairment",
+            "attack.t1685"
         ],
         "falsepositives": [
             "Legitimate administrative activity"
@@ -1140,7 +1140,8 @@
         "tags": [
             "attack.privilege-escalation",
             "attack.persistence",
-            "attack.defense-evasion",
+            "attack.execution",
+            "attack.stealth",
             "attack.t1574.006"
         ],
         "falsepositives": [
@@ -1161,8 +1162,8 @@
         "description": "Detect changes of syslog daemons configuration files",
         "author": "Mikhail Larin, oscd.community",
         "tags": [
-            "attack.defense-evasion",
-            "attack.t1562.006"
+            "attack.defense-impairment",
+            "attack.t1685"
         ],
         "falsepositives": [
             "Legitimate administrative activity"
