@@ -2028,23 +2028,21 @@
         "title": "Registry Manipulation via WMI Stdregprov",
         "id": "c453ab7a-1f5c-4716-a3b4-dea8135fb43a",
         "status": "experimental",
-        "description": "Detects the usage of wmic.exe to manipulate Windows registry via the WMI StdRegProv class.\nThis behaviour could be potentially suspicious because it uses an alternative method to modify registry keys instead of legitimate registry tools like reg.exe or regedit.exe.\nAttackers specifically choose this technique to evade detection and bypass security monitoring focused on traditional registry modification commands.\n",
+        "description": "Detects the usage of wmic.exe to modify Windows registry via the WMI StdRegProv class write methods (CreateKey, DeleteKey, SetStringValue, etc.).\nThis behaviour could be potentially suspicious because it uses an alternative method to modify registry keys instead of legitimate registry tools like reg.exe or regedit.exe.\nAttackers specifically choose this technique to evade detection and bypass security monitoring focused on traditional registry modification commands.\n",
         "author": "Daniel Koifman (KoifSec)",
         "tags": [
-            "attack.persistence",
             "attack.execution",
-            "attack.discovery",
-            "attack.defense-impairment",
             "attack.t1047",
-            "attack.t1112",
-            "attack.t1012"
+            "attack.persistence",
+            "attack.defense-impairment",
+            "attack.t1112"
         ],
         "falsepositives": [
             "Legitimate administrative activity"
         ],
         "level": "medium",
         "rule": [
-            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\wmic.exe' ESCAPE '\\' OR OriginalFileName='wmic.exe') AND (CommandLine LIKE '%call%' ESCAPE '\\' AND CommandLine LIKE '%stdregprov%' ESCAPE '\\')))"
+            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\wmic.exe' ESCAPE '\\' OR OriginalFileName='wmic.exe') AND ((CommandLine LIKE '%stdregprov%' ESCAPE '\\' AND CommandLine LIKE '%call%' ESCAPE '\\') AND (CommandLine LIKE '%CreateKey%' ESCAPE '\\' OR CommandLine LIKE '%DeleteKey%' ESCAPE '\\' OR CommandLine LIKE '%DeleteValue%' ESCAPE '\\' OR CommandLine LIKE '%SetBinaryValue%' ESCAPE '\\' OR CommandLine LIKE '%SetDWORDValue%' ESCAPE '\\' OR CommandLine LIKE '%SetExpandedStringValue%' ESCAPE '\\' OR CommandLine LIKE '%SetMultiStringValue%' ESCAPE '\\' OR CommandLine LIKE '%SetQWORDValue%' ESCAPE '\\' OR CommandLine LIKE '%SetSecurityDescriptor%' ESCAPE '\\' OR CommandLine LIKE '%SetStringValue%' ESCAPE '\\'))))"
         ],
         "filename": "",
         "channel": [
@@ -6229,10 +6227,10 @@
         ]
     },
     {
-        "title": "New Process Created Via Wmic.EXE",
+        "title": "Process Creation Attempt via Wmic.EXE",
         "id": "526be59f-a573-4eea-b5f7-f0973207634d",
         "status": "test",
-        "description": "Detects new process creation using WMIC via the \"process call create\" flag",
+        "description": "Detects the attempt to create a process via \"wmic\" with the \"process call create\" flag, which might\nindicate an attempt to execute a malicious process on the compromised host. Adversaries may use\nwmic to execute a process on the compromised host as part of their attack. This event is triggered on\non attempt and process creation can be either successful or unsuccessful.\n",
         "author": "Michael Haag, Florian Roth (Nextron Systems), juju4, oscd.community",
         "tags": [
             "attack.execution",
@@ -8031,21 +8029,23 @@
         ]
     },
     {
-        "title": "Process Reconnaissance Via Wmic.EXE",
+        "title": "Potential Process Reconnaissance via Wmic.EXE",
         "id": "221b251a-357a-49a9-920a-271802777cc0",
         "status": "test",
-        "description": "Detects the execution of \"wmic\" with the \"process\" flag, which adversary might use to list processes running on the compromised host or list installed software hotfixes and patches.",
+        "description": "Detects the execution of \"wmic\" with the \"process\" flag, which might indicate an attempt to perform reconnaissance on running processes.\nAdversaries may use wmic to query for running processes and their details as part of their reconnaissance efforts.\n",
         "author": "frack113",
         "tags": [
             "attack.execution",
-            "attack.t1047"
+            "attack.t1047",
+            "attack.discovery",
+            "attack.t1057"
         ],
         "falsepositives": [
             "Unknown"
         ],
         "level": "medium",
         "rule": [
-            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (((NewProcessName LIKE '%\\\\WMIC.exe' ESCAPE '\\' OR OriginalFileName='wmic.exe') AND CommandLine LIKE '%process%' ESCAPE '\\') AND (NOT (CommandLine LIKE '%call%' ESCAPE '\\' AND CommandLine LIKE '%create%' ESCAPE '\\'))))"
+            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (((NewProcessName LIKE '%\\\\WMIC.exe' ESCAPE '\\' OR OriginalFileName='wmic.exe') AND CommandLine LIKE '%process%' ESCAPE '\\') AND (NOT ((CommandLine LIKE '%call%' ESCAPE '\\' AND CommandLine LIKE '%create%' ESCAPE '\\') OR (CommandLine LIKE '%call%' ESCAPE '\\' AND CommandLine LIKE '%terminate%' ESCAPE '\\')))))"
         ],
         "filename": "",
         "channel": [
@@ -11363,6 +11363,33 @@
         ]
     },
     {
+        "title": "Registry Enumeration via WMI Stdregprov",
+        "id": "a0e417e2-2fa1-40da-b6d2-e094cd5e1191",
+        "status": "experimental",
+        "description": "Detects the usage of wmic.exe to enumerate or read Windows registry via the WMI StdRegProv class read methods (EnumKey, EnumValues, GetStringValue, etc.).\nWhile registry reads are common, attackers may use this technique to perform reconnaissance and discover sensitive configuration values, credentials, or installed software.\nThe use of WMI as an alternative to standard tools like reg.exe can indicate an attempt to evade detection focused on traditional registry query commands.\n",
+        "author": "Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.execution",
+            "attack.t1047",
+            "attack.discovery",
+            "attack.t1012"
+        ],
+        "falsepositives": [
+            "Legitimate administrative activity"
+        ],
+        "level": "medium",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\wmic.exe' ESCAPE '\\' OR OriginalFileName='wmic.exe') AND ((CommandLine LIKE '%stdregprov%' ESCAPE '\\' AND CommandLine LIKE '%call%' ESCAPE '\\') AND (CommandLine LIKE '%CheckAccess%' ESCAPE '\\' OR CommandLine LIKE '%EnumKey%' ESCAPE '\\' OR CommandLine LIKE '%EnumValues%' ESCAPE '\\' OR CommandLine LIKE '%GetBinaryValue%' ESCAPE '\\' OR CommandLine LIKE '%GetDWORDValue%' ESCAPE '\\' OR CommandLine LIKE '%GetExpandedStringValue%' ESCAPE '\\' OR CommandLine LIKE '%GetMultiStringValue%' ESCAPE '\\' OR CommandLine LIKE '%GetQWORDValue%' ESCAPE '\\' OR CommandLine LIKE '%GetSecurityDescriptor%' ESCAPE '\\' OR CommandLine LIKE '%GetStringValue%' ESCAPE '\\'))))"
+        ],
+        "filename": "",
+        "channel": [
+            "Security"
+        ],
+        "eventid": [
+            4688
+        ]
+    },
+    {
         "title": "Folder Compress To Potentially Suspicious Output Via Compress-Archive Cmdlet",
         "id": "85a8e5ba-bd03-4bfb-bbfa-a4409a8f8b98",
         "status": "test",
@@ -11670,7 +11697,7 @@
         "title": "WMI Persistence - Script Event Consumer",
         "id": "ec1d5e28-8f3b-4188-a6f8-6e8df81dc28e",
         "status": "test",
-        "description": "Detects WMI script event consumers",
+        "description": "Detects the execution of a script event consumer. When scrcons.exe launches, it does so in response to the creation of an ActiveScriptEventConsumer instance\nand will execute registered JScript or VBScript code as a result.\nScript event consumers are a built-in Windows Management Instrumentation (WMI) class that\nautomatically executes a predefined script (in VBScript or JScript) whenever a specific system event occurs.\nAdversaries often abuse script event consumers to maintain persistence on a compromised host\nby executing a malicious script whenever a specific event occurs.\n",
         "author": "Thomas Patzke",
         "tags": [
             "attack.persistence",
@@ -11745,10 +11772,10 @@
         ]
     },
     {
-        "title": "Application Terminated Via Wmic.EXE",
+        "title": "Application Termination Attempt via Wmic.EXE",
         "id": "49d9671b-0a0a-4c09-8280-d215bfd30662",
         "status": "test",
-        "description": "Detects calls to the \"terminate\" function via wmic in order to kill an application",
+        "description": "Detects an attempt to terminate a process via \"wmic\" with the \"call terminate\" flag. Adversaries may\nuse wmic to terminate security products or other applications on the compromised host. This event is\ntriggered on on attempt and process creation can be either successful or unsuccessful.\n",
         "author": "Nasreddine Bencherchali (Nextron Systems)",
         "tags": [
             "attack.execution",
@@ -36342,10 +36369,10 @@
         ]
     },
     {
-        "title": "New ActiveScriptEventConsumer Created Via Wmic.EXE",
+        "title": "NewActiveScriptEventConsumer Creation Attempt via Wmic.EXE",
         "id": "ebef4391-1a81-4761-a40a-1db446c0e625",
         "status": "test",
-        "description": "Detects WMIC executions in which an event consumer gets created. This could be used to establish persistence",
+        "description": "Detects the attempt to create an ActiveScriptEventConsumer via WMIC.EXE.\nAn ActiveScriptEventConsumer is a built-in Windows Management Instrumentation (WMI) class that\nautomatically executes a predefined script (in VBScript or JScript) whenever a specific system event occurs.\nAdversaries often abuse ActiveScriptEventConsumer to maintain persistence on a compromised host by executing a malicious script whenever a specific event occurs.\n",
         "author": "Florian Roth (Nextron Systems)",
         "tags": [
             "attack.privilege-escalation",
@@ -36357,7 +36384,7 @@
         ],
         "level": "high",
         "rule": [
-            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (CommandLine LIKE '%ActiveScriptEventConsumer%' ESCAPE '\\' AND CommandLine LIKE '% CREATE %' ESCAPE '\\'))"
+            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((OriginalFileName='wmic.exe' OR NewProcessName LIKE '%\\\\WMIC.exe' ESCAPE '\\') AND (CommandLine LIKE '%ActiveScriptEventConsumer%' ESCAPE '\\' AND CommandLine LIKE '% CREATE %' ESCAPE '\\')))"
         ],
         "filename": "",
         "channel": [
