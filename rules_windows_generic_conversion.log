@@ -1,9 +1,9 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - GENERIC
 ================================================================================
-Timestamp: 2026-06-24 05:13:44
-Total rules processed: 2856
-Successful conversions: 2823
+Timestamp: 2026-06-25 05:17:03
+Total rules processed: 2857
+Successful conversions: 2824
 Failed conversions: 33
 Success rate: 98.8%
 ================================================================================
@@ -177,7 +177,7 @@ ID:    5ea8faa8-db8b-45be-89b0-151b84c82702
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 ================================================================================
-SUCCESSFUL RULES (2823)
+SUCCESSFUL RULES (2824)
 --------------------------------------------------------------------------------
 sigma/rules/windows/driver_load/driver_load_win_pua_process_hacker.yml
 sigma/rules/windows/driver_load/driver_load_win_windivert.yml
@@ -778,6 +778,7 @@ sigma/rules/windows/process_creation/proc_creation_win_schtasks_delete_all.yml
 sigma/rules/windows/process_creation/proc_creation_win_netsh_port_forwarding.yml
 sigma/rules/windows/process_creation/proc_creation_win_hktl_localpotato.yml
 sigma/rules/windows/process_creation/proc_creation_win_pdqdeploy_runner_susp_children.yml
+sigma/rules/windows/process_creation/proc_creation_win_curl_upload_file_sharing_websites.yml
 sigma/rules/windows/process_creation/proc_creation_win_instalutil_no_log_execution.yml
 sigma/rules/windows/process_creation/proc_creation_win_cmd_del_execution.yml
 sigma/rules/windows/process_creation/proc_creation_win_hktl_htran_or_natbypass.yml

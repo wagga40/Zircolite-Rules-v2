@@ -1,11 +1,11 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - LINUX
 ================================================================================
-Timestamp: 2026-06-24 05:13:45
-Total rules processed: 209
-Successful conversions: 181
+Timestamp: 2026-06-25 05:17:04
+Total rules processed: 210
+Successful conversions: 182
 Failed conversions: 28
-Success rate: 86.6%
+Success rate: 86.7%
 ================================================================================
 
 FAILED RULES (28)
@@ -152,7 +152,7 @@ ID:    b3cec4e7-6901-4b0d-a02d-8ab2d8eb818b
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 ================================================================================
-SUCCESSFUL RULES (181)
+SUCCESSFUL RULES (182)
 --------------------------------------------------------------------------------
 sigma/rules/linux/process_creation/proc_creation_lnx_susp_curl_useragent.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_auditctl_clear_rules.yml
@@ -169,6 +169,7 @@ sigma/rules/linux/process_creation/proc_creation_lnx_omigod_scx_runasprovider_ex
 sigma/rules/linux/process_creation/proc_creation_lnx_clipboard_collection.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_nohup_susp_execution.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_susp_history_recon.yml
+sigma/rules/linux/process_creation/proc_creation_lnx_susp_exec_from_dev_shm.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_perl_reverse_shell.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_remote_access_tools_teamviewer_incoming_connection.yml
 sigma/rules/linux/process_creation/proc_creation_lnx_pua_trufflehog.yml
