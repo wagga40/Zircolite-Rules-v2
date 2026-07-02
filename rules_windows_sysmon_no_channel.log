@@ -1,4 +1,4 @@
-RULES REMOVED (no channel): 140
+RULES REMOVED (no channel): 142
 --------------------------------------------------------------------------------
 
 Title: Suspicious File Access to Browser Credential Storage
@@ -7,6 +7,10 @@ Level: low
 
 Title: Previously Installed IIS Module Was Removed
 ID:    9e1a1fdf-ee58-40ce-8e15-b66ca5a80e1f
+Level: low
+
+Title: EvilTokens PhaaS Kit Phishing Related Request - Proxy
+ID:    e0e121d0-be4d-4281-af7e-17abbba4a408
 Level: low
 
 Title: Access To Windows Credential History File By Uncommon Applications
@@ -51,6 +55,10 @@ Level: medium
 
 Title: Unsigned or Unencrypted SMB Connection to Share Established
 ID:    8d91f6e4-9f3b-4c21-ae41-2c5b7d9f7a12
+Level: medium
+
+Title: RedTail Cryptominer User-Agent
+ID:    6fd25dd1-527b-47c8-baa4-2a0e77279c6f
 Level: medium
 
 Title: Potential CVE-2024-3400 Exploitation - Palo Alto GlobalProtect OS Command Injection - File Creation

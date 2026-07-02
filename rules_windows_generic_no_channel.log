@@ -1,4 +1,4 @@
-RULES REMOVED (no channel): 649
+RULES REMOVED (no channel): 651
 --------------------------------------------------------------------------------
 
 Title: New PowerShell Instance Created
@@ -107,6 +107,10 @@ Level: low
 
 Title: Previously Installed IIS Module Was Removed
 ID:    9e1a1fdf-ee58-40ce-8e15-b66ca5a80e1f
+Level: low
+
+Title: EvilTokens PhaaS Kit Phishing Related Request - Proxy
+ID:    e0e121d0-be4d-4281-af7e-17abbba4a408
 Level: low
 
 Title: SNAKE Malware Installer Name Indicators
@@ -879,6 +883,10 @@ Level: medium
 
 Title: Removal Of SD Value to Hide Schedule Task - Registry
 ID:    acd74772-5f88-45c7-956b-6a7b36c294d2
+Level: medium
+
+Title: RedTail Cryptominer User-Agent
+ID:    6fd25dd1-527b-47c8-baa4-2a0e77279c6f
 Level: medium
 
 Title: DarkGate - Drop DarkGate Loader In C:\Temp Directory
