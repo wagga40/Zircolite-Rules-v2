@@ -13993,7 +13993,7 @@
         ],
         "level": "medium",
         "rule": [
-            "SELECT * FROM logs WHERE (Channel='Microsoft-Windows-PowerShell/Operational' OR Channel='PowerShellCore/Operational') AND (EventID=4104 AND (ScriptBlockText LIKE '%Start-Process%' ESCAPE '\\' AND ScriptBlockText LIKE '%-PassThru %' ESCAPE '\\' AND ScriptBlockText LIKE '%-FilePath %' ESCAPE '\\'))"
+            "SELECT * FROM logs WHERE (Channel='Microsoft-Windows-PowerShell/Operational' OR Channel='PowerShellCore/Operational') AND (EventID=4104 AND ((ScriptBlockText LIKE '%Start-Process %' ESCAPE '\\' OR ScriptBlockText LIKE '%saps %' ESCAPE '\\') AND (ScriptBlockText LIKE '%-PassThru %' ESCAPE '\\' AND ScriptBlockText LIKE '%-FilePath %' ESCAPE '\\')))"
         ],
         "filename": "",
         "channel": [

@@ -1,9 +1,9 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - SYSMON
 ================================================================================
-Timestamp: 2026-07-03 05:01:21
-Total rules processed: 2861
-Successful conversions: 2828
+Timestamp: 2026-07-04 04:55:41
+Total rules processed: 2863
+Successful conversions: 2830
 Failed conversions: 33
 Success rate: 98.8%
 ================================================================================
@@ -177,7 +177,7 @@ ID:    5ea8faa8-db8b-45be-89b0-151b84c82702
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 ================================================================================
-SUCCESSFUL RULES (2828)
+SUCCESSFUL RULES (2830)
 --------------------------------------------------------------------------------
 sigma/rules/windows/driver_load/driver_load_win_pua_process_hacker.yml
 sigma/rules/windows/driver_load/driver_load_win_windivert.yml
@@ -2615,6 +2615,8 @@ sigma/rules/windows/rules-emerging-threats/2026/Exploits/RedSun/pipe_created_win
 sigma/rules/windows/rules-emerging-threats/2026/Exploits/RedSun/proc_creation_win_redsun_conhost_via_tiering_engine.yml
 sigma/rules/windows/rules-emerging-threats/2026/Exploits/RedSun/file_event_win_exploit_redsun_indicators.yml
 sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-33829/proc_creation_win_exploit_cve_2026_33829.yml
+sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-31431/proc_creation_lnx_exploit_cve_2026_31431_copyfail.yml
+sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-31431/lnx_auditd_exploit_cve_2026_31431_af_alg_socket_creation.yml
 sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-41089/win_application_error_exploit_cve_2026_41089_lsass_netlogon_crash.yml
 sigma/rules/windows/rules-emerging-threats/2026/TA/TeamPCP/proc_creation_lnx_teampcp_litellm_supply_chain_attack_indicators.yml
 sigma/rules/windows/rules-emerging-threats/2026/TA/TeamPCP/file_event_lnx_teampcp_litellm_supply_chain_attack_indicators.yml

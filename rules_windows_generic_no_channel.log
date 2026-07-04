@@ -1,4 +1,4 @@
-RULES REMOVED (no channel): 651
+RULES REMOVED (no channel): 653
 --------------------------------------------------------------------------------
 
 Title: New PowerShell Instance Created
@@ -1919,6 +1919,14 @@ Level: high
 
 Title: Axios NPM Compromise File Creation Indicators - Linux
 ID:    b7cb840c-11f6-47f7-b3ef-5524739c9077
+Level: high
+
+Title: Authencesn Crypto Module Load via Modprobe - Copy-Fail Indicator
+ID:    474b415a-d917-4f3b-8c62-9e1a0d5f7b48
+Level: high
+
+Title: Linux AF_ALG Socket Creation - Kernel Crypto API Exploit Indicator
+ID:    474b415a-8b3d-4e6a-9f12-0d5c8a7b6e94
 Level: high
 
 Title: LiteLLM / TeamPCP Supply Chain Attack Indicators
