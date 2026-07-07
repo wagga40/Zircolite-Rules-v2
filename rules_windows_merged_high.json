@@ -23341,17 +23341,19 @@
         "title": "Execution Of Non-Existing File - Generic",
         "id": "71158e3f-df67-472b-930e-7d287acaa3e1",
         "status": "test",
-        "description": "Checks whether the image specified in a process creation event is not a full, absolute path (caused by process ghosting or other unorthodox methods to start a process)",
+        "description": "Detects process creation events where the Image field lacks an absolute path,\nwhich occurs when the backing file no longer exists on disk at the time of\nlogging - commonly caused by Process Ghosting or other unorthodox process creation techniques.\n",
         "author": "Max Altgelt (Nextron Systems)",
         "tags": [
-            "attack.stealth"
+            "attack.stealth",
+            "attack.privilege-escalation",
+            "attack.t1055"
         ],
         "falsepositives": [
             "Unknown"
         ],
         "level": "high",
         "rule": [
-            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NOT NewProcessName LIKE '%\\\\%' ESCAPE '\\') AND (NOT (NewProcessName IS NULL OR (NewProcessName='-' OR NewProcessName='') OR ((NewProcessName='System' OR NewProcessName='Registry' OR NewProcessName='MemCompression' OR NewProcessName='vmmem') OR (CommandLine='Registry' OR CommandLine='MemCompression' OR CommandLine='vmmem'))))))"
+            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NOT NewProcessName LIKE '%\\\\%' ESCAPE '\\') AND (NOT (NewProcessName IS NULL OR (NewProcessName='-' OR NewProcessName='') OR ((NewProcessName='MemCompression' OR NewProcessName='Registry' OR NewProcessName='System' OR NewProcessName='vmmem' OR NewProcessName='vmmemWSL') OR (CommandLine='MemCompression' OR CommandLine='Registry' OR CommandLine='vmmem' OR CommandLine='vmmemWSL'))))))"
         ],
         "filename": "",
         "channel": [
@@ -23365,17 +23367,19 @@
         "title": "Execution Of Non-Existing File - Sysmon",
         "id": "71158e3f-df67-472b-930e-7d287acaa3e1",
         "status": "test",
-        "description": "Checks whether the image specified in a process creation event is not a full, absolute path (caused by process ghosting or other unorthodox methods to start a process)",
+        "description": "Detects process creation events where the Image field lacks an absolute path,\nwhich occurs when the backing file no longer exists on disk at the time of\nlogging - commonly caused by Process Ghosting or other unorthodox process creation techniques.\n",
         "author": "Max Altgelt (Nextron Systems)",
         "tags": [
-            "attack.stealth"
+            "attack.stealth",
+            "attack.privilege-escalation",
+            "attack.t1055"
         ],
         "falsepositives": [
             "Unknown"
         ],
         "level": "high",
         "rule": [
-            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((NOT Image LIKE '%\\\\%' ESCAPE '\\') AND (NOT (Image IS NULL OR (Image='-' OR Image='') OR ((Image='System' OR Image='Registry' OR Image='MemCompression' OR Image='vmmem') OR (CommandLine='Registry' OR CommandLine='MemCompression' OR CommandLine='vmmem'))))))"
+            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((NOT Image LIKE '%\\\\%' ESCAPE '\\') AND (NOT (Image IS NULL OR (Image='-' OR Image='') OR ((Image='MemCompression' OR Image='Registry' OR Image='System' OR Image='vmmem' OR Image='vmmemWSL') OR (CommandLine='MemCompression' OR CommandLine='Registry' OR CommandLine='vmmem' OR CommandLine='vmmemWSL'))))))"
         ],
         "filename": "",
         "channel": [
