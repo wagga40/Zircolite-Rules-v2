@@ -1,9 +1,9 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - GENERIC
 ================================================================================
-Timestamp: 2026-07-08 04:36:28
-Total rules processed: 2863
-Successful conversions: 2830
+Timestamp: 2026-07-09 05:11:06
+Total rules processed: 2864
+Successful conversions: 2831
 Failed conversions: 33
 Success rate: 98.8%
 ================================================================================
@@ -177,7 +177,7 @@ ID:    5ea8faa8-db8b-45be-89b0-151b84c82702
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 ================================================================================
-SUCCESSFUL RULES (2830)
+SUCCESSFUL RULES (2831)
 --------------------------------------------------------------------------------
 sigma/rules/windows/driver_load/driver_load_win_pua_process_hacker.yml
 sigma/rules/windows/driver_load/driver_load_win_windivert.yml
@@ -2217,6 +2217,7 @@ sigma/rules/windows/builtin/windefend/win_defender_tamper_protection_trigger.yml
 sigma/rules/windows/builtin/windefend/win_defender_history_delete.yml
 sigma/rules/windows/builtin/windefend/win_defender_asr_psexec_wmi.yml
 sigma/rules/windows/builtin/windefend/win_defender_restored_quarantine_file.yml
+sigma/rules/windows/builtin/wmi/win_wmi_activity_nteventlogfile_cleareventlog.yml
 sigma/rules/windows/builtin/application/screenconnect/win_app_remote_access_tools_screenconnect_file_transfer.yml
 sigma/rules/windows/builtin/application/screenconnect/win_app_remote_access_tools_screenconnect_command_exec.yml
 sigma/rules/windows/builtin/application/mssqlserver/win_mssql_xp_cmdshell_audit_log.yml
