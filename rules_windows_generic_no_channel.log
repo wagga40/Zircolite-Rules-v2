@@ -1,4 +1,4 @@
-RULES REMOVED (no channel): 653
+RULES REMOVED (no channel): 657
 --------------------------------------------------------------------------------
 
 Title: New PowerShell Instance Created
@@ -887,6 +887,18 @@ Level: medium
 
 Title: RedTail Cryptominer User-Agent
 ID:    6fd25dd1-527b-47c8-baa4-2a0e77279c6f
+Level: medium
+
+Title: TanStack Supply-Chain Attack File Creation Indicators - Linux
+ID:    2b5e4d3f-7c9a-4fab-a8d1-3e6f5a7b8c9d
+Level: medium
+
+Title: TanStack Supply-Chain Attack File Creation Indicators - Windows
+ID:    8a3f2c1e-5d7b-4e9a-b6c8-1f2a3d4e5f6a
+Level: medium
+
+Title: TanStack Supply-Chain Attack DNS Indicators
+ID:    ac5a4e3f-7f9d-6abc-d8ea-3b4c5f6a7b8c
 Level: medium
 
 Title: DarkGate - Drop DarkGate Loader In C:\Temp Directory
@@ -1919,6 +1931,10 @@ Level: high
 
 Title: Axios NPM Compromise File Creation Indicators - Linux
 ID:    b7cb840c-11f6-47f7-b3ef-5524739c9077
+Level: high
+
+Title: TanStack Supply-Chain Attack Execution Indicators - Linux
+ID:    3c6f5e4a-8d0b-6abc-d9e2-4f7a6b8c9d0e
 Level: high
 
 Title: Authencesn Crypto Module Load via Modprobe - Copy-Fail Indicator

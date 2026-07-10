@@ -19827,6 +19827,42 @@
         ]
     },
     {
+        "title": "AppLocker Application Would Have Been Blocked",
+        "id": "557e3bd3-7f21-495d-8d50-7c8bdfb8041c",
+        "status": "experimental",
+        "description": "Detects when AppLocker \"Audit only\" enforcement mode reports that an Application, DLL, Script, MSI, or Packaged-App would have been blocked if AppLocker \"Enforce rules\" enforcement mode was enabled.\n",
+        "author": "heyyanu",
+        "tags": [
+            "attack.execution",
+            "attack.t1204.002",
+            "attack.t1059.001",
+            "attack.t1059.003",
+            "attack.t1059.005",
+            "attack.t1059.006",
+            "attack.t1059.007"
+        ],
+        "falsepositives": [
+            "Expected during AppLocker policy testing and audit mode deployments"
+        ],
+        "level": "medium",
+        "rule": [
+            "SELECT * FROM logs WHERE (Channel='Microsoft-Windows-AppLocker/MSI and Script' OR Channel='Microsoft-Windows-AppLocker/EXE and DLL' OR Channel='Microsoft-Windows-AppLocker/Packaged app-Deployment' OR Channel='Microsoft-Windows-AppLocker/Packaged app-Execution') AND (EventID=8003 OR EventID=8006 OR EventID=8021 OR EventID=8024)"
+        ],
+        "filename": "",
+        "channel": [
+            "Microsoft-Windows-AppLocker/EXE and DLL",
+            "Microsoft-Windows-AppLocker/MSI and Script",
+            "Microsoft-Windows-AppLocker/Packaged app-Deployment",
+            "Microsoft-Windows-AppLocker/Packaged app-Execution"
+        ],
+        "eventid": [
+            8003,
+            8006,
+            8021,
+            8024
+        ]
+    },
+    {
         "title": "OpenSSH Server Listening On Socket",
         "id": "3ce8e9a4-bc61-4c9b-8e69-d7e2492a8781",
         "status": "test",
@@ -50487,6 +50523,33 @@
         "level": "high",
         "rule": [
             "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (((ParentProcessName LIKE '%\\\\node.exe' ESCAPE '\\' OR ParentProcessName LIKE '%\\\\bun.exe' ESCAPE '\\') AND NewProcessName LIKE '%\\\\cmd.exe' ESCAPE '\\' AND (CommandLine LIKE '%cscript%' ESCAPE '\\' AND CommandLine LIKE '%AppData\\\\Local\\\\Temp%' ESCAPE '\\' AND CommandLine LIKE '%//nologo && del%' ESCAPE '\\' AND CommandLine LIKE '%6202033.vbs%' ESCAPE '\\')) OR ((NewProcessName LIKE '%\\\\curl.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\powershell.exe' ESCAPE '\\') AND CommandLine LIKE '%http://sfrclak.com%' ESCAPE '\\') OR (OriginalFileName='PowerShell.EXE' AND CommandLine LIKE '%\"C:\\\\ProgramData\\\\wt.exe\" -w hidden -ep bypass -file%' ESCAPE '\\')))"
+        ],
+        "filename": "",
+        "channel": [
+            "Security"
+        ],
+        "eventid": [
+            4688
+        ]
+    },
+    {
+        "title": "TanStack Supply-Chain Attack Execution Indicators - Windows",
+        "id": "9b4f3d2e-6e8c-5fab-c7d9-2a3b4e5f6a7b",
+        "status": "experimental",
+        "description": "Detects process execution indicators associated with the Mini Shai-Hulud supply-chain campaign targeting TanStack npm packages and others such as mistralai, uipath reported on early May 2026.",
+        "author": "Leonardo Gasparini",
+        "tags": [
+            "attack.execution",
+            "attack.t1059.007",
+            "attack.t1204.002",
+            "detection.emerging-threats"
+        ],
+        "falsepositives": [
+            "Unlikely"
+        ],
+        "level": "high",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (NewProcessName LIKE '%\\\\bun.exe' ESCAPE '\\' AND (CommandLine LIKE '%run%' ESCAPE '\\' AND CommandLine LIKE '%tanstack\\_runner.js%' ESCAPE '\\')))"
         ],
         "filename": "",
         "channel": [

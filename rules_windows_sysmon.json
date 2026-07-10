@@ -25110,6 +25110,42 @@
         ]
     },
     {
+        "title": "AppLocker Application Would Have Been Blocked",
+        "id": "557e3bd3-7f21-495d-8d50-7c8bdfb8041c",
+        "status": "experimental",
+        "description": "Detects when AppLocker \"Audit only\" enforcement mode reports that an Application, DLL, Script, MSI, or Packaged-App would have been blocked if AppLocker \"Enforce rules\" enforcement mode was enabled.\n",
+        "author": "heyyanu",
+        "tags": [
+            "attack.execution",
+            "attack.t1204.002",
+            "attack.t1059.001",
+            "attack.t1059.003",
+            "attack.t1059.005",
+            "attack.t1059.006",
+            "attack.t1059.007"
+        ],
+        "falsepositives": [
+            "Expected during AppLocker policy testing and audit mode deployments"
+        ],
+        "level": "medium",
+        "rule": [
+            "SELECT * FROM logs WHERE (Channel='Microsoft-Windows-AppLocker/MSI and Script' OR Channel='Microsoft-Windows-AppLocker/EXE and DLL' OR Channel='Microsoft-Windows-AppLocker/Packaged app-Deployment' OR Channel='Microsoft-Windows-AppLocker/Packaged app-Execution') AND (EventID=8003 OR EventID=8006 OR EventID=8021 OR EventID=8024)"
+        ],
+        "filename": "",
+        "channel": [
+            "Microsoft-Windows-AppLocker/EXE and DLL",
+            "Microsoft-Windows-AppLocker/MSI and Script",
+            "Microsoft-Windows-AppLocker/Packaged app-Deployment",
+            "Microsoft-Windows-AppLocker/Packaged app-Execution"
+        ],
+        "eventid": [
+            8003,
+            8006,
+            8021,
+            8024
+        ]
+    },
+    {
         "title": "OpenSSH Server Listening On Socket",
         "id": "3ce8e9a4-bc61-4c9b-8e69-d7e2492a8781",
         "status": "test",
@@ -30297,6 +30333,64 @@
         ],
         "eventid": [
             1
+        ]
+    },
+    {
+        "title": "TanStack Supply-Chain Attack File Creation Indicators - Windows",
+        "id": "8a3f2c1e-5d7b-4e9a-b6c8-1f2a3d4e5f6a",
+        "status": "experimental",
+        "description": "Detects file creation indicators associated with the Mini Shai-Hulud supply-chain campaign targeting TanStack npm packages and others such as mistralai, uipath, etc reported on early May 2026.",
+        "author": "Leonardo Gasparini",
+        "tags": [
+            "attack.initial-access",
+            "attack.t1195.002",
+            "attack.execution",
+            "attack.t1059.007",
+            "attack.persistence",
+            "attack.t1554",
+            "detection.emerging-threats"
+        ],
+        "falsepositives": [
+            "Unknown"
+        ],
+        "level": "medium",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=11 AND ((TargetFilename LIKE '%\\\\router\\_init.js' ESCAPE '\\' OR TargetFilename LIKE '%\\\\tanstack\\_runner.js' ESCAPE '\\') OR (TargetFilename LIKE '%\\\\.claude\\\\router\\_runtime.js' ESCAPE '\\' OR TargetFilename LIKE '%\\\\.vscode\\\\router\\_runtime.js' ESCAPE '\\')))"
+        ],
+        "filename": "",
+        "channel": [
+            "Microsoft-Windows-Sysmon/Operational"
+        ],
+        "eventid": [
+            11
+        ]
+    },
+    {
+        "title": "TanStack Supply-Chain Attack DNS Indicators",
+        "id": "ac5a4e3f-7f9d-6abc-d8ea-3b4c5f6a7b8c",
+        "status": "experimental",
+        "description": "Detects DNS queries to attacker-controlled infrastructure used by the Mini Shai-Hulud campaign targeting TanStack npm packages along with other packages such as mistralai, uipath and so on.\nThe domain git-tanstack.com (registered May 9, 2026) hosted secondary payloads including transformers.pyz.\nThe filev2.getsession.org endpoint was used for credential exfiltration via the Session protocol.\n",
+        "author": "Leonardo Gasparini",
+        "tags": [
+            "attack.command-and-control",
+            "attack.t1071.001",
+            "attack.exfiltration",
+            "attack.t1048",
+            "detection.emerging-threats"
+        ],
+        "falsepositives": [
+            "Unknown"
+        ],
+        "level": "medium",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=22 AND (QueryName='git-tanstack.com' OR QueryName='filev2.getsession.org'))"
+        ],
+        "filename": "",
+        "channel": [
+            "Microsoft-Windows-Sysmon/Operational"
+        ],
+        "eventid": [
+            22
         ]
     },
     {
@@ -61995,6 +62089,33 @@
         "level": "high",
         "rule": [
             "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (((ParentImage LIKE '%\\\\node.exe' ESCAPE '\\' OR ParentImage LIKE '%\\\\bun.exe' ESCAPE '\\') AND Image LIKE '%\\\\cmd.exe' ESCAPE '\\' AND (CommandLine LIKE '%cscript%' ESCAPE '\\' AND CommandLine LIKE '%AppData\\\\Local\\\\Temp%' ESCAPE '\\' AND CommandLine LIKE '%//nologo && del%' ESCAPE '\\' AND CommandLine LIKE '%6202033.vbs%' ESCAPE '\\')) OR ((Image LIKE '%\\\\curl.exe' ESCAPE '\\' OR Image LIKE '%\\\\powershell.exe' ESCAPE '\\') AND CommandLine LIKE '%http://sfrclak.com%' ESCAPE '\\') OR (OriginalFileName='PowerShell.EXE' AND CommandLine LIKE '%\"C:\\\\ProgramData\\\\wt.exe\" -w hidden -ep bypass -file%' ESCAPE '\\')))"
+        ],
+        "filename": "",
+        "channel": [
+            "Microsoft-Windows-Sysmon/Operational"
+        ],
+        "eventid": [
+            1
+        ]
+    },
+    {
+        "title": "TanStack Supply-Chain Attack Execution Indicators - Windows",
+        "id": "9b4f3d2e-6e8c-5fab-c7d9-2a3b4e5f6a7b",
+        "status": "experimental",
+        "description": "Detects process execution indicators associated with the Mini Shai-Hulud supply-chain campaign targeting TanStack npm packages and others such as mistralai, uipath reported on early May 2026.",
+        "author": "Leonardo Gasparini",
+        "tags": [
+            "attack.execution",
+            "attack.t1059.007",
+            "attack.t1204.002",
+            "detection.emerging-threats"
+        ],
+        "falsepositives": [
+            "Unlikely"
+        ],
+        "level": "high",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (Image LIKE '%\\\\bun.exe' ESCAPE '\\' AND (CommandLine LIKE '%run%' ESCAPE '\\' AND CommandLine LIKE '%tanstack\\_runner.js%' ESCAPE '\\')))"
         ],
         "filename": "",
         "channel": [

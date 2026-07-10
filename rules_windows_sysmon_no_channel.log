@@ -1,4 +1,4 @@
-RULES REMOVED (no channel): 144
+RULES REMOVED (no channel): 146
 --------------------------------------------------------------------------------
 
 Title: Suspicious File Access to Browser Credential Storage
@@ -59,6 +59,10 @@ Level: medium
 
 Title: RedTail Cryptominer User-Agent
 ID:    6fd25dd1-527b-47c8-baa4-2a0e77279c6f
+Level: medium
+
+Title: TanStack Supply-Chain Attack File Creation Indicators - Linux
+ID:    2b5e4d3f-7c9a-4fab-a8d1-3e6f5a7b8c9d
 Level: medium
 
 Title: Potential CVE-2024-3400 Exploitation - Palo Alto GlobalProtect OS Command Injection - File Creation
@@ -171,6 +175,10 @@ Level: high
 
 Title: Axios NPM Compromise File Creation Indicators - Linux
 ID:    b7cb840c-11f6-47f7-b3ef-5524739c9077
+Level: high
+
+Title: TanStack Supply-Chain Attack Execution Indicators - Linux
+ID:    3c6f5e4a-8d0b-6abc-d9e2-4f7a6b8c9d0e
 Level: high
 
 Title: Authencesn Crypto Module Load via Modprobe - Copy-Fail Indicator
