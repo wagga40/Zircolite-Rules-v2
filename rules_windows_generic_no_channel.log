@@ -1,4 +1,4 @@
-RULES REMOVED (no channel): 657
+RULES REMOVED (no channel): 660
 --------------------------------------------------------------------------------
 
 Title: New PowerShell Instance Created
@@ -627,6 +627,10 @@ Level: medium
 
 Title: TanStack Supply-Chain Attack File Creation Indicators - Windows
 ID:    8a3f2c1e-5d7b-4e9a-b6c8-1f2a3d4e5f6a
+Level: medium
+
+Title: WordPress Wp2shell REST Batch Endpoint Exploitation
+ID:    b8d5f301-2c49-4e6d-af83-4a5b6c7d8e9f
 Level: medium
 
 Title: DarkGate - Drop DarkGate Loader In C:\Temp Directory
@@ -1869,6 +1873,10 @@ Title: Authencesn Crypto Module Load via Modprobe - Copy-Fail Indicator
 ID:    474b415a-d917-4f3b-8c62-9e1a0d5f7b48
 Level: high
 
+Title: WordPress Wp2shell Exploitation Tool User-Agent
+ID:    a7c4e2f9-1b38-4d5c-9e72-3f4a5b6c7d8e
+Level: high
+
 Title: LiteLLM / TeamPCP Supply Chain Attack Indicators
 ID:    36603778-030c-43c4-8cbb-cd3c1d1a80c7
 Level: high
@@ -2559,6 +2567,10 @@ Level: critical
 
 Title: UNC4841 - Potential SEASPY Execution
 ID:    f6a711f3-d032-4f9e-890b-bbe776236c84
+Level: critical
+
+Title: WordPress Wp2shell Webshell Plugin Access
+ID:    c9e6f412-3d50-4f7e-bf94-5b6c7d8e9f0a
 Level: critical
 
 Title: RedSun - TieringEngineService.exe Staged in RS-Prefixed Temp Dir

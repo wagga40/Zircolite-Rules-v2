@@ -1,9 +1,9 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - SYSMON
 ================================================================================
-Timestamp: 2026-07-20 04:56:07
-Total rules processed: 2870
-Successful conversions: 2837
+Timestamp: 2026-07-21 04:36:30
+Total rules processed: 2873
+Successful conversions: 2840
 Failed conversions: 33
 Success rate: 98.9%
 ================================================================================
@@ -177,7 +177,7 @@ ID:    18f37338-b9bd-4117-a039-280c81f7a596
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 ================================================================================
-SUCCESSFUL RULES (2837)
+SUCCESSFUL RULES (2840)
 --------------------------------------------------------------------------------
 sigma/rules/windows/wmi_event/sysmon_wmi_susp_scripting.yml
 sigma/rules/windows/wmi_event/sysmon_wmi_event_subscription.yml
@@ -1919,6 +1919,9 @@ sigma/rules/windows/rules-emerging-threats/2026/Malware/TanStack-Supply-Chain/pr
 sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-41089/win_application_error_exploit_cve_2026_41089_lsass_netlogon_crash.yml
 sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-31431/lnx_auditd_exploit_cve_2026_31431_af_alg_socket_creation.yml
 sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-31431/proc_creation_lnx_exploit_cve_2026_31431_copyfail.yml
+sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-63030/web_exploit_cve_2026_63030_webshell_plugin_access.yml
+sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-63030/web_exploit_cve_2026_63030_wp2shell_tool_useragent.yml
+sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-63030/web_exploit_cve_2026_63030_batch_rest_route_abuse.yml
 sigma/rules/windows/rules-emerging-threats/2026/Exploits/RedSun/file_event_win_exploit_redsun_indicators.yml
 sigma/rules/windows/rules-emerging-threats/2026/Exploits/RedSun/proc_creation_win_redsun_conhost_via_tiering_engine.yml
 sigma/rules/windows/rules-emerging-threats/2026/Exploits/RedSun/win_defender_exploit_redsun_tiering_engine_detected_as_eicar.yml

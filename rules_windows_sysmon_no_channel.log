@@ -1,4 +1,4 @@
-RULES REMOVED (no channel): 146
+RULES REMOVED (no channel): 149
 --------------------------------------------------------------------------------
 
 Title: EvilTokens PhaaS Kit Phishing Related Request - Proxy
@@ -71,6 +71,10 @@ Level: medium
 
 Title: TanStack Supply-Chain Attack File Creation Indicators - Linux
 ID:    2b5e4d3f-7c9a-4fab-a8d1-3e6f5a7b8c9d
+Level: medium
+
+Title: WordPress Wp2shell REST Batch Endpoint Exploitation
+ID:    b8d5f301-2c49-4e6d-af83-4a5b6c7d8e9f
 Level: medium
 
 Title: Potential CVE-2024-3400 Exploitation - Palo Alto GlobalProtect OS Command Injection - File Creation
@@ -381,6 +385,10 @@ Title: Authencesn Crypto Module Load via Modprobe - Copy-Fail Indicator
 ID:    474b415a-d917-4f3b-8c62-9e1a0d5f7b48
 Level: high
 
+Title: WordPress Wp2shell Exploitation Tool User-Agent
+ID:    a7c4e2f9-1b38-4d5c-9e72-3f4a5b6c7d8e
+Level: high
+
 Title: LiteLLM / TeamPCP Supply Chain Attack Indicators
 ID:    36603778-030c-43c4-8cbb-cd3c1d1a80c7
 Level: high
@@ -559,6 +567,10 @@ Level: critical
 
 Title: UNC4841 - Potential SEASPY Execution
 ID:    f6a711f3-d032-4f9e-890b-bbe776236c84
+Level: critical
+
+Title: WordPress Wp2shell Webshell Plugin Access
+ID:    c9e6f412-3d50-4f7e-bf94-5b6c7d8e9f0a
 Level: critical
 
 Title: CVE-2024-1709 - ScreenConnect Authentication Bypass Exploitation
