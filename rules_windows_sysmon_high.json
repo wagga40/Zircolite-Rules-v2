@@ -22663,6 +22663,34 @@
         ]
     },
     {
+        "title": "Registry Hive File Staged Outside Standard User Profile Path",
+        "id": "a7f3c891-2e4d-4b6a-9f8c-d5e2a1b04c73",
+        "status": "experimental",
+        "description": "Detects the creation of a registry hive file (UsrClass.dat or NTUSER.DAT) outside of the standard user profile path.\nThese files generally contain various user-specific registry settings and are typically located in the user's profile directory.\nStaging these files outside of the standard path can be indicative of an attacker attempting to manipulate user registry settings\nfor persistence, privilege escalation, or dump user registry hives for credential harvesting.\n",
+        "author": "Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.privilege-escalation",
+            "attack.t1548",
+            "attack.credential-access",
+            "attack.t1003"
+        ],
+        "falsepositives": [
+            "Backup or profile migration software",
+            "Forensic acquisition tools"
+        ],
+        "level": "high",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=11 AND ((TargetFilename LIKE '%\\\\UsrClass.dat' ESCAPE '\\' OR TargetFilename LIKE '%\\\\NTUSER.DAT' ESCAPE '\\') AND (NOT (TargetFilename LIKE '%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\UsrClass.dat' ESCAPE '\\' OR TargetFilename REGEXP '(?i)^C:\\\\Users\\\\[^\\\\]+\\\\NTUSER\\.DAT$' OR (TargetFilename LIKE 'C:\\\\Windows\\\\System32\\\\config\\\\%' ESCAPE '\\' OR TargetFilename LIKE 'C:\\\\Windows\\\\SYSVOL\\\\%' ESCAPE '\\' OR TargetFilename LIKE 'C:\\\\Windows\\\\ServiceProfiles\\\\%' ESCAPE '\\')))))"
+        ],
+        "filename": "",
+        "channel": [
+            "Microsoft-Windows-Sysmon/Operational"
+        ],
+        "eventid": [
+            11
+        ]
+    },
+    {
         "title": "ISO File Created Within Temp Folders",
         "id": "2f9356ae-bf43-41b8-b858-4496d83b2acb",
         "status": "test",

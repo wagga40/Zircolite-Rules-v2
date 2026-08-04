@@ -1,4 +1,4 @@
-RULES REMOVED (no channel): 660
+RULES REMOVED (no channel): 662
 --------------------------------------------------------------------------------
 
 Title: New PowerShell Instance Created
@@ -391,6 +391,10 @@ Level: medium
 
 Title: Suspicious WSMAN Provider Image Loads
 ID:    ad1f4bb9-8dfb-4765-adb6-2a7cfb6c0f94
+Level: medium
+
+Title: Potentially Suspicious Image Load of Offreg.dll
+ID:    c9e5f013-4a6f-4d8c-9b0e-f7a4c3d26e95
 Level: medium
 
 Title: Potential DLL Sideloading Via JsSchHlp
@@ -1615,6 +1619,10 @@ Level: high
 
 Title: HackTool - CrackMapExec File Indicators
 ID:    736ffa74-5f6f-44ca-94ef-1c0df4f51d2a
+Level: high
+
+Title: Registry Hive File Staged Outside Standard User Profile Path
+ID:    a7f3c891-2e4d-4b6a-9f8c-d5e2a1b04c73
 Level: high
 
 Title: ISO File Created Within Temp Folders

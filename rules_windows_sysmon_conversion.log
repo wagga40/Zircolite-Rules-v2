@@ -1,9 +1,9 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - SYSMON
 ================================================================================
-Timestamp: 2026-08-03 04:51:36
-Total rules processed: 2873
-Successful conversions: 2840
+Timestamp: 2026-08-04 04:33:58
+Total rules processed: 2877
+Successful conversions: 2844
 Failed conversions: 33
 Success rate: 98.9%
 ================================================================================
@@ -177,7 +177,7 @@ ID:    0506a799-698b-43b4-85a1-ac4c84c720e9
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
 ================================================================================
-SUCCESSFUL RULES (2840)
+SUCCESSFUL RULES (2844)
 --------------------------------------------------------------------------------
 sigma/rules/windows/create_remote_thread/create_remote_thread_win_powershell_susp_targets.yml
 sigma/rules/windows/create_remote_thread/create_remote_thread_win_hktl_cobaltstrike.yml
@@ -337,6 +337,7 @@ sigma/rules/windows/image_load/image_load_side_load_ualapi.yml
 sigma/rules/windows/image_load/image_load_side_load_dbgcore.yml
 sigma/rules/windows/image_load/image_load_office_vbadll_load.yml
 sigma/rules/windows/image_load/image_load_wsman_provider_image_load.yml
+sigma/rules/windows/image_load/image_load_susp_offreg_dll_load.yml
 sigma/rules/windows/image_load/image_load_susp_baaupdate_dll_load.yml
 sigma/rules/windows/image_load/image_load_side_load_smadhook.yml
 sigma/rules/windows/image_load/image_load_dll_comsvcs_load_renamed_version_by_rundll32.yml
@@ -518,6 +519,7 @@ sigma/rules/windows/process_creation/proc_creation_win_wusa_cab_files_extraction
 sigma/rules/windows/process_creation/proc_creation_win_cmd_net_use_and_exec_combo.yml
 sigma/rules/windows/process_creation/proc_creation_win_hktl_invoke_obfuscation_clip.yml
 sigma/rules/windows/process_creation/proc_creation_win_reg_bitlocker.yml
+sigma/rules/windows/process_creation/proc_creation_win_susp_cross_user_process_spawn.yml
 sigma/rules/windows/process_creation/proc_creation_win_whoami_execution_from_high_priv_process.yml
 sigma/rules/windows/process_creation/proc_creation_win_lolbin_openwith.yml
 sigma/rules/windows/process_creation/proc_creation_win_net_use_mount_share.yml
@@ -1909,6 +1911,7 @@ sigma/rules/windows/file/file_event/file_event_win_powershell_drop_binary_or_scr
 sigma/rules/windows/file/file_event/file_event_win_bloodhound_collection.yml
 sigma/rules/windows/file/file_event/file_event_win_susp_diagcab.yml
 sigma/rules/windows/file/file_event/file_event_win_hktl_crackmapexec_indicators.yml
+sigma/rules/windows/file/file_event/file_event_win_susp_registry_hive_file_creation.yml
 sigma/rules/windows/file/file_event/file_event_win_initial_access_dll_search_order_hijacking.yml
 sigma/rules/windows/file/file_event/file_event_win_iso_file_mount.yml
 sigma/rules/windows/file/file_event/file_event_win_office_onenote_files_in_susp_locations.yml
@@ -2342,6 +2345,7 @@ sigma/rules/windows/builtin/security/win_security_metasploit_authentication.yml
 sigma/rules/windows/builtin/security/win_security_protected_storage_service_access.yml
 sigma/rules/windows/builtin/security/win_security_service_installation_by_unusal_client.yml
 sigma/rules/windows/builtin/security/win_security_susp_dsrm_password_change.yml
+sigma/rules/windows/builtin/security/win_security_explicit_credential_local_logon.yml
 sigma/rules/windows/builtin/security/win_security_susp_group_policy_abuse_privilege_addition.yml
 sigma/rules/windows/builtin/security/win_security_codeintegrity_check_failure.yml
 sigma/rules/windows/builtin/security/win_security_disable_event_auditing.yml

@@ -1008,6 +1008,33 @@
         ]
     },
     {
+        "title": "Suspicious Cross-User Process Spawn",
+        "id": "d2b7a134-9c3e-4f8a-b56d-e0c1f8a29b47",
+        "status": "experimental",
+        "description": "Detects suspicious spawning of a process under a different user context than the parent process.\nProcesses such as notepad.exe, calculator etc. are generally spawned under the same user context and\nalso they are often targeted as sacrificial process or decoy process to check successful privilege escalation.\n",
+        "author": "Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.privilege-escalation",
+            "attack.stealth",
+            "attack.t1055",
+            "attack.t1134"
+        ],
+        "falsepositives": [
+            "RunAs usage spawning one of the listed binaries under a different account"
+        ],
+        "level": "medium",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\notepad.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\calc.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\mspaint.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\wordpad.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\write.exe' ESCAPE '\\') AND (NOT User=ParentUser) AND (NOT (User IS NULL OR ParentUser IS NULL OR ((ParentUser='' OR ParentUser='-') OR (User='' OR User='-'))))))"
+        ],
+        "filename": "",
+        "channel": [
+            "Security"
+        ],
+        "eventid": [
+            4688
+        ]
+    },
+    {
         "title": "Potential Defense Evasion Via Binary Rename",
         "id": "36480ae1-a1cb-4eaa-a0d6-29801d7e9142",
         "status": "test",
@@ -18995,6 +19022,34 @@
         ],
         "eventid": [
             4697
+        ]
+    },
+    {
+        "title": "Potentially Suspicious Explicit Credential Local Logon",
+        "id": "e3c6d245-7b8f-4e2a-c17f-a9d0e5b38f62",
+        "status": "experimental",
+        "description": "Detects potentially suspicious explicit credential logon events where the user\nis trying to logon with explicit credentials (username and password) that are\ndifferent from the current user context. It might indicate an attacker attempting\nto escalate privileges after obtaining credentials for a different user account.\n",
+        "author": "Swachchhanda Shrawan Poudel (Nextron Systems)",
+        "tags": [
+            "attack.privilege-escalation",
+            "attack.stealth",
+            "attack.t1134",
+            "attack.t1134.003"
+        ],
+        "falsepositives": [
+            "RunAs usage from user-installed applications outside Program Files",
+            "Administrative scripts using explicit credentials from non-standard paths"
+        ],
+        "level": "medium",
+        "rule": [
+            "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4648 AND (TargetServerName='localhost' OR TargetInfo='localhost' OR (IpAddress='127.0.0.1' OR IpAddress='::1'))) AND (NOT (SubjectUserName LIKE '%$' ESCAPE '\\' OR (ProcessName LIKE 'C:\\\\Windows\\\\System32\\\\%' ESCAPE '\\' OR ProcessName LIKE 'C:\\\\Windows\\\\SysWOW64\\\\%' ESCAPE '\\' OR ProcessName LIKE 'C:\\\\Windows\\\\WinSxS\\\\%' ESCAPE '\\') OR (ProcessName LIKE 'C:\\\\Program Files\\\\%' ESCAPE '\\' OR ProcessName LIKE 'C:\\\\Program Files (x86)\\\\%' ESCAPE '\\') OR SubjectUserName=TargetUserName)))"
+        ],
+        "filename": "",
+        "channel": [
+            "Security"
+        ],
+        "eventid": [
+            4648
         ]
     },
     {
