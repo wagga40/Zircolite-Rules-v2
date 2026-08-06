@@ -1,14 +1,14 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - GENERIC
 ================================================================================
-Timestamp: 2026-08-05 04:33:21
-Total rules processed: 2877
-Successful conversions: 2844
-Failed conversions: 33
-Success rate: 98.9%
+Timestamp: 2026-08-06 04:34:12
+Total rules processed: 2880
+Successful conversions: 2845
+Failed conversions: 35
+Success rate: 98.8%
 ================================================================================
 
-FAILED RULES (33)
+FAILED RULES (35)
 --------------------------------------------------------------------------------
 
 Path:  sigma/rules/windows/builtin/win_alert_mimikatz_keywords.yml
@@ -176,8 +176,18 @@ Title: PwnKit Local Privilege Escalation
 ID:    0506a799-698b-43b4-85a1-ac4c84c720e9
 Error: Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.
 
+Path:  sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-54121/win_security_adcs_certighost_cert_issued_via_chase.yml
+Title: ADCS - Certighost Certificate Issued via CDC Chase (CVE-2026-54121)
+ID:    8b7e2c54-1f93-4a6d-b8e0-3c9d7f25a168
+Error: Attempt to convert unhandled placeholder 'known_cdcs' into query.
+
+Path:  sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-54121/win_security_adcs_certighost_cdc_chase_request.yml
+Title: ADCS - Certighost CDC Chase Certificate Request (CVE-2026-54121)
+ID:    c4a1f389-2e6b-4d9a-8f0c-b73e5a12d947
+Error: Attempt to convert unhandled placeholder 'known_cdcs' into query.
+
 ================================================================================
-SUCCESSFUL RULES (2844)
+SUCCESSFUL RULES (2845)
 --------------------------------------------------------------------------------
 sigma/rules/windows/create_remote_thread/create_remote_thread_win_powershell_susp_targets.yml
 sigma/rules/windows/create_remote_thread/create_remote_thread_win_hktl_cobaltstrike.yml
@@ -2321,6 +2331,7 @@ sigma/rules/windows/builtin/security/win_security_dcom_iertutil_dll_hijack.yml
 sigma/rules/windows/builtin/security/win_security_adcs_certificate_template_configuration_vulnerability_eku.yml
 sigma/rules/windows/builtin/security/win_security_sdelete_potential_secure_deletion.yml
 sigma/rules/windows/builtin/security/win_security_metasploit_or_impacket_smb_psexec_service_install.yml
+sigma/rules/windows/builtin/security/win_security_ad_replication_machine_account.yml
 sigma/rules/windows/builtin/security/win_security_kerberos_coercion_via_dns_object.yml
 sigma/rules/windows/builtin/security/win_security_transf_files_with_cred_data_via_network_shares.yml
 sigma/rules/windows/builtin/security/win_security_invoke_obfuscation_clip_services_security.yml
@@ -2401,7 +2412,6 @@ sigma/rules/windows/builtin/security/win_security_admin_share_access.yml
 sigma/rules/windows/builtin/security/win_security_external_device.yml
 sigma/rules/windows/builtin/security/win_security_syskey_registry_access.yml
 sigma/rules/windows/builtin/security/win_security_vssaudit_secevent_source_registration.yml
-sigma/rules/windows/builtin/security/win_security_dcsync.yml
 sigma/rules/windows/builtin/security/win_security_impacket_secretdump.yml
 sigma/rules/windows/builtin/security/win_security_ad_object_writedac_access.yml
 sigma/rules/windows/builtin/security/win_security_remote_powershell_session.yml
@@ -2956,6 +2966,7 @@ sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-31431/proc_cre
 sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-63030/web_exploit_cve_2026_63030_webshell_plugin_access.yml
 sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-63030/web_exploit_cve_2026_63030_batch_rest_route_abuse.yml
 sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-63030/web_exploit_cve_2026_63030_wp2shell_tool_useragent.yml
+sigma/rules/windows/rules-emerging-threats/2026/Exploits/CVE-2026-54121/win_security_adcs_certighost_ghost_machine_account_creation.yml
 sigma/rules/windows/rules-emerging-threats/2026/Malware/RedTail-Cryptominer/web_malware_redtail_useragent.yml
 sigma/rules/windows/rules-emerging-threats/2026/Malware/Axios-NPM-Compromise/file_event_win_axios_npm_compromise_indicators.yml
 sigma/rules/windows/rules-emerging-threats/2026/Malware/Axios-NPM-Compromise/file_event_lnx_axios_npm_compromise_indicators.yml
