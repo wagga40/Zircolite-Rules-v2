@@ -1,9 +1,9 @@
 ================================================================================
 SIGMA RULE CONVERSION LOG - SYSMON
 ================================================================================
-Timestamp: 2026-08-18 02:31:00
-Total rules processed: 2880
-Successful conversions: 2845
+Timestamp: 2026-08-19 02:33:26
+Total rules processed: 2883
+Successful conversions: 2848
 Failed conversions: 35
 Success rate: 98.8%
 ================================================================================
@@ -187,7 +187,7 @@ ID:    8b7e2c54-1f93-4a6d-b8e0-3c9d7f25a168
 Error: Attempt to convert unhandled placeholder 'known_cdcs' into query.
 
 ================================================================================
-SUCCESSFUL RULES (2845)
+SUCCESSFUL RULES (2848)
 --------------------------------------------------------------------------------
 sigma/rules/windows/process_creation/proc_creation_win_pua_adfind_susp_usage.yml
 sigma/rules/windows/process_creation/proc_creation_win_at_interactive_execution.yml
@@ -1157,6 +1157,7 @@ sigma/rules/windows/process_creation/proc_creation_win_certutil_certificate_inst
 sigma/rules/windows/process_creation/proc_creation_win_lolbin_susp_grpconv.yml
 sigma/rules/windows/process_creation/proc_creation_win_pua_nsudo.yml
 sigma/rules/windows/process_creation/proc_creation_win_dirlister_execution.yml
+sigma/rules/windows/process_creation/proc_creation_win_powershell_adsi_create_user.yml
 sigma/rules/windows/process_creation/proc_creation_win_bcdedit_boot_conf_tamper.yml
 sigma/rules/windows/process_creation/proc_creation_win_print_dump_sensitive_files.yml
 sigma/rules/windows/process_creation/proc_creation_win_powershell_set_acl_susp_location.yml
@@ -1305,6 +1306,7 @@ sigma/rules/windows/process_creation/proc_creation_win_ssm_agent_abuse.yml
 sigma/rules/windows/process_creation/proc_creation_win_citrix_trolleyexpress_procdump.yml
 sigma/rules/windows/process_creation/proc_creation_win_hktl_coercedpotato.yml
 sigma/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk_silent_install.yml
+sigma/rules/windows/process_creation/proc_creation_win_powershell_applocker_policy_discovery_via_get_applockerpolicy.yml
 sigma/rules/windows/process_creation/proc_creation_win_cloudflared_quicktunnel_execution.yml
 sigma/rules/windows/process_creation/proc_creation_win_sysinternals_procdump.yml
 sigma/rules/windows/process_creation/proc_creation_win_reg_lsa_disable_restricted_admin.yml
@@ -2853,6 +2855,7 @@ sigma/rules/windows/powershell/powershell_script/posh_ps_directorysearcher.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_dump_password_windows_credential_manager.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_veeam_credential_dumping_script.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_invoke_obfuscation_via_use_rundll32.yml
+sigma/rules/windows/powershell/powershell_script/posh_ps_adsi_create_user.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_hotfix_enum.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_win_api_susp_access.yml
 sigma/rules/windows/powershell/powershell_script/posh_ps_nishang_malicious_commandlets.yml
