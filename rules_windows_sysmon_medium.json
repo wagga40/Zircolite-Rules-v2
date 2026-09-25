@@ -29261,7 +29261,7 @@
         ],
         "level": "high",
         "rule": [
-            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (((Image LIKE '%\\\\EXCEL.EXE' ESCAPE '\\' OR Image LIKE '%\\\\POWERPNT.EXE' ESCAPE '\\' OR Image LIKE '%\\\\WINWORD.exe' ESCAPE '\\') OR (OriginalFileName='Excel.exe' OR OriginalFileName='POWERPNT.EXE' OR OriginalFileName='WinWord.exe')) AND (CommandLine LIKE '%http://%' ESCAPE '\\' OR CommandLine LIKE '%https://%' ESCAPE '\\')))"
+            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (((Image LIKE '%\\\\EXCEL.EXE' ESCAPE '\\' OR Image LIKE '%\\\\MSOXMLED.EXE' ESCAPE '\\' OR Image LIKE '%\\\\POWERPNT.EXE' ESCAPE '\\' OR Image LIKE '%\\\\WINWORD.exe' ESCAPE '\\') OR (OriginalFileName='Excel.exe' OR OriginalFileName='msoxmled.exe' OR OriginalFileName='POWERPNT.EXE' OR OriginalFileName='WinWord.exe')) AND (CommandLine LIKE '%http://%' ESCAPE '\\' OR CommandLine LIKE '%https://%' ESCAPE '\\')))"
         ],
         "filename": "",
         "channel": [
@@ -63198,7 +63198,7 @@
         ],
         "level": "critical",
         "rule": [
-            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (Hashes LIKE '%MD5=09D278F9DE118EF09163C6140255C690%' ESCAPE '\\' OR CommandLine LIKE '%Dumpert.dll%' ESCAPE '\\'))"
+            "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (Hashes LIKE '%IMPHASH=09D278F9DE118EF09163C6140255C690%' ESCAPE '\\' OR (CommandLine LIKE '%Dumpert.dll%' ESCAPE '\\' OR CommandLine LIKE '%Dumpert.exe%' ESCAPE '\\')))"
         ],
         "filename": "",
         "channel": [
