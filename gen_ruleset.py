@@ -1,295 +1,237 @@
+"""Generate independently validated, reproducible Zircolite rulesets."""
+
+import argparse
+import importlib.metadata
+import json
+import os
+import platform
+import sqlite3
 import sys
+import tempfile
+from copy import deepcopy
+from datetime import UTC, datetime
 from pathlib import Path
 
-# Add local pySigma-backend-sqlite to path before importing
-sys.path.insert(0, str(Path(__file__).parent / "pySigma-backend-sqlite"))
+from rule_bundles import windows_all_files
+from rule_conversion import artifact_name, artifact_rules, compile_source, retired_artifacts
+from rule_sources import digest, fetch_source, json_bytes, local_revision
+from ruleset_stats import update_readme_stats, verify_release
 
-from sigma.collection import SigmaCollection
-
-# import pysigma-backend-sqlite from local folder
-from sigma.backends.sqlite import sqliteBackend
-
-from sigma.pipelines.sysmon import sysmon_pipeline
-from sigma.pipelines.windows import windows_logsource_pipeline, windows_audit_pipeline
-
-import json
-from datetime import datetime
-
-# Paths
-rules_path_windows = r"./sigma/rules/windows/"
-rules_path_linux = r"./sigma/rules/linux/"
-
-# Ruleset configurations
-# Format: (suffix, output_filename_template)
-RULESET_CONFIGS = {
-    "sysmon": "rules_windows_sysmon",
-    "generic": "rules_windows_generic",
-    "merged": "rules_windows_merged",
-    "linux": "rules_linux",
-}
-
-# Level configurations for filtering
-# Each entry: (suffix, min_level_index) - levels at or above this index are included
-LEVEL_ORDER = ["informational", "low", "medium", "high", "critical"]
-LEVEL_FILTERS = [
-    ("", None),                    # All rules (no suffix, no filter)
-    ("_medium", "medium"),         # Medium to critical
-    ("_high", "high"),             # High to critical
-]
-
-def write_conversion_log(log_filename, name, total_rules, successful_rules, failed_rules):
-    """Write a detailed conversion log file."""
-    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    
-    with open(log_filename, 'w') as log:
-        log.write(f"{'='*80}\n")
-        log.write(f"SIGMA RULE CONVERSION LOG - {name.upper()}\n")
-        log.write(f"{'='*80}\n")
-        log.write(f"Timestamp: {timestamp}\n")
-        log.write(f"Total rules processed: {total_rules}\n")
-        log.write(f"Successful conversions: {len(successful_rules)}\n")
-        log.write(f"Failed conversions: {len(failed_rules)}\n")
-        log.write(f"Success rate: {len(successful_rules)/total_rules*100:.1f}%\n")
-        log.write(f"{'='*80}\n\n")
-        
-        # Failed rules section
-        log.write(f"FAILED RULES ({len(failed_rules)})\n")
-        log.write(f"{'-'*80}\n")
-        if failed_rules:
-            for rule in failed_rules:
-                log.write(f"\nPath:  {rule['path']}\n")
-                log.write(f"Title: {rule['title']}\n")
-                log.write(f"ID:    {rule['id']}\n")
-                log.write(f"Error: {rule['error']}\n")
-        else:
-            log.write("No failed rules.\n")
-        
-        log.write(f"\n{'='*80}\n")
-        log.write(f"SUCCESSFUL RULES ({len(successful_rules)})\n")
-        log.write(f"{'-'*80}\n")
-        for rule in successful_rules:
-            log.write(f"{rule['path']}\n")
-    
-    print(f'[+] Log written to {log_filename}')
+ROOT = Path(__file__).resolve().parent
+PACKAGES = ("pysigma", "pysigma-backend-sqlite", "pysigma-pipeline-sysmon", "pysigma-pipeline-windows")
 
 
-def convert_rule(backend, rule):
-    """Convert a single rule, returning (result, error_info) tuple."""
-    rule_path = str(getattr(rule.source, 'path', 'unknown') if rule.source else 'unknown')
-    rule_title = getattr(rule, 'title', 'unknown')
-    rule_id = str(getattr(rule, 'id', 'unknown'))
-    
-    try: 
-        result = backend.convert_rule(rule, "zircolite")[0]
-        return (result, None)
-    except Exception as e:
-        error_info = {
-            'path': rule_path,
-            'title': rule_title,
-            'id': rule_id,
-            'error': str(e)[:200]  # Truncate long error messages
-        }
-        return (None, error_info)
+def read_json(path, default):
+    return json.loads(path.read_text()) if path.exists() else default
 
-def ruleset_generator(name, base_output_name, input_rules, pipelines=None):
-    """Generate ruleset and return the rules (does not save to file).
-    If pipelines is None or empty, no pipeline is used (rules converted as-is)."""
-    print(f'[+] Initialisation ruleset : {name}')
-    if pipelines:
-        # Add pipelines to one another
-        combined_pipeline = pipelines[0]
-        for pipeline in pipelines[1:]:
-            combined_pipeline += pipeline
-        sqlite_backend = sqliteBackend(combined_pipeline)
+
+def write_json(path, value):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_bytes(json_bytes(value))
+    temporary.replace(path)
+
+
+def promote(output, files, previous):
+    """Stage a complete source, then replace it, rolling back on an I/O failure."""
+    paths = set(files) | set(previous)
+    for name in paths:
+        if Path(name).is_absolute() or ".." in Path(name).parts:
+            raise ValueError("Unsafe artifact path")
+    before = {name: (output / name).read_bytes() if (output / name).exists() else None for name in paths}
+    with tempfile.TemporaryDirectory(prefix=".rules-stage-", dir=output) as temporary:
+        staging = Path(temporary)
+        for name, data in files.items():
+            destination = staging / name
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_bytes(data)
+        try:
+            for name in sorted(paths):
+                destination = output / name
+                if name in files:
+                    destination.parent.mkdir(parents=True, exist_ok=True)
+                    os.replace(staging / name, destination)
+                elif destination.exists():
+                    destination.unlink()
+        except Exception:
+            for name, data in before.items():
+                destination = output / name
+                if data is None:
+                    destination.unlink(missing_ok=True)
+                else:
+                    destination.parent.mkdir(parents=True, exist_ok=True)
+                    destination.write_bytes(data)
+            raise
+
+
+def existing_official(output, manifest):
+    official, hashes = {}, {}
+    details = manifest["sources"].get("sigmahq")
+    for profile in ("sysmon", "generic", "linux"):
+        official[profile] = {}
+        for kind in ("events", "correlations"):
+            name = artifact_name("sigmahq", profile, kind)
+            official[profile][kind] = []
+            if details is not None and name not in details.get("artifacts", {}):
+                continue
+            path = output / name
+            if details is None and not path.exists():
+                continue
+            raw = path.read_bytes()
+            hashes[name] = digest(raw)
+            if details is not None and hashes[name] != details["artifacts"][name]:
+                raise ValueError(f"Official baseline artifact hash mismatch: {name}")
+            official[profile][kind] = json.loads(raw)
+    return official, {"repository": (details or {}).get("repository", "SigmaHQ/sigma"),
+                      "revision": (details or {}).get("revision"), "artifacts": hashes}
+
+
+def rebuild_windows_all(output):
+    """Atomically publish the bundle and its lineage after source promotions."""
+    manifest = read_json(output / "release-manifest.json", {"sources": {}})
+    files, details = windows_all_files(output, manifest)
+    previous = manifest.get("aggregates", {}).get("windows_all", {})
+    if details is None and not previous:
+        return
+    if details is None:
+        del manifest["aggregates"]["windows_all"]
     else:
-        # No pipeline: convert rules as-is (e.g. for Linux rules)
-        sqlite_backend = sqliteBackend(None)
-
-    rules = Path(input_rules)
-    if rules.is_dir():
-        pattern = "*.yml"
-        rule_list = list(rules.rglob(pattern))
-    else:
-        sys.exit(f"Log path {rules} is not a directory")
-    
-    rule_collection = SigmaCollection.load_ruleset(rule_list)
-
-    ruleset = []
-    failed_rules = []
-    successful_rules = []
-
-    total_rules = len(rule_collection)
-    print(f'[+] Conversion : {name} ({total_rules} rules)')
-
-    # Process rules sequentially to avoid multiprocessing serialization issues
-    # with pySigma's transformed detection items
-    for i, rule in enumerate(rule_collection, 1):
-        if i % 100 == 0 or i == total_rules:
-            print(f'    Processing: {i}/{total_rules}', end='\r')
-        
-        result, error_info = convert_rule(sqlite_backend, rule)
-        
-        if result is not None:
-            ruleset.append(result)
-            successful_rules.append({
-                'path': str(getattr(rule.source, 'path', 'unknown') if rule.source else 'unknown'),
-                'title': getattr(rule, 'title', 'unknown'),
-                'id': str(getattr(rule, 'id', 'unknown'))
-            })
-        else:
-            failed_rules.append(error_info)
-    
-    print()  # New line after progress
-    
-    if failed_rules:
-        print(f'[!] {len(failed_rules)} rules failed conversion')
-    
-    # Sort by level (low to critical)
-    ruleset = sorted(ruleset, key=lambda d: LEVEL_ORDER.index(d.get('level', 'informational')))
-    
-    print(f'[+] Done: {len(ruleset)} rules converted')
-    
-    # Write conversion log
-    log_filename = f"{base_output_name}_conversion.log"
-    write_conversion_log(log_filename, name, total_rules, successful_rules, failed_rules)
-    
-    return ruleset
+        manifest.setdefault("aggregates", {})["windows_all"] = details
+    promote(output, {**files, "release-manifest.json": json_bytes(manifest)}, previous.get("artifacts", {}))
 
 
-def remove_empty_channel_rules(ruleset, base_output_name):
-    """Remove converted rules that have no channel and log them. Returns the filtered ruleset."""
-    kept = []
-    removed = []
-    for rule in ruleset:
-        if rule.get("channel"):
-            kept.append(rule)
-        else:
-            removed.append(rule)
-    if removed:
-        print(f'[!] Removed {len(removed)} rules with no channel')
-        log_filename = f"{base_output_name}_no_channel.log"
-        with open(log_filename, 'w') as log:
-            log.write(f"RULES REMOVED (no channel): {len(removed)}\n")
-            log.write(f"{'-'*80}\n")
-            for rule in removed:
-                log.write(f"\nTitle: {rule.get('title', 'unknown')}\n")
-                log.write(f"ID:    {rule.get('id', 'unknown')}\n")
-                log.write(f"Level: {rule.get('level', 'unknown')}\n")
-        print(f'[+] No-channel log written to {log_filename}')
-    return kept
-
-
-def merge_rulesets(sysmon_rules, generic_rules):
-    """Merge sysmon and generic rulesets, deduplicating by rule ID.
-    - Same ID, same SQL: keep the generic version only.
-    - Same ID, different SQL: keep both, appending '- Sysmon' / '- Generic' to titles.
-    - Unique to one set: keep as-is."""
-    generic_by_id = {r["id"]: r for r in generic_rules if r.get("id")}
-    sysmon_by_id = {r["id"]: r for r in sysmon_rules if r.get("id")}
-
-    merged = []
-    seen_ids = set()
-    stats = {"generic_only": 0, "sysmon_only": 0, "same_sql": 0, "diff_sql": 0}
-
-    for rule_id, g_rule in generic_by_id.items():
-        seen_ids.add(rule_id)
-        if rule_id in sysmon_by_id:
-            s_rule = sysmon_by_id[rule_id]
-            if g_rule.get("rule") == s_rule.get("rule"):
-                merged.append(g_rule)
-                stats["same_sql"] += 1
+def generate(registry, sources, output, cache, exclusions, local_roots=None, revisions=None, audit=False):
+    output.mkdir(parents=True, exist_ok=True)
+    manifest_path = output / "release-manifest.json"
+    manifest = read_json(manifest_path, {"schema_version": 1, "sources": {}})
+    tools = {package: importlib.metadata.version(package) for package in PACKAGES}
+    tools.update(python=platform.python_version(), sqlite=sqlite3.sqlite_version)
+    official, official_baseline = None, None
+    failed = []
+    # Official output is the comparison baseline, including during a source-only run.
+    ordered = sorted(sources, key=lambda name: (name != "sigmahq", name))
+    for source in ordered:
+        spec = registry[source]
+        previous = manifest["sources"].get(source, {})
+        revision = None
+        now = datetime.now(UTC).isoformat(timespec="seconds")
+        print(f"[{source}] Fetching and validating", flush=True)
+        try:
+            if source != "sigmahq" and official is None:
+                official, official_baseline = existing_official(output, manifest)
+            if source in (local_roots or {}):
+                root = Path(local_roots[source]).resolve()
+                revision = local_revision(root, spec)
             else:
-                g_copy = dict(g_rule)
-                s_copy = dict(s_rule)
-                g_copy["title"] = g_rule.get("title", "") + " - Generic"
-                s_copy["title"] = s_rule.get("title", "") + " - Sysmon"
-                merged.append(g_copy)
-                merged.append(s_copy)
-                stats["diff_sql"] += 1
-        else:
-            merged.append(g_rule)
-            stats["generic_only"] += 1
+                root, revision = fetch_source(spec, cache / source, (revisions or {}).get(source))
+            license_bytes = (root / spec["license_file"]).read_bytes()
+            if not license_bytes.strip():
+                raise ValueError("Source license is empty")
+            outputs, report = compile_source(source, spec, root, exclusions)
+            report.update(repository=spec["repository"], revision=revision, tools=tools)
+            if source != "sigmahq":
+                report["official_baseline"] = official_baseline
+            artifacts, overlaps = artifact_rules(source, outputs, {} if source == "sigmahq" else official)
+            report["official_duplicates_removed"] = overlaps
+            report["artifacts"] = {name: len(rules) for name, rules in artifacts.items()}
+            if report["status"] != "validated":
+                write_json(output / "reports" / f"{source}.json", report)
+                reason = report.get("error") or f"{sum(not item['approved'] for item in report['failures'])} unexpected failures"
+                raise ValueError(f"{reason}; see reports/{source}.json")
+            files = {name: json_bytes(rules) for name, rules in artifacts.items()}
+            files[f"licenses/{source}.txt"] = license_bytes
+            # The successful report is kept with its rules; the latest attempt is separate.
+            files[f"provenance/{source}.json"] = json_bytes(report)
+            hashes = {name: digest(data) for name, data in files.items()}
+            if not audit:
+                unchanged = previous.get("revision") == revision and previous.get("artifacts") == hashes
+                candidate = deepcopy(manifest)
+                candidate["sources"][source] = {
+                    "status": "current", "repository": spec["repository"], "revision": revision,
+                    "license": spec["license"], "tools": tools, "artifacts": hashes,
+                    "rule_counts": report["artifacts"],
+                    "last_success": previous["last_success"] if unchanged else now,
+                }
+                promote(output, {**files, "release-manifest.json": json_bytes(candidate),
+                                 f"reports/{source}.json": json_bytes(report)},
+                        set(previous.get("artifacts", {})) | retired_artifacts(source, spec["profiles"]))
+                manifest = candidate
+            else:
+                write_json(output / "reports" / f"{source}.json", report)
+            if source == "sigmahq":
+                official = outputs
+                official_baseline = {
+                    "repository": spec["repository"], "revision": revision,
+                    "artifacts": {name: hashes[name] for profile in outputs for kind in outputs[profile]
+                                  if (name := artifact_name(source, profile, kind)) in artifacts},
+                }
+            print(f"[{source}] Validated {sum(p['events'] for p in report['profiles'].values())} detections and "
+                  f"{sum(p['correlations'] for p in report['profiles'].values())} correlations across profiles", flush=True)
+        except Exception as exc:
+            failed.append(source)
+            latest = read_json(output / "reports" / f"{source}.json", {})
+            if latest.get("revision") != revision or latest.get("status") != "failed":
+                latest = {"source": source, "status": "failed", "revision": revision, "error": str(exc)}
+                write_json(output / "reports" / f"{source}.json", latest)
+            if not audit:
+                manifest["sources"][source] = {
+                    **previous, "status": "stale" if previous.get("artifacts") else "unavailable",
+                    "repository": spec["repository"], "failed_revision": revision,
+                    "last_attempt": now, "error": str(exc),
+                }
+                write_json(manifest_path, manifest)
+            print(f"[{source}] FAILED: {exc}; previous rules retained", file=sys.stderr, flush=True)
+    if not audit:
+        rebuild_windows_all(output)
+        if (output / "README.md").exists():
+            update_readme_stats(output)
+    return failed
 
-    for rule_id, s_rule in sysmon_by_id.items():
-        if rule_id not in seen_ids:
-            merged.append(s_rule)
-            stats["sysmon_only"] += 1
 
-    # Include rules without an ID from both sets
-    merged.extend(r for r in generic_rules if not r.get("id"))
-    merged.extend(r for r in sysmon_rules if not r.get("id"))
-
-    merged = sorted(merged, key=lambda d: LEVEL_ORDER.index(d.get('level', 'informational')))
-
-    print(f'[+] Merged ruleset: {len(merged)} rules')
-    print(f'    Generic only: {stats["generic_only"]}, Sysmon only: {stats["sysmon_only"]}')
-    print(f'    Same SQL (kept generic): {stats["same_sql"]}, Different SQL (kept both): {stats["diff_sql"]}')
-
-    return merged
+def assignments(values):
+    result = {}
+    for value in values:
+        name, separator, content = value.partition("=")
+        if not separator or not name or not content:
+            raise ValueError("Expected SOURCE=VALUE")
+        result[name] = content
+    return result
 
 
-def filter_ruleset_by_level(ruleset, min_level):
-    """Filter ruleset to include only rules at or above the minimum level."""
-    if min_level is None:
-        return ruleset
-    
-    min_level_index = LEVEL_ORDER.index(min_level)
-    filtered = [
-        rule for rule in ruleset 
-        if LEVEL_ORDER.index(rule.get('level', 'informational')) >= min_level_index
-    ]
-    return filtered
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--sources", nargs="+", help="Registry source names; default: all")
+    parser.add_argument("--output-dir", type=Path, default=ROOT)
+    parser.add_argument("--cache-dir", type=Path, default=ROOT / ".cache" / "rule-sources")
+    parser.add_argument("--registry", type=Path, default=ROOT / "sources.json")
+    parser.add_argument("--exclusions", type=Path, default=ROOT / "exclusions.json")
+    parser.add_argument("--source-root", action="append", default=[], metavar="SOURCE=PATH",
+                        help="Explicit local input override, recorded with a content hash")
+    parser.add_argument("--revision", action="append", default=[], metavar="SOURCE=SHA",
+                        help="Fetch an immutable revision instead of resolving the branch")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--audit", action="store_true", help="Write validation reports only; never publish rules")
+    mode.add_argument("--verify-release", action="store_true", help="Verify published hashes, counts, and README statistics and exit")
+    mode.add_argument("--update-readme-stats", action="store_true", help="Refresh README statistics from verified local artifacts and exit")
+    args = parser.parse_args()
+    if args.verify_release:
+        verify_release(args.output_dir.resolve())
+        return 0
+    if args.update_readme_stats:
+        update_readme_stats(args.output_dir.resolve())
+        return 0
+    registry = read_json(args.registry, {})
+    roots, revisions = assignments(args.source_root), assignments(args.revision)
+    selected = args.sources or list(registry)
+    unknown = (set(selected) | roots.keys() | revisions.keys()) - registry.keys()
+    if unknown:
+        parser.error("Unknown sources: " + ", ".join(sorted(unknown)))
+    if roots.keys() & revisions.keys():
+        parser.error("Use either a local root or a remote revision for each source")
+    failed = generate(registry, selected, args.output_dir.resolve(), args.cache_dir.resolve(),
+                      read_json(args.exclusions, []), roots, revisions, args.audit)
+    return 1 if failed else 0
 
 
-def save_filtered_rulesets(base_name, ruleset):
-    """Save filtered versions of the ruleset based on LEVEL_FILTERS."""
-    for suffix, min_level in LEVEL_FILTERS:
-        filtered = filter_ruleset_by_level(ruleset, min_level)
-        output_filename = f"{base_name}{suffix}.json"
-        
-        with open(output_filename, 'w') as outfile:
-            json.dump(filtered, outfile, indent=4, ensure_ascii=True)
-        
-        level_desc = f"{min_level}+" if min_level else "all"
-        print(f'[+] Saved {output_filename}: {len(filtered)} rules ({level_desc})')
-
-
-if __name__ == '__main__':
-    # Generate sysmon ruleset
-    sysmon_rules = ruleset_generator(
-        "sysmon",
-        RULESET_CONFIGS["sysmon"],
-        rules_path_windows,
-        [sysmon_pipeline(), windows_logsource_pipeline()]
-    )
-    sysmon_rules = remove_empty_channel_rules(sysmon_rules, RULESET_CONFIGS["sysmon"])
-    save_filtered_rulesets(RULESET_CONFIGS["sysmon"], sysmon_rules)
-    
-    print()  # Separator
-    
-    # Generate generic ruleset
-    generic_rules = ruleset_generator(
-        "generic",
-        RULESET_CONFIGS["generic"],
-        rules_path_windows,
-        [windows_audit_pipeline(), windows_logsource_pipeline()]
-    )
-    generic_rules = remove_empty_channel_rules(generic_rules, RULESET_CONFIGS["generic"])
-    save_filtered_rulesets(RULESET_CONFIGS["generic"], generic_rules)
-
-    print()  # Separator
-
-    # Merge sysmon + generic into a combined ruleset
-    merged_rules = merge_rulesets(sysmon_rules, generic_rules)
-    save_filtered_rulesets(RULESET_CONFIGS["merged"], merged_rules)
-
-    print()  # Separator
-
-    # Generate Linux ruleset (no pipeline)
-    linux_rules = ruleset_generator(
-        "linux",
-        RULESET_CONFIGS["linux"],
-        rules_path_linux,
-        pipelines=None,
-    )
-    save_filtered_rulesets(RULESET_CONFIGS["linux"], linux_rules)
+if __name__ == "__main__":
+    sys.exit(main())

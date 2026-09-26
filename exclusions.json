@@ -1,0 +1,1742 @@
+[
+  {
+    "document": "0",
+    "error": "Unsupported Sigma collection action: 'correlation'",
+    "path": "2022_HTMLSmuggling/correlation_temporal_html_smuggling.yml",
+    "profile": "*",
+    "reason": "Reviewed legacy action: correlation syntax references filenames and uses ordered: true; exclude until upstream supplies a supported Sigma correlation definition without inventing reference or ordering semantics.",
+    "sha256": "5a866eeb502668fb7ec0ece96050f113ddb227783aed7b4cc8688a406ddc3932",
+    "source": "mbabinski",
+    "stage": "discovery"
+  },
+  {
+    "document": "0",
+    "error": "Sigma rule must contain at least one condition",
+    "path": "hayabusa/builtin/Security/LogonLogoff/Logon/Sec_4624_Info_Logon-Type-4-Batch.yml",
+    "profile": "*",
+    "reason": "Invalid upstream detection structure or modifier type; do not invent detection semantics.",
+    "sha256": "6de430c21b594a3c6b5062a5e7108519d9e15e3e9545f512c70244f2818fafb0",
+    "source": "hayabusa",
+    "stage": "parse"
+  },
+  {
+    "document": "0",
+    "error": "Modifier SigmaContainsModifier incompatible to value type of '1833'",
+    "path": "hayabusa/builtin/Security/LogonLogoff/Logon/Sec_4624_Med_Logon-Type9-NewInteractive_PossibleTokenImpersonation.yml",
+    "profile": "*",
+    "reason": "Invalid upstream detection structure or modifier type; do not invent detection semantics.",
+    "sha256": "fdff79a66931ccc99d7e269bc477a9e59157c2e7d6c9830bb07596c31b7d1c72",
+    "source": "hayabusa",
+    "stage": "parse"
+  },
+  {
+    "document": "*",
+    "error": "found undefined alias 'chcp'\n  in \"<byte string>\", line 18, column 15:\n                - *chcp 437 & schtasks /query /tn  ... \n                  ^",
+    "path": "rules/koadicpostexploitationrootkit.yml",
+    "profile": "*",
+    "reason": "Malformed upstream YAML; preserve the source and exclude until corrected.",
+    "sha256": "f75188ace92410325621bdc66b832eaec58d1341353390bd3969259b0083f4c5",
+    "source": "joesecurity",
+    "stage": "yaml"
+  },
+  {
+    "document": "*",
+    "error": "while scanning an alias\n  in \"<byte string>\", line 33, column 16:\n                - '*powershell*net.web*https://bitly.*\n                   ^\nexpected alphabetic or numeric character, but found '*'\n  in \"<byte string>\", line 33, column 27:\n                - '*powershell*net.web*https://bitly.*\n                              ^",
+    "path": "rules/powershelldownloadingfilefromurlshortenersite.yml",
+    "profile": "*",
+    "reason": "Malformed upstream YAML; preserve the source and exclude until corrected.",
+    "sha256": "c04160f524ea8300d9c0ad2de7e38e00ccd2bfc12370faef84f62b6095df9e38",
+    "source": "joesecurity",
+    "stage": "yaml"
+  },
+  {
+    "document": "*",
+    "error": "while scanning an alias\n  in \"<byte string>\", line 18, column 15:\n                - *powershell*regsvr32*\n                  ^\nexpected alphabetic or numeric character, but found '*'\n  in \"<byte string>\", line 18, column 26:\n                - *powershell*regsvr32*\n                             ^",
+    "path": "rules/powershelllaunchregsvr32.yml",
+    "profile": "*",
+    "reason": "Malformed upstream YAML; preserve the source and exclude until corrected.",
+    "sha256": "6d62b1df6af23c12a80bf909d26e36d9aae4acfe016fc60692c7c9ef6591a7a9",
+    "source": "joesecurity",
+    "stage": "yaml"
+  },
+  {
+    "document": "*",
+    "error": "found undefined alias 'powershell'\n  in \"<byte string>\", line 18, column 15:\n                - *powershell -c sleep -s *;saps * ... \n                  ^",
+    "path": "rules/powershellsleepandlaunchexecutable.yml",
+    "profile": "*",
+    "reason": "Malformed upstream YAML; preserve the source and exclude until corrected.",
+    "sha256": "45df23fa388122e0c855be0d522214c5e6fbb9f04f9bc6da35b1ecef3d091f01",
+    "source": "joesecurity",
+    "stage": "yaml"
+  },
+  {
+    "document": "*",
+    "error": "while scanning an alias\n  in \"<byte string>\", line 20, column 16:\n                - '*regsvr32*\\\\*.png*\n                   ^\nexpected alphabetic or numeric character, but found '*'\n  in \"<byte string>\", line 20, column 25:\n                - '*regsvr32*\\\\*.png*\n                            ^",
+    "path": "rules/registerdllwithspoofedextension.yml",
+    "profile": "*",
+    "reason": "Malformed upstream YAML; preserve the source and exclude until corrected.",
+    "sha256": "321848f26031feec002900ceb3b9c3019a5d8fc3f76de0203c0ae37cae158939",
+    "source": "joesecurity",
+    "stage": "yaml"
+  },
+  {
+    "document": "*",
+    "error": "while scanning an alias\n  in \"<byte string>\", line 18, column 15:\n                - *schtasks.exe*/create*powershell ... \n                  ^\nexpected alphabetic or numeric character, but found '.'\n  in \"<byte string>\", line 18, column 24:\n                - *schtasks.exe*/create*powershell*hidden*\n                           ^",
+    "path": "rules/shedulehiddenpowershellscript.yml",
+    "profile": "*",
+    "reason": "Malformed upstream YAML; preserve the source and exclude until corrected.",
+    "sha256": "5c4f01092c62fddcacc9adced1b921f9ba04901cf63fa6c73c03d1d18eb8a7ea",
+    "source": "joesecurity",
+    "stage": "yaml"
+  },
+  {
+    "document": "*",
+    "error": "found undefined alias 'cmd'\n  in \"<byte string>\", line 18, column 15:\n                - *cmd /c wscript.exe *\\AppData\\Lo ... \n                  ^",
+    "path": "rules/wscriptdownloadfileintotemplocationfromwordpresssite.yml",
+    "profile": "*",
+    "reason": "Malformed upstream YAML; preserve the source and exclude until corrected.",
+    "sha256": "0490a6ab19293a81f888f17a4c431da76a20a9108ff8e2b4183b5a3a50b2f37f",
+    "source": "joesecurity",
+    "stage": "yaml"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/executedllwithspoofedextension.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "e0527e56c0beb4d082dc83b84a54f3af797414d99d3608c68326e7e2e87ebb35",
+    "source": "joesecurity",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/executedllwithspoofedextension.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "e0527e56c0beb4d082dc83b84a54f3af797414d99d3608c68326e7e2e87ebb35",
+    "source": "joesecurity",
+    "stage": "convert"
+  },
+  {
+    "document": "*",
+    "error": "while parsing a block mapping\n  in \"<byte string>\", line 1, column 1:\n    title: MinPlasma_CVE-2020-17103  ... \n    ^\nexpected <block end>, but found '<block mapping start>'\n  in \"<byte string>\", line 19, column 2:\n     selection2:\n     ^",
+    "path": "windows-os/win-os-MinPlasma_CVE-2020-17103 (Reg via Sysmon).yaml",
+    "profile": "*",
+    "reason": "Malformed upstream YAML; preserve the source and exclude until corrected.",
+    "sha256": "dfca2052d64f621d559c1a3b666039fd7589880702705aeb64640bc33e4e2fa0",
+    "source": "mdecrevoisier",
+    "stage": "yaml"
+  },
+  {
+    "document": "*",
+    "error": "while scanning for the next token\nfound character '\\t' that cannot start any token\n  in \"<byte string>\", line 20, column 3:\n      \tRelativeTargetName|startswith:  ... \n      ^",
+    "path": "windows-os/win-os-dump file transfered over SMB share.yaml",
+    "profile": "*",
+    "reason": "Malformed upstream YAML; preserve the source and exclude until corrected.",
+    "sha256": "c936b2e8c74f9b260db949e13528da80551835d9e84bcd92d5522c2396a90b4d",
+    "source": "mdecrevoisier",
+    "stage": "yaml"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 48), (line:1, col:49)",
+    "path": "windows-active_directory/win-ad-Host set with constrainted delegation.yaml",
+    "profile": "sysmon",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "3989bbda633a0359c149102e9eee28e8addcb7e4a32e583ed4af1b0e9684d6af",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "windows-active_directory/win-ad-IFM created (native).yaml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "819f8137745d1e33e590250d5909fb7314d7919631986413cbd390e03ad7e572",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-active_directory/win-ad-SAM database access during DCshadow.yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "ea5a364fbc80301e712adc1f11a3c82eaaefdf2084cae6ef3b1448102d1ff91b",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-active_directory/win-ad-SAM database user credentials dump with Mimikatz.yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "b17f2ffdce7fb1ad849e55a97cba9fa5e543c0e66f23264a84700e9d7f71007b",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-active_directory/win-ad-group domain enumeration (CME).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "ce4a96d2cf817bcf1259631a0f3a211a6b9648eeef39a604ec8198a8e8402d37",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-active_directory/win-ad-local group enumeration (CME).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "58294bada367fa7fa73546fc9d108d3f0d80b33407a168624329c314f51ec50b",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 54), (line:1, col:55)",
+    "path": "windows-active_directory/win-ad-local-domain local group membership change (medium risk).yaml",
+    "profile": "sysmon",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "56993ac5c802f38f216cb640ddc472a735f4271046767131817252ac17c9c4d7",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-active_directory/win-ad-remote local group enumeration (SharpHound).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "292d349f68da301a387ede919ec46be2f9b54ba286dec4faa4693374a14fd098",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_module\"}",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 83), (line:1, col:84)",
+    "path": "windows-bitlocker/win-os-BitLocker feature activation (PowerShell).yaml",
+    "profile": "sysmon",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "8a5fd09535d51572d7fc65e6bf302d949d56e7b77771f5a079015b4e9bc15158",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_classic_script\"}",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 83), (line:1, col:84)",
+    "path": "windows-bitlocker/win-os-BitLocker feature activation (PowerShell).yaml",
+    "profile": "sysmon",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "8a5fd09535d51572d7fc65e6bf302d949d56e7b77771f5a079015b4e9bc15158",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_script\"}",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 83), (line:1, col:84)",
+    "path": "windows-bitlocker/win-os-BitLocker feature activation (PowerShell).yaml",
+    "profile": "sysmon",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "8a5fd09535d51572d7fc65e6bf302d949d56e7b77771f5a079015b4e9bc15158",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-bitlocker/win-os-BitLocker massive feature activation (native).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "f34bc44f4602f3ee14af6d902a8978d9813c1fbd2c55a5c08a5af5a232c5a0b2",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "windows-bits/win-os-BITS high volume file downloaded (native).yaml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "6983e258803d4d8ec93a65da4c2e5944e8a1dbec853291dbdcb24154a656d42b",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-defender/defender-host massively infected.yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "efe1d8f66ee7a65fe5d957227b7195aa7034ffce683f80f6f0c2ecf31942d690",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found '>'  (at char 57), (line:1, col:58)",
+    "path": "windows-defender/defender-host signatures outdated (limited).yaml",
+    "profile": "sysmon",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "ed38ab5e15e396f42956d9ce8eb70806b4e0fa1b9ae0ca0c486c8c242980c126",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-defender/defender-massive threat outbreach.yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "f26cd97ffe8c14500478cf11c7f21f215ee407734ab1672cededa5fbc9d34888",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Detection 'selection' not defined in detections",
+    "path": "windows-firewall/win-os-firewall rule creation (command).yaml",
+    "profile": "sysmon",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "0f4283c08839ba480e529bb71a28127173e3862ab1a46f8042779edc2230dfc1",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 85), (line:1, col:86)",
+    "path": "windows-os/win-os-DoT (DNS over TLS) activation (command).yaml",
+    "profile": "sysmon",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "409aa231dc0167b198f3881f0b5132811764ac10b0c79c90ca0b420afc080926",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Detection 'filter' not defined in detections",
+    "path": "windows-os/win-os-Pass-the-hash login with Mimikatz.yaml",
+    "profile": "sysmon",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "2717bae9a72cf72858c98c40ebc624dda6cc2de6cf20363002ec43d99231a058",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_module\"}",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-PipeShell exfiltration over named pipes (PowerShell).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "b3aa7c6534188c9a330536a3f6068c61007991fec31c308e70a56b35abc721dd",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_classic_script\"}",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-PipeShell exfiltration over named pipes (PowerShell).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "b3aa7c6534188c9a330536a3f6068c61007991fec31c308e70a56b35abc721dd",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_script\"}",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-PipeShell exfiltration over named pipes (PowerShell).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "b3aa7c6534188c9a330536a3f6068c61007991fec31c308e70a56b35abc721dd",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-exfiltration from vice society (PowerShell).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "aa9843a154544dc73a11eb4b9e02a8921b08a52d6a45820e653186154adc16fd",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_module\"}",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-group discovery (PowerShell).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "0e084621bb545e7b39541091f3afbdb252d3ae03967f93bee84a38b2bbfe314d",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_classic_script\"}",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-group discovery (PowerShell).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "0e084621bb545e7b39541091f3afbdb252d3ae03967f93bee84a38b2bbfe314d",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_script\"}",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-group discovery (PowerShell).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "0e084621bb545e7b39541091f3afbdb252d3ae03967f93bee84a38b2bbfe314d",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-payload obfuscated transfer via service name - Tchopper (command).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "f0738d400cc332ee99f1102a7f21a085d203361e3a2ef20e0da9bc9e8ff29726",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-print spooler bug discovery via named pipe.yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "876d86afc9ac07450d74bcc06524ac5f7cb165822f207979c31b6b8558a0b037",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-process termination-kill burst.yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "e21ef8c938a9edcbc826da99aed1ef63090bacc1ca64428d56d487caf1cc69b6",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-registry backdoor permission change via WMI (DAMP).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "9ef155da27e2300342515adb533c8f118b93b27c173c7687c8aa874bce6f233a",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 57), (line:1, col:58)",
+    "path": "windows-os/win-os-user application credentials dump via share (DonPapi, Lazagne).yaml",
+    "profile": "sysmon",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "06b166e455e45be914deefdf06c066e4233925ef161e2d3f7284c7b6005e9759",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-scheduled_task/win-os-scheduled task fastly created and deleted.yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "dedfef73c430dcd6c704cddbe9e08b582ba153db7e0742eb5e15fb12cfe83e92",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-scheduled_task/win-os-scheduled task remote creation via named pipes (CME-ATexec).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "3e06c06126e30ef0cb940486dd2d574f97242baaef2517622d093271774de65d",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Detection 'selection' not defined in detections",
+    "path": "windows-services/win-os-service abuse with malicious ImagePath (service).yaml",
+    "profile": "sysmon",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "815d66bc1f0fe31c9da13d858f2e90c47c8422e7b91f259f235ce6733b5bed6d",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-services/win-os-service deletion burst.yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "ba252e6fcbc6842067a6afdceb626b092116eb4e5fa2ec0dfe2a8028d7d9ba19",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-services/win-os-service massive failures - Tchopper (native).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "085dba974ccc2efda00160460ee9e75b668119218a9511afe4d2992783bcd65d",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-services/win-os-service massive installation- Tchopper (native).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "c028d7534b2c8b693652244f27f97da29b913023565561d6d3c008394701a17c",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-services/win-os-service massive remote creation via named pipes - Tchopper (native).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "f00862f4a66c8a54f0747029cf9b5867b525f4160d86788adc1304fe53df5b68",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 60), (line:1, col:61)",
+    "path": "windows-services/win-os-service permissions modified (service).yaml",
+    "profile": "sysmon",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "6f1fcfa482b3dcd9ab6a95ce92f8c04f85de80ff7588649d076da5adad04e727",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-services/win-os-service remote creation via named pipes (CME, Tchopper).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "3df4ad492c62c9c83cf9287ed021e9741034f335b0a7c699afa618b58fa44b3d",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-services/win-os-service termination burst.yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "6812c5b8c2538152f86d24191cc389e4129d936bf0e03ca2439b22c706a0129b",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-sql_server/sql_server-table enumeration.yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "1060137432ba35bcc7e886363d1e17650498c9f2d615a3f0a58f49a253cd321e",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-winrm/win-winrm-listening service reconnaissance (process).yaml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "e1e0d4cdfa19a7f2aa6190bd7ad11eadbd4929ae712416230f58255f7fd3e50b",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 48), (line:1, col:49)",
+    "path": "windows-active_directory/win-ad-Host set with constrainted delegation.yaml",
+    "profile": "generic",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "3989bbda633a0359c149102e9eee28e8addcb7e4a32e583ed4af1b0e9684d6af",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "windows-active_directory/win-ad-IFM created (native).yaml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "819f8137745d1e33e590250d5909fb7314d7919631986413cbd390e03ad7e572",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-active_directory/win-ad-SAM database access during DCshadow.yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "ea5a364fbc80301e712adc1f11a3c82eaaefdf2084cae6ef3b1448102d1ff91b",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-active_directory/win-ad-SAM database user credentials dump with Mimikatz.yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "b17f2ffdce7fb1ad849e55a97cba9fa5e543c0e66f23264a84700e9d7f71007b",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-active_directory/win-ad-group domain enumeration (CME).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "ce4a96d2cf817bcf1259631a0f3a211a6b9648eeef39a604ec8198a8e8402d37",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-active_directory/win-ad-local group enumeration (CME).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "58294bada367fa7fa73546fc9d108d3f0d80b33407a168624329c314f51ec50b",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 54), (line:1, col:55)",
+    "path": "windows-active_directory/win-ad-local-domain local group membership change (medium risk).yaml",
+    "profile": "generic",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "56993ac5c802f38f216cb640ddc472a735f4271046767131817252ac17c9c4d7",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-active_directory/win-ad-remote local group enumeration (SharpHound).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "292d349f68da301a387ede919ec46be2f9b54ba286dec4faa4693374a14fd098",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_module\"}",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 83), (line:1, col:84)",
+    "path": "windows-bitlocker/win-os-BitLocker feature activation (PowerShell).yaml",
+    "profile": "generic",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "8a5fd09535d51572d7fc65e6bf302d949d56e7b77771f5a079015b4e9bc15158",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_classic_script\"}",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 83), (line:1, col:84)",
+    "path": "windows-bitlocker/win-os-BitLocker feature activation (PowerShell).yaml",
+    "profile": "generic",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "8a5fd09535d51572d7fc65e6bf302d949d56e7b77771f5a079015b4e9bc15158",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_script\"}",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 83), (line:1, col:84)",
+    "path": "windows-bitlocker/win-os-BitLocker feature activation (PowerShell).yaml",
+    "profile": "generic",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "8a5fd09535d51572d7fc65e6bf302d949d56e7b77771f5a079015b4e9bc15158",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-bitlocker/win-os-BitLocker massive feature activation (native).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "f34bc44f4602f3ee14af6d902a8978d9813c1fbd2c55a5c08a5af5a232c5a0b2",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "windows-bits/win-os-BITS high volume file downloaded (native).yaml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "6983e258803d4d8ec93a65da4c2e5944e8a1dbec853291dbdcb24154a656d42b",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-defender/defender-host massively infected.yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "efe1d8f66ee7a65fe5d957227b7195aa7034ffce683f80f6f0c2ecf31942d690",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found '>'  (at char 57), (line:1, col:58)",
+    "path": "windows-defender/defender-host signatures outdated (limited).yaml",
+    "profile": "generic",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "ed38ab5e15e396f42956d9ce8eb70806b4e0fa1b9ae0ca0c486c8c242980c126",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-defender/defender-massive threat outbreach.yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "f26cd97ffe8c14500478cf11c7f21f215ee407734ab1672cededa5fbc9d34888",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Detection 'selection' not defined in detections",
+    "path": "windows-firewall/win-os-firewall rule creation (command).yaml",
+    "profile": "generic",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "0f4283c08839ba480e529bb71a28127173e3862ab1a46f8042779edc2230dfc1",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 85), (line:1, col:86)",
+    "path": "windows-os/win-os-DoT (DNS over TLS) activation (command).yaml",
+    "profile": "generic",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "409aa231dc0167b198f3881f0b5132811764ac10b0c79c90ca0b420afc080926",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Detection 'filter' not defined in detections",
+    "path": "windows-os/win-os-Pass-the-hash login with Mimikatz.yaml",
+    "profile": "generic",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "2717bae9a72cf72858c98c40ebc624dda6cc2de6cf20363002ec43d99231a058",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_module\"}",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-PipeShell exfiltration over named pipes (PowerShell).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "b3aa7c6534188c9a330536a3f6068c61007991fec31c308e70a56b35abc721dd",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_classic_script\"}",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-PipeShell exfiltration over named pipes (PowerShell).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "b3aa7c6534188c9a330536a3f6068c61007991fec31c308e70a56b35abc721dd",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_script\"}",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-PipeShell exfiltration over named pipes (PowerShell).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "b3aa7c6534188c9a330536a3f6068c61007991fec31c308e70a56b35abc721dd",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-exfiltration from vice society (PowerShell).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "aa9843a154544dc73a11eb4b9e02a8921b08a52d6a45820e653186154adc16fd",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_module\"}",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-group discovery (PowerShell).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "0e084621bb545e7b39541091f3afbdb252d3ae03967f93bee84a38b2bbfe314d",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_classic_script\"}",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-group discovery (PowerShell).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "0e084621bb545e7b39541091f3afbdb252d3ae03967f93bee84a38b2bbfe314d",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0:{\"category\":\"ps_script\"}",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-group discovery (PowerShell).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "0e084621bb545e7b39541091f3afbdb252d3ae03967f93bee84a38b2bbfe314d",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-payload obfuscated transfer via service name - Tchopper (command).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "f0738d400cc332ee99f1102a7f21a085d203361e3a2ef20e0da9bc9e8ff29726",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-print spooler bug discovery via named pipe.yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "876d86afc9ac07450d74bcc06524ac5f7cb165822f207979c31b6b8558a0b037",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-process termination-kill burst.yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "e21ef8c938a9edcbc826da99aed1ef63090bacc1ca64428d56d487caf1cc69b6",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-os/win-os-registry backdoor permission change via WMI (DAMP).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "9ef155da27e2300342515adb533c8f118b93b27c173c7687c8aa874bce6f233a",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 57), (line:1, col:58)",
+    "path": "windows-os/win-os-user application credentials dump via share (DonPapi, Lazagne).yaml",
+    "profile": "generic",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "06b166e455e45be914deefdf06c066e4233925ef161e2d3f7284c7b6005e9759",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-scheduled_task/win-os-scheduled task fastly created and deleted.yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "dedfef73c430dcd6c704cddbe9e08b582ba153db7e0742eb5e15fb12cfe83e92",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-scheduled_task/win-os-scheduled task remote creation via named pipes (CME-ATexec).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "3e06c06126e30ef0cb940486dd2d574f97242baaef2517622d093271774de65d",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Detection 'selection' not defined in detections",
+    "path": "windows-services/win-os-service abuse with malicious ImagePath (service).yaml",
+    "profile": "generic",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "815d66bc1f0fe31c9da13d858f2e90c47c8422e7b91f259f235ce6733b5bed6d",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-services/win-os-service deletion burst.yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "ba252e6fcbc6842067a6afdceb626b092116eb4e5fa2ec0dfe2a8028d7d9ba19",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-services/win-os-service massive failures - Tchopper (native).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "085dba974ccc2efda00160460ee9e75b668119218a9511afe4d2992783bcd65d",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-services/win-os-service massive installation- Tchopper (native).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "c028d7534b2c8b693652244f27f97da29b913023565561d6d3c008394701a17c",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-services/win-os-service massive remote creation via named pipes - Tchopper (native).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "f00862f4a66c8a54f0747029cf9b5867b525f4160d86788adc1304fe53df5b68",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 60), (line:1, col:61)",
+    "path": "windows-services/win-os-service permissions modified (service).yaml",
+    "profile": "generic",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "6f1fcfa482b3dcd9ab6a95ce92f8c04f85de80ff7588649d076da5adad04e727",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-services/win-os-service remote creation via named pipes (CME, Tchopper).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "3df4ad492c62c9c83cf9287ed021e9741034f335b0a7c699afa618b58fa44b3d",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-services/win-os-service termination burst.yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "6812c5b8c2538152f86d24191cc389e4129d936bf0e03ca2439b22c706a0129b",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-sql_server/sql_server-table enumeration.yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "1060137432ba35bcc7e886363d1e17650498c9f2d615a3f0a58f49a253cd321e",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "windows-winrm/win-winrm-listening service reconnaissance (process).yaml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "e1e0d4cdfa19a7f2aa6190bd7ad11eadbd4929ae712416230f58255f7fd3e50b",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "linux-defender/lin-defender-ebpf sensor deactivation.yaml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "4c7d885f60aa6f9fe5622abaedee4eee8ac53b16c6f685d21f0567b49ad13ccd",
+    "source": "mdecrevoisier",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "6df8054945d5ff36517fa7bc65f89c1a2cfc3d806bfd2b7adcdb65fe80dbb446",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/msexchange/win_exchange_proxylogon_oabvirtualdir.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "9705b2f3f28a85e9c3d4d97ac4022c686de433e040ee3151b0c9ec61e7b5cbf3",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/msexchange/win_exchange_proxyshell_certificate_generation.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "231164589966c7980323e9cc94bee77bbdf328c51f6bb4febcd4b1e4adadf60a",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/msexchange/win_exchange_proxyshell_mailbox_export.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "610c8a02a046035d0303872385ae81283234858effae7b0a563f7e374560f275",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/msexchange/win_exchange_proxyshell_remove_mailbox_export.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "93d7a165b6055e5190313c883e733804ba4ace766632df0439b4726efd936641",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/msexchange/win_exchange_set_oabvirtualdirectory_externalurl.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "329217678176702de3121a890f0a50b1a6b2df95c6a350f85883543e53a6e58d",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/msexchange/win_exchange_transportagent.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "d48e1a382b744920651b0e77496e48c8f6facd9ac92bf6395e17dc7dceb74dc4",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/servicebus/win_hybridconnectionmgr_svc_running.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "4418a7d691bce51ba36f772262add6130f0fc25b1c7024b867878e6a9480c3be",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/system/netlogon/win_system_possible_zerologon_exploitation_using_wellknown_tools.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "01280cfdc62932dbfb15688746e728686ed578ffbd98606a7d6ecf2c03c9649e",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/win_alert_mimikatz_keywords.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "3d853eb7c1b21f5ec58ea8f95767cebb47446152bc76ab584692e0693ca98fbd",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/wmi/win_wmi_persistence.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "4e79a1e2a6914ad09a9193e41f5a27ead2dc0876ac835099bac516ca49a28c8f",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/sysmon/sysmon_config_modification_status.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "72e138e08f33f29c92acc2b0fce7b75403746152f459ad36767d858155d416c4",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules-emerging-threats/2017/Malware/NotPetya/proc_creation_win_malware_notpetya.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "12e58eaad9ce4fe14b586a6cc9252de8ecbeccae6faa90ee539db9cc1e3cfb33",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules-emerging-threats/2020/Exploits/CVE-2020-0688/win_vul_cve_2020_0688.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "c43587e92fb24565252b0c77778b5761763b7617515e13138831005f51506c70",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules-emerging-threats/2021/Exploits/CVE-2021-1675/win_exploit_cve_2021_1675_printspooler.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "8c35de58a42ce73fe66b4a4901c46a132e330bebb306dded8ca8410e58ac07b0",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules-emerging-threats/2021/Exploits/CVE-2021-1675/win_exploit_cve_2021_1675_printspooler_operational.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "c1317c1a23981645b6f9d4422d6a0705fffe4fa09d19b43af97a52707cd4b338",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules-emerging-threats/2024/Exploits/CVE-2024-37085/win_security_exploit_cve_2024_37085_esxi_admins_group.yml",
+    "profile": "sysmon",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "7ba5347b79a7df210d04afc553d4cd47d47db7fc6f1cd6eb8ea149815849f927",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Attempt to convert unhandled placeholder 'known_cdcs' into query.",
+    "path": "rules-emerging-threats/2026/Exploits/CVE-2026-54121/win_security_adcs_certighost_cdc_chase_request.yml",
+    "profile": "sysmon",
+    "reason": "Requires organization-specific domain controller values; no default is safe.",
+    "sha256": "c7057e8aaa2aa567add9dfc888de6ec0472b183e5a659c45a1efe38328954e25",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Attempt to convert unhandled placeholder 'known_cdcs' into query.",
+    "path": "rules-emerging-threats/2026/Exploits/CVE-2026-54121/win_security_adcs_certighost_cert_issued_via_chase.yml",
+    "profile": "sysmon",
+    "reason": "Requires organization-specific domain controller values; no default is safe.",
+    "sha256": "2b1a099961a8e418f9ecfeef2881493b4e7fa5f5f94fdbcdb672025e4b398eb4",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "6df8054945d5ff36517fa7bc65f89c1a2cfc3d806bfd2b7adcdb65fe80dbb446",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/msexchange/win_exchange_proxylogon_oabvirtualdir.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "9705b2f3f28a85e9c3d4d97ac4022c686de433e040ee3151b0c9ec61e7b5cbf3",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/msexchange/win_exchange_proxyshell_certificate_generation.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "231164589966c7980323e9cc94bee77bbdf328c51f6bb4febcd4b1e4adadf60a",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/msexchange/win_exchange_proxyshell_mailbox_export.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "610c8a02a046035d0303872385ae81283234858effae7b0a563f7e374560f275",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/msexchange/win_exchange_proxyshell_remove_mailbox_export.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "93d7a165b6055e5190313c883e733804ba4ace766632df0439b4726efd936641",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/msexchange/win_exchange_set_oabvirtualdirectory_externalurl.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "329217678176702de3121a890f0a50b1a6b2df95c6a350f85883543e53a6e58d",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/msexchange/win_exchange_transportagent.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "d48e1a382b744920651b0e77496e48c8f6facd9ac92bf6395e17dc7dceb74dc4",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/servicebus/win_hybridconnectionmgr_svc_running.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "4418a7d691bce51ba36f772262add6130f0fc25b1c7024b867878e6a9480c3be",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/system/netlogon/win_system_possible_zerologon_exploitation_using_wellknown_tools.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "01280cfdc62932dbfb15688746e728686ed578ffbd98606a7d6ecf2c03c9649e",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/win_alert_mimikatz_keywords.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "3d853eb7c1b21f5ec58ea8f95767cebb47446152bc76ab584692e0693ca98fbd",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/windows/builtin/wmi/win_wmi_persistence.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "4e79a1e2a6914ad09a9193e41f5a27ead2dc0876ac835099bac516ca49a28c8f",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules-emerging-threats/2017/Malware/NotPetya/proc_creation_win_malware_notpetya.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "12e58eaad9ce4fe14b586a6cc9252de8ecbeccae6faa90ee539db9cc1e3cfb33",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules-emerging-threats/2020/Exploits/CVE-2020-0688/win_vul_cve_2020_0688.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "c43587e92fb24565252b0c77778b5761763b7617515e13138831005f51506c70",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules-emerging-threats/2021/Exploits/CVE-2021-1675/win_exploit_cve_2021_1675_printspooler.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "8c35de58a42ce73fe66b4a4901c46a132e330bebb306dded8ca8410e58ac07b0",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules-emerging-threats/2021/Exploits/CVE-2021-1675/win_exploit_cve_2021_1675_printspooler_operational.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "c1317c1a23981645b6f9d4422d6a0705fffe4fa09d19b43af97a52707cd4b338",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules-emerging-threats/2024/Exploits/CVE-2024-37085/win_security_exploit_cve_2024_37085_esxi_admins_group.yml",
+    "profile": "generic",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "7ba5347b79a7df210d04afc553d4cd47d47db7fc6f1cd6eb8ea149815849f927",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Attempt to convert unhandled placeholder 'known_cdcs' into query.",
+    "path": "rules-emerging-threats/2026/Exploits/CVE-2026-54121/win_security_adcs_certighost_cdc_chase_request.yml",
+    "profile": "generic",
+    "reason": "Requires organization-specific domain controller values; no default is safe.",
+    "sha256": "c7057e8aaa2aa567add9dfc888de6ec0472b183e5a659c45a1efe38328954e25",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Attempt to convert unhandled placeholder 'known_cdcs' into query.",
+    "path": "rules-emerging-threats/2026/Exploits/CVE-2026-54121/win_security_adcs_certighost_cert_issued_via_chase.yml",
+    "profile": "generic",
+    "reason": "Requires organization-specific domain controller values; no default is safe.",
+    "sha256": "2b1a099961a8e418f9ecfeef2881493b4e7fa5f5f94fdbcdb672025e4b398eb4",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/auditd/execve/lnx_auditd_binary_padding.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "b4bc9e39c6f8a27d59c7c7ceabd5cc404ef40db20badd32bfd7c78980c390674",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/auditd/execve/lnx_auditd_bpfdoor_port_redirect.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "7472238a0eda6d6ef35c118f5afbe8997003079479e759e1cb60dd7a9029d2e9",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/auditd/execve/lnx_auditd_change_file_time_attr.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "a2b8a1ee2bf22d7f99328e618c58c4b5a2b057f1b9a615a59f2a9c613c395a34",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/auditd/execve/lnx_auditd_find_cred_in_files.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "fcdff3b0e1b3be0c5d816b7601fe8b0da6a16b8468446145f6670b018027d1fa",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/auditd/execve/lnx_auditd_susp_histfile_operations.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "6e1a35503e21c441c8c7ea8aa6ed46b5c105f785a515a72156bd597984c3acad",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/auditd/execve/lnx_auditd_system_shutdown_reboot.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "b18af7835c492443e2676fd414e28590393d152083e0dade8235d6f77197cdef",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/clamav/lnx_clamav_relevant_message.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "ee7a303e38cd842a556d10aa86cb0985853bc869fae1fc425aa11fee0fa695db",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/cron/lnx_cron_crontab_file_modification.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "57fae599a26cc85cc62453bdbff9c226cbffc940bf4e66dc2933244abe937f3e",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/guacamole/lnx_guacamole_susp_guacamole.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "431d8771197cd96e4ebb367eb812d235d74e677f7c70a352a54d4596b28f89e9",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/lnx_apt_equationgroup_lnx.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "39d4bc254ac74c81d226308e39c2887eff0c6696c7cceaac57dd231bbfe449f6",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/lnx_buffer_overflows.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "9560ea4416c85ab76d1de421322016976370b3c937aa24851e1bc2188bb1af71",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/lnx_clear_syslog.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "9a4013f7037340a2112e055eacab73835174eaa0faa940bbb0fba681934f5e12",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/lnx_file_copy.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "5e7382c57d359df1ba9389a00fd8cfdc26a432a93ccbfe632f81f2a08f82ba21",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/lnx_ldso_preload_injection.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "7f1555a53fcc787bfd7fdec9cbda5d7c8c19a7068ceebdef944a4c17d64dac80",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/lnx_potential_susp_ebpf_activity.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "083167cd24127940dc716b5df60a43222bbbb2c789449b306a33f7ba8bea1b8e",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/lnx_privileged_user_creation.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "d3077e7863686f8da3428c8b3d5ab819648fc0dbeead29ac1792ab138a28f967",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/lnx_shell_clear_cmd_history.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "66df93044b76c6f0e52bd2db5a437c89da13a9ad97f8334c9d6f714f0a1a4531",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/lnx_shell_susp_commands.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "6958c20c0ba481e5fd34cd4a7ee85302a685cba63e985c21f58d5a34101c2663",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/lnx_shell_susp_log_entries.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "90e2f9e004bf30c02e6949368332bac8152f20b7255124d1b25b31518c5d09de",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/lnx_shell_susp_rev_shells.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "c81f97017992bebadc7078d631bdbc92475e2db0efce7666d720ecf7e019faa8",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/lnx_shellshock.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "a8f9292981105bad5c92c36b36350d2d81d93ac33388368b0f05f2bb0ca0d58d",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/lnx_susp_dev_tcp.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "3f0da13c9f36f11f99afda19b37bcb7cf2ba334006b49f1a801e5bdae171580c",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/lnx_susp_jexboss.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "de7dfb892c16ab14ec7368d27e8c17cb21da09ecb75cf9d66b9286237351648b",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/lnx_symlink_etc_passwd.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "7f44b24b0be3827ef3ad79a994780a3cce90f26100a5aab3c335a77fc2dfe745",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/sshd/lnx_sshd_susp_ssh.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "8e0302ef07eabcb04ee3d63ffcedce173270ca20e6b6213c83a3d7db8630ce9e",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/syslog/lnx_syslog_security_tools_disabling_syslog.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "98bd182838ebfff1398cbb287557f07cf070926ee5dfaee9a95b053ba915a8bb",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/syslog/lnx_syslog_susp_named.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "5b6242df3e3343be5b0822071a015f66bfbef2efa39930b29546b92fc66bd59b",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules/linux/builtin/vsftpd/lnx_vsftpd_susp_error_messages.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "955277148926b4fd458ba9152a2ff52c6b076af9b57b172c191e744a7ca69d96",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules-emerging-threats/2018/Exploits/CVE-2018-15473/lnx_sshd_exploit_cve_2018_15473.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "3e96b73c27e667c37116db20a451803fc13b94a0eb51d9dda98c2abb5c6cc08e",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules-emerging-threats/2021/Exploits/CVE-2021-4034/lnx_auth_exploit_cve_2021_4034_pwnkit_lpe.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "04f089f3936ad459ac5b7fb75afb7466b9af301c3cfb62166d2026b621ace8b2",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules-emerging-threats/2022/Exploits/CVE-2022-29799/lnx_exploit_cve_2022_27999_cve_2022_27800.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "c910aa7a57ae1b51c49fbc7d9d300915b8a15a7ffa19e6827c143fb10fba46f8",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+    "path": "rules-emerging-threats/2023/Exploits/CVE-2023-2283/lnx_sshd_exploit_cve_2023_2283_libssh_authentication_bypass.yml",
+    "profile": "linux",
+    "reason": "Backend 2.0 explicitly does not support fieldless keyword detections.",
+    "sha256": "8192a7bae5f23bfcce907b86d1953466c86569616759d9051712396878927da8",
+    "source": "sigmahq",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 93), (line:1, col:94)",
+    "path": "Threat Hunting Queries/proc_creation_windows_exec_script_from_zip.yml",
+    "profile": "sysmon",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "197481bd915f346d621bcb25d4e956825f591e63c403d5b7196f9f23efc0db88",
+    "source": "tsale",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 55), (line:1, col:56)",
+    "path": "vulnerability_exploitation/proc_creation_windows_VMWare_CVE-2022-22954.yml",
+    "profile": "sysmon",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "621e49ef41dc85aecba1f55fa5617016c77af830b06a17bd80b82c1c44ec86d1",
+    "source": "tsale",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 93), (line:1, col:94)",
+    "path": "Threat Hunting Queries/proc_creation_windows_exec_script_from_zip.yml",
+    "profile": "generic",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "197481bd915f346d621bcb25d4e956825f591e63c403d5b7196f9f23efc0db88",
+    "source": "tsale",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 55), (line:1, col:56)",
+    "path": "vulnerability_exploitation/proc_creation_windows_VMWare_CVE-2022-22954.yml",
+    "profile": "generic",
+    "reason": "Invalid upstream Sigma condition; retain predicates without automatic rewrites.",
+    "sha256": "621e49ef41dc85aecba1f55fa5617016c77af830b06a17bd80b82c1c44ec86d1",
+    "source": "tsale",
+    "stage": "convert"
+  }
+]
