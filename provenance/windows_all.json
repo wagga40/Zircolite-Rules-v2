@@ -11,7 +11,7 @@
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
       "revision": "1d9f8751f6b0f2dd3eee1d44712c6a92541f5d08",
-      "status": "current"
+      "status": "stale"
     },
     "joesecurity": {
       "artifacts": {
@@ -20,7 +20,7 @@
       "license": "GPL-3.0",
       "repository": "joesecurity/sigma-rules",
       "revision": "cb91be06c8c95ce63aa9aa5006a7835678136a96",
-      "status": "current"
+      "status": "stale"
     },
     "mbabinski": {
       "artifacts": {
@@ -29,7 +29,7 @@
       "license": "GPL-3.0",
       "repository": "mbabinski/Sigma-Rules",
       "revision": "9dea7a5c15cfd422ec320e7fabd93f0c3634181d",
-      "status": "current"
+      "status": "stale"
     },
     "mdecrevoisier": {
       "artifacts": {
@@ -38,7 +38,7 @@
       "license": "CC0-1.0",
       "repository": "mdecrevoisier/SIGMA-detection-rules",
       "revision": "d61408af8769c74c96296b7ccc92d4bc3abb15af",
-      "status": "current"
+      "status": "stale"
     },
     "sigmahq": {
       "artifacts": {
@@ -47,7 +47,7 @@
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
       "revision": "07ec293a51695cb1131a2e05260247872b31e1e1",
-      "status": "current"
+      "status": "stale"
     },
     "tsale": {
       "artifacts": {
@@ -56,9 +56,9 @@
       "license": "GPL-3.0",
       "repository": "tsale/Sigma_rules",
       "revision": "f5190e6b6c5ba9e6729845f13ac916590e90b0d8",
-      "status": "current"
+      "status": "stale"
     }
   },
   "name": "windows_all",
-  "status": "current"
+  "status": "stale"
 }
