@@ -14,6 +14,69 @@ from pathlib import Path
 import requests
 import yaml
 
+# Accept current hyphenated tactics and their legacy Sigma underscore forms.
+# Keep validation offline and deterministic; this checks tag format, not whether
+# every identifier exists in the latest ATT&CK release.
+ATTACK_TACTICS = {
+    "reconnaissance", "resource-development", "initial-access", "execution",
+    "persistence", "privilege-escalation", "defense-evasion", "defense-impairment",
+    "stealth", "credential-access", "discovery", "lateral-movement", "collection",
+    "command-and-control", "exfiltration", "impact",
+}
+ATTACK_ID = re.compile(r"(?:t[0-9]{4}(?:\.[0-9]{3})?|(?:g|s|ds|m|a)[0-9]{4})")
+ATTACK_ALIASES = {
+    # Hayabusa's rule references https://attack.mitre.org/techniques/T1136/001/.
+    "11136.001": "t1136.001",
+    "defense-evansion": "defense_evasion",
+    "defense_evesion": "defense_evasion",
+    "compiled.html.file": "t1218.001",
+    "exploitation for privilege escalation": "t1068",
+    "hidden.users": "t1564.002",
+    "account_discovery": "t1087",
+    "credential_dumping": "t1003",
+    "valid_account": "t1078",
+    "account_manipulation": "t1098",
+    "": None,
+    # Ambiguous mixture of execution/escalation: retain the rule's technique
+    # tags and record removal in provenance instead of inventing a tactic.
+    "privilege_execution": None,
+}
+
+
+def validate_attack_tags(tags):
+    for tag in tags:
+        if not isinstance(tag, str):
+            raise TypeError(f"Invalid rule tag: {tag!r}")
+        namespace, _, name = tag.partition(".")
+        if namespace.lower() == "attack" and not (
+            namespace == "attack" and (name.replace("_", "-") in ATTACK_TACTICS
+                                       or ATTACK_ID.fullmatch(name))
+        ):
+            raise ValueError(f"Malformed ATT&CK tag: {tag!r}")
+
+
+def normalize_tags(tags):
+    result = []
+    for tag in tags:
+        if not isinstance(tag, str) or "." not in tag:
+            continue
+        namespace, _, name = tag.partition(".")
+        if namespace.lower() == "attack":
+            name = name.lower()
+            name = ATTACK_ALIASES.get(name, name)
+            if name is None:
+                continue
+            if re.fullmatch(r"[0-9]{4}(?:\.[0-9]{3})?", name):
+                name = "t" + name
+            if name.replace("_", "-") not in ATTACK_TACTICS:
+                compact = re.sub(r"[\s._-]", "", name)
+                name = next((tactic.replace("-", "_") for tactic in sorted(ATTACK_TACTICS)
+                             if tactic.replace("-", "") == compact), name)
+            tag = "attack." + name
+        if tag not in result:
+            result.append(tag)
+    return result
+
 
 def digest(data: bytes) -> str:
     return sha256(data).hexdigest()
@@ -145,7 +208,7 @@ def adapt(document: Document, spec):
         if data.get("description") is None:
             data["description"] = ""
         if isinstance(data.get("tags"), list):
-            data["tags"] = [tag for tag in data["tags"] if isinstance(tag, str) and "." in tag]
+            data["tags"] = normalize_tags(data["tags"])
         status = data.get("status")
         if isinstance(status, str):
             status = status.lower()

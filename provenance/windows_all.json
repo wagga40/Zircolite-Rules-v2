@@ -6,12 +6,12 @@
   "inputs": {
     "hayabusa": {
       "artifacts": {
-        "rules_hayabusa_windows_native.json": "815e33e56e1f3174717727c768940a03a5f41e9e456764a1584fd4523ae9a801"
+        "rules_hayabusa_windows_native.json": "8caa4ebca274a9814f63e373b1898932db843acd82f5dd444c2622452d054b1b"
       },
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
       "revision": "1d9f8751f6b0f2dd3eee1d44712c6a92541f5d08",
-      "status": "stale"
+      "status": "current"
     },
     "joesecurity": {
       "artifacts": {
@@ -20,7 +20,7 @@
       "license": "GPL-3.0",
       "repository": "joesecurity/sigma-rules",
       "revision": "cb91be06c8c95ce63aa9aa5006a7835678136a96",
-      "status": "stale"
+      "status": "current"
     },
     "mbabinski": {
       "artifacts": {
@@ -29,16 +29,16 @@
       "license": "GPL-3.0",
       "repository": "mbabinski/Sigma-Rules",
       "revision": "9dea7a5c15cfd422ec320e7fabd93f0c3634181d",
-      "status": "stale"
+      "status": "current"
     },
     "mdecrevoisier": {
       "artifacts": {
-        "rules_mdecrevoisier_windows_merged.json": "c05eb51e6cc123ae002d8e489b32eb5e7e5916bd467946ceead32d935c099ef3"
+        "rules_mdecrevoisier_windows_merged.json": "4631c7e09b406562bfcd681158727b7a13ea034fdc02fa7369f0769268e07032"
       },
       "license": "CC0-1.0",
       "repository": "mdecrevoisier/SIGMA-detection-rules",
       "revision": "d61408af8769c74c96296b7ccc92d4bc3abb15af",
-      "status": "stale"
+      "status": "current"
     },
     "sigmahq": {
       "artifacts": {
@@ -47,18 +47,18 @@
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
       "revision": "07ec293a51695cb1131a2e05260247872b31e1e1",
-      "status": "stale"
+      "status": "current"
     },
     "tsale": {
       "artifacts": {
-        "rules_tsale_windows_merged.json": "8183cd9be5817167b6c090a82afea1b6bc38852450d27bbf8a41119067db2c83"
+        "rules_tsale_windows_merged.json": "ac8b7e8fb77963785e399c0fc4ec462a3465ae7ad310fec03b8386b73dc369bf"
       },
       "license": "GPL-3.0",
       "repository": "tsale/Sigma_rules",
       "revision": "f5190e6b6c5ba9e6729845f13ac916590e90b0d8",
-      "status": "stale"
+      "status": "current"
     }
   },
   "name": "windows_all",
-  "status": "stale"
+  "status": "current"
 }

@@ -3494,7 +3494,7 @@
     "status": "stable",
     "tags": [
       "attack.persistence",
-      "attack.1136.001"
+      "attack.t1136.001"
     ],
     "title": "Local User Account Created"
   },
@@ -5927,7 +5927,7 @@
     "status": "stable",
     "tags": [
       "attack.persistence",
-      "attack.11136.001"
+      "attack.t1136.001"
     ],
     "title": "Hidden User Account Created"
   },

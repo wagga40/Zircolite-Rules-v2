@@ -338,14 +338,36 @@
       "sha256": "91b5998b636774606bb186140f6b4864f4684c352492454c73b474bdf225e06a"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.persistence",
+            "attack.t1136.001"
+          ],
+          "original": [
+            "attack.persistence",
+            "attack.11136.001"
+          ]
+        }
+      },
       "document": "0",
       "id": "70b8b1bd-c107-4b1a-8b1e-5b0f9f57930a",
       "path": "hayabusa/builtin/Security/AccountManagement/UserAccountManagement/Sec_4720_High_AcctCreated_PossibleHiddenUserAcct.yml",
       "sha256": "cad10cdeddb8e1bf2cad7b6aac3642205c0d0f33861bbbfdfcddf4b3d7a06a20"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.persistence",
+            "attack.t1136.001"
+          ],
+          "original": [
+            "attack.persistence",
+            "attack.1136.001"
+          ]
+        }
+      },
       "document": "0",
       "id": "13edce80-2b02-4469-8de4-a3e37271dcdb",
       "path": "hayabusa/builtin/Security/AccountManagement/UserAccountManagement/Sec_4720_Info_AcctCreated_UsrAcctCreated.yml",

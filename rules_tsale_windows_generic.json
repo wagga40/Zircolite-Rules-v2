@@ -74,7 +74,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1623"
+      "attack.t1623"
     ],
     "title": "MOVEit exploitation"
   },
@@ -150,7 +150,7 @@
     "status": "experimental",
     "tags": [
       "attack.defense_evasion",
-      "attack.T1218"
+      "attack.t1218"
     ],
     "title": "VSDiagnostics used for proxying execution malicious binaries"
   },
@@ -188,8 +188,7 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.hidden.users",
-      "attack.T1564.002"
+      "attack.t1564.002"
     ],
     "title": "Hiding local user accounts"
   },
@@ -227,8 +226,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.CommandAndControl",
-      "attack.T1219"
+      "attack.command_and_control",
+      "attack.t1219"
     ],
     "title": "Arbitrary code execution and remote sessions via Action1 RMM"
   },
@@ -344,8 +343,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense-Evansion",
-      "attack.T1562.001"
+      "attack.defense_evasion",
+      "attack.t1562.001"
     ],
     "title": "Disabling Python warnings for executing untrusted code"
   },
@@ -385,10 +384,10 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.001",
+      "attack.t1059.001",
       "attack.persistence",
-      "attack.T1176",
-      "attack.T1053.005"
+      "attack.t1176",
+      "attack.t1053.005"
     ],
     "title": "ChromeLoader Malware Detection"
   },
@@ -465,7 +464,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.006"
+      "attack.t1059.006"
     ],
     "title": "Emotet loader execution via .lnk file"
   },
@@ -582,7 +581,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.001"
+      "attack.t1059.001"
     ],
     "title": "Raspberry Robin initial execution from external drive"
   },
@@ -620,8 +619,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.defense.evasion",
-      "attack.T1562.001"
+      "attack.defense_evasion",
+      "attack.t1562.001"
     ],
     "title": "Disabled AV On Dev Drive via Registry"
   },
@@ -813,8 +812,7 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Compiled.HTML.File",
-      "attack.T1218.001"
+      "attack.t1218.001"
     ],
     "title": "HH.exe LOLBA executing .chm files"
   },
@@ -890,8 +888,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.defense.evasion",
-      "attack.T1562.001"
+      "attack.defense_evasion",
+      "attack.t1562.001"
     ],
     "title": "Enabling Dev Drive With Disabled AV"
   },
@@ -929,8 +927,8 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.003",
-      "attack.T1204.002"
+      "attack.t1059.003",
+      "attack.t1204.002"
     ],
     "title": "ms-msdt for RCE CVE-2022-30190"
   },
@@ -969,8 +967,8 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.003",
-      "attack.T1204.002"
+      "attack.t1059.003",
+      "attack.t1204.002"
     ],
     "title": "ms-msdt for RCE - sdiagnhost.exe spawning command"
   },
@@ -1007,8 +1005,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense Evasion",
-      "attack.T1218"
+      "attack.defense_evasion",
+      "attack.t1218"
     ],
     "title": "CMSTP installation of malicious code"
   },
@@ -1046,8 +1044,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense.Evasion",
-      "attack.T1202"
+      "attack.defense_evasion",
+      "attack.t1202"
     ],
     "title": "Execute Python Scripts via Python Installer Binary"
   },
@@ -1084,8 +1082,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense Evasion",
-      "attack.T1218"
+      "attack.defense_evasion",
+      "attack.t1218"
     ],
     "title": "Wermgr.exe spawning without command line arguments"
   },
@@ -1161,7 +1159,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059"
+      "attack.t1059"
     ],
     "title": "Ursnif Redirection Of Discovery Commands"
   },
@@ -1240,7 +1238,7 @@
     "status": "experimental",
     "tags": [
       "attack.defense_evasion",
-      "attack.T1218.001"
+      "attack.t1218.001"
     ],
     "title": "Onenote execution of malicious embedded scripts"
   },
@@ -1279,7 +1277,7 @@
     "status": "experimental",
     "tags": [
       "attack.defense_evasion",
-      "attack.T1055"
+      "attack.t1055"
     ],
     "title": "Injected Browser Process Spawning Rundll32"
   },
@@ -1317,8 +1315,7 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Exploitation for Privilege Escalation",
-      "attack.T1068"
+      "attack.t1068"
     ],
     "title": "Exploitation of 7zip vulnerability - CVE-2022-29072"
   },
@@ -1358,7 +1355,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.001"
+      "attack.t1059.001"
     ],
     "title": "FakeUpdates/SocGholish Malware Detection"
   },
@@ -1436,7 +1433,7 @@
     "tags": [
       "attack.execution",
       "attack.lateral_movement",
-      "attack.T1210"
+      "attack.t1210"
     ],
     "title": "Abuse of the Windows Server Update Services (WSUS) for lateral movement."
   },
@@ -1473,7 +1470,7 @@
     "status": "experimental",
     "tags": [
       "attack.credential_access",
-      "attack.T1003"
+      "attack.t1003"
     ],
     "title": "LAPS Credential Dumping Spoofing and Domain Controller Impersonation"
   },
@@ -1550,7 +1547,7 @@
     "status": "experimental",
     "tags": [
       "attack.privilege_escalation",
-      "attack.T1548.002"
+      "attack.t1548.002"
     ],
     "title": "Explorer UAC Bypass Via /NOUACCHECK Parameter"
   },
@@ -1588,8 +1585,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Discovery",
-      "attack.T1135"
+      "attack.discovery",
+      "attack.t1135"
     ],
     "title": "Using explorer.exe to open a file explorer folder via command prompt"
   },
@@ -1626,8 +1623,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense Evasion",
-      "attack.T1218"
+      "attack.defense_evasion",
+      "attack.t1218"
     ],
     "title": "Dumpbin LOLBin use for proxying execution via link.exe"
   },
@@ -1665,8 +1662,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.CredentialAccess",
-      "attack.T1552.001"
+      "attack.credential_access",
+      "attack.t1552.001"
     ],
     "title": "Extract Credentials From IIS Application Pool Configuration Files"
   },
@@ -1705,7 +1702,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.001"
+      "attack.t1059.001"
     ],
     "title": "Raspberry Robin subsequent execution of commands"
   },
@@ -1743,9 +1740,9 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.006",
+      "attack.t1059.006",
       "attack.persistence",
-      "attack.T1053.005"
+      "attack.t1053.005"
     ],
     "title": "Serpent backdoor payload execution via scheduled task"
   },
@@ -1783,8 +1780,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense Evasion",
-      "attack.T1218"
+      "attack.defense_evasion",
+      "attack.t1218"
     ],
     "title": "MSTeams exe side-loading - Update.exe"
   }

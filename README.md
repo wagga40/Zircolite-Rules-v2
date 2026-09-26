@@ -65,14 +65,14 @@ Stale sources retain their last successful files and counts. Unavailable sources
 
 | Source | Status | Published revision | Last successful generation (UTC) |
 |---|---|---|---|
-| sigmahq | stale | [07ec293a5169](https://github.com/SigmaHQ/sigma/tree/07ec293a51695cb1131a2e05260247872b31e1e1) | 2026-09-26T17:11:12+00:00 |
-| hayabusa | stale | [1d9f8751f6b0](https://github.com/Yamato-Security/hayabusa-rules/tree/1d9f8751f6b0f2dd3eee1d44712c6a92541f5d08) | 2026-09-26T17:11:28+00:00 |
-| joesecurity | stale | [cb91be06c8c9](https://github.com/joesecurity/sigma-rules/tree/cb91be06c8c95ce63aa9aa5006a7835678136a96) | 2026-09-26T17:11:28+00:00 |
-| mbabinski | stale | [9dea7a5c15cf](https://github.com/mbabinski/Sigma-Rules/tree/9dea7a5c15cfd422ec320e7fabd93f0c3634181d) | 2026-09-26T17:11:29+00:00 |
-| mdecrevoisier | stale | [d61408af8769](https://github.com/mdecrevoisier/SIGMA-detection-rules/tree/d61408af8769c74c96296b7ccc92d4bc3abb15af) | 2026-09-26T17:11:29+00:00 |
-| tsale | stale | [f5190e6b6c5b](https://github.com/tsale/Sigma_rules/tree/f5190e6b6c5ba9e6729845f13ac916590e90b0d8) | 2026-09-26T17:11:31+00:00 |
+| sigmahq | current | [07ec293a5169](https://github.com/SigmaHQ/sigma/tree/07ec293a51695cb1131a2e05260247872b31e1e1) | 2026-09-26T17:11:12+00:00 |
+| hayabusa | current | [1d9f8751f6b0](https://github.com/Yamato-Security/hayabusa-rules/tree/1d9f8751f6b0f2dd3eee1d44712c6a92541f5d08) | 2026-09-26T19:21:56+00:00 |
+| joesecurity | current | [cb91be06c8c9](https://github.com/joesecurity/sigma-rules/tree/cb91be06c8c95ce63aa9aa5006a7835678136a96) | 2026-09-26T17:11:28+00:00 |
+| mbabinski | current | [9dea7a5c15cf](https://github.com/mbabinski/Sigma-Rules/tree/9dea7a5c15cfd422ec320e7fabd93f0c3634181d) | 2026-09-26T17:11:29+00:00 |
+| mdecrevoisier | current | [d61408af8769](https://github.com/mdecrevoisier/SIGMA-detection-rules/tree/d61408af8769c74c96296b7ccc92d4bc3abb15af) | 2026-09-26T19:22:47+00:00 |
+| tsale | current | [f5190e6b6c5b](https://github.com/tsale/Sigma_rules/tree/f5190e6b6c5ba9e6729845f13ac916590e90b0d8) | 2026-09-26T19:21:58+00:00 |
 
-Combined Windows ruleset status: **stale**. It includes available published Windows detections; stale sources contribute their retained rules, and unavailable sources contribute none.
+Combined Windows ruleset status: **current**. It includes available published Windows detections; stale sources contribute their retained rules, and unavailable sources contribute none.
 
 ### Detection rulesets
 
@@ -126,9 +126,13 @@ Combined Windows ruleset status: **stale**. It includes available published Wind
 
 Adapters normalize metadata such as scalar references, nonstandard status labels, list descriptions, non-Sigma tags, and Windows/Linux product capitalization in community rules. Original values are recorded in `provenance/<source>.json`. Missing or invalid IDs receive deterministic UUIDv5 identifiers. List-valued logsources become distinct alternatives with stable variant IDs; ambiguous correlation references fail validation.
 
+Community ATT&CK tags are lowercased, known spelling errors and technique-name aliases are corrected, and duplicate tags are removed, with original tags retained in provenance. Empty ATT&CK tags and the ambiguous `attack.privilege_execution` label are removed without guessing a tactic. Unknown malformed ATT&CK tags fail validation. This offline check accepts current hyphenated and legacy underscore tactic names and checks identifier syntax; it does not verify every identifier against the latest ATT&CK catalog.
+
 Upstream detection predicates are not rewritten to repair invalid conditions. Legacy aggregation syntax, malformed rules, and fieldless keyword detections remain visible exclusions. Collection actions, including legacy `action: correlation` and `global`/`reset`/`repeat`, are explicitly reported as unsupported and require a reviewed exclusion to publish the source. mdecrevoisier templates containing lower-case `%organization_value%` placeholders are excluded, along with dependent correlations. Windows environment-variable literals such as `%COMSPEC%` remain intact.
 
 Applicability is based on product, explicit event fields, and installed pipeline mappings. An empty channel allow-list does not by itself exclude a rule. Exact official duplicates are removed by ID and generated SQL; different SQL variants remain and can still overlap semantically. Conversion counts are not a measure of unique threat coverage.
+
+Windows conversion maps the upstream field aliases `EventXML.Address`, `EventXML.Param3`, and `New Value` to Zircolite's flattened columns `Address`, `Param3`, and `NewValue`. Both SQL and `required_fields` use these names. Other identifiers retain the backend's SQLite quoting.
 
 ## Experimental correlations
 
@@ -140,7 +144,7 @@ Correlation rulesets live only in [experimental/](experimental/README.md), with 
 
 Each source passes through discovery, metadata adaptation, reference resolution, profile selection, conversion, SQL preparation, and artifact staging. Both `.yml` and `.yaml` files and their documents are inspected; unsupported collection actions fail validation unless explicitly excluded. Reference-only rules stay available to selected correlations but are not accidentally exported; `generate: true` retains requested standalone outputs. Excluded correlations do not suppress otherwise applicable standalone detections. Local severity filtering operates on complete converted entries, preserving embedded correlation dependencies.
 
-Every exported query is prepared in a fresh SQLite database with its declared fields. Regex literals are checked using Python's regex engine. Correlation standalone SQL and materialized plans are both validated. Tests execute positive and negative fixtures, backend detection fixes, correlation windows/evidence, and all eight correlation types on SQLite 3.38 in CI.
+Every exported query is prepared in a fresh SQLite database with its declared fields and double-quoted string fallback disabled. ATT&CK tag format and regex literals are checked before export. Correlation standalone SQL and materialized plans are both validated. Tests execute positive and negative fixtures using Zircolite's flattened Windows columns, backend detection fixes, correlation windows/evidence, and all eight correlation types on SQLite 3.38 in CI.
 
 [exclusions.json](exclusions.json) is a reviewed baseline for known upstream conversion failures. Each record binds the source, file hash, document, profile, stage, and exact error, with a reason. A changed file or error does not silently inherit approval. Policy exclusions such as another platform, deprecated status, or an unmapped logsource are listed separately in reports.
 

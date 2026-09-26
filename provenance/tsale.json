@@ -86,49 +86,126 @@
   },
   "provenance": [
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1218"
+          ],
+          "original": [
+            "attack.Defense Evasion",
+            "attack.T1218"
+          ]
+        }
+      },
       "document": "0",
       "id": "c8cf90cc-61ac-4c59-ba8d-739ca0d4f392",
       "path": "LOL_BINs/proc_creation_windows_Dumpbin_LoLBin.yml",
       "sha256": "2600e8f660a71b890e0144d48ecbc3b340dde27b0f7368d3f510867a41c23dc4"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1218"
+          ],
+          "original": [
+            "attack.Defense Evasion",
+            "attack.T1218"
+          ]
+        }
+      },
       "document": "0",
       "id": "dafa6fd4-dcda-4ef2-81c9-4bf33ce4c299",
       "path": "LOL_BINs/proc_creation_windows_MSTeams_side-loading.yml",
       "sha256": "cbbbc93fedaf91d134c61a9777a5ac272cfa93b329e6deabcbd2f3a5b0aa86e7"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1218"
+          ],
+          "original": [
+            "attack.defense_evasion",
+            "attack.T1218"
+          ]
+        }
+      },
       "document": "0",
       "id": "81d761c8-ed08-4421-8206-8ff516e453bf",
       "path": "LOL_BINs/proc_creation_windows_VSDiagnostics_LoLBin.yml",
       "sha256": "4791bccffc944286718cb220d0480d4605f841dbcfacca42a7ac86ae050557b2"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1218"
+          ],
+          "original": [
+            "attack.Defense Evasion",
+            "attack.T1218"
+          ]
+        }
+      },
       "document": "0",
       "id": "735e43b1-8533-4b37-91a6-5bf89a671884",
       "path": "LOL_BINs/proc_creation_windows_Wermgr_injection.yml",
       "sha256": "f88f6d823a249609455895a83b836dd1f1e3bfeb23040a834a238f404e5a3606"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.credential_access",
+            "attack.t1552.001"
+          ],
+          "original": [
+            "attack.CredentialAccess",
+            "attack.T1552.001"
+          ]
+        }
+      },
       "document": "0",
       "id": "cf6cd798-1933-4eb1-9ab7-2c9acc237104",
       "path": "LOL_BINs/proc_creation_windows_appcmd.yml",
       "sha256": "4f642f9e3baad014b41766fd2375e775906a3f0f89fc86a5624998e6bcadd71a"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1218"
+          ],
+          "original": [
+            "attack.Defense Evasion",
+            "attack.T1218"
+          ]
+        }
+      },
       "document": "0",
       "id": "64a31e54-0cf3-4130-84c0-4ea972b88628",
       "path": "LOL_BINs/proc_creation_windows_cmstp_fake_profiles.yml",
       "sha256": "de1dabe08161e14dfeea0837a09208d0e271885cd5cceefffaca4b08dac0db84"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1562.001"
+          ],
+          "original": [
+            "attack.defense.evasion",
+            "attack.T1562.001"
+          ]
+        }
+      },
       "document": "0",
       "id": "53394955-c956-4e36-8fa6-24c8d8b3dbaf",
       "path": "LOL_BINs/proc_creation_windows_devdrv_bypass_fsutil.yml",
@@ -142,7 +219,18 @@
       "sha256": "dbac581bcf85caf325f8f388b1320ceafae6cf8aeed400661fca850b64bc7d23"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1202"
+          ],
+          "original": [
+            "attack.Defense.Evasion",
+            "attack.T1202"
+          ]
+        }
+      },
       "document": "0",
       "id": "6c6b0b7a-481d-4aca-84be-963e6cd2e302",
       "path": "LOL_BINs/proc_creation_windows_setup_pythonw.yml",
@@ -156,7 +244,18 @@
       "sha256": "6a5ff32f77dcd8b5fe4017ad1cfc91a65565c4cae2b9acf85b63a8fc7ee46a28"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1562.001"
+          ],
+          "original": [
+            "attack.defense.evasion",
+            "attack.T1562.001"
+          ]
+        }
+      },
       "document": "0",
       "id": "31e124fb-5dc4-42a0-83b3-44a69c77b271",
       "path": "LOL_BINs/registry_set_devdrv_bypass_registry.yml",
@@ -216,6 +315,16 @@
         "status": {
           "adapted": "experimental",
           "original": "Experimental"
+        },
+        "tags": {
+          "adapted": [
+            "attack.discovery",
+            "attack.t1135"
+          ],
+          "original": [
+            "attack.Discovery",
+            "attack.T1135"
+          ]
         }
       },
       "document": "0",
@@ -224,14 +333,35 @@
       "sha256": "653ebc0d980b8df8c86eae1a164369707c48c9309a44ed9f2d93c69eea112706"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.t1218.001"
+          ],
+          "original": [
+            "attack.Compiled.HTML.File",
+            "attack.T1218.001"
+          ]
+        }
+      },
       "document": "0",
       "id": "4dd98986-86b3-44d3-9618-c58e86b5674d",
       "path": "MISC/proc_creation_windows_hh_LOLBA.yml",
       "sha256": "dae19c398ac8aa897e044a17d96ab6f0f2b8da36b99566ebc669bc6b1d88395a"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1562.001"
+          ],
+          "original": [
+            "attack.Defense-Evansion",
+            "attack.T1562.001"
+          ]
+        }
+      },
       "document": "0",
       "id": "023c654f-8f16-44d9-bb2b-00ff36a62af9",
       "path": "MISC/proc_creation_windows_pythonfunctionwarnings_disabled.yml",
@@ -250,7 +380,17 @@
       "sha256": "1b99d0f720a422bfe96704a02f0b72abff996b5e0c213a8b6cbcc0b50ed99338"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.t1564.002"
+          ],
+          "original": [
+            "attack.hidden.users",
+            "attack.T1564.002"
+          ]
+        }
+      },
       "document": "0",
       "id": "9ec9fb1b-e059-4489-9642-f270c207923d",
       "path": "MISC/proc_creation_windows_registry_hide_user.yml",
@@ -293,7 +433,18 @@
       "sha256": "96c67d92b7ffff90281d5b5fc0f3b67f6d8d8e85a66553ebbaac5cad7cc6f19e"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.command_and_control",
+            "attack.t1219"
+          ],
+          "original": [
+            "attack.CommandAndControl",
+            "attack.T1219"
+          ]
+        }
+      },
       "document": "0",
       "id": "aa3168fb-d594-4f93-a92d-7a9ba675b766",
       "path": "Threat Hunting Queries/proc_creation_windows_Action1_RMM.yml",
@@ -307,7 +458,18 @@
       "sha256": "7689394a6fcf0c9608203ce584d71bf5599304b7c5474edf002744a6143aa4d3"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1623"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1623"
+          ]
+        }
+      },
       "document": "0",
       "id": "39ac1fb0-07f1-474b-b97e-c5c0eace0d79",
       "path": "Threat Hunting Queries/proc_creation_windows_MOVEit_exploitation.yml",
@@ -321,7 +483,18 @@
       "sha256": "349cb1020ceac26446894c74ee478251c0c8d5c91398eb170dc7fa985b8f8a7a"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059"
+          ]
+        }
+      },
       "document": "0",
       "id": "95724fc1-a258-4674-97db-a30351981c5a",
       "path": "Threat Hunting Queries/proc_creation_windows_exec_script_from_zip.yml",
@@ -340,49 +513,132 @@
       "sha256": "ce62ee9c7bb4c20668ba1ca3537bf6e22faa0627ad157d5c0ca978b02032880d"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.001",
+            "attack.persistence",
+            "attack.t1176",
+            "attack.t1053.005"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.001",
+            "attack.persistence",
+            "attack.T1176",
+            "attack.T1053.005"
+          ]
+        }
+      },
       "document": "0",
       "id": "0a74c5a9-1b71-4475-9af2-7829d320d5c2",
       "path": "malware/proc_creation_windows_ChromeLoader.yml",
       "sha256": "b3c2ff2527ae83821beac3a451589a434a4a39d62eaf5b070a48cc4c1e58191e"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.006"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.006"
+          ]
+        }
+      },
       "document": "0",
       "id": "1f32d820-1d5c-43fe-8fe2-feef0c952eb7",
       "path": "malware/proc_creation_windows_Emotet_04_22.yml",
       "sha256": "32ef49cdb93ea0c4b007f70111dc7bdaf4aaafcf43fa90ee66d9802ed87da5d5"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.privilege_escalation",
+            "attack.t1548.002"
+          ],
+          "original": [
+            "attack.privilege_escalation",
+            "attack.T1548.002"
+          ]
+        }
+      },
       "document": "0",
       "id": "c284e98e-a2a6-4917-aeb9-7159c6283e05",
       "path": "malware/proc_creation_windows_Explorer_NOUACCHECK.yml",
       "sha256": "8a2542f32ed21dd6ebce8cf131a6c4d777f339f9542d3cf36bf2ee689c14e107"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1055"
+          ],
+          "original": [
+            "attack.defense_evasion",
+            "attack.T1055"
+          ]
+        }
+      },
       "document": "0",
       "id": "89e1490f-1a3e-452a-bbb8-b68a5f58072f",
       "path": "malware/proc_creation_windows_GuLoader_08_07.yml",
       "sha256": "e12cbe06c9daae2b33f72f8f4f76da603a979224cb7887c0bcf837b15c6383a8"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1218.001"
+          ],
+          "original": [
+            "attack.defense_evasion",
+            "attack.T1218.001"
+          ]
+        }
+      },
       "document": "0",
       "id": "84b1706c-932a-44c4-ae28-892b28a25b94",
       "path": "malware/proc_creation_windows_OneNote_Execution.yml",
       "sha256": "3feed575fe8b2af79a358e51bf90acdf1f98b2e119724d5ef2a00658ecc0d101"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.001"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.001"
+          ]
+        }
+      },
       "document": "0",
       "id": "d52d2e87-eb03-4fac-961d-eb616da79788",
       "path": "malware/proc_creation_windows_Raspberry_Robin_mal-exec.yml",
       "sha256": "07fb10d028bc6f28f4d474f4f00567a0aae5a55cbec7a51ee7e2cf82d498c4b3"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.001"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.001"
+          ]
+        }
+      },
       "document": "0",
       "id": "2c6bea3a-ef58-4f2e-a775-4928f6b7c58a",
       "path": "malware/proc_creation_windows_Raspberry_Robin_usb-exec.yml",
@@ -395,6 +651,20 @@
           "original": [
             "Detects the new post-exploitation execution technique of the Serpent backdoor. According to Proofpoint, one of the commands that the backdoor ran was via creating a temporary scheduled task using an unusual method. It creates a fictitious windows event and a trigger in which once the event is created, it executes the payload."
           ]
+        },
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.006",
+            "attack.persistence",
+            "attack.t1053.005"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.006",
+            "attack.persistence",
+            "attack.T1053.005"
+          ]
         }
       },
       "document": "0",
@@ -403,28 +673,75 @@
       "sha256": "6f203cf1173eff78fa51f3d63a079a7486dce78a2d34313844d627a790b382f9"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.001"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.001"
+          ]
+        }
+      },
       "document": "0",
       "id": "97805087-93ab-4203-b5cb-287cda6aecaa",
       "path": "malware/proc_creation_windows_SocGholish_FakeUpdates.yml",
       "sha256": "86aee2571f5c4528e3c7de4323852e5b1be4adb58ec595b66197f24fdf594d1a"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059"
+          ]
+        }
+      },
       "document": "0",
       "id": "7aaa5739-12fc-41aa-b98b-23ec27d42bdf",
       "path": "malware/proc_creation_windows_Ursnif_cmd_redirection.yml",
       "sha256": "0e61f171005e899442ccfe978fc391ae59447f811eac657bea7a2de5823876a9"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.t1068"
+          ],
+          "original": [
+            "attack.Exploitation for Privilege Escalation",
+            "attack.T1068"
+          ]
+        }
+      },
       "document": "0",
       "id": "932ade0f-3ba6-49c4-ba78-51c5234384d5",
       "path": "vulnerability_exploitation/proc_creation_windows_7z_CVE-2022-29072.yml",
       "sha256": "16de0176fac5ce14bf68efaedc5f66254885541b5228f7319092be5eb523419d"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.006",
+            "attack.initial_access",
+            "attack.t1190"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.006",
+            "attack.initial_access",
+            "attack.t1190"
+          ]
+        }
+      },
       "document": "0",
       "id": "5660d8db-6e25-411f-b92f-094420168a5d",
       "path": "vulnerability_exploitation/proc_creation_windows_VMWare_CVE-2022-22954.yml",
@@ -456,6 +773,18 @@
         "status": {
           "adapted": "experimental",
           "original": "Experimental"
+        },
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.lateral_movement",
+            "attack.t1210"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.lateral_movement",
+            "attack.T1210"
+          ]
         }
       },
       "document": "0",
@@ -464,14 +793,40 @@
       "sha256": "79f37f713679b2bddb2303f95b2ca1f3ed9ee4dc9ea3a9ff4f4dcb0c71eef3bc"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.003",
+            "attack.t1204.002"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.003",
+            "attack.T1204.002"
+          ]
+        }
+      },
       "document": "0",
       "id": "5eff5816-a518-4ab8-b7e0-a776344e7d36",
       "path": "windows_exploitation/proc_creation_windows_ms-msdt_exploitation.yml",
       "sha256": "3e2a4712ba60781fa31cf86f6e31af581a63f33c6c3f6f1490f1b829b3f7861f"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.003",
+            "attack.t1204.002"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.003",
+            "attack.T1204.002"
+          ]
+        }
+      },
       "document": "0",
       "id": "6469c7a1-8a28-40c4-a72b-5acddcfd0b0b",
       "path": "windows_exploitation/proc_creation_windows_sdiagnhost-ms-msdt_exploitation.yml",
@@ -482,6 +837,18 @@
         "status": {
           "adapted": "experimental",
           "original": "Experimental"
+        },
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.lateral_movement",
+            "attack.t1210"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.lateral_movement",
+            "attack.T1210"
+          ]
         }
       },
       "document": "0",
@@ -504,7 +871,18 @@
       "sha256": "0a818d3446842bdf069760c4b57b140e7622054056d284231515c19506ea89d6"
     },
     {
-      "adaptations": {},
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.credential_access",
+            "attack.t1003"
+          ],
+          "original": [
+            "attack.credential_access",
+            "attack.T1003"
+          ]
+        }
+      },
       "document": "0",
       "id": "b4019300-4846-4c66-9d3e-62efff5cff51",
       "path": "windows_exploitation/win_security_LAPS_CredDumping.yml",

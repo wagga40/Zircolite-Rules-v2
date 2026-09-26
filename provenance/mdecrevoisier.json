@@ -4661,6 +4661,16 @@
         "id": {
           "adapted": "cd7df46a-36b7-5fa6-b93e-bfd07e6ac1f5",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1003",
+            "attack.t1003.003"
+          ],
+          "original": [
+            "attack.credential_dumping",
+            "attack.t1003.003"
+          ]
         }
       },
       "document": "0",
@@ -4673,6 +4683,16 @@
         "id": {
           "adapted": "2998f8b0-375c-58eb-ba25-f645e8468c30",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1003",
+            "attack.t1003.003"
+          ],
+          "original": [
+            "attack.credential_dumping",
+            "attack.t1003.003"
+          ]
         }
       },
       "document": "0",
@@ -5175,6 +5195,15 @@
         "id": {
           "adapted": "ffa88b53-8e98-5479-b66f-920c58b5358b",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1003"
+          ],
+          "original": [
+            "attack.credential_dumping",
+            "attack.t1003"
+          ]
         }
       },
       "document": "0",
@@ -5541,6 +5570,20 @@
             ],
             "product": "windows"
           }
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1087",
+            "attack.t1087.002",
+            "attack.credential_access",
+            "attack.t1558.003"
+          ],
+          "original": [
+            "attack.account_discovery",
+            "attack.t1087.002",
+            "attack.credential_access",
+            "attack.t1558.003"
+          ]
         }
       },
       "document": "0:{\"category\":\"ps_module\"}",
@@ -5567,6 +5610,20 @@
             ],
             "product": "windows"
           }
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1087",
+            "attack.t1087.002",
+            "attack.credential_access",
+            "attack.t1558.003"
+          ],
+          "original": [
+            "attack.account_discovery",
+            "attack.t1087.002",
+            "attack.credential_access",
+            "attack.t1558.003"
+          ]
         }
       },
       "document": "0:{\"category\":\"ps_classic_script\"}",
@@ -5593,6 +5650,20 @@
             ],
             "product": "windows"
           }
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1087",
+            "attack.t1087.002",
+            "attack.credential_access",
+            "attack.t1558.003"
+          ],
+          "original": [
+            "attack.account_discovery",
+            "attack.t1087.002",
+            "attack.credential_access",
+            "attack.t1558.003"
+          ]
         }
       },
       "document": "0:{\"category\":\"ps_script\"}",
@@ -5605,6 +5676,16 @@
         "id": {
           "adapted": "c339e6ef-a968-527d-9e59-6353047ea562",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1087",
+            "attack.t1087.002"
+          ],
+          "original": [
+            "attack.account_discovery",
+            "attack.t1087.002"
+          ]
         }
       },
       "document": "0",
@@ -5665,6 +5746,20 @@
         "id": {
           "adapted": "62bc6b74-a161-5bd8-9d04-ff57337d1532",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.persistence",
+            "attack.t1136",
+            "attack.defense_evasion",
+            "attack.t1036"
+          ],
+          "original": [
+            "attack.persistence",
+            "attack.t1136",
+            "attack.defense_evesion",
+            "attack.t1036"
+          ]
         }
       },
       "document": "0",
@@ -5677,6 +5772,22 @@
         "id": {
           "adapted": "3262375d-932a-5260-b2f8-e49ba9eaf694",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.persistence",
+            "attack.t1098",
+            "attack.t1136",
+            "attack.defense_evasion",
+            "attack.t0136"
+          ],
+          "original": [
+            "attack.persistence",
+            "attack.t1098",
+            "attack.t1136",
+            "attack.defense_evesion",
+            "attack.t0136"
+          ]
         }
       },
       "document": "0",
@@ -5971,6 +6082,28 @@
             ],
             "product": "windows"
           }
+        },
+        "tags": {
+          "adapted": [
+            "attack.exfiltration",
+            "attack.t1048",
+            "attack.lateral_movement",
+            "attack.t1570",
+            "attack.command_and_control",
+            "attack.t1105",
+            "attack.persistence",
+            "attack.t1197"
+          ],
+          "original": [
+            "attack.exfiltration",
+            "attack.t1048",
+            "attack.lateral_movement",
+            "attack.t1570",
+            "attack.Command_and_control",
+            "attack.t1105",
+            "attack.persistence",
+            "attack.t1197"
+          ]
         }
       },
       "document": "0:{\"category\":\"ps_module\"}",
@@ -5997,6 +6130,28 @@
             ],
             "product": "windows"
           }
+        },
+        "tags": {
+          "adapted": [
+            "attack.exfiltration",
+            "attack.t1048",
+            "attack.lateral_movement",
+            "attack.t1570",
+            "attack.command_and_control",
+            "attack.t1105",
+            "attack.persistence",
+            "attack.t1197"
+          ],
+          "original": [
+            "attack.exfiltration",
+            "attack.t1048",
+            "attack.lateral_movement",
+            "attack.t1570",
+            "attack.Command_and_control",
+            "attack.t1105",
+            "attack.persistence",
+            "attack.t1197"
+          ]
         }
       },
       "document": "0:{\"category\":\"ps_classic_script\"}",
@@ -6023,6 +6178,28 @@
             ],
             "product": "windows"
           }
+        },
+        "tags": {
+          "adapted": [
+            "attack.exfiltration",
+            "attack.t1048",
+            "attack.lateral_movement",
+            "attack.t1570",
+            "attack.command_and_control",
+            "attack.t1105",
+            "attack.persistence",
+            "attack.t1197"
+          ],
+          "original": [
+            "attack.exfiltration",
+            "attack.t1048",
+            "attack.lateral_movement",
+            "attack.t1570",
+            "attack.Command_and_control",
+            "attack.t1105",
+            "attack.persistence",
+            "attack.t1197"
+          ]
         }
       },
       "document": "0:{\"category\":\"ps_script\"}",
@@ -6035,6 +6212,28 @@
         "id": {
           "adapted": "69f5d42a-8368-5943-83ff-7faac4ab2714",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.exfiltration",
+            "attack.t1048",
+            "attack.lateral_movement",
+            "attack.t1570",
+            "attack.command_and_control",
+            "attack.t1105",
+            "attack.persistence",
+            "attack.t1197"
+          ],
+          "original": [
+            "attack.exfiltration",
+            "attack.t1048",
+            "attack.lateral_movement",
+            "attack.t1570",
+            "attack.Command_and_control",
+            "attack.t1105",
+            "attack.persistence",
+            "attack.t1197"
+          ]
         }
       },
       "document": "0",
@@ -6057,6 +6256,28 @@
             "product": "windows",
             "service": "bits"
           }
+        },
+        "tags": {
+          "adapted": [
+            "attack.exfiltration",
+            "attack.t1048",
+            "attack.lateral_movement",
+            "attack.t1570",
+            "attack.command_and_control",
+            "attack.t1105",
+            "attack.persistence",
+            "attack.t1197"
+          ],
+          "original": [
+            "attack.exfiltration",
+            "attack.t1048",
+            "attack.lateral_movement",
+            "attack.t1570",
+            "attack.Command_and_control",
+            "attack.t1105",
+            "attack.persistence",
+            "attack.t1197"
+          ]
         }
       },
       "document": "0",
@@ -7789,6 +8010,15 @@
         "id": {
           "adapted": "458cde4a-5d26-561e-a39a-2298d094a8a8",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1078"
+          ],
+          "original": [
+            "attack.valid_account",
+            "attack.t1078"
+          ]
         }
       },
       "document": "0",
@@ -8218,6 +8448,15 @@
               "security"
             ]
           }
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1543.003"
+          ],
+          "original": [
+            "attack.privilege_execution",
+            "attack.t1543.003"
+          ]
         }
       },
       "document": "0:{\"service\":\"system\"}",
@@ -8243,6 +8482,15 @@
               "security"
             ]
           }
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1543.003"
+          ],
+          "original": [
+            "attack.privilege_execution",
+            "attack.t1543.003"
+          ]
         }
       },
       "document": "0:{\"service\":\"security\"}",
@@ -9403,6 +9651,22 @@
         "id": {
           "adapted": "0af9fade-4dff-5ea7-b92b-852323f74498",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.persistence",
+            "attack.t1098",
+            "attack.t1136",
+            "attack.defense_evasion",
+            "attack.t0136"
+          ],
+          "original": [
+            "attack.persistence",
+            "attack.t1098",
+            "attack.t1136",
+            "attack.defense_evesion",
+            "attack.t0136"
+          ]
         }
       },
       "document": "0",
@@ -9788,6 +10052,19 @@
               "security"
             ]
           }
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1543.003",
+            "attack.defense_evasion",
+            "attack.t1027"
+          ],
+          "original": [
+            "attack.privilege_execution",
+            "attack.t1543.003",
+            "attack.defense_evasion",
+            "attack.t1027"
+          ]
         }
       },
       "document": "0:{\"service\":\"system\"}",
@@ -9813,6 +10090,19 @@
               "security"
             ]
           }
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1543.003",
+            "attack.defense_evasion",
+            "attack.t1027"
+          ],
+          "original": [
+            "attack.privilege_execution",
+            "attack.t1543.003",
+            "attack.defense_evasion",
+            "attack.t1027"
+          ]
         }
       },
       "document": "0:{\"service\":\"security\"}",
@@ -10021,6 +10311,20 @@
         "id": {
           "adapted": "ac401a0f-f367-5722-8a7f-d2063e6c815c",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.impact",
+            "attack.t1489",
+            "attack.defense_evasion",
+            "attack.t1562.001"
+          ],
+          "original": [
+            "attack.impact",
+            "attack.t1489",
+            "attack.defense_evasion",
+            "attack.1562.001"
+          ]
         }
       },
       "document": "0",
@@ -10173,6 +10477,15 @@
         "id": {
           "adapted": "518e1703-d141-5921-9796-f03d85d8d815",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.t"
+          ],
+          "original": [
+            "attack.",
+            "attack.t"
+          ]
         }
       },
       "document": "0",
@@ -10495,6 +10808,19 @@
         "id": {
           "adapted": "52d0a976-8953-5743-965b-cc9d873dc794",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.lateral_movement",
+            "attack.t1021.001",
+            "attack.privilege_escalation"
+          ],
+          "original": [
+            "attack.lateral_movement",
+            "attack.t1021.001",
+            "attack.privilege_escalation",
+            "attack.t1021.001"
+          ]
         }
       },
       "document": "0",
@@ -10829,6 +11155,19 @@
         "status": {
           "adapted": "stable",
           "original": "production"
+        },
+        "tags": {
+          "adapted": [
+            "attack.privilege_escalation",
+            "attack.t1574.002",
+            "attack.t1543.003"
+          ],
+          "original": [
+            "attack.privilege_escalation",
+            "attack.t1574.002",
+            "attack.privilege_escalation",
+            "attack.t1543.003"
+          ]
         }
       },
       "document": "0",
@@ -11148,6 +11487,19 @@
               "security"
             ]
           }
+        },
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1112",
+            "attack.t1543.003"
+          ],
+          "original": [
+            "attack.defense_evasion",
+            "attack.t1112",
+            "attack.privilege_execution",
+            "attack.t1543.003"
+          ]
         }
       },
       "document": "0:{\"service\":\"system\"}",
@@ -11173,6 +11525,19 @@
               "security"
             ]
           }
+        },
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1112",
+            "attack.t1543.003"
+          ],
+          "original": [
+            "attack.defense_evasion",
+            "attack.t1112",
+            "attack.privilege_execution",
+            "attack.t1543.003"
+          ]
         }
       },
       "document": "0:{\"service\":\"security\"}",
@@ -11185,6 +11550,19 @@
         "id": {
           "adapted": "ff54e0c3-4275-5cda-9fcd-9868d2f0b27d",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1112",
+            "attack.t1543.003"
+          ],
+          "original": [
+            "attack.defense_evasion",
+            "attack.t1112",
+            "attack.privilege_execution",
+            "attack.t1543.003"
+          ]
         }
       },
       "document": "0",
@@ -11197,6 +11575,20 @@
         "id": {
           "adapted": "b176769e-eb95-55f8-9266-9065b47319de",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.impact",
+            "attack.t1489",
+            "attack.defense_evasion",
+            "attack.t1562.001"
+          ],
+          "original": [
+            "attack.impact",
+            "attack.t1489",
+            "attack.defense_evasion",
+            "attack.1562.001"
+          ]
         }
       },
       "document": "0",
@@ -11209,6 +11601,20 @@
         "id": {
           "adapted": "0085e903-8223-518e-8ee9-23e3f402f156",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.impact",
+            "attack.t1489",
+            "attack.defense_evasion",
+            "attack.t1562.001"
+          ],
+          "original": [
+            "attack.impact",
+            "attack.t1489",
+            "attack.defense_evasion",
+            "attack.1562.001"
+          ]
         }
       },
       "document": "0",
@@ -11461,6 +11867,20 @@
         "id": {
           "adapted": "2a8a76f4-5305-5419-adaa-01fb0f0cf453",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.impact",
+            "attack.t1489",
+            "attack.defense_evasion",
+            "attack.t1562.001"
+          ],
+          "original": [
+            "attack.impact",
+            "attack.t1489",
+            "attack.defense_evasion",
+            "attack.1562.001"
+          ]
         }
       },
       "document": "0",
@@ -11569,6 +11989,15 @@
         "id": {
           "adapted": "a0df2d45-6420-5f92-9a1d-01668fbf0b4e",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1078"
+          ],
+          "original": [
+            "attack.valid_account",
+            "attack.t1078"
+          ]
         }
       },
       "document": "0",
@@ -11593,6 +12022,15 @@
         "id": {
           "adapted": "b21a1195-d26b-5bcb-a4e0-c948dee946ad",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1098"
+          ],
+          "original": [
+            "attack.account_manipulation",
+            "attack.t1098"
+          ]
         }
       },
       "document": "0",
@@ -11605,6 +12043,15 @@
         "id": {
           "adapted": "93d5c1aa-a448-5c82-b592-37bdfce2568b",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1098"
+          ],
+          "original": [
+            "attack.account_manipulation",
+            "attack.t1098"
+          ]
         }
       },
       "document": "0",
@@ -11617,6 +12064,15 @@
         "id": {
           "adapted": "c7dc2ca4-f9e1-5bc0-8672-da540ccefff3",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1098"
+          ],
+          "original": [
+            "attack.account_manipulation",
+            "attack.t1098"
+          ]
         }
       },
       "document": "0",
@@ -11629,6 +12085,15 @@
         "id": {
           "adapted": "3f75006e-2832-5dea-8f7f-718a97e61eaf",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.t1098"
+          ],
+          "original": [
+            "attack.account_manipulation",
+            "attack.t1098"
+          ]
         }
       },
       "document": "0",
@@ -11676,6 +12141,16 @@
         "id": {
           "adapted": "ea230ab7-6d47-540a-8452-ee00c49096ca",
           "original": null
+        },
+        "tags": {
+          "adapted": [
+            "attack.persistence",
+            "attack.t1505"
+          ],
+          "original": [
+            "attack.persistence",
+            "attack.T1505"
+          ]
         }
       },
       "document": "0",

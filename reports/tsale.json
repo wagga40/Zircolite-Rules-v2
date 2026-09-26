@@ -1,6 +1,911 @@
 {
-  "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/tsale/Sigma_rules/commits/main",
-  "revision": null,
+  "artifacts": {
+    "rules_tsale_windows_generic.json": 46,
+    "rules_tsale_windows_merged.json": 89,
+    "rules_tsale_windows_sysmon.json": 47
+  },
+  "exclusions": [
+    {
+      "document": "0",
+      "path": "windows_exploitation/net_connection_windows_ADWS_abuse.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "c758d3669082d642668243d0bc32f3ccaa5921b293eac79cb84e5e1357da2443"
+    }
+  ],
+  "failures": [
+    {
+      "approved": true,
+      "document": "0",
+      "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 93), (line:1, col:94)",
+      "path": "Threat Hunting Queries/proc_creation_windows_exec_script_from_zip.yml",
+      "profile": "sysmon",
+      "sha256": "197481bd915f346d621bcb25d4e956825f591e63c403d5b7196f9f23efc0db88",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 55), (line:1, col:56)",
+      "path": "vulnerability_exploitation/proc_creation_windows_VMWare_CVE-2022-22954.yml",
+      "profile": "sysmon",
+      "sha256": "621e49ef41dc85aecba1f55fa5617016c77af830b06a17bd80b82c1c44ec86d1",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 93), (line:1, col:94)",
+      "path": "Threat Hunting Queries/proc_creation_windows_exec_script_from_zip.yml",
+      "profile": "generic",
+      "sha256": "197481bd915f346d621bcb25d4e956825f591e63c403d5b7196f9f23efc0db88",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 55), (line:1, col:56)",
+      "path": "vulnerability_exploitation/proc_creation_windows_VMWare_CVE-2022-22954.yml",
+      "profile": "generic",
+      "sha256": "621e49ef41dc85aecba1f55fa5617016c77af830b06a17bd80b82c1c44ec86d1",
+      "stage": "convert"
+    }
+  ],
+  "ignored": [],
+  "input_documents": 52,
+  "official_baseline": {
+    "artifacts": {
+      "rules_linux.json": "7b2e5b1210c26b12d401b27f3d8be79d7ef8fa8abb0671db364794a9486aa2ac",
+      "rules_windows_generic.json": "d35a1c829711acdf36839ee728369ba0d654d3357309cdf6101fde24df0c6892",
+      "rules_windows_sysmon.json": "5a6dafe76b0f34ee9fab07453b14fccddccb89e0f7566d2b9c786224a3539360"
+    },
+    "repository": "SigmaHQ/sigma",
+    "revision": "07ec293a51695cb1131a2e05260247872b31e1e1"
+  },
+  "official_duplicates_removed": {
+    "generic/correlations": 0,
+    "generic/events": 3,
+    "sysmon/correlations": 0,
+    "sysmon/events": 3
+  },
+  "profiles": {
+    "generic": {
+      "converted": 49,
+      "correlations": 0,
+      "eligible": 51,
+      "events": 49,
+      "reference_only": 0
+    },
+    "sysmon": {
+      "converted": 50,
+      "correlations": 0,
+      "eligible": 52,
+      "events": 50,
+      "reference_only": 0
+    }
+  },
+  "provenance": [
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1218"
+          ],
+          "original": [
+            "attack.Defense Evasion",
+            "attack.T1218"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "c8cf90cc-61ac-4c59-ba8d-739ca0d4f392",
+      "path": "LOL_BINs/proc_creation_windows_Dumpbin_LoLBin.yml",
+      "sha256": "2600e8f660a71b890e0144d48ecbc3b340dde27b0f7368d3f510867a41c23dc4"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1218"
+          ],
+          "original": [
+            "attack.Defense Evasion",
+            "attack.T1218"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "dafa6fd4-dcda-4ef2-81c9-4bf33ce4c299",
+      "path": "LOL_BINs/proc_creation_windows_MSTeams_side-loading.yml",
+      "sha256": "cbbbc93fedaf91d134c61a9777a5ac272cfa93b329e6deabcbd2f3a5b0aa86e7"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1218"
+          ],
+          "original": [
+            "attack.defense_evasion",
+            "attack.T1218"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "81d761c8-ed08-4421-8206-8ff516e453bf",
+      "path": "LOL_BINs/proc_creation_windows_VSDiagnostics_LoLBin.yml",
+      "sha256": "4791bccffc944286718cb220d0480d4605f841dbcfacca42a7ac86ae050557b2"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1218"
+          ],
+          "original": [
+            "attack.Defense Evasion",
+            "attack.T1218"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "735e43b1-8533-4b37-91a6-5bf89a671884",
+      "path": "LOL_BINs/proc_creation_windows_Wermgr_injection.yml",
+      "sha256": "f88f6d823a249609455895a83b836dd1f1e3bfeb23040a834a238f404e5a3606"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.credential_access",
+            "attack.t1552.001"
+          ],
+          "original": [
+            "attack.CredentialAccess",
+            "attack.T1552.001"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "cf6cd798-1933-4eb1-9ab7-2c9acc237104",
+      "path": "LOL_BINs/proc_creation_windows_appcmd.yml",
+      "sha256": "4f642f9e3baad014b41766fd2375e775906a3f0f89fc86a5624998e6bcadd71a"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1218"
+          ],
+          "original": [
+            "attack.Defense Evasion",
+            "attack.T1218"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "64a31e54-0cf3-4130-84c0-4ea972b88628",
+      "path": "LOL_BINs/proc_creation_windows_cmstp_fake_profiles.yml",
+      "sha256": "de1dabe08161e14dfeea0837a09208d0e271885cd5cceefffaca4b08dac0db84"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1562.001"
+          ],
+          "original": [
+            "attack.defense.evasion",
+            "attack.T1562.001"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "53394955-c956-4e36-8fa6-24c8d8b3dbaf",
+      "path": "LOL_BINs/proc_creation_windows_devdrv_bypass_fsutil.yml",
+      "sha256": "b8f57a74ee06965800ed2c6ef9eabcd5655979a818c40f1d84ade00dfc9e3f2b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "26421df5-d394-4226-bcc5-0e846636acec",
+      "path": "LOL_BINs/proc_creation_windows_errorhandler_persistence.yml",
+      "sha256": "dbac581bcf85caf325f8f388b1320ceafae6cf8aeed400661fca850b64bc7d23"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1202"
+          ],
+          "original": [
+            "attack.Defense.Evasion",
+            "attack.T1202"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "6c6b0b7a-481d-4aca-84be-963e6cd2e302",
+      "path": "LOL_BINs/proc_creation_windows_setup_pythonw.yml",
+      "sha256": "ae7ae24c206478c3b2bc5b3e0e0ce7c4033f7759648141893ae849150d782fa3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0ea52357-cd59-4340-9981-c46c7e900428",
+      "path": "LOL_BINs/proc_creation_windows_udl_exec.yml",
+      "sha256": "6a5ff32f77dcd8b5fe4017ad1cfc91a65565c4cae2b9acf85b63a8fc7ee46a28"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1562.001"
+          ],
+          "original": [
+            "attack.defense.evasion",
+            "attack.T1562.001"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "31e124fb-5dc4-42a0-83b3-44a69c77b271",
+      "path": "LOL_BINs/registry_set_devdrv_bypass_registry.yml",
+      "sha256": "ab6b12c324fd0f24af45cd17ad01eab9cb0c641924de530ad57592b6646ad5af"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4f7f3162-d6e7-48f7-bbf9-2a56eb6a1ff2",
+      "path": "MISC/proc_creation_windows_AMSI_Bypass.yml",
+      "sha256": "d020737652f446eddaf25c1f2947ea9b0ebcb0caf53bcf8694c617441ad442b4"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "experimental",
+          "original": "Experimental (depending how many more emojis are out there)"
+        },
+        "tags": {
+          "adapted": [],
+          "original": [
+            "( \u0361\u00b0 \u035c\u0296 \u0361\u00b0)"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "4a30ac0c-b9d6-4e01-b71a-5f851bbf4259",
+      "path": "MISC/proc_creation_windows_AlltTheEmojis.yml",
+      "sha256": "2de027cf1fc432d59d6bfb1409fb86e63c9f369e80d605a18825091cf5d9d3a1"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "experimental",
+          "original": "Experimental"
+        }
+      },
+      "document": "0",
+      "id": "0e6e820b-f829-472e-9e34-930939778187",
+      "path": "MISC/proc_creation_windows_DisableRestrictedAdmin.yml",
+      "sha256": "479131bb8098662f49ce2b6edfc4b9f5555a270266e86efd85620e42a3b149be"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "experimental",
+          "original": "Experimental"
+        }
+      },
+      "document": "0",
+      "id": "44e24481-6202-4c62-9127-5a0ae8e3fe3d",
+      "path": "MISC/proc_creation_windows_Powershell_downloader_cradle.yml",
+      "sha256": "eb139ce582ad5cc606ff9aa92bb393ffcdda32cb5eb81ec553b97094ec47d486"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "experimental",
+          "original": "Experimental"
+        },
+        "tags": {
+          "adapted": [
+            "attack.discovery",
+            "attack.t1135"
+          ],
+          "original": [
+            "attack.Discovery",
+            "attack.T1135"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "c3d76afc-93df-461e-8e67-9b2bad3f2ac4",
+      "path": "MISC/proc_creation_windows_explorer_shell_execute.yml",
+      "sha256": "653ebc0d980b8df8c86eae1a164369707c48c9309a44ed9f2d93c69eea112706"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.t1218.001"
+          ],
+          "original": [
+            "attack.Compiled.HTML.File",
+            "attack.T1218.001"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "4dd98986-86b3-44d3-9618-c58e86b5674d",
+      "path": "MISC/proc_creation_windows_hh_LOLBA.yml",
+      "sha256": "dae19c398ac8aa897e044a17d96ab6f0f2b8da36b99566ebc669bc6b1d88395a"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1562.001"
+          ],
+          "original": [
+            "attack.Defense-Evansion",
+            "attack.T1562.001"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "023c654f-8f16-44d9-bb2b-00ff36a62af9",
+      "path": "MISC/proc_creation_windows_pythonfunctionwarnings_disabled.yml",
+      "sha256": "67cca8292ffa66df3749ba2774687d2655beb4609cfed41366a76c6bcea4fbfb"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "experimental",
+          "original": "Experimental"
+        }
+      },
+      "document": "0",
+      "id": "afed5f7a-362a-46c2-8cc3-38a2e96b07b1",
+      "path": "MISC/proc_creation_windows_reg_enabling_rdp.yml",
+      "sha256": "1b99d0f720a422bfe96704a02f0b72abff996b5e0c213a8b6cbcc0b50ed99338"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.t1564.002"
+          ],
+          "original": [
+            "attack.hidden.users",
+            "attack.T1564.002"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "9ec9fb1b-e059-4489-9642-f270c207923d",
+      "path": "MISC/proc_creation_windows_registry_hide_user.yml",
+      "sha256": "572b8b84d543609301cf028c97ccc6c95b05f6c2998a6673b5f1e0b89ca9667f"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "experimental",
+          "original": "Experimental"
+        }
+      },
+      "document": "0",
+      "id": "7cd354a2-92f2-4c39-85b5-6b5096366d4e",
+      "path": "MISC/proc_creation_windows_schtask_enc-psh.yml",
+      "sha256": "24021e032e4675fd69582a156afeea8443d92e308ac81f89a6dff101424aa694"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "experimental",
+          "original": "Experimental"
+        }
+      },
+      "document": "0",
+      "id": "c0d0392c-de50-4a11-9565-a457587e0c9d",
+      "path": "MISC/proc_creation_windows_schtasks_win-def-removal.yml",
+      "sha256": "27e95a862716b84ababc044bbe24de0d635b3d464b37b1feb9a39c12d3e58965"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "experimental",
+          "original": "Experimental"
+        }
+      },
+      "document": "0",
+      "id": "29419560-7c08-46d4-bb2c-531ed2ea0383",
+      "path": "MISC/proc_creation_windows_win-lazagne.yml",
+      "sha256": "96c67d92b7ffff90281d5b5fc0f3b67f6d8d8e85a66553ebbaac5cad7cc6f19e"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.command_and_control",
+            "attack.t1219"
+          ],
+          "original": [
+            "attack.CommandAndControl",
+            "attack.T1219"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "aa3168fb-d594-4f93-a92d-7a9ba675b766",
+      "path": "Threat Hunting Queries/proc_creation_windows_Action1_RMM.yml",
+      "sha256": "12386d263c8e22e56453d31b114f6ba623b81c91d17cedb246f6aaaca94a1d7f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "bc533330-fc29-44c0-b245-7dc6e5939c87",
+      "path": "Threat Hunting Queries/proc_creation_windows_Anyviewer.yml",
+      "sha256": "7689394a6fcf0c9608203ce584d71bf5599304b7c5474edf002744a6143aa4d3"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1623"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1623"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "39ac1fb0-07f1-474b-b97e-c5c0eace0d79",
+      "path": "Threat Hunting Queries/proc_creation_windows_MOVEit_exploitation.yml",
+      "sha256": "4a8904798ff5589597516b4e1acea64bd8439ea27b1449425b2c41efd550f805"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7da7809e-f3d5-47a3-9d5d-fc9d019caf14",
+      "path": "Threat Hunting Queries/proc_creation_windows_ammyy_admin.yml",
+      "sha256": "349cb1020ceac26446894c74ee478251c0c8d5c91398eb170dc7fa985b8f8a7a"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "95724fc1-a258-4674-97db-a30351981c5a",
+      "path": "Threat Hunting Queries/proc_creation_windows_exec_script_from_zip.yml",
+      "sha256": "197481bd915f346d621bcb25d4e956825f591e63c403d5b7196f9f23efc0db88"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "experimental",
+          "original": "Experimental"
+        }
+      },
+      "document": "0",
+      "id": "74a2b202-73e0-4693-9a3a-9d36146d0775",
+      "path": "Threat Hunting Queries/proc_creation_windows_meshagent.yml",
+      "sha256": "ce62ee9c7bb4c20668ba1ca3537bf6e22faa0627ad157d5c0ca978b02032880d"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.001",
+            "attack.persistence",
+            "attack.t1176",
+            "attack.t1053.005"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.001",
+            "attack.persistence",
+            "attack.T1176",
+            "attack.T1053.005"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "0a74c5a9-1b71-4475-9af2-7829d320d5c2",
+      "path": "malware/proc_creation_windows_ChromeLoader.yml",
+      "sha256": "b3c2ff2527ae83821beac3a451589a434a4a39d62eaf5b070a48cc4c1e58191e"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.006"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.006"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "1f32d820-1d5c-43fe-8fe2-feef0c952eb7",
+      "path": "malware/proc_creation_windows_Emotet_04_22.yml",
+      "sha256": "32ef49cdb93ea0c4b007f70111dc7bdaf4aaafcf43fa90ee66d9802ed87da5d5"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.privilege_escalation",
+            "attack.t1548.002"
+          ],
+          "original": [
+            "attack.privilege_escalation",
+            "attack.T1548.002"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "c284e98e-a2a6-4917-aeb9-7159c6283e05",
+      "path": "malware/proc_creation_windows_Explorer_NOUACCHECK.yml",
+      "sha256": "8a2542f32ed21dd6ebce8cf131a6c4d777f339f9542d3cf36bf2ee689c14e107"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1055"
+          ],
+          "original": [
+            "attack.defense_evasion",
+            "attack.T1055"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "89e1490f-1a3e-452a-bbb8-b68a5f58072f",
+      "path": "malware/proc_creation_windows_GuLoader_08_07.yml",
+      "sha256": "e12cbe06c9daae2b33f72f8f4f76da603a979224cb7887c0bcf837b15c6383a8"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.defense_evasion",
+            "attack.t1218.001"
+          ],
+          "original": [
+            "attack.defense_evasion",
+            "attack.T1218.001"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "84b1706c-932a-44c4-ae28-892b28a25b94",
+      "path": "malware/proc_creation_windows_OneNote_Execution.yml",
+      "sha256": "3feed575fe8b2af79a358e51bf90acdf1f98b2e119724d5ef2a00658ecc0d101"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.001"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.001"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "d52d2e87-eb03-4fac-961d-eb616da79788",
+      "path": "malware/proc_creation_windows_Raspberry_Robin_mal-exec.yml",
+      "sha256": "07fb10d028bc6f28f4d474f4f00567a0aae5a55cbec7a51ee7e2cf82d498c4b3"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.001"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.001"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "2c6bea3a-ef58-4f2e-a775-4928f6b7c58a",
+      "path": "malware/proc_creation_windows_Raspberry_Robin_usb-exec.yml",
+      "sha256": "089a8820318662a23df15c3127b3f7067b056ab53cb60980ac72e7a4116ea66a"
+    },
+    {
+      "adaptations": {
+        "description": {
+          "adapted": "Detects the new post-exploitation execution technique of the Serpent backdoor. According to Proofpoint, one of the commands that the backdoor ran was via creating a temporary scheduled task using an unusual method. It creates a fictitious windows event and a trigger in which once the event is created, it executes the payload.",
+          "original": [
+            "Detects the new post-exploitation execution technique of the Serpent backdoor. According to Proofpoint, one of the commands that the backdoor ran was via creating a temporary scheduled task using an unusual method. It creates a fictitious windows event and a trigger in which once the event is created, it executes the payload."
+          ]
+        },
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.006",
+            "attack.persistence",
+            "attack.t1053.005"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.006",
+            "attack.persistence",
+            "attack.T1053.005"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "d5eb7432-fda4-4bba-a37f-ffa74d9ed639",
+      "path": "malware/proc_creation_windows_Serpent_payload_exec.yml",
+      "sha256": "6f203cf1173eff78fa51f3d63a079a7486dce78a2d34313844d627a790b382f9"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.001"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.001"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "97805087-93ab-4203-b5cb-287cda6aecaa",
+      "path": "malware/proc_creation_windows_SocGholish_FakeUpdates.yml",
+      "sha256": "86aee2571f5c4528e3c7de4323852e5b1be4adb58ec595b66197f24fdf594d1a"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "7aaa5739-12fc-41aa-b98b-23ec27d42bdf",
+      "path": "malware/proc_creation_windows_Ursnif_cmd_redirection.yml",
+      "sha256": "0e61f171005e899442ccfe978fc391ae59447f811eac657bea7a2de5823876a9"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.t1068"
+          ],
+          "original": [
+            "attack.Exploitation for Privilege Escalation",
+            "attack.T1068"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "932ade0f-3ba6-49c4-ba78-51c5234384d5",
+      "path": "vulnerability_exploitation/proc_creation_windows_7z_CVE-2022-29072.yml",
+      "sha256": "16de0176fac5ce14bf68efaedc5f66254885541b5228f7319092be5eb523419d"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.006",
+            "attack.initial_access",
+            "attack.t1190"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.006",
+            "attack.initial_access",
+            "attack.t1190"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "5660d8db-6e25-411f-b92f-094420168a5d",
+      "path": "vulnerability_exploitation/proc_creation_windows_VMWare_CVE-2022-22954.yml",
+      "sha256": "621e49ef41dc85aecba1f55fa5617016c77af830b06a17bd80b82c1c44ec86d1"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3eb91f0a-0060-424a-a676-59f5fdd75610",
+      "path": "vulnerability_exploitation/proc_creation_windows_VMware_Horizon_LOG4J.yml",
+      "sha256": "d772011382d87c2fbd8807f47f1a423b27ecbd4d19228610ebc62b52322d6cb0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b3ad3c0f-c949-47a1-a30e-b0491ccae876",
+      "path": "windows_exploitation/net_connection_windows_ADWS_abuse.yml",
+      "sha256": "c758d3669082d642668243d0bc32f3ccaa5921b293eac79cb84e5e1357da2443"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e92a4287-e072-4a40-9739-370c106bb750",
+      "path": "windows_exploitation/proc_creation_windows_SOAPHound.yml",
+      "sha256": "aa4e0c076676e60ad6304403ac52feb3e606428730f9b225a16b12bb55204fa7"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "experimental",
+          "original": "Experimental"
+        },
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.lateral_movement",
+            "attack.t1210"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.lateral_movement",
+            "attack.T1210"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "b0ce780f-10bd-496d-9067-066d23dc3aa5",
+      "path": "windows_exploitation/proc_creation_windows_WSUS_abuse.yml",
+      "sha256": "79f37f713679b2bddb2303f95b2ca1f3ed9ee4dc9ea3a9ff4f4dcb0c71eef3bc"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.003",
+            "attack.t1204.002"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.003",
+            "attack.T1204.002"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "5eff5816-a518-4ab8-b7e0-a776344e7d36",
+      "path": "windows_exploitation/proc_creation_windows_ms-msdt_exploitation.yml",
+      "sha256": "3e2a4712ba60781fa31cf86f6e31af581a63f33c6c3f6f1490f1b829b3f7861f"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.t1059.003",
+            "attack.t1204.002"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.T1059.003",
+            "attack.T1204.002"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "6469c7a1-8a28-40c4-a72b-5acddcfd0b0b",
+      "path": "windows_exploitation/proc_creation_windows_sdiagnhost-ms-msdt_exploitation.yml",
+      "sha256": "54997fd849646c7f43e5fcd900b4e4c1df4072440db4de6199edb7db1db5de31"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "experimental",
+          "original": "Experimental"
+        },
+        "tags": {
+          "adapted": [
+            "attack.execution",
+            "attack.lateral_movement",
+            "attack.t1210"
+          ],
+          "original": [
+            "attack.execution",
+            "attack.lateral_movement",
+            "attack.T1210"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "dcc6a01e-9471-44a0-a699-71ea96f8ed8b",
+      "path": "windows_exploitation/proc_creation_windows_zero_exe.yml",
+      "sha256": "e4d975b7366096f4712c5a77de7ced06a52647477905e042e07c68334e7f7ba1"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "74256088-d35f-40e4-91e6-601cfa2e7615",
+      "path": "windows_exploitation/win_security_DC_Impersonation.yml",
+      "sha256": "caeec123b51de1a0f4f0aa97652e846f67652c59bc081bb6f5294c946fc6e8ac"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3f3e85e9-2fec-4c2f-89cd-6762b5928570",
+      "path": "windows_exploitation/win_security_KrbRelayUp.yml",
+      "sha256": "0a818d3446842bdf069760c4b57b140e7622054056d284231515c19506ea89d6"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.credential_access",
+            "attack.t1003"
+          ],
+          "original": [
+            "attack.credential_access",
+            "attack.T1003"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "b4019300-4846-4c66-9d3e-62efff5cff51",
+      "path": "windows_exploitation/win_security_LAPS_CredDumping.yml",
+      "sha256": "4377812408c280745d232bdea3fed0819c588614b08db20e0aa796d4d98af4dd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d04ae2b8-ad54-4de0-bd87-4bc1da66aa59",
+      "path": "windows_exploitation/win_security_kerberoasting_activity.yml",
+      "sha256": "f481cfaaf3f8615765dea4b057cf0c3c7e4c2a2bd4688950bd8b4f6345b59bdd"
+    }
+  ],
+  "repository": "tsale/Sigma_rules",
+  "revision": "f5190e6b6c5ba9e6729845f13ac916590e90b0d8",
   "source": "tsale",
-  "status": "failed"
+  "status": "validated",
+  "tools": {
+    "pysigma": "1.5.1",
+    "pysigma-backend-sqlite": "2.0.0",
+    "pysigma-pipeline-sysmon": "2.0.0",
+    "pysigma-pipeline-windows": "2.0.0",
+    "python": "3.14.7",
+    "sqlite": "3.53.4"
+  }
 }

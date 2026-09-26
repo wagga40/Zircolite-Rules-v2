@@ -358,7 +358,7 @@
       "attack.t1048",
       "attack.lateral_movement",
       "attack.t1570",
-      "attack.Command_and_control",
+      "attack.command_and_control",
       "attack.t1105",
       "attack.persistence",
       "attack.t1197"
@@ -882,7 +882,7 @@
       "attack.t1048",
       "attack.lateral_movement",
       "attack.t1570",
-      "attack.Command_and_control",
+      "attack.command_and_control",
       "attack.t1105",
       "attack.persistence",
       "attack.t1197"
@@ -1041,7 +1041,6 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.privilege_execution",
       "attack.t1543.003"
     ],
     "title": "PSexec service installation"
@@ -1124,7 +1123,6 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.privilege_execution",
       "attack.t1543.003"
     ],
     "title": "PSexec service installation"
@@ -1401,7 +1399,7 @@
       "attack.t1048",
       "attack.lateral_movement",
       "attack.t1570",
-      "attack.Command_and_control",
+      "attack.command_and_control",
       "attack.t1105",
       "attack.persistence",
       "attack.t1197"
@@ -1681,7 +1679,6 @@
     "tags": [
       "attack.privilege_escalation",
       "attack.t1574.002",
-      "attack.privilege_escalation",
       "attack.t1543.003"
     ],
     "title": "Possible impact of 'SMOKEDHAM backdoor' with MSDTC service privilege escalation via command line"
@@ -2628,7 +2625,7 @@
       "attack.t1048",
       "attack.lateral_movement",
       "attack.t1570",
-      "attack.Command_and_control",
+      "attack.command_and_control",
       "attack.t1105",
       "attack.persistence",
       "attack.t1197"
@@ -3095,7 +3092,6 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.privilege_execution",
       "attack.t1543.003",
       "attack.defense_evasion",
       "attack.t1027"
@@ -3245,14 +3241,14 @@
       "product": "windows"
     },
     "required_fields": [
+      "Address",
       "Channel",
       "EventID",
-      "EventXML.Address",
-      "EventXML.Param3"
+      "Param3"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE ((EventID=21 OR EventID=24 OR EventID=25) AND Channel='Microsoft-Windows-TerminalServices-LocalSessionManager/Operational' AND `EventXML.Address` LIKE '::\\%%' ESCAPE '\\') OR (EventID=1149 AND Channel='Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational' AND `EventXML.Param3` LIKE '::\\%%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE ((EventID=21 OR EventID=24 OR EventID=25) AND Channel='Microsoft-Windows-TerminalServices-LocalSessionManager/Operational' AND Address LIKE '::\\%%' ESCAPE '\\') OR (EventID=1149 AND Channel='Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational' AND Param3 LIKE '::\\%%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source_table": "logs",
@@ -3504,7 +3500,7 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.account_discovery",
+      "attack.t1087",
       "attack.t1087.002",
       "attack.credential_access",
       "attack.t1558.003"
@@ -3660,7 +3656,6 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.privilege_execution",
       "attack.t1543.003",
       "attack.defense_evasion",
       "attack.t1027"
@@ -4428,7 +4423,6 @@
     "tags": [
       "attack.defense_evasion",
       "attack.t1112",
-      "attack.privilege_execution",
       "attack.t1543.003"
     ],
     "title": "Impacket SMBexec service registration (native)"
@@ -5298,7 +5292,7 @@
       "attack.persistence",
       "attack.t1098",
       "attack.t1136",
-      "attack.defense_evesion",
+      "attack.defense_evasion",
       "attack.t0136"
     ],
     "title": "User account creation disguised in a computer account"
@@ -6468,8 +6462,7 @@
     "tags": [
       "attack.lateral_movement",
       "attack.t1021.001",
-      "attack.privilege_escalation",
-      "attack.t1021.001"
+      "attack.privilege_escalation"
     ],
     "title": "RDP BlueeKeep connection closed (CVE-2019-0708)"
   },
@@ -6495,11 +6488,11 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "New Value"
+      "NewValue"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Windows Defender/Operational' AND (EventID=5007 AND `New Value` LIKE 'HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows Defender\\\\Exclusions\\\\%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Windows Defender/Operational' AND (EventID=5007 AND NewValue LIKE 'HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows Defender\\\\Exclusions\\\\%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source_table": "logs",
@@ -7169,7 +7162,7 @@
     "tags": [
       "attack.persistence",
       "attack.t1136",
-      "attack.defense_evesion",
+      "attack.defense_evasion",
       "attack.t1036"
     ],
     "title": "User account created by a computer account"
@@ -8358,7 +8351,7 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.account_discovery",
+      "attack.t1087",
       "attack.t1087.002",
       "attack.credential_access",
       "attack.t1558.003"
@@ -8387,11 +8380,11 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "EventXML.Param3"
+      "Param3"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE EventID=1149 AND Channel='Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational' AND `EventXML.Param3`='127.0.0.1'"
+      "SELECT * FROM logs WHERE EventID=1149 AND Channel='Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational' AND Param3='127.0.0.1'"
     ],
     "schema_version": 2,
     "source_table": "logs",
@@ -9543,7 +9536,7 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.account_discovery",
+      "attack.t1087",
       "attack.t1087.002",
       "attack.credential_access",
       "attack.t1558.003"
@@ -9785,7 +9778,7 @@
       "attack.impact",
       "attack.t1489",
       "attack.defense_evasion",
-      "attack.1562.001"
+      "attack.t1562.001"
     ],
     "title": "Service deactivation (command)"
   },
@@ -9943,7 +9936,6 @@
     "tags": [
       "attack.defense_evasion",
       "attack.t1112",
-      "attack.privilege_execution",
       "attack.t1543.003"
     ],
     "title": "Impacket SMBexec service registration (native)"
@@ -10334,7 +10326,7 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.account_discovery",
+      "attack.t1087",
       "attack.t1087.002"
     ],
     "title": "Suspicious SPN enumeration previous to Kerberoasting attack (native commands)"
@@ -10856,7 +10848,7 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.credential_dumping",
+      "attack.t1003",
       "attack.t1003.003"
     ],
     "title": "IFM creation detected from commandline (installation from media)"
@@ -12512,7 +12504,6 @@
     "tags": [
       "attack.defense_evasion",
       "attack.t1112",
-      "attack.privilege_execution",
       "attack.t1543.003"
     ],
     "title": "Impacket SMBexec service creation (registry)"
@@ -12590,7 +12581,6 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.credential_dumping",
       "attack.t1003"
     ],
     "title": "Diskshadow command abuse to expose VSS backup"

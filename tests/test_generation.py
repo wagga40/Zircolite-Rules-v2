@@ -74,6 +74,65 @@ def test_metadata_adapter_has_stable_id_and_preserves_original():
     assert len({v.data["id"] for v in variants}) == 2
 
 
+@pytest.mark.parametrize("original,expected", [
+    ("attack.11136.001", "attack.t1136.001"),
+    ("attack.1136.001", "attack.t1136.001"),
+    ("attack.1562.001", "attack.t1562.001"),
+    ("attack.Defense Evasion", "attack.defense_evasion"),
+    ("attack.Defense.Evasion", "attack.defense_evasion"),
+    ("attack.Defense-Evansion", "attack.defense_evasion"),
+    ("attack.defense_evesion", "attack.defense_evasion"),
+    ("attack.CommandAndControl", "attack.command_and_control"),
+    ("attack.Command_and_control", "attack.command_and_control"),
+    ("attack.CredentialAccess", "attack.credential_access"),
+    ("ATTACK.T1059.001", "attack.t1059.001"),
+    ("attack.Compiled.HTML.File", "attack.t1218.001"),
+    ("attack.hidden.users", "attack.t1564.002"),
+    ("attack.Exploitation for Privilege Escalation", "attack.t1068"),
+    ("attack.account_discovery", "attack.t1087"),
+    ("attack.credential_dumping", "attack.t1003"),
+])
+def test_attack_tags_are_normalized_deduplicated_and_auditable(original, expected):
+    value = detection(tags=[original, expected, "cve.2022-29072"])
+    before = deepcopy(value)
+    variant, = adapt(Document("rule.yml", "hash", "0", value), SPEC)
+    assert variant.data["tags"] == [expected, "cve.2022-29072"]
+    assert variant.changes["tags"] == {"original": value["tags"], "adapted": variant.data["tags"]}
+    assert value == before
+    assert adapt(variant, SPEC)[0].data == variant.data
+
+
+def test_ambiguous_tactic_is_removed_with_provenance_without_losing_technique():
+    value = detection(tags=["attack.privilege_execution", "attack.t1543.003"])
+    variant, = adapt(Document("rule.yml", "hash", "0", value), SPEC)
+    assert variant.data["tags"] == ["attack.t1543.003"]
+    assert variant.changes["tags"]["original"] == value["tags"]
+
+
+def test_valid_tag_forms_and_other_namespaces_are_preserved():
+    tags = ["attack.defense-evasion", "attack.defense_evasion", "attack.ds0005",
+            "attack.g0001", "attack.s0001", "attack.m0001", "attack.a0001", "custom.SomeValue"]
+    variant, = adapt(Document("rule.yml", "hash", "0", detection(tags=tags)), SPEC)
+    assert variant.data["tags"] == tags
+
+
+@pytest.mark.parametrize("tag", ["attack.12345.001", "attack.Unknown Tactic", "attack.t123.1"])
+def test_unknown_malformed_tags_fail_source_validation(tmp_path, tag):
+    _, report = compile_source("test", SPEC, source(tmp_path, [detection(tags=[tag])]), [])
+    assert report["status"] == "failed"
+    assert report["failures"][0]["stage"] == "validate"
+    assert "Malformed ATT&CK tag" in report["failures"][0]["error"]
+
+
+def test_excluded_templates_do_not_fail_tag_validation(tmp_path):
+    template = detection(id=str(uuid.uuid4()), tags=["attack.", "attack.t"], detection={
+        "s": {"Image": "%administration_hosts%"}, "condition": "s"})
+    spec = dict(SPEC, repository="mdecrevoisier/SIGMA-detection-rules")
+    _, report = compile_source("test", spec, source(tmp_path, [detection(), template]), [])
+    assert report["status"] == "validated"
+    assert any("requires organization values" in item["reason"] for item in report["exclusions"])
+
+
 def test_exact_official_overlap_only_and_full_rulesets(tmp_path):
     outputs, _ = compile_source("test", SPEC, source(tmp_path), [])
     official = deepcopy(outputs)

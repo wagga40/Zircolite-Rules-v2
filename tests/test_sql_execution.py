@@ -42,6 +42,12 @@ def database(entry, rows):
     ({"s": {"Group": "admins"}}, "s", [{"Group": "ADMINS"}, {"Group": "users"}], [1]),
     ({"s": {"CommandLine|re": "don't"}}, "s", [{"CommandLine": "don't run"}, {"CommandLine": "run"}], [1]),
     ({"s": {"Image|cased": "a[*]?.exe"}}, "s", [{"Image": "a[*]?.exe"}, {"Image": "abx.exe"}], [1]),
+    ({"s": {"EventXML.Address": "::%16777216"}}, "s",
+     [{"EventXML.Address": "::%16777216"}, {"EventXML.Address": "::1"}], [1]),
+    ({"s": {"EventXML.Param3": "127.0.0.1"}}, "s",
+     [{"EventXML.Param3": "127.0.0.1"}, {"EventXML.Param3": "10.0.0.1"}], [1]),
+    ({"s": {"New Value|startswith": "HKLM\\"}}, "s",
+     [{"New Value": "HKLM\\test"}, {"New Value": "other"}], [1]),
 ])
 def test_detection_matching(selection, condition, rows, expected):
     entry = convert([detection(detection={**selection, "condition": condition})])[0]
@@ -60,6 +66,51 @@ def test_event_sql_naming_a_collation_is_rejected():
         validate_entry(entry)
     literal = convert([detection(detection={"s": {"CommandLine|contains": "collate"}, "condition": "s"})])[0]
     validate_entry(literal)
+
+
+@pytest.mark.parametrize("quoted", [False, True])
+def test_missing_column_is_rejected_even_with_double_quotes(quoted):
+    entry = convert([detection()])[0]
+    field = '"missing"' if quoted else "missing"
+    entry["rule"] = [f"SELECT * FROM logs WHERE {field}='value'"]
+    with pytest.raises(sqlite3.OperationalError, match="no such column"):
+        validate_entry(entry)
+
+
+def test_export_validation_rejects_malformed_attack_tags():
+    entry = convert([detection(tags=["attack.11136.001"])])[0]
+    with pytest.raises(ValueError, match="Malformed ATT&CK tag"):
+        validate_entry(entry)
+
+
+@pytest.mark.parametrize("profile", ["sysmon", "generic", "native"])
+@pytest.mark.parametrize("upstream,column,modifier,value,matching,other", [
+    ("EventXML.Address", "Address", "startswith", "::%", "::%16777216", "::1"),
+    ("EventXML.Param3", "Param3", "", "127.0.0.1", "127.0.0.1", "10.0.0.1"),
+    ("New Value", "NewValue", "startswith", "HKLM\\", "HKLM\\SOFTWARE\\test", "other"),
+])
+def test_windows_fields_match_zircolite_columns(tmp_path, profile, upstream, column, modifier, value, matching, other):
+    field = upstream + ("|" + modifier if modifier else "")
+    rule = detection(logsource={"product": "windows"}, detection={
+        "s": {field: value}, "condition": "s"})
+    outputs, report = compile_source("test", dict(SPEC, profiles=[profile]), source(tmp_path, [rule]), [])
+    assert report["status"] == "validated"
+    entry, = outputs[profile]["events"]
+    assert entry["required_fields"] == [column]
+    # Explicit consumer schema: never create columns from compiler metadata,
+    # which would conceal a mismatch with Zircolite's flattened event fields.
+    with sqlite3.connect(":memory:") as connection:
+        connection.execute(f'CREATE TABLE logs(row_id INTEGER PRIMARY KEY, "{column}" TEXT COLLATE NOCASE)')
+        connection.executemany(f'INSERT INTO logs("{column}") VALUES (?)', [(matching,), (other,), (None,)])
+        assert [r[0] for r in connection.execute(entry["rule"][0])] == [1]
+
+
+def test_windows_field_mapping_does_not_change_linux_fields(tmp_path):
+    rule = detection(logsource={"product": "linux"}, detection={
+        "s": {"EventXML.Address": "value"}, "condition": "s"})
+    outputs, report = compile_source("test", dict(SPEC, profiles=["linux"]), source(tmp_path, [rule]), [])
+    assert report["status"] == "validated"
+    assert outputs["linux"]["events"][0]["required_fields"] == ["EventXML.Address"]
 
 
 def test_long_or_chain_executes():

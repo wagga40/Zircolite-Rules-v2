@@ -116,7 +116,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1623"
+      "attack.t1623"
     ],
     "title": "MOVEit exploitation - Sysmon"
   },
@@ -155,7 +155,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1623"
+      "attack.t1623"
     ],
     "title": "MOVEit exploitation - Generic"
   },
@@ -271,7 +271,7 @@
     "status": "experimental",
     "tags": [
       "attack.defense_evasion",
-      "attack.T1218"
+      "attack.t1218"
     ],
     "title": "VSDiagnostics used for proxying execution malicious binaries - Sysmon"
   },
@@ -309,7 +309,7 @@
     "status": "experimental",
     "tags": [
       "attack.defense_evasion",
-      "attack.T1218"
+      "attack.t1218"
     ],
     "title": "VSDiagnostics used for proxying execution malicious binaries - Generic"
   },
@@ -348,8 +348,7 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.hidden.users",
-      "attack.T1564.002"
+      "attack.t1564.002"
     ],
     "title": "Hiding local user accounts - Sysmon"
   },
@@ -387,8 +386,7 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.hidden.users",
-      "attack.T1564.002"
+      "attack.t1564.002"
     ],
     "title": "Hiding local user accounts - Generic"
   },
@@ -427,8 +425,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.CommandAndControl",
-      "attack.T1219"
+      "attack.command_and_control",
+      "attack.t1219"
     ],
     "title": "Arbitrary code execution and remote sessions via Action1 RMM - Sysmon"
   },
@@ -466,8 +464,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.CommandAndControl",
-      "attack.T1219"
+      "attack.command_and_control",
+      "attack.t1219"
     ],
     "title": "Arbitrary code execution and remote sessions via Action1 RMM - Generic"
   },
@@ -664,8 +662,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense-Evansion",
-      "attack.T1562.001"
+      "attack.defense_evasion",
+      "attack.t1562.001"
     ],
     "title": "Disabling Python warnings for executing untrusted code - Sysmon"
   },
@@ -702,8 +700,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense-Evansion",
-      "attack.T1562.001"
+      "attack.defense_evasion",
+      "attack.t1562.001"
     ],
     "title": "Disabling Python warnings for executing untrusted code - Generic"
   },
@@ -744,10 +742,10 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.001",
+      "attack.t1059.001",
       "attack.persistence",
-      "attack.T1176",
-      "attack.T1053.005"
+      "attack.t1176",
+      "attack.t1053.005"
     ],
     "title": "ChromeLoader Malware Detection - Sysmon"
   },
@@ -787,10 +785,10 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.001",
+      "attack.t1059.001",
       "attack.persistence",
-      "attack.T1176",
-      "attack.T1053.005"
+      "attack.t1176",
+      "attack.t1053.005"
     ],
     "title": "ChromeLoader Malware Detection - Generic"
   },
@@ -907,7 +905,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.006"
+      "attack.t1059.006"
     ],
     "title": "Emotet loader execution via .lnk file - Sysmon"
   },
@@ -946,7 +944,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.006"
+      "attack.t1059.006"
     ],
     "title": "Emotet loader execution via .lnk file - Generic"
   },
@@ -1143,7 +1141,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.001"
+      "attack.t1059.001"
     ],
     "title": "Raspberry Robin initial execution from external drive - Sysmon"
   },
@@ -1183,7 +1181,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.001"
+      "attack.t1059.001"
     ],
     "title": "Raspberry Robin initial execution from external drive - Generic"
   },
@@ -1221,8 +1219,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.defense.evasion",
-      "attack.T1562.001"
+      "attack.defense_evasion",
+      "attack.t1562.001"
     ],
     "title": "Disabled AV On Dev Drive via Registry - Sysmon"
   },
@@ -1260,8 +1258,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.defense.evasion",
-      "attack.T1562.001"
+      "attack.defense_evasion",
+      "attack.t1562.001"
     ],
     "title": "Disabled AV On Dev Drive via Registry - Generic"
   },
@@ -1569,8 +1567,7 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Compiled.HTML.File",
-      "attack.T1218.001"
+      "attack.t1218.001"
     ],
     "title": "HH.exe LOLBA executing .chm files - Sysmon"
   },
@@ -1609,8 +1606,7 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Compiled.HTML.File",
-      "attack.T1218.001"
+      "attack.t1218.001"
     ],
     "title": "HH.exe LOLBA executing .chm files - Generic"
   },
@@ -1727,8 +1723,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.defense.evasion",
-      "attack.T1562.001"
+      "attack.defense_evasion",
+      "attack.t1562.001"
     ],
     "title": "Enabling Dev Drive With Disabled AV - Sysmon"
   },
@@ -1765,8 +1761,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.defense.evasion",
-      "attack.T1562.001"
+      "attack.defense_evasion",
+      "attack.t1562.001"
     ],
     "title": "Enabling Dev Drive With Disabled AV - Generic"
   },
@@ -1805,8 +1801,8 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.003",
-      "attack.T1204.002"
+      "attack.t1059.003",
+      "attack.t1204.002"
     ],
     "title": "ms-msdt for RCE CVE-2022-30190 - Sysmon"
   },
@@ -1844,8 +1840,8 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.003",
-      "attack.T1204.002"
+      "attack.t1059.003",
+      "attack.t1204.002"
     ],
     "title": "ms-msdt for RCE CVE-2022-30190 - Generic"
   },
@@ -1885,8 +1881,8 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.003",
-      "attack.T1204.002"
+      "attack.t1059.003",
+      "attack.t1204.002"
     ],
     "title": "ms-msdt for RCE - sdiagnhost.exe spawning command - Sysmon"
   },
@@ -1925,8 +1921,8 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.003",
-      "attack.T1204.002"
+      "attack.t1059.003",
+      "attack.t1204.002"
     ],
     "title": "ms-msdt for RCE - sdiagnhost.exe spawning command - Generic"
   },
@@ -1964,8 +1960,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense Evasion",
-      "attack.T1218"
+      "attack.defense_evasion",
+      "attack.t1218"
     ],
     "title": "CMSTP installation of malicious code - Sysmon"
   },
@@ -2002,8 +1998,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense Evasion",
-      "attack.T1218"
+      "attack.defense_evasion",
+      "attack.t1218"
     ],
     "title": "CMSTP installation of malicious code - Generic"
   },
@@ -2042,8 +2038,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense.Evasion",
-      "attack.T1202"
+      "attack.defense_evasion",
+      "attack.t1202"
     ],
     "title": "Execute Python Scripts via Python Installer Binary - Sysmon"
   },
@@ -2081,8 +2077,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense.Evasion",
-      "attack.T1202"
+      "attack.defense_evasion",
+      "attack.t1202"
     ],
     "title": "Execute Python Scripts via Python Installer Binary - Generic"
   },
@@ -2120,8 +2116,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense Evasion",
-      "attack.T1218"
+      "attack.defense_evasion",
+      "attack.t1218"
     ],
     "title": "Wermgr.exe spawning without command line arguments - Sysmon"
   },
@@ -2158,8 +2154,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense Evasion",
-      "attack.T1218"
+      "attack.defense_evasion",
+      "attack.t1218"
     ],
     "title": "Wermgr.exe spawning without command line arguments - Generic"
   },
@@ -2236,7 +2232,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059"
+      "attack.t1059"
     ],
     "title": "Ursnif Redirection Of Discovery Commands - Sysmon"
   },
@@ -2275,7 +2271,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059"
+      "attack.t1059"
     ],
     "title": "Ursnif Redirection Of Discovery Commands - Generic"
   },
@@ -2396,7 +2392,7 @@
     "status": "experimental",
     "tags": [
       "attack.defense_evasion",
-      "attack.T1218.001"
+      "attack.t1218.001"
     ],
     "title": "Onenote execution of malicious embedded scripts - Sysmon"
   },
@@ -2435,7 +2431,7 @@
     "status": "experimental",
     "tags": [
       "attack.defense_evasion",
-      "attack.T1218.001"
+      "attack.t1218.001"
     ],
     "title": "Onenote execution of malicious embedded scripts - Generic"
   },
@@ -2475,7 +2471,7 @@
     "status": "experimental",
     "tags": [
       "attack.defense_evasion",
-      "attack.T1055"
+      "attack.t1055"
     ],
     "title": "Injected Browser Process Spawning Rundll32 - Sysmon"
   },
@@ -2514,7 +2510,7 @@
     "status": "experimental",
     "tags": [
       "attack.defense_evasion",
-      "attack.T1055"
+      "attack.t1055"
     ],
     "title": "Injected Browser Process Spawning Rundll32 - Generic"
   },
@@ -2553,8 +2549,7 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Exploitation for Privilege Escalation",
-      "attack.T1068"
+      "attack.t1068"
     ],
     "title": "Exploitation of 7zip vulnerability - CVE-2022-29072 - Sysmon"
   },
@@ -2592,8 +2587,7 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Exploitation for Privilege Escalation",
-      "attack.T1068"
+      "attack.t1068"
     ],
     "title": "Exploitation of 7zip vulnerability - CVE-2022-29072 - Generic"
   },
@@ -2634,7 +2628,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.001"
+      "attack.t1059.001"
     ],
     "title": "FakeUpdates/SocGholish Malware Detection - Sysmon"
   },
@@ -2674,7 +2668,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.001"
+      "attack.t1059.001"
     ],
     "title": "FakeUpdates/SocGholish Malware Detection - Generic"
   },
@@ -2794,7 +2788,7 @@
     "tags": [
       "attack.execution",
       "attack.lateral_movement",
-      "attack.T1210"
+      "attack.t1210"
     ],
     "title": "Abuse of the Windows Server Update Services (WSUS) for lateral movement. - Sysmon"
   },
@@ -2832,7 +2826,7 @@
     "tags": [
       "attack.execution",
       "attack.lateral_movement",
-      "attack.T1210"
+      "attack.t1210"
     ],
     "title": "Abuse of the Windows Server Update Services (WSUS) for lateral movement. - Generic"
   },
@@ -2869,7 +2863,7 @@
     "status": "experimental",
     "tags": [
       "attack.credential_access",
-      "attack.T1003"
+      "attack.t1003"
     ],
     "title": "LAPS Credential Dumping Spoofing and Domain Controller Impersonation"
   },
@@ -2986,7 +2980,7 @@
     "status": "experimental",
     "tags": [
       "attack.privilege_escalation",
-      "attack.T1548.002"
+      "attack.t1548.002"
     ],
     "title": "Explorer UAC Bypass Via /NOUACCHECK Parameter - Sysmon"
   },
@@ -3025,7 +3019,7 @@
     "status": "experimental",
     "tags": [
       "attack.privilege_escalation",
-      "attack.T1548.002"
+      "attack.t1548.002"
     ],
     "title": "Explorer UAC Bypass Via /NOUACCHECK Parameter - Generic"
   },
@@ -3064,8 +3058,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Discovery",
-      "attack.T1135"
+      "attack.discovery",
+      "attack.t1135"
     ],
     "title": "Using explorer.exe to open a file explorer folder via command prompt - Sysmon"
   },
@@ -3103,8 +3097,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Discovery",
-      "attack.T1135"
+      "attack.discovery",
+      "attack.t1135"
     ],
     "title": "Using explorer.exe to open a file explorer folder via command prompt - Generic"
   },
@@ -3142,8 +3136,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense Evasion",
-      "attack.T1218"
+      "attack.defense_evasion",
+      "attack.t1218"
     ],
     "title": "Dumpbin LOLBin use for proxying execution via link.exe - Sysmon"
   },
@@ -3180,8 +3174,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense Evasion",
-      "attack.T1218"
+      "attack.defense_evasion",
+      "attack.t1218"
     ],
     "title": "Dumpbin LOLBin use for proxying execution via link.exe - Generic"
   },
@@ -3220,8 +3214,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.CredentialAccess",
-      "attack.T1552.001"
+      "attack.credential_access",
+      "attack.t1552.001"
     ],
     "title": "Extract Credentials From IIS Application Pool Configuration Files - Sysmon"
   },
@@ -3259,8 +3253,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.CredentialAccess",
-      "attack.T1552.001"
+      "attack.credential_access",
+      "attack.t1552.001"
     ],
     "title": "Extract Credentials From IIS Application Pool Configuration Files - Generic"
   },
@@ -3300,7 +3294,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.001"
+      "attack.t1059.001"
     ],
     "title": "Raspberry Robin subsequent execution of commands - Sysmon"
   },
@@ -3339,7 +3333,7 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.001"
+      "attack.t1059.001"
     ],
     "title": "Raspberry Robin subsequent execution of commands - Generic"
   },
@@ -3378,9 +3372,9 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.006",
+      "attack.t1059.006",
       "attack.persistence",
-      "attack.T1053.005"
+      "attack.t1053.005"
     ],
     "title": "Serpent backdoor payload execution via scheduled task - Sysmon"
   },
@@ -3418,9 +3412,9 @@
     "status": "experimental",
     "tags": [
       "attack.execution",
-      "attack.T1059.006",
+      "attack.t1059.006",
       "attack.persistence",
-      "attack.T1053.005"
+      "attack.t1053.005"
     ],
     "title": "Serpent backdoor payload execution via scheduled task - Generic"
   },
@@ -3459,8 +3453,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense Evasion",
-      "attack.T1218"
+      "attack.defense_evasion",
+      "attack.t1218"
     ],
     "title": "MSTeams exe side-loading - Update.exe - Sysmon"
   },
@@ -3498,8 +3492,8 @@
     "source_table": "logs",
     "status": "experimental",
     "tags": [
-      "attack.Defense Evasion",
-      "attack.T1218"
+      "attack.defense_evasion",
+      "attack.t1218"
     ],
     "title": "MSTeams exe side-loading - Update.exe - Generic"
   }

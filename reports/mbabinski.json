@@ -1,6 +1,2174 @@
 {
-  "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/mbabinski/Sigma-Rules/commits/main",
-  "revision": null,
+  "artifacts": {
+    "experimental/rules_mbabinski_windows_generic_correlation.json": 2,
+    "experimental/rules_mbabinski_windows_merged_correlation.json": 3,
+    "experimental/rules_mbabinski_windows_sysmon_correlation.json": 2,
+    "rules_mbabinski_windows_generic.json": 165,
+    "rules_mbabinski_windows_merged.json": 364,
+    "rules_mbabinski_windows_sysmon.json": 209
+  },
+  "exclusions": [
+    {
+      "document": "0",
+      "path": "2023_Impacket/GetUserSPNs/zeek_impacket_kerberos_rc4.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'zeek' is outside this profile",
+      "sha256": "6e963ac004aac7b656d44217c77ecd16bc4454651b795bc0e676b9ca86a63244"
+    },
+    {
+      "document": "0",
+      "path": "2023_Impacket/dcomexec/zeek_dce_impacket_remote_create_instance_dcomexec.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'zeek' is outside this profile",
+      "sha256": "e47fc323198d3fae8afa04ed7f2b4ad7a62e3acb7a82eb2ce163d2b40f8de28b"
+    },
+    {
+      "document": "0",
+      "path": "2023_Impacket/secretsdump/zeek_dce_impacket_rpc_secretsdump.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'zeek' is outside this profile",
+      "sha256": "014501b1d5c2c519c11bce2942c065a947711f4a83e70507fe44bf44bdf6a111"
+    },
+    {
+      "document": "0",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_setuid_setgid_binary_search.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "9033a9f3e3840529b7ea1843b03d673d2381f75c5e93f4555362ae247851f9d9"
+    },
+    {
+      "document": "0",
+      "path": "2023_WebDAV_SearchMS/proxy_webdav_search_ms.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "e977c9e4b938f0225975f800045e11931093a2ab7bf132c2119e9bc84d73ef5f"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_applescript_applet_download_as_payload.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'macos' is outside this profile",
+      "sha256": "5670c7a594b0d3bd427d41de197a5ba5d348c18cc9d6826ab0aca876aa35a71d"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_applescript_input_prompt.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'macos' is outside this profile",
+      "sha256": "74be2ee8457593d9b7f79551e55e7e96ae6fdd1c78035fc9b689b122d49cbbbf"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_email_forwarding_rule_suspicious_criteria.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'm365' is outside this profile",
+      "sha256": "9242a576602b60c62a6cb8ed9ff116d04921ecf03287f7b5b5b3ffa6eeeb1fbc"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_email_forwarding_rule_suspicious_folders.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'm365' is outside this profile",
+      "sha256": "750e564376952772a6f63d7f62c105e2d98c5255e96b47f6daf25fe63fac4e9b"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_email_forwarding_rule_suspicious_names.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'm365' is outside this profile",
+      "sha256": "4a1cd5eda78f56576f639e058192a37a73dc40943049344a3fccde09f71cf4e7"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_kernel_modules_nondepmod_modifying_modules_dep.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "4f6c0d6194fbdd6c3ed494339b4a6011c26580f96f3bb9476414fb846fa16bdc"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_kernel_modules_shells_modifying_files_in_lkm_directories.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "887efd11ca23c54d4ae8ce8f92a7c8ce5625319e5995eae8d4873a92f1d40d0d"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_kernel_modules_systemd_loading_lkm_insmod.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "0de2826dd1218c2d549bfeeca5572040709a120b9433f035d4532b6450df8cdb"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_kernel_modules_systemd_loading_lkm_modprobe.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "6060155a870fa480b9ac74aec0340717ef48f13bfbca985685e1ede54083ec86"
+    },
+    {
+      "document": "0",
+      "path": "2022_HTMLSmuggling/1_win_zipfile_drop.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "1f71889cbf04151b7231f7aff14f78e78f272dee0747ede5a34e599166b26e50"
+    },
+    {
+      "document": "0",
+      "path": "2022_HTMLSmuggling/2_win_susp_file_extraction.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "dff1c31629394f05e350bf6efed70d9458fec47f5c7ff370d16bb7f52309f5d5"
+    },
+    {
+      "document": "0",
+      "path": "2022_QakBot/win_qakbot_dropped_file_creation_sysmon.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "1e5f2ba5906b2504b19a3e1f5e3faf5c25b3341e7a9e457cd229972478833aae"
+    },
+    {
+      "document": "0",
+      "path": "2022_RedCanary_ThreatDetectionReport/lsass_process_access_injection.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "4f61eef3bd6152e162d0666cfb1cc19d1df718234b274d3c71632d0914d1bbc8"
+    },
+    {
+      "document": "0",
+      "path": "2022_RedCanary_ThreatDetectionReport/notepad_network_connection.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "bc2f454ffc90b26bb48c1233b42727a2165431c55ef33aba70b8596c8a94520b"
+    },
+    {
+      "document": "0",
+      "path": "2022_RedCanary_ThreatDetectionReport/powershell_process_injection.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "c9297ca0a3cc3289305a33679aed20c314f02d93ff0db06f93180d7a4257f6d7"
+    },
+    {
+      "document": "0",
+      "path": "2022_RenameSystemUtilities/file_creation_exe_extension.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "db23d314b6fec8c27a15775044e12d0cdfa7d5b10ca90975c9f17c18d002f79f"
+    },
+    {
+      "document": "0",
+      "path": "2022_Solarmarker/win_susp_solarmarker_file_creation.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "0aa5651ef6b0e45b71f51be2cc1e19698969721ce2ac7539a951421e68aa3129"
+    },
+    {
+      "document": "0",
+      "path": "2022_Solarmarker/win_victim_id_file_creation.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "320db9bef9065bc022d4eafd381a699157fb7384ffda8fdecb6d0e5148b3ddd2"
+    },
+    {
+      "document": "0",
+      "path": "2022_ViceSociety_Ransomware/win_encrypted_extension_file_creation_vsociety.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "45c3d43d04966cbd2ae4f5984f9a088d546da3b34d7c3ec467b1b1c8f54bf785"
+    },
+    {
+      "document": "0",
+      "path": "2023_DarkGate/file_event_win_malware_darkgate_autoit3.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "01bc005f15cb4869cd6a097287bab486601db43696796098392df7ff1de1a8db"
+    },
+    {
+      "document": "0",
+      "path": "2023_Impacket/GetUserSPNs/zeek_impacket_kerberos_rc4.yml",
+      "profile": "generic",
+      "reason": "logsource product 'zeek' is outside this profile",
+      "sha256": "6e963ac004aac7b656d44217c77ecd16bc4454651b795bc0e676b9ca86a63244"
+    },
+    {
+      "document": "0",
+      "path": "2023_Impacket/atexec/win_file_creation_impacket_atexec.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "d78319c28bdba074edc6cb6c9c21eaa9613f3d334875fb4a80445989ca15b04d"
+    },
+    {
+      "document": "0",
+      "path": "2023_Impacket/dcomexec/zeek_dce_impacket_remote_create_instance_dcomexec.yml",
+      "profile": "generic",
+      "reason": "logsource product 'zeek' is outside this profile",
+      "sha256": "e47fc323198d3fae8afa04ed7f2b4ad7a62e3acb7a82eb2ce163d2b40f8de28b"
+    },
+    {
+      "document": "0",
+      "path": "2023_Impacket/psexec/win_file_creation_impacket_psexec.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "009cda928afa72bce7a68df4e4613ef7a4be62a257ba34b9ae12b1ba6d0269d5"
+    },
+    {
+      "document": "0",
+      "path": "2023_Impacket/psexec/win_pipe_created_remcom_impacket_psexec.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "76b00fc8b58d601195534b69ba432d8cd0562becef3ecd82f12e0a770b6af0a3"
+    },
+    {
+      "document": "0",
+      "path": "2023_Impacket/secretsdump/zeek_dce_impacket_rpc_secretsdump.yml",
+      "profile": "generic",
+      "reason": "logsource product 'zeek' is outside this profile",
+      "sha256": "014501b1d5c2c519c11bce2942c065a947711f4a83e70507fe44bf44bdf6a111"
+    },
+    {
+      "document": "0",
+      "path": "2023_Impacket/smbclient/file_event_win_impacket_exe.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "f97921451004f532926c8b285173a5a94aa0be66ed5291eb93a7fd5aa7859034"
+    },
+    {
+      "document": "0",
+      "path": "2023_OneNote_Malware/create_stream_hash_double_extension.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "588a1f78d5545c905fec4f36d3bcf793e4c3c2670ac1dfcf2a7ef0e021ae4a62"
+    },
+    {
+      "document": "0",
+      "path": "2023_OneNote_Malware/dns_query_double_extension.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "35346d4d49d33fd223d1a46a4fcff45aa7101fab764de969f463a5100e54992a"
+    },
+    {
+      "document": "0",
+      "path": "2023_OneNote_Malware/file_event_double_extension.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "b6ed393cab4b80be71d1c086679ff06d56aa1a97a5d27c3234c491a155611b2b"
+    },
+    {
+      "document": "0",
+      "path": "2023_OneNote_Malware/net_connection_win_double_extension.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "e3f349ab5f2225be18e61dbdebf45983fcd4d0bbfc78ada4780558023ee67a8d"
+    },
+    {
+      "document": "0",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_lsass_memory_lsass_access.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "c53f460f87e0db368676bf2069e48e53c594a7d46fe2d1d56d4ed1477044511d"
+    },
+    {
+      "document": "0",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_motw_bypass_iso_write_susp_folder.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "a62dc07d17ffed0a5e1e755bc5198746ed5f1de27c8832e9b39808cd41fef313"
+    },
+    {
+      "document": "0",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_process_injection_powershell_injection.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "6edda107803fe0c5617ca61d648f74c27f2af3f368f5d5931e7f8443057feac5"
+    },
+    {
+      "document": "0",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_process_injection_susp_net_conn.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "53f3226c6c5870d4d0de770e435c3a394b009e95b396d8f65e0070c6a34c0af2"
+    },
+    {
+      "document": "0",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_rundll32_inject_to_lsass.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "78d22e6ea1fa6d412ffbcf7e8faa5a65576e578e19ad8480cec3e13e047a62fd"
+    },
+    {
+      "document": "0",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_setuid_setgid_binary_search.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "9033a9f3e3840529b7ea1843b03d673d2381f75c5e93f4555362ae247851f9d9"
+    },
+    {
+      "document": "0",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_smb_win_admin_shares_file_write.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "dad61321458e84892dbbf0f75f319407791755892971f871c5612b088690a2d7"
+    },
+    {
+      "document": "0",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_wmi_unusual_module_loads.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "289183083d33da3fd6f4e72b0b5eb6537e9127d808d082017446efd64d910833"
+    },
+    {
+      "document": "0",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_adsearch_startup_folder_persistence.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "295cad952e156cfde58552cd4930dee846626bb705cbe0ca42ff84c5862e8162"
+    },
+    {
+      "document": "0",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_cobalt_strike_beacon_implant.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "74d07f0f668aec40d76338a63a7454b227053727fa23cac616d9470587a08f88"
+    },
+    {
+      "document": "0",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_mimikatz_kirbi_file_creation.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "52aff36ff5d6171c9ea2e1d05a4385e17b51be7a5f71c4fc54f1e7d73f2cffb2"
+    },
+    {
+      "document": "0",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_yellow_cockatoo_startup_lnk_file.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "a6e4514adbeecd0db980b0d5f8de0fe3ea76aad1a205927848773108df7923e8"
+    },
+    {
+      "document": "0",
+      "path": "2023_WebDAV_SearchMS/file_event_win_webdav_tmpfile_creation.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "b24daa9a90b20a5a707a78a48558e87d85fc751e997c441f81367f5bc60e1b1e"
+    },
+    {
+      "document": "0",
+      "path": "2023_WebDAV_SearchMS/proxy_webdav_search_ms.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "e977c9e4b938f0225975f800045e11931093a2ab7bf132c2119e9bc84d73ef5f"
+    },
+    {
+      "document": "0",
+      "path": "2024_Cicada3301_Ransomware/file_creation_win_cicada_psexec.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "d883003e0000df7d2ab90a09ced51b7fe140867ad59cab92ec92811d638dea6e"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_applescript_applet_download_as_payload.yml",
+      "profile": "generic",
+      "reason": "logsource product 'macos' is outside this profile",
+      "sha256": "5670c7a594b0d3bd427d41de197a5ba5d348c18cc9d6826ab0aca876aa35a71d"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_applescript_input_prompt.yml",
+      "profile": "generic",
+      "reason": "logsource product 'macos' is outside this profile",
+      "sha256": "74be2ee8457593d9b7f79551e55e7e96ae6fdd1c78035fc9b689b122d49cbbbf"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_email_forwarding_rule_suspicious_criteria.yml",
+      "profile": "generic",
+      "reason": "logsource product 'm365' is outside this profile",
+      "sha256": "9242a576602b60c62a6cb8ed9ff116d04921ecf03287f7b5b5b3ffa6eeeb1fbc"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_email_forwarding_rule_suspicious_folders.yml",
+      "profile": "generic",
+      "reason": "logsource product 'm365' is outside this profile",
+      "sha256": "750e564376952772a6f63d7f62c105e2d98c5255e96b47f6daf25fe63fac4e9b"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_email_forwarding_rule_suspicious_names.yml",
+      "profile": "generic",
+      "reason": "logsource product 'm365' is outside this profile",
+      "sha256": "4a1cd5eda78f56576f639e058192a37a73dc40943049344a3fccde09f71cf4e7"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_kernel_modules_nondepmod_modifying_modules_dep.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "4f6c0d6194fbdd6c3ed494339b4a6011c26580f96f3bb9476414fb846fa16bdc"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_kernel_modules_shells_modifying_files_in_lkm_directories.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "887efd11ca23c54d4ae8ce8f92a7c8ce5625319e5995eae8d4873a92f1d40d0d"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_kernel_modules_systemd_loading_lkm_insmod.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "0de2826dd1218c2d549bfeeca5572040709a120b9433f035d4532b6450df8cdb"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_kernel_modules_systemd_loading_lkm_modprobe.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "6060155a870fa480b9ac74aec0340717ef48f13bfbca985685e1ede54083ec86"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_obfuscation_zipfile_spawning_javascript.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "627501ed1a7a321e3cac440d601b46422fde6ba0a127c04e741370ebc14582d1"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_os_cred_dumping_secretsdump_file_modification.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "2c3ac153264474ec83495f4dd3dcd3b59f82a21a6bc7185c1f21018904f783af"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_rundll32_injection_to_lsass.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "d2ad019d933401ccfdbaf300d820f985b23a6e9542474d059da2a1216bfcf4c6"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_rundll32_no_cmdline.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "8533155338bb03d46323bbcda3f5decb217902bf497a60cd46d22a994920ddf4"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_wmi_unusual_module_loads.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "589c359caa5c199bbc396f2a38480070aa3af117175070c7c124d3639082d281"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_impacket_atexec_execution.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "52e7b851695fb2fec128cc7e00bc2857bd9b1b803d57b7d1f5efddf230b4fc04"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_impacket_secretsdump_execution.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "49747f3ebf7925a240c9b3aa39a93fe3a4bddf093775ab1f10edb4478cb6b0ab"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_mimikatz_kirbi_file.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "5b5ae1c6ed89e92a3e48b6d483afea14c2019fedf8679bb4d1b43671a92408f0"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_raspberry_robin_cmdline_netconn_no_params.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "8e374eebd6bbd4c25bf7b940befbfac9b68ae0b681113864786047dd18cb4411"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_socgholish_wscript_from_browser_with_netconn.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "192e2f3e5be546d4a288d70f4b11aa952635a2a1dcb0eb36bdd519f798dc3688"
+    },
+    {
+      "document": "0",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_yellow_cockatoo_ps_startup_folder_persistence.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "6976d2ffd49e7be889fcd4e55e676447e814577a4e0e54b479cecd3b9b069e13"
+    },
+    {
+      "document": "0",
+      "path": "2025_ArcGIS_Server_SOE_Abuse/file_event_win_arcsoc_creating_susp_files.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "b81ea9fd755e8a1f8d76098c66ec49309fdd7cb230830ed3fefb2f7211f32537"
+    }
+  ],
+  "failures": [
+    {
+      "approved": true,
+      "document": "0",
+      "error": "Unsupported Sigma collection action: 'correlation'",
+      "path": "2022_HTMLSmuggling/correlation_temporal_html_smuggling.yml",
+      "profile": "*",
+      "sha256": "5a866eeb502668fb7ec0ece96050f113ddb227783aed7b4cc8688a406ddc3932",
+      "stage": "discovery"
+    }
+  ],
+  "ignored": [],
+  "input_documents": 227,
+  "official_baseline": {
+    "artifacts": {
+      "rules_linux.json": "7b2e5b1210c26b12d401b27f3d8be79d7ef8fa8abb0671db364794a9486aa2ac",
+      "rules_windows_generic.json": "d35a1c829711acdf36839ee728369ba0d654d3357309cdf6101fde24df0c6892",
+      "rules_windows_sysmon.json": "5a6dafe76b0f34ee9fab07453b14fccddccb89e0f7566d2b9c786224a3539360"
+    },
+    "repository": "SigmaHQ/sigma",
+    "revision": "07ec293a51695cb1131a2e05260247872b31e1e1"
+  },
+  "official_duplicates_removed": {
+    "generic/correlations": 0,
+    "generic/events": 0,
+    "sysmon/correlations": 0,
+    "sysmon/events": 0
+  },
+  "profiles": {
+    "generic": {
+      "converted": 169,
+      "correlations": 2,
+      "eligible": 169,
+      "events": 165,
+      "reference_only": 2
+    },
+    "sysmon": {
+      "converted": 213,
+      "correlations": 2,
+      "eligible": 213,
+      "events": 209,
+      "reference_only": 2
+    }
+  },
+  "provenance": [
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "df69c374-327e-4146-acff-4a961bb1b755",
+      "path": "2022_BlackCat_Ransomware/win_susp_process_blackcat_execution.yml",
+      "sha256": "da702e3869882e76458c17b0d0dc85b0463539dc7935811a41ca80d0e6406d07"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "76fe5991-2bff-4ae2-adcf-28a95788027f",
+      "path": "2022_BlackCat_Ransomware/win_susp_process_blackcat_execution_getuuid.yml",
+      "sha256": "a75e9e79ad8708c5dfcdba0429b883b56a4f89c6780538079b1bf77498a36bfe"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "613624be-dabf-4562-b49b-c2fd45773556",
+      "path": "2022_BlackCat_Ransomware/win_susp_process_blackcat_exfiltration.yml",
+      "sha256": "a5761e13eae3c787fc10b82c5298eeda3ba68eb02e0a9cb7b54d1a7c6e74f045"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "82469ee5-ccf3-4669-9be6-31830f7ef3d7",
+      "path": "2022_BlackCat_Ransomware/win_susp_process_exec_in_perflogs_path.yml",
+      "sha256": "ae0604fc87542981e9daca126eb2c0d5b8f289e31df82f7c627fe7ee140a90aa"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "27e58290-85bf-4bd4-8eab-1c493139b659",
+      "path": "2022_BlackCat_Ransomware/win_susp_process_fsutil_allowing_connections.yml",
+      "sha256": "f25943c31a13714089db5f98677b3b63e1cd5f6d4e0213d7d50210694510541f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9fc5784b-50ab-4f0e-8044-5e15990d48a1",
+      "path": "2022_BlackCat_Ransomware/win_susp_process_maxmpxct_reg_mod.yml",
+      "sha256": "ce75c77ee097cfcf48d6209e7fd93cd22062352bba0edcbf181c4866d48a8cda"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9c5df39b-0fe2-450b-bc90-a1b748dca8af",
+      "path": "2022_BlackCat_Ransomware/win_susp_reg_added_maxmpxct_sysmon.yml",
+      "sha256": "d5e342553f4a3979cc136388b2345b62a70e413427aaa4e3ee847869eb961c3f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4bd730d9-37d6-4a87-b392-ffb9ab52bf21",
+      "path": "2022_BlackCat_Ransomware/win_susp_reg_set_maxmpxct_sysmon.yml",
+      "sha256": "415b09c3f7173b5ada0242fb0f6ff64338126f0aab30e54b162e0c351fa4b818"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4007bc45-1727-405d-a7bc-4b3d441bf08f",
+      "path": "2022_ChromeLoader/chrome_loadextension_chromeloader.yml",
+      "sha256": "ec3aeea850fd8da0926de8e59741b17e2aa3a8186f5ac9b8c2981e91b305f4f5"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "79cd4f76-2df9-42e1-a957-34fb7ee5a3cc",
+      "path": "2022_ChromeLoader/cmd_external_drive_batch_script_execution_chromeloader.yml",
+      "sha256": "a1be2aa81037746dbaefa8e7feacf031473f81014f76c752ff2d22331f676532"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "10ad1627-1a0a-4323-b3da-3a9394b9535a",
+      "path": "2022_Gootloader/registry_key_creation_gootloader.yml",
+      "sha256": "1d7934715d63c0ca05dfcdaed9c92d4831f70dde3c704fc76ce71ca579ec05c7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c9677b37-50f0-44d3-b8f8-24b5b5eed570",
+      "path": "2022_Gootloader/wscript_execution_in_appdata_gootloader.yml",
+      "sha256": "a28b366785a8fecf8356eb30fe62874f74b65e16a556791fd17fc990ba9d187e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2e88fc48-1d6c-425d-beb8-fa58047d41dd",
+      "path": "2022_HTMLSmuggling/1_win_zipfile_drop.yml",
+      "sha256": "1f71889cbf04151b7231f7aff14f78e78f272dee0747ede5a34e599166b26e50"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f853978d-343e-4879-ab56-dfe07f1f2f0b",
+      "path": "2022_HTMLSmuggling/2_win_susp_file_extraction.yml",
+      "sha256": "dff1c31629394f05e350bf6efed70d9458fec47f5c7ff370d16bb7f52309f5d5"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0248a7bc-8a9a-4cd8-a57e-3ae8e073a073",
+      "path": "2022_HTMLSmuggling/3_win_security_iso_mount.yml",
+      "sha256": "336c78609138ef376a8063b21af9323975c3dae3022e56335732ab7a0f5e23e8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2a054382-98a1-4d96-b966-ded8e5aa3a65",
+      "path": "2022_HTMLSmuggling/4_win_process_creation_ext_drive.yml",
+      "sha256": "f2bf63529646be01c3d81b271f16a7a982cdeaebbb79369164b5ef0cc669b509"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2a054382-98a1-4d96-b966-ded8e5aa3a65",
+      "path": "2022_HTMLSmuggling/4_win_process_creation_ext_drive_old.yml",
+      "sha256": "5e76977c0676700b2096c9f49f1ebb8c79952ae3a465819c4cd438ab3eaa7510"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "99a9fbb6-62bf-4cb7-8406-a363bc14cbf3",
+      "path": "2022_Hive_Ransomware/win_bcd_registry_modification_hive.yml",
+      "sha256": "cab89e4ecb9fe46ec3f3d082608463727ec857ba9d8fb2615f9c192396ef690e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e28f76ad-bdd9-4e56-bd09-ce8b9b853b7f",
+      "path": "2022_Hive_Ransomware/win_susp_bcdedit_hive.yml",
+      "sha256": "dc5a2aad214f68b558d9c8894ca7433158af67beec3eeb5a36dfd04576c674f6"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4d71069b-dda7-4df7-b835-1f23dd212615",
+      "path": "2022_Hive_Ransomware/win_susp_wevtutil_hive.yml",
+      "sha256": "af3b638ebde5b8c7f1d0193c6435259c319cd2d4c83acdaf11ec4dc7c819ff54"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7daae1fd-b462-4628-a87e-5f639351b783",
+      "path": "2022_QakBot/win_qakbot_dropped_file_creation_4663.yml",
+      "sha256": "bf4b598d8d40c957144ff4c90cb4e523a4dabfc1496eb647a151f78106b5fc27"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8e401ffe-ca9b-4bb2-87aa-8e285811d43f",
+      "path": "2022_QakBot/win_qakbot_dropped_file_creation_sysmon.yml",
+      "sha256": "1e5f2ba5906b2504b19a3e1f5e3faf5c25b3341e7a9e457cd229972478833aae"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b47b9cc3-6f9a-4a58-a669-5e5e126514b1",
+      "path": "2022_QakBot/win_qakbot_susp_calc_dll_load_trellix.yml",
+      "sha256": "f76e70c21d4e835411d3997a8f0039c6c0bd18ef428cede85931761b515e4a08"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "76c86421-c373-4cac-9510-66455bc5fcd5",
+      "path": "2022_QakBot/win_qakbot_susp_calc_process_trellix.yml",
+      "sha256": "fe081a3cec22f57d4712bc05d4e3b4645e97c0971da12abbd584ef52c1d3e365"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ebda47a5-173e-493d-93a6-d7123076ee11",
+      "path": "2022_QakBot/win_qakbot_susp_cmdline_from_injected_process.yml",
+      "sha256": "df990a51e6da84fbd4eae16874915225d9e11f0e24dd928159a6d687df94f72c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ddef6008-8465-4ce6-b2ec-4e8ffef62a9a",
+      "path": "2022_QakBot/win_qakbot_susp_process_injection_to_explorer.yml",
+      "sha256": "ec9690fa25d88450dd272d9b97aaf015dbbb2bca4e04dfa65b8eae78f148d960"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6470cbb3-a339-40dd-8d0e-250013b86828",
+      "path": "2022_QakBot/win_qakbot_susp_schtasks_process_trellix.yml",
+      "sha256": "489ae410724bb5a6f90a869f0fefe6a4248563c9cd88d0df91c272cbe0096dce"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c7568c9e-f6c6-4cb7-a3c0-da356aef51d8",
+      "path": "2022_RedCanary_ThreatDetectionReport/bitsadmin_mal_download.yml",
+      "sha256": "772d254df8e09367af7b7de58f2c2225d26990a84c4ee4e7640c96159ce2ebfc"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b7bfe106-4c22-4ced-82da-b12c39bef679",
+      "path": "2022_RedCanary_ThreatDetectionReport/certutil_mal_download.yml",
+      "sha256": "fd8ebc24a1bded4f2fc8d865cce4b0c69e2f5efffacc35a09087d5740071d47d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "188b256a-4344-47fb-88ed-6343b37c4999",
+      "path": "2022_RedCanary_ThreatDetectionReport/cmd_bypassing_security_controls.yml",
+      "sha256": "397c8544d0866c405898914552c59f6b2931381466a4198a28812553a46c8ee1"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a30afe67-bde7-450f-a143-96a1a86d26d9",
+      "path": "2022_RedCanary_ThreatDetectionReport/cmd_obfuscated_commands.yml",
+      "sha256": "450956ef8fef489b64ee475c4b516008adc19696ad9007930741f6694a4b8d14"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1b5f1187-7010-4f58-b6a3-2b762d594b90",
+      "path": "2022_RedCanary_ThreatDetectionReport/cmd_powershell_base64.yml",
+      "sha256": "abecb28e847915e338f31bbf558f5fe1a17df5d87aea4d00bb27f039e16e75cb"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "157c153a-97d1-43e4-bc25-5461f52c935d",
+      "path": "2022_RedCanary_ThreatDetectionReport/cmd_susp_process_ancestry.yml",
+      "sha256": "8e5a5bbd1cea2cda7cc6b44923261080bfdbfdcd44d3100cc1815ebf6fad51db"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "23fac7e9-3c44-4b76-891b-72c4d44e1964",
+      "path": "2022_RedCanary_ThreatDetectionReport/lsass_process_access_injection.yml",
+      "sha256": "4f61eef3bd6152e162d0666cfb1cc19d1df718234b274d3c71632d0914d1bbc8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "67ba1ddd-4510-42d5-aa78-83bed66bd684",
+      "path": "2022_RedCanary_ThreatDetectionReport/lsass_susp_parent_child_relationships.yml",
+      "sha256": "75251c0603dc7cd7dc276d6701074b950b4015f8a98c2aa25ec0ac05868b2ce1"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1b7bc524-7d66-4902-9524-0e22e5cbe667",
+      "path": "2022_RedCanary_ThreatDetectionReport/notepad_internal_name_mismatch.yml",
+      "sha256": "c1c6ab6ea07686e383cea5ba27326f06d67657427a6dd654e2ba62c36afd2fc3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6abd63f2-a8cc-40bc-b13b-7c60fa20b265",
+      "path": "2022_RedCanary_ThreatDetectionReport/notepad_network_connection.yml",
+      "sha256": "bc2f454ffc90b26bb48c1233b42727a2165431c55ef33aba70b8596c8a94520b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9c644369-a7c5-4166-a702-930efd9b5579",
+      "path": "2022_RedCanary_ThreatDetectionReport/notpowershell_unusual_commandline.yml",
+      "sha256": "14c9b17a16221e52bb1397f30433b9f59314f805bba6a5788646e2cd1c843f45"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1d3025d2-f965-42e2-8256-adaa1054613d",
+      "path": "2022_RedCanary_ThreatDetectionReport/powershell_base64.yml",
+      "sha256": "b63679d575b86e8fb0b825aa97691fca230e21581a744c2812ae7173a5c4320d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "32cfafc8-fbdc-43e0-a2cd-11b99630d270",
+      "path": "2022_RedCanary_ThreatDetectionReport/powershell_disable_defender_components.yml",
+      "sha256": "997cd6fbb4b3e7a0d2020ab14c44c041c42a36bf7674219193081683d4eb364e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5c0fcaac-e5e9-44a3-811f-b43b7709c339",
+      "path": "2022_RedCanary_ThreatDetectionReport/powershell_encoded_flag.yml",
+      "sha256": "39cb83bcf950469007eb2c0f4c867dcb50a3f2f13ea6dcf3e05558e6ea32723e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "bb1e6157-bc60-41fc-a395-513ed538fabe",
+      "path": "2022_RedCanary_ThreatDetectionReport/powershell_high_count_susp_chars.yml",
+      "sha256": "187dc618d2090c299de0110f5296ff83ed83c2d110a3136c64838924c2ac512b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "bb193057-4917-427f-887c-1d2615394935",
+      "path": "2022_RedCanary_ThreatDetectionReport/powershell_modify_defender_components.yml",
+      "sha256": "94c34337edcf852b35c75a1c5fc3568c06de7bc37b2f5a42469bc2feeb663091"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "95d5a93d-b755-4443-87d2-48125a4172ac",
+      "path": "2022_RedCanary_ThreatDetectionReport/powershell_process_injection.yml",
+      "sha256": "c9297ca0a3cc3289305a33679aed20c314f02d93ff0db06f93180d7a4257f6d7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a01d910a-d31d-4d1f-98ce-3dedd301a605",
+      "path": "2022_RedCanary_ThreatDetectionReport/powershell_renamed.yml",
+      "sha256": "a931f3a3b3eacd5b6998d0cc2168df0769d5d458ee8fc32d127c08ee77c082cb"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b3dfac86-1056-4b6b-9c67-db4a10a9e812",
+      "path": "2022_RedCanary_ThreatDetectionReport/powershell_susp_cmdlets.yml",
+      "sha256": "ed1fab6cc3e4a0ae4769d758aa706981548c5a30bb8b534d24800e73cb8a6563"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c920d5b8-0e50-40ef-8f1a-5eb27399f455",
+      "path": "2022_RedCanary_ThreatDetectionReport/powershell_susp_wmi_cmdlets.yml",
+      "sha256": "d837d52b3ff5e14f0ae48f3894491587016623573686b63c850baf75fe354011"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e0a2f82f-d11d-4ea7-af7e-a8f760b07c04",
+      "path": "2022_RedCanary_ThreatDetectionReport/process_execution_without_commandline.yml",
+      "sha256": "d7701731ffe6594a1ce00065f718f921009e2ed218048fe2e1b0e9c2a0594d86"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "361f2190-4857-4505-aaf9-588013b390f1",
+      "path": "2022_RedCanary_ThreatDetectionReport/rundll32_app_bypass_dllregisterserver.yml",
+      "sha256": "e30ff2fbf13bbafdaa165804b7905aa3e519b78e9545af693da1deff9fb1324c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e7cff8e3-89ae-47bd-841f-833e0a647f72",
+      "path": "2022_RedCanary_ThreatDetectionReport/rundll32_susp_export_functionality.yml",
+      "sha256": "6e411f6f78b9c2d5839822972f22b72cfc9cbe0af63b6c72bf56f6d66504ae28"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a01588a5-b68d-4d55-ab49-76d25c557ed4",
+      "path": "2022_RedCanary_ThreatDetectionReport/rundll32_susp_process_ancestry.yml",
+      "sha256": "cc780834e568ae2ec8dcbeae6278793a71e82692047994e7c8fad75dc7f1fadd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "48bd57e9-1b2b-4be9-a2aa-5fccbe86b136",
+      "path": "2022_RedCanary_ThreatDetectionReport/rundll32_without_commandline.yml",
+      "sha256": "8f140af6f5899977071e0eff07d4eaf42e5eb310eebc4d1af5de224b7c093ced"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "eb9d10be-1ece-4241-bc76-d51eadcaf42b",
+      "path": "2022_RedCanary_ThreatDetectionReport/schtasks_create_shell.yml",
+      "sha256": "9174a7d99a530695806f4f8d6f86a82a96e77735f36707f8fb5e1b0db04e4ad9"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4a224230-746d-436b-b569-59f2d6809d6b",
+      "path": "2022_RedCanary_ThreatDetectionReport/schtasks_network_connections.yml",
+      "sha256": "a7942cb394a613065cec7bc644328a92d2579120a88ffe123ede52ed307c8492"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ccb39be9-ba55-4553-9614-a94e98e58626",
+      "path": "2022_RedCanary_ThreatDetectionReport/schtasks_susp_behavior.yml",
+      "sha256": "a0720d5373e02bbd6dbf18a6c0e0787e33a162ecc279441c6eadfd28d2ceddcf"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3b9fc5ea-6288-4c03-882a-af00df4f5b32",
+      "path": "2022_RedCanary_ThreatDetectionReport/shrpubw_execution_from_unexpected_path.yml",
+      "sha256": "4a2e85975cee75fe899813654c7d3163f9fca43c0490b21b54770b527376b3a1"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "036c727d-0263-4733-ad60-d5f48dc72144",
+      "path": "2022_RedCanary_ThreatDetectionReport/svchost_wout_normal_parameters.yml",
+      "sha256": "531ca688e2c6d37cbc4999ff3a72fe513d1c19e813d855421aba1eda9d5704e0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "21a5815b-5db5-4e13-99e4-052ae6bbcdc1",
+      "path": "2022_RedCanary_ThreatDetectionReport/wmi_recon_activity.yml",
+      "sha256": "384e137e5f6a56ce1bc9f4385dce7e5ea9dd9e85309d264653b783c55ce6a407"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9c3367de-94fd-4a46-bc9f-d2943bd32025",
+      "path": "2022_RedCanary_ThreatDetectionReport/wmi_susp_process_lineage.yml",
+      "sha256": "2ce80a1381bfb500c95c5aa4f3d416aa2f290b3c7f0e5b2da049000c822994c2"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "68483dc1-6bce-44ba-821b-59f3a0ba3bd8",
+      "path": "2022_RedCanary_ThreatDetectionReport/wmic_shadow_copy_deletion.yml",
+      "sha256": "d19bc9900e115900e1828f56a45635fbd4f83119a4d8bf7014885aa6bae9b186"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b772987f-ca62-4c24-ab78-a93ebb561d96",
+      "path": "2022_RedCanary_ThreatDetectionReport/wmic_susp_commands.yml",
+      "sha256": "6b579d44ff96e29dc45b9df205ba9922bb172d30feaf87326375fc0453138438"
+    },
+    {
+      "adaptations": {
+        "logsource": {
+          "adapted": {
+            "category": "file_event",
+            "product": "windows"
+          },
+          "original": {
+            "category": "file_creation",
+            "product": "windows"
+          }
+        }
+      },
+      "document": "0",
+      "id": "47d68f87-d0f0-4386-8362-d62b7135a494",
+      "path": "2022_RenameSystemUtilities/file_creation_exe_extension.yml",
+      "sha256": "db23d314b6fec8c27a15775044e12d0cdfa7d5b10ca90975c9f17c18d002f79f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "069aacee-0176-4bdd-8c8b-09e958b88b70",
+      "path": "2022_RenameSystemUtilities/file_creation_exe_in_temp_directories_4663.yml",
+      "sha256": "2b88be603fd92442284b41125ada860e764e8323f03f7a3fa3887ad312b4dc90"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "02dc3892-2fd0-4dd5-b2d7-62052a837abe",
+      "path": "2022_RenameSystemUtilities/proc_creation_non_exe_demo.yml",
+      "sha256": "c85310849a554b561c436d6a523a03f114a7faaa24a435d8b2ed636c45cd05a0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0c92f2e6-f08f-4b73-9216-ecb0ca634689",
+      "path": "2022_RenameSystemUtilities/proc_creation_susp_rcedit_execution.yml",
+      "sha256": "e43038dadc0ec7b5e7b2029336eeb0a9a36823b389a0af8dbebf70067d54def6"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "57c4dca5-51cd-4cff-b835-d7eebe8e92f6",
+      "path": "2022_Solarmarker/win_susp_file_ext_reg_key.yml",
+      "sha256": "2a6afc0108b520713ff8b20dc2bd5aabcda0e7c8f5af2aa75941129d5c5a9318"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9b3d414e-a215-4262-b502-484b6b24b7d6",
+      "path": "2022_Solarmarker/win_susp_solarmarker_file_creation.yml",
+      "sha256": "0aa5651ef6b0e45b71f51be2cc1e19698969721ce2ac7539a951421e68aa3129"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c7e8e46c-10f2-45e6-936d-8651522223d1",
+      "path": "2022_Solarmarker/win_victim_id_file_creation.yml",
+      "sha256": "320db9bef9065bc022d4eafd381a699157fb7384ffda8fdecb6d0e5148b3ddd2"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9e50b0e6-464b-4eb3-858c-690d2d51e812",
+      "path": "2022_ViceSociety_Ransomware/pwsh_ms_defender_tampering_vsociety.yml",
+      "sha256": "4faa86833138d8c4a9f5be63c2b8afa7dcd7501a031a569c6856cf5f0c9556e7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ba85a1ba-a194-4f03-9064-0c53da092698",
+      "path": "2022_ViceSociety_Ransomware/win_encrypted_extension_file_creation_vsociety.yml",
+      "sha256": "45c3d43d04966cbd2ae4f5984f9a088d546da3b34d7c3ec467b1b1c8f54bf785"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "85f915d8-7cbc-4bd5-b1cc-03c7f3188c19",
+      "path": "2022_ViceSociety_Ransomware/win_exe_deployment_from_remote_share_vsociety.yml",
+      "sha256": "b578c2d8e57a4760596b16783a7b0b53626fdd61c3b1fa378268562e08745b70"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e6be4f3d-9ef7-49ff-a18e-633ae489b3e4",
+      "path": "2022_ViceSociety_Ransomware/win_ntdsutil_credential_theft_vsociety.yml",
+      "sha256": "5d59dcd7ea3bb11c5e014f0198a2282408b34a02f8e80ebffae932090047fe2f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0ce1911b-5038-4ee7-8925-013d808c6c7f",
+      "path": "2022_ViceSociety_Ransomware/win_susp_net_user_creation_vsociety.yml",
+      "sha256": "3a709eae70d018395be5e64f6e50df9d60b0ef34cd23505a0c355851fc1cd7f9"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ca11521c-5d9c-484f-b83a-14aa12df1201",
+      "path": "2022_ViceSociety_Ransomware/win_susp_reg_defender_tampering_vsociety.yml",
+      "sha256": "b044a45e7e10cc3a3a58446ec39cb265004d112b004c15a6624068217e6477c8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1a433e1d-03d2-47a6-8063-ece992cf4e73",
+      "path": "2023_DarkGate/file_event_win_malware_darkgate_autoit3.yml",
+      "sha256": "01bc005f15cb4869cd6a097287bab486601db43696796098392df7ff1de1a8db"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f8e9aa1c-14f2-4dbd-aa59-b98968ed650d",
+      "path": "2023_DarkGate/proc_creation_win_malware_darkgate_autoit3_from_appdata.yml",
+      "sha256": "947020ef9b1ff2595d53f64214934bed216b996498747e93589e345033527170"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "259a9cdf-c4dd-4fa2-b243-2269e5ab18a2",
+      "path": "2023_External_RemoteSvc_Logons/win_security_successful_external_remote_svc_login.yml",
+      "sha256": "a00bcf1c29048ef506cdf737228519578bc798f50b51b1b08c0dabde285f12fd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "73822599-97d8-411f-8ee1-e57ecac118c7",
+      "path": "2023_Impacket/GetUserSPNs/zeek_impacket_kerberos_rc4.yml",
+      "sha256": "6e963ac004aac7b656d44217c77ecd16bc4454651b795bc0e676b9ca86a63244"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "22514cf3-83dd-4949-931e-69a6d6abe154",
+      "path": "2023_Impacket/atexec/win_file_creation_impacket_atexec.yml",
+      "sha256": "d78319c28bdba074edc6cb6c9c21eaa9613f3d334875fb4a80445989ca15b04d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ceccdcd7-ab57-407c-bd8f-78b2427eb283",
+      "path": "2023_Impacket/atexec/win_proc_creation_impacket_atexec.yml",
+      "sha256": "f42211f46575c00289fafae30e72bbff967f465e1a3e20af2d933450399bcaf9"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "be577827-db17-4786-b00a-347c93973662",
+      "path": "2023_Impacket/atexec/win_registry_events_impacket_atexec.yml",
+      "sha256": "68a91bebf130c6bdb591db92e0c68c73cb587109004732350e32104d5cb9446b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "eb2713cd-6e7d-4813-81d0-ced79de4c7da",
+      "path": "2023_Impacket/atexec/win_schtasks_impacket_atexec.yml",
+      "sha256": "c458b16b2e8e9c7ea51c4d272b2c37b63d807ef15dff47d7522e59f2435007bb"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f6127748-4656-435f-b07c-c624f8f18812",
+      "path": "2023_Impacket/dcomexec/zeek_dce_impacket_remote_create_instance_dcomexec.yml",
+      "sha256": "e47fc323198d3fae8afa04ed7f2b4ad7a62e3acb7a82eb2ce163d2b40f8de28b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b0ceadcb-ebc8-455e-9541-19d90ad4502c",
+      "path": "2023_Impacket/psexec/win_file_creation_impacket_psexec.yml",
+      "sha256": "009cda928afa72bce7a68df4e4613ef7a4be62a257ba34b9ae12b1ba6d0269d5"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "019a9cea-6b05-4ea3-9aa2-f8ff6f9e92d5",
+      "path": "2023_Impacket/psexec/win_pipe_created_remcom_impacket_psexec.yml",
+      "sha256": "76b00fc8b58d601195534b69ba432d8cd0562becef3ecd82f12e0a770b6af0a3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8d1476b7-0f57-43a4-b56b-50bfab66943d",
+      "path": "2023_Impacket/secretsdump/zeek_dce_impacket_rpc_secretsdump.yml",
+      "sha256": "014501b1d5c2c519c11bce2942c065a947711f4a83e70507fe44bf44bdf6a111"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2ace112a-1717-4648-b0f8-51796f36c58e",
+      "path": "2023_Impacket/smbclient/file_event_win_impacket_exe.yml",
+      "sha256": "f97921451004f532926c8b285173a5a94aa0be66ed5291eb93a7fd5aa7859034"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "60dbde0d-57dc-40e4-a95c-3488f319f216",
+      "path": "2023_OneNote_Malware/create_stream_hash_double_extension.yml",
+      "sha256": "588a1f78d5545c905fec4f36d3bcf793e4c3c2670ac1dfcf2a7ef0e021ae4a62"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "42f77908-d267-41ee-bf58-623f5d101d91",
+      "path": "2023_OneNote_Malware/dns_query_double_extension.yml",
+      "sha256": "35346d4d49d33fd223d1a46a4fcff45aa7101fab764de969f463a5100e54992a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "96eba19d-a7ac-494b-8901-112dfc0afa6a",
+      "path": "2023_OneNote_Malware/file_event_double_extension.yml",
+      "sha256": "b6ed393cab4b80be71d1c086679ff06d56aa1a97a5d27c3234c491a155611b2b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5deb364c-12e2-4abc-936f-28139aba68a9",
+      "path": "2023_OneNote_Malware/net_connection_win_double_extension.yml",
+      "sha256": "e3f349ab5f2225be18e61dbdebf45983fcd4d0bbfc78ada4780558023ee67a8d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "dd980d89-f015-4d55-b762-ef200843308c",
+      "path": "2023_OneNote_Malware/win_proc_creation_double_extension.yml",
+      "sha256": "a15e91f24abcc224dcfe02bc7e16ea65d104d4c9b237875d45484b214b05f4fe"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c94e87b8-7529-4582-9572-96cd61f7464c",
+      "path": "2023_OneNote_Malware/win_proc_creation_regasm_process_injection.yml",
+      "sha256": "804927c4847b7c556c6d9bb561d8b044c91dc9a158d133f15ed2df723cc74965"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ad691d92-15f2-4181-9aa4-723c74f9ddc3",
+      "path": "2023_OneNote_Malware/win_proc_right_to_left_override.yml",
+      "sha256": "73340060ab7f9cde98cc22b0ba0f08aaddf43d7791ac92544e1aa6cf04e575f4"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e76af6c9-1c66-4ed7-9a36-b2f905e2e78c",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_cmd_bypassing_controls.yml",
+      "sha256": "739d21304df63cfd66d9411af0a076d3eb066f02c31f1b4b05f9ab9fa14d254e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c4e301d9-9f2d-4a81-9c98-60596edb55a3",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_cmd_explorer_start_exit_cmd.yml",
+      "sha256": "4bbd1c94ba5ab1b4c75b4ae6a2c1af4133aac90852394a33164fc432932534f8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b6aed14c-95a2-4e03-9949-70bc73c08b64",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_cmd_obfuscated_commands.yml",
+      "sha256": "81710f8981e740770719b58a0f6c6c72a210946e4b1ec263bd1043f284601cb7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a916cc1b-7f0e-46b4-9c77-c80b1f2ba26b",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_cmd_schtasks_create_shell.yml",
+      "sha256": "298869407bee649c98bc35e06eea054b95790a0fcf708206e760b0c9a81b5afb"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "60cb2beb-d2ba-4a47-ad68-e97576985c70",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_cmd_susp_process_ancestry.yml",
+      "sha256": "c5ca08482ca9654bcf514c38a042136ffdd5e624f74f0eef0b3d57aa40dd5c9a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "80f850be-12ea-4bb8-b000-6e485dc821f5",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_cmd_svc_shell_command.yml",
+      "sha256": "927407be94411871c5405fa0b1705e31b8308e1aac0688415337b718c2da2725"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0a6b7cc5-f28e-4795-94bf-48112d89664b",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_ingress_tool_transfer_bitsadmin_download.yml",
+      "sha256": "9dfb67a9f1cd83ac6e8e0b97b859f6ae0df6c986363616103707f4d3be59fc75"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5da5a0a0-e610-4d72-9562-339eafdef216",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_ingress_tool_transfer_certutil_download.yml",
+      "sha256": "e9f5fe0511e0d889c242297e50dac18277234af431a2e3516cc36c21d994b150"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c62c85ad-bbe7-4937-b77a-2cc984a1449d",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_lsass_memory_lsass_access.yml",
+      "sha256": "c53f460f87e0db368676bf2069e48e53c594a7d46fe2d1d56d4ed1477044511d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c6624640-de9d-4933-a3dd-261cdeafdd18",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_lsass_memory_lsass_non_sytem.yml",
+      "sha256": "6e2e6b8ccd6ba7e9cb248ea0767983c5dab5350806ff7f5170225b30a4bea4d3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b1bab1c9-9dc4-499e-aa9e-5c1b707c21e1",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_lsass_memory_rundll32_minidump.yml",
+      "sha256": "45decf86f345f98aade6a1bc95143b3b4b935fc6b88da8d2854fedd600898bcb"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1afbb031-8721-45b3-b2ed-856515f68558",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_lsass_memory_susp_lineage.yml",
+      "sha256": "964785f9a91b31efd03a78c6ed6046cd2213ac681ef86c1318fc3dd99809e025"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "bedf5cac-6332-4463-98ab-818f9e31234c",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_motw_bypass_iso_write_susp_folder.yml",
+      "sha256": "a62dc07d17ffed0a5e1e755bc5198746ed5f1de27c8832e9b39808cd41fef313"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3556964d-5ade-438c-bc68-58e0c64a70ec",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_process_injection_powershell_injection.yml",
+      "sha256": "6edda107803fe0c5617ca61d648f74c27f2af3f368f5d5931e7f8443057feac5"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "fbc13e37-c601-4935-aa4f-3eaaa9976003",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_process_injection_process_sans_cmdline.yml",
+      "sha256": "80994cbac5e28316f8818ccaa085783bd82971606bd994cd8a904abc2c2ec70e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f3b0b17c-0e4b-45e5-b88e-521d2c3f6ae1",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_process_injection_susp_net_conn.yml",
+      "sha256": "53f3226c6c5870d4d0de770e435c3a394b009e95b396d8f65e0070c6a34c0af2"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4becc177-8fc7-40b4-aa12-ee55202bbe95",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_pwsh_base64_encoding.yml",
+      "sha256": "137feef44a00c639698baa6c6926043a8c3843ec24e1e74e06a28a4c2f8dfcd4"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8446b07e-3088-403f-b93e-5a62d88e8dc5",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_pwsh_encoded_command_switch.yml",
+      "sha256": "fe2804ee389e5e877b3a7d7b4f07d53f673961afb277e43bd2fef44d878d623d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "df39fa21-d6b5-490e-85ef-d9b379707ac8",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_pwsh_obfuscated_commands.yml",
+      "sha256": "603e78f6d1a31c2014b02a5d0643e090a2e4057a8d9686212417c6c925c74eb3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "68490f55-bf8d-489d-995a-5ceae34ce215",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_pwsh_susp_cmdlets.yml",
+      "sha256": "24cbb03d3dc53caf09a041fbea0d3fc6f68c18c422007412cf6e21a6c67261fa"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e930ba8f-388a-4436-8326-4ffb1c52b111",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_rename_sys_utils_unexpected_internal_name.yml",
+      "sha256": "893d8fce957696afe0318daf58157968418d79aaf5258332e926abe37762e8dd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "23aafdd3-8476-49a0-8377-54d26bf7847f",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_rename_sys_utils_unusual_cmdlines.yml",
+      "sha256": "90f7e1598825d25c10921f1e8d5550c6661a8f342ccd314056d39941fa0f82dd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f6d0c39a-96fe-45c5-b3c8-7dbea2a3f34c",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_rundll32_app_bypass_dllregisterserver.yml",
+      "sha256": "4cddc165641d63af3cf3330dac148afbfb3d74f36ce8fefb6c9e851bcd865009"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7aa20f5c-6100-46c9-8885-427110e0c0e5",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_rundll32_inject_to_lsass.yml",
+      "sha256": "78d22e6ea1fa6d412ffbcf7e8faa5a65576e578e19ad8480cec3e13e047a62fd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2a2bd094-ecd0-4b19-afb7-c2547b0bdf30",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_rundll32_no_cmdline.yml",
+      "sha256": "fec4c998739d9bc46f480b8eaf64cfa2bc247bd3ba348ba1ce04ff99b735fe54"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d4ae7bf0-8325-4a1f-9d72-0da717d9d757",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_rundll32_susp_lineage.yml",
+      "sha256": "b43130fa30b8863f5708a87b4436a2d0ef5f3ac3e95f654f4e770a2f406d42f3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1312409d-9cf1-43c4-82dd-25f5ef59283c",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_setuid_setgid_binary_search.yml",
+      "sha256": "9033a9f3e3840529b7ea1843b03d673d2381f75c5e93f4555362ae247851f9d9"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7d5c80c9-c2a0-4eeb-9988-3d1ac170ffc0",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_smb_win_admin_shares_file_write.yml",
+      "sha256": "dad61321458e84892dbbf0f75f319407791755892971f871c5612b088690a2d7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "187ac7b5-f919-446b-93b3-cde8a6506d64",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_smb_win_admin_shares_impacket_svc_via_registry.yml",
+      "sha256": "0c8757cb308af70f82dbed6f975fc7ba8c7136b8ba604ad473f09e43bd2a4432"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "508ffe6a-8d07-4162-a000-fbf939a23b92",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_smb_win_admin_shares_process_execution.yml",
+      "sha256": "e7acedf7bcd2e1dccaebda0eda2227e103cf986d6a24765b979e7dd5146564be"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6335a2c2-5339-443a-b00c-ebffc9ffc321",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_wmi_office_products_spawning_wmic.yml",
+      "sha256": "845b4eba66ba860ad7bc6cab0f608f34569b1ce6cab9dc13f34f0a6fe94042aa"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4f2f005d-8755-4ff8-9086-179fc632a850",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_wmi_reconnaissance.yml",
+      "sha256": "b4d64f2982b678ec9edc144ab4907b4869898903f7fe8eafd5771a9376eb1027"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "31b52a76-ef7a-40dd-8bb1-9c1671f04d0a",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_wmi_shadow_copy_deletion.yml",
+      "sha256": "8cb114449dac5e163ca1b0c854ed1a7823f1ec606ed028a76719d4552bfa695d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "fd4852d8-3464-4639-acc5-f9cf9553a396",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_wmi_susp_commands.yml",
+      "sha256": "e24c814137020fda73a38a011b57ccae892561b264e49d4e8950260439cf0ee0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "03fd0ccb-e246-451d-9923-f0698642a0ec",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_wmi_susp_lineage.yml",
+      "sha256": "85dc6050a9e795e1d3b1a5f42a09f92627b4df90c3e184e8a560e888d20ccc3f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "75b32717-173f-45d0-9447-be84f8bdcce5",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_wmi_susp_pwsh_cmdlets.yml",
+      "sha256": "7ae4735f2c6fb583e960bf44d6ff658becda7aa782c2e7c408a8cb4e80ed92c6"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "674d5957-41a2-47df-ad91-1833379632a6",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_wmi_unusual_module_loads.yml",
+      "sha256": "289183083d33da3fd6f4e72b0b5eb6537e9127d808d082017446efd64d910833"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b50624c2-7867-4685-817e-88c72da264c7",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_adsearch_reg_runkey_persistence_execution.yml",
+      "sha256": "a27d6ce32f60e08bbff372ae25aa16de808dd7a7226f061163f521e03f75a2e5"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "739d97f7-96e3-4e96-aebb-574b4f19d034",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_adsearch_startup_folder_persistence.yml",
+      "sha256": "295cad952e156cfde58552cd4930dee846626bb705cbe0ca42ff84c5862e8162"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2b7d1fff-74b3-496c-b8f9-3bd90ba102c5",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_bloodhound_common_cmd_actions.yml",
+      "sha256": "a6b5bb81b71ec394db69e2e5be52466c76efeea31e4a9669ab20932ac3160ad7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "187c05df-debd-40ed-a59e-1163703bb1de",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_cobalt_strike_beacon_getsystem_cmd_pattern.yml",
+      "sha256": "0bd0e3da2d20933579f193b009f7ed5cf098b6427118ff3f1f312794be6f0bef"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0da8f33f-2703-4a4e-92f8-a6090a31b1e1",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_cobalt_strike_beacon_implant.yml",
+      "sha256": "74d07f0f668aec40d76338a63a7454b227053727fa23cac616d9470587a08f88"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "405ec76f-7d77-464d-b28b-4f5d9131346b",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_cobalt_strike_uac_bypass_w_cliconfg.yml",
+      "sha256": "76f313b231e3b9788fcdfcdde8ed697f1cb7eca29eeb0181ada7192145cbea7a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2cbe546e-8c8a-41ab-80d4-aadd2961b3c7",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_emotet_excel_regsvr32_execution.yml",
+      "sha256": "768aab0f6e698127a7df363a149e944f2a0ba777dc102298aeecc0b4d3c22577"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "62989cd5-4d35-4ce8-a1fd-73673c25d0f4",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_gamarue_rundll32_dll_filename.yml",
+      "sha256": "5ce085cc14254e26567828b2a97d98a692036d9d6ea959395750adb1a5bfb69f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5e284df6-3a2e-4ac1-8907-29fdc6b43757",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_gootloader_appdata_js_execution.yml",
+      "sha256": "f7cc6f400049774fc0bbc1521497fac3a93e4ce63ee66b27c3b4d6b61547dc31"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1aa0b866-727e-480f-9694-6bd694e2855d",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_gootloader_cscript_msdos_shortnames.yml",
+      "sha256": "4e021e70a49621c335960c777c036c1e6d652ae49095a4aa565500027d219c4a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6b588393-f45f-484b-8233-56bbc657c63c",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_impacket_atexec_execution.yml",
+      "sha256": "2df969f4712102cc11ed6eae1cb171cafd8d8a2f7677ac160983399c365bfa6c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "671651fd-62e1-48d7-b5e0-81b1746ec0dd",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_impacket_smbexec_execution.yml",
+      "sha256": "86d57340f5cd234814eed51aa549051a7091edbbdb2e0f9044e09a8632cfeff5"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "26d79902-98ac-43f8-b669-99486e2b5126",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_impacket_wmiexec_execution.yml",
+      "sha256": "2b09eb4d62c6d869f862ca7e7c0cbcc00633ae43b69c2b22f30202b236005ddf"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3f5c1eae-a9ef-44a2-bd04-a8a0e3762ec3",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_mimikatz_kirbi_file_creation.yml",
+      "sha256": "52aff36ff5d6171c9ea2e1d05a4385e17b51be7a5f71c4fc54f1e7d73f2cffb2"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ca5d91c2-3411-4085-a003-d7df8ce60244",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_mimikatz_module_names_in_cmdline.yml",
+      "sha256": "d000049020770328ff14dad6ec7f669029bd36eb7428d2ef0bef639263c05b80"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c518ac74-2e2b-4197-84d7-ea5118c557eb",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_plugx_wsc_proxy_dll_search_order_hijacking.yml",
+      "sha256": "c85e93554f49ec00a36dbda98cb511c5cb9d7eece531de87d84d91a5338f183b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "949afe0b-2d45-4999-be9c-fe4808b8a68b",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_qbot_mounted_drive_execution.yml",
+      "sha256": "5eac525f3691709d9d41f61769697a75b9d33ca791004f6c0732440afe0d0216"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "bb1cfac0-eca2-4803-9acd-aa75f5b84ff4",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_qbot_rundll32_non_standard_file_proxy_execution.yml",
+      "sha256": "f042326f44d560a62f3734e3f9164c0059d4afa04cfaab914d3082cf4e760162"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "60a7350b-38b0-4f44-b2e8-e7b284516bd0",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_raspberry_robin_msiexec_execution.yml",
+      "sha256": "38d3f10148790863f7c8f87df6ba33dfca3d1641a09805cb4c145a73cc13515c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "32e280f1-8ad4-46ef-9e80-910657611fbc",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_socgholish_homoglyph_cyrillic_lookalikes.yml",
+      "sha256": "355b5419cde2ae5b4a22175ac572f196fa08b79871a130da2e0fd047865d5a29"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "cdd824c2-ebda-404e-ad62-b2acf251976a",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_socgholish_nltest_domain_trust_enumeration.yml",
+      "sha256": "bf4674e50e6ab27ad6f292ab4d4cbb0d5589ff349040c719a1fecb877300c368"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0886986b-47e9-41e8-87c7-41b202503b24",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_socgholish_whoami_output_to_file.yml",
+      "sha256": "7fcb1025817d7febc97ed82207f0372dce7fd78dce5f91f89a23521fec4bd5b5"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "874acb07-02f7-4c9f-8069-e0659c6d3fad",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_yellow_cockatoo_startup_lnk_file.yml",
+      "sha256": "a6e4514adbeecd0db980b0d5f8de0fe3ea76aad1a205927848773108df7923e8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e2c6d4c8-2e14-47a8-b22c-e4c9e7e65d0e",
+      "path": "2023_RedCanary_ThreatDetectionReport/threat_yellow_cockatoo_susp_dotnet_methods.yml",
+      "sha256": "010bb1b2a5cae981824bf07045e269284d25ccde253f65fd884599a6298bfe7c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4c55738d-72d8-490e-a2db-7969654e375f",
+      "path": "2023_WebDAV_SearchMS/file_event_win_webdav_tmpfile_creation.yml",
+      "sha256": "b24daa9a90b20a5a707a78a48558e87d85fc751e997c441f81367f5bc60e1b1e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1412aa78-a24c-4abd-83df-767dfb2c5bbe",
+      "path": "2023_WebDAV_SearchMS/proc_creation_win_webdav_lnk_execution.yml",
+      "sha256": "e4d5d143d0247f617fe84a90d03589c919e98ad22b8ae4a8ca042b4a1cb98e96"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5039f3d2-406a-4c1a-9350-7a5a85dc84c2",
+      "path": "2023_WebDAV_SearchMS/proxy_webdav_search_ms.yml",
+      "sha256": "e977c9e4b938f0225975f800045e11931093a2ab7bf132c2119e9bc84d73ef5f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "135e717e-2b3a-485f-9976-40e74a2e558c",
+      "path": "2024_Cicada3301_Ransomware/correlation_proc_creation_win_taskkill_cicada3301.yml",
+      "sha256": "a54b2c24f49056c5fe9f977657f05964846228f7de499749ca7388e0bd123338"
+    },
+    {
+      "adaptations": {},
+      "document": "1",
+      "id": "78689f2e-64e0-4363-942b-d676a7af7f12",
+      "path": "2024_Cicada3301_Ransomware/correlation_proc_creation_win_taskkill_cicada3301.yml",
+      "sha256": "a54b2c24f49056c5fe9f977657f05964846228f7de499749ca7388e0bd123338"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6039c5a5-d765-424c-b30d-cb391c9f76de",
+      "path": "2024_Cicada3301_Ransomware/correlation_win_system_service_stopped_cicada3301.yml",
+      "sha256": "24dbda4716f28bccfc0fe66a2fb5cfa515719964c402190e5046ef56790a454a"
+    },
+    {
+      "adaptations": {},
+      "document": "1",
+      "id": "ac3c528e-b4b5-4ea2-81bb-14385d104416",
+      "path": "2024_Cicada3301_Ransomware/correlation_win_system_service_stopped_cicada3301.yml",
+      "sha256": "24dbda4716f28bccfc0fe66a2fb5cfa515719964c402190e5046ef56790a454a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "76cdd984-4b2b-465d-908f-d55ead0cdc9e",
+      "path": "2024_Cicada3301_Ransomware/file_creation_win_cicada_psexec.yml",
+      "sha256": "d883003e0000df7d2ab90a09ced51b7fe140867ad59cab92ec92811d638dea6e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "79495647-d84d-4804-9a52-5263cfdf2c63",
+      "path": "2024_Cicada3301_Ransomware/proc_creation_win_cicada3301_execution.yml",
+      "sha256": "e51fc6752950d12f267428f4b38cef75fb86736b738237a93d93e51f72b7c1cb"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d42df972-2f45-44b0-8566-3de71b9ed3e9",
+      "path": "2024_Cicada3301_Ransomware/proc_creation_win_hyperv_stopvm.yml",
+      "sha256": "be603f82f33bf70339b751e7dd95eeb923a71d7b8803081f4eee6f8386850a98"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3a56827c-353e-4e86-b429-674abae37f32",
+      "path": "2024_Cicada3301_Ransomware/proc_creation_win_iisreset_stop.yml",
+      "sha256": "4e73316084ccab092f78c3e7608bc44ac0a143aefa08617e47f0ca62d3e6f987"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "75933b00-4949-4cf0-a0e0-f234c3ff1407",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_applescript_applet_download_as_payload.yml",
+      "sha256": "5670c7a594b0d3bd427d41de197a5ba5d348c18cc9d6826ab0aca876aa35a71d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "cff40f2b-46e9-49cc-8ba5-dde6403ab453",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_applescript_input_prompt.yml",
+      "sha256": "74be2ee8457593d9b7f79551e55e7e96ae6fdd1c78035fc9b689b122d49cbbbf"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2aaf3922-0a8b-4b7b-9c10-ea552bdff707",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_command_shell_bypass_security_controls.yml",
+      "sha256": "56075e69b2250292d5ebb2a41407d86ad297799f56f7a5b5ae8866527855ba9c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ebb4eaad-9909-4785-a038-97bdee8aa5ae",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_command_shell_from_explorer.yml",
+      "sha256": "28c01481e7cf264244af90ccc4712b9841be5b07b437c31da4130cee5be70ef4"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8b1a34e3-c4d6-4af6-9836-35a0da09b85b",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_command_shell_from_schtask.yml",
+      "sha256": "3eacdc2200095b7ecd7a66c8e91d0e82d0850d2be36e5920245d66dcefa91d51"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "cdf9f0ba-857a-4f91-9f30-724ade93b797",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_command_shell_from_service_ctrl_mgr.yml",
+      "sha256": "20d9c9b08333126bbca9df34db8d4579f403daf337c722eaf258356e45c6648e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b58b6c4b-0f79-407e-b2ab-76de16a6cd79",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_command_shell_obfuscated_commands.yml",
+      "sha256": "e47a071247c8edbbddd249b12a9a84a05cd11bebfa6e720020c92146dcafcbe9"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "64d04088-5ed5-4125-9219-4bbedec13e9f",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_command_shell_suspicious_ancestry.yml",
+      "sha256": "3bc17fc5ffdb1e00f6c67968cbaf2508adb0b6c009dfd5ae7ed045c3870cc948"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7315f2c5-892c-4c18-bda4-b788ef9219a2",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_email_forwarding_rule_suspicious_criteria.yml",
+      "sha256": "9242a576602b60c62a6cb8ed9ff116d04921ecf03287f7b5b5b3ffa6eeeb1fbc"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f1595374-3a4a-4b40-aef5-0d854e043a14",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_email_forwarding_rule_suspicious_folders.yml",
+      "sha256": "750e564376952772a6f63d7f62c105e2d98c5255e96b47f6daf25fe63fac4e9b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "47ea2a13-f863-4403-a672-00b3d940ac92",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_email_forwarding_rule_suspicious_names.yml",
+      "sha256": "4a1cd5eda78f56576f639e058192a37a73dc40943049344a3fccde09f71cf4e7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b195646e-8455-4fa1-b78a-91bb92371152",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_ingress_tools_transfer_bitsadmin_download.yml",
+      "sha256": "83e53547710ab149260e6d3ac65d34514f9ad2891f323148945102b584b7d7b6"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "da4eca65-03c5-497a-a8f0-d4b0534a5c53",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_ingress_tools_transfer_certreq_download.yml",
+      "sha256": "1f818c12dbf91f404f26288153cc2703772f0b671be69dac94b86b5677965fbc"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "95d670e1-ce19-4269-b101-e12a1bce7c41",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_ingress_tools_transfer_certutil_download.yml",
+      "sha256": "3d6ae998bd9500350d8d59b6cc130ff17255d65610ce347023bf0003ac9a5e4f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ca15c3dc-243f-432d-868b-c7694027be21",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_installer_packages_non_ms_publisher_id.yml",
+      "sha256": "37665050b8f868e8f84f79467587375397defff2b49552f5c8491e7cc8e87e84"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0c5dcf6c-9b6a-4411-a410-9b9b2caaef75",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_installer_packages_psf_powershell_execution.yml",
+      "sha256": "2a13e668d488832fb234436cf74d48786f5368e56915d3a3a0ba52063780ab94"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c0bbc749-9ed3-483b-b3ac-7c5732a61fda",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_kernel_modules_nondepmod_modifying_modules_dep.yml",
+      "sha256": "4f6c0d6194fbdd6c3ed494339b4a6011c26580f96f3bb9476414fb846fa16bdc"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "173fa93c-88ce-4d3f-89de-cfc849a94821",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_kernel_modules_shells_modifying_files_in_lkm_directories.yml",
+      "sha256": "887efd11ca23c54d4ae8ce8f92a7c8ce5625319e5995eae8d4873a92f1d40d0d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6ec5eab7-03aa-4a6b-8562-012f3ddd2c64",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_kernel_modules_systemd_loading_lkm_insmod.yml",
+      "sha256": "0de2826dd1218c2d549bfeeca5572040709a120b9433f035d4532b6450df8cdb"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4d786f58-8222-4047-b635-6432da31bd7c",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_kernel_modules_systemd_loading_lkm_modprobe.yml",
+      "sha256": "6060155a870fa480b9ac74aec0340717ef48f13bfbca985685e1ede54083ec86"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "027b8851-d448-4a3e-8f2e-698433ba81e3",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_obfuscation_base64_encoding.yml",
+      "sha256": "80b49243628c1db4e7fc5a240c721fd6d39ce3330ef6b766299f39e33d7399bc"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b99b32f3-aa61-495d-a6a1-2595e1551ba8",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_obfuscation_zipfile_spawning_javascript.yml",
+      "sha256": "627501ed1a7a321e3cac440d601b46422fde6ba0a127c04e741370ebc14582d1"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "88de04f6-c443-40ec-a592-72c31a55810b",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_os_cred_dumping_secretsdump_file_modification.yml",
+      "sha256": "2c3ac153264474ec83495f4dd3dcd3b59f82a21a6bc7185c1f21018904f783af"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "df33cc09-ea03-4681-bd6c-b8dba7328a84",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_powershell_base64_encoding.yml",
+      "sha256": "32181610febf65f09552fc366e270ad7d97fba2932ee85ceca6e58e54de63644"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2f0c5dcb-71aa-44d7-abc6-dac43f121138",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_powershell_encoded_command.yml",
+      "sha256": "515ad0cfb7e2c99247b4ba1518c28aa4d4420d5f64bd4188256184f4d9f8328a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b47fccc1-8407-4fca-ae31-ef49d0ae0410",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_powershell_obfuscation_escape_chars.yml",
+      "sha256": "7dab0f6aea8279d8c6192c94752b35ec43ffc030aef7d62bac25f99d32872a99"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "33a86fea-add2-42b3-bccb-96285c619933",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_powershell_susp_cmdlets.yml",
+      "sha256": "3ba0a4387df2640df6c79b1b1dffab194320afa40772f8999027285e990966ba"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a6d26b45-14ea-4ee0-901c-3aefc384d3c9",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_rename_system_utils_powershell_notepad.yml",
+      "sha256": "8af9294f6670f643d35612c21978a9ec4a0877dc40188f08a29e577dcb4b4bc4"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4108fe33-1d66-4111-a698-53b4ecc15dc4",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_rename_system_utils_unusual_cmdline.yml",
+      "sha256": "b8e8fdbeeba6eb9399320a9f32d3079cc5d840dc35a0511366140c7f35b64009"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "06c7a5b8-24dc-482c-8203-c674a7e05c56",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_rundll32_dllregister_server_function.yml",
+      "sha256": "3729ebbb847921f83682bb7ee455aa4d43ca6750aec3da59f1aa35cb11227c10"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c6a45ac1-b909-423b-907b-a9bfde31ab9c",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_rundll32_injection_to_lsass.yml",
+      "sha256": "d2ad019d933401ccfdbaf300d820f985b23a6e9542474d059da2a1216bfcf4c6"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0fab2f9d-0c38-4392-802f-09e4f4fef0ed",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_rundll32_no_cmdline.yml",
+      "sha256": "8533155338bb03d46323bbcda3f5decb217902bf497a60cd46d22a994920ddf4"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "705d6f7b-779f-41c5-9994-8b191094577b",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_rundll32_suspicious_export_functionalities.yml",
+      "sha256": "591862d5667f9c75dce691beb4db4359a0cd9caba97e5cfd4c85d0c813f41cea"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5025ecc7-1efd-41de-aee2-38f4b9d8d281",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_rundll32_suspicious_lineage.yml",
+      "sha256": "47cbf48405001f683a543c174f734afb9772f5ffb77e509465cdcba49366329a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0c2d39af-2c24-42c4-9bab-35e30ad2aeb8",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_wmi_office_product_parent.yml",
+      "sha256": "d529f415a44302a31baf9b81dd043b581937074363b2313acb005f99bd523617"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8a450075-e74f-4b19-9efa-b62a53f85bf8",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_wmi_reconnaissance.yml",
+      "sha256": "f26fe21cd1bff5e4785fe004c61cb31d66b8558c74152e6a1ab35b95827a26c8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1c078d3c-749c-40ce-9400-c2dbad604764",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_wmi_shadowcopy_deletion.yml",
+      "sha256": "be2d7bbfbeed2b3de1f6d06e2f23b374a898dbbc4aced82804ced05d56ef05bd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5a6a9a1b-97d0-43d8-9dd7-3cdef056c3c3",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_wmi_suspicious_commands.yml",
+      "sha256": "b4fb27caaa67e8ba999703996086d2628fe02d58a2453fe8d8c9b4bdbe5261af"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e29d3301-3b64-4305-9e91-8aabfbef2015",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_wmi_suspicious_powershell_cmdlets.yml",
+      "sha256": "f966cea19ff93b9476f4d12608432d300bb2752a3cbda0b5dba34b02d544da1c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "75e6bb57-d135-4308-b0ac-936e2d76d4d5",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_wmi_suspicious_process_lineage.yml",
+      "sha256": "6d46db30220254b08a366d1e3e7e6548354340fe85bd409fb623635e1f4a3564"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b62ec77f-8014-42be-9874-c155f9ce6fae",
+      "path": "2024_RedCanary_ThreatDetectionReport/technique_wmi_unusual_module_loads.yml",
+      "sha256": "589c359caa5c199bbc396f2a38480070aa3af117175070c7c124d3639082d281"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "be3e4b3e-4076-4ae3-acb9-3713c651158b",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_chromeloader_nwjs_runtime_installation_paths.yml",
+      "sha256": "037db7cf233e6259962c9476cfa1b0dc0d7117be750a794f9608244377a16f09"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "66fa7a57-1c53-42e1-9e5c-e9a1f5e62784",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_gamarue_rundll32_cmdline.yml",
+      "sha256": "7fda689703b29ff9663f0911acc4032044bb788917e78484768bc4ac02ba9435"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "317bdc3b-f4a6-4664-b810-6dffb18fc7f5",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_impacket_atexec_execution.yml",
+      "sha256": "52e7b851695fb2fec128cc7e00bc2857bd9b1b803d57b7d1f5efddf230b4fc04"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1337f1b5-8524-40f7-bf08-b0dec46cb764",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_impacket_secretsdump_execution.yml",
+      "sha256": "49747f3ebf7925a240c9b3aa39a93fe3a4bddf093775ab1f10edb4478cb6b0ab"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c250b516-78d8-4664-8b86-8f3c9c0b53c8",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_impacket_smbexec_execution.yml",
+      "sha256": "745b3912a5b5ed03945777252771c8c16f8e8bfa24c95e8201d82e02e23e84d0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2968dbf6-77ee-4932-b42b-b453d3ac8915",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_impacket_wmiexec_execution.yml",
+      "sha256": "3160cd93ec566a8d49bbec3042bb49def0af1c5f8742149baef6fb0c2780ea71"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8132d811-8314-40bc-9bb0-4bcdc33605e9",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_mimikatz_kirbi_file.yml",
+      "sha256": "5b5ae1c6ed89e92a3e48b6d483afea14c2019fedf8679bb4d1b43671a92408f0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8628d9d9-3a53-4d2e-b1cf-1d2e606cfd1d",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_mimikatz_module_names.yml",
+      "sha256": "0e5410ca8aae2003c18c899d46ee62433ae34aa52580a70e4b5c747ce116299a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e69d709f-097f-4798-bf9a-aa600fc3249f",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_qbot_mounted_drive_script_execution.yml",
+      "sha256": "e15143e5391270cefe05739317582381c074ce5b254a31c8e556dc7b9d6726c8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1b49c5af-3774-4364-9c49-827fd59417cb",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_raspberry_robin_cmdline_netconn_no_params.yml",
+      "sha256": "8e374eebd6bbd4c25bf7b940befbfac9b68ae0b681113864786047dd18cb4411"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2b09f558-14dc-40ac-b962-66386b5785c1",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_raspberry_robin_msiexec_download.yml",
+      "sha256": "45f0085f399351dfbcb65425b0c2f44001f308625906072ff4a2084fbe00097a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "65e7b868-ebe9-4e8a-b828-3bd2181bc407",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_smashjacker_appinit_dll_installation.yml",
+      "sha256": "d02e1e4c169945797802f94a2d8f0763347a2a3ec262f8197dfe0f758ce8c069"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "81f18c2e-640e-411d-93c0-496bb713003c",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_smashjacker_web_browser_loading_extension.yml",
+      "sha256": "c7de4cbbcdc5166d69a8109f698d759c16173d3955584cf71acd30418ed57e99"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3ddc7df5-780a-442a-8d41-269f476ed24a",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_socgholish_nltest_domain_trust_enum.yml",
+      "sha256": "0b1dfcc428f1301143cc80aa1cf1ea767d4c1e693780a57aa826d6d5efd4739c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "abcdf274-2fbd-4736-a16b-032fcac54eee",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_socgholish_whoami_recon_file_output.yml",
+      "sha256": "6dcc6a821ba6bc1e42da1c9a3c345b3b7bb320f60c4558212dacf432d50af6ce"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6d873a6b-2287-494a-a5c8-2dff432cfc09",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_socgholish_wscript_from_browser_with_netconn.yml",
+      "sha256": "192e2f3e5be546d4a288d70f4b11aa952635a2a1dcb0eb36bdd519f798dc3688"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "07fce851-4cab-4ea5-880c-daf9d18bb180",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_yellow_cockatoo_ps_startup_folder_persistence.yml",
+      "sha256": "6976d2ffd49e7be889fcd4e55e676447e814577a4e0e54b479cecd3b9b069e13"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "016c4ee2-ca34-474b-bfdc-43e017a29b47",
+      "path": "2024_RedCanary_ThreatDetectionReport/threat_yellow_cockatoo_ps_susp_dotnet_methods.yml",
+      "sha256": "0e2138f286d3693bf86fb6d272ed760d3cf9d8e16c6e9eff005b50260701e79e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e890acee-d488-420e-8f20-d9b19b3c3d43",
+      "path": "2025_ArcGIS_Server_SOE_Abuse/file_event_win_arcsoc_creating_susp_files.yml",
+      "sha256": "b81ea9fd755e8a1f8d76098c66ec49309fdd7cb230830ed3fefb2f7211f32537"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8e95e73e-ba02-4a87-b4d7-0929b8053038",
+      "path": "2025_ArcGIS_Server_SOE_Abuse/proc_creation_win_arcsoc_susp_child_process.yml",
+      "sha256": "86b69fe46cefe7ea4e8593152e52b5b250338efe2a60950e2dca461ac7c4542e"
+    }
+  ],
+  "repository": "mbabinski/Sigma-Rules",
+  "revision": "9dea7a5c15cfd422ec320e7fabd93f0c3634181d",
   "source": "mbabinski",
-  "status": "failed"
+  "status": "validated",
+  "tools": {
+    "pysigma": "1.5.1",
+    "pysigma-backend-sqlite": "2.0.0",
+    "pysigma-pipeline-sysmon": "2.0.0",
+    "pysigma-pipeline-windows": "2.0.0",
+    "python": "3.14.7",
+    "sqlite": "3.53.4"
+  }
 }

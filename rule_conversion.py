@@ -13,8 +13,10 @@ from sigma.correlations import SigmaCorrelationRule
 from sigma.pipelines.sysmon import sysmon_pipeline
 from sigma.pipelines.windows import windows_audit_pipeline, windows_logsource_pipeline
 from sigma.processing.conditions import LogsourceCondition
+from sigma.processing.pipeline import ProcessingItem, ProcessingPipeline
+from sigma.processing.transformations import FieldMappingTransformation
 
-from rule_sources import adapt, read_documents, template_reason
+from rule_sources import adapt, read_documents, template_reason, validate_attack_tags
 
 LEVELS = ["informational", "low", "medium", "high", "critical"]
 
@@ -39,11 +41,20 @@ def retired_artifacts(source, profiles):
 
 
 def pipeline_for(profile):
+    # These upstream aliases refer to Windows event leaves. Zircolite uses
+    # the leaf name and removes punctuation/spaces when flattening events.
+    windows_fields = ProcessingPipeline(items=[ProcessingItem(
+        FieldMappingTransformation({"EventXML.Address": "Address", "EventXML.Param3": "Param3",
+                                    "New Value": "NewValue"}),
+        identifier="zircolite_windows_fields",
+    )])
     if profile == "sysmon":
-        return sysmon_pipeline() + windows_logsource_pipeline()
+        return sysmon_pipeline() + windows_logsource_pipeline() + windows_fields
     if profile == "generic":
-        return windows_audit_pipeline() + windows_logsource_pipeline()
-    if profile in ("linux", "native"):
+        return windows_audit_pipeline() + windows_logsource_pipeline() + windows_fields
+    if profile == "native":
+        return windows_fields
+    if profile == "linux":
         return None
     raise ValueError(f"Unknown profile: {profile}")
 
@@ -103,7 +114,10 @@ def validate_entry(entry):
         raise ValueError("Missing required_fields")
     if not isinstance(entry.get("rule"), list) or not entry["rule"]:
         raise ValueError("Rule contains no queries")
+    validate_attack_tags(entry.get("tags", []))
     connection = sqlite3.connect(":memory:")
+    # Do not let a missing double-quoted column silently become a string.
+    connection.setconfig(sqlite3.SQLITE_DBCONFIG_DQS_DML, False)
     connection.create_function("regexp", 2, lambda p, v: bool(v is not None and re.search(p, str(v))))
     try:
         connection.execute("CREATE TABLE logs(row_id INTEGER PRIMARY KEY)")
