@@ -1,0 +1,56 @@
+{
+  "sigmahq": {
+    "repository": "SigmaHQ/sigma",
+    "branch": "master",
+    "directories": ["rules", "rules-emerging-threats", "rules-threat-hunting"],
+    "adapter": "sigmahq",
+    "profiles": ["sysmon", "generic", "linux"],
+    "license": "DRL-1.1",
+    "license_file": "LICENSE"
+  },
+  "mbabinski": {
+    "repository": "mbabinski/Sigma-Rules",
+    "branch": "main",
+    "directories": ["."],
+    "adapter": "community",
+    "profiles": ["sysmon", "generic"],
+    "license": "GPL-3.0",
+    "license_file": "LICENSE"
+  },
+  "tsale": {
+    "repository": "tsale/Sigma_rules",
+    "branch": "main",
+    "directories": ["LOL_BINs", "MISC", "Threat Hunting Queries", "malware", "vulnerability_exploitation", "windows_exploitation"],
+    "adapter": "community",
+    "profiles": ["sysmon", "generic"],
+    "license": "GPL-3.0",
+    "license_file": "LICENSE"
+  },
+  "hayabusa": {
+    "repository": "Yamato-Security/hayabusa-rules",
+    "branch": "main",
+    "directories": ["hayabusa"],
+    "adapter": "community",
+    "profiles": ["native"],
+    "license": "DRL-1.1",
+    "license_file": "LICENSE.md"
+  },
+  "joesecurity": {
+    "repository": "joesecurity/sigma-rules",
+    "branch": "master",
+    "directories": ["rules"],
+    "adapter": "community",
+    "profiles": ["sysmon", "generic"],
+    "license": "GPL-3.0",
+    "license_file": "LICENSE"
+  },
+  "mdecrevoisier": {
+    "repository": "mdecrevoisier/SIGMA-detection-rules",
+    "branch": "main",
+    "directories": ["."],
+    "adapter": "community",
+    "profiles": ["sysmon", "generic", "linux"],
+    "license": "CC0-1.0",
+    "license_file": "LICENSE.md"
+  }
+}

@@ -7,4 +7,8 @@ __pycache__/
 
 # macOS
 .DS_Store
-
+.cache/
+.venv/
+build/
+# Retained local checkout; generation uses the locked PyPI package.
+/pySigma-backend-sqlite/
