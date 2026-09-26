@@ -12315,6 +12315,6 @@
     "pysigma-pipeline-sysmon": "2.0.0",
     "pysigma-pipeline-windows": "2.0.0",
     "python": "3.14.7",
-    "sqlite": "3.53.4"
+    "sqlite": "3.45.1"
   }
 }

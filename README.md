@@ -65,12 +65,12 @@ Stale sources retain their last successful files and counts. Unavailable sources
 
 | Source | Status | Published revision | Last successful generation (UTC) |
 |---|---|---|---|
-| sigmahq | current | [07ec293a5169](https://github.com/SigmaHQ/sigma/tree/07ec293a51695cb1131a2e05260247872b31e1e1) | 2026-09-26T17:11:12+00:00 |
-| hayabusa | current | [1d9f8751f6b0](https://github.com/Yamato-Security/hayabusa-rules/tree/1d9f8751f6b0f2dd3eee1d44712c6a92541f5d08) | 2026-09-26T19:21:56+00:00 |
-| joesecurity | current | [cb91be06c8c9](https://github.com/joesecurity/sigma-rules/tree/cb91be06c8c95ce63aa9aa5006a7835678136a96) | 2026-09-26T17:11:28+00:00 |
-| mbabinski | current | [9dea7a5c15cf](https://github.com/mbabinski/Sigma-Rules/tree/9dea7a5c15cfd422ec320e7fabd93f0c3634181d) | 2026-09-26T17:11:29+00:00 |
-| mdecrevoisier | current | [d61408af8769](https://github.com/mdecrevoisier/SIGMA-detection-rules/tree/d61408af8769c74c96296b7ccc92d4bc3abb15af) | 2026-09-26T19:22:47+00:00 |
-| tsale | current | [f5190e6b6c5b](https://github.com/tsale/Sigma_rules/tree/f5190e6b6c5ba9e6729845f13ac916590e90b0d8) | 2026-09-26T19:21:58+00:00 |
+| sigmahq | current | [07ec293a5169](https://github.com/SigmaHQ/sigma/tree/07ec293a51695cb1131a2e05260247872b31e1e1) | 2026-09-26T19:32:46+00:00 |
+| hayabusa | current | [1d9f8751f6b0](https://github.com/Yamato-Security/hayabusa-rules/tree/1d9f8751f6b0f2dd3eee1d44712c6a92541f5d08) | 2026-09-26T19:33:16+00:00 |
+| joesecurity | current | [cb91be06c8c9](https://github.com/joesecurity/sigma-rules/tree/cb91be06c8c95ce63aa9aa5006a7835678136a96) | 2026-09-26T19:33:19+00:00 |
+| mbabinski | current | [9dea7a5c15cf](https://github.com/mbabinski/Sigma-Rules/tree/9dea7a5c15cfd422ec320e7fabd93f0c3634181d) | 2026-09-26T19:33:20+00:00 |
+| mdecrevoisier | current | [d61408af8769](https://github.com/mdecrevoisier/SIGMA-detection-rules/tree/d61408af8769c74c96296b7ccc92d4bc3abb15af) | 2026-09-26T19:33:22+00:00 |
+| tsale | current | [f5190e6b6c5b](https://github.com/tsale/Sigma_rules/tree/f5190e6b6c5ba9e6729845f13ac916590e90b0d8) | 2026-09-26T19:33:25+00:00 |
 
 Combined Windows ruleset status: **current**. It includes available published Windows detections; stale sources contribute their retained rules, and unavailable sources contribute none.
 
