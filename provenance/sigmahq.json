@@ -4981,7 +4981,7 @@
       "path": "rules/web/proxy_generic/proxy_ua_bitsadmin_susp_tld.yml",
       "profile": "sysmon",
       "reason": "logsource product None is outside this profile",
-      "sha256": "91d52f2772c0618fb20d0e596eca9c7fcf7f64f5070a772b7c2224efb814d902"
+      "sha256": "844059a90a5e14be2192c709fcdacdfd5daac1be194f1985575ccb912f6c4723"
     },
     {
       "document": "0",
@@ -11407,7 +11407,7 @@
       "path": "rules/web/proxy_generic/proxy_ua_bitsadmin_susp_tld.yml",
       "profile": "generic",
       "reason": "logsource product None is outside this profile",
-      "sha256": "91d52f2772c0618fb20d0e596eca9c7fcf7f64f5070a772b7c2224efb814d902"
+      "sha256": "844059a90a5e14be2192c709fcdacdfd5daac1be194f1985575ccb912f6c4723"
     },
     {
       "document": "0",
@@ -20220,7 +20220,7 @@
       "path": "rules/web/proxy_generic/proxy_ua_bitsadmin_susp_tld.yml",
       "profile": "linux",
       "reason": "logsource product None is outside this profile",
-      "sha256": "91d52f2772c0618fb20d0e596eca9c7fcf7f64f5070a772b7c2224efb814d902"
+      "sha256": "844059a90a5e14be2192c709fcdacdfd5daac1be194f1985575ccb912f6c4723"
     },
     {
       "document": "0",
@@ -46911,7 +46911,7 @@
       "document": "0",
       "id": "9eb68894-7476-4cd6-8752-23b51f5883a7",
       "path": "rules/web/proxy_generic/proxy_ua_bitsadmin_susp_tld.yml",
-      "sha256": "91d52f2772c0618fb20d0e596eca9c7fcf7f64f5070a772b7c2224efb814d902"
+      "sha256": "844059a90a5e14be2192c709fcdacdfd5daac1be194f1985575ccb912f6c4723"
     },
     {
       "adaptations": {},
@@ -68237,7 +68237,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "07ec293a51695cb1131a2e05260247872b31e1e1",
+  "revision": "330d1cf1955f5ee46430a01a6c61ca72577b16be",
   "source": "sigmahq",
   "status": "validated",
   "tools": {

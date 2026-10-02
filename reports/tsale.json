@@ -60,7 +60,7 @@
       "rules_windows_sysmon.json": "5a6dafe76b0f34ee9fab07453b14fccddccb89e0f7566d2b9c786224a3539360"
     },
     "repository": "SigmaHQ/sigma",
-    "revision": "07ec293a51695cb1131a2e05260247872b31e1e1"
+    "revision": "330d1cf1955f5ee46430a01a6c61ca72577b16be"
   },
   "official_duplicates_removed": {
     "generic/correlations": 0,
