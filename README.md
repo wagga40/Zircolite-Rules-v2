@@ -65,12 +65,12 @@ Stale sources retain their last successful files and counts. Unavailable sources
 
 | Source | Status | Published revision | Last successful generation (UTC) |
 |---|---|---|---|
-| sigmahq | current | [330d1cf1955f](https://github.com/SigmaHQ/sigma/tree/330d1cf1955f5ee46430a01a6c61ca72577b16be) | 2026-10-02T07:04:21+00:00 |
-| hayabusa | current | [1d9f8751f6b0](https://github.com/Yamato-Security/hayabusa-rules/tree/1d9f8751f6b0f2dd3eee1d44712c6a92541f5d08) | 2026-10-02T07:04:56+00:00 |
-| joesecurity | current | [cb91be06c8c9](https://github.com/joesecurity/sigma-rules/tree/cb91be06c8c95ce63aa9aa5006a7835678136a96) | 2026-10-02T07:05:01+00:00 |
-| mbabinski | current | [9dea7a5c15cf](https://github.com/mbabinski/Sigma-Rules/tree/9dea7a5c15cfd422ec320e7fabd93f0c3634181d) | 2026-10-02T07:05:02+00:00 |
-| mdecrevoisier | current | [d61408af8769](https://github.com/mdecrevoisier/SIGMA-detection-rules/tree/d61408af8769c74c96296b7ccc92d4bc3abb15af) | 2026-10-02T07:05:04+00:00 |
-| tsale | current | [f5190e6b6c5b](https://github.com/tsale/Sigma_rules/tree/f5190e6b6c5ba9e6729845f13ac916590e90b0d8) | 2026-10-02T07:05:08+00:00 |
+| sigmahq | current | [ca24243a6e3f](https://github.com/SigmaHQ/sigma/tree/ca24243a6e3f94353a54176f83c4c3b7f579224a) | 2026-10-03T06:37:15+00:00 |
+| hayabusa | current | [3d81fa79779a](https://github.com/Yamato-Security/hayabusa-rules/tree/3d81fa79779a5af3fde92e37c4b6a0f9a4347d73) | 2026-10-03T06:37:51+00:00 |
+| joesecurity | current | [cb91be06c8c9](https://github.com/joesecurity/sigma-rules/tree/cb91be06c8c95ce63aa9aa5006a7835678136a96) | 2026-10-03T06:37:55+00:00 |
+| mbabinski | current | [9dea7a5c15cf](https://github.com/mbabinski/Sigma-Rules/tree/9dea7a5c15cfd422ec320e7fabd93f0c3634181d) | 2026-10-03T06:37:56+00:00 |
+| mdecrevoisier | current | [d61408af8769](https://github.com/mdecrevoisier/SIGMA-detection-rules/tree/d61408af8769c74c96296b7ccc92d4bc3abb15af) | 2026-10-03T06:37:58+00:00 |
+| tsale | current | [f5190e6b6c5b](https://github.com/tsale/Sigma_rules/tree/f5190e6b6c5ba9e6729845f13ac916590e90b0d8) | 2026-10-03T06:38:01+00:00 |
 
 Combined Windows ruleset status: **current**. It includes available published Windows detections; stale sources contribute their retained rules, and unavailable sources contribute none.
 
@@ -78,11 +78,11 @@ Combined Windows ruleset status: **current**. It includes available published Wi
 
 | Ruleset | Entries | Unique IDs | Informational | Low | Medium | High | Critical |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [rules_windows_all.json](rules_windows_all.json) | 5,773 | 3,666 | 117 | 526 | 1,969 | 2,753 | 408 |
+| [rules_windows_all.json](rules_windows_all.json) | 5,784 | 3,672 | 117 | 526 | 1,974 | 2,759 | 408 |
 | [rules_linux.json](rules_linux.json) | 216 | 216 | 5 | 56 | 71 | 79 | 5 |
-| [rules_windows_generic.json](rules_windows_generic.json) | 2,270 | 2,270 | 11 | 162 | 901 | 1,096 | 100 |
-| [rules_windows_merged.json](rules_windows_merged.json) | 4,504 | 2,820 | 17 | 294 | 1,779 | 2,209 | 205 |
-| [rules_windows_sysmon.json](rules_windows_sysmon.json) | 2,820 | 2,820 | 13 | 204 | 1,114 | 1,362 | 127 |
+| [rules_windows_generic.json](rules_windows_generic.json) | 2,275 | 2,275 | 11 | 162 | 903 | 1,099 | 100 |
+| [rules_windows_merged.json](rules_windows_merged.json) | 4,515 | 2,826 | 17 | 294 | 1,784 | 2,215 | 205 |
+| [rules_windows_sysmon.json](rules_windows_sysmon.json) | 2,826 | 2,826 | 13 | 204 | 1,117 | 1,365 | 127 |
 | [rules_hayabusa_windows_native.json](rules_hayabusa_windows_native.json) | 186 | 186 | 100 | 26 | 40 | 19 | 1 |
 | [rules_joesecurity_windows_generic.json](rules_joesecurity_windows_generic.json) | 110 | 110 | 0 | 1 | 0 | 1 | 108 |
 | [rules_joesecurity_windows_merged.json](rules_joesecurity_windows_merged.json) | 201 | 110 | 0 | 2 | 0 | 2 | 197 |
