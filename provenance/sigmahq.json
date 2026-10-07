@@ -1,9 +1,9 @@
 {
   "artifacts": {
     "rules_linux.json": 216,
-    "rules_windows_generic.json": 2275,
-    "rules_windows_merged.json": 4515,
-    "rules_windows_sysmon.json": 2826
+    "rules_windows_generic.json": 2277,
+    "rules_windows_merged.json": 4518,
+    "rules_windows_sysmon.json": 2828
   },
   "exclusions": [
     {
@@ -25978,6 +25978,13 @@
     },
     {
       "document": "0",
+      "path": "rules/windows/powershell/powershell_script/posh_ps_cmdlet_invocation_via_exported_commands_array_index.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "5949bbe42690504c5d2fab06348cd0554bb790cbc049e8dc26fcd4408e6460ff"
+    },
+    {
+      "document": "0",
       "path": "rules/windows/powershell/powershell_script/posh_ps_cmdlet_scheduled_task.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
@@ -30889,6 +30896,13 @@
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
       "sha256": "e503018613d39b2bfa187d2050ac06715d81e435cb7075f6900a375c638ebde8"
+    },
+    {
+      "document": "0",
+      "path": "rules/windows/process_creation/proc_creation_win_powershell_cmdlet_invocation_via_exported_commands_array_index.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "f5cf7d32256dba8aa3d431cb5270358eda819a222a325ec798bc2ac9b45e1ef7"
     },
     {
       "document": "0",
@@ -41952,7 +41966,7 @@
     }
   ],
   "ignored": [],
-  "input_documents": 3763,
+  "input_documents": 3765,
   "official_duplicates_removed": {
     "generic/correlations": 0,
     "generic/events": 0,
@@ -41963,10 +41977,10 @@
   },
   "profiles": {
     "generic": {
-      "converted": 2275,
+      "converted": 2277,
       "correlations": 0,
-      "eligible": 2293,
-      "events": 2275,
+      "eligible": 2295,
+      "events": 2277,
       "reference_only": 0
     },
     "linux": {
@@ -41977,10 +41991,10 @@
       "reference_only": 0
     },
     "sysmon": {
-      "converted": 2826,
+      "converted": 2828,
       "correlations": 0,
-      "eligible": 2845,
-      "events": 2826,
+      "eligible": 2847,
+      "events": 2828,
       "reference_only": 0
     }
   },
@@ -52712,6 +52726,13 @@
     {
       "adaptations": {},
       "document": "0",
+      "id": "4ff4ad3e-9fb5-4a70-9962-d6ea58090318",
+      "path": "rules/windows/powershell/powershell_script/posh_ps_cmdlet_invocation_via_exported_commands_array_index.yml",
+      "sha256": "5949bbe42690504c5d2fab06348cd0554bb790cbc049e8dc26fcd4408e6460ff"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
       "id": "363eccc0-279a-4ccf-a3ab-24c2e63b11fb",
       "path": "rules/windows/powershell/powershell_script/posh_ps_cmdlet_scheduled_task.yml",
       "sha256": "89fb4d577d256c3665a449d34891412d144f510f7d49ee1e8997403b6c705145"
@@ -57622,6 +57643,13 @@
       "id": "1e0e1a81-e79b-44bc-935b-ddb9c8006b3d",
       "path": "rules/windows/process_creation/proc_creation_win_powershell_cl_mutexverifiers.yml",
       "sha256": "e503018613d39b2bfa187d2050ac06715d81e435cb7075f6900a375c638ebde8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0c3ebe9f-df09-4e00-be0f-73d4ca8d62f6",
+      "path": "rules/windows/process_creation/proc_creation_win_powershell_cmdlet_invocation_via_exported_commands_array_index.yml",
+      "sha256": "f5cf7d32256dba8aa3d431cb5270358eda819a222a325ec798bc2ac9b45e1ef7"
     },
     {
       "adaptations": {},
@@ -68328,7 +68356,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "ca24243a6e3f94353a54176f83c4c3b7f579224a",
+  "revision": "8a4813404ea3074890e0cda9272d4d1a8b2941d6",
   "source": "sigmahq",
   "status": "validated",
   "tools": {

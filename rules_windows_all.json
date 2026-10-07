@@ -49204,6 +49204,47 @@
     "title": "Security Tools Keyword Lookup Via Findstr.EXE - Generic"
   },
   {
+    "author": "Norbert Ja\u015bniewicz (AlphaSOC)",
+    "channel": [
+      "Microsoft-Windows-PowerShell/Operational",
+      "PowerShellCore/Operational"
+    ],
+    "description": "Detects obfuscated PowerShell scripts that enumerate Microsoft.PowerShell.Utility exported commands\nand invoke cmdlets indirectly by array index. This can be used to evade detections\nthat look for explicit strings such as Invoke-RestMethod or Invoke-Expression.\n",
+    "eventid": [
+      4104
+    ],
+    "falsepositives": [
+      "Legitimate use of exported commands array indexing in PowerShell scripts (should be rare)"
+    ],
+    "filename": "rules/windows/powershell/powershell_script/posh_ps_cmdlet_invocation_via_exported_commands_array_index.yml",
+    "id": "4ff4ad3e-9fb5-4a70-9962-d6ea58090318",
+    "level": "medium",
+    "logsource": {
+      "category": "ps_script",
+      "product": "windows",
+      "service": "powershell"
+    },
+    "required_fields": [
+      "Channel",
+      "EventID",
+      "ScriptBlockText"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE (Channel='Microsoft-Windows-PowerShell/Operational' OR Channel='PowerShellCore/Operational') AND (EventID=4104 AND (((ScriptBlockText LIKE '%Get-Module %' ESCAPE '\\' OR ScriptBlockText LIKE '%gmo %' ESCAPE '\\') AND (ScriptBlockText LIKE '%ListAvailable%' ESCAPE '\\' AND ScriptBlockText LIKE '%Microsoft.PowerShell.Utility%' ESCAPE '\\' AND ScriptBlockText LIKE '%ExportedCommands%' ESCAPE '\\' AND ScriptBlockText LIKE '%Values%' ESCAPE '\\')) AND ScriptBlockText LIKE '%[%]%' ESCAPE '\\'))"
+    ],
+    "schema_version": 2,
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.execution",
+      "attack.stealth",
+      "attack.t1027",
+      "attack.t1059.001"
+    ],
+    "title": "PowerShell Dynamic Module Invocation Via ExportedCommands Array Index - PS Script"
+  },
+  {
     "author": "frack113",
     "channel": [
       "Microsoft-Windows-PowerShell/Operational",
@@ -108815,6 +108856,89 @@
       "attack.t1027"
     ],
     "title": "Encoded PowerShell payload deployed via service"
+  },
+  {
+    "author": "Norbert Ja\u015bniewicz (AlphaSOC), Swachchhanda Shrawan Poudel (Nextron Systems)",
+    "channel": [
+      "Microsoft-Windows-Sysmon/Operational"
+    ],
+    "description": "Detects PowerShell processes invoked with obfuscated command lines that enumerate Microsoft.PowerShell.Utility\nexported commands and invoke cmdlets indirectly by array index. This technique is used to evade\ndetections that look for explicit strings such as Invoke-RestMethod or Invoke-Expression.\n",
+    "eventid": [
+      1
+    ],
+    "falsepositives": [
+      "Legitimate use of exported commands array indexing during PowerShell command execution (should be rare)"
+    ],
+    "filename": "rules/windows/process_creation/proc_creation_win_powershell_cmdlet_invocation_via_exported_commands_array_index.yml",
+    "id": "0c3ebe9f-df09-4e00-be0f-73d4ca8d62f6",
+    "level": "high",
+    "logsource": {
+      "category": "process_creation",
+      "product": "windows",
+      "service": "sysmon"
+    },
+    "required_fields": [
+      "Channel",
+      "CommandLine",
+      "EventID",
+      "Image",
+      "OriginalFileName"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (((Image LIKE '%\\\\powershell.exe' ESCAPE '\\' OR Image LIKE '%\\\\pwsh.exe' ESCAPE '\\') OR (OriginalFileName='powershell.exe' OR OriginalFileName='pwsh.dll')) AND ((CommandLine LIKE '%Get-Module %' ESCAPE '\\' OR CommandLine LIKE '%gmo %' ESCAPE '\\') AND (CommandLine LIKE '%ListAvailable%' ESCAPE '\\' AND CommandLine LIKE '%Microsoft.PowerShell.Utility%' ESCAPE '\\' AND CommandLine LIKE '%ExportedCommands%' ESCAPE '\\' AND CommandLine LIKE '%Values%' ESCAPE '\\')) AND CommandLine LIKE '%[%]%' ESCAPE '\\'))"
+    ],
+    "schema_version": 2,
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.execution",
+      "attack.stealth",
+      "attack.t1027.010",
+      "attack.t1059.001"
+    ],
+    "title": "PowerShell Dynamic Module Invocation Via ExportedCommands Array Index - Sysmon"
+  },
+  {
+    "author": "Norbert Ja\u015bniewicz (AlphaSOC), Swachchhanda Shrawan Poudel (Nextron Systems)",
+    "channel": [
+      "Security"
+    ],
+    "description": "Detects PowerShell processes invoked with obfuscated command lines that enumerate Microsoft.PowerShell.Utility\nexported commands and invoke cmdlets indirectly by array index. This technique is used to evade\ndetections that look for explicit strings such as Invoke-RestMethod or Invoke-Expression.\n",
+    "eventid": [
+      4688
+    ],
+    "falsepositives": [
+      "Legitimate use of exported commands array indexing during PowerShell command execution (should be rare)"
+    ],
+    "filename": "rules/windows/process_creation/proc_creation_win_powershell_cmdlet_invocation_via_exported_commands_array_index.yml",
+    "id": "0c3ebe9f-df09-4e00-be0f-73d4ca8d62f6",
+    "level": "high",
+    "logsource": {
+      "product": "windows",
+      "service": "security"
+    },
+    "required_fields": [
+      "Channel",
+      "CommandLine",
+      "EventID",
+      "NewProcessName",
+      "OriginalFileName"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (((NewProcessName LIKE '%\\\\powershell.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\pwsh.exe' ESCAPE '\\') OR (OriginalFileName='powershell.exe' OR OriginalFileName='pwsh.dll')) AND ((CommandLine LIKE '%Get-Module %' ESCAPE '\\' OR CommandLine LIKE '%gmo %' ESCAPE '\\') AND (CommandLine LIKE '%ListAvailable%' ESCAPE '\\' AND CommandLine LIKE '%Microsoft.PowerShell.Utility%' ESCAPE '\\' AND CommandLine LIKE '%ExportedCommands%' ESCAPE '\\' AND CommandLine LIKE '%Values%' ESCAPE '\\')) AND CommandLine LIKE '%[%]%' ESCAPE '\\'))"
+    ],
+    "schema_version": 2,
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.execution",
+      "attack.stealth",
+      "attack.t1027.010",
+      "attack.t1059.001"
+    ],
+    "title": "PowerShell Dynamic Module Invocation Via ExportedCommands Array Index - Generic"
   },
   {
     "author": "frack113",

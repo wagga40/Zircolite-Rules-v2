@@ -1,8 +1,8 @@
 {
   "deduplication": "Same ID and SQL; prefer SigmaHQ, then source name order. Distinct SQL variants remain.",
   "duplicates_removed": 0,
-  "entries": 5784,
-  "input_entries": 5784,
+  "entries": 5787,
+  "input_entries": 5787,
   "inputs": {
     "hayabusa": {
       "artifacts": {
@@ -10,7 +10,7 @@
       },
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
-      "revision": "3d81fa79779a5af3fde92e37c4b6a0f9a4347d73",
+      "revision": "e8a8ee6eb8e96c3c489d72107c36543950308720",
       "status": "current"
     },
     "joesecurity": {
@@ -42,11 +42,11 @@
     },
     "sigmahq": {
       "artifacts": {
-        "rules_windows_merged.json": "8ea9b07f5fd35f37f6bf5e2430010ff8bb9160c2d072039a66a95ff29aabc9eb"
+        "rules_windows_merged.json": "b8575e76b3f369b56a566043545335a8067589e8c4f20393ba8e33da1452c605"
       },
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
-      "revision": "ca24243a6e3f94353a54176f83c4c3b7f579224a",
+      "revision": "8a4813404ea3074890e0cda9272d4d1a8b2941d6",
       "status": "current"
     },
     "tsale": {
