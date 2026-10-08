@@ -6217,6 +6217,82 @@
     "title": "Proc Exec (Sysmon Alert)"
   },
   {
+    "author": "Defa Mulya Pratama",
+    "channel": [
+      "Security"
+    ],
+    "description": "Detects commands commonly used by ransomware and destructive malware to inhibit system recovery, such as deleting or resizing Volume Shadow Copies, deleting backup catalogs, or disabling Windows automatic recovery.\nThis rule uses the built-in Windows Security \"Process Creation\" event (4688) so that it works without Sysmon. Command line auditing must be enabled.\n",
+    "eventid": [
+      4688
+    ],
+    "falsepositives": [
+      "Legitimate administrative maintenance of shadow copies or backups, which is uncommon and should be verified."
+    ],
+    "filename": "hayabusa/builtin/Security/DetailedTracking/ProcessCreation/Sec_4688_High_ProcExec_InhibitSystemRecovery.yml",
+    "id": "db13c364-2254-4247-8c53-da1a7c4bdb78",
+    "level": "high",
+    "logsource": {
+      "product": "windows",
+      "service": "security"
+    },
+    "required_fields": [
+      "Channel",
+      "CommandLine",
+      "EventID",
+      "NewProcessName"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE (Channel='Security' AND EventID=4688) AND ((NewProcessName LIKE '%\\\\vssadmin.exe' ESCAPE '\\' AND (CommandLine LIKE '%delete%' ESCAPE '\\' AND CommandLine LIKE '%shadows%' ESCAPE '\\')) OR (NewProcessName LIKE '%\\\\vssadmin.exe' ESCAPE '\\' AND (CommandLine LIKE '%resize%' ESCAPE '\\' AND CommandLine LIKE '%shadowstorage%' ESCAPE '\\')) OR (NewProcessName LIKE '%\\\\wmic.exe' ESCAPE '\\' AND (CommandLine LIKE '%shadowcopy%' ESCAPE '\\' AND CommandLine LIKE '%delete%' ESCAPE '\\')) OR (NewProcessName LIKE '%\\\\wbadmin.exe' ESCAPE '\\' AND (CommandLine LIKE '%delete%' ESCAPE '\\' AND CommandLine LIKE '%catalog%' ESCAPE '\\')) OR (NewProcessName LIKE '%\\\\bcdedit.exe' ESCAPE '\\' AND (CommandLine LIKE '%recoveryenabled no%' ESCAPE '\\' OR CommandLine LIKE '%recoveryenabled off%' ESCAPE '\\' OR CommandLine LIKE '%ignoreallfailures%' ESCAPE '\\')))"
+    ],
+    "schema_version": 2,
+    "source_table": "logs",
+    "status": "test",
+    "tags": [
+      "attack.impact",
+      "attack.t1490"
+    ],
+    "title": "Susp CmdLine (Possible Inhibit System Recovery)"
+  },
+  {
+    "author": "Defa Mulya Pratama",
+    "channel": [
+      "Microsoft-Windows-Sysmon/Operational"
+    ],
+    "description": "Detects commands commonly used by ransomware and destructive malware to inhibit system recovery, such as deleting or resizing Volume Shadow Copies, deleting backup catalogs, or disabling Windows automatic recovery.\nThis is the Sysmon process creation (EventID 1) version of the Security 4688 rule.\n",
+    "eventid": [
+      1
+    ],
+    "falsepositives": [
+      "Legitimate administrative maintenance of shadow copies or backups, which is uncommon and should be verified."
+    ],
+    "filename": "hayabusa/sysmon/Sysmon_1_High_ProcExec_InhibitSystemRecovery.yml",
+    "id": "db1fa879-6d12-4bd1-b947-ee5dc565c55e",
+    "level": "high",
+    "logsource": {
+      "product": "windows",
+      "service": "sysmon"
+    },
+    "required_fields": [
+      "Channel",
+      "CommandLine",
+      "EventID",
+      "Image"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE (Channel='Microsoft-Windows-Sysmon/Operational' AND EventID=1) AND ((Image LIKE '%\\\\vssadmin.exe' ESCAPE '\\' AND (CommandLine LIKE '%delete%' ESCAPE '\\' AND CommandLine LIKE '%shadows%' ESCAPE '\\')) OR (Image LIKE '%\\\\vssadmin.exe' ESCAPE '\\' AND (CommandLine LIKE '%resize%' ESCAPE '\\' AND CommandLine LIKE '%shadowstorage%' ESCAPE '\\')) OR (Image LIKE '%\\\\wmic.exe' ESCAPE '\\' AND (CommandLine LIKE '%shadowcopy%' ESCAPE '\\' AND CommandLine LIKE '%delete%' ESCAPE '\\')) OR (Image LIKE '%\\\\wbadmin.exe' ESCAPE '\\' AND (CommandLine LIKE '%delete%' ESCAPE '\\' AND CommandLine LIKE '%catalog%' ESCAPE '\\')) OR (Image LIKE '%\\\\bcdedit.exe' ESCAPE '\\' AND (CommandLine LIKE '%recoveryenabled no%' ESCAPE '\\' OR CommandLine LIKE '%recoveryenabled off%' ESCAPE '\\' OR CommandLine LIKE '%ignoreallfailures%' ESCAPE '\\')))"
+    ],
+    "schema_version": 2,
+    "source_table": "logs",
+    "status": "test",
+    "tags": [
+      "attack.impact",
+      "attack.t1490"
+    ],
+    "title": "Susp CmdLine (Possible Inhibit System Recovery)"
+  },
+  {
     "author": "Zach Mathis",
     "channel": [
       "System"

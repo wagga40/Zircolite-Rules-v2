@@ -1,7 +1,7 @@
 {
   "artifacts": {
     "experimental/rules_hayabusa_windows_native_correlation.json": 3,
-    "rules_hayabusa_windows_native.json": 186
+    "rules_hayabusa_windows_native.json": 188
   },
   "exclusions": [
     {
@@ -47,7 +47,7 @@
     }
   ],
   "ignored": [],
-  "input_documents": 197,
+  "input_documents": 199,
   "official_baseline": {
     "artifacts": {
       "rules_linux.json": "7b2e5b1210c26b12d401b27f3d8be79d7ef8fa8abb0671db364794a9486aa2ac",
@@ -63,10 +63,10 @@
   },
   "profiles": {
     "native": {
-      "converted": 192,
+      "converted": 194,
       "correlations": 3,
-      "eligible": 192,
-      "events": 186,
+      "eligible": 194,
+      "events": 188,
       "reference_only": 3
     }
   },
@@ -414,6 +414,13 @@
       "id": "d8e3afc5-fa0a-4063-a4af-55e014eb1936",
       "path": "hayabusa/builtin/Security/Default/Sec_5397_Low_CredentialManagerEnumerated.yml",
       "sha256": "394b06015c10187c965fc7012f8765fee3e843ee6bb74acf66286deb2ad0390f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "db13c364-2254-4247-8c53-da1a7c4bdb78",
+      "path": "hayabusa/builtin/Security/DetailedTracking/ProcessCreation/Sec_4688_High_ProcExec_InhibitSystemRecovery.yml",
+      "sha256": "172ec42bfb22c07f6694dbfc0f9904830a4b0852296daca1f2f78f6edb06c596"
     },
     {
       "adaptations": {},
@@ -1803,6 +1810,13 @@
       "sha256": "412aa0f96129103206e0939cd10c307d72851164f74fee6b7453bd2b775de37a"
     },
     {
+      "adaptations": {},
+      "document": "0",
+      "id": "db1fa879-6d12-4bd1-b947-ee5dc565c55e",
+      "path": "hayabusa/sysmon/Sysmon_1_High_ProcExec_InhibitSystemRecovery.yml",
+      "sha256": "bae3cd9853f1c2f665ee7b0dfcce60f001a5193359ed5808734c62fe381a1a74"
+    },
+    {
       "adaptations": {
         "tags": {
           "adapted": [
@@ -2386,7 +2400,7 @@
     }
   ],
   "repository": "Yamato-Security/hayabusa-rules",
-  "revision": "e8a8ee6eb8e96c3c489d72107c36543950308720",
+  "revision": "18afcb376e13e965037b2fc12c1e3470bc5e333d",
   "source": "hayabusa",
   "status": "validated",
   "tools": {
@@ -2394,7 +2408,7 @@
     "pysigma-backend-sqlite": "2.0.0",
     "pysigma-pipeline-sysmon": "2.0.0",
     "pysigma-pipeline-windows": "2.0.0",
-    "python": "3.14.7",
+    "python": "3.14.8",
     "sqlite": "3.45.1"
   }
 }
