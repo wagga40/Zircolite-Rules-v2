@@ -66,7 +66,7 @@ Stale sources retain their last successful files and counts. Unavailable sources
 | Source | Status | Published revision | Last successful generation (UTC) |
 |---|---|---|---|
 | sigmahq | current | [8a4813404ea3](https://github.com/SigmaHQ/sigma/tree/8a4813404ea3074890e0cda9272d4d1a8b2941d6) | 2026-10-08T07:29:47+00:00 |
-| hayabusa | current | [18afcb376e13](https://github.com/Yamato-Security/hayabusa-rules/tree/18afcb376e13e965037b2fc12c1e3470bc5e333d) | 2026-10-08T07:30:13+00:00 |
+| hayabusa | current | [04af3d207cae](https://github.com/Yamato-Security/hayabusa-rules/tree/04af3d207cae784183e0e5e82c1132ee866bbd67) | 2026-10-09T07:28:46+00:00 |
 | joesecurity | current | [cb91be06c8c9](https://github.com/joesecurity/sigma-rules/tree/cb91be06c8c95ce63aa9aa5006a7835678136a96) | 2026-10-08T07:30:17+00:00 |
 | mbabinski | current | [9dea7a5c15cf](https://github.com/mbabinski/Sigma-Rules/tree/9dea7a5c15cfd422ec320e7fabd93f0c3634181d) | 2026-10-08T07:30:18+00:00 |
 | mdecrevoisier | current | [d61408af8769](https://github.com/mdecrevoisier/SIGMA-detection-rules/tree/d61408af8769c74c96296b7ccc92d4bc3abb15af) | 2026-10-08T07:30:20+00:00 |

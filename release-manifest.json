@@ -2,7 +2,7 @@
   "aggregates": {
     "windows_all": {
       "artifacts": {
-        "provenance/windows_all.json": "7356c077d9c05d7a55a0dab0c2a4deb92856b5f6685e9b78d8877b2c78543471",
+        "provenance/windows_all.json": "91f8887b19eb3764a6e4a446ce7ca17f1c06864802e46ea4737fa7c18618b9e5",
         "rules_windows_all.json": "e1bd8cec98457547ad4bf3a36623a9e4cbf0596196a1366a606254cd3dc32328"
       },
       "inputs": {
@@ -12,7 +12,7 @@
           },
           "license": "DRL-1.1",
           "repository": "Yamato-Security/hayabusa-rules",
-          "revision": "18afcb376e13e965037b2fc12c1e3470bc5e333d",
+          "revision": "04af3d207cae784183e0e5e82c1132ee866bbd67",
           "status": "current"
         },
         "joesecurity": {
@@ -73,13 +73,13 @@
       "artifacts": {
         "experimental/rules_hayabusa_windows_native_correlation.json": "55cdc4d35a775e8f8aa424d29b5ae15c4437a2661ec0b3840b2e7ca570029d6b",
         "licenses/hayabusa.txt": "d5f4c36a0528e01cfdd9e4fc60879201d3af49b41c520200643d321fe53da5f9",
-        "provenance/hayabusa.json": "3b5a5124dc8c53e345c84c87876ac84f3954e58bb1e557936b39e4f75a512c58",
+        "provenance/hayabusa.json": "051dcf3d314ae9060b1fd28b042abae5cfe561e70b0b0fea696accd61ec4e163",
         "rules_hayabusa_windows_native.json": "5d069c4236909d232c862d016a4f452335921c215b83887e0f1d6470872072f8"
       },
-      "last_success": "2026-10-08T07:30:13+00:00",
+      "last_success": "2026-10-09T07:28:46+00:00",
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
-      "revision": "18afcb376e13e965037b2fc12c1e3470bc5e333d",
+      "revision": "04af3d207cae784183e0e5e82c1132ee866bbd67",
       "rule_counts": {
         "experimental/rules_hayabusa_windows_native_correlation.json": 3,
         "rules_hayabusa_windows_native.json": 188
