@@ -79,5 +79,42 @@
     "profiles": ["sysmon", "generic"],
     "license": "MIT",
     "license_file": "LICENSE"
+  },
+  "hatchepsoute": {
+    "repository": "Hatchepsoute/sigma-rules",
+    "branch": "main",
+    "directories": ["."],
+    "exclude": [".github/**", "*/playbook/**"],
+    "adapter": "community",
+    "profiles": ["sysmon", "generic", "linux"],
+    "license": "Apache-2.0",
+    "license_file": "LICENSE"
+  },
+  "wrg11": {
+    "repository": "WRG-11/wrg-sigma-rules",
+    "branch": "main",
+    "directories": ["resources/examples"],
+    "adapter": "community",
+    "profiles": ["sysmon", "generic", "linux"],
+    "license": "MIT",
+    "license_file": "LICENSE"
+  },
+  "tyrian": {
+    "repository": "zshguy/tyrian-detection-pack",
+    "branch": "main",
+    "directories": ["rules"],
+    "adapter": "community",
+    "profiles": ["sysmon", "generic", "linux"],
+    "license": "MIT",
+    "license_file": "LICENSE"
+  },
+  "dragon": {
+    "repository": "frknaykc/Dragon-ThreatResearchHQ",
+    "branch": "main",
+    "directories": ["Detection-Rules/Sigma"],
+    "adapter": "community",
+    "profiles": ["sysmon", "generic", "linux"],
+    "license": "MIT",
+    "license_file": "LICENSE"
   }
 }

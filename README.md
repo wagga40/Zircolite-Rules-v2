@@ -21,6 +21,10 @@ Every ruleset contains all available severity levels. Severity reflects the upst
 | LOLRMM | `rules_lolrmm_windows_{sysmon,generic,merged}` | Windows logs; remote monitoring and management tool activity |
 | LOLDrivers | `rules_loldrivers_windows_sysmon` | Sysmon driver loads (event 6) with hashes |
 | ReversingLabs | `rules_reversinglabs_windows_{sysmon,generic,merged}` | Windows logs |
+| Hatchepsoute | `rules_hatchepsoute_windows_{sysmon,generic,merged}`, `rules_hatchepsoute_linux` | Windows or Linux logs; vulnerability-specific packs, some broad |
+| WRG-11 | `rules_wrg11_windows_{sysmon,generic,merged}`, `rules_wrg11_linux` | Windows or Linux logs |
+| tyrian | `rules_tyrian_windows_{sysmon,generic,merged}`, `rules_tyrian_linux` | Windows or Linux logs; hunting-oriented |
+| Dragon | `rules_dragon_windows_{sysmon,generic,merged}`, `rules_dragon_linux` | Windows or Linux logs |
 
 Add `.json` to a base filename. Source-specific files remain available; community rules are not added to the SigmaHQ-only files. A profile with no usable community rules produces no ruleset. Sysmon and Generic describe conversion mappings, not exclusive log channels: both retain applicable Windows service rules, while their category mappings target Sysmon and Windows Audit respectively. Each source's merged file combines both without losing distinct SQL variants sharing an ID.
 
@@ -116,7 +120,7 @@ Combined Windows ruleset status: **current**. It includes available published Wi
 
 ## Sources and adaptations
 
-[sources.json](sources.json) declares the repositories, branches, input directories, adapters, profiles, and licenses:
+[sources.json](sources.json) declares the repositories, branches, input directories, adapters, profiles, and licenses. An optional `exclude` list of glob patterns, relative to the repository root, skips non-rule YAML such as CI workflows; reports list skipped files as ignored:
 
 | Repository | Content | Upstream license |
 |---|---|---|
@@ -129,6 +133,10 @@ Combined Windows ruleset status: **current**. It includes available published Wi
 | [magicsword-io/LOLRMM](https://github.com/magicsword-io/LOLRMM) | Generated `detections/sigma/` rules for remote monitoring and management tools; legitimate RMM use produces matches | Apache 2.0 |
 | [magicsword-io/LOLDrivers](https://github.com/magicsword-io/LOLDrivers) | Aggregated `detections/sigma/` vulnerable and malicious driver rules; the per-driver collection is not used | Apache 2.0 |
 | [reversinglabs/reversinglabs-siem-rules](https://github.com/reversinglabs/reversinglabs-siem-rules) | `Ransomware/` detections | MIT |
+| [Hatchepsoute/sigma-rules](https://github.com/Hatchepsoute/sigma-rules) | Per-vulnerability and campaign packs; CI workflows and response playbooks are excluded by pattern | Apache 2.0 |
+| [WRG-11/wrg-sigma-rules](https://github.com/WRG-11/wrg-sigma-rules) | `resources/examples/` detections and correlations; the plugin runtime copy is not used | MIT |
+| [zshguy/tyrian-detection-pack](https://github.com/zshguy/tyrian-detection-pack) | Windows and Linux hunting detections | MIT |
+| [frknaykc/Dragon-ThreatResearchHQ](https://github.com/frknaykc/Dragon-ThreatResearchHQ) | `Detection-Rules/Sigma/` threat-research detections | MIT |
 
 Adapters normalize metadata such as scalar references, nonstandard status labels, list descriptions, non-Sigma tags, and Windows/Linux product capitalization in community rules. Original values are recorded in `provenance/<source>.json`. Missing or invalid IDs receive deterministic UUIDv5 identifiers. List-valued logsources become distinct alternatives with stable variant IDs; ambiguous correlation references fail validation.
 
