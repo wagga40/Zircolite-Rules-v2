@@ -148,7 +148,7 @@ Every exported query is prepared in a fresh SQLite database with its declared fi
 
 [exclusions.json](exclusions.json) is a reviewed baseline for known upstream conversion failures. Each record binds the source, file hash, document, profile, stage, and exact error, with a reason. A changed file or error does not silently inherit approval. Policy exclusions such as another platform, deprecated status, or an unmapped logsource are listed separately in reports.
 
-Successful sources replace their artifacts only after validation. Unexpected source failures leave the last good artifacts and provenance intact. CI publishes successful sources, failure status, and updated README statistics, then marks the run failed if any source failed. It verifies artifact hashes, counts, and README statistics before committing and never upgrades converter dependencies during the daily update.
+Successful sources replace their artifacts only after validation. Unexpected source failures leave the last good artifacts and provenance intact. CI publishes successful sources, failure status, and updated README statistics, then marks the run failed if any source failed. It verifies artifact hashes, counts, and README statistics before committing and never upgrades converter dependencies during the daily update. Tests run in a read-only job; only the publish job, which never runs for pull requests, can push. Each publish run adds a `ruleset_diff.py` summary of rule changes to the job summary and keeps one open *Rule source validation failures* issue current while any source fails, closing it after a clean run. Source snapshots are cached between runs and pruned to the revisions the manifest records (`gen_ruleset.py --prune-cache`). Workflow actions are pinned to commit SHAs and updated by Dependabot.
 
 - `release-manifest.json`: current/stale/unavailable source status, exact revisions, tool versions, counts, artifact hashes, last successful generation, and the combined Windows ruleset's input lineage under `aggregates.windows_all`.
 - `reports/<source>.json`: latest attempt, including errors, exclusions, and profile counts.
@@ -206,7 +206,7 @@ pdm run python exclusion_baseline.py build/audit/reports            # review onl
 pdm run python exclusion_baseline.py build/audit/reports --apply    # keep reasons, update messages
 ```
 
-Set `SQLITE_MIN_BINARY` to a SQLite 3.38 CLI to run the minimum-version tests locally; otherwise those 16 cases are skipped. CI builds this version explicitly.
+Set `SQLITE_MIN_BINARY` to a SQLite 3.38 CLI to run the minimum-version tests locally; otherwise those 16 cases are skipped. CI builds this version from the sqlite.org archive after checking its published SHA3-256.
 
 ## Licensing
 
