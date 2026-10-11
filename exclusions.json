@@ -1788,5 +1788,75 @@
     "sha256": "0388b35900972bb745dbf742bd6d7d99aeca2bc870188e1bd723ff67066622a6",
     "source": "reversinglabs",
     "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Regular expression '^(?!10\\.|172\\.(1[6-9]|2[0-9]|3[01])\\.|192\\.168\\.|127\\.|::1|fe80)[0-9]' is invalid: b'invalid perl operator: (?!'",
+    "path": "CVE-2025-24054_Windows_NTLM_Hash_Leak/rules/windows_ntlm_coercion_file_trigger_strict.yml",
+    "profile": "*",
+    "reason": "pySigma 2 compiles |re values with RE2, which has no lookaround assertions; the pattern is not rewritten.",
+    "sha256": "2976f244594f53c1e404fad2108b2adf4bd6e1d9b6e8aa0802efed597f144c79",
+    "source": "hatchepsoute",
+    "stage": "parse"
+  },
+  {
+    "document": "0",
+    "error": "Regular expression '(?i)SAMLResponse(?:=|%3[dD])[A-Za-z0-9+/=%]{1500,}' is invalid: b'invalid repetition size: {1500,}'",
+    "path": "CVE-2025-59718_Fortigate_bypass/rules/web_fortinet_saml_bypass_exploitation_cve_2025_59718_strict.yml",
+    "profile": "*",
+    "reason": "pySigma 2 compiles |re values with RE2, which limits counted repetition to 1000; the pattern is not rewritten.",
+    "sha256": "15a3262c1634f2c718d5ae57fc2cf9b68b84c9c85b0e9a891ae632d4547e8cc5",
+    "source": "hatchepsoute",
+    "stage": "parse"
+  },
+  {
+    "document": "0",
+    "error": "Regular expression '(?i)https?://(?!(?:www\\.)?microsoft\\.com|(?:www\\.)?windowsupdate\\.com|download\\.windows\\.net|update\\.microsoft\\.com)[^ ]+\\.(exe|dll|ps1|vbs|js)\\b' is invalid: b'invalid perl operator: (?!'",
+    "path": "CVE-2025-62550_AzurMonitorAgent/rules/cve_2025_62550_azure_monitor_agent_lolbin_download_execute_strict.yml",
+    "profile": "*",
+    "reason": "pySigma 2 compiles |re values with RE2, which has no lookaround assertions; the pattern is not rewritten.",
+    "sha256": "079a9a74585ec3060b4e899ef862f475a2c20fe2059f6c06efa028c63642caeb",
+    "source": "hatchepsoute",
+    "stage": "parse"
+  },
+  {
+    "document": "0",
+    "error": "Regular expression '(?i)(^|[\\r\\n;,\\s])\\s*cdc:\\s*(?:\\d{1,3}\\.){3}\\d{1,3}(?=$|[\\r\\n;,\\s])' is invalid: b'invalid perl operator: (?='",
+    "path": "CVE-2026-54121_ADCS_Certighost/rules/windows_adcs_certighost_certificate_issuance_cve_2026_54121_strict.yml",
+    "profile": "*",
+    "reason": "pySigma 2 compiles |re values with RE2, which has no lookaround assertions; the pattern is not rewritten.",
+    "sha256": "655924344e43677e77a7b90edcb2b1102385d550825d7112488c967728252da8",
+    "source": "hatchepsoute",
+    "stage": "parse"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "rules/credential-access/password-spraying-4625.yml",
+    "profile": "sysmon",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "b98618c90db69de50706437d4be7d5ddbc5a4e167387e264df75df6fdce3d985",
+    "source": "tyrian",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+    "path": "rules/credential-access/password-spraying-4625.yml",
+    "profile": "generic",
+    "reason": "Legacy aggregation syntax needs an authored Sigma correlation migration.",
+    "sha256": "b98618c90db69de50706437d4be7d5ddbc5a4e167387e264df75df6fdce3d985",
+    "source": "tyrian",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unknown modifier 'any'",
+    "path": "Detection-Rules/Sigma/macOS/lnx_macsync_launchagent_persistence.yml",
+    "profile": "*",
+    "reason": "Invalid upstream modifier: 'any' is not a Sigma modifier, and this macOS rule matches no profile.",
+    "sha256": "579a598f3dc778791e6dc63b27cb5b5eb9764a35eb748475d4920a3f713bf0f1",
+    "source": "dragon",
+    "stage": "parse"
   }
 ]
