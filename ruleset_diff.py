@@ -10,6 +10,8 @@ from rule_sources import json_bytes
 from ruleset_stats import read_release
 
 CATEGORIES = ("added", "removed", "sql_changed", "metadata_changed")
+LABELS = {"added": "Added", "removed": "Removed", "sql_changed": "SQL changed",
+          "metadata_changed": "Metadata changed"}
 
 
 def load_release(output):
@@ -113,7 +115,7 @@ def render_markdown(diff, limit=50):
             rules = item[category]
             if not rules:
                 continue
-            lines.append(f"**{category.replace('_', ' ').capitalize()}**")
+            lines.append(f"**{LABELS[category]}**")
             lines.append("")
             for rule in rules[:limit]:
                 detail = f" (+{rule['added']}/−{rule['removed']} SQL variants)" if category == "sql_changed" else ""

@@ -67,7 +67,7 @@ def test_markdown_lists_are_limited(tmp_path):
     old = release(tmp_path, "old", [detection()])
     new = release(tmp_path, "new", [detection(id=rule_id) for rule_id in IDS])
     markdown = render_markdown(diff_releases(old, new), limit=1)
-    assert "- … and 2 more" in markdown
+    assert "**Added**" in markdown and "- … and 2 more" in markdown
 
 
 def test_cli_writes_json_and_signals_changes(tmp_path, monkeypatch, capsys):
