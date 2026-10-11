@@ -7,7 +7,7 @@ import yaml
 
 import gen_ruleset
 from rule_conversion import LEVELS
-from ruleset_stats import DASHBOARD, END, START, read_release, update_readme_stats, verify_release
+from ruleset_stats import DASHBOARD, END, FIGURES, START, read_release, update_readme_stats, verify_release
 from test_generation import SPEC, detection, source
 from test_sql_execution import definitions
 
@@ -41,12 +41,15 @@ def test_statistics_count_entries_ids_and_exact_levels(tmp_path):
     text, board = (output / "README.md").read_text(), dashboard(output)
     assert text.startswith(README.partition(START)[0])
     assert text.endswith(README.partition(END)[2])
-    assert "| 1 (all current) | 4 | 12 rules, 5 unique |" in text and "[dashboard](docs/dashboard.md)" in text
+    assert '<source media="(prefers-color-scheme: dark)" srcset="docs/assets/overview-dark.svg">' in text
+    assert "1 of 1 sources current; 12 rules in rules_windows_all.json (5 unique)" in text
+    assert "[dashboard](docs/dashboard.md)" in text
     assert "| 12 | 5 | 4 | 2 | 2 | 2 | 2 |" in board
     assert "[rules_test_windows_merged.json](../rules_test_windows_merged.json)" in board
     assert board.split("## Experimental correlation rulesets")[1].count("No published rulesets.") == 1
     assert ROW.format("test", "current") + " MIT |" in board
-    paths = [output / "README.md", output / DASHBOARD]
+    paths = [output / "README.md", output / DASHBOARD, *sorted((output / FIGURES).glob("*.svg"))]
+    assert len(paths) == 8
     before = [(path.read_bytes(), path.stat().st_mtime_ns) for path in paths]
     update_readme_stats(output)
     assert [(path.read_bytes(), path.stat().st_mtime_ns) for path in paths] == before
@@ -176,10 +179,14 @@ def test_retained_legacy_variants_are_verified_but_not_advertised(tmp_path):
 def test_dashboard_drift_is_rejected_and_repaired(tmp_path):
     _, output, _ = release(tmp_path)
     (output / DASHBOARD).write_text("edited by hand\n")
-    with pytest.raises(ValueError, match="dashboard is out of date"):
+    with pytest.raises(ValueError, match="dashboard.md is out of date"):
         verify_release(output)
     (output / DASHBOARD).unlink()
-    with pytest.raises(ValueError, match="dashboard is out of date"):
+    with pytest.raises(ValueError, match="dashboard.md is out of date"):
+        verify_release(output)
+    update_readme_stats(output)
+    (output / FIGURES / "tactics-dark.svg").unlink()
+    with pytest.raises(ValueError, match="tactics-dark.svg is out of date"):
         verify_release(output)
     update_readme_stats(output)
     verify_release(output)
@@ -196,3 +203,21 @@ def test_dashboard_counts_distinct_rules_by_tactic_category_and_severity(tmp_pat
     assert "| Execution | 2 |\n| Defense Evasion | 1 |\n| (no tactic tag) | 1 |" in section
     # Generic variants become Security 4688 rules; they still count as process_creation.
     assert "| process_creation | 2 |\n| service: security | 1 |" in section
+
+
+def test_figures_are_valid_animated_svg_in_both_themes(tmp_path):
+    import xml.etree.ElementTree as ET
+    docs = [detection(id=str(uuid.uuid4()), level=level, tags=["attack.execution"]) for level in LEVELS]
+    _, output, _ = release(tmp_path, docs)
+    names = sorted(path.name for path in (output / FIGURES).glob("*.svg"))
+    assert names == [f"{chart}-{theme}.svg" for chart in ("logsources", "overview", "tactics")
+                     for theme in ("dark", "light")]
+    for name in names:
+        text = (output / FIGURES / name).read_text()
+        root = ET.fromstring(text)
+        assert root.get("role") == "img" and root.find("{http://www.w3.org/2000/svg}title") is not None
+        assert "@keyframes" in text and "prefers-reduced-motion: reduce" in text
+    card = (output / FIGURES / "overview-light.svg").read_text()
+    assert ">1 of 1 sources current<" in card and ">10<" in card
+    assert (output / FIGURES / "overview-dark.svg").read_text() != card
+    assert "| Execution | 5 |" in dashboard(output) and "<summary>ATT&CK tactic table</summary>" in dashboard(output)

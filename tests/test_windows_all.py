@@ -42,7 +42,7 @@ def test_all_windows_sources_merge_without_losing_variants(tmp_path):
     assert provenance["duplicates_removed"] == 2
     assert set(provenance["inputs"]) == set(roots)
     assert provenance["inputs"]["native"]["artifacts"].keys() == {"rules_native_windows_native.json"}
-    assert "[`rules_windows_all.json`](rules_windows_all.json)" in (output / "README.md").read_text()
+    assert "5 rules in rules_windows_all.json (3 unique)" in (output / "README.md").read_text()
     assert "[rules_windows_all.json](../rules_windows_all.json)" in (output / "docs/dashboard.md").read_text()
     gen_ruleset.verify_release(output)
 

@@ -2,9 +2,10 @@
 
 Generated from the verified release on every update; do not edit.
 
-| Sources | Detection rulesets | [`rules_windows_all.json`](../rules_windows_all.json) | Linux rules | Experimental correlations | Last update (UTC) |
-|---|---:|---|---:|---:|---|
-| 13 (all current) | 41 | 7,344 rules, 4,696 unique | 299 | 31 | 2026-10-11 |
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/overview-dark.svg">
+  <img alt="13 of 13 sources current; 7,344 rules in rules_windows_all.json (4,696 unique); 299 Linux rules; 31 experimental correlations; updated 2026-10-11. Severity of unique detections: informational 114, low 351, medium 2,078, high 1,867, critical 290." src="assets/overview-light.svg" width="100%">
+</picture>
 
 ## Sources
 
@@ -32,6 +33,14 @@ Counts are distinct rules; a rule with several tactics counts once per tactic.
 |---:|---:|---:|---:|---:|
 | 114 | 351 | 2,078 | 1,867 | 290 |
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/tactics-dark.svg">
+  <img alt="Unique detections per ATT&amp;CK tactic; the table below lists the values." src="assets/tactics-light.svg" width="100%">
+</picture>
+
+<details>
+<summary>ATT&CK tactic table</summary>
+
 | ATT&CK tactic | Rules |
 |---|---:|
 | Reconnaissance | 14 |
@@ -52,6 +61,16 @@ Counts are distinct rules; a rule with several tactics counts once per tactic.
 | Impact | 111 |
 | (no tactic tag) | 352 |
 
+</details>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/logsources-dark.svg">
+  <img alt="Unique detections per log source, top 15; the table below lists the values." src="assets/logsources-light.svg" width="100%">
+</picture>
+
+<details>
+<summary>Log source table</summary>
+
 | Log source (top 15) | Rules |
 |---|---:|
 | process_creation | 2,223 |
@@ -69,6 +88,8 @@ Counts are distinct rules; a rule with several tactics counts once per tactic.
 | ps_classic_script | 35 |
 | dns_query | 32 |
 | service: application | 32 |
+
+</details>
 
 ## Detection rulesets
 
