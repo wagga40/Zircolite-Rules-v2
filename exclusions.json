@@ -1738,5 +1738,55 @@
     "sha256": "621e49ef41dc85aecba1f55fa5617016c77af830b06a17bd80b82c1c44ec86d1",
     "source": "tsale",
     "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 56), (line:1, col:57)",
+    "path": "Ransomware/BlackBasta/Sigma/file_event_win_blackbasta_ransom_note.yml",
+    "profile": "sysmon",
+    "reason": "Reviewed invalid condition: upper-case OR/AND are not Sigma boolean operators; upstream predicates are not rewritten.",
+    "sha256": "56d591a68c0af250878ba2f8e4e5f8b306c2f9112fa9c3d03999a3c2dbd8ebc2",
+    "source": "reversinglabs",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 56), (line:1, col:57)",
+    "path": "Ransomware/BlackBasta/Sigma/proc_creation_win_suspicious_lnk.yml",
+    "profile": "sysmon",
+    "reason": "Reviewed invalid condition: upper-case OR/AND are not Sigma boolean operators; upstream predicates are not rewritten.",
+    "sha256": "0388b35900972bb745dbf742bd6d7d99aeca2bc870188e1bd723ff67066622a6",
+    "source": "reversinglabs",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'AND'  (at char 55), (line:1, col:56)",
+    "path": "Ransomware/QuantumLocker/Sigma/file_event_win_icedid_license.yml",
+    "profile": "sysmon",
+    "reason": "Reviewed invalid condition: upper-case OR/AND are not Sigma boolean operators; upstream predicates are not rewritten.",
+    "sha256": "839d85ba9558b6204643704c9cb85e035a15dcc2be61e7fc3a12c4cede3d1dd2",
+    "source": "reversinglabs",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'AND'  (at char 55), (line:1, col:56)",
+    "path": "Ransomware/QuantumLocker/Sigma/file_event_win_quantumlocker_recon.yml",
+    "profile": "sysmon",
+    "reason": "Reviewed invalid condition: upper-case OR/AND are not Sigma boolean operators; upstream predicates are not rewritten.",
+    "sha256": "7bc7f2be9306659f446f52a842d068ab47299df2b69394cc7b1439ca4d96651c",
+    "source": "reversinglabs",
+    "stage": "convert"
+  },
+  {
+    "document": "0",
+    "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 56), (line:1, col:57)",
+    "path": "Ransomware/BlackBasta/Sigma/proc_creation_win_suspicious_lnk.yml",
+    "profile": "generic",
+    "reason": "Reviewed invalid condition: upper-case OR/AND are not Sigma boolean operators; upstream predicates are not rewritten.",
+    "sha256": "0388b35900972bb745dbf742bd6d7d99aeca2bc870188e1bd723ff67066622a6",
+    "source": "reversinglabs",
+    "stage": "convert"
   }
 ]

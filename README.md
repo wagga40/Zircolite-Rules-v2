@@ -18,6 +18,9 @@ Every ruleset contains all available severity levels. Severity reflects the upst
 | Micah Babinski | `rules_mbabinski_windows_{sysmon,generic,merged}` | Windows logs |
 | mdecrevoisier | `rules_mdecrevoisier_windows_{sysmon,generic,merged}` | Windows logs |
 | tsale | `rules_tsale_windows_{sysmon,generic,merged}` | Windows logs |
+| LOLRMM | `rules_lolrmm_windows_{sysmon,generic,merged}` | Windows logs; remote monitoring and management tool activity |
+| LOLDrivers | `rules_loldrivers_windows_sysmon` | Sysmon driver loads (event 6) with hashes |
+| ReversingLabs | `rules_reversinglabs_windows_{sysmon,generic,merged}` | Windows logs |
 
 Add `.json` to a base filename. Source-specific files remain available; community rules are not added to the SigmaHQ-only files. A profile with no usable community rules produces no ruleset. Sysmon and Generic describe conversion mappings, not exclusive log channels: both retain applicable Windows service rules, while their category mappings target Sysmon and Windows Audit respectively. Each source's merged file combines both without losing distinct SQL variants sharing an ID.
 
@@ -123,6 +126,9 @@ Combined Windows ruleset status: **current**. It includes available published Wi
 | [mbabinski/Sigma-Rules](https://github.com/mbabinski/Sigma-Rules) | Malware, intrusion, and threat-report detections | GPL 3.0 |
 | [mdecrevoisier/SIGMA-detection-rules](https://github.com/mdecrevoisier/SIGMA-detection-rules) | Windows and Active Directory detection content | CC0 1.0 |
 | [tsale/Sigma_rules](https://github.com/tsale/Sigma_rules) | Exploitation, malware, and Windows detections | GPL 3.0 |
+| [magicsword-io/LOLRMM](https://github.com/magicsword-io/LOLRMM) | Generated `detections/sigma/` rules for remote monitoring and management tools; legitimate RMM use produces matches | Apache 2.0 |
+| [magicsword-io/LOLDrivers](https://github.com/magicsword-io/LOLDrivers) | Aggregated `detections/sigma/` vulnerable and malicious driver rules; the per-driver collection is not used | Apache 2.0 |
+| [reversinglabs/reversinglabs-siem-rules](https://github.com/reversinglabs/reversinglabs-siem-rules) | `Ransomware/` detections | MIT |
 
 Adapters normalize metadata such as scalar references, nonstandard status labels, list descriptions, non-Sigma tags, and Windows/Linux product capitalization in community rules. Original values are recorded in `provenance/<source>.json`. Missing or invalid IDs receive deterministic UUIDv5 identifiers. List-valued logsources become distinct alternatives with stable variant IDs; ambiguous correlation references fail validation.
 
