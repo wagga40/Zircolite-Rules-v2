@@ -16,24 +16,29 @@ on:
   schedule:
     - cron: '23 1 * * *'
 
-permissions:
-  contents: read
+permissions: {}
 
 concurrency:
   group: rules-${{ github.ref }}
   cancel-in-progress: false
 
+env:
+  # SHA3-256 published on sqlite.org's download page for this release.
+  SQLITE_MIN_URL: https://www.sqlite.org/2022/sqlite-amalgamation-3380000.zip
+  SQLITE_MIN_SHA3_256: d167634332b6875d8430f2ad1eda4e0b847b266c4fd7673c91b36644da00d02d
+
 jobs:
-  rules-gen:
+  verify:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           submodules: false
+          persist-credentials: false
 
-      - uses: pdm-project/setup-pdm@v4
+      - uses: pdm-project/setup-pdm@544d7237314ee09c256785bd360f6b30add38b37 # v4.6
         with:
           python-version: '3.14'
           version: '2.29.2'
@@ -45,22 +50,50 @@ jobs:
 
       - name: Build minimum supported SQLite
         run: |
-          curl --fail --location https://www.sqlite.org/2022/sqlite-amalgamation-3380000.zip --output /tmp/sqlite-min.zip
+          curl --fail --location "$SQLITE_MIN_URL" --output /tmp/sqlite-min.zip
+          actual=$(openssl dgst -sha3-256 -r /tmp/sqlite-min.zip | cut -d' ' -f1)
+          if [ "$actual" != "$SQLITE_MIN_SHA3_256" ]; then
+            echo "SQLite archive checksum mismatch: $actual" >&2
+            exit 1
+          fi
           unzip -q /tmp/sqlite-min.zip -d /tmp
           cc -O2 -DSQLITE_THREADSAFE=0 /tmp/sqlite-amalgamation-3380000/shell.c /tmp/sqlite-amalgamation-3380000/sqlite3.c -lm -ldl -o /tmp/sqlite-min
           echo "SQLITE_MIN_BINARY=/tmp/sqlite-min" >> "$GITHUB_ENV"
 
       - name: Test generation and release isolation
-        id: tests
         run: pdm run pytest -q
 
       - name: Verify checked-in artifacts and README statistics
         if: github.event_name == 'pull_request'
         run: pdm run python gen_ruleset.py --verify-release
 
+  publish:
+    needs: verify
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          submodules: false
+
+      - uses: pdm-project/setup-pdm@544d7237314ee09c256785bd360f6b30add38b37 # v4.6
+        with:
+          python-version: '3.14'
+          version: '2.29.2'
+
+      # Sources are downloaded fresh: a restored Actions cache could be written
+      # by any default-branch job, and this job can push rulesets.
+      - name: Install locked dependencies
+        run: pdm sync --no-self
+
+      - name: Keep the published release for comparison
+        run: git worktree add --detach "$RUNNER_TEMP/published" HEAD
+
       - name: Generate validated sources
         id: generate
-        if: github.event_name != 'pull_request'
         shell: bash
         run: |
           # Each source is staged and validated before promotion. Preserve a
@@ -71,7 +104,7 @@ jobs:
 
       - name: Upload validation reports
         if: always() && steps.generate.outcome != 'skipped'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: conversion-reports
           path: |
@@ -79,8 +112,13 @@ jobs:
             release-manifest.json
           if-no-files-found: warn
 
+      - name: Summarize ruleset changes
+        if: steps.generate.outcome == 'success'
+        continue-on-error: true
+        run: pdm run python ruleset_diff.py "$RUNNER_TEMP/published" . >> "$GITHUB_STEP_SUMMARY"
+
       - name: Publish successful sources and source status
-        if: steps.generate.outcome == 'success' && github.event_name != 'pull_request'
+        if: steps.generate.outcome == 'success'
         shell: bash
         run: |
           pdm run python gen_ruleset.py --verify-release
@@ -90,6 +128,35 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m 'Update validated rulesets'
             git push
+          fi
+
+      - name: Track failed sources in an issue
+        if: always() && steps.generate.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RESULT: ${{ steps.generate.outputs.result }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title='Rule source validation failures'
+          number=$(gh issue list --state open --search "in:title \"$title\"" --json number,title \
+            --jq "map(select(.title == \"$title\"))[0].number // empty")
+          if [ "$RESULT" != 0 ]; then
+            {
+              echo "The latest update could not validate every source; their previous rulesets were retained."
+              echo "See [the run]($RUN_URL) and its conversion-reports artifact. This issue closes after a clean run."
+              echo
+              jq -r '.sources | to_entries[] | select(.value.error)
+                | "### \(.key) (\(.value.status))\n\n~~~\n\(.value.error)\n~~~\n"' release-manifest.json
+            } > "$RUNNER_TEMP/failures.md"
+            if [ -n "$number" ]; then
+              gh issue edit "$number" --body-file "$RUNNER_TEMP/failures.md"
+            else
+              gh issue create --title "$title" --body-file "$RUNNER_TEMP/failures.md"
+            fi
+          elif [ -n "$number" ]; then
+            gh issue close "$number" --comment "All sources validated in $RUN_URL."
           fi
 
       - name: Report failed sources

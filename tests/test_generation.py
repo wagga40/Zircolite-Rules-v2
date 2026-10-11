@@ -437,3 +437,13 @@ def test_attribution_does_not_hide_official_duplicates(tmp_path):
     official, _ = compile_source("sigmahq", dict(SPEC, license="DRL-1.1"), source(tmp_path / "official"), [])
     artifacts, overlap = artifact_rules("community", outputs, official)
     assert artifacts == {} and overlap["sysmon/events"] == 1
+
+
+def test_cache_pruning_keeps_published_and_failed_revisions(tmp_path):
+    published, failed, old = "a" * 40, "b" * 40, "c" * 40
+    for name in (f"one/{published}", f"one/{old}", f"two/{failed}", "two/not-a-revision"):
+        (tmp_path / name).mkdir(parents=True)
+    manifest = {"sources": {"one": {"revision": published}, "two": {"failed_revision": failed}}}
+    assert gen_ruleset.prune_cache(tmp_path, manifest) == [f"one/{old}"]
+    assert sorted(p.relative_to(tmp_path).as_posix() for p in tmp_path.glob("*/*")) == [
+        f"one/{published}", f"two/{failed}", "two/not-a-revision"]

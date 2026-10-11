@@ -6,6 +6,7 @@ import json
 import os
 import platform
 import re
+import shutil
 import sqlite3
 import sys
 import tempfile
@@ -196,6 +197,18 @@ def manifest_revisions(path):
             if re.fullmatch(r"[0-9a-f]{40}", details.get("revision") or "")}
 
 
+def prune_cache(cache, manifest):
+    """Remove snapshots the manifest no longer records as published or failed."""
+    keep = {details.get(key) for details in manifest.get("sources", {}).values()
+            for key in ("revision", "failed_revision")}
+    removed = []
+    for snapshot in sorted(cache.glob("*/*")):
+        if snapshot.is_dir() and re.fullmatch(r"[0-9a-f]{40}", snapshot.name) and snapshot.name not in keep:
+            shutil.rmtree(snapshot)
+            removed.append(snapshot.relative_to(cache).as_posix())
+    return removed
+
+
 def assignments(values):
     result = {}
     for value in values:
@@ -223,12 +236,18 @@ def main():
     mode.add_argument("--audit", action="store_true", help="Write validation reports only; never publish rules")
     mode.add_argument("--verify-release", action="store_true", help="Verify published hashes, counts, and README statistics and exit")
     mode.add_argument("--update-readme-stats", action="store_true", help="Refresh README statistics from verified local artifacts and exit")
+    mode.add_argument("--prune-cache", action="store_true", help="Remove cached snapshots the release manifest no longer uses and exit")
     args = parser.parse_args()
     if args.verify_release:
         verify_release(args.output_dir.resolve())
         return 0
     if args.update_readme_stats:
         update_readme_stats(args.output_dir.resolve())
+        return 0
+    if args.prune_cache:
+        manifest = read_json(args.output_dir.resolve() / "release-manifest.json", {"sources": {}})
+        for name in prune_cache(args.cache_dir.resolve(), manifest):
+            print(f"Removed cached snapshot {name}")
         return 0
     registry = read_json(args.registry, {})
     roots, revisions = assignments(args.source_root), assignments(args.revision)
