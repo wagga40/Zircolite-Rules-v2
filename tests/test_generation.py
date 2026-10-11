@@ -447,3 +447,18 @@ def test_cache_pruning_keeps_published_and_failed_revisions(tmp_path):
     assert gen_ruleset.prune_cache(tmp_path, manifest) == [f"one/{old}"]
     assert sorted(p.relative_to(tmp_path).as_posix() for p in tmp_path.glob("*/*")) == [
         f"one/{published}", f"two/{failed}", "two/not-a-revision"]
+
+
+def test_registry_patterns_skip_non_rule_yaml_visibly(tmp_path):
+    root = source(tmp_path)
+    (root / "rules" / "ci").mkdir()
+    (root / "rules" / "ci" / "workflow.yml").write_text("on: [push\n")
+    (root / "rules" / "pack" / "playbook" / "nested").mkdir(parents=True)
+    (root / "rules" / "pack" / "playbook" / "nested" / "steps.yaml").write_text("detection: [\n")
+    assert compile_source("test", SPEC, root, [])[1]["status"] == "failed"
+    spec = dict(SPEC, exclude=["rules/ci/**", "*/*/playbook/**"])
+    outputs, report = compile_source("test", spec, root, [])
+    assert report["status"] == "validated" and len(outputs["sysmon"]["events"]) == 1
+    assert sorted((item["path"], item["reason"]) for item in report["ignored"]) == [
+        ("rules/ci/workflow.yml", "excluded by source configuration"),
+        ("rules/pack/playbook/nested/steps.yaml", "excluded by source configuration")]

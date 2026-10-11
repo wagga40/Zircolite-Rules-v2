@@ -52,5 +52,32 @@
     "profiles": ["sysmon", "generic", "linux"],
     "license": "CC0-1.0",
     "license_file": "LICENSE.md"
+  },
+  "lolrmm": {
+    "repository": "magicsword-io/LOLRMM",
+    "branch": "main",
+    "directories": ["detections/sigma"],
+    "adapter": "community",
+    "profiles": ["sysmon", "generic"],
+    "license": "Apache-2.0",
+    "license_file": "LICENSE"
+  },
+  "loldrivers": {
+    "repository": "magicsword-io/LOLDrivers",
+    "branch": "main",
+    "directories": ["detections/sigma"],
+    "adapter": "community",
+    "profiles": ["sysmon"],
+    "license": "Apache-2.0",
+    "license_file": "LICENSE"
+  },
+  "reversinglabs": {
+    "repository": "reversinglabs/reversinglabs-siem-rules",
+    "branch": "master",
+    "directories": ["Ransomware"],
+    "adapter": "community",
+    "profiles": ["sysmon", "generic"],
+    "license": "MIT",
+    "license_file": "LICENSE"
   }
 }

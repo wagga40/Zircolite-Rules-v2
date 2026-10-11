@@ -167,6 +167,10 @@ def read_documents(root, spec):
     for path in discover(root, spec):
         raw = path.read_bytes()
         location = {"path": path.relative_to(root).as_posix(), "sha256": digest(raw)}
+        # Registry patterns skip non-rule YAML, such as CI workflows, that may not parse.
+        if any(path.relative_to(root).full_match(pattern) for pattern in spec.get("exclude", [])):
+            ignored.append({**location, "document": "*", "reason": "excluded by source configuration"})
+            continue
         try:
             values = list(yaml.safe_load_all(raw))
         except yaml.YAMLError as exc:
