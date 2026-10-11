@@ -84,15 +84,10 @@ jobs:
           python-version: '3.14'
           version: '2.29.2'
 
+      # Sources are downloaded fresh: a restored Actions cache could be written
+      # by any default-branch job, and this job can push rulesets.
       - name: Install locked dependencies
         run: pdm sync --no-self
-
-      - name: Restore source snapshots
-        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-        with:
-          path: .cache/rule-sources
-          key: rule-sources-${{ github.run_id }}
-          restore-keys: rule-sources-
 
       - name: Keep the published release for comparison
         run: git worktree add --detach "$RUNNER_TEMP/published" HEAD
@@ -134,17 +129,6 @@ jobs:
             git commit -m 'Update validated rulesets'
             git push
           fi
-
-      - name: Prune unused source snapshots
-        if: always() && steps.generate.outcome == 'success'
-        run: pdm run python gen_ruleset.py --prune-cache
-
-      - name: Save source snapshots
-        if: always() && steps.generate.outcome == 'success'
-        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-        with:
-          path: .cache/rule-sources
-          key: rule-sources-${{ github.run_id }}
 
       - name: Track failed sources in an issue
         if: always() && steps.generate.outcome == 'success'
