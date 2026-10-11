@@ -4,4 +4,4 @@ Each `.txt` file is copied from the exact upstream revision recorded in [release
 
 The MIT declaration for the generator does not replace these rule licenses.
 
-`rules_windows_all.json` combines Windows detections from the published sources and retains their authorship. Its contributing source revisions, licenses, and input hashes are listed in `provenance/windows_all.json`; the per-source license texts also apply to that combined file.
+`rules_windows_all.json` combines Windows detections from the published sources and retains their authorship. Its contributing source revisions, licenses, and input hashes are listed in `provenance/windows_all.json`; the per-source license texts also apply to that combined file. Every exported rule, including those in the combined file, carries `source` (the registry name, matching `licenses/<source>.txt`) and `license` (the source's SPDX identifier). When an exact duplicate is removed, the kept rule's attribution is the preferred source's.

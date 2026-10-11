@@ -34,6 +34,8 @@ def test_all_windows_sources_merge_without_losing_variants(tmp_path):
     assert {rule["id"] for rule in combined} == {detection()["id"], extra["id"], native["id"]}
     assert all(rule["result_type"] == "event" and rule["logsource"]["product"] == "windows" for rule in combined)
     assert all(rule["title"].startswith("Community A") for rule in combined if rule["id"] == extra["id"])
+    assert {(rule["id"], rule["source"]) for rule in combined} == {
+        (detection()["id"], "sigmahq"), (extra["id"], "community_a"), (native["id"], "native")}
     assert len([rule for rule in combined if rule["id"] == detection()["id"]]) == 2
     assert sorted(p.name for p in output.glob("rules_windows_all*.json")) == [WINDOWS_ALL]
     provenance = json.loads((output / "provenance/windows_all.json").read_text())
