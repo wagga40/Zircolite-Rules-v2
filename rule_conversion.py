@@ -290,7 +290,8 @@ def compile_source(source, spec, root, exclusions):
                 continue
             for entry in entries:
                 try:
-                    entry["filename"] = document.path
+                    # Attribution survives cross-source bundles such as rules_windows_all.json.
+                    entry.update(filename=document.path, source=source, license=spec["license"])
                     validate_entry(entry)
                     (correlations if is_correlation else events).append((rank[id(rule)], entry))
                 except Exception as exc:

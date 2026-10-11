@@ -420,3 +420,20 @@ def test_conversion_never_loads_attack_or_d3fend_data(tmp_path, monkeypatch):
     rule = detection(tags=["attack.execution", "attack.t1059.001", "cve.2024-1234"])
     _, report = compile_source("test", SPEC, source(tmp_path, [rule]), [])
     assert report["status"] == "validated"
+
+
+def test_every_entry_records_its_source_and_license(tmp_path):
+    from test_sql_execution import definitions
+    root = source(tmp_path, [detection(), *definitions()])
+    outputs, report = compile_source("test", SPEC, root, [])
+    assert report["status"] == "validated"
+    entries = [entry for kinds in outputs.values() for rules in kinds.values() for entry in rules]
+    assert {entry["result_type"] for entry in entries} == {"event", "correlation"}
+    assert {(entry["source"], entry["license"]) for entry in entries} == {("test", "MIT")}
+
+
+def test_attribution_does_not_hide_official_duplicates(tmp_path):
+    outputs, _ = compile_source("community", SPEC, source(tmp_path / "community"), [])
+    official, _ = compile_source("sigmahq", dict(SPEC, license="DRL-1.1"), source(tmp_path / "official"), [])
+    artifacts, overlap = artifact_rules("community", outputs, official)
+    assert artifacts == {} and overlap["sysmon/events"] == 1
