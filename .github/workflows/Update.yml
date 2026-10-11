@@ -124,7 +124,7 @@ jobs:
           pdm run python gen_ruleset.py --verify-release
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- 'rules_*.json' experimental/ licenses/ provenance/ reports/ release-manifest.json README.md
+          git add -- 'rules_*.json' experimental/ licenses/ provenance/ reports/ release-manifest.json README.md docs/dashboard.md
           if ! git diff --cached --quiet; then
             git commit -m 'Update validated rulesets'
             git push

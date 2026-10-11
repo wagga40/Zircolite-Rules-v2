@@ -16,13 +16,13 @@ import yaml
 
 # Accept current hyphenated tactics and their legacy Sigma underscore forms.
 # Keep validation offline and deterministic; this checks tag format, not whether
-# every identifier exists in the latest ATT&CK release.
-ATTACK_TACTICS = {
+# every identifier exists in the latest ATT&CK release. Kill-chain order.
+ATTACK_TACTICS = (
     "reconnaissance", "resource-development", "initial-access", "execution",
     "persistence", "privilege-escalation", "defense-evasion", "defense-impairment",
     "stealth", "credential-access", "discovery", "lateral-movement", "collection",
     "command-and-control", "exfiltration", "impact",
-}
+)
 ATTACK_ID = re.compile(r"(?:t[0-9]{4}(?:\.[0-9]{3})?|(?:g|s|ds|m|a)[0-9]{4})")
 ATTACK_ALIASES = {
     # Hayabusa's rule references https://attack.mitre.org/techniques/T1136/001/.

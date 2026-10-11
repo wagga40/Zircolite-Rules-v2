@@ -12,3 +12,13 @@ __pycache__/
 build/
 # Retained local checkout; generation uses the locked PyPI package.
 /pySigma-backend-sqlite/
+
+# AI assistant state and instructions are local, never published.
+.remember/
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+AGENTS.md
+GEMINI.md
+.cursor/
+.aider*

@@ -235,7 +235,7 @@ def main():
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--audit", action="store_true", help="Write validation reports only; never publish rules")
     mode.add_argument("--verify-release", action="store_true", help="Verify published hashes, counts, and README statistics and exit")
-    mode.add_argument("--update-readme-stats", action="store_true", help="Refresh README statistics from verified local artifacts and exit")
+    mode.add_argument("--update-readme-stats", action="store_true", help="Refresh the README summary and docs/dashboard.md from verified local artifacts and exit")
     mode.add_argument("--prune-cache", action="store_true", help="Remove cached snapshots the release manifest no longer uses and exit")
     args = parser.parse_args()
     if args.verify_release:
