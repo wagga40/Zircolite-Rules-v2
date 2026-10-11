@@ -8,7 +8,7 @@ Ready-to-use [Zircolite](https://github.com/wagga40/Zircolite) rulesets, convert
 
 | Sources | Detection rulesets | [`rules_windows_all.json`](rules_windows_all.json) | Linux rules | Experimental correlations | Last update (UTC) |
 |---|---:|---|---:|---:|---|
-| 6 (all current) | 18 | 5,789 rules, 3,676 unique | 216 | 12 | 2026-10-09 |
+| 13 (all current) | 41 | 7,344 rules, 4,696 unique | 299 | 31 | 2026-10-11 |
 
 Every ruleset, source, severity, ATT&CK tactic, and log source: [dashboard](docs/dashboard.md).
 

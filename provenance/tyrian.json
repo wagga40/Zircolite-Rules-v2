@@ -1,0 +1,2132 @@
+{
+  "artifacts": {
+    "rules_tyrian_linux.json": 15,
+    "rules_tyrian_windows_generic.json": 57,
+    "rules_tyrian_windows_merged.json": 61,
+    "rules_tyrian_windows_sysmon.json": 58
+  },
+  "exclusions": [
+    {
+      "document": "0",
+      "path": "rules/collection/aws-s3-public-access-block-removed.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'aws' is outside this profile",
+      "sha256": "d86a98c1fd0e853e3eb9deaf9c4207a5c9475adea3223dedaa794e8e9081486c"
+    },
+    {
+      "document": "0",
+      "path": "rules/collection/m365-inbox-forwarding-rule.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'm365' is outside this profile",
+      "sha256": "a5dc3ec05b1e82c416ed34c0528d03d49cfaa32e1a14a0d2997bb22ab955e931"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/entra-mfa-fatigue.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'azure' is outside this profile",
+      "sha256": "fb49846ca9363a5f29fdd936bf3effbfc9e56278513c0f1120e3f7342ad088e0"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/entra-password-spray.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'azure' is outside this profile",
+      "sha256": "e0a014efc589b32bb10dcdd10fcaa78330383d72cd1b3ad7bc61db7bce5af352"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/linux-shadow-file-access.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "ac39787a93c386b6f6358397b302e0e9449ef1cbaa17325b506df731c5ed02bd"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/okta-mfa-factor-reset.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'okta' is outside this profile",
+      "sha256": "04e0208eda229e2282624326b9c2bdfddc553f2372ecd02575886ca1b7f842ed"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/aws-security-logging-disabled.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'aws' is outside this profile",
+      "sha256": "dd53a2b9ab34425f156df5ea215d571da7bb0f17f52ad649d87ff63f8430ff56"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/linux-auditd-tampering.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "74b2745abfca3f8bf53c77e43feb78c9c1d4c7ba6296920f9d1c5301de1aa324"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/linux-execution-from-world-writable.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "787325af649c36530a60d1a9a8e4dea215709e65cc52e6b84b6a8aa31b30cf90"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/linux-log-deletion.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "efc81366b365ea7178bb0554806c4771eb396bd462ec0dd4e69846f67d8e9362"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/m365-audit-logging-disabled.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'm365' is outside this profile",
+      "sha256": "04791e8c5fc660c4a2462a86054f276f9154b8140a3b859f08dc3b1d6ab2febe"
+    },
+    {
+      "document": "0",
+      "path": "rules/discovery/linux-host-enumeration-burst.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "79884ce204246104cbec2c95dab14e5dea52ac6b33b03089739dba0a7a125ba7"
+    },
+    {
+      "document": "0",
+      "path": "rules/execution/linux-download-pipe-to-shell.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "d0806d458fd4af1ba6836c7dc02107fc6de320bd696e3b8ac1d02a545f065d15"
+    },
+    {
+      "document": "0",
+      "path": "rules/execution/linux-reverse-shell.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "fbc4fb09c7bd7b8189aab9348212ae82c1ddf1df08f579dbd50c25882037e740"
+    },
+    {
+      "document": "0",
+      "path": "rules/execution/macos-osascript-admin-prompt.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'macos' is outside this profile",
+      "sha256": "16892a58b905edbf0225a7f180450fda21462383534b2e25da800af61889c96e"
+    },
+    {
+      "document": "0",
+      "path": "rules/initial-access/aws-root-console-login.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'aws' is outside this profile",
+      "sha256": "18ec7cab85b108715c94f94fe0aa76a114113be9985edb656e58e3e3574a4c72"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/aws-iam-admin-policy-attached.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'aws' is outside this profile",
+      "sha256": "3f0c0b9b49a80821d6411e9718e9540137e6bbe20cf987bb6b3ddf0a09328a17"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/entra-app-credentials-added.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'azure' is outside this profile",
+      "sha256": "2f22815ab67b1d0a76c9ee6b52e85c919e700bf4b2149afb51e53f02b77f1bd0"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/entra-privileged-role-assigned.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'azure' is outside this profile",
+      "sha256": "6abc99c9813afc83b8b8de43683f1990fcfeb9c5d9cebb3ee06f53ce9421b3dc"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/gcp-service-account-key-created.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'gcp' is outside this profile",
+      "sha256": "220bd90d7f9bad8b5371f1f4c82510d918a0d1b588b7174d4f6cf2e8a3eb8a00"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/github-org-owner-granted.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'github' is outside this profile",
+      "sha256": "9b6615edfc64be1b8e71f0e5c09714edd8923002f090ead229d937af37e782f2"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/linux-account-manipulation.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "4b38fc188e63b75ae07530f03c99f53617ce7a40d6f7d4f6cee3cb927f926e73"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/linux-cron-persistence.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "620d85cb1a74b4efa1a0d2989f21b5fe407b22fbcb373bacdde5f28edb2b8f6e"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/linux-kernel-module-load.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "4c8271a52ee47bde743f5804d235379da48f648f1a9e55de976e45eeda0b63fa"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/linux-ld-preload-hijack.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "f876cbda4ec1d0d23817e07d0b4d8783dae76bd2bf6a6ae3644f32409bcd8009"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/linux-ssh-authorized-keys-write.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "4f677f231facbb9c41eebbb34481426227e9f29520a48703a299732aa2f84298"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/linux-systemd-service-persistence.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "694b383e642ca48d6732e5ec9d8e2bb5b835587679bc3971ce869e899b4ea788"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/m365-mailbox-full-access-granted.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'm365' is outside this profile",
+      "sha256": "ed55334c16a2ca45f39c66c6485e6c253a02217834ee8911b62602e89fac8ffc"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/macos-launch-agent-created.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'macos' is outside this profile",
+      "sha256": "272e5fb6e13a577b2df0b2fe8d07646b4ca1a4bbafed811cd65f30ec423431c7"
+    },
+    {
+      "document": "0",
+      "path": "rules/privilege-escalation/linux-container-escape.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "ce49dbc09e6a4ae5ac13f25c81833b8447bc4ba1075e2a646c443aaf15ce517c"
+    },
+    {
+      "document": "0",
+      "path": "rules/privilege-escalation/linux-sudoers-modification.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "d5e4459847d7500ce1ed8da8e7f7d7cfcc11e449589d388fa026bed979cbbe86"
+    },
+    {
+      "document": "0",
+      "path": "rules/collection/aws-s3-public-access-block-removed.yml",
+      "profile": "generic",
+      "reason": "logsource product 'aws' is outside this profile",
+      "sha256": "d86a98c1fd0e853e3eb9deaf9c4207a5c9475adea3223dedaa794e8e9081486c"
+    },
+    {
+      "document": "0",
+      "path": "rules/collection/m365-inbox-forwarding-rule.yml",
+      "profile": "generic",
+      "reason": "logsource product 'm365' is outside this profile",
+      "sha256": "a5dc3ec05b1e82c416ed34c0528d03d49cfaa32e1a14a0d2997bb22ab955e931"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/entra-mfa-fatigue.yml",
+      "profile": "generic",
+      "reason": "logsource product 'azure' is outside this profile",
+      "sha256": "fb49846ca9363a5f29fdd936bf3effbfc9e56278513c0f1120e3f7342ad088e0"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/entra-password-spray.yml",
+      "profile": "generic",
+      "reason": "logsource product 'azure' is outside this profile",
+      "sha256": "e0a014efc589b32bb10dcdd10fcaa78330383d72cd1b3ad7bc61db7bce5af352"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/linux-shadow-file-access.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "ac39787a93c386b6f6358397b302e0e9449ef1cbaa17325b506df731c5ed02bd"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/lsass-handle-access.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "062f7c1212ceea1158bc65dea8f8c8d2aaff89075575da930f4cb04a2e39d335"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/okta-mfa-factor-reset.yml",
+      "profile": "generic",
+      "reason": "logsource product 'okta' is outside this profile",
+      "sha256": "04e0208eda229e2282624326b9c2bdfddc553f2372ecd02575886ca1b7f842ed"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/aws-security-logging-disabled.yml",
+      "profile": "generic",
+      "reason": "logsource product 'aws' is outside this profile",
+      "sha256": "dd53a2b9ab34425f156df5ea215d571da7bb0f17f52ad649d87ff63f8430ff56"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/linux-auditd-tampering.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "74b2745abfca3f8bf53c77e43feb78c9c1d4c7ba6296920f9d1c5301de1aa324"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/linux-execution-from-world-writable.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "787325af649c36530a60d1a9a8e4dea215709e65cc52e6b84b6a8aa31b30cf90"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/linux-log-deletion.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "efc81366b365ea7178bb0554806c4771eb396bd462ec0dd4e69846f67d8e9362"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/m365-audit-logging-disabled.yml",
+      "profile": "generic",
+      "reason": "logsource product 'm365' is outside this profile",
+      "sha256": "04791e8c5fc660c4a2462a86054f276f9154b8140a3b859f08dc3b1d6ab2febe"
+    },
+    {
+      "document": "0",
+      "path": "rules/discovery/linux-host-enumeration-burst.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "79884ce204246104cbec2c95dab14e5dea52ac6b33b03089739dba0a7a125ba7"
+    },
+    {
+      "document": "0",
+      "path": "rules/execution/linux-download-pipe-to-shell.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "d0806d458fd4af1ba6836c7dc02107fc6de320bd696e3b8ac1d02a545f065d15"
+    },
+    {
+      "document": "0",
+      "path": "rules/execution/linux-reverse-shell.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "fbc4fb09c7bd7b8189aab9348212ae82c1ddf1df08f579dbd50c25882037e740"
+    },
+    {
+      "document": "0",
+      "path": "rules/execution/macos-osascript-admin-prompt.yml",
+      "profile": "generic",
+      "reason": "logsource product 'macos' is outside this profile",
+      "sha256": "16892a58b905edbf0225a7f180450fda21462383534b2e25da800af61889c96e"
+    },
+    {
+      "document": "0",
+      "path": "rules/initial-access/aws-root-console-login.yml",
+      "profile": "generic",
+      "reason": "logsource product 'aws' is outside this profile",
+      "sha256": "18ec7cab85b108715c94f94fe0aa76a114113be9985edb656e58e3e3574a4c72"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/aws-iam-admin-policy-attached.yml",
+      "profile": "generic",
+      "reason": "logsource product 'aws' is outside this profile",
+      "sha256": "3f0c0b9b49a80821d6411e9718e9540137e6bbe20cf987bb6b3ddf0a09328a17"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/entra-app-credentials-added.yml",
+      "profile": "generic",
+      "reason": "logsource product 'azure' is outside this profile",
+      "sha256": "2f22815ab67b1d0a76c9ee6b52e85c919e700bf4b2149afb51e53f02b77f1bd0"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/entra-privileged-role-assigned.yml",
+      "profile": "generic",
+      "reason": "logsource product 'azure' is outside this profile",
+      "sha256": "6abc99c9813afc83b8b8de43683f1990fcfeb9c5d9cebb3ee06f53ce9421b3dc"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/gcp-service-account-key-created.yml",
+      "profile": "generic",
+      "reason": "logsource product 'gcp' is outside this profile",
+      "sha256": "220bd90d7f9bad8b5371f1f4c82510d918a0d1b588b7174d4f6cf2e8a3eb8a00"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/github-org-owner-granted.yml",
+      "profile": "generic",
+      "reason": "logsource product 'github' is outside this profile",
+      "sha256": "9b6615edfc64be1b8e71f0e5c09714edd8923002f090ead229d937af37e782f2"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/linux-account-manipulation.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "4b38fc188e63b75ae07530f03c99f53617ce7a40d6f7d4f6cee3cb927f926e73"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/linux-cron-persistence.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "620d85cb1a74b4efa1a0d2989f21b5fe407b22fbcb373bacdde5f28edb2b8f6e"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/linux-kernel-module-load.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "4c8271a52ee47bde743f5804d235379da48f648f1a9e55de976e45eeda0b63fa"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/linux-ld-preload-hijack.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "f876cbda4ec1d0d23817e07d0b4d8783dae76bd2bf6a6ae3644f32409bcd8009"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/linux-ssh-authorized-keys-write.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "4f677f231facbb9c41eebbb34481426227e9f29520a48703a299732aa2f84298"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/linux-systemd-service-persistence.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "694b383e642ca48d6732e5ec9d8e2bb5b835587679bc3971ce869e899b4ea788"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/m365-mailbox-full-access-granted.yml",
+      "profile": "generic",
+      "reason": "logsource product 'm365' is outside this profile",
+      "sha256": "ed55334c16a2ca45f39c66c6485e6c253a02217834ee8911b62602e89fac8ffc"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/macos-launch-agent-created.yml",
+      "profile": "generic",
+      "reason": "logsource product 'macos' is outside this profile",
+      "sha256": "272e5fb6e13a577b2df0b2fe8d07646b4ca1a4bbafed811cd65f30ec423431c7"
+    },
+    {
+      "document": "0",
+      "path": "rules/privilege-escalation/linux-container-escape.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "ce49dbc09e6a4ae5ac13f25c81833b8447bc4ba1075e2a646c443aaf15ce517c"
+    },
+    {
+      "document": "0",
+      "path": "rules/privilege-escalation/linux-sudoers-modification.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "d5e4459847d7500ce1ed8da8e7f7d7cfcc11e449589d388fa026bed979cbbe86"
+    },
+    {
+      "document": "0",
+      "path": "rules/collection/aws-s3-public-access-block-removed.yml",
+      "profile": "linux",
+      "reason": "logsource product 'aws' is outside this profile",
+      "sha256": "d86a98c1fd0e853e3eb9deaf9c4207a5c9475adea3223dedaa794e8e9081486c"
+    },
+    {
+      "document": "0",
+      "path": "rules/collection/m365-inbox-forwarding-rule.yml",
+      "profile": "linux",
+      "reason": "logsource product 'm365' is outside this profile",
+      "sha256": "a5dc3ec05b1e82c416ed34c0528d03d49cfaa32e1a14a0d2997bb22ab955e931"
+    },
+    {
+      "document": "0",
+      "path": "rules/command-and-control/bitsadmin-transfer-job.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "516de8973391cfdcceac7635b73ca0562bef4ad312cd4cfd7625c25110d4fee2"
+    },
+    {
+      "document": "0",
+      "path": "rules/command-and-control/cobalt-strike-named-pipe.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "00ed6b7c0940dfa3df9ab0dda9adc9f4f62f632383383ccd30a932ebafd39cf4"
+    },
+    {
+      "document": "0",
+      "path": "rules/command-and-control/dns-tunneling-long-query.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "6fc6c9ebdcb3aa91d40817fb2a4e1847b5bc129030d872d55bcba7a7cc9cb7d0"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/adcs-esc1-san-certificate-request.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "08952ca0e7a433cd1419c8793e16ab37700ba5d0891e42b1b28df0323eae4bf3"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/adcs-machine-account-user-certificate.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "676fbce1dcfc8c66a76065c11bd757f259ae57723e53ef2710077eca473e91e6"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/asrep-roasting-no-preauth.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "e851d2af82284eafd51017e11251dffad1f4679878a606439ba7fe320c33d862"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/browser-credential-store-access.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "a9317b961747f7edbfc8c63b7407fe258507260495011242f1c1a4d614049092"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/dcsync-replication-rights.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "d5145ef6e820f491190feca333bb16fc6620ba406b3fb2cb7163b7e5d640b0ca"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/entra-mfa-fatigue.yml",
+      "profile": "linux",
+      "reason": "logsource product 'azure' is outside this profile",
+      "sha256": "fb49846ca9363a5f29fdd936bf3effbfc9e56278513c0f1120e3f7342ad088e0"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/entra-password-spray.yml",
+      "profile": "linux",
+      "reason": "logsource product 'azure' is outside this profile",
+      "sha256": "e0a014efc589b32bb10dcdd10fcaa78330383d72cd1b3ad7bc61db7bce5af352"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/forged-kerberos-ticket-tooling.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "8e67befc6c9abf71bf87ff1638f6d2e30665aaa8c19658b4ef092c8e20b86430"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/kerberoasting-rc4-tgs.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "3c7406ac7626a2ad2672df2665d119dd3ce6dde8ec59ba8ab1681eac5684a5ea"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/krbtgt-account-modified.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "5873cd29be53dee7a5d675959850d404f5b24f55f41f8d266fa44619220f4162"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/lsass-dump-comsvcs.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "e54203da2815cabe43cb1302804bfff4a3e0a553e68e388115ed00fb23895ef6"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/lsass-handle-access.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "062f7c1212ceea1158bc65dea8f8c8d2aaff89075575da930f4cb04a2e39d335"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/ntds-dit-extraction.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "dce3f2e4e25ffeea1d197ad9f018077d5489e0c0b16f66602a3ea69bfede9344"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/okta-mfa-factor-reset.yml",
+      "profile": "linux",
+      "reason": "logsource product 'okta' is outside this profile",
+      "sha256": "04e0208eda229e2282624326b9c2bdfddc553f2372ecd02575886ca1b7f842ed"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/password-spraying-4625.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "b98618c90db69de50706437d4be7d5ddbc5a4e167387e264df75df6fdce3d985"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/sam-hive-dump.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "b90bdcf771cf6d425d8098efe6c761ef338b0e791d0c1834ff03fe4b6679aecc"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/shadow-credentials-key-credential-link.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "59e241f7f01da7fd2018a92a5d89389f2c2fe25899cbb78aad00f2f2148d101a"
+    },
+    {
+      "document": "0",
+      "path": "rules/credential-access/wdigest-cleartext-enabled.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "1e7e7e65f61ce987a5c5d68c8b3ae3f7745099843c798c128d41e81c871a53ab"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/aws-security-logging-disabled.yml",
+      "profile": "linux",
+      "reason": "logsource product 'aws' is outside this profile",
+      "sha256": "dd53a2b9ab34425f156df5ea215d571da7bb0f17f52ad649d87ff63f8430ff56"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/dcshadow-rogue-domain-controller.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "c2c02c2af15aea647923668259bed949f5086145afc1b51a4a16705301627f7d"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/defender-disabled.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "a5325b46ebd6fd3f45a43de577b6402d6877977420247ffb89c9ffec4ea2cb3d"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/event-log-cleared.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "7c2d8ddf540233b6de5c38bb6f98b8c10c68b15525897bb50a66b27516bb80e1"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/m365-audit-logging-disabled.yml",
+      "profile": "linux",
+      "reason": "logsource product 'm365' is outside this profile",
+      "sha256": "04791e8c5fc660c4a2462a86054f276f9154b8140a3b859f08dc3b1d6ab2febe"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/powershell-amsi-bypass.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "968e56c6ce2d5c63c84b28830d4b15084348ca7f79682fd7bf4a21b04bc3eab0"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/process-image-tampering-hollowing.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "3ea3d1178c9740502a7598c63ee6f2a10488ea937a89dd0db4801738465a6224"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/process-injection-createremotethread.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "83986399ea2eaf7203124b2c87649ea4260206842b1bed1315241c85ab0051a4"
+    },
+    {
+      "document": "0",
+      "path": "rules/defense-evasion/rundll32-suspicious-invocation.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "81b775c1d187285a79abc0c0858a5df4b94493c402989e84fc5c3f13ad573525"
+    },
+    {
+      "document": "0",
+      "path": "rules/discovery/bloodhound-sharphound-collection.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "e051b2a9c09a956ff80e757e50bf2c07e6010009a3ef9684e91b6dbbb7a13078"
+    },
+    {
+      "document": "0",
+      "path": "rules/discovery/domain-recon-net-commands.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "df239ddaa0b9375ad9c8e1f746b8ade8edd381bb672e5f2c3072e32e1a888d16"
+    },
+    {
+      "document": "0",
+      "path": "rules/execution/certutil-download.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "c0936347f24b74b0675ec192218759d778a24b7da1146a99573065fdf5ef71e1"
+    },
+    {
+      "document": "0",
+      "path": "rules/execution/macos-osascript-admin-prompt.yml",
+      "profile": "linux",
+      "reason": "logsource product 'macos' is outside this profile",
+      "sha256": "16892a58b905edbf0225a7f180450fda21462383534b2e25da800af61889c96e"
+    },
+    {
+      "document": "0",
+      "path": "rules/execution/mshta-remote-payload.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "4e45af54b599a8032807c6d7e6ef9cd0e5bf5a95823adc664d159980bab31d81"
+    },
+    {
+      "document": "0",
+      "path": "rules/execution/powershell-download-cradle.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "9dac13384267ae4253db3adafcda31801eed9c83954b683fb0d4a2c599506488"
+    },
+    {
+      "document": "0",
+      "path": "rules/execution/powershell-encoded-command.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "50fb5bcb509dc7d3a4763377ba8e3e44356b00140ced5f04b7bcf8085e0d94a9"
+    },
+    {
+      "document": "0",
+      "path": "rules/execution/regsvr32-scriptlet-squiblydoo.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "ed222cd9c392b11da39baa40b6edc5a7fc1b2d71670c2c46e413d18b8e2c9224"
+    },
+    {
+      "document": "0",
+      "path": "rules/exfiltration/archive-staging-for-exfil.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "8be41383e2aee2b0925739454601c0271ccca0d640fdbded91cd35d615f17e23"
+    },
+    {
+      "document": "0",
+      "path": "rules/exfiltration/exfiltration-to-cloud-storage.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "8db8fda52d325b8bc37b8fd2b75659f9d732bb1f6df16c2c3ad0ab3d596e078c"
+    },
+    {
+      "document": "0",
+      "path": "rules/impact/backup-deletion-wbadmin-bcdedit.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "8ea6a97f1173fab9ff93b8a3b7ac9b5bc153d443489a0f0d153cb2dc528476ec"
+    },
+    {
+      "document": "0",
+      "path": "rules/impact/ransomware-shadowcopy-deletion.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "d3992192085aa5ac394c5e7944352ae711db727a5bf63853c500073b5b78ebe5"
+    },
+    {
+      "document": "0",
+      "path": "rules/impact/service-stop-before-encryption.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "40edfb99f60049128ac8e837046012041f138ff6b13f26777a7100c3b9c6e166"
+    },
+    {
+      "document": "0",
+      "path": "rules/initial-access/aws-root-console-login.yml",
+      "profile": "linux",
+      "reason": "logsource product 'aws' is outside this profile",
+      "sha256": "18ec7cab85b108715c94f94fe0aa76a114113be9985edb656e58e3e3574a4c72"
+    },
+    {
+      "document": "0",
+      "path": "rules/initial-access/office-spawns-script-host.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "f709cf4922bee7cdf092e75298f9d4fc78ead14f0bd307bd7c958aefe0e79ff9"
+    },
+    {
+      "document": "0",
+      "path": "rules/initial-access/script-from-archive-or-downloads.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "9c6e7274e06887917ca1f0764e9be75cc0b86b5a2cb338a517b103502242bb9b"
+    },
+    {
+      "document": "0",
+      "path": "rules/initial-access/web-server-spawns-shell.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "139a4ce1f924bfd92b1693c9fa835665733ab9807d3bfff89dc19f965ebfd1f6"
+    },
+    {
+      "document": "0",
+      "path": "rules/lateral-movement/dcom-lateral-execution.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "71489126904c047f8f973cfd8a2024c4d3b2a1fac04781be30cd3fede9e3d600"
+    },
+    {
+      "document": "0",
+      "path": "rules/lateral-movement/pass-the-hash-ntlm.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "7518e64034a3ba82cf9974f0dc7a4449e5305160346715fdeaf51ebb7e86e1cf"
+    },
+    {
+      "document": "0",
+      "path": "rules/lateral-movement/psexec-service-creation.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "5d5312d6a83440a85990036b0b95c1c664cb4900d14854fbb0131c07747b728a"
+    },
+    {
+      "document": "0",
+      "path": "rules/lateral-movement/rdp-enabled-via-registry.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "2fd7b86d8959434b6a02da9ae6c9d6b61e4d41231c02d925da6c35446982aeb4"
+    },
+    {
+      "document": "0",
+      "path": "rules/lateral-movement/rdp-session-hijack-tscon.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "b5fb3dae1842ecaa4233f4b42e7ab524f7896c87ccf0487624f380b8917b8248"
+    },
+    {
+      "document": "0",
+      "path": "rules/lateral-movement/smb-admin-share-write.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "041a35619eeb982338f461d12a58992a2da2e7337615c482beaa4b190cfe0065"
+    },
+    {
+      "document": "0",
+      "path": "rules/lateral-movement/winrm-remoting-child-process.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "3a10c5b04a015e0a23c4d9c08c7303bd1f31a4fdcd6292bb3f2b798d9d13bf1c"
+    },
+    {
+      "document": "0",
+      "path": "rules/lateral-movement/wmi-remote-process-creation.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "f9fa20135ac87c2a78553fbb96250b43b7e19eaa6b0af92d8f5fea1e98ec703f"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/adminsdholder-acl-modification.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "13831542743f0517680d0f26bd186cdca3ca18014346dfd09848edb9da04ec61"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/aws-iam-admin-policy-attached.yml",
+      "profile": "linux",
+      "reason": "logsource product 'aws' is outside this profile",
+      "sha256": "3f0c0b9b49a80821d6411e9718e9540137e6bbe20cf987bb6b3ddf0a09328a17"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/entra-app-credentials-added.yml",
+      "profile": "linux",
+      "reason": "logsource product 'azure' is outside this profile",
+      "sha256": "2f22815ab67b1d0a76c9ee6b52e85c919e700bf4b2149afb51e53f02b77f1bd0"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/entra-privileged-role-assigned.yml",
+      "profile": "linux",
+      "reason": "logsource product 'azure' is outside this profile",
+      "sha256": "6abc99c9813afc83b8b8de43683f1990fcfeb9c5d9cebb3ee06f53ce9421b3dc"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/gcp-service-account-key-created.yml",
+      "profile": "linux",
+      "reason": "logsource product 'gcp' is outside this profile",
+      "sha256": "220bd90d7f9bad8b5371f1f4c82510d918a0d1b588b7174d4f6cf2e8a3eb8a00"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/github-org-owner-granted.yml",
+      "profile": "linux",
+      "reason": "logsource product 'github' is outside this profile",
+      "sha256": "9b6615edfc64be1b8e71f0e5c09714edd8923002f090ead229d937af37e782f2"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/m365-mailbox-full-access-granted.yml",
+      "profile": "linux",
+      "reason": "logsource product 'm365' is outside this profile",
+      "sha256": "ed55334c16a2ca45f39c66c6485e6c253a02217834ee8911b62602e89fac8ffc"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/macos-launch-agent-created.yml",
+      "profile": "linux",
+      "reason": "logsource product 'macos' is outside this profile",
+      "sha256": "272e5fb6e13a577b2df0b2fe8d07646b4ca1a4bbafed811cd65f30ec423431c7"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/new-local-admin-account.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "869985ff7e935435780f76c0e4f51217e30496e755ca1d589691ff2b3080b105"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/registry-run-key-write.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "4aa100b1ebcde03d786d8334f4727f6ed4c1ed8bf2fffb9fd438763c71afc929"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/service-creation-suspicious-path.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "9597a985d0255a936ca3e39a4a208a844f30ddca807d9cbec35d4da19c92242d"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/suspicious-scheduled-task.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "2cd462b74da706f847cd51837ee4720767cd6e28a620623c4e622a0952db4e7b"
+    },
+    {
+      "document": "0",
+      "path": "rules/persistence/wmi-event-subscription.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "d7594b289b0e93652a69affa696bf7b62a0820d24a1130f372d23e10482099b6"
+    },
+    {
+      "document": "0",
+      "path": "rules/privilege-escalation/group-policy-object-modified.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "39d83fdec4c85b0be137ab563606667c576c9b411c3fa3c06826686bbae391fa"
+    },
+    {
+      "document": "0",
+      "path": "rules/privilege-escalation/new-credentials-logon-type-9.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "afc28c1ae9b6ef2d7902d19c905db4cf85933c49ffd5d43ff527750b41479743"
+    },
+    {
+      "document": "0",
+      "path": "rules/privilege-escalation/resource-based-constrained-delegation-write.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "473ac59682204c8a78b5a2640b7697e5cb974befa051ce8868d941437db0003b"
+    },
+    {
+      "document": "0",
+      "path": "rules/privilege-escalation/unconstrained-delegation-enabled.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "c008c5f3f1ff18402ed69217bafd5fc4e94d49eaa8b8440cf2c5e36ec1c87b5e"
+    },
+    {
+      "document": "0",
+      "path": "rules/privilege-escalation/vulnerable-driver-loaded-byovd.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "990fbffa6400c20ffa91918b2e6cd2d50fed90e6bbbbd77dfdff0323fd451d89"
+    }
+  ],
+  "failures": [
+    {
+      "approved": true,
+      "document": "0",
+      "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+      "path": "rules/credential-access/password-spraying-4625.yml",
+      "profile": "sysmon",
+      "sha256": "b98618c90db69de50706437d4be7d5ddbc5a4e167387e264df75df6fdce3d985",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "The pipe syntax in Sigma conditions has been deprecated and replaced by Sigma correlations. pySigma doesn't supports this syntax.",
+      "path": "rules/credential-access/password-spraying-4625.yml",
+      "profile": "generic",
+      "sha256": "b98618c90db69de50706437d4be7d5ddbc5a4e167387e264df75df6fdce3d985",
+      "stage": "convert"
+    }
+  ],
+  "ignored": [],
+  "input_documents": 90,
+  "official_baseline": {
+    "artifacts": {
+      "rules_linux.json": "12116f7a53e71a5c677d788cd934466c3609cd353df2163411c2980dacb380e2",
+      "rules_windows_generic.json": "84cc750a37518a8d6481759177dac65d7856a1ab2121c0342cd7e6d41e2d7878",
+      "rules_windows_sysmon.json": "bc5bf843a3f74021ead6c22528d3d10e19e93e91f2203f304e89fae4e1268369"
+    },
+    "repository": "SigmaHQ/sigma",
+    "revision": "8a4813404ea3074890e0cda9272d4d1a8b2941d6"
+  },
+  "official_duplicates_removed": {
+    "generic/correlations": 0,
+    "generic/events": 0,
+    "linux/correlations": 0,
+    "linux/events": 0,
+    "sysmon/correlations": 0,
+    "sysmon/events": 0
+  },
+  "profiles": {
+    "generic": {
+      "converted": 57,
+      "correlations": 0,
+      "eligible": 58,
+      "events": 57,
+      "reference_only": 0
+    },
+    "linux": {
+      "converted": 15,
+      "correlations": 0,
+      "eligible": 15,
+      "events": 15,
+      "reference_only": 0
+    },
+    "sysmon": {
+      "converted": 58,
+      "correlations": 0,
+      "eligible": 59,
+      "events": 58,
+      "reference_only": 0
+    }
+  },
+  "provenance": [
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "58e753d8-988f-5fff-a891-cc44113a4f18",
+          "original": "999be7b6-e1fe-4e07-97a8-tyrian000078"
+        }
+      },
+      "document": "0",
+      "id": "58e753d8-988f-5fff-a891-cc44113a4f18",
+      "path": "rules/collection/aws-s3-public-access-block-removed.yml",
+      "sha256": "d86a98c1fd0e853e3eb9deaf9c4207a5c9475adea3223dedaa794e8e9081486c"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "af990bf5-edc7-597a-9546-1565f9742e73",
+          "original": "9a095753-b696-4025-bc7e-tyrian000083"
+        }
+      },
+      "document": "0",
+      "id": "af990bf5-edc7-597a-9546-1565f9742e73",
+      "path": "rules/collection/m365-inbox-forwarding-rule.yml",
+      "sha256": "a5dc3ec05b1e82c416ed34c0528d03d49cfaa32e1a14a0d2997bb22ab955e931"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "156f7987-2196-5f13-bf1a-cabaf7cb3f89",
+          "original": "37d809e6-5af7-4b26-063e-tyrian000065"
+        }
+      },
+      "document": "0",
+      "id": "156f7987-2196-5f13-bf1a-cabaf7cb3f89",
+      "path": "rules/command-and-control/bitsadmin-transfer-job.yml",
+      "sha256": "516de8973391cfdcceac7635b73ca0562bef4ad312cd4cfd7625c25110d4fee2"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "72d94227-55fd-5b8d-a949-ce923d0d3fc3",
+          "original": "f394c5a2-16b3-47e6-c2da-tyrian000061"
+        }
+      },
+      "document": "0",
+      "id": "72d94227-55fd-5b8d-a949-ce923d0d3fc3",
+      "path": "rules/command-and-control/cobalt-strike-named-pipe.yml",
+      "sha256": "00ed6b7c0940dfa3df9ab0dda9adc9f4f62f632383383ccd30a932ebafd39cf4"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "bf1f025e-b893-5050-a105-c53f6110a8a6",
+          "original": "c376bb13-3b5e-4ea8-19cb-tyrian000035"
+        }
+      },
+      "document": "0",
+      "id": "bf1f025e-b893-5050-a105-c53f6110a8a6",
+      "path": "rules/command-and-control/dns-tunneling-long-query.yml",
+      "sha256": "6fc6c9ebdcb3aa91d40817fb2a4e1847b5bc129030d872d55bcba7a7cc9cb7d0"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "c5a61539-a2d2-59a8-8bda-e0a95e5794db",
+          "original": "6a0b3c1f-8d29-4e5c-9741-tyrian000052"
+        }
+      },
+      "document": "0",
+      "id": "c5a61539-a2d2-59a8-8bda-e0a95e5794db",
+      "path": "rules/credential-access/adcs-esc1-san-certificate-request.yml",
+      "sha256": "08952ca0e7a433cd1419c8793e16ab37700ba5d0891e42b1b28df0323eae4bf3"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "69506fc5-bfa0-5589-8246-8b669e43ea50",
+          "original": "7b1c4d2a-9e3b-4f6d-a852-tyrian000053"
+        }
+      },
+      "document": "0",
+      "id": "69506fc5-bfa0-5589-8246-8b669e43ea50",
+      "path": "rules/credential-access/adcs-machine-account-user-certificate.yml",
+      "sha256": "676fbce1dcfc8c66a76065c11bd757f259ae57723e53ef2710077eca473e91e6"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "115f7c66-8a63-529d-9a6a-0a686193c09b",
+          "original": "2a7c11de-91b4-4c0e-9f21-tyrian000009"
+        }
+      },
+      "document": "0",
+      "id": "115f7c66-8a63-529d-9a6a-0a686193c09b",
+      "path": "rules/credential-access/asrep-roasting-no-preauth.yml",
+      "sha256": "e851d2af82284eafd51017e11251dffad1f4679878a606439ba7fe320c33d862"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "0296dbb7-c093-53d3-9b7d-6104562a521b",
+          "original": "9d2f62e5-f031-406b-95e5-tyrian000073"
+        }
+      },
+      "document": "0",
+      "id": "0296dbb7-c093-53d3-9b7d-6104562a521b",
+      "path": "rules/credential-access/browser-credential-store-access.yml",
+      "sha256": "a9317b961747f7edbfc8c63b7407fe258507260495011242f1c1a4d614049092"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "71fcbc7a-c98f-5a52-ad60-3707ea75d10a",
+          "original": "3b8d22ef-a2c5-4d1f-8032-tyrian000010"
+        }
+      },
+      "document": "0",
+      "id": "71fcbc7a-c98f-5a52-ad60-3707ea75d10a",
+      "path": "rules/credential-access/dcsync-replication-rights.yml",
+      "sha256": "d5145ef6e820f491190feca333bb16fc6620ba406b3fb2cb7163b7e5d640b0ca"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "a056a5f1-0c31-5e56-b1e7-baaa0f8aa30d",
+          "original": "4229ea26-2d60-4a1e-987e-tyrian000080"
+        }
+      },
+      "document": "0",
+      "id": "a056a5f1-0c31-5e56-b1e7-baaa0f8aa30d",
+      "path": "rules/credential-access/entra-mfa-fatigue.yml",
+      "sha256": "fb49846ca9363a5f29fdd936bf3effbfc9e56278513c0f1120e3f7342ad088e0"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "725625d9-17ca-5e56-b3e4-579263dd3b1e",
+          "original": "e3b80f79-f00e-4fc7-9345-tyrian000079"
+        }
+      },
+      "document": "0",
+      "id": "725625d9-17ca-5e56-b3e4-579263dd3b1e",
+      "path": "rules/credential-access/entra-password-spray.yml",
+      "sha256": "e0a014efc589b32bb10dcdd10fcaa78330383d72cd1b3ad7bc61db7bce5af352"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "82315e84-ff12-5036-b941-8b4cf8888412",
+          "original": "8edd4c6e-9efc-4122-a04d-tyrian000074"
+        }
+      },
+      "document": "0",
+      "id": "82315e84-ff12-5036-b941-8b4cf8888412",
+      "path": "rules/credential-access/forged-kerberos-ticket-tooling.yml",
+      "sha256": "8e67befc6c9abf71bf87ff1638f6d2e30665aaa8c19658b4ef092c8e20b86430"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "c9c49676-f703-5462-ab22-95414958f583",
+          "original": "0f1a2b3c-roast-4d5e-6f70-tyrian000001"
+        }
+      },
+      "document": "0",
+      "id": "c9c49676-f703-5462-ab22-95414958f583",
+      "path": "rules/credential-access/kerberoasting-rc4-tgs.yml",
+      "sha256": "3c7406ac7626a2ad2672df2665d119dd3ce6dde8ec59ba8ab1681eac5684a5ea"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "2a7e0887-c0e4-58a6-bc2f-1332e980c981",
+          "original": "d172a3e0-f491-45c0-a0b8-tyrian000059"
+        }
+      },
+      "document": "0",
+      "id": "2a7e0887-c0e4-58a6-bc2f-1332e980c981",
+      "path": "rules/credential-access/krbtgt-account-modified.yml",
+      "sha256": "5873cd29be53dee7a5d675959850d404f5b24f55f41f8d266fa44619220f4162"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "0da32f44-d662-521a-b8f4-7edb658754d2",
+          "original": "ae4f7053-c16d-4294-bd85-tyrian000040"
+        }
+      },
+      "document": "0",
+      "id": "0da32f44-d662-521a-b8f4-7edb658754d2",
+      "path": "rules/credential-access/linux-shadow-file-access.yml",
+      "sha256": "ac39787a93c386b6f6358397b302e0e9449ef1cbaa17325b506df731c5ed02bd"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "e2c200e6-4868-5cb6-b979-2c608c634217",
+          "original": "6e1055b2-d5f8-4042-b365-tyrian000013"
+        }
+      },
+      "document": "0",
+      "id": "e2c200e6-4868-5cb6-b979-2c608c634217",
+      "path": "rules/credential-access/lsass-dump-comsvcs.yml",
+      "sha256": "e54203da2815cabe43cb1302804bfff4a3e0a553e68e388115ed00fb23895ef6"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "8a5bacb8-dbda-5262-9650-51c5cf6d3fe0",
+          "original": "0f1a2b3c-lsass-4d5e-6f70-tyrian000003"
+        }
+      },
+      "document": "0",
+      "id": "8a5bacb8-dbda-5262-9650-51c5cf6d3fe0",
+      "path": "rules/credential-access/lsass-handle-access.yml",
+      "sha256": "062f7c1212ceea1158bc65dea8f8c8d2aaff89075575da930f4cb04a2e39d335"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "022ba792-50d4-5a03-862d-e90018246748",
+          "original": "4c9e33f0-b3d6-4e20-9143-tyrian000011"
+        }
+      },
+      "document": "0",
+      "id": "022ba792-50d4-5a03-862d-e90018246748",
+      "path": "rules/credential-access/ntds-dit-extraction.yml",
+      "sha256": "dce3f2e4e25ffeea1d197ad9f018077d5489e0c0b16f66602a3ea69bfede9344"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "be854b71-ec85-5e32-8875-b1e7b30e3510",
+          "original": "9f988cc3-2115-425f-b10d-tyrian000086"
+        }
+      },
+      "document": "0",
+      "id": "be854b71-ec85-5e32-8875-b1e7b30e3510",
+      "path": "rules/credential-access/okta-mfa-factor-reset.yml",
+      "sha256": "04e0208eda229e2282624326b9c2bdfddc553f2372ecd02575886ca1b7f842ed"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "dabed2f5-9f7b-5a57-8722-b8542a639cfc",
+          "original": "0f1a2b3c-spry-4d5e-6f70-tyrian000007"
+        }
+      },
+      "document": "0",
+      "id": "dabed2f5-9f7b-5a57-8722-b8542a639cfc",
+      "path": "rules/credential-access/password-spraying-4625.yml",
+      "sha256": "b98618c90db69de50706437d4be7d5ddbc5a4e167387e264df75df6fdce3d985"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "7c908dcc-95a2-5fe0-90fc-ab20f0cc5a5f",
+          "original": "5d0f44a1-c4e7-4f31-a254-tyrian000012"
+        }
+      },
+      "document": "0",
+      "id": "7c908dcc-95a2-5fe0-90fc-ab20f0cc5a5f",
+      "path": "rules/credential-access/sam-hive-dump.yml",
+      "sha256": "b90bdcf771cf6d425d8098efe6c761ef338b0e791d0c1834ff03fe4b6679aecc"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "931209be-1611-52a4-bbff-610984530a90",
+          "original": "8c2d5e3b-af4c-407e-b963-tyrian000054"
+        }
+      },
+      "document": "0",
+      "id": "931209be-1611-52a4-bbff-610984530a90",
+      "path": "rules/credential-access/shadow-credentials-key-credential-link.yml",
+      "sha256": "59e241f7f01da7fd2018a92a5d89389f2c2fe25899cbb78aad00f2f2148d101a"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "b016831c-c0b3-524c-a58a-8a22552a9f79",
+          "original": "7f2166c3-e609-4153-c476-tyrian000014"
+        }
+      },
+      "document": "0",
+      "id": "b016831c-c0b3-524c-a58a-8a22552a9f79",
+      "path": "rules/credential-access/wdigest-cleartext-enabled.yml",
+      "sha256": "1e7e7e65f61ce987a5c5d68c8b3ae3f7745099843c798c128d41e81c871a53ab"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "6aace6c9-d485-512a-b090-f5712dbbf204",
+          "original": "39fff3df-105d-4711-ba44-tyrian000075"
+        }
+      },
+      "document": "0",
+      "id": "6aace6c9-d485-512a-b090-f5712dbbf204",
+      "path": "rules/defense-evasion/aws-security-logging-disabled.yml",
+      "sha256": "dd53a2b9ab34425f156df5ea215d571da7bb0f17f52ad649d87ff63f8430ff56"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "e913c694-8cec-5c05-b609-bd2edeb0c2a9",
+          "original": "e283b4f1-05a2-46dd-b1c9-tyrian000060"
+        }
+      },
+      "document": "0",
+      "id": "e913c694-8cec-5c05-b609-bd2edeb0c2a9",
+      "path": "rules/defense-evasion/dcshadow-rogue-domain-controller.yml",
+      "sha256": "c2c02c2af15aea647923668259bed949f5086145afc1b51a4a16705301627f7d"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "4b700068-4d19-5e67-8d4b-04bc3de8c1b7",
+          "original": "6c1055b8-d5f8-44e2-b365-tyrian000029"
+        }
+      },
+      "document": "0",
+      "id": "4b700068-4d19-5e67-8d4b-04bc3de8c1b7",
+      "path": "rules/defense-evasion/defender-disabled.yml",
+      "sha256": "a5325b46ebd6fd3f45a43de577b6402d6877977420247ffb89c9ffec4ea2cb3d"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "ef34fa3f-9170-585f-a9a1-a8f22942e075",
+          "original": "5b0f44a7-c4e7-43d1-a254-tyrian000028"
+        }
+      },
+      "document": "0",
+      "id": "ef34fa3f-9170-585f-a9a1-a8f22942e075",
+      "path": "rules/defense-evasion/event-log-cleared.yml",
+      "sha256": "7c2d8ddf540233b6de5c38bb6f98b8c10c68b15525897bb50a66b27516bb80e1"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "e75e78ff-05cb-5e10-b723-a1d964844370",
+          "original": "15b6e7ca-38d4-4907-24fc-tyrian000047"
+        }
+      },
+      "document": "0",
+      "id": "e75e78ff-05cb-5e10-b723-a1d964844370",
+      "path": "rules/defense-evasion/linux-auditd-tampering.yml",
+      "sha256": "74b2745abfca3f8bf53c77e43feb78c9c1d4c7ba6296920f9d1c5301de1aa324"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "0fb22aaf-ab35-5f61-a4cd-2314fc633480",
+          "original": "9d3e6f42-b05c-4183-ac74-tyrian000039"
+        }
+      },
+      "document": "0",
+      "id": "0fb22aaf-ab35-5f61-a4cd-2314fc633480",
+      "path": "rules/defense-evasion/linux-execution-from-world-writable.yml",
+      "sha256": "787325af649c36530a60d1a9a8e4dea215709e65cc52e6b84b6a8aa31b30cf90"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "5d937203-dbbf-5330-8e6b-c81c8deb50ec",
+          "original": "04a5d6b9-27c3-48fa-13eb-tyrian000046"
+        }
+      },
+      "document": "0",
+      "id": "5d937203-dbbf-5330-8e6b-c81c8deb50ec",
+      "path": "rules/defense-evasion/linux-log-deletion.yml",
+      "sha256": "efc81366b365ea7178bb0554806c4771eb396bd462ec0dd4e69846f67d8e9362"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "33e71ee7-6473-5443-8a82-e98b90e1e797",
+          "original": "a73d719e-40a6-46d1-8a38-tyrian000085"
+        }
+      },
+      "document": "0",
+      "id": "33e71ee7-6473-5443-8a82-e98b90e1e797",
+      "path": "rules/defense-evasion/m365-audit-logging-disabled.yml",
+      "sha256": "04791e8c5fc660c4a2462a86054f276f9154b8140a3b859f08dc3b1d6ab2febe"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "37cfb04b-0bb2-5f80-8f82-0c9693db7b79",
+          "original": "7d2166c9-e609-45f3-c476-tyrian000030"
+        }
+      },
+      "document": "0",
+      "id": "37cfb04b-0bb2-5f80-8f82-0c9693db7b79",
+      "path": "rules/defense-evasion/powershell-amsi-bypass.yml",
+      "sha256": "968e56c6ce2d5c63c84b28830d4b15084348ca7f79682fd7bf4a21b04bc3eab0"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "ca83670d-a03a-59d2-9a7c-4db7307fd26b",
+          "original": "15b6e7c4-38d5-4904-e4fc-tyrian000063"
+        }
+      },
+      "document": "0",
+      "id": "ca83670d-a03a-59d2-9a7c-4db7307fd26b",
+      "path": "rules/defense-evasion/process-image-tampering-hollowing.yml",
+      "sha256": "3ea3d1178c9740502a7598c63ee6f2a10488ea937a89dd0db4801738465a6224"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "455eee3a-3bb3-55e0-977e-e300d525fa49",
+          "original": "04a5d6b3-27c4-48f7-d3eb-tyrian000062"
+        }
+      },
+      "document": "0",
+      "id": "455eee3a-3bb3-55e0-977e-e300d525fa49",
+      "path": "rules/defense-evasion/process-injection-createremotethread.yml",
+      "sha256": "83986399ea2eaf7203124b2c87649ea4260206842b1bed1315241c85ab0051a4"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "6b002867-a210-5665-8c0e-520c491095cd",
+          "original": "48e91af0-6b08-4c37-172f-tyrian000066"
+        }
+      },
+      "document": "0",
+      "id": "6b002867-a210-5665-8c0e-520c491095cd",
+      "path": "rules/defense-evasion/rundll32-suspicious-invocation.yml",
+      "sha256": "81b775c1d187285a79abc0c0858a5df4b94493c402989e84fc5c3f13ad573525"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "f66defe9-0222-5dd3-9ac3-63697cf792d6",
+          "original": "8e3277d0-f71a-46c4-d587-tyrian000031"
+        }
+      },
+      "document": "0",
+      "id": "f66defe9-0222-5dd3-9ac3-63697cf792d6",
+      "path": "rules/discovery/bloodhound-sharphound-collection.yml",
+      "sha256": "e051b2a9c09a956ff80e757e50bf2c07e6010009a3ef9684e91b6dbbb7a13078"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "2e691c10-dc39-53ca-a273-4223aa8dd6d0",
+          "original": "9f4388e6-082b-47d5-e698-tyrian000032"
+        }
+      },
+      "document": "0",
+      "id": "2e691c10-dc39-53ca-a273-4223aa8dd6d0",
+      "path": "rules/discovery/domain-recon-net-commands.yml",
+      "sha256": "df239ddaa0b9375ad9c8e1f746b8ade8edd381bb672e5f2c3072e32e1a888d16"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "044d9564-0a89-5d8e-a1f2-dce53a269616",
+          "original": "48e91afd-6b07-4c3a-572f-tyrian000050"
+        }
+      },
+      "document": "0",
+      "id": "044d9564-0a89-5d8e-a1f2-dce53a269616",
+      "path": "rules/discovery/linux-host-enumeration-burst.yml",
+      "sha256": "79884ce204246104cbec2c95dab14e5dea52ac6b33b03089739dba0a7a125ba7"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "ed34bddb-6524-5533-b0bb-0e1ca39461e7",
+          "original": "06baff52-7f92-4aec-5d0f-tyrian000023"
+        }
+      },
+      "document": "0",
+      "id": "ed34bddb-6524-5533-b0bb-0e1ca39461e7",
+      "path": "rules/execution/certutil-download.yml",
+      "sha256": "c0936347f24b74b0675ec192218759d778a24b7da1146a99573065fdf5ef71e1"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "fecea633-792e-53ba-bb07-f7f69b1e6974",
+          "original": "8c2d5e31-af4b-4072-9b63-tyrian000038"
+        }
+      },
+      "document": "0",
+      "id": "fecea633-792e-53ba-bb07-f7f69b1e6974",
+      "path": "rules/execution/linux-download-pipe-to-shell.yml",
+      "sha256": "d0806d458fd4af1ba6836c7dc02107fc6de320bd696e3b8ac1d02a545f065d15"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "a76ceef8-90f1-515b-a049-d6f89d73df24",
+          "original": "7b1c4d20-9e3a-4f61-8a52-tyrian000037"
+        }
+      },
+      "document": "0",
+      "id": "a76ceef8-90f1-515b-a049-d6f89d73df24",
+      "path": "rules/execution/linux-reverse-shell.yml",
+      "sha256": "fbc4fb09c7bd7b8189aab9348212ae82c1ddf1df08f579dbd50c25882037e740"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "9f2410ed-f30d-590d-8566-3073fdee6ca4",
+          "original": "11e58522-97db-426b-b3b7-tyrian000090"
+        }
+      },
+      "document": "0",
+      "id": "9f2410ed-f30d-590d-8566-3073fdee6ca4",
+      "path": "rules/execution/macos-osascript-admin-prompt.yml",
+      "sha256": "16892a58b905edbf0225a7f180450fda21462383534b2e25da800af61889c96e"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "a061123e-949c-5341-8dc6-4e66b15c2611",
+          "original": "e498dd30-5d70-48ca-3bed-tyrian000021"
+        }
+      },
+      "document": "0",
+      "id": "a061123e-949c-5341-8dc6-4e66b15c2611",
+      "path": "rules/execution/mshta-remote-payload.yml",
+      "sha256": "4e45af54b599a8032807c6d7e6ef9cd0e5bf5a95823adc664d159980bab31d81"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "5e1e076e-5fb4-58c6-ad90-3219b3472014",
+          "original": "d387cc29-4c6f-47b9-2adc-tyrian000020"
+        }
+      },
+      "document": "0",
+      "id": "5e1e076e-5fb4-58c6-ad90-3219b3472014",
+      "path": "rules/execution/powershell-download-cradle.yml",
+      "sha256": "9dac13384267ae4253db3adafcda31801eed9c83954b683fb0d4a2c599506488"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "b154f249-2470-5bba-a83a-31fdb73e2026",
+          "original": "c276bb18-3b5e-46a8-19cb-tyrian000019"
+        }
+      },
+      "document": "0",
+      "id": "b154f249-2470-5bba-a83a-31fdb73e2026",
+      "path": "rules/execution/powershell-encoded-command.yml",
+      "sha256": "50fb5bcb509dc7d3a4763377ba8e3e44356b00140ced5f04b7bcf8085e0d94a9"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "7e884c0e-2b4b-5b38-84e6-e39444b3ec1a",
+          "original": "f5a9ee41-6e81-49db-4cfe-tyrian000022"
+        }
+      },
+      "document": "0",
+      "id": "7e884c0e-2b4b-5b38-84e6-e39444b3ec1a",
+      "path": "rules/execution/regsvr32-scriptlet-squiblydoo.yml",
+      "sha256": "ed222cd9c392b11da39baa40b6edc5a7fc1b2d71670c2c46e413d18b8e2c9224"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "9029fb28-542e-538d-9544-02d26bd33a53",
+          "original": "d476cc24-4c6f-40b9-2adc-tyrian000036"
+        }
+      },
+      "document": "0",
+      "id": "9029fb28-542e-538d-9544-02d26bd33a53",
+      "path": "rules/exfiltration/archive-staging-for-exfil.yml",
+      "sha256": "8be41383e2aee2b0925739454601c0271ccca0d640fdbded91cd35d615f17e23"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "93b80bbd-ffd7-5c82-a92c-b881f51e2e5a",
+          "original": "59fa2b08-7c19-4d48-2830-tyrian000067"
+        }
+      },
+      "document": "0",
+      "id": "93b80bbd-ffd7-5c82-a92c-b881f51e2e5a",
+      "path": "rules/exfiltration/exfiltration-to-cloud-storage.yml",
+      "sha256": "8db8fda52d325b8bc37b8fd2b75659f9d732bb1f6df16c2c3ad0ab3d596e078c"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "d8534cc1-4d7b-5498-a8a6-3d4435f764b4",
+          "original": "a15499f1-193c-48e6-f7a9-tyrian000033"
+        }
+      },
+      "document": "0",
+      "id": "d8534cc1-4d7b-5498-a8a6-3d4435f764b4",
+      "path": "rules/impact/backup-deletion-wbadmin-bcdedit.yml",
+      "sha256": "8ea6a97f1173fab9ff93b8a3b7ac9b5bc153d443489a0f0d153cb2dc528476ec"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "025299bf-ff29-56e6-8bf2-7f3e8c6e400a",
+          "original": "0f1a2b3c-lock-4d5e-6f70-tyrian000002"
+        }
+      },
+      "document": "0",
+      "id": "025299bf-ff29-56e6-8bf2-7f3e8c6e400a",
+      "path": "rules/impact/ransomware-shadowcopy-deletion.yml",
+      "sha256": "d3992192085aa5ac394c5e7944352ae711db727a5bf63853c500073b5b78ebe5"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "0d2e8b67-0dfe-54b2-a883-97174b3d40f8",
+          "original": "b265aa02-2a4d-49f7-08ba-tyrian000034"
+        }
+      },
+      "document": "0",
+      "id": "0d2e8b67-0dfe-54b2-a883-97174b3d40f8",
+      "path": "rules/impact/service-stop-before-encryption.yml",
+      "sha256": "40edfb99f60049128ac8e837046012041f138ff6b13f26777a7100c3b9c6e166"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "42804892-0da7-59ab-a6ba-f3c3744676f5",
+          "original": "d7819811-9a2e-4109-948b-tyrian000076"
+        }
+      },
+      "document": "0",
+      "id": "42804892-0da7-59ab-a6ba-f3c3744676f5",
+      "path": "rules/initial-access/aws-root-console-login.yml",
+      "sha256": "18ec7cab85b108715c94f94fe0aa76a114113be9985edb656e58e3e3574a4c72"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "ee3645d5-f50c-5aa0-a9c0-e8a68ef15264",
+          "original": "0f1a2b3c-phsh-4d5e-6f70-tyrian000005"
+        }
+      },
+      "document": "0",
+      "id": "ee3645d5-f50c-5aa0-a9c0-e8a68ef15264",
+      "path": "rules/initial-access/office-spawns-script-host.yml",
+      "sha256": "f709cf4922bee7cdf092e75298f9d4fc78ead14f0bd307bd7c958aefe0e79ff9"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "cf53a12f-aaa2-53e9-8be1-bbb44e114a3a",
+          "original": "30d4c486-44e4-4085-aec2-tyrian000069"
+        }
+      },
+      "document": "0",
+      "id": "cf53a12f-aaa2-53e9-8be1-bbb44e114a3a",
+      "path": "rules/initial-access/script-from-archive-or-downloads.yml",
+      "sha256": "9c6e7274e06887917ca1f0764e9be75cc0b86b5a2cb338a517b103502242bb9b"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "ce34a2e8-76c5-5c4a-9caa-ac5485d24961",
+          "original": "3f1e1b68-b5eb-4e9f-82e8-tyrian000068"
+        }
+      },
+      "document": "0",
+      "id": "ce34a2e8-76c5-5c4a-9caa-ac5485d24961",
+      "path": "rules/initial-access/web-server-spawns-shell.yml",
+      "sha256": "139a4ce1f924bfd92b1693c9fa835665733ab9807d3bfff89dc19f965ebfd1f6"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "fd0c82fa-a8c4-58df-a597-c806aac2af3c",
+          "original": "b165aa07-2a4d-4597-08ba-tyrian000018"
+        }
+      },
+      "document": "0",
+      "id": "fd0c82fa-a8c4-58df-a597-c806aac2af3c",
+      "path": "rules/lateral-movement/dcom-lateral-execution.yml",
+      "sha256": "71489126904c047f8f973cfd8a2024c4d3b2a1fac04781be30cd3fede9e3d600"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "efee1a1d-e83f-50c0-8721-7be6fb784f56",
+          "original": "0f1a2b3c-pth0-4d5e-6f70-tyrian000006"
+        }
+      },
+      "document": "0",
+      "id": "efee1a1d-e83f-50c0-8721-7be6fb784f56",
+      "path": "rules/lateral-movement/pass-the-hash-ntlm.yml",
+      "sha256": "7518e64034a3ba82cf9974f0dc7a4449e5305160346715fdeaf51ebb7e86e1cf"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "6850165e-dce9-5dcc-8a27-571900c0596a",
+          "original": "0f1a2b3c-smb0-4d5e-6f70-tyrian000004"
+        }
+      },
+      "document": "0",
+      "id": "6850165e-dce9-5dcc-8a27-571900c0596a",
+      "path": "rules/lateral-movement/psexec-service-creation.yml",
+      "sha256": "5d5312d6a83440a85990036b0b95c1c664cb4900d14854fbb0131c07747b728a"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "86ab8c68-9f48-52d1-b06e-1947186aea35",
+          "original": "0b1db8ec-dfa4-4bf0-85ab-tyrian000070"
+        }
+      },
+      "document": "0",
+      "id": "86ab8c68-9f48-52d1-b06e-1947186aea35",
+      "path": "rules/lateral-movement/rdp-enabled-via-registry.yml",
+      "sha256": "2fd7b86d8959434b6a02da9ae6c9d6b61e4d41231c02d925da6c35446982aeb4"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "4eb1a6ec-d6c3-5411-9d1f-5d63c2d55de8",
+          "original": "c9946d59-be04-44fe-a047-tyrian000071"
+        }
+      },
+      "document": "0",
+      "id": "4eb1a6ec-d6c3-5411-9d1f-5d63c2d55de8",
+      "path": "rules/lateral-movement/rdp-session-hijack-tscon.yml",
+      "sha256": "b5fb3dae1842ecaa4233f4b42e7ab524f7896c87ccf0487624f380b8917b8248"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "bf980a51-2337-5dc3-ad80-6e3db6f38279",
+          "original": "a05499f6-193c-4486-f7a9-tyrian000017"
+        }
+      },
+      "document": "0",
+      "id": "bf980a51-2337-5dc3-ad80-6e3db6f38279",
+      "path": "rules/lateral-movement/smb-admin-share-write.yml",
+      "sha256": "041a35619eeb982338f461d12a58992a2da2e7337615c482beaa4b190cfe0065"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "da29ee20-8865-5f54-92b5-280b17595b85",
+          "original": "9b4388e5-082b-4375-e698-tyrian000016"
+        }
+      },
+      "document": "0",
+      "id": "da29ee20-8865-5f54-92b5-280b17595b85",
+      "path": "rules/lateral-movement/winrm-remoting-child-process.yml",
+      "sha256": "3a10c5b04a015e0a23c4d9c08c7303bd1f31a4fdcd6292bb3f2b798d9d13bf1c"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "b6fcbdbb-9c5e-516f-8065-94aa4ad4a049",
+          "original": "8a3277d4-f71a-4264-d587-tyrian000015"
+        }
+      },
+      "document": "0",
+      "id": "b6fcbdbb-9c5e-516f-8065-94aa4ad4a049",
+      "path": "rules/lateral-movement/wmi-remote-process-creation.yml",
+      "sha256": "f9fa20135ac87c2a78553fbb96250b43b7e19eaa6b0af92d8f5fea1e98ec703f"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "90c6c42c-238f-55e6-809f-d03f2df2bb9b",
+          "original": "bf50816e-d27f-43a2-ec96-tyrian000057"
+        }
+      },
+      "document": "0",
+      "id": "90c6c42c-238f-55e6-809f-d03f2df2bb9b",
+      "path": "rules/persistence/adminsdholder-acl-modification.yml",
+      "sha256": "13831542743f0517680d0f26bd186cdca3ca18014346dfd09848edb9da04ec61"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "2c7220b7-6dfb-582e-8cde-408d6fd3222c",
+          "original": "e0c81495-5d48-4dc3-83e3-tyrian000077"
+        }
+      },
+      "document": "0",
+      "id": "2c7220b7-6dfb-582e-8cde-408d6fd3222c",
+      "path": "rules/persistence/aws-iam-admin-policy-attached.yml",
+      "sha256": "3f0c0b9b49a80821d6411e9718e9540137e6bbe20cf987bb6b3ddf0a09328a17"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "4b6ad565-ee2f-5215-89ca-8662c149e331",
+          "original": "f2e9548c-9a95-4617-a3b2-tyrian000082"
+        }
+      },
+      "document": "0",
+      "id": "4b6ad565-ee2f-5215-89ca-8662c149e331",
+      "path": "rules/persistence/entra-app-credentials-added.yml",
+      "sha256": "2f22815ab67b1d0a76c9ee6b52e85c919e700bf4b2149afb51e53f02b77f1bd0"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "56740515-4f80-5b1c-bf0c-a1ea2fd5e5de",
+          "original": "4f19c4f2-3835-45dd-9964-tyrian000081"
+        }
+      },
+      "document": "0",
+      "id": "56740515-4f80-5b1c-bf0c-a1ea2fd5e5de",
+      "path": "rules/persistence/entra-privileged-role-assigned.yml",
+      "sha256": "6abc99c9813afc83b8b8de43683f1990fcfeb9c5d9cebb3ee06f53ce9421b3dc"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "f2bd3a51-ca27-53e6-b8f0-392a8b7c0bd3",
+          "original": "887340b6-8fcd-4766-b976-tyrian000087"
+        }
+      },
+      "document": "0",
+      "id": "f2bd3a51-ca27-53e6-b8f0-392a8b7c0bd3",
+      "path": "rules/persistence/gcp-service-account-key-created.yml",
+      "sha256": "220bd90d7f9bad8b5371f1f4c82510d918a0d1b588b7174d4f6cf2e8a3eb8a00"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "fc45f9ed-73a1-5b6e-8895-d4aa823900a2",
+          "original": "0e28a24d-fa42-4fa6-bdec-tyrian000088"
+        }
+      },
+      "document": "0",
+      "id": "fc45f9ed-73a1-5b6e-8895-d4aa823900a2",
+      "path": "rules/persistence/github-org-owner-granted.yml",
+      "sha256": "9b6615edfc64be1b8e71f0e5c09714edd8923002f090ead229d937af37e782f2"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "21304832-fb20-557e-8fbe-6e2addd36cb2",
+          "original": "37d809ec-5af6-4b29-461e-tyrian000049"
+        }
+      },
+      "document": "0",
+      "id": "21304832-fb20-557e-8fbe-6e2addd36cb2",
+      "path": "rules/persistence/linux-account-manipulation.yml",
+      "sha256": "4b38fc188e63b75ae07530f03c99f53617ce7a40d6f7d4f6cee3cb927f926e73"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "6b26ebd4-99d7-5e79-a712-1f416ce8c4f9",
+          "original": "c0619275-e38f-44b6-dfa7-tyrian000042"
+        }
+      },
+      "document": "0",
+      "id": "6b26ebd4-99d7-5e79-a712-1f416ce8c4f9",
+      "path": "rules/persistence/linux-cron-persistence.yml",
+      "sha256": "620d85cb1a74b4efa1a0d2989f21b5fe407b22fbcb373bacdde5f28edb2b8f6e"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "2d6278f1-4a07-5ab9-b58b-a408ff36afca",
+          "original": "59fa2b0e-7c18-4d4b-6830-tyrian000051"
+        }
+      },
+      "document": "0",
+      "id": "2d6278f1-4a07-5ab9-b58b-a408ff36afca",
+      "path": "rules/persistence/linux-kernel-module-load.yml",
+      "sha256": "4c8271a52ee47bde743f5804d235379da48f648f1a9e55de976e45eeda0b63fa"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "bd3b962a-26a8-5cbe-ae16-e866b6acea87",
+          "original": "f394c5a8-16b2-47e9-02da-tyrian000045"
+        }
+      },
+      "document": "0",
+      "id": "bd3b962a-26a8-5cbe-ae16-e866b6acea87",
+      "path": "rules/persistence/linux-ld-preload-hijack.yml",
+      "sha256": "f876cbda4ec1d0d23817e07d0b4d8783dae76bd2bf6a6ae3644f32409bcd8009"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "3d2308ab-d493-5a67-b5d4-cb78465e433a",
+          "original": "bf508164-d27e-43a5-ce96-tyrian000041"
+        }
+      },
+      "document": "0",
+      "id": "3d2308ab-d493-5a67-b5d4-cb78465e433a",
+      "path": "rules/persistence/linux-ssh-authorized-keys-write.yml",
+      "sha256": "4f677f231facbb9c41eebbb34481426227e9f29520a48703a299732aa2f84298"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "a2ce02b0-4a61-574d-9cfc-9c6d52daba76",
+          "original": "d172a386-f490-45c7-e0b8-tyrian000043"
+        }
+      },
+      "document": "0",
+      "id": "a2ce02b0-4a61-574d-9cfc-9c6d52daba76",
+      "path": "rules/persistence/linux-systemd-service-persistence.yml",
+      "sha256": "694b383e642ca48d6732e5ec9d8e2bb5b835587679bc3971ce869e899b4ea788"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "ef48452a-09a8-5269-9b84-272aff8e00fa",
+          "original": "b9cb7529-8392-4464-80a2-tyrian000084"
+        }
+      },
+      "document": "0",
+      "id": "ef48452a-09a8-5269-9b84-272aff8e00fa",
+      "path": "rules/persistence/m365-mailbox-full-access-granted.yml",
+      "sha256": "ed55334c16a2ca45f39c66c6485e6c253a02217834ee8911b62602e89fac8ffc"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "9bdc9a33-7486-5c7d-9d2c-49853f5eb99e",
+          "original": "397acd7b-6139-4df5-af03-tyrian000089"
+        }
+      },
+      "document": "0",
+      "id": "9bdc9a33-7486-5c7d-9d2c-49853f5eb99e",
+      "path": "rules/persistence/macos-launch-agent-created.yml",
+      "sha256": "272e5fb6e13a577b2df0b2fe8d07646b4ca1a4bbafed811cd65f30ec423431c7"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "ab3f101b-9214-5404-81e3-ff10a4d3e850",
+          "original": "4afe3396-b3d6-42c0-9143-tyrian000027"
+        }
+      },
+      "document": "0",
+      "id": "ab3f101b-9214-5404-81e3-ff10a4d3e850",
+      "path": "rules/persistence/new-local-admin-account.yml",
+      "sha256": "869985ff7e935435780f76c0e4f51217e30496e755ca1d589691ff2b3080b105"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "ede060f5-8a72-56f1-9084-c4fb393fc868",
+          "original": "17cb0063-80a3-4bfd-6e10-tyrian000024"
+        }
+      },
+      "document": "0",
+      "id": "ede060f5-8a72-56f1-9084-c4fb393fc868",
+      "path": "rules/persistence/registry-run-key-write.yml",
+      "sha256": "4aa100b1ebcde03d786d8334f4727f6ed4c1ed8bf2fffb9fd438763c71afc929"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "0a17fcde-8779-5c41-8e6e-4b26725e2457",
+          "original": "28dc1174-91b4-40ae-7f21-tyrian000025"
+        }
+      },
+      "document": "0",
+      "id": "0a17fcde-8779-5c41-8e6e-4b26725e2457",
+      "path": "rules/persistence/service-creation-suspicious-path.yml",
+      "sha256": "9597a985d0255a936ca3e39a4a208a844f30ddca807d9cbec35d4da19c92242d"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "df789d52-9e75-5539-8a22-373fe5495b65",
+          "original": "0f1a2b3c-task-4d5e-6f70-tyrian000008"
+        }
+      },
+      "document": "0",
+      "id": "df789d52-9e75-5539-8a22-373fe5495b65",
+      "path": "rules/persistence/suspicious-scheduled-task.yml",
+      "sha256": "2cd462b74da706f847cd51837ee4720767cd6e28a620623c4e622a0952db4e7b"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "8dfbb017-7465-56db-b538-2805dc58014a",
+          "original": "39ed2285-a2c5-41bf-8032-tyrian000026"
+        }
+      },
+      "document": "0",
+      "id": "8dfbb017-7465-56db-b538-2805dc58014a",
+      "path": "rules/persistence/wmi-event-subscription.yml",
+      "sha256": "d7594b289b0e93652a69affa696bf7b62a0820d24a1130f372d23e10482099b6"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "3d488537-0e7f-5c11-aa63-6559b740781c",
+          "original": "c06192df-e380-44b3-fda7-tyrian000058"
+        }
+      },
+      "document": "0",
+      "id": "3d488537-0e7f-5c11-aa63-6559b740781c",
+      "path": "rules/privilege-escalation/group-policy-object-modified.yml",
+      "sha256": "39d83fdec4c85b0be137ab563606667c576c9b411c3fa3c06826686bbae391fa"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "2a55340f-34b2-553f-a630-035c1271c42d",
+          "original": "26c7f8db-49e5-4a18-350d-tyrian000048"
+        }
+      },
+      "document": "0",
+      "id": "2a55340f-34b2-553f-a630-035c1271c42d",
+      "path": "rules/privilege-escalation/linux-container-escape.yml",
+      "sha256": "ce49dbc09e6a4ae5ac13f25c81833b8447bc4ba1075e2a646c443aaf15ce517c"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "6ba98efb-6dda-5591-bca6-5bfa0028a09c",
+          "original": "e283b497-05a1-46d8-f1c9-tyrian000044"
+        }
+      },
+      "document": "0",
+      "id": "6ba98efb-6dda-5591-bca6-5bfa0028a09c",
+      "path": "rules/privilege-escalation/linux-sudoers-modification.yml",
+      "sha256": "d5e4459847d7500ce1ed8da8e7f7d7cfcc11e449589d388fa026bed979cbbe86"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "8db86775-c2ea-55aa-bb6e-f7f91d454c31",
+          "original": "5f768d6d-73f5-440a-8231-tyrian000072"
+        }
+      },
+      "document": "0",
+      "id": "8db86775-c2ea-55aa-bb6e-f7f91d454c31",
+      "path": "rules/privilege-escalation/new-credentials-logon-type-9.yml",
+      "sha256": "afc28c1ae9b6ef2d7902d19c905db4cf85933c49ffd5d43ff527750b41479743"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "1b694c37-1295-5189-93d0-4622f9aaf736",
+          "original": "9d3e6f4c-b05d-4180-ca74-tyrian000055"
+        }
+      },
+      "document": "0",
+      "id": "1b694c37-1295-5189-93d0-4622f9aaf736",
+      "path": "rules/privilege-escalation/resource-based-constrained-delegation-write.yml",
+      "sha256": "473ac59682204c8a78b5a2640b7697e5cb974befa051ce8868d941437db0003b"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "3146bbb3-9dbd-5a04-8bb9-ce97fb2cfbac",
+          "original": "ae4f705d-c16e-4291-db85-tyrian000056"
+        }
+      },
+      "document": "0",
+      "id": "3146bbb3-9dbd-5a04-8bb9-ce97fb2cfbac",
+      "path": "rules/privilege-escalation/unconstrained-delegation-enabled.yml",
+      "sha256": "c008c5f3f1ff18402ed69217bafd5fc4e94d49eaa8b8440cf2c5e36ec1c87b5e"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "2f9c8852-6615-5665-a938-0fe353adc177",
+          "original": "26c7f8d5-49e6-4a15-f50d-tyrian000064"
+        }
+      },
+      "document": "0",
+      "id": "2f9c8852-6615-5665-a938-0fe353adc177",
+      "path": "rules/privilege-escalation/vulnerable-driver-loaded-byovd.yml",
+      "sha256": "990fbffa6400c20ffa91918b2e6cd2d50fed90e6bbbbd77dfdff0323fd451d89"
+    }
+  ],
+  "repository": "zshguy/tyrian-detection-pack",
+  "revision": "b2cea417bcbd1316ac571b29a5dc459ce387a7c2",
+  "source": "tyrian",
+  "status": "validated",
+  "tools": {
+    "pysigma": "2.0.0",
+    "pysigma-backend-sqlite": "2.1.0",
+    "pysigma-pipeline-sysmon": "2.0.0",
+    "pysigma-pipeline-windows": "2.0.0",
+    "python": "3.14.8",
+    "sqlite": "3.45.1"
+  }
+}

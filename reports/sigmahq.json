@@ -1,9 +1,9 @@
 {
   "artifacts": {
     "rules_linux.json": 216,
-    "rules_windows_generic.json": 2277,
-    "rules_windows_merged.json": 4518,
-    "rules_windows_sysmon.json": 2828
+    "rules_windows_generic.json": 2282,
+    "rules_windows_merged.json": 4523,
+    "rules_windows_sysmon.json": 2833
   },
   "exclusions": [
     {
@@ -5143,41 +5143,6 @@
       "profile": "sysmon",
       "reason": "logsource product None is outside this profile",
       "sha256": "aecf13dfffc0d341a27fa2bb93f15c54512c7ee78107195526ff3f2bece27144"
-    },
-    {
-      "document": "0",
-      "path": "rules/windows/builtin/iis-configuration/win_iis_logging_etw_disabled.yml",
-      "profile": "sysmon",
-      "reason": "no mapping for logsource in this profile",
-      "sha256": "b0baa94515b67bf02a8402e02920c98f2209e56ab9b099ac77a10717ee76f02d"
-    },
-    {
-      "document": "0",
-      "path": "rules/windows/builtin/iis-configuration/win_iis_logging_http_disabled.yml",
-      "profile": "sysmon",
-      "reason": "no mapping for logsource in this profile",
-      "sha256": "25b0f98b5c1b867ac81d5acec73f27a33e1a8120aa5899f835684399db2d8bcb"
-    },
-    {
-      "document": "0",
-      "path": "rules/windows/builtin/iis-configuration/win_iis_module_added.yml",
-      "profile": "sysmon",
-      "reason": "no mapping for logsource in this profile",
-      "sha256": "6aadc1c7021c1283e184025a184e53d71a7cf42c7c8d185ea6fa2e8db6569042"
-    },
-    {
-      "document": "0",
-      "path": "rules/windows/builtin/iis-configuration/win_iis_module_removed.yml",
-      "profile": "sysmon",
-      "reason": "no mapping for logsource in this profile",
-      "sha256": "ca39539ab4205dc1185b577e3c7e2a794cbac909df9996442d46672079de8247"
-    },
-    {
-      "document": "0",
-      "path": "rules/windows/builtin/ldap/win_ldap_recon.yml",
-      "profile": "sysmon",
-      "reason": "no mapping for logsource in this profile",
-      "sha256": "f4e58a8b7e35104eca0ee7592129bfb796b84145552871634cea75b785c440af"
     },
     {
       "document": "0",
@@ -11569,41 +11534,6 @@
       "profile": "generic",
       "reason": "logsource product None is outside this profile",
       "sha256": "aecf13dfffc0d341a27fa2bb93f15c54512c7ee78107195526ff3f2bece27144"
-    },
-    {
-      "document": "0",
-      "path": "rules/windows/builtin/iis-configuration/win_iis_logging_etw_disabled.yml",
-      "profile": "generic",
-      "reason": "no mapping for logsource in this profile",
-      "sha256": "b0baa94515b67bf02a8402e02920c98f2209e56ab9b099ac77a10717ee76f02d"
-    },
-    {
-      "document": "0",
-      "path": "rules/windows/builtin/iis-configuration/win_iis_logging_http_disabled.yml",
-      "profile": "generic",
-      "reason": "no mapping for logsource in this profile",
-      "sha256": "25b0f98b5c1b867ac81d5acec73f27a33e1a8120aa5899f835684399db2d8bcb"
-    },
-    {
-      "document": "0",
-      "path": "rules/windows/builtin/iis-configuration/win_iis_module_added.yml",
-      "profile": "generic",
-      "reason": "no mapping for logsource in this profile",
-      "sha256": "6aadc1c7021c1283e184025a184e53d71a7cf42c7c8d185ea6fa2e8db6569042"
-    },
-    {
-      "document": "0",
-      "path": "rules/windows/builtin/iis-configuration/win_iis_module_removed.yml",
-      "profile": "generic",
-      "reason": "no mapping for logsource in this profile",
-      "sha256": "ca39539ab4205dc1185b577e3c7e2a794cbac909df9996442d46672079de8247"
-    },
-    {
-      "document": "0",
-      "path": "rules/windows/builtin/ldap/win_ldap_recon.yml",
-      "profile": "generic",
-      "reason": "no mapping for logsource in this profile",
-      "sha256": "f4e58a8b7e35104eca0ee7592129bfb796b84145552871634cea75b785c440af"
     },
     {
       "document": "0",
@@ -41346,7 +41276,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
       "profile": "sysmon",
       "sha256": "6df8054945d5ff36517fa7bc65f89c1a2cfc3d806bfd2b7adcdb65fe80dbb446",
@@ -41355,7 +41285,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/msexchange/win_exchange_proxylogon_oabvirtualdir.yml",
       "profile": "sysmon",
       "sha256": "9705b2f3f28a85e9c3d4d97ac4022c686de433e040ee3151b0c9ec61e7b5cbf3",
@@ -41364,7 +41294,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/msexchange/win_exchange_proxyshell_certificate_generation.yml",
       "profile": "sysmon",
       "sha256": "231164589966c7980323e9cc94bee77bbdf328c51f6bb4febcd4b1e4adadf60a",
@@ -41373,7 +41303,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/msexchange/win_exchange_proxyshell_mailbox_export.yml",
       "profile": "sysmon",
       "sha256": "610c8a02a046035d0303872385ae81283234858effae7b0a563f7e374560f275",
@@ -41382,7 +41312,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/msexchange/win_exchange_proxyshell_remove_mailbox_export.yml",
       "profile": "sysmon",
       "sha256": "93d7a165b6055e5190313c883e733804ba4ace766632df0439b4726efd936641",
@@ -41391,7 +41321,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/msexchange/win_exchange_set_oabvirtualdirectory_externalurl.yml",
       "profile": "sysmon",
       "sha256": "329217678176702de3121a890f0a50b1a6b2df95c6a350f85883543e53a6e58d",
@@ -41400,7 +41330,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/msexchange/win_exchange_transportagent.yml",
       "profile": "sysmon",
       "sha256": "d48e1a382b744920651b0e77496e48c8f6facd9ac92bf6395e17dc7dceb74dc4",
@@ -41409,7 +41339,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/servicebus/win_hybridconnectionmgr_svc_running.yml",
       "profile": "sysmon",
       "sha256": "4418a7d691bce51ba36f772262add6130f0fc25b1c7024b867878e6a9480c3be",
@@ -41418,7 +41348,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/system/netlogon/win_system_possible_zerologon_exploitation_using_wellknown_tools.yml",
       "profile": "sysmon",
       "sha256": "01280cfdc62932dbfb15688746e728686ed578ffbd98606a7d6ecf2c03c9649e",
@@ -41427,7 +41357,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/win_alert_mimikatz_keywords.yml",
       "profile": "sysmon",
       "sha256": "3d853eb7c1b21f5ec58ea8f95767cebb47446152bc76ab584692e0693ca98fbd",
@@ -41436,7 +41366,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/wmi/win_wmi_persistence.yml",
       "profile": "sysmon",
       "sha256": "4e79a1e2a6914ad09a9193e41f5a27ead2dc0876ac835099bac516ca49a28c8f",
@@ -41445,7 +41375,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/sysmon/sysmon_config_modification_status.yml",
       "profile": "sysmon",
       "sha256": "72e138e08f33f29c92acc2b0fce7b75403746152f459ad36767d858155d416c4",
@@ -41454,7 +41384,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules-emerging-threats/2017/Malware/NotPetya/proc_creation_win_malware_notpetya.yml",
       "profile": "sysmon",
       "sha256": "12e58eaad9ce4fe14b586a6cc9252de8ecbeccae6faa90ee539db9cc1e3cfb33",
@@ -41463,7 +41393,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules-emerging-threats/2020/Exploits/CVE-2020-0688/win_vul_cve_2020_0688.yml",
       "profile": "sysmon",
       "sha256": "c43587e92fb24565252b0c77778b5761763b7617515e13138831005f51506c70",
@@ -41472,7 +41402,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules-emerging-threats/2021/Exploits/CVE-2021-1675/win_exploit_cve_2021_1675_printspooler.yml",
       "profile": "sysmon",
       "sha256": "8c35de58a42ce73fe66b4a4901c46a132e330bebb306dded8ca8410e58ac07b0",
@@ -41481,7 +41411,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules-emerging-threats/2021/Exploits/CVE-2021-1675/win_exploit_cve_2021_1675_printspooler_operational.yml",
       "profile": "sysmon",
       "sha256": "c1317c1a23981645b6f9d4422d6a0705fffe4fa09d19b43af97a52707cd4b338",
@@ -41490,7 +41420,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules-emerging-threats/2024/Exploits/CVE-2024-37085/win_security_exploit_cve_2024_37085_esxi_admins_group.yml",
       "profile": "sysmon",
       "sha256": "7ba5347b79a7df210d04afc553d4cd47d47db7fc6f1cd6eb8ea149815849f927",
@@ -41517,7 +41447,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
       "profile": "generic",
       "sha256": "6df8054945d5ff36517fa7bc65f89c1a2cfc3d806bfd2b7adcdb65fe80dbb446",
@@ -41526,7 +41456,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/msexchange/win_exchange_proxylogon_oabvirtualdir.yml",
       "profile": "generic",
       "sha256": "9705b2f3f28a85e9c3d4d97ac4022c686de433e040ee3151b0c9ec61e7b5cbf3",
@@ -41535,7 +41465,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/msexchange/win_exchange_proxyshell_certificate_generation.yml",
       "profile": "generic",
       "sha256": "231164589966c7980323e9cc94bee77bbdf328c51f6bb4febcd4b1e4adadf60a",
@@ -41544,7 +41474,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/msexchange/win_exchange_proxyshell_mailbox_export.yml",
       "profile": "generic",
       "sha256": "610c8a02a046035d0303872385ae81283234858effae7b0a563f7e374560f275",
@@ -41553,7 +41483,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/msexchange/win_exchange_proxyshell_remove_mailbox_export.yml",
       "profile": "generic",
       "sha256": "93d7a165b6055e5190313c883e733804ba4ace766632df0439b4726efd936641",
@@ -41562,7 +41492,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/msexchange/win_exchange_set_oabvirtualdirectory_externalurl.yml",
       "profile": "generic",
       "sha256": "329217678176702de3121a890f0a50b1a6b2df95c6a350f85883543e53a6e58d",
@@ -41571,7 +41501,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/msexchange/win_exchange_transportagent.yml",
       "profile": "generic",
       "sha256": "d48e1a382b744920651b0e77496e48c8f6facd9ac92bf6395e17dc7dceb74dc4",
@@ -41580,7 +41510,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/servicebus/win_hybridconnectionmgr_svc_running.yml",
       "profile": "generic",
       "sha256": "4418a7d691bce51ba36f772262add6130f0fc25b1c7024b867878e6a9480c3be",
@@ -41589,7 +41519,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/system/netlogon/win_system_possible_zerologon_exploitation_using_wellknown_tools.yml",
       "profile": "generic",
       "sha256": "01280cfdc62932dbfb15688746e728686ed578ffbd98606a7d6ecf2c03c9649e",
@@ -41598,7 +41528,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/win_alert_mimikatz_keywords.yml",
       "profile": "generic",
       "sha256": "3d853eb7c1b21f5ec58ea8f95767cebb47446152bc76ab584692e0693ca98fbd",
@@ -41607,7 +41537,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/wmi/win_wmi_persistence.yml",
       "profile": "generic",
       "sha256": "4e79a1e2a6914ad09a9193e41f5a27ead2dc0876ac835099bac516ca49a28c8f",
@@ -41616,7 +41546,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules-emerging-threats/2017/Malware/NotPetya/proc_creation_win_malware_notpetya.yml",
       "profile": "generic",
       "sha256": "12e58eaad9ce4fe14b586a6cc9252de8ecbeccae6faa90ee539db9cc1e3cfb33",
@@ -41625,7 +41555,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules-emerging-threats/2020/Exploits/CVE-2020-0688/win_vul_cve_2020_0688.yml",
       "profile": "generic",
       "sha256": "c43587e92fb24565252b0c77778b5761763b7617515e13138831005f51506c70",
@@ -41634,7 +41564,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules-emerging-threats/2021/Exploits/CVE-2021-1675/win_exploit_cve_2021_1675_printspooler.yml",
       "profile": "generic",
       "sha256": "8c35de58a42ce73fe66b4a4901c46a132e330bebb306dded8ca8410e58ac07b0",
@@ -41643,7 +41573,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules-emerging-threats/2021/Exploits/CVE-2021-1675/win_exploit_cve_2021_1675_printspooler_operational.yml",
       "profile": "generic",
       "sha256": "c1317c1a23981645b6f9d4422d6a0705fffe4fa09d19b43af97a52707cd4b338",
@@ -41652,7 +41582,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules-emerging-threats/2024/Exploits/CVE-2024-37085/win_security_exploit_cve_2024_37085_esxi_admins_group.yml",
       "profile": "generic",
       "sha256": "7ba5347b79a7df210d04afc553d4cd47d47db7fc6f1cd6eb8ea149815849f927",
@@ -41679,7 +41609,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/auditd/execve/lnx_auditd_binary_padding.yml",
       "profile": "linux",
       "sha256": "b4bc9e39c6f8a27d59c7c7ceabd5cc404ef40db20badd32bfd7c78980c390674",
@@ -41688,7 +41618,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/auditd/execve/lnx_auditd_bpfdoor_port_redirect.yml",
       "profile": "linux",
       "sha256": "7472238a0eda6d6ef35c118f5afbe8997003079479e759e1cb60dd7a9029d2e9",
@@ -41697,7 +41627,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/auditd/execve/lnx_auditd_change_file_time_attr.yml",
       "profile": "linux",
       "sha256": "a2b8a1ee2bf22d7f99328e618c58c4b5a2b057f1b9a615a59f2a9c613c395a34",
@@ -41706,7 +41636,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/auditd/execve/lnx_auditd_find_cred_in_files.yml",
       "profile": "linux",
       "sha256": "fcdff3b0e1b3be0c5d816b7601fe8b0da6a16b8468446145f6670b018027d1fa",
@@ -41715,7 +41645,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/auditd/execve/lnx_auditd_susp_histfile_operations.yml",
       "profile": "linux",
       "sha256": "6e1a35503e21c441c8c7ea8aa6ed46b5c105f785a515a72156bd597984c3acad",
@@ -41724,7 +41654,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/auditd/execve/lnx_auditd_system_shutdown_reboot.yml",
       "profile": "linux",
       "sha256": "b18af7835c492443e2676fd414e28590393d152083e0dade8235d6f77197cdef",
@@ -41733,7 +41663,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/clamav/lnx_clamav_relevant_message.yml",
       "profile": "linux",
       "sha256": "ee7a303e38cd842a556d10aa86cb0985853bc869fae1fc425aa11fee0fa695db",
@@ -41742,7 +41672,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/cron/lnx_cron_crontab_file_modification.yml",
       "profile": "linux",
       "sha256": "57fae599a26cc85cc62453bdbff9c226cbffc940bf4e66dc2933244abe937f3e",
@@ -41751,7 +41681,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/guacamole/lnx_guacamole_susp_guacamole.yml",
       "profile": "linux",
       "sha256": "431d8771197cd96e4ebb367eb812d235d74e677f7c70a352a54d4596b28f89e9",
@@ -41760,7 +41690,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/lnx_apt_equationgroup_lnx.yml",
       "profile": "linux",
       "sha256": "39d4bc254ac74c81d226308e39c2887eff0c6696c7cceaac57dd231bbfe449f6",
@@ -41769,7 +41699,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/lnx_buffer_overflows.yml",
       "profile": "linux",
       "sha256": "9560ea4416c85ab76d1de421322016976370b3c937aa24851e1bc2188bb1af71",
@@ -41778,7 +41708,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/lnx_clear_syslog.yml",
       "profile": "linux",
       "sha256": "9a4013f7037340a2112e055eacab73835174eaa0faa940bbb0fba681934f5e12",
@@ -41787,7 +41717,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/lnx_file_copy.yml",
       "profile": "linux",
       "sha256": "5e7382c57d359df1ba9389a00fd8cfdc26a432a93ccbfe632f81f2a08f82ba21",
@@ -41796,7 +41726,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/lnx_ldso_preload_injection.yml",
       "profile": "linux",
       "sha256": "7f1555a53fcc787bfd7fdec9cbda5d7c8c19a7068ceebdef944a4c17d64dac80",
@@ -41805,7 +41735,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/lnx_potential_susp_ebpf_activity.yml",
       "profile": "linux",
       "sha256": "083167cd24127940dc716b5df60a43222bbbb2c789449b306a33f7ba8bea1b8e",
@@ -41814,7 +41744,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/lnx_privileged_user_creation.yml",
       "profile": "linux",
       "sha256": "d3077e7863686f8da3428c8b3d5ab819648fc0dbeead29ac1792ab138a28f967",
@@ -41823,7 +41753,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/lnx_shell_clear_cmd_history.yml",
       "profile": "linux",
       "sha256": "66df93044b76c6f0e52bd2db5a437c89da13a9ad97f8334c9d6f714f0a1a4531",
@@ -41832,7 +41762,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/lnx_shell_susp_commands.yml",
       "profile": "linux",
       "sha256": "6958c20c0ba481e5fd34cd4a7ee85302a685cba63e985c21f58d5a34101c2663",
@@ -41841,7 +41771,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/lnx_shell_susp_log_entries.yml",
       "profile": "linux",
       "sha256": "90e2f9e004bf30c02e6949368332bac8152f20b7255124d1b25b31518c5d09de",
@@ -41850,7 +41780,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/lnx_shell_susp_rev_shells.yml",
       "profile": "linux",
       "sha256": "c81f97017992bebadc7078d631bdbc92475e2db0efce7666d720ecf7e019faa8",
@@ -41859,7 +41789,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/lnx_shellshock.yml",
       "profile": "linux",
       "sha256": "a8f9292981105bad5c92c36b36350d2d81d93ac33388368b0f05f2bb0ca0d58d",
@@ -41868,7 +41798,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/lnx_susp_dev_tcp.yml",
       "profile": "linux",
       "sha256": "3f0da13c9f36f11f99afda19b37bcb7cf2ba334006b49f1a801e5bdae171580c",
@@ -41877,7 +41807,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/lnx_susp_jexboss.yml",
       "profile": "linux",
       "sha256": "de7dfb892c16ab14ec7368d27e8c17cb21da09ecb75cf9d66b9286237351648b",
@@ -41886,7 +41816,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/lnx_symlink_etc_passwd.yml",
       "profile": "linux",
       "sha256": "7f44b24b0be3827ef3ad79a994780a3cce90f26100a5aab3c335a77fc2dfe745",
@@ -41895,7 +41825,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/sshd/lnx_sshd_susp_ssh.yml",
       "profile": "linux",
       "sha256": "8e0302ef07eabcb04ee3d63ffcedce173270ca20e6b6213c83a3d7db8630ce9e",
@@ -41904,7 +41834,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/syslog/lnx_syslog_security_tools_disabling_syslog.yml",
       "profile": "linux",
       "sha256": "98bd182838ebfff1398cbb287557f07cf070926ee5dfaee9a95b053ba915a8bb",
@@ -41913,7 +41843,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/syslog/lnx_syslog_susp_named.yml",
       "profile": "linux",
       "sha256": "5b6242df3e3343be5b0822071a015f66bfbef2efa39930b29546b92fc66bd59b",
@@ -41922,7 +41852,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/linux/builtin/vsftpd/lnx_vsftpd_susp_error_messages.yml",
       "profile": "linux",
       "sha256": "955277148926b4fd458ba9152a2ff52c6b076af9b57b172c191e744a7ca69d96",
@@ -41931,7 +41861,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules-emerging-threats/2018/Exploits/CVE-2018-15473/lnx_sshd_exploit_cve_2018_15473.yml",
       "profile": "linux",
       "sha256": "3e96b73c27e667c37116db20a451803fc13b94a0eb51d9dda98c2abb5c6cc08e",
@@ -41940,7 +41870,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules-emerging-threats/2021/Exploits/CVE-2021-4034/lnx_auth_exploit_cve_2021_4034_pwnkit_lpe.yml",
       "profile": "linux",
       "sha256": "04f089f3936ad459ac5b7fb75afb7466b9af301c3cfb62166d2026b621ace8b2",
@@ -41949,7 +41879,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules-emerging-threats/2022/Exploits/CVE-2022-29799/lnx_exploit_cve_2022_27999_cve_2022_27800.yml",
       "profile": "linux",
       "sha256": "c910aa7a57ae1b51c49fbc7d9d300915b8a15a7ffa19e6827c143fb10fba46f8",
@@ -41958,7 +41888,7 @@
     {
       "approved": true,
       "document": "0",
-      "error": "Value-only string expressions (i.e Full Text Search or 'keywords' search) are not supported by the backend.",
+      "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules-emerging-threats/2023/Exploits/CVE-2023-2283/lnx_sshd_exploit_cve_2023_2283_libssh_authentication_bypass.yml",
       "profile": "linux",
       "sha256": "8192a7bae5f23bfcce907b86d1953466c86569616759d9051712396878927da8",
@@ -41977,10 +41907,10 @@
   },
   "profiles": {
     "generic": {
-      "converted": 2277,
+      "converted": 2282,
       "correlations": 0,
-      "eligible": 2295,
-      "events": 2277,
+      "eligible": 2300,
+      "events": 2282,
       "reference_only": 0
     },
     "linux": {
@@ -41991,10 +41921,10 @@
       "reference_only": 0
     },
     "sysmon": {
-      "converted": 2828,
+      "converted": 2833,
       "correlations": 0,
-      "eligible": 2847,
-      "events": 2828,
+      "eligible": 2852,
+      "events": 2833,
       "reference_only": 0
     }
   },
@@ -68360,8 +68290,8 @@
   "source": "sigmahq",
   "status": "validated",
   "tools": {
-    "pysigma": "1.5.1",
-    "pysigma-backend-sqlite": "2.0.0",
+    "pysigma": "2.0.0",
+    "pysigma-backend-sqlite": "2.1.0",
     "pysigma-pipeline-sysmon": "2.0.0",
     "pysigma-pipeline-windows": "2.0.0",
     "python": "3.14.8",

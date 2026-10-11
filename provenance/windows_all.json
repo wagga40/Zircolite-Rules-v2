@@ -1,12 +1,30 @@
 {
   "deduplication": "Same ID and SQL; prefer SigmaHQ, then source name order. Distinct SQL variants remain.",
   "duplicates_removed": 0,
-  "entries": 5789,
-  "input_entries": 5789,
+  "entries": 7344,
+  "input_entries": 7344,
   "inputs": {
+    "dragon": {
+      "artifacts": {
+        "rules_dragon_windows_merged.json": "5586583b2d9ac986481cf07aa4c0d6fbb0c151c72f650e244e4f5ff527f6f316"
+      },
+      "license": "MIT",
+      "repository": "frknaykc/Dragon-ThreatResearchHQ",
+      "revision": "47b5f65e6e65dc9ce1a4829242cf61ff6e12eb98",
+      "status": "current"
+    },
+    "hatchepsoute": {
+      "artifacts": {
+        "rules_hatchepsoute_windows_merged.json": "ca719377043443facbd13dd709fc7285d0e286aa5ce08ce0d2c1e9f15f31d90d"
+      },
+      "license": "Apache-2.0",
+      "repository": "Hatchepsoute/sigma-rules",
+      "revision": "c04c81bb42b926677d596991a4a50a8afd2c91db",
+      "status": "current"
+    },
     "hayabusa": {
       "artifacts": {
-        "rules_hayabusa_windows_native.json": "5d069c4236909d232c862d016a4f452335921c215b83887e0f1d6470872072f8"
+        "rules_hayabusa_windows_native.json": "fe3590c322965ebe1318f50c2685eadee5f1b9d17b60ffdacdb9f14d674a2aca"
       },
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
@@ -15,16 +33,34 @@
     },
     "joesecurity": {
       "artifacts": {
-        "rules_joesecurity_windows_merged.json": "27711e100617e3fa7749f7db8651a3a9c33a3648631aebd4a084974626bb6e27"
+        "rules_joesecurity_windows_merged.json": "ddae4034d06e16e3fd7ea7ae56de6317afd8c9644456eb8f40559ea5ea63a14a"
       },
       "license": "GPL-3.0",
       "repository": "joesecurity/sigma-rules",
       "revision": "cb91be06c8c95ce63aa9aa5006a7835678136a96",
       "status": "current"
     },
+    "loldrivers": {
+      "artifacts": {
+        "rules_loldrivers_windows_sysmon.json": "31beb81270e06e2c1102f8964304b911a77c58476f327a50b9438149c09c4b79"
+      },
+      "license": "Apache-2.0",
+      "repository": "magicsword-io/LOLDrivers",
+      "revision": "9e8d6b30000dc88951597de5bcb9556daa2a07c1",
+      "status": "current"
+    },
+    "lolrmm": {
+      "artifacts": {
+        "rules_lolrmm_windows_merged.json": "5a047a62215a2a038ee129db609e82c02b8380b3920397ca0bce49057d848c08"
+      },
+      "license": "Apache-2.0",
+      "repository": "magicsword-io/LOLRMM",
+      "revision": "befa4a7f822a858f81aee9ea754af6ec4c34b76f",
+      "status": "current"
+    },
     "mbabinski": {
       "artifacts": {
-        "rules_mbabinski_windows_merged.json": "69cfa14ca549b0a4b580545fcbfa236bc1c85f0fed7cd9f6ff5959c44804bdb5"
+        "rules_mbabinski_windows_merged.json": "13b7404fde4871468094edd652dfcad7a6708c97cdec9c1d57ca3f061b0c2687"
       },
       "license": "GPL-3.0",
       "repository": "mbabinski/Sigma-Rules",
@@ -33,16 +69,25 @@
     },
     "mdecrevoisier": {
       "artifacts": {
-        "rules_mdecrevoisier_windows_merged.json": "4631c7e09b406562bfcd681158727b7a13ea034fdc02fa7369f0769268e07032"
+        "rules_mdecrevoisier_windows_merged.json": "1fbceb54598827c0b12e727d5df662049b28c9179e7a329459c750db2fa2e248"
       },
       "license": "CC0-1.0",
       "repository": "mdecrevoisier/SIGMA-detection-rules",
       "revision": "d61408af8769c74c96296b7ccc92d4bc3abb15af",
       "status": "current"
     },
+    "reversinglabs": {
+      "artifacts": {
+        "rules_reversinglabs_windows_merged.json": "caa8aee3df8f1d52005e02df0a8df5e9fb8a9398c51e0b94cf65f58d30a20796"
+      },
+      "license": "MIT",
+      "repository": "reversinglabs/reversinglabs-siem-rules",
+      "revision": "23fc452b527f2f8e08c26c6dffc0f734e750a2be",
+      "status": "current"
+    },
     "sigmahq": {
       "artifacts": {
-        "rules_windows_merged.json": "b8575e76b3f369b56a566043545335a8067589e8c4f20393ba8e33da1452c605"
+        "rules_windows_merged.json": "f5ac571eaedfe0f40536b41f205375e91ac01dea6deffb7268fd1e18288ea128"
       },
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
@@ -51,11 +96,29 @@
     },
     "tsale": {
       "artifacts": {
-        "rules_tsale_windows_merged.json": "ac8b7e8fb77963785e399c0fc4ec462a3465ae7ad310fec03b8386b73dc369bf"
+        "rules_tsale_windows_merged.json": "f8208acb83742ba4ebb362030c2561d527f9b8c17ab7b714a84790452693ce09"
       },
       "license": "GPL-3.0",
       "repository": "tsale/Sigma_rules",
       "revision": "f5190e6b6c5ba9e6729845f13ac916590e90b0d8",
+      "status": "current"
+    },
+    "tyrian": {
+      "artifacts": {
+        "rules_tyrian_windows_merged.json": "50904ccedfd490064fd0d8f514d07177d91e9c9056d112bbb26d2ddb90aafbf8"
+      },
+      "license": "MIT",
+      "repository": "zshguy/tyrian-detection-pack",
+      "revision": "b2cea417bcbd1316ac571b29a5dc459ce387a7c2",
+      "status": "current"
+    },
+    "wrg11": {
+      "artifacts": {
+        "rules_wrg11_windows_merged.json": "9c83cd5b9330596454aff9bcd3eefa3722b3ecc253da152216270e56e26d9135"
+      },
+      "license": "MIT",
+      "repository": "WRG-11/wrg-sigma-rules",
+      "revision": "5d739770d559c9882bb293bab353f777b8923377",
       "status": "current"
     }
   },
