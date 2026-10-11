@@ -6,9 +6,10 @@ Ready-to-use [Zircolite](https://github.com/wagga40/Zircolite) rulesets, convert
 
 <!-- ruleset-stats:start -->
 
-| Sources | Detection rulesets | [`rules_windows_all.json`](rules_windows_all.json) | Linux rules | Experimental correlations | Last update (UTC) |
-|---|---:|---|---:|---:|---|
-| 13 (all current) | 41 | 7,344 rules, 4,696 unique | 299 | 31 | 2026-10-11 |
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/overview-dark.svg">
+  <img alt="13 of 13 sources current; 7,344 rules in rules_windows_all.json (4,696 unique); 299 Linux rules; 31 experimental correlations; updated 2026-10-11. Severity of unique detections: informational 114, low 351, medium 2,078, high 1,867, critical 290." src="docs/assets/overview-light.svg" width="100%">
+</picture>
 
 Every ruleset, source, severity, ATT&CK tactic, and log source: [dashboard](docs/dashboard.md).
 

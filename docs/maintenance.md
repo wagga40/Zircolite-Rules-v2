@@ -10,7 +10,7 @@ The Windows and Sysmon pipelines still declare `pysigma<2`. `pyproject.toml` ove
 pdm sync --no-self -G test
 pdm run pytest -q                                # set SQLITE_MIN_BINARY to a SQLite 3.38 CLI for 16 more tests
 pdm run python gen_ruleset.py                    # fetch, validate, and publish every source
-pdm run python gen_ruleset.py --verify-release   # check hashes, counts, the README summary, and the dashboard
+pdm run python gen_ruleset.py --verify-release   # check hashes, counts, the README summary, dashboard, and figures
 ```
 
 ## Commands
@@ -25,10 +25,12 @@ Run each with `pdm run python`.
 | Use a local checkout | `gen_ruleset.py --sources sigmahq --source-root sigmahq=./sigma --output-dir build/local` |
 | Reproduce the published inputs | `gen_ruleset.py --revisions-from release-manifest.json --output-dir build/repro` |
 | Compare two releases rule by rule | `ruleset_diff.py . build/repro` |
-| Refresh the README summary and dashboard | `gen_ruleset.py --update-readme-stats` |
+| Refresh the README summary, dashboard, and figures | `gen_ruleset.py --update-readme-stats` |
 | Remove unused cached snapshots | `gen_ruleset.py --prune-cache` |
 
 With unchanged tools, `--revisions-from` reproduces the published rulesets byte for byte. A diff against that output therefore isolates the effect of a code or dependency change.
+
+The README and dashboard figures in `docs/assets/` are animated SVGs rendered by `ruleset_charts.py` from the verified release, in light and dark variants. They animate once, except for the status dot, and stay still for readers who prefer reduced motion.
 
 ## Validation and release
 
@@ -74,7 +76,7 @@ Do not commit regenerated rulesets: the daily update also commits them, and CI p
 
 | Workflow | Runs | Does |
 |---|---|---|
-| `Update.yml` | Daily at 01:23 UTC, on pushes that change generation files, and on demand | Tests in a read-only job, then publishes changed sources, the README summary, and the dashboard. Adds a rule diff to the job summary and keeps a *Rule source validation failures* issue open while a source fails. |
+| `Update.yml` | Daily at 01:23 UTC, on pushes that change generation files, and on demand | Tests in a read-only job, then publishes changed sources, the README summary, the dashboard, and its figures. Adds a rule diff to the job summary and keeps a *Rule source validation failures* issue open while a source fails. |
 | `Update.yml` | Pull requests | Tests and `--verify-release`; never publishes |
 | `dependency-canary.yml` | Weekly and on demand | Resolves the newest allowed dependencies, tests, and regenerates. Keeps a *Dependency canary* issue open while versions, exclusions, or rules would change. |
 

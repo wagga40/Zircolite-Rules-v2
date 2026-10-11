@@ -6,13 +6,18 @@ import tempfile
 from collections import Counter, defaultdict
 from pathlib import Path
 
+from html import escape
+
 from rule_bundles import WINDOWS_ALL, windows_all_files
 from rule_conversion import LEVELS
 from rule_sources import ATTACK_TACTICS, digest
+from ruleset_charts import THEMES, bar_chart
+from ruleset_charts import overview as overview_card
 
 START = "<!-- ruleset-stats:start -->"
 END = "<!-- ruleset-stats:end -->"
 DASHBOARD = Path("docs/dashboard.md")
+FIGURES = Path("docs/assets")
 NO_TACTIC = "(no tactic tag)"
 
 
@@ -99,30 +104,56 @@ def updated(manifest):
     return max((details.get("last_success") or "" for details in manifest["sources"].values()), default="")[:10] or "—"
 
 
-def overview(manifest, rulesets, prefix=""):
-    """One-row summary shared by the README and the dashboard."""
-    statuses = Counter(details["status"] for details in manifest["sources"].values())
-    state = "all current" if set(statuses) == {"current"} else ", ".join(
-        f"{count} {status}" for status, count in sorted(statuses.items()))
+def summary(manifest, rulesets):
+    """Headline figures shared by the README, the dashboard, and the overview card."""
+    sources = manifest["sources"]
     detections = [row for row in rulesets if not row["name"].startswith("experimental/")]
     combined = next((row for row in rulesets if row["name"] == WINDOWS_ALL), None)
     union = lambda rows: len(set().union(*(row["ids"] for row in rows)))
-    linux = union([row for row in detections if row["name"].endswith("_linux.json")])
-    correlations = union([row for row in rulesets if row["name"].startswith("experimental/")])
-    windows = (f"{combined['entries']:,} rules, {combined['unique_ids']:,} unique" if combined else "—")
-    lines = [
-        f"| Sources | Detection rulesets | [`{WINDOWS_ALL}`]({prefix}{WINDOWS_ALL}) | Linux rules "
-        "| Experimental correlations | Last update (UTC) |",
-        "|---|---:|---|---:|---:|---|",
-        f"| {len(manifest['sources'])} ({state}) | {len(detections):,} | {windows} | {linux:,} "
-        f"| {correlations:,} | {updated(manifest)} |",
-    ]
-    behind = [f"{name} ({details['status']}"
-              + (f" since {details['last_success'][:10]})" if details.get("last_success") else ")")
-              for name, details in sorted(manifest["sources"].items()) if details["status"] != "current"]
-    if behind:
-        lines.extend(["", "Not current: " + ", ".join(behind) + ". Stale sources keep their last good rules."])
-    return lines
+    data = {"sources": len(sources), "current": sum(d["status"] == "current" for d in sources.values()),
+            "windows_rules": f"{combined['entries']:,}" if combined else "—",
+            "windows_unique": f"{combined['unique_ids']:,}" if combined else "—",
+            "linux": f"{union([row for row in detections if row['name'].endswith('_linux.json')]):,}",
+            "correlations": f"{union([row for row in rulesets if row['name'].startswith('experimental/')]):,}",
+            "updated": updated(manifest), "severity": combined["severity"] if combined else Counter()}
+    data["alt"] = (f"{data['current']} of {data['sources']} sources current; {data['windows_rules']} rules in "
+                   f"{WINDOWS_ALL} ({data['windows_unique']} unique); {data['linux']} Linux rules; "
+                   f"{data['correlations']} experimental correlations; updated {data['updated']}.")
+    if combined:
+        data["alt"] += " Severity of unique detections: " + ", ".join(
+            f"{level} {data['severity'][level]:,}" for level in LEVELS) + "."
+    return data
+
+
+def behind(manifest):
+    names = [f"{name} ({details['status']}"
+             + (f" since {details['last_success'][:10]})" if details.get("last_success") else ")")
+             for name, details in sorted(manifest["sources"].items()) if details["status"] != "current"]
+    return ["", "Not current: " + ", ".join(names) + ". Stale sources keep their last good rules."] if names else []
+
+
+def picture(name, alt, prefix):
+    """A figure that follows the reader's GitHub theme."""
+    return "\n".join(["<picture>",
+                      f'  <source media="(prefers-color-scheme: dark)" srcset="{prefix}{name}-dark.svg">',
+                      f'  <img alt="{escape(alt)}" src="{prefix}{name}-light.svg" width="100%">',
+                      "</picture>"])
+
+
+def figures(manifest, rulesets):
+    data = summary(manifest, rulesets)
+    combined = next((row for row in rulesets if row["name"] == WINDOWS_ALL), None)
+    files = {}
+    for theme in THEMES:
+        files[FIGURES / f"overview-{theme}.svg"] = overview_card(data, theme)
+        if combined:
+            files[FIGURES / f"tactics-{theme}.svg"] = bar_chart(
+                "ATT&CK tactics", f"Unique detections in {WINDOWS_ALL} per tactic; a rule can have several",
+                [(label, count, label == NO_TACTIC) for label, count in tactic_rows(combined["tactics"])], theme)
+            files[FIGURES / f"logsources-{theme}.svg"] = bar_chart(
+                "Log sources", f"Unique detections in {WINDOWS_ALL} per Sigma category or service, top 15",
+                [(label, count, False) for label, count in logsource_rows(combined["logsources"])], theme)
+    return files
 
 
 def ruleset_table(rows, prefix):
@@ -147,8 +178,17 @@ def tactic_rows(counts):
     return [(labels.get(tactic, tactic), counts[tactic]) for tactic in (*ATTACK_TACTICS, NO_TACTIC) if counts[tactic]]
 
 
+def logsource_rows(counts):
+    return sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:15]
+
+
+def collapsed(summary_text, lines):
+    return ["<details>", f"<summary>{summary_text}</summary>", "", *lines, "", "</details>"]
+
+
 def render_summary(manifest, rulesets):
-    return "\n".join([*overview(manifest, rulesets), "",
+    return "\n".join([picture("overview", summary(manifest, rulesets)["alt"], f"{FIGURES.as_posix()}/"),
+                      *behind(manifest), "",
                       f"Every ruleset, source, severity, ATT&CK tactic, and log source: [dashboard]({DASHBOARD.as_posix()})."])
 
 
@@ -156,7 +196,8 @@ def render_dashboard(manifest, rulesets):
     prefix = "../"
     lines = ["# Ruleset dashboard", "",
              "Generated from the verified release on every update; do not edit.", "",
-             *overview(manifest, rulesets, prefix), "", "## Sources", "",
+             picture("overview", summary(manifest, rulesets)["alt"], "assets/"), *behind(manifest),
+             "", "## Sources", "",
              "| Source | Status | License | Revision | Last success (UTC) | Detection rules |",
              "|---|---|---|---|---|---:|"]
     for name, details in sorted(manifest["sources"].items(), key=lambda item: (item[0] != "sigmahq", item[0])):
@@ -176,9 +217,13 @@ def render_dashboard(manifest, rulesets):
                       "Counts are distinct rules; a rule with several tactics counts once per tactic.", "",
                       "| Info | Low | Medium | High | Critical |", "|---:|---:|---:|---:|---:|",
                       "| " + " | ".join(f"{combined['severity'][level]:,}" for level in LEVELS) + " |", "",
-                      *count_table("ATT&CK tactic", tactic_rows(combined["tactics"])), "",
-                      *count_table("Log source (top 15)", sorted(
-                          combined["logsources"].items(), key=lambda item: (-item[1], item[0]))[:15])])
+                      picture("tactics", "Unique detections per ATT&CK tactic; the table below lists the values.",
+                              "assets/"), "",
+                      *collapsed("ATT&CK tactic table", count_table("ATT&CK tactic", tactic_rows(combined["tactics"]))),
+                      "", picture("logsources", "Unique detections per log source, top 15; the table below lists "
+                                  "the values.", "assets/"), "",
+                      *collapsed("Log source table", count_table("Log source (top 15)",
+                                                               logsource_rows(combined["logsources"])))])
     lines.extend(["", "## Detection rulesets", "",
                   *ruleset_table([row for row in rulesets if not row["name"].startswith("experimental/")], prefix),
                   "", "## Experimental correlation rulesets", "",
@@ -202,9 +247,9 @@ def documentation(output, release):
     """Current and refreshed README and dashboard text for a verified release."""
     manifest, rulesets = release
     original, readme = readme_with_statistics(output, manifest, rulesets)
-    path = output / DASHBOARD
-    current = path.read_bytes().decode("utf-8") if path.exists() else None
-    return {Path("README.md"): (original, readme), DASHBOARD: (current, render_dashboard(manifest, rulesets))}
+    generated = {DASHBOARD: render_dashboard(manifest, rulesets), **figures(manifest, rulesets)}
+    current = lambda name: (output / name).read_bytes().decode("utf-8") if (output / name).exists() else None
+    return {Path("README.md"): (original, readme), **{name: (current(name), text) for name, text in generated.items()}}
 
 
 def update_readme_stats(output):
@@ -223,5 +268,5 @@ def verify_release(output):
     if (output / "README.md").exists():
         for name, (original, updated) in documentation(output, release).items():
             if original != updated:
-                label = "README statistics are" if name.name == "README.md" else "The dashboard is"
+                label = "README statistics are" if name.name == "README.md" else f"{name.as_posix()} is"
                 raise ValueError(f"{label} out of date; run gen_ruleset.py --update-readme-stats")
