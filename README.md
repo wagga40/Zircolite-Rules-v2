@@ -182,11 +182,29 @@ pdm run python gen_ruleset.py --sources tsale --revision tsale=FULL_40_CHARACTER
 
 # Explicit local input; provenance records a local content hash
 pdm run python gen_ruleset.py --sources sigmahq --source-root sigmahq=./sigma --output-dir build/local
+
+# Reproduce the published inputs: every source at its manifest revision
+pdm run python gen_ruleset.py --revisions-from release-manifest.json --output-dir build/repro
+
+# Compare two hash-verified releases rule by rule (Markdown; --json for details)
+pdm run python ruleset_diff.py . build/repro
 ```
+
+`--revisions-from` fetches the Git revision each source has in a release manifest, including the last successful revision of a stale source. Without `--sources` it selects only the pinned sources; `--revision` and `--source-root` take precedence for their source. With unchanged tools and configuration, the regenerated rulesets are byte-identical to the published ones. This isolates the effect of a toolchain or code change from upstream rule changes.
+
+`ruleset_diff.py PUBLISHED CANDIDATE` verifies both releases and reports, per ruleset, which IDs were added or removed, which had their SQL variants changed, and which only changed metadata. `--exit-code` returns 1 when anything changed.
 
 Community outputs depend on both the source revision and the official duplicate-removal baseline. To reproduce them, first generate SigmaHQ at the `official_baseline.revision` recorded in the community provenance, using the same tools and configuration, then generate the community source at its recorded revision. Verify that the official input hashes match `official_baseline.artifacts`. A source-only run uses the published official detections and correlations in its output directory; an empty directory has no official baseline. Audits write reports only and leave rulesets, the manifest, and README unchanged.
 
-The source cache is under `.cache/rule-sources/`. Do not edit cached snapshots. To review a new failure, inspect its upstream YAML and the corresponding report, then fix the adapter or manually add a narrowly scoped exclusion with its exact hash and a reason. No command automatically approves newly failed rules. Dependency upgrades require a deliberate lock update (`pdm lock -G test`) and a full validation run.
+The source cache is under `.cache/rule-sources/`. Do not edit cached snapshots. To review a new failure, inspect its upstream YAML and the corresponding report, then fix the adapter or manually add a narrowly scoped exclusion with its exact hash and a reason. No command approves a newly failed rule. Dependency upgrades require a deliberate lock update (`pdm lock -G test`) and a full validation run.
+
+A converter upgrade can reword the errors that reviewed exclusions match exactly. `exclusion_baseline.py` compares an audit's reports with `exclusions.json`. For a failure at the exact location (source, file hash, document, stage, profile) of one reviewed record that no longer matches, it proposes the new message, grouped by old → new wording for review. New failures, ambiguous locations, and changed file hashes are listed, never approved. Unused records of the audited sources are listed for pruning.
+
+```bash
+pdm run python gen_ruleset.py --audit --revisions-from release-manifest.json --output-dir build/audit
+pdm run python exclusion_baseline.py build/audit/reports            # review only
+pdm run python exclusion_baseline.py build/audit/reports --apply    # keep reasons, update messages
+```
 
 Set `SQLITE_MIN_BINARY` to a SQLite 3.38 CLI to run the minimum-version tests locally; otherwise those 16 cases are skipped. CI builds this version explicitly.
 

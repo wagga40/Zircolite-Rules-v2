@@ -268,6 +268,9 @@ def compile_source(source, spec, root, exclusions):
         # checks must not change the output of an otherwise standalone rule.
         collection = SigmaCollection(selected)
         collection.resolve_rule_references()
+        # pySigma converts referenced rules first, in a version-specific order.
+        # Deduplicate in source order so the same duplicate always survives.
+        rank = {id(rule): index for index, rule in enumerate(selected)}
         backend = sqliteBackend(pipeline_for(profile), timestamp_field="SystemTime",
                                 timestamp_format="iso", event_id_field="row_id")
         backend.init_processing_pipeline("zircolite")
@@ -289,10 +292,11 @@ def compile_source(source, spec, root, exclusions):
                 try:
                     entry["filename"] = document.path
                     validate_entry(entry)
-                    (correlations if is_correlation else events).append(entry)
+                    (correlations if is_correlation else events).append((rank[id(rule)], entry))
                 except Exception as exc:
                     failures.append(error_record(document, "validate", profile, exc))
-        outputs[profile] = {"events": deduplicate(events), "correlations": deduplicate(correlations)}
+        outputs[profile] = {kind: deduplicate(entry for _, entry in sorted(entries, key=lambda item: item[0]))
+                            for kind, entries in (("events", events), ("correlations", correlations))}
         report["profiles"][profile] = {
             "eligible": len(selected), "converted": converted, "reference_only": reference_only,
             "events": len(outputs[profile]["events"]), "correlations": len(outputs[profile]["correlations"]),

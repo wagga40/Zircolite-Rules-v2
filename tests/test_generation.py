@@ -345,3 +345,41 @@ def test_retirement_is_rolled_back_on_promotion_error(tmp_path, monkeypatch):
     assert gen_ruleset.generate(*args) == ["test"]
     assert retired.read_bytes() == b"old variant"
     assert json.loads((output / "release-manifest.json").read_text())["sources"]["test"]["status"] == "stale"
+
+
+def test_revisions_from_manifest_pins_published_sources(tmp_path, monkeypatch):
+    pinned, other = "a" * 40, "b" * 40
+    registry = tmp_path / "sources.json"
+    registry.write_text(json.dumps({name: SPEC for name in ("pinned", "local", "unpublished")}))
+    manifest = tmp_path / "release-manifest.json"
+    manifest.write_text(json.dumps({"sources": {
+        "pinned": {"revision": pinned}, "local": {"revision": "local-sha256:" + "c" * 64},
+        "removed": {"revision": other}}}))
+    calls = []
+    monkeypatch.setattr(gen_ruleset, "generate", lambda *args: calls.append(args) or [])
+    def run(*extra):
+        monkeypatch.setattr(gen_ruleset.sys, "argv", ["gen_ruleset.py", "--registry", str(registry),
+                                                      "--revisions-from", str(manifest), *extra])
+        assert gen_ruleset.main() == 0
+        _, selected, *_, roots, revisions, _ = calls.pop()
+        return selected, roots, revisions
+    assert run() == (["pinned"], {}, {"pinned": pinned})
+    assert run("--revision", f"pinned={other}") == (["pinned"], {}, {"pinned": other})
+    assert run("--source-root", f"pinned={tmp_path}") == (["pinned"], {"pinned": str(tmp_path)}, {})
+    assert run("--sources", "unpublished") == (["unpublished"], {}, {"pinned": pinned})
+
+
+def test_duplicate_origin_does_not_depend_on_reference_order(tmp_path, monkeypatch):
+    from sigma.collection import SigmaCollection
+    root = source(tmp_path)
+    (root / "rules" / "z_copy.yml").write_text(yaml.safe_dump(detection(title="Copy")))
+    expected, _ = compile_source("test", SPEC, root, [])
+    original = SigmaCollection.resolve_rule_references
+    def other_order(self):
+        # Idempotent: pySigma may resolve the same collection more than once.
+        original(self)
+        self.rules.sort(key=lambda rule: rule.title)
+    monkeypatch.setattr(SigmaCollection, "resolve_rule_references", other_order)
+    outputs, _ = compile_source("test", SPEC, root, [])
+    assert outputs == expected
+    assert [rule["filename"] for rule in outputs["sysmon"]["events"]] == ["rules/example.yaml"]
