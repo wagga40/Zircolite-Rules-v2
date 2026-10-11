@@ -383,3 +383,40 @@ def test_duplicate_origin_does_not_depend_on_reference_order(tmp_path, monkeypat
     outputs, _ = compile_source("test", SPEC, root, [])
     assert outputs == expected
     assert [rule["filename"] for rule in outputs["sysmon"]["events"]] == ["rules/example.yaml"]
+
+
+def test_regex_rules_convert_for_every_profile(tmp_path):
+    rule = detection(detection={"s": {"CommandLine|re": "evil.*\\.exe"}, "condition": "s"})
+    outputs, report = compile_source("test", SPEC, source(tmp_path, [rule]), [])
+    assert report["status"] == "validated"
+    assert all("REGEXP" in outputs[profile]["events"][0]["rule"][0] for profile in SPEC["profiles"])
+
+
+def test_regex_rejected_by_re2_is_a_reviewable_parse_failure(tmp_path):
+    rule = detection(id=str(uuid.uuid4()), detection={"s": {"CommandLine|re": "(?<!good)evil"}, "condition": "s"})
+    root = source(tmp_path, [detection(), rule])
+    _, report = compile_source("test", SPEC, root, [])
+    failure, = report["failures"]
+    assert (report["status"], failure["stage"], failure["profile"]) == ("failed", "parse", "*")
+    _, report = compile_source("test", SPEC, root, [{**failure, "source": "test", "reason": "Reviewed lookbehind"}])
+    assert report["status"] == "validated"
+
+
+def test_keyword_rules_stay_excluded_conversion_failures(tmp_path):
+    rule = detection(id=str(uuid.uuid4()), detection={"keywords": ["mimikatz"], "condition": "keywords"})
+    outputs, report = compile_source("test", SPEC, source(tmp_path, [detection(), rule]), [])
+    assert sorted((f["stage"], f["profile"]) for f in report["failures"]) == [
+        ("convert", "generic"), ("convert", "sysmon")]
+    assert all(entry["schema_version"] == 2 for kinds in outputs.values() for entries in kinds.values()
+               for entry in entries)
+
+
+def test_conversion_never_loads_attack_or_d3fend_data(tmp_path, monkeypatch):
+    from sigma.data import mitre_attack, mitre_d3fend
+    def offline():
+        raise AssertionError("Conversion must not fetch ATT&CK or D3FEND data")
+    monkeypatch.setattr(mitre_attack, "_load_mitre_attack_data", offline)
+    monkeypatch.setattr(mitre_d3fend, "_load_mitre_d3fend_data", offline)
+    rule = detection(tags=["attack.execution", "attack.t1059.001", "cve.2024-1234"])
+    _, report = compile_source("test", SPEC, source(tmp_path, [rule]), [])
+    assert report["status"] == "validated"

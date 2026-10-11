@@ -2,7 +2,7 @@
 
 Sigma rules compiled to validated SQLite JSON rulesets for [Zircolite](https://github.com/wagga40/Zircolite). The daily workflow updates each source independently. A source that fails validation keeps its previous rulesets; [release-manifest.json](release-manifest.json) identifies their revision and marks them stale.
 
-Generation uses **pySigma-backend-sqlite 2.0.0**, pySigma 1.5.1 or later within major version 1, and Python 3.14. Exact package versions are recorded in `pdm.lock` and the manifest. Source revisions are resolved once and downloaded as immutable snapshots. Local submodule checkouts are not used or modified; the historical backend submodule entry remains for checkout compatibility.
+Generation uses **pySigma-backend-sqlite 2.1.0**, pySigma 2.0.0 or later within major version 2, and Python 3.14. Exact package versions are recorded in `pdm.lock` and the manifest. The Windows and Sysmon pipeline releases still declare `pysigma<2`; a PDM resolution override in `pyproject.toml` admits pySigma 2 until they are re-released. Source revisions are resolved once and downloaded as immutable snapshots. Local submodule checkouts are not used or modified; the historical backend submodule entry remains for checkout compatibility.
 
 ## Available rulesets
 
@@ -128,7 +128,7 @@ Adapters normalize metadata such as scalar references, nonstandard status labels
 
 Community ATT&CK tags are lowercased, known spelling errors and technique-name aliases are corrected, and duplicate tags are removed, with original tags retained in provenance. Empty ATT&CK tags and the ambiguous `attack.privilege_execution` label are removed without guessing a tactic. Unknown malformed ATT&CK tags fail validation. This offline check accepts current hyphenated and legacy underscore tactic names and checks identifier syntax; it does not verify every identifier against the latest ATT&CK catalog.
 
-Upstream detection predicates are not rewritten to repair invalid conditions. Legacy aggregation syntax, malformed rules, and fieldless keyword detections remain visible exclusions. Collection actions, including legacy `action: correlation` and `global`/`reset`/`repeat`, are explicitly reported as unsupported and require a reviewed exclusion to publish the source. mdecrevoisier templates containing lower-case `%organization_value%` placeholders are excluded, along with dependent correlations. Windows environment-variable literals such as `%COMSPEC%` remain intact.
+Upstream detection predicates are not rewritten to repair invalid conditions. Legacy aggregation syntax, malformed rules, and fieldless keyword detections remain visible exclusions. The backend converts keyword detections only with a full-text column (`fulltext_field`, ruleset schema version 3), which Zircolite does not provide, so generation keeps schema version 2. Collection actions, including legacy `action: correlation` and `global`/`reset`/`repeat`, are explicitly reported as unsupported and require a reviewed exclusion to publish the source. mdecrevoisier templates containing lower-case `%organization_value%` placeholders are excluded, along with dependent correlations. Windows environment-variable literals such as `%COMSPEC%` remain intact.
 
 Applicability is based on product, explicit event fields, and installed pipeline mappings. An empty channel allow-list does not by itself exclude a rule. Exact official duplicates are removed by ID and generated SQL; different SQL variants remain and can still overlap semantically. Conversion counts are not a measure of unique threat coverage.
 
