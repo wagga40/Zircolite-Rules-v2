@@ -1,0 +1,171 @@
+name: Dependency canary
+
+# Resolves the newest dependencies allowed by the resolution overrides,
+# regenerates the published source revisions with them, and reports what would
+# change. It never commits; upgrades still go through a reviewed lock update.
+on:
+  schedule:
+    - cron: '41 4 * * 1'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: dependency-canary
+  cancel-in-progress: true
+
+jobs:
+  # Runs newly published, unreviewed packages, so it holds no write permission.
+  canary:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      attention: ${{ steps.summary.outputs.attention }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          submodules: false
+          persist-credentials: false
+
+      - uses: pdm-project/setup-pdm@544d7237314ee09c256785bd360f6b30add38b37 # v4.6
+        with:
+          python-version: '3.14'
+          version: '2.29.2'
+
+      - name: Resolve the newest dependencies
+        id: resolve
+        continue-on-error: true
+        run: pdm update --unconstrained --update-all --no-sync 2>&1 | tee "$RUNNER_TEMP/resolve.log"
+
+      - name: Install the resolved dependencies
+        id: install
+        if: steps.resolve.outcome == 'success'
+        continue-on-error: true
+        run: pdm sync --no-self -G test --clean
+
+      - name: Compare converter versions
+        id: versions
+        if: steps.install.outcome == 'success'
+        continue-on-error: true
+        run: pdm run python dependency_canary.py --exit-code > "$RUNNER_TEMP/versions.md"
+
+      - name: Test with the resolved dependencies
+        id: tests
+        if: steps.install.outcome == 'success'
+        continue-on-error: true
+        run: pdm run pytest -q
+
+      - name: Regenerate the published revisions
+        id: generate
+        if: steps.install.outcome == 'success'
+        continue-on-error: true
+        run: pdm run python gen_ruleset.py --revisions-from release-manifest.json --output-dir "$RUNNER_TEMP/candidate"
+
+      - name: Review exclusions against the new reports
+        id: exclusions
+        if: steps.install.outcome == 'success' && steps.generate.outcome != 'skipped'
+        continue-on-error: true
+        run: pdm run python exclusion_baseline.py "$RUNNER_TEMP/candidate/reports" --exit-code > "$RUNNER_TEMP/exclusions.md"
+
+      - name: Compare rulesets with the published release
+        id: diff
+        if: steps.install.outcome == 'success' && steps.generate.outcome != 'skipped'
+        continue-on-error: true
+        run: pdm run python ruleset_diff.py . "$RUNNER_TEMP/candidate" --exit-code > "$RUNNER_TEMP/diff.md"
+
+      - name: Summarize
+        id: summary
+        if: always()
+        shell: bash
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          RESOLVE: ${{ steps.resolve.outcome }}
+          INSTALL: ${{ steps.install.outcome }}
+          VERSIONS: ${{ steps.versions.outcome }}
+          TESTS: ${{ steps.tests.outcome }}
+          GENERATE: ${{ steps.generate.outcome }}
+          EXCLUSIONS: ${{ steps.exclusions.outcome }}
+          DIFF: ${{ steps.diff.outcome }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/canary"
+          report="$RUNNER_TEMP/canary/report.md"
+          attention=no
+          {
+            echo "# Dependency canary"
+            echo
+            echo "[Run]($RUN_URL). A *failure* outcome for versions, exclusions, or ruleset diff means something changed or needs review."
+            echo
+            echo "| Step | Outcome |"
+            echo "|---|---|"
+            for step in RESOLVE INSTALL VERSIONS TESTS GENERATE EXCLUSIONS DIFF; do
+              echo "| ${step,,} | ${!step:-skipped} |"
+              if [ "${!step}" = failure ]; then attention=yes; fi
+            done
+            if [ "$RESOLVE" != success ]; then
+              echo
+              echo '<details><summary>Resolution log</summary>'
+              echo
+              echo '~~~'
+              tail -n 40 "$RUNNER_TEMP/resolve.log"
+              echo '~~~'
+              echo '</details>'
+            fi
+            for part in versions exclusions diff; do
+              if [ -s "$RUNNER_TEMP/$part.md" ]; then
+                echo
+                cat "$RUNNER_TEMP/$part.md"
+              fi
+            done
+          } > "$report"
+          cat "$report" >> "$GITHUB_STEP_SUMMARY"
+          echo "attention=$attention" >> "$GITHUB_OUTPUT"
+
+      - name: Upload canary results
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: dependency-canary
+          path: |
+            ${{ runner.temp }}/canary/report.md
+            ${{ runner.temp }}/resolve.log
+            ${{ runner.temp }}/candidate/reports/
+            pdm.lock
+          if-no-files-found: warn
+
+  # Installs nothing, runs no repository code, and publishes no text produced
+  # by the canary job; the details stay in that job's summary and artifact.
+  report:
+    needs: canary
+    if: always() && needs.canary.outputs.attention != ''
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Track the result in an issue
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          ATTENTION: ${{ needs.canary.outputs.attention }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          case "$ATTENTION" in
+            yes|no) ;;
+            *) echo "Unexpected canary result" >&2; exit 1 ;;
+          esac
+          title='Dependency canary'
+          number=$(gh issue list --state open --search "in:title \"$title\"" --json number,title \
+            --jq "map(select(.title == \"$title\"))[0].number // empty")
+          if [ "$ATTENTION" = yes ]; then
+            printf '%s\n' "The latest dependency canary found changes or failures: $RUN_URL" "" \
+              "Its job summary lists converter versions, test and generation outcomes, exclusion changes, and rule differences; the dependency-canary artifact holds the reports and resolved lock." \
+              > issue.md
+            if [ -n "$number" ]; then
+              gh issue edit "$number" --body-file issue.md
+            else
+              gh issue create --title "$title" --body-file issue.md
+            fi
+          elif [ -n "$number" ]; then
+            gh issue close "$number" --comment "Dependencies match the published release again: $RUN_URL"
+          fi
