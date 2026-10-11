@@ -5,6 +5,7 @@ import importlib.metadata
 import json
 import os
 import platform
+import re
 import sqlite3
 import sys
 import tempfile
@@ -188,6 +189,13 @@ def generate(registry, sources, output, cache, exclusions, local_roots=None, rev
     return failed
 
 
+def manifest_revisions(path):
+    """Published Git revisions, so a run can reproduce a release's inputs."""
+    sources = json.loads(Path(path).read_bytes()).get("sources", {})
+    return {name: details["revision"] for name, details in sources.items()
+            if re.fullmatch(r"[0-9a-f]{40}", details.get("revision") or "")}
+
+
 def assignments(values):
     result = {}
     for value in values:
@@ -209,6 +217,8 @@ def main():
                         help="Explicit local input override, recorded with a content hash")
     parser.add_argument("--revision", action="append", default=[], metavar="SOURCE=SHA",
                         help="Fetch an immutable revision instead of resolving the branch")
+    parser.add_argument("--revisions-from", type=Path, metavar="MANIFEST",
+                        help="Fetch the revisions a release manifest records; default sources: those pinned")
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--audit", action="store_true", help="Write validation reports only; never publish rules")
     mode.add_argument("--verify-release", action="store_true", help="Verify published hashes, counts, and README statistics and exit")
@@ -222,7 +232,12 @@ def main():
         return 0
     registry = read_json(args.registry, {})
     roots, revisions = assignments(args.source_root), assignments(args.revision)
-    selected = args.sources or list(registry)
+    if args.revisions_from:
+        pinned = {name: revision for name, revision in manifest_revisions(args.revisions_from).items()
+                  if name in registry and name not in roots}
+        revisions = {**pinned, **revisions}
+    selected = args.sources or [name for name in registry
+                                if not args.revisions_from or name in revisions or name in roots]
     unknown = (set(selected) | roots.keys() | revisions.keys()) - registry.keys()
     if unknown:
         parser.error("Unknown sources: " + ", ".join(sorted(unknown)))
