@@ -7,11 +7,16 @@ import yaml
 
 import gen_ruleset
 from rule_conversion import LEVELS
-from ruleset_stats import END, START, read_release, update_readme_stats, verify_release
+from ruleset_stats import DASHBOARD, END, START, read_release, update_readme_stats, verify_release
 from test_generation import SPEC, detection, source
 from test_sql_execution import definitions
 
 README = "# Project\n\nHandwritten introduction: café.\n\n" + START + "\nold statistics\n" + END + "\n\nKeep this footer.\n"
+ROW = "| [{0}](https://github.com/example/rules) | {1} |"
+
+
+def dashboard(output):
+    return (output / DASHBOARD).read_text()
 
 
 def release(tmp_path, docs=None):
@@ -33,28 +38,29 @@ def test_statistics_count_entries_ids_and_exact_levels(tmp_path):
     assert merged["entries"] == 12
     assert merged["unique_ids"] == 5
     assert merged["levels"] == dict.fromkeys(LEVELS, 2) | {"informational": 4}
-    text = (output / "README.md").read_text()
-    assert "| 12 | 5 | 4 | 2 | 2 | 2 | 2 |" in text
+    text, board = (output / "README.md").read_text(), dashboard(output)
     assert text.startswith(README.partition(START)[0])
     assert text.endswith(README.partition(END)[2])
-    assert "[rules_test_windows_merged.json](rules_test_windows_merged.json)" in text
-    assert "### Experimental correlation rulesets\n\nNo published rulesets." in text
-    assert "| test | current |" in text
-    before = (output / "README.md").read_bytes()
-    modified = (output / "README.md").stat().st_mtime_ns
+    assert "| 1 (all current) | 4 | 12 rules, 5 unique |" in text and "[dashboard](docs/dashboard.md)" in text
+    assert "| 12 | 5 | 4 | 2 | 2 | 2 | 2 |" in board
+    assert "[rules_test_windows_merged.json](../rules_test_windows_merged.json)" in board
+    assert board.split("## Experimental correlation rulesets")[1].count("No published rulesets.") == 1
+    assert ROW.format("test", "current") + " MIT |" in board
+    paths = [output / "README.md", output / DASHBOARD]
+    before = [(path.read_bytes(), path.stat().st_mtime_ns) for path in paths]
     update_readme_stats(output)
-    assert (output / "README.md").read_bytes() == before
-    assert (output / "README.md").stat().st_mtime_ns == modified
+    assert [(path.read_bytes(), path.stat().st_mtime_ns) for path in paths] == before
     verify_release(output)
 
 
 def test_correlation_statistics_are_separate(tmp_path):
     _, output, _ = release(tmp_path, definitions())
-    text = (output / "README.md").read_text()
-    assert "### Detection rulesets\n\nNo published rulesets." in text
-    assert "[rules_test_windows_sysmon_correlation.json](experimental/rules_test_windows_sysmon_correlation.json)" in text
-    assert "_correlation_high.json" not in text
-    assert "| 1 | 1 | 0 | 0 | 0 | 1 | 0 |" in text
+    board = dashboard(output)
+    assert "## Detection rulesets\n\nNo published rulesets." in board
+    assert ("[rules_test_windows_sysmon_correlation.json](../experimental/rules_test_windows_sysmon_correlation.json)"
+            in board)
+    assert "_correlation_high.json" not in board
+    assert "| 1 | 1 | 0 | 0 | 0 | 1 | 0 |" in board
 
 
 def test_partial_failures_and_source_only_updates_keep_published_counts(tmp_path):
@@ -73,9 +79,10 @@ def test_partial_failures_and_source_only_updates_keep_published_counts(tmp_path
     _, rows = read_release(output)
     assert next(row for row in rows if row["name"] == "rules_bad_windows_sysmon.json")["entries"] == 1
     assert next(row for row in rows if row["name"] == "rules_good_windows_sysmon.json")["entries"] == 2
-    assert "| bad | stale |" in (output / "README.md").read_text()
+    assert ROW.format("bad", "stale") in dashboard(output)
+    assert "Not current: bad (stale since 20" in (output / "README.md").read_text()
     assert not gen_ruleset.generate(registry, ["good"], output, tmp_path / "cache", [], roots)
-    assert "| bad | stale |" in (output / "README.md").read_text()
+    assert ROW.format("bad", "stale") in dashboard(output)
     verify_release(output)
 
 
@@ -85,9 +92,9 @@ def test_unavailable_source_has_no_invented_counts(tmp_path, monkeypatch):
     monkeypatch.setattr(gen_ruleset, "fetch_source", unavailable)
     (tmp_path / "README.md").write_text(README)
     assert gen_ruleset.generate({"test": SPEC}, ["test"], tmp_path, tmp_path / "cache", []) == ["test"]
-    text = (tmp_path / "README.md").read_text()
-    assert "| test | unavailable | — | — |" in text
-    assert "[rules_test" not in text
+    assert ROW.format("test", "unavailable") + " — | — | — | — |" in dashboard(tmp_path)
+    assert "[rules_test" not in dashboard(tmp_path)
+    assert "Not current: test (unavailable)." in (tmp_path / "README.md").read_text()
     verify_release(tmp_path)
 
 
@@ -159,8 +166,33 @@ def test_retained_legacy_variants_are_verified_but_not_advertised(tmp_path):
     gen_ruleset.write_json(output / "release-manifest.json", manifest)
     gen_ruleset.rebuild_windows_all(output)
     update_readme_stats(output)
-    assert name not in (output / "README.md").read_text()
+    assert name not in (output / "README.md").read_text() + dashboard(output)
     verify_release(output)
     (output / name).write_text("[]")
     with pytest.raises(ValueError, match="hash mismatch"):
         verify_release(output)
+
+
+def test_dashboard_drift_is_rejected_and_repaired(tmp_path):
+    _, output, _ = release(tmp_path)
+    (output / DASHBOARD).write_text("edited by hand\n")
+    with pytest.raises(ValueError, match="dashboard is out of date"):
+        verify_release(output)
+    (output / DASHBOARD).unlink()
+    with pytest.raises(ValueError, match="dashboard is out of date"):
+        verify_release(output)
+    update_readme_stats(output)
+    verify_release(output)
+
+
+def test_dashboard_counts_distinct_rules_by_tactic_category_and_severity(tmp_path):
+    docs = [detection(tags=["attack.execution", "attack.t1059"]),
+            detection(id=str(uuid.uuid4()), tags=["attack.defense_evasion", "attack.execution"], level="low"),
+            detection(id=str(uuid.uuid4()), logsource={"product": "windows", "service": "security"},
+                      detection={"s": {"EventID": 4624}, "condition": "s"}, level="low")]
+    _, output, _ = release(tmp_path, docs)
+    section = dashboard(output).split("## Inside `rules_windows_all.json`")[1].split("## Detection rulesets")[0]
+    assert "| 0 | 2 | 0 | 1 | 0 |" in section
+    assert "| Execution | 2 |\n| Defense Evasion | 1 |\n| (no tactic tag) | 1 |" in section
+    # Generic variants become Security 4688 rules; they still count as process_creation.
+    assert "| process_creation | 2 |\n| service: security | 1 |" in section

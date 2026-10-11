@@ -8,6 +8,6 @@ These files are generated and SQL-validated, but require integration with the ba
 - Preserve `required_fields`, `result_type`, `schema_version`, and `correlation_plan`. Use `sigma.backends.sqlite.runtime.execute_plan` to obtain alerts, event evidence, and diagnostics.
 - Results describe qualifying occurrences, windows, group keys, metrics, and evidence. They are not ordinary event rows.
 - Missing group keys and invalid timestamps exclude events; incomplete absence windows do not produce alerts. Preserve these diagnostics in the application.
-- Each source/profile has one full-severity file. Dependencies, including low-severity reference-only rules, are embedded during conversion. Local filtering must preserve complete entries and their plans; see the [severity migration instructions](../README.md#migrating-severity-filtered-downloads).
+- Each source/profile has one full-severity file. Dependencies, including low-severity reference-only rules, are embedded during conversion. Local filtering must preserve complete entries and their plans; see the [filtering instructions](../docs/rulesets.md#filtering).
 
 For the result contract, see the [backend migration guide](https://github.com/SigmaHQ/pySigma-backend-sqlite/blob/v2.1.0/docs/migration-v2.md). Source revisions, licenses, and counts are in [the release manifest](../release-manifest.json).
