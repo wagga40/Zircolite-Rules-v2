@@ -2,7 +2,7 @@
   "aggregates": {
     "windows_all": {
       "artifacts": {
-        "provenance/windows_all.json": "90efaa4dc11f51d2126978b9a80d3df64da83de497ef6a49efc48fc9ddeb4e56",
+        "provenance/windows_all.json": "4b9f8d7a31325ec131149e166fc4a4ab17e3de29d16fc48045def1548c4fd99b",
         "rules_windows_all.json": "c0ed870b88a7ec68570354e7a657318f7e225b3686f1ced0a3814ac95bf05caf"
       },
       "inputs": {
@@ -57,7 +57,7 @@
           },
           "license": "Apache-2.0",
           "repository": "magicsword-io/LOLRMM",
-          "revision": "befa4a7f822a858f81aee9ea754af6ec4c34b76f",
+          "revision": "1c5e9dc042a62c7d2e0920b1679a2be407ca6eb0",
           "status": "current"
         },
         "mbabinski": {
@@ -272,15 +272,15 @@
     "lolrmm": {
       "artifacts": {
         "licenses/lolrmm.txt": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
-        "provenance/lolrmm.json": "38c348fbe6ec625eb4204c7ace233f8c547cb8ead2266930d662f87189d6d3f2",
+        "provenance/lolrmm.json": "c9714276e406cbcb100c22621d2918fb03d6592e403b9d5ec547d03b9b6e142c",
         "rules_lolrmm_windows_generic.json": "ffb3c22f1932e8cb5665bbf6da39a6aa32f146fd0c393a98751b4511b59faead",
         "rules_lolrmm_windows_merged.json": "5a047a62215a2a038ee129db609e82c02b8380b3920397ca0bce49057d848c08",
         "rules_lolrmm_windows_sysmon.json": "db862ef8e8fdfe6507ac51a3fb3237eb3bed25a119fec2d88c07143e8f1a8ffa"
       },
-      "last_success": "2026-10-11T09:16:12+00:00",
+      "last_success": "2026-10-12T07:28:35+00:00",
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLRMM",
-      "revision": "befa4a7f822a858f81aee9ea754af6ec4c34b76f",
+      "revision": "1c5e9dc042a62c7d2e0920b1679a2be407ca6eb0",
       "rule_counts": {
         "rules_lolrmm_windows_generic.json": 371,
         "rules_lolrmm_windows_merged.json": 1098,
