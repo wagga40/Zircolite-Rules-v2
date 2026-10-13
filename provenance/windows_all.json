@@ -28,7 +28,7 @@
       },
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
-      "revision": "04af3d207cae784183e0e5e82c1132ee866bbd67",
+      "revision": "cde84eef71b2093dc2733b919ff958d409df940c",
       "status": "current"
     },
     "joesecurity": {
@@ -42,11 +42,11 @@
     },
     "loldrivers": {
       "artifacts": {
-        "rules_loldrivers_windows_sysmon.json": "31beb81270e06e2c1102f8964304b911a77c58476f327a50b9438149c09c4b79"
+        "rules_loldrivers_windows_sysmon.json": "f39ef5c9d215457ab10703f762aa8fb2fcca33ac1ecc0019d263a59cc9b07e95"
       },
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLDrivers",
-      "revision": "9e8d6b30000dc88951597de5bcb9556daa2a07c1",
+      "revision": "6f6f5b49fdf45ba007db1b87991c5be4a4f844e1",
       "status": "current"
     },
     "lolrmm": {
@@ -55,7 +55,7 @@
       },
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLRMM",
-      "revision": "1c5e9dc042a62c7d2e0920b1679a2be407ca6eb0",
+      "revision": "0922dcedb37861685f77c22b190318e53a5d47c1",
       "status": "current"
     },
     "mbabinski": {
@@ -92,7 +92,7 @@
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
       "revision": "8a4813404ea3074890e0cda9272d4d1a8b2941d6",
-      "status": "current"
+      "status": "stale"
     },
     "tsale": {
       "artifacts": {
@@ -114,14 +114,14 @@
     },
     "wrg11": {
       "artifacts": {
-        "rules_wrg11_windows_merged.json": "9c83cd5b9330596454aff9bcd3eefa3722b3ecc253da152216270e56e26d9135"
+        "rules_wrg11_windows_merged.json": "af6179590238859513801492eacefd20343201c64540700810026ab4770f6b3f"
       },
       "license": "MIT",
       "repository": "WRG-11/wrg-sigma-rules",
-      "revision": "5d739770d559c9882bb293bab353f777b8923377",
+      "revision": "edae7c923441d88488dae78cfd705529b256b4e5",
       "status": "current"
     }
   },
   "name": "windows_all",
-  "status": "current"
+  "status": "stale"
 }

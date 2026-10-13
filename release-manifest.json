@@ -2,8 +2,8 @@
   "aggregates": {
     "windows_all": {
       "artifacts": {
-        "provenance/windows_all.json": "4b9f8d7a31325ec131149e166fc4a4ab17e3de29d16fc48045def1548c4fd99b",
-        "rules_windows_all.json": "c0ed870b88a7ec68570354e7a657318f7e225b3686f1ced0a3814ac95bf05caf"
+        "provenance/windows_all.json": "91a5fc6abce154d8a003af43ab126dd37c71940666b091f49e0c922805d50bbb",
+        "rules_windows_all.json": "5cda6310d8d4b301e2239491f2753ac3cf30d72b095a2a19a4b9ed1bbbc29eae"
       },
       "inputs": {
         "dragon": {
@@ -30,7 +30,7 @@
           },
           "license": "DRL-1.1",
           "repository": "Yamato-Security/hayabusa-rules",
-          "revision": "04af3d207cae784183e0e5e82c1132ee866bbd67",
+          "revision": "cde84eef71b2093dc2733b919ff958d409df940c",
           "status": "current"
         },
         "joesecurity": {
@@ -44,11 +44,11 @@
         },
         "loldrivers": {
           "artifacts": {
-            "rules_loldrivers_windows_sysmon.json": "31beb81270e06e2c1102f8964304b911a77c58476f327a50b9438149c09c4b79"
+            "rules_loldrivers_windows_sysmon.json": "f39ef5c9d215457ab10703f762aa8fb2fcca33ac1ecc0019d263a59cc9b07e95"
           },
           "license": "Apache-2.0",
           "repository": "magicsword-io/LOLDrivers",
-          "revision": "9e8d6b30000dc88951597de5bcb9556daa2a07c1",
+          "revision": "6f6f5b49fdf45ba007db1b87991c5be4a4f844e1",
           "status": "current"
         },
         "lolrmm": {
@@ -57,7 +57,7 @@
           },
           "license": "Apache-2.0",
           "repository": "magicsword-io/LOLRMM",
-          "revision": "1c5e9dc042a62c7d2e0920b1679a2be407ca6eb0",
+          "revision": "0922dcedb37861685f77c22b190318e53a5d47c1",
           "status": "current"
         },
         "mbabinski": {
@@ -94,7 +94,7 @@
           "license": "DRL-1.1",
           "repository": "SigmaHQ/sigma",
           "revision": "8a4813404ea3074890e0cda9272d4d1a8b2941d6",
-          "status": "current"
+          "status": "stale"
         },
         "tsale": {
           "artifacts": {
@@ -116,18 +116,18 @@
         },
         "wrg11": {
           "artifacts": {
-            "rules_wrg11_windows_merged.json": "9c83cd5b9330596454aff9bcd3eefa3722b3ecc253da152216270e56e26d9135"
+            "rules_wrg11_windows_merged.json": "af6179590238859513801492eacefd20343201c64540700810026ab4770f6b3f"
           },
           "license": "MIT",
           "repository": "WRG-11/wrg-sigma-rules",
-          "revision": "5d739770d559c9882bb293bab353f777b8923377",
+          "revision": "edae7c923441d88488dae78cfd705529b256b4e5",
           "status": "current"
         }
       },
       "rule_counts": {
         "rules_windows_all.json": 7344
       },
-      "status": "current"
+      "status": "stale"
     }
   },
   "schema_version": 1,
@@ -198,13 +198,13 @@
       "artifacts": {
         "experimental/rules_hayabusa_windows_native_correlation.json": "0bcec5b3066f6ac4ef6d946d6dc89f8fe0e59ace5920669251afe562a594dc36",
         "licenses/hayabusa.txt": "d5f4c36a0528e01cfdd9e4fc60879201d3af49b41c520200643d321fe53da5f9",
-        "provenance/hayabusa.json": "b766e4613e55c73e03c6db2fd703249f026a23356c49072d8de9d4257eb8fe78",
+        "provenance/hayabusa.json": "2699c9321f78f0e8192a229235c3cd43e7d1e196fc89b6ebb57dd09b50901171",
         "rules_hayabusa_windows_native.json": "fe3590c322965ebe1318f50c2685eadee5f1b9d17b60ffdacdb9f14d674a2aca"
       },
-      "last_success": "2026-10-11T09:16:01+00:00",
+      "last_success": "2026-10-13T07:49:08+00:00",
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
-      "revision": "04af3d207cae784183e0e5e82c1132ee866bbd67",
+      "revision": "cde84eef71b2093dc2733b919ff958d409df940c",
       "rule_counts": {
         "experimental/rules_hayabusa_windows_native_correlation.json": 3,
         "rules_hayabusa_windows_native.json": 188
@@ -249,13 +249,13 @@
     "loldrivers": {
       "artifacts": {
         "licenses/loldrivers.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
-        "provenance/loldrivers.json": "b063279ca7286c02f90580a8d3122963d1c2fbe8c651bb8a3190fe15814cdff6",
-        "rules_loldrivers_windows_sysmon.json": "31beb81270e06e2c1102f8964304b911a77c58476f327a50b9438149c09c4b79"
+        "provenance/loldrivers.json": "a42b2f918becffc7595690dc387065a8453fd85accfdac6be2bccb483af2decd",
+        "rules_loldrivers_windows_sysmon.json": "f39ef5c9d215457ab10703f762aa8fb2fcca33ac1ecc0019d263a59cc9b07e95"
       },
-      "last_success": "2026-10-11T09:16:06+00:00",
+      "last_success": "2026-10-13T07:49:12+00:00",
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLDrivers",
-      "revision": "9e8d6b30000dc88951597de5bcb9556daa2a07c1",
+      "revision": "6f6f5b49fdf45ba007db1b87991c5be4a4f844e1",
       "rule_counts": {
         "rules_loldrivers_windows_sysmon.json": 6
       },
@@ -272,15 +272,15 @@
     "lolrmm": {
       "artifacts": {
         "licenses/lolrmm.txt": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
-        "provenance/lolrmm.json": "c9714276e406cbcb100c22621d2918fb03d6592e403b9d5ec547d03b9b6e142c",
+        "provenance/lolrmm.json": "70ce8b91830c96da78acb875c35c47c4d7741e3a92b3ef1c44aa52f80879f57f",
         "rules_lolrmm_windows_generic.json": "ffb3c22f1932e8cb5665bbf6da39a6aa32f146fd0c393a98751b4511b59faead",
         "rules_lolrmm_windows_merged.json": "5a047a62215a2a038ee129db609e82c02b8380b3920397ca0bce49057d848c08",
         "rules_lolrmm_windows_sysmon.json": "db862ef8e8fdfe6507ac51a3fb3237eb3bed25a119fec2d88c07143e8f1a8ffa"
       },
-      "last_success": "2026-10-12T07:28:35+00:00",
+      "last_success": "2026-10-13T07:49:19+00:00",
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLRMM",
-      "revision": "1c5e9dc042a62c7d2e0920b1679a2be407ca6eb0",
+      "revision": "0922dcedb37861685f77c22b190318e53a5d47c1",
       "rule_counts": {
         "rules_lolrmm_windows_generic.json": 371,
         "rules_lolrmm_windows_merged.json": 1098,
@@ -398,6 +398,9 @@
         "rules_windows_merged.json": "f5ac571eaedfe0f40536b41f205375e91ac01dea6deffb7268fd1e18288ea128",
         "rules_windows_sysmon.json": "bc5bf843a3f74021ead6c22528d3d10e19e93e91f2203f304e89fae4e1268369"
       },
+      "error": "2 unexpected failures; see reports/sigmahq.json",
+      "failed_revision": "b4ba1f2ae16fbc0af92e7ae96364aac95bdf55b6",
+      "last_attempt": "2026-10-13T07:48:31+00:00",
       "last_success": "2026-10-11T09:15:15+00:00",
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
@@ -408,7 +411,7 @@
         "rules_windows_merged.json": 4523,
         "rules_windows_sysmon.json": 2833
       },
-      "status": "current",
+      "status": "stale",
       "tools": {
         "pysigma": "2.0.0",
         "pysigma-backend-sqlite": "2.1.0",
@@ -480,16 +483,16 @@
         "experimental/rules_wrg11_windows_merged_correlation.json": "3365f72bdb994ad745d408de1e88116222b31f37a4802b080326682418ea3f35",
         "experimental/rules_wrg11_windows_sysmon_correlation.json": "86f3216ec6d582a72497c66c76e93d9ae8b8d1620bb3dcf22e92776f444c945c",
         "licenses/wrg11.txt": "2af072a300d0c32eac227a1649b34221128b2396c2e44f7571716ff45154c5a1",
-        "provenance/wrg11.json": "f64920f4ca95f71dc40c4fe96405306adccc5e32e943b2612dfb99b2c3f07e4d",
+        "provenance/wrg11.json": "304ba125a382fac48f3b444bbf26cdc3a61798cbff997e6f03374b29d91ad426",
         "rules_wrg11_linux.json": "2df0b6de838e90b92a053fd99cdf9febc23ccd8db99f382c7b361cfa62fd83b9",
-        "rules_wrg11_windows_generic.json": "dfd6d4e2d62a896cf04fc997b02e61a7b1e8cf58987a2c763de1f4a17639783a",
-        "rules_wrg11_windows_merged.json": "9c83cd5b9330596454aff9bcd3eefa3722b3ecc253da152216270e56e26d9135",
-        "rules_wrg11_windows_sysmon.json": "c66d4f9083e69b48e57bb062ff8ec0cd90fd78a7c0e1b501fb18b9b02a7d77e0"
+        "rules_wrg11_windows_generic.json": "5b68f0f80248072e1e0290fe699ba5944db9930962877664a12647d58f337e82",
+        "rules_wrg11_windows_merged.json": "af6179590238859513801492eacefd20343201c64540700810026ab4770f6b3f",
+        "rules_wrg11_windows_sysmon.json": "0769e9754f2a0a8e08d7693c5a7c51eb1bbf5749259e3593ebd204992e69a852"
       },
-      "last_success": "2026-10-11T09:16:28+00:00",
+      "last_success": "2026-10-13T07:49:33+00:00",
       "license": "MIT",
       "repository": "WRG-11/wrg-sigma-rules",
-      "revision": "5d739770d559c9882bb293bab353f777b8923377",
+      "revision": "edae7c923441d88488dae78cfd705529b256b4e5",
       "rule_counts": {
         "experimental/rules_wrg11_windows_generic_correlation.json": 12,
         "experimental/rules_wrg11_windows_merged_correlation.json": 24,

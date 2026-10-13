@@ -4767,7 +4767,7 @@
       "path": "resources/examples/persistence/observed_photo_zip_nodejs_run_key_persistence_t1547_001.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "4e5349f7a9f48d642602e86c0d5a289ca817bac33f80d5f4a53f537b9d630460"
+      "sha256": "fbeb144cc31d03395a30a3b9f0ab885919ca3db140c3ec010452997df66a8f2a"
     },
     {
       "document": "0",
@@ -7097,7 +7097,7 @@
       "document": "0",
       "id": "67677963-fa59-43c3-ac46-a70db515e83a",
       "path": "resources/examples/persistence/observed_photo_zip_nodejs_run_key_persistence_t1547_001.yml",
-      "sha256": "4e5349f7a9f48d642602e86c0d5a289ca817bac33f80d5f4a53f537b9d630460"
+      "sha256": "fbeb144cc31d03395a30a3b9f0ab885919ca3db140c3ec010452997df66a8f2a"
     },
     {
       "adaptations": {},
@@ -7465,7 +7465,7 @@
     }
   ],
   "repository": "WRG-11/wrg-sigma-rules",
-  "revision": "5d739770d559c9882bb293bab353f777b8923377",
+  "revision": "edae7c923441d88488dae78cfd705529b256b4e5",
   "source": "wrg11",
   "status": "validated",
   "tools": {

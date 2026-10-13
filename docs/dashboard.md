@@ -4,26 +4,28 @@ Generated from the verified release on every update; do not edit.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/overview-dark.svg">
-  <img alt="13 of 13 sources current; 7,344 rules in rules_windows_all.json (4,696 unique); 299 Linux rules; 31 experimental correlations; updated 2026-10-12. Severity of unique detections: informational 114, low 351, medium 2,078, high 1,867, critical 290." src="assets/overview-light.svg" width="100%">
+  <img alt="12 of 13 sources current; 7,344 rules in rules_windows_all.json (4,696 unique); 299 Linux rules; 31 experimental correlations; updated 2026-10-13. Severity of unique detections: informational 114, low 351, medium 2,078, high 1,867, critical 290." src="assets/overview-light.svg" width="100%">
 </picture>
+
+Not current: sigmahq (stale since 2026-10-11). Stale sources keep their last good rules.
 
 ## Sources
 
 | Source | Status | License | Revision | Last success (UTC) | Detection rules |
 |---|---|---|---|---|---:|
-| [sigmahq](https://github.com/SigmaHQ/sigma) | current | DRL-1.1 | [8a4813404ea3](https://github.com/SigmaHQ/sigma/tree/8a4813404ea3074890e0cda9272d4d1a8b2941d6) | 2026-10-11 09:15 | 3,049 |
+| [sigmahq](https://github.com/SigmaHQ/sigma) | stale | DRL-1.1 | [8a4813404ea3](https://github.com/SigmaHQ/sigma/tree/8a4813404ea3074890e0cda9272d4d1a8b2941d6) | 2026-10-11 09:15 | 3,049 |
 | [dragon](https://github.com/frknaykc/Dragon-ThreatResearchHQ) | current | MIT | [47b5f65e6e65](https://github.com/frknaykc/Dragon-ThreatResearchHQ/tree/47b5f65e6e65dc9ce1a4829242cf61ff6e12eb98) | 2026-10-11 09:15 | 37 |
 | [hatchepsoute](https://github.com/Hatchepsoute/sigma-rules) | current | Apache-2.0 | [c04c81bb42b9](https://github.com/Hatchepsoute/sigma-rules/tree/c04c81bb42b926677d596991a4a50a8afd2c91db) | 2026-10-11 09:15 | 142 |
-| [hayabusa](https://github.com/Yamato-Security/hayabusa-rules) | current | DRL-1.1 | [04af3d207cae](https://github.com/Yamato-Security/hayabusa-rules/tree/04af3d207cae784183e0e5e82c1132ee866bbd67) | 2026-10-11 09:16 | 188 |
+| [hayabusa](https://github.com/Yamato-Security/hayabusa-rules) | current | DRL-1.1 | [cde84eef71b2](https://github.com/Yamato-Security/hayabusa-rules/tree/cde84eef71b2093dc2733b919ff958d409df940c) | 2026-10-13 07:49 | 188 |
 | [joesecurity](https://github.com/joesecurity/sigma-rules) | current | GPL-3.0 | [cb91be06c8c9](https://github.com/joesecurity/sigma-rules/tree/cb91be06c8c95ce63aa9aa5006a7835678136a96) | 2026-10-11 09:16 | 110 |
-| [loldrivers](https://github.com/magicsword-io/LOLDrivers) | current | Apache-2.0 | [9e8d6b30000d](https://github.com/magicsword-io/LOLDrivers/tree/9e8d6b30000dc88951597de5bcb9556daa2a07c1) | 2026-10-11 09:16 | 6 |
-| [lolrmm](https://github.com/magicsword-io/LOLRMM) | current | Apache-2.0 | [1c5e9dc042a6](https://github.com/magicsword-io/LOLRMM/tree/1c5e9dc042a62c7d2e0920b1679a2be407ca6eb0) | 2026-10-12 07:28 | 727 |
+| [loldrivers](https://github.com/magicsword-io/LOLDrivers) | current | Apache-2.0 | [6f6f5b49fdf4](https://github.com/magicsword-io/LOLDrivers/tree/6f6f5b49fdf45ba007db1b87991c5be4a4f844e1) | 2026-10-13 07:49 | 6 |
+| [lolrmm](https://github.com/magicsword-io/LOLRMM) | current | Apache-2.0 | [0922dcedb378](https://github.com/magicsword-io/LOLRMM/tree/0922dcedb37861685f77c22b190318e53a5d47c1) | 2026-10-13 07:49 | 727 |
 | [mbabinski](https://github.com/mbabinski/Sigma-Rules) | current | GPL-3.0 | [9dea7a5c15cf](https://github.com/mbabinski/Sigma-Rules/tree/9dea7a5c15cfd422ec320e7fabd93f0c3634181d) | 2026-10-11 09:16 | 208 |
 | [mdecrevoisier](https://github.com/mdecrevoisier/SIGMA-detection-rules) | current | CC0-1.0 | [d61408af8769](https://github.com/mdecrevoisier/SIGMA-detection-rules/tree/d61408af8769c74c96296b7ccc92d4bc3abb15af) | 2026-10-11 09:16 | 330 |
 | [reversinglabs](https://github.com/reversinglabs/reversinglabs-siem-rules) | current | MIT | [23fc452b527f](https://github.com/reversinglabs/reversinglabs-siem-rules/tree/23fc452b527f2f8e08c26c6dffc0f734e750a2be) | 2026-10-11 09:16 | 7 |
 | [tsale](https://github.com/tsale/Sigma_rules) | current | GPL-3.0 | [f5190e6b6c5b](https://github.com/tsale/Sigma_rules/tree/f5190e6b6c5ba9e6729845f13ac916590e90b0d8) | 2026-10-11 09:16 | 47 |
 | [tyrian](https://github.com/zshguy/tyrian-detection-pack) | current | MIT | [b2cea417bcbd](https://github.com/zshguy/tyrian-detection-pack/tree/b2cea417bcbd1316ac571b29a5dc459ce387a7c2) | 2026-10-11 09:16 | 73 |
-| [wrg11](https://github.com/WRG-11/wrg-sigma-rules) | current | MIT | [5d739770d559](https://github.com/WRG-11/wrg-sigma-rules/tree/5d739770d559c9882bb293bab353f777b8923377) | 2026-10-11 09:16 | 110 |
+| [wrg11](https://github.com/WRG-11/wrg-sigma-rules) | current | MIT | [edae7c923441](https://github.com/WRG-11/wrg-sigma-rules/tree/edae7c923441d88488dae78cfd705529b256b4e5) | 2026-10-13 07:49 | 110 |
 
 ## Inside `rules_windows_all.json`
 

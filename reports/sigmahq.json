@@ -12786,7 +12786,7 @@
       "path": "rules/windows/file/file_event/file_event_win_susp_double_extension.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "731467fc95390d4b31f75229ab3c4725c329a74d02dabf2fe554f439516bdd60"
+      "sha256": "cbb8b8ba5c690c216f148452bb136cca979989842e69d6153d7101b136b31732"
     },
     {
       "document": "0",
@@ -20325,7 +20325,7 @@
       "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "6df8054945d5ff36517fa7bc65f89c1a2cfc3d806bfd2b7adcdb65fe80dbb446"
+      "sha256": "292762142c36db3dec4f9900b2cea671d6a37a296fe72e6df29249de9e20d26f"
     },
     {
       "document": "0",
@@ -23853,7 +23853,7 @@
       "path": "rules/windows/file/file_event/file_event_win_susp_double_extension.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "731467fc95390d4b31f75229ab3c4725c329a74d02dabf2fe554f439516bdd60"
+      "sha256": "cbb8b8ba5c690c216f148452bb136cca979989842e69d6153d7101b136b31732"
     },
     {
       "document": "0",
@@ -26051,7 +26051,7 @@
       "path": "rules/windows/powershell/powershell_script/posh_ps_etw_trace_evasion.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "6c4f908ce0850656bb0b49df10ec19afc87877681150f5fe11b37125c1f4363a"
+      "sha256": "4b13b8d2f8ac98b8142ca8af0e384f8ace2b5e0ace256f0fe9ae522bbf6aa5ed"
     },
     {
       "document": "0",
@@ -33667,7 +33667,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_susp_etw_trace_evasion.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "f883d161d3a510e54a3baa3e54ecc22fe4cb515a6569cb1b59df03688215df5b"
+      "sha256": "fa2afe1689c1006c008fa2844d92bd41784a956d51e0ed2bc492eb4593a9a1c6"
     },
     {
       "document": "0",
@@ -41274,12 +41274,12 @@
   ],
   "failures": [
     {
-      "approved": true,
+      "approved": false,
       "document": "0",
       "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
       "profile": "sysmon",
-      "sha256": "6df8054945d5ff36517fa7bc65f89c1a2cfc3d806bfd2b7adcdb65fe80dbb446",
+      "sha256": "292762142c36db3dec4f9900b2cea671d6a37a296fe72e6df29249de9e20d26f",
       "stage": "convert"
     },
     {
@@ -41445,12 +41445,12 @@
       "stage": "convert"
     },
     {
-      "approved": true,
+      "approved": false,
       "document": "0",
       "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
       "profile": "generic",
-      "sha256": "6df8054945d5ff36517fa7bc65f89c1a2cfc3d806bfd2b7adcdb65fe80dbb446",
+      "sha256": "292762142c36db3dec4f9900b2cea671d6a37a296fe72e6df29249de9e20d26f",
       "stage": "convert"
     },
     {
@@ -47072,7 +47072,7 @@
       "document": "0",
       "id": "78bc5783-81d9-4d73-ac97-59f6db4f72a8",
       "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
-      "sha256": "6df8054945d5ff36517fa7bc65f89c1a2cfc3d806bfd2b7adcdb65fe80dbb446"
+      "sha256": "292762142c36db3dec4f9900b2cea671d6a37a296fe72e6df29249de9e20d26f"
     },
     {
       "adaptations": {},
@@ -50600,7 +50600,7 @@
       "document": "0",
       "id": "b4926b47-a9d7-434c-b3a0-adc3fa0bd13e",
       "path": "rules/windows/file/file_event/file_event_win_susp_double_extension.yml",
-      "sha256": "731467fc95390d4b31f75229ab3c4725c329a74d02dabf2fe554f439516bdd60"
+      "sha256": "cbb8b8ba5c690c216f148452bb136cca979989842e69d6153d7101b136b31732"
     },
     {
       "adaptations": {},
@@ -52798,7 +52798,7 @@
       "document": "0",
       "id": "115fdba9-f017-42e6-84cf-d5573bf2ddf8",
       "path": "rules/windows/powershell/powershell_script/posh_ps_etw_trace_evasion.yml",
-      "sha256": "6c4f908ce0850656bb0b49df10ec19afc87877681150f5fe11b37125c1f4363a"
+      "sha256": "4b13b8d2f8ac98b8142ca8af0e384f8ace2b5e0ace256f0fe9ae522bbf6aa5ed"
     },
     {
       "adaptations": {},
@@ -60414,7 +60414,7 @@
       "document": "0",
       "id": "a238b5d0-ce2d-4414-a676-7a531b3d13d6",
       "path": "rules/windows/process_creation/proc_creation_win_susp_etw_trace_evasion.yml",
-      "sha256": "f883d161d3a510e54a3baa3e54ecc22fe4cb515a6569cb1b59df03688215df5b"
+      "sha256": "fa2afe1689c1006c008fa2844d92bd41784a956d51e0ed2bc492eb4593a9a1c6"
     },
     {
       "adaptations": {},
@@ -68286,9 +68286,9 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "8a4813404ea3074890e0cda9272d4d1a8b2941d6",
+  "revision": "b4ba1f2ae16fbc0af92e7ae96364aac95bdf55b6",
   "source": "sigmahq",
-  "status": "validated",
+  "status": "failed",
   "tools": {
     "pysigma": "2.0.0",
     "pysigma-backend-sqlite": "2.1.0",
