@@ -1,9 +1,9 @@
 {
   "artifacts": {
     "rules_linux.json": 216,
-    "rules_windows_generic.json": 2282,
-    "rules_windows_merged.json": 4523,
-    "rules_windows_sysmon.json": 2833
+    "rules_windows_generic.json": 2284,
+    "rules_windows_merged.json": 4527,
+    "rules_windows_sysmon.json": 2835
   },
   "exclusions": [
     {
@@ -3469,7 +3469,7 @@
       "path": "rules/linux/process_creation/proc_creation_lnx_install_root_certificate.yml",
       "profile": "sysmon",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "8e7af70ca8e0aeea873015d891cf423f175d0053fd861b8cef64920ee5046db8"
+      "sha256": "28a1e9b4a8af9500bcc356585906cb6cf91259883572a671de9428c7d20c0c10"
     },
     {
       "document": "0",
@@ -4568,7 +4568,7 @@
       "path": "rules/network/dns/net_dns_external_service_interaction_domains.yml",
       "profile": "sysmon",
       "reason": "logsource product None is outside this profile",
-      "sha256": "ede2ec8aac7ff6a041578170c7a8ca3947be68b516a0c7bdbe42752e41d2391f"
+      "sha256": "9af795305841e9c030bd1d7523de265c081b6edb8e0d9e50b8be8140e38660e6"
     },
     {
       "document": "0",
@@ -9860,7 +9860,7 @@
       "path": "rules/linux/process_creation/proc_creation_lnx_install_root_certificate.yml",
       "profile": "generic",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "8e7af70ca8e0aeea873015d891cf423f175d0053fd861b8cef64920ee5046db8"
+      "sha256": "28a1e9b4a8af9500bcc356585906cb6cf91259883572a671de9428c7d20c0c10"
     },
     {
       "document": "0",
@@ -10959,7 +10959,7 @@
       "path": "rules/network/dns/net_dns_external_service_interaction_domains.yml",
       "profile": "generic",
       "reason": "logsource product None is outside this profile",
-      "sha256": "ede2ec8aac7ff6a041578170c7a8ca3947be68b516a0c7bdbe42752e41d2391f"
+      "sha256": "9af795305841e9c030bd1d7523de265c081b6edb8e0d9e50b8be8140e38660e6"
     },
     {
       "document": "0",
@@ -19744,7 +19744,7 @@
       "path": "rules/network/dns/net_dns_external_service_interaction_domains.yml",
       "profile": "linux",
       "reason": "logsource product None is outside this profile",
-      "sha256": "ede2ec8aac7ff6a041578170c7a8ca3947be68b516a0c7bdbe42752e41d2391f"
+      "sha256": "9af795305841e9c030bd1d7523de265c081b6edb8e0d9e50b8be8140e38660e6"
     },
     {
       "document": "0",
@@ -35778,6 +35778,13 @@
     },
     {
       "document": "0",
+      "path": "rules/windows/registry/registry_set/registry_set_allow_defender_firewall_exceptions.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "caac055208f338e020bbdbc8d93d34e2fb865dd14efeee610461b623a08b613b"
+    },
+    {
+      "document": "0",
       "path": "rules/windows/registry/registry_set/registry_set_allow_rdp_remote_assistance_feature.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
@@ -36034,6 +36041,13 @@
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
       "sha256": "1f19512c3a12a7ee3cb411d082d53f2fc08ce739449243193991e30a55cfb89b"
+    },
+    {
+      "document": "0",
+      "path": "rules/windows/registry/registry_set/registry_set_defender_firewall_add_exception.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "6c37e06fe55f0640addf2d8fd91100465c765a16e52492dc21ca12ef0857dfb0"
     },
     {
       "document": "0",
@@ -41896,7 +41910,7 @@
     }
   ],
   "ignored": [],
-  "input_documents": 3765,
+  "input_documents": 3767,
   "official_duplicates_removed": {
     "generic/correlations": 0,
     "generic/events": 0,
@@ -41907,10 +41921,10 @@
   },
   "profiles": {
     "generic": {
-      "converted": 2282,
+      "converted": 2284,
       "correlations": 0,
-      "eligible": 2300,
-      "events": 2282,
+      "eligible": 2302,
+      "events": 2284,
       "reference_only": 0
     },
     "linux": {
@@ -41921,10 +41935,10 @@
       "reference_only": 0
     },
     "sysmon": {
-      "converted": 2833,
+      "converted": 2835,
       "correlations": 0,
-      "eligible": 2852,
-      "events": 2833,
+      "eligible": 2854,
+      "events": 2835,
       "reference_only": 0
     }
   },
@@ -45392,7 +45406,7 @@
       "document": "0",
       "id": "78a80655-a51e-4669-bc6b-e9d206a462ee",
       "path": "rules/linux/process_creation/proc_creation_lnx_install_root_certificate.yml",
-      "sha256": "8e7af70ca8e0aeea873015d891cf423f175d0053fd861b8cef64920ee5046db8"
+      "sha256": "28a1e9b4a8af9500bcc356585906cb6cf91259883572a671de9428c7d20c0c10"
     },
     {
       "adaptations": {},
@@ -46491,7 +46505,7 @@
       "document": "0",
       "id": "aff715fa-4dd5-497a-8db3-910bea555566",
       "path": "rules/network/dns/net_dns_external_service_interaction_domains.yml",
-      "sha256": "ede2ec8aac7ff6a041578170c7a8ca3947be68b516a0c7bdbe42752e41d2391f"
+      "sha256": "9af795305841e9c030bd1d7523de265c081b6edb8e0d9e50b8be8140e38660e6"
     },
     {
       "adaptations": {},
@@ -62526,6 +62540,13 @@
     {
       "adaptations": {},
       "document": "0",
+      "id": "c69fc6a2-607d-4530-b7d1-75823af1bde4",
+      "path": "rules/windows/registry/registry_set/registry_set_allow_defender_firewall_exceptions.yml",
+      "sha256": "caac055208f338e020bbdbc8d93d34e2fb865dd14efeee610461b623a08b613b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
       "id": "37b437cf-3fc5-4c8e-9c94-1d7c9aff842b",
       "path": "rules/windows/registry/registry_set/registry_set_allow_rdp_remote_assistance_feature.yml",
       "sha256": "a0a14b8776b95c0cd7c814520c05c3d8264da1af0dd13f9c48dbca2e8abec887"
@@ -62781,6 +62802,13 @@
       "id": "a982fc9c-6333-4ffb-a51d-addb04e8b529",
       "path": "rules/windows/registry/registry_set/registry_set_defender_exclusions.yml",
       "sha256": "1f19512c3a12a7ee3cb411d082d53f2fc08ce739449243193991e30a55cfb89b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6648f900-4a7d-47e3-bad6-952b313a1c0e",
+      "path": "rules/windows/registry/registry_set/registry_set_defender_firewall_add_exception.yml",
+      "sha256": "6c37e06fe55f0640addf2d8fd91100465c765a16e52492dc21ca12ef0857dfb0"
     },
     {
       "adaptations": {},
@@ -68286,7 +68314,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "b4ba1f2ae16fbc0af92e7ae96364aac95bdf55b6",
+  "revision": "42478221b1a062411b8185732c82caa439271122",
   "source": "sigmahq",
   "status": "failed",
   "tools": {

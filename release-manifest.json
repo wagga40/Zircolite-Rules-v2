@@ -2,8 +2,8 @@
   "aggregates": {
     "windows_all": {
       "artifacts": {
-        "provenance/windows_all.json": "91a5fc6abce154d8a003af43ab126dd37c71940666b091f49e0c922805d50bbb",
-        "rules_windows_all.json": "5cda6310d8d4b301e2239491f2753ac3cf30d72b095a2a19a4b9ed1bbbc29eae"
+        "provenance/windows_all.json": "a0b7d0b085979ee8b78755ca1d8423a85acd08b475e2d2f39910d50eb4b92cb6",
+        "rules_windows_all.json": "83978ae4ecdff1d963623016d615059487582ce789b0ea642f2a60e95ce806a7"
       },
       "inputs": {
         "dragon": {
@@ -30,7 +30,7 @@
           },
           "license": "DRL-1.1",
           "repository": "Yamato-Security/hayabusa-rules",
-          "revision": "cde84eef71b2093dc2733b919ff958d409df940c",
+          "revision": "137510326932eb881cc619c5041212905a98f683",
           "status": "current"
         },
         "joesecurity": {
@@ -44,11 +44,11 @@
         },
         "loldrivers": {
           "artifacts": {
-            "rules_loldrivers_windows_sysmon.json": "f39ef5c9d215457ab10703f762aa8fb2fcca33ac1ecc0019d263a59cc9b07e95"
+            "rules_loldrivers_windows_sysmon.json": "9d63000c1bd96afa11952f29ae8f52286ce8ca8e0355a4aa3e09ef1f4cbb1c7c"
           },
           "license": "Apache-2.0",
           "repository": "magicsword-io/LOLDrivers",
-          "revision": "6f6f5b49fdf45ba007db1b87991c5be4a4f844e1",
+          "revision": "f1ba732915876d7c3ea4bc81150e070f84528cea",
           "status": "current"
         },
         "lolrmm": {
@@ -198,13 +198,13 @@
       "artifacts": {
         "experimental/rules_hayabusa_windows_native_correlation.json": "0bcec5b3066f6ac4ef6d946d6dc89f8fe0e59ace5920669251afe562a594dc36",
         "licenses/hayabusa.txt": "d5f4c36a0528e01cfdd9e4fc60879201d3af49b41c520200643d321fe53da5f9",
-        "provenance/hayabusa.json": "2699c9321f78f0e8192a229235c3cd43e7d1e196fc89b6ebb57dd09b50901171",
+        "provenance/hayabusa.json": "20fb9ad6544bc67eb481c52109b5d36d19d9d01dbf2e0dacdad1c0ba11d2debd",
         "rules_hayabusa_windows_native.json": "fe3590c322965ebe1318f50c2685eadee5f1b9d17b60ffdacdb9f14d674a2aca"
       },
-      "last_success": "2026-10-13T07:49:08+00:00",
+      "last_success": "2026-10-14T06:14:16+00:00",
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
-      "revision": "cde84eef71b2093dc2733b919ff958d409df940c",
+      "revision": "137510326932eb881cc619c5041212905a98f683",
       "rule_counts": {
         "experimental/rules_hayabusa_windows_native_correlation.json": 3,
         "rules_hayabusa_windows_native.json": 188
@@ -249,13 +249,13 @@
     "loldrivers": {
       "artifacts": {
         "licenses/loldrivers.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
-        "provenance/loldrivers.json": "a42b2f918becffc7595690dc387065a8453fd85accfdac6be2bccb483af2decd",
-        "rules_loldrivers_windows_sysmon.json": "f39ef5c9d215457ab10703f762aa8fb2fcca33ac1ecc0019d263a59cc9b07e95"
+        "provenance/loldrivers.json": "2b611a6871d369bcd99f556289bd65eea176eb8fcd2f6778b0f807c04f07ea03",
+        "rules_loldrivers_windows_sysmon.json": "9d63000c1bd96afa11952f29ae8f52286ce8ca8e0355a4aa3e09ef1f4cbb1c7c"
       },
-      "last_success": "2026-10-13T07:49:12+00:00",
+      "last_success": "2026-10-14T06:14:20+00:00",
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLDrivers",
-      "revision": "6f6f5b49fdf45ba007db1b87991c5be4a4f844e1",
+      "revision": "f1ba732915876d7c3ea4bc81150e070f84528cea",
       "rule_counts": {
         "rules_loldrivers_windows_sysmon.json": 6
       },
@@ -399,8 +399,8 @@
         "rules_windows_sysmon.json": "bc5bf843a3f74021ead6c22528d3d10e19e93e91f2203f304e89fae4e1268369"
       },
       "error": "2 unexpected failures; see reports/sigmahq.json",
-      "failed_revision": "b4ba1f2ae16fbc0af92e7ae96364aac95bdf55b6",
-      "last_attempt": "2026-10-13T07:48:31+00:00",
+      "failed_revision": "42478221b1a062411b8185732c82caa439271122",
+      "last_attempt": "2026-10-14T06:13:39+00:00",
       "last_success": "2026-10-11T09:15:15+00:00",
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
