@@ -118,7 +118,7 @@ def generate(registry, sources, output, cache, exclusions, local_roots=None, rev
     for source in ordered:
         spec = registry[source]
         previous = manifest["sources"].get(source, {})
-        revision = None
+        revision, reported = None, False
         now = datetime.now(UTC).isoformat(timespec="seconds")
         print(f"[{source}] Fetching and validating", flush=True)
         try:
@@ -141,12 +141,15 @@ def generate(registry, sources, output, cache, exclusions, local_roots=None, rev
             report["artifacts"] = {name: len(rules) for name, rules in artifacts.items()}
             if report["status"] != "validated":
                 write_json(output / "reports" / f"{source}.json", report)
+                reported = True
                 reason = report.get("error") or f"{sum(not item['approved'] for item in report['failures'])} unexpected failures"
                 raise ValueError(f"{reason}; see reports/{source}.json")
             files = {name: json_bytes(rules) for name, rules in artifacts.items()}
             files[f"licenses/{source}.txt"] = license_bytes
             # The successful report is kept with its rules; the latest attempt is separate.
-            files[f"provenance/{source}.json"] = json_bytes(report)
+            # Drift is a pending re-pin, not provenance: re-pinning must not change it.
+            files[f"provenance/{source}.json"] = json_bytes({**report, "failures": [
+                {key: value for key, value in failure.items() if key != "drifted"} for failure in report["failures"]]})
             hashes = {name: digest(data) for name, data in files.items()}
             if not audit:
                 unchanged = previous.get("revision") == revision and previous.get("artifacts") == hashes
@@ -175,10 +178,10 @@ def generate(registry, sources, output, cache, exclusions, local_roots=None, rev
         except Exception as exc:
             failed.append(source)
             error = str(exc) or type(exc).__name__
-            latest = read_json(output / "reports" / f"{source}.json", {})
-            if latest.get("revision") != revision or latest.get("status") != "failed":
-                latest = {"source": source, "status": "failed", "revision": revision, "error": error}
-                write_json(output / "reports" / f"{source}.json", latest)
+            # Keep the detailed report this attempt wrote; replace any older one.
+            if not reported:
+                write_json(output / "reports" / f"{source}.json",
+                           {"source": source, "status": "failed", "revision": revision, "error": error})
             if not audit:
                 manifest["sources"][source] = {
                     **previous, "status": "stale" if previous.get("artifacts") else "unavailable",

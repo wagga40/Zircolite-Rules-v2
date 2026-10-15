@@ -177,8 +177,8 @@ def error_record(document, stage, profile, error):
     return {**document.location(), "stage": stage, "profile": profile, "error": str(error)}
 
 
-def approved_failure(source, failure, exclusions):
-    keys = ("path", "sha256", "document", "stage", "profile", "error")
+def approved_failure(source, failure, exclusions, ignore=()):
+    keys = [key for key in ("path", "sha256", "document", "stage", "profile", "error") if key not in ignore]
     return any(item.get("source") == source and all(item.get(k) == failure.get(k) for k in keys)
                and item.get("reason") for item in exclusions)
 
@@ -304,6 +304,13 @@ def compile_source(source, spec, root, exclusions):
         }
     for failure in failures:
         failure["approved"] = bool(approved_failure(source, failure, exclusions))
+        # Edited upstream but failing exactly as reviewed: the rule stays out, as
+        # it would after re-pinning, which exclusion_baseline.py proposes. A
+        # collection action shapes the sibling documents that do publish, so an
+        # edit to one is always reviewed.
+        if (not failure["approved"] and failure["stage"] != "discovery"
+                and approved_failure(source, failure, exclusions, ignore=("sha256",))):
+            failure.update(approved=True, drifted=True)
     report["status"] = "failed" if any(not f["approved"] for f in failures) else "validated"
     if not any(result["events"] or result["correlations"] for result in outputs.values()):
         report["status"] = "failed"

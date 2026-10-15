@@ -125,3 +125,38 @@ def test_failures_reach_the_summary_even_when_the_baseline_fails(tmp_path, monke
     with pytest.raises(json.JSONDecodeError):
         failure_report.main()
     assert issue.exists() and "## Failed sources" in summary.read_text()
+
+
+def test_since_limits_the_report_to_sources_attempted_in_this_run():
+    manifest = {"sources": {
+        "today": {"status": "stale", "error": "A", "last_attempt": "2026-10-15T01:30:00+00:00"},
+        "removed": {"status": "stale", "error": "B", "last_attempt": "2026-09-01T01:30:00+00:00"}}}
+    since = failure_report.parse_time("2026-10-15T01:23:00+00:00")
+    assert [item["source"] for item in failed_sources(manifest, {}, since)] == ["today"]
+    assert len(failed_sources(manifest, {})) == 2
+
+
+def test_fingerprint_ignores_paths_and_numbers_in_source_errors():
+    def failed(error):
+        return failed_sources({"sources": {"s": {"status": "stale", "error": error}}}, {})
+    assert fingerprint(failed("Fetch failed in /tmp/abc123/.rules-stage-x9: read 512 bytes")) == fingerprint(
+        failed("Fetch failed in /tmp/zzz999/.rules-stage-q1: read 4096 bytes"))
+    assert fingerprint(failed("Fetch failed")) != fingerprint(failed("License is empty"))
+
+
+def test_drifted_exclusions_warn_without_opening_the_issue(tmp_path, monkeypatch, capsys):
+    (tmp_path / "reports").mkdir()
+    drifted = {**FAILURE, "approved": True, "drifted": True}
+    (tmp_path / "reports" / "current.json").write_text(json.dumps({"source": "current", "failures": [drifted]}))
+    (tmp_path / "release-manifest.json").write_text(json.dumps({"sources": {"current": {"status": "current"}}}))
+    exclusions = tmp_path / "exclusions.json"
+    exclusions.write_text(json.dumps([{**FAILURE, "source": "current", "sha256": "0" * 64, "reason": "R"}]))
+    summary, issue = tmp_path / "summary.md", tmp_path / "issue.md"
+    monkeypatch.setattr(sys, "argv", ["failure_report.py", "--output-dir", str(tmp_path), "--exclusions",
+                                      str(exclusions), "--run-url", "https://run", "--summary", str(summary),
+                                      "--issue", str(issue)])
+    assert failure_report.main() == 0
+    warning, = capsys.readouterr().out.splitlines()
+    assert warning.startswith("::warning title=1 excluded rule changed upstream::")
+    assert "exclusion_baseline.py" in warning and not issue.exists()
+    assert "re-pinned" in summary.read_text() and "## Failed sources" not in summary.read_text()
