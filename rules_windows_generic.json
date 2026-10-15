@@ -11097,7 +11097,7 @@
     "channel": [
       "Security"
     ],
-    "description": "Detects suspicious powershell download cradle using nslookup. This cradle uses nslookup to extract payloads from DNS records",
+    "description": "Detects suspicious powershell download cradle using nslookup.\nThis cradle uses nslookup to extract payloads from DNS records\n",
     "eventid": [
       4688
     ],
@@ -11122,14 +11122,15 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\nslookup.exe%' ESCAPE '\\' OR OriginalFileName LIKE '\\\\nslookup.exe' ESCAPE '\\') AND ((ParentProcessName LIKE '%\\\\powershell.exe' ESCAPE '\\' OR ParentProcessName LIKE '%\\\\pwsh.exe' ESCAPE '\\') AND (CommandLine LIKE '% -q=txt %' ESCAPE '\\' OR CommandLine LIKE '% -querytype=txt %' ESCAPE '\\'))))"
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\nslookup.exe' ESCAPE '\\' OR OriginalFileName='nslookup.exe') AND ((ParentProcessName LIKE '%\\\\powershell.exe' ESCAPE '\\' OR ParentProcessName LIKE '%\\\\pwsh.exe' ESCAPE '\\') AND (CommandLine LIKE '% -q=txt %' ESCAPE '\\' OR CommandLine LIKE '% -querytype=txt %' ESCAPE '\\' OR CommandLine LIKE '% -type=txt%' ESCAPE '\\'))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
     "source_table": "logs",
     "status": "test",
     "tags": [
-      "attack.stealth"
+      "attack.command-and-control",
+      "attack.t1071.004"
     ],
     "title": "Nslookup PowerShell Download Cradle - ProcessCreation"
   },
@@ -21739,6 +21740,47 @@
       "attack.t1567.002"
     ],
     "title": "DNS Query To MEGA Hosting Website - DNS Client"
+  },
+  {
+    "author": "frack113",
+    "channel": [
+      "Security"
+    ],
+    "description": "Detects the degradation of the system firewall security by the creation or re-enabling of per-application\nexceptions via registry writes to the AuthorizedApplications\\List keys under FirewallPolicy, which grants\nthe targeted executable network access and can be abused by malware to bypass network restrictions.\n",
+    "eventid": [
+      4657
+    ],
+    "falsepositives": [
+      "Unknown"
+    ],
+    "filename": "rules/windows/registry/registry_set/registry_set_defender_firewall_add_exception.yml",
+    "id": "6648f900-4a7d-47e3-bad6-952b313a1c0e",
+    "level": "medium",
+    "license": "DRL-1.1",
+    "logsource": {
+      "product": "windows",
+      "service": "security"
+    },
+    "required_fields": [
+      "Channel",
+      "EventID",
+      "NewValue",
+      "OperationType",
+      "TargetObject"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND ((TargetObject LIKE '%\\\\Services\\\\SharedAccess\\\\Parameters\\\\FirewallPolicy\\\\%' ESCAPE '\\' AND TargetObject LIKE '%\\\\AuthorizedApplications\\\\List%' ESCAPE '\\') AND NewValue LIKE '%:Enabled:%' ESCAPE '\\'))"
+    ],
+    "schema_version": 2,
+    "source": "sigmahq",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.defense-impairment",
+      "attack.t1686.003"
+    ],
+    "title": "Add Authorized Applications to Microsoft Defender Firewall via Registry"
   },
   {
     "author": "Alex Walston (@4ayymm)",
@@ -36187,6 +36229,48 @@
     "title": "Powershell Timestomp"
   },
   {
+    "author": "frack113",
+    "channel": [
+      "Security"
+    ],
+    "description": "Detects the degradation of the system firewall security by the DoNotAllowExceptions policy value being\nset to 0 (DWORD 0x00000000), which re-enables application and port exceptions in the Microsoft\nDefender Firewall and can restore network paths that a hardened profile would block.\n",
+    "eventid": [
+      4657
+    ],
+    "falsepositives": [
+      "Unknown"
+    ],
+    "filename": "rules/windows/registry/registry_set/registry_set_allow_defender_firewall_exceptions.yml",
+    "id": "c69fc6a2-607d-4530-b7d1-75823af1bde4",
+    "level": "medium",
+    "license": "DRL-1.1",
+    "logsource": {
+      "product": "windows",
+      "service": "security"
+    },
+    "required_fields": [
+      "Channel",
+      "EventID",
+      "NewProcessName",
+      "NewValue",
+      "OperationType",
+      "TargetObject"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND ((TargetObject LIKE '%\\\\Services\\\\SharedAccess\\\\Parameters\\\\FirewallPolicy\\\\%' ESCAPE '\\' AND TargetObject LIKE '%\\\\DoNotAllowExceptions' ESCAPE '\\' AND NewValue='DWORD (0x00000000)') AND (NOT COALESCE((NewProcessName LIKE 'C:\\\\Windows\\\\System32\\\\svchost.exe' ESCAPE '\\' OR NewProcessName LIKE 'C:\\\\Windows\\\\SysWOW64\\\\svchost.exe' ESCAPE '\\'), 0))))"
+    ],
+    "schema_version": 2,
+    "source": "sigmahq",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.defense-impairment",
+      "attack.t1686.003"
+    ],
+    "title": "Allow Exceptions in Microsoft Defender Firewall via Registry"
+  },
+  {
     "author": "Nasreddine Bencherchali (Nextron Systems)",
     "channel": [
       "Security"
@@ -47724,7 +47808,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE (Channel='Microsoft-Windows-PowerShell/Operational' OR Channel='PowerShellCore/Operational') AND (EventID=4104 AND (ScriptBlockText LIKE '%Remove-EtwTraceProvider %' ESCAPE '\\' OR (ScriptBlockText LIKE '%Set-EtwTraceProvider %' ESCAPE '\\' AND ScriptBlockText LIKE '%0x11%' ESCAPE '\\')))"
+      "SELECT * FROM logs WHERE (Channel='Microsoft-Windows-PowerShell/Operational' OR Channel='PowerShellCore/Operational') AND (EventID=4104 AND (ScriptBlockText LIKE '%Remove-EtwTraceProvider %' ESCAPE '\\' OR (ScriptBlockText LIKE '%Set-EtwTraceProvider %' ESCAPE '\\' AND ScriptBlockText LIKE '%0x11%' ESCAPE '\\') OR ((ScriptBlockText LIKE '%Set-EtwTraceProvider %' ESCAPE '\\' AND ScriptBlockText LIKE '% 17%' ESCAPE '\\') OR (ScriptBlockText LIKE '%Set-EtwTraceProvider %' ESCAPE '\\' AND ScriptBlockText LIKE '%\u201c''17''\u201d%' ESCAPE '\\') OR (ScriptBlockText LIKE '%Set-EtwTraceProvider %' ESCAPE '\\' AND ScriptBlockText LIKE '%\u201d17\u201d%' ESCAPE '\\'))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -73361,7 +73445,7 @@
     "channel": [
       "Security"
     ],
-    "description": "Detects command line activity that tries to clear or disable any ETW trace log which could be a sign of logging evasion.\n",
+    "description": "Detects command line activity that attempts to tamper with Event Tracing for Windows (ETW) by clearing or disabling\ntrace logs or providers. Adversaries may target ETW to blind security tooling and evade detection by removing\nvisibility into process activity, network connections, and other telemetry sources.\nTechniques include clearing logs via wevtutil, disabling trace sessions via logman, and removing or modifying\nETW providers using PowerShell cmdlets such as Remove-EtwTraceProvider and Set-EtwTraceProvider.\n",
     "eventid": [
       4688
     ],
@@ -73379,11 +73463,13 @@
     "required_fields": [
       "Channel",
       "CommandLine",
-      "EventID"
+      "EventID",
+      "NewProcessName",
+      "OriginalFileName"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((CommandLine LIKE '%cl%' ESCAPE '\\' AND CommandLine LIKE '%/Trace%' ESCAPE '\\') OR (CommandLine LIKE '%clear-log%' ESCAPE '\\' AND CommandLine LIKE '%/Trace%' ESCAPE '\\') OR (CommandLine LIKE '%sl%' ESCAPE '\\' AND CommandLine LIKE '%/e:false%' ESCAPE '\\') OR (CommandLine LIKE '%set-log%' ESCAPE '\\' AND CommandLine LIKE '%/e:false%' ESCAPE '\\') OR (CommandLine LIKE '%logman%' ESCAPE '\\' AND CommandLine LIKE '%update%' ESCAPE '\\' AND CommandLine LIKE '%trace%' ESCAPE '\\' AND CommandLine LIKE '%--p%' ESCAPE '\\' AND CommandLine LIKE '%-ets%' ESCAPE '\\') OR CommandLine LIKE '%Remove-EtwTraceProvider%' ESCAPE '\\' OR (CommandLine LIKE '%Set-EtwTraceProvider%' ESCAPE '\\' AND CommandLine LIKE '%0x11%' ESCAPE '\\')))"
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (((NewProcessName LIKE '%\\\\wevtutil.exe' ESCAPE '\\' OR OriginalFileName='wevtutil.exe') AND (((CommandLine LIKE '% cl %' ESCAPE '\\' OR CommandLine LIKE '%clear-log%' ESCAPE '\\') AND (CommandLine LIKE '%-Trace%' ESCAPE '\\' OR CommandLine LIKE '%/Trace%' ESCAPE '\\' OR CommandLine LIKE '%\u2013Trace%' ESCAPE '\\' OR CommandLine LIKE '%\u2014Trace%' ESCAPE '\\' OR CommandLine LIKE '%\u2015Trace%' ESCAPE '\\')) OR ((CommandLine LIKE '% sl %' ESCAPE '\\' OR CommandLine LIKE '%set-log%' ESCAPE '\\') AND (CommandLine LIKE '%-e:false%' ESCAPE '\\' OR CommandLine LIKE '%/e:false%' ESCAPE '\\' OR CommandLine LIKE '%\u2013e:false%' ESCAPE '\\' OR CommandLine LIKE '%\u2014e:false%' ESCAPE '\\' OR CommandLine LIKE '%\u2015e:false%' ESCAPE '\\')))) OR ((NewProcessName LIKE '%\\\\logman.exe' ESCAPE '\\' OR OriginalFileName='Logman.exe') AND (CommandLine LIKE '%update%' ESCAPE '\\' AND CommandLine LIKE '%trace%' ESCAPE '\\' AND CommandLine LIKE '%--p%' ESCAPE '\\' AND CommandLine LIKE '%-ets%' ESCAPE '\\')) OR (((NewProcessName LIKE '%\\\\powershell.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\pwsh.exe' ESCAPE '\\') OR (OriginalFileName='powershell.exe' OR OriginalFileName='pwsh.dll')) AND (CommandLine LIKE '%Remove-EtwTraceProvider%' ESCAPE '\\' OR (CommandLine LIKE '%Set-EtwTraceProvider%' ESCAPE '\\' AND CommandLine LIKE '%0x11%' ESCAPE '\\') OR (CommandLine LIKE '%Set-EtwTraceProvider%' ESCAPE '\\' AND CommandLine LIKE '% 17%' ESCAPE '\\') OR (CommandLine LIKE '%Set-EtwTraceProvider%' ESCAPE '\\' AND CommandLine LIKE '%''17''%' ESCAPE '\\') OR (CommandLine LIKE '%Set-EtwTraceProvider%' ESCAPE '\\' AND CommandLine LIKE '%\"17\"%' ESCAPE '\\')))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",

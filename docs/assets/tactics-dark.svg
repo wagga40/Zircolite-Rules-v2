@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="504" viewBox="0 0 860 504" role="img" aria-labelledby="title desc">
 <title id="title">ATT&amp;CK tactics</title>
-<desc id="desc">Unique detections in rules_windows_all.json per tactic; a rule can have several. Reconnaissance: 14; Resource Development: 28; Initial Access: 144; Execution: 1,138; Persistence: 809; Privilege Escalation: 661; Defense Evasion: 230; Defense Impairment: 337; Stealth: 934; Credential Access: 352; Discovery: 206; Lateral Movement: 206; Collection: 83; Command and Control: 954; Exfiltration: 68; Impact: 111; (no tactic tag): 352.</desc>
+<desc id="desc">Unique detections in rules_windows_all.json per tactic; a rule can have several. Reconnaissance: 14; Resource Development: 28; Initial Access: 144; Execution: 1,138; Persistence: 809; Privilege Escalation: 661; Defense Evasion: 230; Defense Impairment: 339; Stealth: 933; Credential Access: 352; Discovery: 206; Lateral Movement: 206; Collection: 83; Command and Control: 955; Exfiltration: 68; Impact: 111; (no tactic tag): 352.</desc>
 <style>
 text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #f0efec; }
 .secondary { fill: #c3c2b7; }
@@ -41,11 +41,11 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 <path class="grow" style="animation-delay:390ms" fill="#3987e5" d="M224.0 226.0H334.0Q338.0 226.0 338.0 230.0V236.0Q338.0 240.0 334.0 240.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:970ms" x="346.0" y="237" font-size="12">230</text>
 <text x="214" y="261" font-size="12" text-anchor="end" class="secondary">Defense Impairment</text>
-<path class="grow" style="animation-delay:435ms" fill="#3987e5" d="M224.0 250.0H387.0Q391.0 250.0 391.0 254.0V260.0Q391.0 264.0 387.0 264.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1015ms" x="399.0" y="261" font-size="12">337</text>
+<path class="grow" style="animation-delay:435ms" fill="#3987e5" d="M224.0 250.0H388.0Q392.0 250.0 392.0 254.0V260.0Q392.0 264.0 388.0 264.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1015ms" x="400.0" y="261" font-size="12">339</text>
 <text x="214" y="285" font-size="12" text-anchor="end" class="secondary">Stealth</text>
-<path class="grow" style="animation-delay:480ms" fill="#3987e5" d="M224.0 274.0H682.9Q686.9 274.0 686.9 278.0V284.0Q686.9 288.0 682.9 288.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1060ms" x="694.9" y="285" font-size="12">934</text>
+<path class="grow" style="animation-delay:480ms" fill="#3987e5" d="M224.0 274.0H682.4Q686.4 274.0 686.4 278.0V284.0Q686.4 288.0 682.4 288.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1060ms" x="694.4" y="285" font-size="12">933</text>
 <text x="214" y="309" font-size="12" text-anchor="end" class="secondary">Credential Access</text>
 <path class="grow" style="animation-delay:525ms" fill="#3987e5" d="M224.0 298.0H394.5Q398.5 298.0 398.5 302.0V308.0Q398.5 312.0 394.5 312.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:1105ms" x="406.5" y="309" font-size="12">352</text>
@@ -59,8 +59,8 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 <path class="grow" style="animation-delay:660ms" fill="#3987e5" d="M224.0 370.0H261.1Q265.1 370.0 265.1 374.0V380.0Q265.1 384.0 261.1 384.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:1240ms" x="273.1" y="381" font-size="12">83</text>
 <text x="214" y="405" font-size="12" text-anchor="end" class="secondary">Command and Control</text>
-<path class="grow" style="animation-delay:705ms" fill="#3987e5" d="M224.0 394.0H692.8Q696.8 394.0 696.8 398.0V404.0Q696.8 408.0 692.8 408.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1285ms" x="704.8" y="405" font-size="12">954</text>
+<path class="grow" style="animation-delay:705ms" fill="#3987e5" d="M224.0 394.0H693.3Q697.3 394.0 697.3 398.0V404.0Q697.3 408.0 693.3 408.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1285ms" x="705.3" y="405" font-size="12">955</text>
 <text x="214" y="429" font-size="12" text-anchor="end" class="secondary">Exfiltration</text>
 <path class="grow" style="animation-delay:750ms" fill="#3987e5" d="M224.0 418.0H253.7Q257.7 418.0 257.7 422.0V428.0Q257.7 432.0 253.7 432.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:1330ms" x="265.7" y="429" font-size="12">68</text>

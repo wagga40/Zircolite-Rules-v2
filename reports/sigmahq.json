@@ -11981,7 +11981,7 @@
       "path": "rules/windows/file/file_delete/file_delete_win_delete_exchange_powershell_logs.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "175ab703cdab562d894996e225dff7d3248af3b0c49c75a5fea5f01debc71f00"
+      "sha256": "8a4d74e24d1b881e392ffd2a975254101acebf73a642c94201bda797b1418c4c"
     },
     {
       "document": "0",
@@ -12107,7 +12107,7 @@
       "path": "rules/windows/file/file_event/file_event_win_create_evtx_non_common_locations.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "f4e705fed019e380816c2fd9c60158edaf80b11ba14438176b488051ad634298"
+      "sha256": "fd35cdb8faa18a3f3076b8d46b8d7559b37444322e7ef1cae9262be68c35e714"
     },
     {
       "document": "0",
@@ -23048,7 +23048,7 @@
       "path": "rules/windows/file/file_delete/file_delete_win_delete_exchange_powershell_logs.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "175ab703cdab562d894996e225dff7d3248af3b0c49c75a5fea5f01debc71f00"
+      "sha256": "8a4d74e24d1b881e392ffd2a975254101acebf73a642c94201bda797b1418c4c"
     },
     {
       "document": "0",
@@ -23174,7 +23174,7 @@
       "path": "rules/windows/file/file_event/file_event_win_create_evtx_non_common_locations.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "f4e705fed019e380816c2fd9c60158edaf80b11ba14438176b488051ad634298"
+      "sha256": "fd35cdb8faa18a3f3076b8d46b8d7559b37444322e7ef1cae9262be68c35e714"
     },
     {
       "document": "0",
@@ -30447,7 +30447,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_nslookup_poweshell_download.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "645d9b803d2cfa6c2b497f358b2cb38cc854920dbf05b8f7edd26c0761ba2679"
+      "sha256": "56d5a2e3255b7298917c5c6e1c50cea24c0b99cec7c2ff63ed681e6f3b3954d1"
     },
     {
       "document": "0",
@@ -41288,7 +41288,7 @@
   ],
   "failures": [
     {
-      "approved": false,
+      "approved": true,
       "document": "0",
       "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
@@ -41459,7 +41459,7 @@
       "stage": "convert"
     },
     {
-      "approved": false,
+      "approved": true,
       "document": "0",
       "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
@@ -49809,7 +49809,7 @@
       "document": "0",
       "id": "a55349d8-9588-4c5a-8e3b-1925fe2a4ffe",
       "path": "rules/windows/file/file_delete/file_delete_win_delete_exchange_powershell_logs.yml",
-      "sha256": "175ab703cdab562d894996e225dff7d3248af3b0c49c75a5fea5f01debc71f00"
+      "sha256": "8a4d74e24d1b881e392ffd2a975254101acebf73a642c94201bda797b1418c4c"
     },
     {
       "adaptations": {},
@@ -49935,7 +49935,7 @@
       "document": "0",
       "id": "65236ec7-ace0-4f0c-82fd-737b04fd4dcb",
       "path": "rules/windows/file/file_event/file_event_win_create_evtx_non_common_locations.yml",
-      "sha256": "f4e705fed019e380816c2fd9c60158edaf80b11ba14438176b488051ad634298"
+      "sha256": "fd35cdb8faa18a3f3076b8d46b8d7559b37444322e7ef1cae9262be68c35e714"
     },
     {
       "adaptations": {},
@@ -57208,7 +57208,7 @@
       "document": "0",
       "id": "1b3b01c7-84e9-4072-86e5-fc285a41ff23",
       "path": "rules/windows/process_creation/proc_creation_win_nslookup_poweshell_download.yml",
-      "sha256": "645d9b803d2cfa6c2b497f358b2cb38cc854920dbf05b8f7edd26c0761ba2679"
+      "sha256": "56d5a2e3255b7298917c5c6e1c50cea24c0b99cec7c2ff63ed681e6f3b3954d1"
     },
     {
       "adaptations": {},
@@ -68314,9 +68314,9 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "42478221b1a062411b8185732c82caa439271122",
+  "revision": "7d8b152a5fc062ebd309f62ae4d8276aca2786af",
   "source": "sigmahq",
-  "status": "failed",
+  "status": "validated",
   "tools": {
     "pysigma": "2.0.0",
     "pysigma-backend-sqlite": "2.1.0",

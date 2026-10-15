@@ -1,9 +1,9 @@
 {
   "artifacts": {
     "rules_linux.json": 216,
-    "rules_windows_generic.json": 2282,
-    "rules_windows_merged.json": 4523,
-    "rules_windows_sysmon.json": 2833
+    "rules_windows_generic.json": 2284,
+    "rules_windows_merged.json": 4527,
+    "rules_windows_sysmon.json": 2835
   },
   "exclusions": [
     {
@@ -3469,7 +3469,7 @@
       "path": "rules/linux/process_creation/proc_creation_lnx_install_root_certificate.yml",
       "profile": "sysmon",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "8e7af70ca8e0aeea873015d891cf423f175d0053fd861b8cef64920ee5046db8"
+      "sha256": "28a1e9b4a8af9500bcc356585906cb6cf91259883572a671de9428c7d20c0c10"
     },
     {
       "document": "0",
@@ -4568,7 +4568,7 @@
       "path": "rules/network/dns/net_dns_external_service_interaction_domains.yml",
       "profile": "sysmon",
       "reason": "logsource product None is outside this profile",
-      "sha256": "ede2ec8aac7ff6a041578170c7a8ca3947be68b516a0c7bdbe42752e41d2391f"
+      "sha256": "9af795305841e9c030bd1d7523de265c081b6edb8e0d9e50b8be8140e38660e6"
     },
     {
       "document": "0",
@@ -9860,7 +9860,7 @@
       "path": "rules/linux/process_creation/proc_creation_lnx_install_root_certificate.yml",
       "profile": "generic",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "8e7af70ca8e0aeea873015d891cf423f175d0053fd861b8cef64920ee5046db8"
+      "sha256": "28a1e9b4a8af9500bcc356585906cb6cf91259883572a671de9428c7d20c0c10"
     },
     {
       "document": "0",
@@ -10959,7 +10959,7 @@
       "path": "rules/network/dns/net_dns_external_service_interaction_domains.yml",
       "profile": "generic",
       "reason": "logsource product None is outside this profile",
-      "sha256": "ede2ec8aac7ff6a041578170c7a8ca3947be68b516a0c7bdbe42752e41d2391f"
+      "sha256": "9af795305841e9c030bd1d7523de265c081b6edb8e0d9e50b8be8140e38660e6"
     },
     {
       "document": "0",
@@ -11981,7 +11981,7 @@
       "path": "rules/windows/file/file_delete/file_delete_win_delete_exchange_powershell_logs.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "175ab703cdab562d894996e225dff7d3248af3b0c49c75a5fea5f01debc71f00"
+      "sha256": "8a4d74e24d1b881e392ffd2a975254101acebf73a642c94201bda797b1418c4c"
     },
     {
       "document": "0",
@@ -12107,7 +12107,7 @@
       "path": "rules/windows/file/file_event/file_event_win_create_evtx_non_common_locations.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "f4e705fed019e380816c2fd9c60158edaf80b11ba14438176b488051ad634298"
+      "sha256": "fd35cdb8faa18a3f3076b8d46b8d7559b37444322e7ef1cae9262be68c35e714"
     },
     {
       "document": "0",
@@ -12786,7 +12786,7 @@
       "path": "rules/windows/file/file_event/file_event_win_susp_double_extension.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "731467fc95390d4b31f75229ab3c4725c329a74d02dabf2fe554f439516bdd60"
+      "sha256": "cbb8b8ba5c690c216f148452bb136cca979989842e69d6153d7101b136b31732"
     },
     {
       "document": "0",
@@ -19744,7 +19744,7 @@
       "path": "rules/network/dns/net_dns_external_service_interaction_domains.yml",
       "profile": "linux",
       "reason": "logsource product None is outside this profile",
-      "sha256": "ede2ec8aac7ff6a041578170c7a8ca3947be68b516a0c7bdbe42752e41d2391f"
+      "sha256": "9af795305841e9c030bd1d7523de265c081b6edb8e0d9e50b8be8140e38660e6"
     },
     {
       "document": "0",
@@ -20325,7 +20325,7 @@
       "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "6df8054945d5ff36517fa7bc65f89c1a2cfc3d806bfd2b7adcdb65fe80dbb446"
+      "sha256": "292762142c36db3dec4f9900b2cea671d6a37a296fe72e6df29249de9e20d26f"
     },
     {
       "document": "0",
@@ -23048,7 +23048,7 @@
       "path": "rules/windows/file/file_delete/file_delete_win_delete_exchange_powershell_logs.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "175ab703cdab562d894996e225dff7d3248af3b0c49c75a5fea5f01debc71f00"
+      "sha256": "8a4d74e24d1b881e392ffd2a975254101acebf73a642c94201bda797b1418c4c"
     },
     {
       "document": "0",
@@ -23174,7 +23174,7 @@
       "path": "rules/windows/file/file_event/file_event_win_create_evtx_non_common_locations.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "f4e705fed019e380816c2fd9c60158edaf80b11ba14438176b488051ad634298"
+      "sha256": "fd35cdb8faa18a3f3076b8d46b8d7559b37444322e7ef1cae9262be68c35e714"
     },
     {
       "document": "0",
@@ -23853,7 +23853,7 @@
       "path": "rules/windows/file/file_event/file_event_win_susp_double_extension.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "731467fc95390d4b31f75229ab3c4725c329a74d02dabf2fe554f439516bdd60"
+      "sha256": "cbb8b8ba5c690c216f148452bb136cca979989842e69d6153d7101b136b31732"
     },
     {
       "document": "0",
@@ -26051,7 +26051,7 @@
       "path": "rules/windows/powershell/powershell_script/posh_ps_etw_trace_evasion.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "6c4f908ce0850656bb0b49df10ec19afc87877681150f5fe11b37125c1f4363a"
+      "sha256": "4b13b8d2f8ac98b8142ca8af0e384f8ace2b5e0ace256f0fe9ae522bbf6aa5ed"
     },
     {
       "document": "0",
@@ -30447,7 +30447,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_nslookup_poweshell_download.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "645d9b803d2cfa6c2b497f358b2cb38cc854920dbf05b8f7edd26c0761ba2679"
+      "sha256": "56d5a2e3255b7298917c5c6e1c50cea24c0b99cec7c2ff63ed681e6f3b3954d1"
     },
     {
       "document": "0",
@@ -33667,7 +33667,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_susp_etw_trace_evasion.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "f883d161d3a510e54a3baa3e54ecc22fe4cb515a6569cb1b59df03688215df5b"
+      "sha256": "fa2afe1689c1006c008fa2844d92bd41784a956d51e0ed2bc492eb4593a9a1c6"
     },
     {
       "document": "0",
@@ -35778,6 +35778,13 @@
     },
     {
       "document": "0",
+      "path": "rules/windows/registry/registry_set/registry_set_allow_defender_firewall_exceptions.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "caac055208f338e020bbdbc8d93d34e2fb865dd14efeee610461b623a08b613b"
+    },
+    {
+      "document": "0",
       "path": "rules/windows/registry/registry_set/registry_set_allow_rdp_remote_assistance_feature.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
@@ -36034,6 +36041,13 @@
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
       "sha256": "1f19512c3a12a7ee3cb411d082d53f2fc08ce739449243193991e30a55cfb89b"
+    },
+    {
+      "document": "0",
+      "path": "rules/windows/registry/registry_set/registry_set_defender_firewall_add_exception.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "6c37e06fe55f0640addf2d8fd91100465c765a16e52492dc21ca12ef0857dfb0"
     },
     {
       "document": "0",
@@ -41279,7 +41293,7 @@
       "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
       "profile": "sysmon",
-      "sha256": "6df8054945d5ff36517fa7bc65f89c1a2cfc3d806bfd2b7adcdb65fe80dbb446",
+      "sha256": "292762142c36db3dec4f9900b2cea671d6a37a296fe72e6df29249de9e20d26f",
       "stage": "convert"
     },
     {
@@ -41450,7 +41464,7 @@
       "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
       "profile": "generic",
-      "sha256": "6df8054945d5ff36517fa7bc65f89c1a2cfc3d806bfd2b7adcdb65fe80dbb446",
+      "sha256": "292762142c36db3dec4f9900b2cea671d6a37a296fe72e6df29249de9e20d26f",
       "stage": "convert"
     },
     {
@@ -41896,7 +41910,7 @@
     }
   ],
   "ignored": [],
-  "input_documents": 3765,
+  "input_documents": 3767,
   "official_duplicates_removed": {
     "generic/correlations": 0,
     "generic/events": 0,
@@ -41907,10 +41921,10 @@
   },
   "profiles": {
     "generic": {
-      "converted": 2282,
+      "converted": 2284,
       "correlations": 0,
-      "eligible": 2300,
-      "events": 2282,
+      "eligible": 2302,
+      "events": 2284,
       "reference_only": 0
     },
     "linux": {
@@ -41921,10 +41935,10 @@
       "reference_only": 0
     },
     "sysmon": {
-      "converted": 2833,
+      "converted": 2835,
       "correlations": 0,
-      "eligible": 2852,
-      "events": 2833,
+      "eligible": 2854,
+      "events": 2835,
       "reference_only": 0
     }
   },
@@ -45392,7 +45406,7 @@
       "document": "0",
       "id": "78a80655-a51e-4669-bc6b-e9d206a462ee",
       "path": "rules/linux/process_creation/proc_creation_lnx_install_root_certificate.yml",
-      "sha256": "8e7af70ca8e0aeea873015d891cf423f175d0053fd861b8cef64920ee5046db8"
+      "sha256": "28a1e9b4a8af9500bcc356585906cb6cf91259883572a671de9428c7d20c0c10"
     },
     {
       "adaptations": {},
@@ -46491,7 +46505,7 @@
       "document": "0",
       "id": "aff715fa-4dd5-497a-8db3-910bea555566",
       "path": "rules/network/dns/net_dns_external_service_interaction_domains.yml",
-      "sha256": "ede2ec8aac7ff6a041578170c7a8ca3947be68b516a0c7bdbe42752e41d2391f"
+      "sha256": "9af795305841e9c030bd1d7523de265c081b6edb8e0d9e50b8be8140e38660e6"
     },
     {
       "adaptations": {},
@@ -47072,7 +47086,7 @@
       "document": "0",
       "id": "78bc5783-81d9-4d73-ac97-59f6db4f72a8",
       "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
-      "sha256": "6df8054945d5ff36517fa7bc65f89c1a2cfc3d806bfd2b7adcdb65fe80dbb446"
+      "sha256": "292762142c36db3dec4f9900b2cea671d6a37a296fe72e6df29249de9e20d26f"
     },
     {
       "adaptations": {},
@@ -49795,7 +49809,7 @@
       "document": "0",
       "id": "a55349d8-9588-4c5a-8e3b-1925fe2a4ffe",
       "path": "rules/windows/file/file_delete/file_delete_win_delete_exchange_powershell_logs.yml",
-      "sha256": "175ab703cdab562d894996e225dff7d3248af3b0c49c75a5fea5f01debc71f00"
+      "sha256": "8a4d74e24d1b881e392ffd2a975254101acebf73a642c94201bda797b1418c4c"
     },
     {
       "adaptations": {},
@@ -49921,7 +49935,7 @@
       "document": "0",
       "id": "65236ec7-ace0-4f0c-82fd-737b04fd4dcb",
       "path": "rules/windows/file/file_event/file_event_win_create_evtx_non_common_locations.yml",
-      "sha256": "f4e705fed019e380816c2fd9c60158edaf80b11ba14438176b488051ad634298"
+      "sha256": "fd35cdb8faa18a3f3076b8d46b8d7559b37444322e7ef1cae9262be68c35e714"
     },
     {
       "adaptations": {},
@@ -50600,7 +50614,7 @@
       "document": "0",
       "id": "b4926b47-a9d7-434c-b3a0-adc3fa0bd13e",
       "path": "rules/windows/file/file_event/file_event_win_susp_double_extension.yml",
-      "sha256": "731467fc95390d4b31f75229ab3c4725c329a74d02dabf2fe554f439516bdd60"
+      "sha256": "cbb8b8ba5c690c216f148452bb136cca979989842e69d6153d7101b136b31732"
     },
     {
       "adaptations": {},
@@ -52798,7 +52812,7 @@
       "document": "0",
       "id": "115fdba9-f017-42e6-84cf-d5573bf2ddf8",
       "path": "rules/windows/powershell/powershell_script/posh_ps_etw_trace_evasion.yml",
-      "sha256": "6c4f908ce0850656bb0b49df10ec19afc87877681150f5fe11b37125c1f4363a"
+      "sha256": "4b13b8d2f8ac98b8142ca8af0e384f8ace2b5e0ace256f0fe9ae522bbf6aa5ed"
     },
     {
       "adaptations": {},
@@ -57194,7 +57208,7 @@
       "document": "0",
       "id": "1b3b01c7-84e9-4072-86e5-fc285a41ff23",
       "path": "rules/windows/process_creation/proc_creation_win_nslookup_poweshell_download.yml",
-      "sha256": "645d9b803d2cfa6c2b497f358b2cb38cc854920dbf05b8f7edd26c0761ba2679"
+      "sha256": "56d5a2e3255b7298917c5c6e1c50cea24c0b99cec7c2ff63ed681e6f3b3954d1"
     },
     {
       "adaptations": {},
@@ -60414,7 +60428,7 @@
       "document": "0",
       "id": "a238b5d0-ce2d-4414-a676-7a531b3d13d6",
       "path": "rules/windows/process_creation/proc_creation_win_susp_etw_trace_evasion.yml",
-      "sha256": "f883d161d3a510e54a3baa3e54ecc22fe4cb515a6569cb1b59df03688215df5b"
+      "sha256": "fa2afe1689c1006c008fa2844d92bd41784a956d51e0ed2bc492eb4593a9a1c6"
     },
     {
       "adaptations": {},
@@ -62526,6 +62540,13 @@
     {
       "adaptations": {},
       "document": "0",
+      "id": "c69fc6a2-607d-4530-b7d1-75823af1bde4",
+      "path": "rules/windows/registry/registry_set/registry_set_allow_defender_firewall_exceptions.yml",
+      "sha256": "caac055208f338e020bbdbc8d93d34e2fb865dd14efeee610461b623a08b613b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
       "id": "37b437cf-3fc5-4c8e-9c94-1d7c9aff842b",
       "path": "rules/windows/registry/registry_set/registry_set_allow_rdp_remote_assistance_feature.yml",
       "sha256": "a0a14b8776b95c0cd7c814520c05c3d8264da1af0dd13f9c48dbca2e8abec887"
@@ -62781,6 +62802,13 @@
       "id": "a982fc9c-6333-4ffb-a51d-addb04e8b529",
       "path": "rules/windows/registry/registry_set/registry_set_defender_exclusions.yml",
       "sha256": "1f19512c3a12a7ee3cb411d082d53f2fc08ce739449243193991e30a55cfb89b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6648f900-4a7d-47e3-bad6-952b313a1c0e",
+      "path": "rules/windows/registry/registry_set/registry_set_defender_firewall_add_exception.yml",
+      "sha256": "6c37e06fe55f0640addf2d8fd91100465c765a16e52492dc21ca12ef0857dfb0"
     },
     {
       "adaptations": {},
@@ -68286,7 +68314,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "8a4813404ea3074890e0cda9272d4d1a8b2941d6",
+  "revision": "7d8b152a5fc062ebd309f62ae4d8276aca2786af",
   "source": "sigmahq",
   "status": "validated",
   "tools": {
