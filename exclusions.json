@@ -1015,7 +1015,7 @@
     "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
     "profile": "sysmon",
     "reason": "Fieldless keyword detections need the backend's fulltext_field (schema version 3); Zircolite has no full-text column, so they remain excluded.",
-    "sha256": "6df8054945d5ff36517fa7bc65f89c1a2cfc3d806bfd2b7adcdb65fe80dbb446",
+    "sha256": "292762142c36db3dec4f9900b2cea671d6a37a296fe72e6df29249de9e20d26f",
     "source": "sigmahq",
     "stage": "convert"
   },
@@ -1205,7 +1205,7 @@
     "path": "rules/windows/builtin/application/Other/win_av_relevant_match.yml",
     "profile": "generic",
     "reason": "Fieldless keyword detections need the backend's fulltext_field (schema version 3); Zircolite has no full-text column, so they remain excluded.",
-    "sha256": "6df8054945d5ff36517fa7bc65f89c1a2cfc3d806bfd2b7adcdb65fe80dbb446",
+    "sha256": "292762142c36db3dec4f9900b2cea671d6a37a296fe72e6df29249de9e20d26f",
     "source": "sigmahq",
     "stage": "convert"
   },
