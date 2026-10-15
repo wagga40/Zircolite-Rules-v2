@@ -24,10 +24,10 @@ LISTED = 20  # lines and failures per source; the conversion-reports artifact ha
 # GitHub limits: 65,536 characters per issue body, 1 MiB per step summary, 10 warnings per step.
 MAX_ISSUE, MAX_SUMMARY, MAX_WARNINGS = 60_000, 250_000, 10
 KEYS = ("path", "document", "stage", "profile", "sha256", "error")
-FIX = ("If an upstream edit changed a rule that still fails for its reviewed reason, the job summary's "
-       "exclusion baseline pairs the new failure with its now unused record: re-pin that record's `sha256` "
-       "in `exclusions.json`. Otherwise fix the conversion or add a reviewed record. A fetch error "
-       "usually clears on a later run.")
+FIX = ("Each failure above needs review. If only the converter's wording of a reviewed error changed, the job "
+       "summary's exclusion baseline proposes the new message, and `exclusion_baseline.py --apply` writes it. "
+       "Otherwise fix the conversion or add a reviewed record to `exclusions.json`. A fetch error usually "
+       "clears on a later run.")
 
 
 def parse_time(text):

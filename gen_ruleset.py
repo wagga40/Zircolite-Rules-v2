@@ -147,7 +147,9 @@ def generate(registry, sources, output, cache, exclusions, local_roots=None, rev
             files = {name: json_bytes(rules) for name, rules in artifacts.items()}
             files[f"licenses/{source}.txt"] = license_bytes
             # The successful report is kept with its rules; the latest attempt is separate.
-            files[f"provenance/{source}.json"] = json_bytes(report)
+            # Drift is a pending re-pin, not provenance: re-pinning must not change it.
+            files[f"provenance/{source}.json"] = json_bytes({**report, "failures": [
+                {key: value for key, value in failure.items() if key != "drifted"} for failure in report["failures"]]})
             hashes = {name: digest(data) for name, data in files.items()}
             if not audit:
                 unchanged = previous.get("revision") == revision and previous.get("artifacts") == hashes

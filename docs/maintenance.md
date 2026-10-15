@@ -45,7 +45,7 @@ Each source goes through the same pipeline:
 
 A source is published only when every failure has a reviewed exclusion. Otherwise its previous files stay, the manifest marks it `stale`, and `gen_ruleset.py` exits with status 3. An uncaught error exits with 1.
 
-A record matches a failure by path, document, stage, profile, error, and content hash. An upstream edit to an excluded rule that fails with the same error still matches. The rule stays out, the source publishes, and the run warns that the record needs a re-pin; `exclusion_baseline.py <reports> --apply` updates the hash. An edit that changes the error blocks the source until reviewed.
+A record matches a failure by path, document, stage, profile, error, and content hash. An upstream edit to an excluded rule that fails with the same error still matches. The rule stays out, the source publishes, and the run warns that the record needs a re-pin; `exclusion_baseline.py <reports> --apply` updates the hash. An edit that changes the error, or any edit to a collection action such as `action: global`, blocks the source until reviewed: such an action shapes sibling documents that do publish.
 
 | File | Contents |
 |---|---|

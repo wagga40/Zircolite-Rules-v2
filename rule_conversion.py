@@ -304,9 +304,12 @@ def compile_source(source, spec, root, exclusions):
         }
     for failure in failures:
         failure["approved"] = bool(approved_failure(source, failure, exclusions))
-        if not failure["approved"] and approved_failure(source, failure, exclusions, ignore=("sha256",)):
-            # Edited upstream but failing exactly as reviewed: the rule stays out,
-            # as it would after re-pinning, which exclusion_baseline.py proposes.
+        # Edited upstream but failing exactly as reviewed: the rule stays out, as
+        # it would after re-pinning, which exclusion_baseline.py proposes. A
+        # collection action shapes the sibling documents that do publish, so an
+        # edit to one is always reviewed.
+        if (not failure["approved"] and failure["stage"] != "discovery"
+                and approved_failure(source, failure, exclusions, ignore=("sha256",))):
             failure.update(approved=True, drifted=True)
     report["status"] = "failed" if any(not f["approved"] for f in failures) else "validated"
     if not any(result["events"] or result["correlations"] for result in outputs.values()):

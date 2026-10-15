@@ -191,14 +191,20 @@ jobs:
       - name: Report the outcome
         if: >-
           ${{ !cancelled() && steps.generate.outputs.result != '' &&
-          (steps.generate.outputs.result != '0' || steps.track.outcome == 'failure') }}
+          (steps.generate.outputs.result != '0' || steps.track.outcome == 'failure' ||
+          steps.summarize.outcome == 'failure') }}
         env:
           RESULT: ${{ steps.generate.outputs.result }}
           SUMMARIZED: ${{ steps.summarize.outcome }}
           TRACKED: ${{ steps.track.outcome }}
         run: |
           if [ "$RESULT" = 0 ]; then
-            echo '::warning title=Issue not closed::Every source validated, but the tracking issue could not be closed; see the Track failed sources in an issue log.'
+            if [ "$TRACKED" != success ]; then
+              echo '::warning title=Issue not closed::Every source validated, but the tracking issue could not be closed; see the Track failed sources in an issue log.'
+            fi
+            if [ "$SUMMARIZED" != success ]; then
+              echo '::warning title=Summary incomplete::Every source validated, but the check for exclusions that need a re-pin did not finish; see the Summarize failed sources log.'
+            fi
             exit 0
           fi
           if [ "$RESULT" != 3 ]; then

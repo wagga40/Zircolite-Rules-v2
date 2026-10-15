@@ -139,6 +139,19 @@ jobs:
               echo "| ${step,,} | ${!step:-skipped} |"
               if [ "${!step}" = failure ]; then attention=yes; fi
             done
+            # Both generations accept failed sources, which leave nothing to compare.
+            uncompared=$(for run in control candidate; do
+                manifest="$RUNNER_TEMP/$run/release-manifest.json"
+                if [ -f "$manifest" ]; then
+                  jq -r '.sources | to_entries[] | select(.value.status != "current") | .key' "$manifest" \
+                    || echo "$run manifest unreadable"
+                fi
+              done | sort -u | paste -sd, - | sed 's/,/, /g')
+            if [ -n "$uncompared" ]; then
+              attention=yes
+              echo
+              echo "Not compared, because generation failed in the control or candidate run: $uncompared. The reports in the artifact say why."
+            fi
             if [ "$RESOLVE" != success ]; then
               echo
               echo '<details><summary>Resolution log</summary>'
