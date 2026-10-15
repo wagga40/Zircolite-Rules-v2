@@ -1,9 +1,10 @@
 """Report the sources a generation run kept at their previous rules.
 
 Writes the tracking issue body, prints warning annotations, and appends the
-failures and the exclusion baseline to a job summary. Writes nothing when every
-source validated. Failure text comes from upstream rules, so the issue keeps it
-in fenced blocks, where it cannot mention users or render links.
+failures and the exclusion baseline to a job summary. Rules edited upstream
+that still fail as reviewed only warn: they stay excluded and need a re-pin.
+Writes nothing when there is neither. Failure text comes from upstream rules,
+so it stays in fenced blocks, where it cannot mention users or render links.
 """
 
 import argparse
@@ -11,9 +12,10 @@ import hashlib
 import json
 import re
 import sys
+from datetime import datetime
 from pathlib import Path
 
-from exclusion_baseline import rebaseline
+from exclusion_baseline import fenced, rebaseline
 from exclusion_baseline import render_markdown as render_baseline
 
 ROOT = Path(__file__).resolve().parent
@@ -28,10 +30,21 @@ FIX = ("If an upstream edit changed a rule that still fails for its reviewed rea
        "usually clears on a later run.")
 
 
-def failed_sources(manifest, reports):
-    """Sources whose latest attempt failed, with the rule failures no reviewed record approves."""
+def parse_time(text):
+    return datetime.fromisoformat(text)
+
+
+def failed_sources(manifest, reports, since=None):
+    """Sources whose latest attempt failed, with the rule failures no reviewed record approves.
+
+    With since, only sources attempted from then on: older entries belong to an
+    earlier run or to a source no longer in the registry.
+    """
     result = []
     for name, details in sorted(manifest.get("sources", {}).items()):
+        attempted = details.get("last_attempt")
+        if since and not (attempted and parse_time(attempted) >= since):
+            continue
         if details.get("status") in FAILED:
             failures = [item for item in reports.get(name, {}).get("failures", []) if not item.get("approved")]
             result.append({"source": name, "status": details["status"],
@@ -40,10 +53,19 @@ def failed_sources(manifest, reports):
     return result
 
 
+def drifted_failures(manifest, reports):
+    """Approved failures of rules edited upstream, pending a re-pin."""
+    return [failure for name in sorted(manifest.get("sources", {}))
+            for failure in reports.get(name, {}).get("failures", []) if failure.get("drifted")]
+
+
 def fingerprint(failed):
-    """Identifies the failures alone, so a daily repeat of the same ones notifies nobody."""
-    value = [[item["source"], item["error"], [[failure.get(key) for key in KEYS] for failure in item["failures"]]]
-             for item in failed]
+    """Identifies the failures alone, so a daily repeat of the same ones notifies nobody.
+
+    Paths and numbers in a source error vary between runs, so they are ignored.
+    """
+    value = [[item["source"], re.sub(r"\S*[/\\]\S*|\d+", "#", item["error"]),
+              [[failure.get(key) for key in KEYS] for failure in item["failures"]]] for item in failed]
     return hashlib.sha256(json.dumps(value).encode()).hexdigest()[:16]
 
 
@@ -60,12 +82,6 @@ def details(item):
     shown = [f"{failure['path']} #{failure['document']} {failure['stage']}/{failure['profile']}: "
              f"{first_line(failure.get('error'))}" for failure in item["failures"]]
     return [*capped(item["error"].splitlines(), "lines"), *capped(shown, "failures")]
-
-
-def fenced(lines):
-    text = "\n".join(lines)
-    fence = "~" * max(3, 1 + max((len(run) for run in re.findall(r"~+", text)), default=0))
-    return f"{fence}\n{text}\n{fence}"
 
 
 def truncate(text, size):
@@ -109,10 +125,17 @@ def escape(text, prop=False):
     return text.replace(":", "%3A").replace(",", "%2C") if prop else text
 
 
-def annotations(failed):
-    shown = failed if len(failed) <= MAX_WARNINGS else failed[:MAX_WARNINGS - 1]
-    lines = [f"::warning title={escape(item['source'] + ' kept its previous rules', True)}::"
-             f"{escape(chr(10).join(details(item)[:6]))}" for item in shown]
+def annotations(failed, drifted=()):
+    lines = []
+    if drifted:
+        rules = f"{len(drifted)} excluded rule" + (" changed" if len(drifted) == 1 else "s changed")
+        lines.append(f"::warning title={rules} upstream::They still fail as reviewed and stay excluded. Re-pin "
+                     "their hashes with exclusion_baseline.py --apply on the conversion-reports artifact; "
+                     "the job summary lists them.")
+    room = MAX_WARNINGS - len(lines)
+    shown = failed if len(failed) <= room else failed[:room - 1]
+    lines += [f"::warning title={escape(item['source'] + ' kept its previous rules', True)}::"
+              f"{escape(chr(10).join(details(item)[:6]))}" for item in shown]
     if len(shown) < len(failed):
         lines.append(f"::warning title={len(failed) - len(shown)} more sources kept their previous rules::"
                      "See the job summary and the tracking issue.")
@@ -131,20 +154,24 @@ def main():
     parser.add_argument("--run-url", help="Run linked from the issue body")
     parser.add_argument("--summary", type=Path, help="Append the failures and exclusion baseline to this file")
     parser.add_argument("--issue", type=Path, help="Write the tracking issue body to this file")
+    parser.add_argument("--since", type=parse_time, metavar="ISO-8601",
+                        help="Report only sources attempted from this time on")
     args = parser.parse_args()
     if args.issue and not args.run_url:
         parser.error("--issue requires --run-url")
     output = args.output_dir.resolve()
     reports = {path.stem: json.loads(path.read_bytes()) for path in sorted((output / "reports").glob("*.json"))}
-    failed = failed_sources(json.loads((output / "release-manifest.json").read_bytes()), reports)
-    if not failed:
+    manifest = json.loads((output / "release-manifest.json").read_bytes())
+    failed, drifted = failed_sources(manifest, reports, args.since), drifted_failures(manifest, reports)
+    if not failed and not drifted:
         return 0
     # Most important first: the issue notifies, and the baseline is the likeliest to fail.
-    if args.issue:
+    if args.issue and failed:
         write(args.issue, render_issue(failed, args.run_url))
-    sys.stdout.write("".join(line + "\n" for line in annotations(failed)))
+    sys.stdout.write("".join(line + "\n" for line in annotations(failed, drifted)))
     if args.summary:
-        write(args.summary, truncate(render_failures(failed), MAX_SUMMARY // 2), "a")
+        if failed:
+            write(args.summary, truncate(render_failures(failed), MAX_SUMMARY // 2), "a")
         baseline = rebaseline(json.loads(args.exclusions.read_bytes()), list(reports.values()))
         write(args.summary, truncate(render_baseline(baseline), MAX_SUMMARY // 2), "a")
     return 0

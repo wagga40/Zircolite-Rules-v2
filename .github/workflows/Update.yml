@@ -99,8 +99,13 @@ jobs:
           # Each source is staged and validated before promotion. A source that
           # fails keeps its previous rules (exit 3) while the others publish;
           # any other non-zero status is a crash, reported after publishing.
+          echo "started=$(date -u +%Y-%m-%dT%H:%M:%S+00:00)" >> "$GITHUB_OUTPUT"
+          # Upstream text reaches this log, so it must not run workflow commands.
+          token=$(openssl rand -hex 16)
+          echo "::stop-commands::$token"
           result=0
           pdm run python gen_ruleset.py || result=$?
+          echo "::$token::"
           echo "result=$result" >> "$GITHUB_OUTPUT"
 
       - name: Upload validation reports
@@ -113,14 +118,17 @@ jobs:
             release-manifest.json
           if-no-files-found: warn
 
+      # Also on a clean run: rules edited upstream that fail as reviewed still
+      # publish, and only this step warns that their records need a re-pin.
       - name: Summarize failed sources
         id: summarize
-        if: always() && steps.generate.outcome == 'success' && steps.generate.outputs.result != '0'
+        if: always() && steps.generate.outcome == 'success'
         continue-on-error: true
         env:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SINCE: ${{ steps.generate.outputs.started }}
         run: >-
-          pdm run python failure_report.py --run-url "$RUN_URL"
+          pdm run python failure_report.py --run-url "$RUN_URL" --since "$SINCE"
           --summary "$GITHUB_STEP_SUMMARY" --issue "$RUNNER_TEMP/failures.md"
 
       - name: Summarize ruleset changes
@@ -181,12 +189,18 @@ jobs:
       # issue records them; red on a crash, when no source validated, or when
       # that feedback was lost.
       - name: Report the outcome
-        if: ${{ !cancelled() && steps.generate.outputs.result != '' && steps.generate.outputs.result != '0' }}
+        if: >-
+          ${{ !cancelled() && steps.generate.outputs.result != '' &&
+          (steps.generate.outputs.result != '0' || steps.track.outcome == 'failure') }}
         env:
           RESULT: ${{ steps.generate.outputs.result }}
           SUMMARIZED: ${{ steps.summarize.outcome }}
           TRACKED: ${{ steps.track.outcome }}
         run: |
+          if [ "$RESULT" = 0 ]; then
+            echo '::warning title=Issue not closed::Every source validated, but the tracking issue could not be closed; see the Track failed sources in an issue log.'
+            exit 0
+          fi
           if [ "$RESULT" != 3 ]; then
             echo "::error title=Generation stopped::gen_ruleset.py exited with status $RESULT; its traceback is in the Generate validated sources log."
             exit 1

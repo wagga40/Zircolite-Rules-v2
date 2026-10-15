@@ -92,3 +92,67 @@ def test_cli_is_a_dry_run_unless_applied(tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(sys, "argv", argv)
     # The report still shows the failure; the updated record now approves it.
     assert exclusion_baseline.main() == 0
+
+
+def test_an_edited_rule_failing_as_reviewed_publishes_and_is_proposed_for_re_pinning(tmp_path):
+    root = broken_source(tmp_path)
+    _, report = compile_source("test", SPEC, root, [])
+    exclusions = reviewed(report, sha256="0" * 64)
+    _, report = compile_source("test", SPEC, root, exclusions)
+    failure, = report["failures"]
+    assert report["status"] == "validated" and failure["approved"] and failure["drifted"]
+    result = rebaseline(exclusions, [report])
+    proposal, = result["proposals"]
+    assert (proposal["field"], proposal["old"], proposal["new"]) == ("sha256", "0" * 64, failure["sha256"])
+    assert result["new_failures"] == result["stale"] == []
+    markdown = exclusion_baseline.render_markdown(result)
+    assert "re-pinned" in markdown and failure["error"].splitlines()[0] in markdown
+    updated = apply(exclusions, result)
+    _, report = compile_source("test", SPEC, root, updated)
+    assert not report["failures"][0].get("drifted")
+    assert rebaseline(updated, [report])["proposals"] == []
+
+
+def test_an_edited_rule_failing_differently_still_blocks(tmp_path):
+    root = broken_source(tmp_path)
+    _, report = compile_source("test", SPEC, root, [])
+    _, report = compile_source("test", SPEC, root, reviewed(report, sha256="0" * 64, error="Other"))
+    assert report["status"] == "failed" and not report["failures"][0]["approved"]
+
+
+def test_control_removes_what_is_not_caused_by_the_candidate(tmp_path):
+    _, report = compile_source("test", SPEC, broken_source(tmp_path), [])
+    stale = {"source": "test", "path": "gone.yml", "sha256": "1" * 64, "document": "0", "stage": "parse",
+             "profile": "*", "error": "Old", "reason": "Reviewed"}
+    control = rebaseline([stale], [report])
+    assert control["new_failures"] and control["stale"]
+    assert exclusion_baseline.subtract(control, control) == {
+        "proposals": [], "new_failures": [], "stale": [], "skipped": []}
+    extra = {**report["failures"][0], "path": "rules/other.yml"}
+    candidate = rebaseline([stale], [{**report, "failures": report["failures"] + [extra]}])
+    difference = exclusion_baseline.subtract(candidate, control)
+    assert [item["path"] for item in difference["new_failures"]] == ["rules/other.yml"]
+    assert difference["stale"] == []
+
+
+def outside_fences(markdown):
+    """Text CommonMark renders outside fenced code blocks."""
+    outside, fence = [], None
+    for line in markdown.splitlines():
+        run = line[:len(line) - len(line.lstrip(line[:1]))] if line[:1] in "~`" else ""
+        if fence is None and len(run) >= 3:
+            fence = run
+        elif fence is not None and run and run[0] == fence[0] and len(run) >= len(fence) and not line[len(run):].strip():
+            fence = None
+        elif fence is None:
+            outside.append(line)
+    return "\n".join(outside)
+
+
+def test_upstream_text_is_fenced_in_the_markdown():
+    failure = {"source": "test", "path": "a.yml", "sha256": "1" * 64, "document": "0", "stage": "parse",
+               "profile": "*", "error": "~~~~\n```\n@someone [x](https://example.org)"}
+    markdown = exclusion_baseline.render_markdown(
+        {"proposals": [{**failure, "index": 0, "field": "error", "old": "Old", "new": failure["error"]}],
+         "new_failures": [{**failure, "error": "@someone ~~~"}], "stale": [], "skipped": []})
+    assert markdown.count("@someone") == 2 and "@someone" not in outside_fences(markdown)

@@ -45,7 +45,7 @@ Each source goes through the same pipeline:
 
 A source is published only when every failure has a reviewed exclusion. Otherwise its previous files stay, the manifest marks it `stale`, and `gen_ruleset.py` exits with status 3. An uncaught error exits with 1.
 
-Records match a rule by content hash, so an upstream edit to an excluded rule makes it fail again. If it still fails for its reviewed reason, re-pin the record's `sha256` to the hash in the new report. `exclusion_baseline.py <reports>` lists the new failure next to the record it no longer matches.
+A record matches a failure by path, document, stage, profile, error, and content hash. An upstream edit to an excluded rule that fails with the same error still matches. The rule stays out, the source publishes, and the run warns that the record needs a re-pin; `exclusion_baseline.py <reports> --apply` updates the hash. An edit that changes the error blocks the source until reviewed.
 
 | File | Contents |
 |---|---|
@@ -66,10 +66,10 @@ The daily run never upgrades dependencies.
    ```bash
    pdm run python gen_ruleset.py --audit --revisions-from release-manifest.json --output-dir build/audit
    pdm run python exclusion_baseline.py build/audit/reports           # review the proposals
-   pdm run python exclusion_baseline.py build/audit/reports --apply   # update messages, keep reasons
+   pdm run python exclusion_baseline.py build/audit/reports --apply   # update messages and hashes, keep reasons
    ```
 
-   Only records whose location still matches exactly are updated. New failures need a written reason.
+   A record is updated only when exactly one field changed: the error at the same content, or the hash with the same error. New failures need a written reason.
 3. Regenerate into `build/repro` and attach the output of `ruleset_diff.py . build/repro` to the pull request.
 
 Do not commit regenerated rulesets: the daily update also commits them, and CI publishes after merge.
@@ -78,9 +78,9 @@ Do not commit regenerated rulesets: the daily update also commits them, and CI p
 
 | Workflow | Runs | Does |
 |---|---|---|
-| `Update.yml` | Daily at 01:23 UTC, on pushes that change generation files, and on demand | Tests in a read-only job, then publishes changed sources, the README summary, the dashboard, and its figures. Adds a rule diff to the job summary. A source that fails keeps its previous rules. The run then ends green with a warning per source, plus the failures and exclusion baseline in the job summary. A *Rule source validation failures* issue stays open while a source fails and gets a comment when the failures change. The run fails only when generation crashes or the issue cannot be updated. |
+| `Update.yml` | Daily at 01:23 UTC, on pushes that change generation files, and on demand | Tests in a read-only job, then publishes changed sources, the README summary, the dashboard, and its figures. Adds a rule diff to the job summary, and a warning when an edited rule's record needs a re-pin. A source that fails keeps its previous rules. The run then ends green with a warning per source, plus the failures and exclusion baseline in the job summary. A *Rule source validation failures* issue stays open while a source fails and gets a comment when the failures change. The run fails only when generation crashes or the issue cannot be updated. |
 | `Update.yml` | Pull requests | Tests and `--verify-release`; never publishes |
-| `dependency-canary.yml` | Weekly and on demand | Resolves the newest allowed dependencies, tests, and regenerates. Keeps a *Dependency canary* issue open while versions, exclusions, or rules would change. |
+| `dependency-canary.yml` | Weekly and on demand | Regenerates the published revisions twice: with the locked dependencies as a control, then with the newest allowed ones. Keeps a *Dependency canary* issue open while versions, tests, exclusions, or rules differ from the control. |
 
 Security measures:
 
