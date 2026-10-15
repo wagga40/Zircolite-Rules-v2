@@ -462,3 +462,25 @@ def test_registry_patterns_skip_non_rule_yaml_visibly(tmp_path):
     assert sorted((item["path"], item["reason"]) for item in report["ignored"]) == [
         ("rules/ci/workflow.yml", "excluded by source configuration"),
         ("rules/pack/playbook/nested/steps.yaml", "excluded by source configuration")]
+
+
+def test_failed_sources_exit_distinctly_from_a_crash(tmp_path, monkeypatch):
+    registry = tmp_path / "sources.json"
+    registry.write_text(json.dumps({"test": SPEC}))
+    monkeypatch.setattr(gen_ruleset.sys, "argv", ["gen_ruleset.py", "--registry", str(registry)])
+    monkeypatch.setattr(gen_ruleset, "generate", lambda *args: ["test"])
+    # An uncaught exception exits 1, so CI can tell retained sources from a crash.
+    assert gen_ruleset.main() == gen_ruleset.SOURCES_FAILED == 3
+    monkeypatch.setattr(gen_ruleset, "generate", lambda *args: [])
+    assert gen_ruleset.main() == 0
+
+
+def test_a_message_less_exception_still_records_an_error(tmp_path, monkeypatch):
+    def fail(*args, **kwargs):
+        raise AssertionError
+    monkeypatch.setattr(gen_ruleset, "compile_source", fail)
+    root = source(tmp_path / "source")
+    assert gen_ruleset.generate({"test": SPEC}, ["test"], tmp_path / "out", tmp_path / "cache", [],
+                                {"test": root}) == ["test"]
+    manifest = json.loads((tmp_path / "out" / "release-manifest.json").read_text())
+    assert manifest["sources"]["test"]["error"] == "AssertionError"

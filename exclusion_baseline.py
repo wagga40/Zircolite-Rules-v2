@@ -80,7 +80,7 @@ def render_markdown(result):
         if items:
             lines.extend(["", f"### {title}", ""])
             lines.extend(f"- {item['source']} `{item['path']}` #{item['document']} {item['stage']}/{item['profile']}: "
-                         f"{item['error'].splitlines()[0]}" for item in items)
+                         f"{next(iter(item['error'].splitlines()), '')}" for item in items)
     if result["skipped"]:
         lines.extend(["", "Skipped (no per-rule results): " + ", ".join(result["skipped"])])
     return "\n".join(lines) + "\n"

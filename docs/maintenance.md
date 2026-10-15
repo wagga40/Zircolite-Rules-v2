@@ -43,7 +43,9 @@ Each source goes through the same pipeline:
 5. Convert.
 6. Prepare every query in a fresh SQLite database with its declared fields. Regexes and ATT&CK tags are checked, and correlation plans are executed.
 
-A source is published only when every failure has a reviewed exclusion. Otherwise its previous files stay and the manifest marks it `stale`.
+A source is published only when every failure has a reviewed exclusion. Otherwise its previous files stay, the manifest marks it `stale`, and `gen_ruleset.py` exits with status 3. An uncaught error exits with 1.
+
+Records match a rule by content hash, so an upstream edit to an excluded rule makes it fail again. If it still fails for its reviewed reason, re-pin the record's `sha256` to the hash in the new report. `exclusion_baseline.py <reports>` lists the new failure next to the record it no longer matches.
 
 | File | Contents |
 |---|---|
@@ -76,7 +78,7 @@ Do not commit regenerated rulesets: the daily update also commits them, and CI p
 
 | Workflow | Runs | Does |
 |---|---|---|
-| `Update.yml` | Daily at 01:23 UTC, on pushes that change generation files, and on demand | Tests in a read-only job, then publishes changed sources, the README summary, the dashboard, and its figures. Adds a rule diff to the job summary and keeps a *Rule source validation failures* issue open while a source fails. |
+| `Update.yml` | Daily at 01:23 UTC, on pushes that change generation files, and on demand | Tests in a read-only job, then publishes changed sources, the README summary, the dashboard, and its figures. Adds a rule diff to the job summary. A source that fails keeps its previous rules. The run then ends green with a warning per source, plus the failures and exclusion baseline in the job summary. A *Rule source validation failures* issue stays open while a source fails and gets a comment when the failures change. The run fails only when generation crashes or the issue cannot be updated. |
 | `Update.yml` | Pull requests | Tests and `--verify-release`; never publishes |
 | `dependency-canary.yml` | Weekly and on demand | Resolves the newest allowed dependencies, tests, and regenerates. Keeps a *Dependency canary* issue open while versions, exclusions, or rules would change. |
 

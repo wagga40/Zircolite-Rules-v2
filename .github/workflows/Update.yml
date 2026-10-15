@@ -96,8 +96,9 @@ jobs:
         id: generate
         shell: bash
         run: |
-          # Each source is staged and validated before promotion. Preserve a
-          # partial failure so successful sources publish before the job fails.
+          # Each source is staged and validated before promotion. A source that
+          # fails keeps its previous rules (exit 3) while the others publish;
+          # any other non-zero status is a crash, reported after publishing.
           result=0
           pdm run python gen_ruleset.py || result=$?
           echo "result=$result" >> "$GITHUB_OUTPUT"
@@ -111,6 +112,16 @@ jobs:
             reports/
             release-manifest.json
           if-no-files-found: warn
+
+      - name: Summarize failed sources
+        id: summarize
+        if: always() && steps.generate.outcome == 'success' && steps.generate.outputs.result != '0'
+        continue-on-error: true
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: >-
+          pdm run python failure_report.py --run-url "$RUN_URL"
+          --summary "$GITHUB_STEP_SUMMARY" --issue "$RUNNER_TEMP/failures.md"
 
       - name: Summarize ruleset changes
         if: steps.generate.outcome == 'success'
@@ -131,6 +142,7 @@ jobs:
           fi
 
       - name: Track failed sources in an issue
+        id: track
         if: always() && steps.generate.outcome == 'success'
         continue-on-error: true
         shell: bash
@@ -140,27 +152,54 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           title='Rule source validation failures'
+          body="$RUNNER_TEMP/failures.md"
           number=$(gh issue list --state open --search "in:title \"$title\"" --json number,title \
             --jq "map(select(.title == \"$title\"))[0].number // empty")
-          if [ "$RESULT" != 0 ]; then
-            {
-              echo "The latest update could not validate every source; their previous rulesets were retained."
-              echo "See [the run]($RUN_URL) and its conversion-reports artifact. This issue closes after a clean run."
-              echo
-              jq -r '.sources | to_entries[] | select(.value.error)
-                | "### \(.key) (\(.value.status))\n\n~~~\n\(.value.error)\n~~~\n"' release-manifest.json
-            } > "$RUNNER_TEMP/failures.md"
+          if [ "$RESULT" = 0 ]; then
             if [ -n "$number" ]; then
-              gh issue edit "$number" --body-file "$RUNNER_TEMP/failures.md"
-            else
-              gh issue create --title "$title" --body-file "$RUNNER_TEMP/failures.md"
+              gh issue close "$number" --comment "All sources validated in $RUN_URL."
             fi
-          elif [ -n "$number" ]; then
-            gh issue close "$number" --comment "All sources validated in $RUN_URL."
+          elif [ -s "$body" ]; then
+            if [ -z "$number" ]; then
+              gh issue create --title "$title" --body-file "$body"
+            else
+              # An edited description notifies nobody, so comment when the failures
+              # change. Commenting first means a failed edit repeats the comment
+              # next run rather than losing it.
+              old=$(gh issue view "$number" --json body --jq .body | grep -o 'failure-fingerprint: [0-9a-f]*' || true)
+              if [ "$old" != "$(grep -o 'failure-fingerprint: [0-9a-f]*' "$body")" ]; then
+                gh issue comment "$number" --body "The failing sources changed in $RUN_URL; the description lists them."
+              fi
+              gh issue edit "$number" --body-file "$body"
+            fi
+          elif [ "$RESULT" = 3 ]; then
+            echo '::error::Sources failed, but no issue body was written; see the Summarize failed sources step.'
+            exit 1
           fi
 
-      - name: Report failed sources
-        if: steps.generate.outputs.result != '' && steps.generate.outputs.result != '0'
+      # Ends the run: green when some sources kept their previous rules and the
+      # issue records them; red on a crash, when no source validated, or when
+      # that feedback was lost.
+      - name: Report the outcome
+        if: ${{ !cancelled() && steps.generate.outputs.result != '' && steps.generate.outputs.result != '0' }}
+        env:
+          RESULT: ${{ steps.generate.outputs.result }}
+          SUMMARIZED: ${{ steps.summarize.outcome }}
+          TRACKED: ${{ steps.track.outcome }}
         run: |
-          echo 'Some sources failed validation. Their previous rulesets were retained; inspect the reports artifact.' >&2
-          exit 1
+          if [ "$RESULT" != 3 ]; then
+            echo "::error title=Generation stopped::gen_ruleset.py exited with status $RESULT; its traceback is in the Generate validated sources log."
+            exit 1
+          fi
+          if [ "$TRACKED" != success ]; then
+            echo '::error title=Failed sources untracked::Some sources kept their previous rules, but the tracking issue was not updated; see the job summary and the Track failed sources in an issue log.'
+            exit 1
+          fi
+          if ! jq -e 'any(.sources[]; .status == "current")' release-manifest.json > /dev/null; then
+            echo '::error title=No source validated::Every source kept its previous rules, so nothing new was published; the tracking issue lists the failures.'
+            exit 1
+          fi
+          if [ "$SUMMARIZED" != success ]; then
+            echo '::warning title=Summary incomplete::The job summary may lack the failures or the exclusion baseline; see the Summarize failed sources log.'
+          fi
+          echo 'Some sources kept their previous rules; the warnings, job summary, and tracking issue list them.'

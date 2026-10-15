@@ -21,6 +21,9 @@ from ruleset_stats import update_readme_stats, verify_release
 
 ROOT = Path(__file__).resolve().parent
 PACKAGES = ("pysigma", "pysigma-backend-sqlite", "pysigma-pipeline-sysmon", "pysigma-pipeline-windows")
+# A source failed and kept its previous rules. Distinct from 1, which an
+# uncaught exception also exits with, so CI can tell the two apart.
+SOURCES_FAILED = 3
 
 
 def read_json(path, default):
@@ -171,18 +174,19 @@ def generate(registry, sources, output, cache, exclusions, local_roots=None, rev
                   f"{sum(p['correlations'] for p in report['profiles'].values())} correlations across profiles", flush=True)
         except Exception as exc:
             failed.append(source)
+            error = str(exc) or type(exc).__name__
             latest = read_json(output / "reports" / f"{source}.json", {})
             if latest.get("revision") != revision or latest.get("status") != "failed":
-                latest = {"source": source, "status": "failed", "revision": revision, "error": str(exc)}
+                latest = {"source": source, "status": "failed", "revision": revision, "error": error}
                 write_json(output / "reports" / f"{source}.json", latest)
             if not audit:
                 manifest["sources"][source] = {
                     **previous, "status": "stale" if previous.get("artifacts") else "unavailable",
                     "repository": spec["repository"], "failed_revision": revision,
-                    "last_attempt": now, "error": str(exc),
+                    "last_attempt": now, "error": error,
                 }
                 write_json(manifest_path, manifest)
-            print(f"[{source}] FAILED: {exc}; previous rules retained", file=sys.stderr, flush=True)
+            print(f"[{source}] FAILED: {error}; previous rules retained", file=sys.stderr, flush=True)
     if not audit:
         rebuild_windows_all(output)
         if (output / "README.md").exists():
@@ -264,7 +268,7 @@ def main():
         parser.error("Use either a local root or a remote revision for each source")
     failed = generate(registry, selected, args.output_dir.resolve(), args.cache_dir.resolve(),
                       read_json(args.exclusions, []), roots, revisions, args.audit)
-    return 1 if failed else 0
+    return SOURCES_FAILED if failed else 0
 
 
 if __name__ == "__main__":
