@@ -52,10 +52,10 @@
     "artifacts": {
       "rules_linux.json": "8041266ad8cf533b55e547ce62f73df05bb1784e6cf04c38de7c6a9150e9d4eb",
       "rules_windows_generic.json": "1fde5dc44a165247d9c8ee00e95f04b1abbd2c7f64870a6f690d46a9c6874d75",
-      "rules_windows_sysmon.json": "77305404c707bc556e72ba737c78d91837732a8d1b9da8d72c05ae93d9af4001"
+      "rules_windows_sysmon.json": "189f5a98ae6b80d9d470b011afb93c1f3c25587d545e2c93e04eadbebd644b17"
     },
     "repository": "SigmaHQ/sigma",
-    "revision": "7d8b152a5fc062ebd309f62ae4d8276aca2786af"
+    "revision": "c04ad420b46c0fb4dba3ce55ce52d0e4f570cc86"
   },
   "official_duplicates_removed": {
     "native/correlations": 0,
@@ -1415,7 +1415,7 @@
       "document": "0",
       "id": "90dd0797-f481-453d-a97e-dd78436893f9",
       "path": "hayabusa/builtin/WLAN-AutoConfig/Sec_8001_Info_Wifi-AP-Conn.yml",
-      "sha256": "5483aa88ca8ba6a5f389ea1ffc075729c78222f76523556001a7fb0b739d88a3"
+      "sha256": "c032ab14b4438cf967903d379224fea0649f1a2da3b3ea94d8bbb5d9eb02a1ab"
     },
     {
       "adaptations": {
@@ -2400,7 +2400,7 @@
     }
   ],
   "repository": "Yamato-Security/hayabusa-rules",
-  "revision": "b7d55e26232113897b932e20eed26228f2cd69bd",
+  "revision": "3264c6f733ddf223fdb3825adc1df9c14104ed87",
   "source": "hayabusa",
   "status": "validated",
   "tools": {

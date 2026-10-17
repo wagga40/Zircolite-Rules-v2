@@ -12786,7 +12786,7 @@
       "path": "rules/windows/file/file_event/file_event_win_susp_double_extension.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "cbb8b8ba5c690c216f148452bb136cca979989842e69d6153d7101b136b31732"
+      "sha256": "ba6cbb880d63b20a01f82c9320e0396c697c9d112e1f288e7d3d63b6c7bf89f6"
     },
     {
       "document": "0",
@@ -23853,7 +23853,7 @@
       "path": "rules/windows/file/file_event/file_event_win_susp_double_extension.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "cbb8b8ba5c690c216f148452bb136cca979989842e69d6153d7101b136b31732"
+      "sha256": "ba6cbb880d63b20a01f82c9320e0396c697c9d112e1f288e7d3d63b6c7bf89f6"
     },
     {
       "document": "0",
@@ -50614,7 +50614,7 @@
       "document": "0",
       "id": "b4926b47-a9d7-434c-b3a0-adc3fa0bd13e",
       "path": "rules/windows/file/file_event/file_event_win_susp_double_extension.yml",
-      "sha256": "cbb8b8ba5c690c216f148452bb136cca979989842e69d6153d7101b136b31732"
+      "sha256": "ba6cbb880d63b20a01f82c9320e0396c697c9d112e1f288e7d3d63b6c7bf89f6"
     },
     {
       "adaptations": {},
@@ -68314,7 +68314,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "7d8b152a5fc062ebd309f62ae4d8276aca2786af",
+  "revision": "c04ad420b46c0fb4dba3ce55ce52d0e4f570cc86",
   "source": "sigmahq",
   "status": "validated",
   "tools": {

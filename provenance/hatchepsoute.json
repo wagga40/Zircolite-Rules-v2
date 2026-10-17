@@ -4019,10 +4019,10 @@
     "artifacts": {
       "rules_linux.json": "8041266ad8cf533b55e547ce62f73df05bb1784e6cf04c38de7c6a9150e9d4eb",
       "rules_windows_generic.json": "1fde5dc44a165247d9c8ee00e95f04b1abbd2c7f64870a6f690d46a9c6874d75",
-      "rules_windows_sysmon.json": "77305404c707bc556e72ba737c78d91837732a8d1b9da8d72c05ae93d9af4001"
+      "rules_windows_sysmon.json": "189f5a98ae6b80d9d470b011afb93c1f3c25587d545e2c93e04eadbebd644b17"
     },
     "repository": "SigmaHQ/sigma",
-    "revision": "7d8b152a5fc062ebd309f62ae4d8276aca2786af"
+    "revision": "c04ad420b46c0fb4dba3ce55ce52d0e4f570cc86"
   },
   "official_duplicates_removed": {
     "generic/correlations": 0,

@@ -24,11 +24,11 @@
     },
     "hayabusa": {
       "artifacts": {
-        "rules_hayabusa_windows_native.json": "fe3590c322965ebe1318f50c2685eadee5f1b9d17b60ffdacdb9f14d674a2aca"
+        "rules_hayabusa_windows_native.json": "071281357ee3cb92ec134d1e4595148f6c706b830a89a56164fc964d90cfad90"
       },
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
-      "revision": "b7d55e26232113897b932e20eed26228f2cd69bd",
+      "revision": "3264c6f733ddf223fdb3825adc1df9c14104ed87",
       "status": "current"
     },
     "joesecurity": {
@@ -87,11 +87,11 @@
     },
     "sigmahq": {
       "artifacts": {
-        "rules_windows_merged.json": "a72452cb6ba2bc10acfcd6175afb8ebe008f1d3d106dabb24207c415a92831ea"
+        "rules_windows_merged.json": "21e28881dbe1aa25b6ffb9be2184611ef6550d6e2bb6959898befacca906c7bf"
       },
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
-      "revision": "7d8b152a5fc062ebd309f62ae4d8276aca2786af",
+      "revision": "c04ad420b46c0fb4dba3ce55ce52d0e4f570cc86",
       "status": "current"
     },
     "tsale": {
