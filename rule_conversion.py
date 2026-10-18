@@ -114,8 +114,7 @@ def explain(connection, queries):
     a second statement in one call.
     """
     for query in queries:
-        # nosemgrep: python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query
-        connection.execute("EXPLAIN " + query).fetchall()
+        connection.execute("EXPLAIN " + query).fetchall()  # nosemgrep: python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query
 
 
 def validate_entry(entry):
