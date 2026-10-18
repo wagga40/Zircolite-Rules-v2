@@ -17,6 +17,7 @@ from pathlib import Path
 
 from exclusion_baseline import fenced, rebaseline
 from exclusion_baseline import render_markdown as render_baseline
+from exclusion_records import normalize_error
 
 ROOT = Path(__file__).resolve().parent
 FAILED = ("stale", "unavailable")
@@ -26,8 +27,9 @@ MAX_ISSUE, MAX_SUMMARY, MAX_WARNINGS = 60_000, 250_000, 10
 KEYS = ("path", "document", "stage", "profile", "sha256", "error")
 FIX = ("Each failure above needs review. If only the converter's wording of a reviewed error changed, the job "
        "summary's exclusion baseline proposes the new message, and `exclusion_baseline.py --apply` writes it. "
-       "Otherwise fix the conversion or add a reviewed record to `exclusions.json`. A fetch error usually "
-       "clears on a later run.")
+       "Otherwise fix the conversion, or add a reviewed record to `exclusions.json`: "
+       "`exclusion_baseline.py <reports> --draft-new` drafts one per failure, each approving nothing until it "
+       "has a reason. A fetch error usually clears on a later run.")
 
 
 def parse_time(text):
@@ -65,10 +67,12 @@ def drifted_failures(manifest, reports):
 def fingerprint(failed):
     """Identifies the failures alone, so a daily repeat of the same ones notifies nobody.
 
-    Paths and numbers in a source error vary between runs, so they are ignored.
+    Paths and numbers in a source error vary between runs, so they are ignored,
+    as are positions in a rule's error, which move with unrelated edits.
     """
     value = [[item["source"], re.sub(r"\S*[/\\]\S*|\d+", "#", item["error"]),
-              [[failure.get(key) for key in KEYS] for failure in item["failures"]]] for item in failed]
+              [[normalize_error(failure.get(key)) if key == "error" else failure.get(key) for key in KEYS]
+               for failure in item["failures"]]] for item in failed]
     return hashlib.sha256(json.dumps(value).encode()).hexdigest()[:16]
 
 
@@ -132,9 +136,8 @@ def annotations(failed, drifted=()):
     lines = []
     if drifted:
         rules = f"{len(drifted)} excluded rule" + (" changed" if len(drifted) == 1 else "s changed")
-        lines.append(f"::warning title={rules} upstream::They still fail as reviewed and stay excluded. Re-pin "
-                     "their hashes with exclusion_baseline.py --apply on the conversion-reports artifact; "
-                     "the job summary lists them.")
+        lines.append(f"::warning title={rules} upstream::They still fail as reviewed and stay excluded. The "
+                     "publish run re-pins their records; the job summary lists them.")
     room = MAX_WARNINGS - len(lines)
     shown = failed if len(failed) <= room else failed[:room - 1]
     lines += [f"::warning title={escape(item['source'] + ' kept its previous rules', True)}::"

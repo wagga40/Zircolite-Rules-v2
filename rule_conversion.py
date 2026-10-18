@@ -16,6 +16,7 @@ from sigma.processing.conditions import LogsourceCondition
 from sigma.processing.pipeline import ProcessingItem, ProcessingPipeline
 from sigma.processing.transformations import FieldMappingTransformation
 
+from exclusion_records import approval, matches
 from rule_sources import adapt, read_documents, template_reason, validate_attack_tags
 
 LEVELS = ["informational", "low", "medium", "high", "critical"]
@@ -178,9 +179,7 @@ def error_record(document, stage, profile, error):
 
 
 def approved_failure(source, failure, exclusions, ignore=()):
-    keys = [key for key in ("path", "sha256", "document", "stage", "profile", "error") if key not in ignore]
-    return any(item.get("source") == source and all(item.get(k) == failure.get(k) for k in keys)
-               and item.get("reason") for item in exclusions)
+    return any(matches(item, source, failure, ignore) for item in exclusions)
 
 
 def compile_source(source, spec, root, exclusions):
@@ -303,14 +302,7 @@ def compile_source(source, spec, root, exclusions):
             "events": len(outputs[profile]["events"]), "correlations": len(outputs[profile]["correlations"]),
         }
     for failure in failures:
-        failure["approved"] = bool(approved_failure(source, failure, exclusions))
-        # Edited upstream but failing exactly as reviewed: the rule stays out, as
-        # it would after re-pinning, which exclusion_baseline.py proposes. A
-        # collection action shapes the sibling documents that do publish, so an
-        # edit to one is always reviewed.
-        if (not failure["approved"] and failure["stage"] != "discovery"
-                and approved_failure(source, failure, exclusions, ignore=("sha256",))):
-            failure.update(approved=True, drifted=True)
+        failure.update(approval(source, failure, exclusions))
     report["status"] = "failed" if any(not f["approved"] for f in failures) else "validated"
     if not any(result["events"] or result["correlations"] for result in outputs.values()):
         report["status"] = "failed"

@@ -1,0 +1,3 @@
+# Exclusion records decide what is left out of the published rulesets.
+/exclusions.json @wagga40
+/exclusion_records.py @wagga40

@@ -158,7 +158,7 @@ def test_drifted_exclusions_warn_without_opening_the_issue(tmp_path, monkeypatch
     assert failure_report.main() == 0
     warning, = capsys.readouterr().out.splitlines()
     assert warning.startswith("::warning title=1 excluded rule changed upstream::")
-    assert "exclusion_baseline.py" in warning and not issue.exists()
+    assert "re-pins their records" in warning and not issue.exists()
     assert "re-pinned" in summary.read_text() and "## Failed sources" not in summary.read_text()
 
 
@@ -170,3 +170,12 @@ def test_a_report_from_an_earlier_revision_lists_no_failures():
     assert item["failures"] == []
     manifest["sources"]["rules"]["failed_revision"] = "b" * 40
     assert failed_sources(manifest, kept)[0]["failures"] == [FAILURE]
+
+
+def test_a_moved_rule_error_keeps_the_fingerprint():
+    located = {**FAILURE, "error": "found 'OR'  (at char 48), (line:1, col:49)"}
+    moved = {**located, "error": "found 'OR'  (at char 52), (line:1, col:53)"}
+    def failed(failure):
+        return failed_sources(MANIFEST, {**REPORTS, "rules": {"failures": [failure]}})
+    assert fingerprint(failed(located)) == fingerprint(failed(moved))
+    assert fingerprint(failed(located)) != fingerprint(failed({**located, "error": "found 'AND'"}))

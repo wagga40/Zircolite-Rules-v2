@@ -46,11 +46,11 @@ Community rules get metadata fixes only; detection logic is never rewritten. Eac
 
 Policy exclusions are listed per source in `reports/<source>.json`.
 
-A conversion failure blocks publication unless [exclusions.json](../exclusions.json) has a reviewed record for it. Each record is bound to the source, the file hash, and the exact error. If the file or the error changes, the source fails again until someone reviews it.
+A conversion failure blocks publication unless [exclusions.json](../exclusions.json) has a reviewed record for that rule or for its class of failure; see [Exclusions](maintenance.md#exclusions).
 
 ## Adding a source
 
 1. Add the source to `sources.json`, including its license file.
 2. Run `pdm run python gen_ruleset.py --audit --sources <name> --output-dir build/audit` and read `build/audit/reports/<name>.json`.
-3. Handle the failures: add reviewed records to `exclusions.json`, or `exclude` patterns for non-rule YAML.
+3. Handle the failures: add reviewed records to `exclusions.json` (`exclusion_baseline.py build/audit/reports --draft-new` drafts them), or `exclude` patterns for non-rule YAML.
 4. Add the source to the table above. The dashboard updates itself.
