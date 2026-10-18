@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="160" viewBox="0 0 860 160" role="img" aria-labelledby="title desc">
 <title id="title">Source status</title>
-<desc id="desc">Source status: sigmahq stale since 2026-10-11, dragon current, hatchepsoute current, hayabusa current, joesecurity current, loldrivers current, lolrmm current, mbabinski current, mdecrevoisier current, reversinglabs current, tsale current, tyrian current, wrg11 current.</desc>
+<desc id="desc">Source status: sigmahq current, dragon current, hatchepsoute current, hayabusa current, joesecurity current, loldrivers current, lolrmm current, mbabinski current, mdecrevoisier current, reversinglabs current, tsale current, tyrian current, wrg11 current.</desc>
 <style>
 text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #0b0b0b; }
 .secondary { fill: #52514e; }
@@ -18,7 +18,7 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
 </style>
 <rect x="0.5" y="0.5" width="859" height="159" rx="12" fill="#fcfcfb" stroke="rgba(11,11,11,0.10)"/>
-<g class="fade" style="animation-delay:60ms"><circle class="pulse" cx="30.0" cy="28" r="5" fill="#fab219"/><circle cx="30.0" cy="28" r="5" fill="#fab219"/><text x="42.0" y="32" font-size="12">sigmahq</text><text x="42.0" y="47" font-size="11" class="secondary">stale since 2026-10-11</text></g>
+<g class="fade" style="animation-delay:60ms"><circle cx="30.0" cy="28" r="5" fill="#0ca30c"/><text x="42.0" y="32" font-size="12">sigmahq</text><text x="42.0" y="47" font-size="11" class="secondary">current</text></g>
 <g class="fade" style="animation-delay:110ms"><circle cx="192.4" cy="28" r="5" fill="#0ca30c"/><text x="204.4" y="32" font-size="12">dragon</text><text x="204.4" y="47" font-size="11" class="secondary">current</text></g>
 <g class="fade" style="animation-delay:160ms"><circle cx="354.8" cy="28" r="5" fill="#0ca30c"/><text x="366.8" y="32" font-size="12">hatchepsoute</text><text x="366.8" y="47" font-size="11" class="secondary">current</text></g>
 <g class="fade" style="animation-delay:210ms"><circle cx="517.2" cy="28" r="5" fill="#0ca30c"/><text x="529.2" y="32" font-size="12">hayabusa</text><text x="529.2" y="47" font-size="11" class="secondary">current</text></g>

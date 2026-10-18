@@ -8,12 +8,12 @@ Ready-to-use [Zircolite](https://github.com/wagga40/Zircolite) rulesets, convert
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/overview-dark.svg">
-  <img alt="12 of 13 sources current; 4,696 unique Windows detections (7,344 entries in rules_windows_all.json); 299 Linux rules; 31 experimental correlations; rules last changed 2026-10-14. Severity of unique detections: informational 114, low 351, medium 2,078, high 1,867, critical 290." src="docs/assets/overview-light.svg" width="100%">
+  <img alt="13 of 13 sources current; 4,698 unique Windows detections (7,348 entries in rules_windows_all.json); 300 Linux rules; 31 experimental correlations; rules last changed 2026-10-18. Severity of unique detections: informational 114, low 351, medium 2,080, high 1,867, critical 290." src="docs/assets/overview-light.svg" width="100%">
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/sources-dark.svg">
-  <img alt="Source status: 12 of 13 sources current. Not current: sigmahq (stale since 2026-10-11). Stale sources keep their last good rules." src="docs/assets/sources-light.svg" width="100%">
+  <img alt="Source status: 13 of 13 sources current. None is stale." src="docs/assets/sources-light.svg" width="100%">
 </picture>
 
 Every ruleset, source, severity, ATT&CK tactic, and log source: [dashboard](docs/dashboard.md).

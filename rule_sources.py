@@ -166,10 +166,14 @@ def fetch_source(spec, cache: Path, revision=None):
             unpacked = temporary / "unpacked"
             unpacked.mkdir()
             with tarfile.open(archive) as tar:
+                members, root = tar.getmembers(), unpacked.resolve()
                 # Rule data never needs links, devices or executable checkout hooks.
-                if any(not (m.isfile() or m.isdir()) for m in tar.getmembers()):
+                if any(not (m.isfile() or m.isdir()) for m in members):
                     raise ValueError("Source archive contains non-regular entries")
-                tar.extractall(unpacked, filter="data")
+                if any(not (root / m.name).resolve().is_relative_to(root) for m in members):
+                    raise ValueError("Source archive entry escapes the extraction directory")
+                for member in members:
+                    tar.extract(member, unpacked, filter="data")
             roots = list(unpacked.iterdir())
             if len(roots) != 1 or not roots[0].is_dir():
                 raise ValueError("Expected one source archive root")
