@@ -4017,12 +4017,12 @@
   "input_documents": 248,
   "official_baseline": {
     "artifacts": {
-      "rules_linux.json": "8041266ad8cf533b55e547ce62f73df05bb1784e6cf04c38de7c6a9150e9d4eb",
-      "rules_windows_generic.json": "1fde5dc44a165247d9c8ee00e95f04b1abbd2c7f64870a6f690d46a9c6874d75",
-      "rules_windows_sysmon.json": "189f5a98ae6b80d9d470b011afb93c1f3c25587d545e2c93e04eadbebd644b17"
+      "rules_linux.json": "9aff43b1e03c68742bfad267105a267f434c691d4782ff8bf2637aacddef92fc",
+      "rules_windows_generic.json": "ddd76af25b8f2da54dfec9f1386eb79c3b9d755a46ed8fa42a850dc9ca4c544e",
+      "rules_windows_sysmon.json": "76561a92622e8849ba9470432d542cdd15e4917f046d83d8b5a2a529e038f429"
     },
     "repository": "SigmaHQ/sigma",
-    "revision": "c04ad420b46c0fb4dba3ce55ce52d0e4f570cc86"
+    "revision": "b7920ed31356fb7f6a9275b34737d8604c65bac3"
   },
   "official_duplicates_removed": {
     "generic/correlations": 0,

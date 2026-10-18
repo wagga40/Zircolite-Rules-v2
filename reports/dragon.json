@@ -1,6 +1,797 @@
 {
-  "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/frknaykc/Dragon-ThreatResearchHQ/commits/main",
-  "revision": null,
+  "artifacts": {
+    "rules_dragon_linux.json": 5,
+    "rules_dragon_windows_generic.json": 29,
+    "rules_dragon_windows_merged.json": 61,
+    "rules_dragon_windows_sysmon.json": 32
+  },
+  "exclusions": [
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Android/lnx_craxsrat_android_package_detection.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'android' is outside this profile",
+      "sha256": "083f8d631b83083b58bee098d7a65bc0d6e7a3059fa33bacee8eff343496185d"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_apk_wonderland_dropper_lure.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'zeek' is outside this profile",
+      "sha256": "b0c89dbf1c9fdc1a76bac0ef22c7cfd563ce5a5b9150cccb52ce3022b5ad0884"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_ivanti_unc5221_wirefire_execution.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "fcfdae7620231cca7def59e3f1328cbd4cf650591cc6949d68330ad326c9d75c"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_panos_cve_2024_3400_device_telemetry_exploit.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "742ab9da6af31e30cb0ae9c309daf5f2a794761445aa14360bc196402d44c9d0"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_remcontrol_android_c2_proxy.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'zeek' is outside this profile",
+      "sha256": "39764fe24d4edbb7d5f74f75537c0279d5cebf116a9b319a8bba3875991dc3bc"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_sandworm_caddywiper_disk_destruction.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "38c10f4cfa85374fbccf8d301ad08e9c8b51d67cb0505ed2eb9255f41cfc5248"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_sshd_regresshion_cve_2024_6387_unauth_child.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "c14ebe2e8785ece099bb20da1419bb34418b93e0c87646d13084fe3b84abf36f"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_sshd_suspicious_child_process_cve_2024_3094.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "c324d139b02aa3783b4f27feeefc62ca06955e7eb35c416014c6caed5857a3cf"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Android/lnx_craxsrat_android_package_detection.yml",
+      "profile": "generic",
+      "reason": "logsource product 'android' is outside this profile",
+      "sha256": "083f8d631b83083b58bee098d7a65bc0d6e7a3059fa33bacee8eff343496185d"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_apk_wonderland_dropper_lure.yml",
+      "profile": "generic",
+      "reason": "logsource product 'zeek' is outside this profile",
+      "sha256": "b0c89dbf1c9fdc1a76bac0ef22c7cfd563ce5a5b9150cccb52ce3022b5ad0884"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_ivanti_unc5221_wirefire_execution.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "fcfdae7620231cca7def59e3f1328cbd4cf650591cc6949d68330ad326c9d75c"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_panos_cve_2024_3400_device_telemetry_exploit.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "742ab9da6af31e30cb0ae9c309daf5f2a794761445aa14360bc196402d44c9d0"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_remcontrol_android_c2_proxy.yml",
+      "profile": "generic",
+      "reason": "logsource product 'zeek' is outside this profile",
+      "sha256": "39764fe24d4edbb7d5f74f75537c0279d5cebf116a9b319a8bba3875991dc3bc"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_sandworm_caddywiper_disk_destruction.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "38c10f4cfa85374fbccf8d301ad08e9c8b51d67cb0505ed2eb9255f41cfc5248"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_sshd_regresshion_cve_2024_6387_unauth_child.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "c14ebe2e8785ece099bb20da1419bb34418b93e0c87646d13084fe3b84abf36f"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_sshd_suspicious_child_process_cve_2024_3094.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "c324d139b02aa3783b4f27feeefc62ca06955e7eb35c416014c6caed5857a3cf"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_bruteratel_badger_named_pipe.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "f4e4348452854279af9261fbebdd01bcb9f130e0871cfe3752c180d41f909484"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_byovd_edr_killer_driver_load.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "047f2d2328730f49cb618d46cc1f5dac5da96cc6294ec919b920856f3909bed0"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_sliver_c2_named_pipes.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "fdf7b87beb4b86ab7dcbd77c9fe696aa79d8f7f8b4516f750b1ea0822cd3d3cd"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Android/lnx_craxsrat_android_package_detection.yml",
+      "profile": "linux",
+      "reason": "logsource product 'android' is outside this profile",
+      "sha256": "083f8d631b83083b58bee098d7a65bc0d6e7a3059fa33bacee8eff343496185d"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_apk_wonderland_dropper_lure.yml",
+      "profile": "linux",
+      "reason": "logsource product 'zeek' is outside this profile",
+      "sha256": "b0c89dbf1c9fdc1a76bac0ef22c7cfd563ce5a5b9150cccb52ce3022b5ad0884"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Linux/lnx_remcontrol_android_c2_proxy.yml",
+      "profile": "linux",
+      "reason": "logsource product 'zeek' is outside this profile",
+      "sha256": "39764fe24d4edbb7d5f74f75537c0279d5cebf116a9b319a8bba3875991dc3bc"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_apt28_gooseegg_spoolsv_child.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "343ebf9a50fdbf9e4b78d7a6a4e174133500e47f64be96a2b228eef84b80c825"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_blackbasta_aukill_edr_killer.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "32986692734318eb885432649ed24cca18cb41bd8dd6ddcc3578c96cc1f35b5f"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_bruteratel_badger_named_pipe.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "f4e4348452854279af9261fbebdd01bcb9f130e0871cfe3752c180d41f909484"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_byovd_edr_killer_driver_load.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "047f2d2328730f49cb618d46cc1f5dac5da96cc6294ec919b920856f3909bed0"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_charming_kitten_manage_bde_weaponization.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "fe27040756a36e5463ef57b8e621ca95da82119723c3e841c6f34b5d962b7f10"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_clickfix_powershell_execution.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "236b4c52e3595ce83e790cd64ba86cf746a9a7d4eb63aaf28bed2a97412ca7ea"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_darkgate_autoit_anomaly.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "2235b1c93c93da987a547f298d579a87824a11d3ccf968f0c18c12169a27e9d0"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_famoussparrow_sparrowocky_pipe.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "6db897d524e2abe9d12c046e1fe7bde8482426d5f55dd7c0f557bc80bd18be35"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_gamaredon_tunnel_worker_c2.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "97da747b720a29ab94cd0813c2e745d776f1245442b7061f30ace765a8505705"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_gentlemen_hastalamuerte_avastrclone.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "cf5979d1d50a3d5c6986c7ab8704e0617acbf8bb216c2c9ad420f1a1674896f2"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_gootloader_wscript_powershell.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "af8e72767ffe123ed9ab4cbcc28352326085f82bb7288a7f94bc8fe620e92903"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_gpo_immediate_task_payload_ransomware.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "c06dfe6cfcb6186ce6a5a2d4e9b2a0268000f6c5618436e1ed5cab3b3843a45e"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_havoc_demon_indirect_syscalls.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "be7a1639b6a4b554a2f90e3d78688812a42b81235f57d202ff52093086c2ccd3"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_headmare_phantomgraph_services.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "8e6fa49094474d6e02869da77eb5e1b33b56af1a6a4029a4349319ecc4aafb0c"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_honeymyte_coolclient_rootkit.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "6a7fb1059a6b5ad531645f79a98e73bd8adbf44024771c81656ad6b3a2eeca7f"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_kimsuky_wmi_security_center.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "576eb364974bca830f7d503229859b2eb9a6bac3c2992b4d24405ee8c228c076"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_latrodectus_rundll32_temp_ordinal.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "8ca2ae1c88c0d137f151862f30423cc99e9af548d2ea5435be73d97656397a88"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_lazarus_contagious_interview_npm_spawn.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "cd528d45cd3fe8e2b29ca87401aa28c3494379fc38d90e8e6a9e273efb76ba56"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_living_off_the_land_ntdsutil_dump.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "01c26ec51f84da3be8a59c7efc380332c9af01ac58b622a5b7fb18b403d923c2"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_lyceum_hollowgraph_artifacts.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "95062bf001a6123244c016c32d2e61b3a59ef1fc2a567cb59df9e846d959ed20"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_miragekitten_noderabbit.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "df1d2fdddd62945206bf96d1d51b06839087563d42a0487a072148a4aea1fca2"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_mythic_apollo_named_pipe.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "8e10ee80abde0ff5c53272ec7afe675767518bef4c3432456d0173c7cb2c146a"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_nighteagle_devtunnels_rdp.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "cf97206277bb4c5405d52b2013d4fe0981dc2091bbf18c78a5c59e90bc8d0c60"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_pikabot_werfault_injection.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "5603afc9b2d6021b8f65bb52fb25278e841d5864fb20f4f71e3dfe57cc7d8b70"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_play_ransomware_execution.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "34f11e4edbc84f91e41d71cc490756725077624496c63392c162fd45921e284b"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_qilin_safeboot_modification.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "2605bb0b27f9b72444ef7a22c8f0c017c142d492adcffa96f991ef2763d60ec5"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_ransomhub_safeboot_execution.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "dfdaf3ac17cb1a37d2982068da023f2d81c2e806ec5d8008be31d871f16a5ac4"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_ransomware_shadow_copy_deletion.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "232ed7a9129b280db84032beb31e3cc0ba02dff47f3dfd72742ddc0279aebbff"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_sliver_c2_named_pipes.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "fdf7b87beb4b86ab7dcbd77c9fe696aa79d8f7f8b4516f750b1ea0822cd3d3cd"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_stealc_self_delete.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "4635b252b4ec22c9378dd614d0443220cdbfdcd924687d7f8b46c10323a58c43"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_tortoiseshell_reverse_ssh.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "52e582b6e2cc5fccc94d097dd2c5577a28909f49b942e2ee47a18fe1d2a3dd00"
+    },
+    {
+      "document": "0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_turla_lunar_w3wp_execution.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "493ee0623e0e012edcbdd7f6f79f9659415db8455566d63e05cfe10c71e9ca09"
+    }
+  ],
+  "failures": [
+    {
+      "approved": true,
+      "document": "0",
+      "error": "Unknown modifier 'any'",
+      "path": "Detection-Rules/Sigma/macOS/lnx_macsync_launchagent_persistence.yml",
+      "profile": "*",
+      "sha256": "579a598f3dc778791e6dc63b27cb5b5eb9764a35eb748475d4920a3f713bf0f1",
+      "stage": "parse"
+    }
+  ],
+  "ignored": [],
+  "input_documents": 41,
+  "official_baseline": {
+    "artifacts": {
+      "rules_linux.json": "9aff43b1e03c68742bfad267105a267f434c691d4782ff8bf2637aacddef92fc",
+      "rules_windows_generic.json": "ddd76af25b8f2da54dfec9f1386eb79c3b9d755a46ed8fa42a850dc9ca4c544e",
+      "rules_windows_sysmon.json": "76561a92622e8849ba9470432d542cdd15e4917f046d83d8b5a2a529e038f429"
+    },
+    "repository": "SigmaHQ/sigma",
+    "revision": "b7920ed31356fb7f6a9275b34737d8604c65bac3"
+  },
+  "official_duplicates_removed": {
+    "generic/correlations": 0,
+    "generic/events": 0,
+    "linux/correlations": 0,
+    "linux/events": 0,
+    "sysmon/correlations": 0,
+    "sysmon/events": 0
+  },
+  "profiles": {
+    "generic": {
+      "converted": 29,
+      "correlations": 0,
+      "eligible": 29,
+      "events": 29,
+      "reference_only": 0
+    },
+    "linux": {
+      "converted": 5,
+      "correlations": 0,
+      "eligible": 5,
+      "events": 5,
+      "reference_only": 0
+    },
+    "sysmon": {
+      "converted": 32,
+      "correlations": 0,
+      "eligible": 32,
+      "events": 32,
+      "reference_only": 0
+    }
+  },
+  "provenance": [
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3c8a91d4-2f17-4b5a-9e3c-7a14b8f60d22",
+      "path": "Detection-Rules/Sigma/Android/lnx_craxsrat_android_package_detection.yml",
+      "sha256": "083f8d631b83083b58bee098d7a65bc0d6e7a3059fa33bacee8eff343496185d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6a92841b-d184-4c81-9b12-871920fcb931",
+      "path": "Detection-Rules/Sigma/Linux/lnx_apk_wonderland_dropper_lure.yml",
+      "sha256": "b0c89dbf1c9fdc1a76bac0ef22c7cfd563ce5a5b9150cccb52ce3022b5ad0884"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a748b930-3127-4a3b-c367-584930217685",
+      "path": "Detection-Rules/Sigma/Linux/lnx_ivanti_unc5221_wirefire_execution.yml",
+      "sha256": "fcfdae7620231cca7def59e3f1328cbd4cf650591cc6949d68330ad326c9d75c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d415e607-0894-4d0e-f034-251607984352",
+      "path": "Detection-Rules/Sigma/Linux/lnx_panos_cve_2024_3400_device_telemetry_exploit.yml",
+      "sha256": "742ab9da6af31e30cb0ae9c309daf5f2a794761445aa14360bc196402d44c9d0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5a71829e-4b21-487a-9a14-871920fcb182",
+      "path": "Detection-Rules/Sigma/Linux/lnx_remcontrol_android_c2_proxy.yml",
+      "sha256": "39764fe24d4edbb7d5f74f75537c0279d5cebf116a9b319a8bba3875991dc3bc"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "stable",
+          "original": "production"
+        }
+      },
+      "document": "0",
+      "id": "3c4d5e6f-7a8b-9c0d-1e2f-34567890abcd",
+      "path": "Detection-Rules/Sigma/Linux/lnx_sandworm_caddywiper_disk_destruction.yml",
+      "sha256": "38c10f4cfa85374fbccf8d301ad08e9c8b51d67cb0505ed2eb9255f41cfc5248"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e4719024-81bd-4221-a477-905e492fa619",
+      "path": "Detection-Rules/Sigma/Linux/lnx_sshd_regresshion_cve_2024_6387_unauth_child.yml",
+      "sha256": "c14ebe2e8785ece099bb20da1419bb34418b93e0c87646d13084fe3b84abf36f"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "stable",
+          "original": "production"
+        }
+      },
+      "document": "0",
+      "id": "f1a2e345-7890-4123-b456-c7d8e9f01234",
+      "path": "Detection-Rules/Sigma/Linux/lnx_sshd_suspicious_child_process_cve_2024_3094.yml",
+      "sha256": "c324d139b02aa3783b4f27feeefc62ca06955e7eb35c416014c6caed5857a3cf"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c304d596-9783-4cfd-ef23-140596873241",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_apt28_gooseegg_spoolsv_child.yml",
+      "sha256": "343ebf9a50fdbf9e4b78d7a6a4e174133500e47f64be96a2b228eef84b80c825"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e526f718-1905-4e1f-a145-362718095463",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_blackbasta_aukill_edr_killer.yml",
+      "sha256": "32986692734318eb885432649ed24cca18cb41bd8dd6ddcc3578c96cc1f35b5f"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "stable",
+          "original": "production"
+        }
+      },
+      "document": "0",
+      "id": "9e0f1a2b-3c4d-5e6f-7a8b-9012345678cd",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_bruteratel_badger_named_pipe.yml",
+      "sha256": "f4e4348452854279af9261fbebdd01bcb9f130e0871cfe3752c180d41f909484"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "stable",
+          "original": "production"
+        }
+      },
+      "document": "0",
+      "id": "8d7c6b5a-4e3f-2a1b-0c9d-ef8901234567",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_byovd_edr_killer_driver_load.yml",
+      "sha256": "047f2d2328730f49cb618d46cc1f5dac5da96cc6294ec919b920856f3909bed0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d9219e84-4821-4f9e-8cb1-857e492fa619",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_charming_kitten_manage_bde_weaponization.yml",
+      "sha256": "fe27040756a36e5463ef57b8e621ca95da82119723c3e841c6f34b5d962b7f10"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "stable",
+          "original": "production"
+        }
+      },
+      "document": "0",
+      "id": "7b8a1c90-410e-48a2-9d3e-908712345678",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_clickfix_powershell_execution.yml",
+      "sha256": "236b4c52e3595ce83e790cd64ba86cf746a9a7d4eb63aaf28bed2a97412ca7ea"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b293c485-8672-4bfc-de12-039485762130",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_darkgate_autoit_anomaly.yml",
+      "sha256": "2235b1c93c93da987a547f298d579a87824a11d3ccf968f0c18c12169a27e9d0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1a9f82b4-52d1-419b-a012-781920fcb128",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_famoussparrow_sparrowocky_pipe.yml",
+      "sha256": "6db897d524e2abe9d12c046e1fe7bde8482426d5f55dd7c0f557bc80bd18be35"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7b21849a-5812-4c8a-9214-99182a5c9f12",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_gamaredon_tunnel_worker_c2.yml",
+      "sha256": "97da747b720a29ab94cd0813c2e745d776f1245442b7061f30ace765a8505705"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f91287c4-42b1-419a-9e12-817290bc5e31",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_gentlemen_hastalamuerte_avastrclone.yml",
+      "sha256": "cf5979d1d50a3d5c6986c7ab8704e0617acbf8bb216c2c9ad420f1a1674896f2"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b71d4590-34fa-48ef-910a-319ef4788c0a",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_gootloader_wscript_powershell.yml",
+      "sha256": "af8e72767ffe123ed9ab4cbcc28352326085f82bb7288a7f94bc8fe620e92903"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e8a12904-712c-4c12-912a-385012dc8f91",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_gpo_immediate_task_payload_ransomware.yml",
+      "sha256": "c06dfe6cfcb6186ce6a5a2d4e9b2a0268000f6c5618436e1ed5cab3b3843a45e"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "stable",
+          "original": "production"
+        }
+      },
+      "document": "0",
+      "id": "2d3e4f5a-6b7c-8d9e-0f1a-bc2345678901",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_havoc_demon_indirect_syscalls.yml",
+      "sha256": "be7a1639b6a4b554a2f90e3d78688812a42b81235f57d202ff52093086c2ccd3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3c8e7192-5b8d-4b8a-a438-6619a924cd01",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_headmare_phantomgraph_services.yml",
+      "sha256": "8e6fa49094474d6e02869da77eb5e1b33b56af1a6a4029a4349319ecc4aafb0c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c4a2e587-5c8e-4a69-8f92-74895696142e",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_honeymyte_coolclient_rootkit.yml",
+      "sha256": "6a7fb1059a6b5ad531645f79a98e73bd8adbf44024771c81656ad6b3a2eeca7f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f1849102-39fe-48aa-b921-957e492fa619",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_kimsuky_wmi_security_center.yml",
+      "sha256": "576eb364974bca830f7d503229859b2eb9a6bac3c2992b4d24405ee8c228c076"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "stable",
+          "original": "production"
+        }
+      },
+      "document": "0",
+      "id": "1a2b3c4d-5e6f-7a8b-9c0d-ef0123456789",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_latrodectus_rundll32_temp_ordinal.yml",
+      "sha256": "8ca2ae1c88c0d137f151862f30423cc99e9af548d2ea5435be73d97656397a88"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f981a240-bc84-4822-a982-f716298db3e1",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_lazarus_contagious_interview_npm_spawn.yml",
+      "sha256": "cd528d45cd3fe8e2b29ca87401aa28c3494379fc38d90e8e6a9e273efb76ba56"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "stable",
+          "original": "production"
+        }
+      },
+      "document": "0",
+      "id": "c4e532a1-638e-49b2-b13c-7bb10e3408a2",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_living_off_the_land_ntdsutil_dump.yml",
+      "sha256": "01c26ec51f84da3be8a59c7efc380332c9af01ac58b622a5b7fb18b403d923c2"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5e91da21-f09b-449e-b873-1996c5678129",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_lyceum_hollowgraph_artifacts.yml",
+      "sha256": "95062bf001a6123244c016c32d2e61b3a59ef1fc2a567cb59df9e846d959ed20"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4e7192a5-d812-421b-8531-1829da48b110",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_miragekitten_noderabbit.yml",
+      "sha256": "df1d2fdddd62945206bf96d1d51b06839087563d42a0487a072148a4aea1fca2"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "61fa3829-0bc9-47aa-a631-289cf0012ba4",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_mythic_apollo_named_pipe.yml",
+      "sha256": "8e10ee80abde0ff5c53272ec7afe675767518bef4c3432456d0173c7cb2c146a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8b1f2371-d820-435b-8fa2-3715ec20bb91",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_nighteagle_devtunnels_rdp.yml",
+      "sha256": "cf97206277bb4c5405d52b2013d4fe0981dc2091bbf18c78a5c59e90bc8d0c60"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f637a829-2016-4f2a-b256-473829106574",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_pikabot_werfault_injection.yml",
+      "sha256": "5603afc9b2d6021b8f65bb52fb25278e841d5864fb20f4f71e3dfe57cc7d8b70"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "fa871b69-80cd-498c-905e-8e547fa918b2",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_play_ransomware_execution.yml",
+      "sha256": "34f11e4edbc84f91e41d71cc490756725077624496c63392c162fd45921e284b"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "stable",
+          "original": "production"
+        }
+      },
+      "document": "0",
+      "id": "5e6f7a8b-9c0d-4e1f-8234-567890abcdef",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_qilin_safeboot_modification.yml",
+      "sha256": "2605bb0b27f9b72444ef7a22c8f0c017c142d492adcffa96f991ef2763d60ec5"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a192b384-7561-4aeb-cd01-928374651029",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_ransomhub_safeboot_execution.yml",
+      "sha256": "dfdaf3ac17cb1a37d2982068da023f2d81c2e806ec5d8008be31d871f16a5ac4"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "stable",
+          "original": "production"
+        }
+      },
+      "document": "0",
+      "id": "9a781df0-20f8-410c-99d9-f5efc31c0a01",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_ransomware_shadow_copy_deletion.yml",
+      "sha256": "232ed7a9129b280db84032beb31e3cc0ba02dff47f3dfd72742ddc0279aebbff"
+    },
+    {
+      "adaptations": {
+        "status": {
+          "adapted": "stable",
+          "original": "production"
+        }
+      },
+      "document": "0",
+      "id": "48d1c720-30be-4a11-a8d2-43bb221199c0",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_sliver_c2_named_pipes.yml",
+      "sha256": "fdf7b87beb4b86ab7dcbd77c9fe696aa79d8f7f8b4516f750b1ea0822cd3d3cd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e4b29c18-7d43-4c91-9128-48b9f10a8c42",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_stealc_self_delete.yml",
+      "sha256": "4635b252b4ec22c9378dd614d0443220cdbfdcd924687d7f8b46c10323a58c43"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9a781b2e-f412-421b-8012-91f1a5b8214f",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_tortoiseshell_reverse_ssh.yml",
+      "sha256": "52e582b6e2cc5fccc94d097dd2c5577a28909f49b942e2ee47a18fe1d2a3dd00"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c8b02419-7e3f-4221-a5bf-85f7560da423",
+      "path": "Detection-Rules/Sigma/Windows/Process-Creation/proc_creation_win_turla_lunar_w3wp_execution.yml",
+      "sha256": "493ee0623e0e012edcbdd7f6f79f9659415db8455566d63e05cfe10c71e9ca09"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8f4d21b3-9c72-4e1a-b8d5-3a07e6c84d19",
+      "path": "Detection-Rules/Sigma/macOS/lnx_macsync_launchagent_persistence.yml",
+      "sha256": "579a598f3dc778791e6dc63b27cb5b5eb9764a35eb748475d4920a3f713bf0f1"
+    }
+  ],
+  "repository": "frknaykc/Dragon-ThreatResearchHQ",
+  "revision": "47b5f65e6e65dc9ce1a4829242cf61ff6e12eb98",
   "source": "dragon",
-  "status": "failed"
+  "status": "validated",
+  "tools": {
+    "pysigma": "2.0.0",
+    "pysigma-backend-sqlite": "2.1.0",
+    "pysigma-pipeline-sysmon": "2.0.0",
+    "pysigma-pipeline-windows": "2.0.0",
+    "python": "3.14.8",
+    "sqlite": "3.45.1"
+  }
 }

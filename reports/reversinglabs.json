@@ -1,6 +1,250 @@
 {
-  "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/reversinglabs/reversinglabs-siem-rules/commits/master",
-  "revision": null,
+  "artifacts": {
+    "rules_reversinglabs_windows_generic.json": 6,
+    "rules_reversinglabs_windows_merged.json": 12,
+    "rules_reversinglabs_windows_sysmon.json": 7
+  },
+  "exclusions": [
+    {
+      "document": "0",
+      "path": "Ransomware/BlackBasta/Sigma/file_event_win_blackbasta_extension.yml",
+      "profile": "sysmon",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "8c1c9325e15edc50d6f342f29c44009dd6a642f824f6622853cca8d34c54446e"
+    },
+    {
+      "document": "0",
+      "path": "Ransomware/QuantumLocker/Sigma/file_event_win_quantumlocker_extension.yml",
+      "profile": "sysmon",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "1f3aedb8c42b53b4d1665c924f2ab175833c52cc17d4640f3c7c64db71918db6"
+    },
+    {
+      "document": "0",
+      "path": "Ransomware/BlackBasta/Sigma/file_event_win_blackbasta_extension.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "8c1c9325e15edc50d6f342f29c44009dd6a642f824f6622853cca8d34c54446e"
+    },
+    {
+      "document": "0",
+      "path": "Ransomware/BlackBasta/Sigma/file_event_win_blackbasta_ransom_note.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "56d591a68c0af250878ba2f8e4e5f8b306c2f9112fa9c3d03999a3c2dbd8ebc2"
+    },
+    {
+      "document": "0",
+      "path": "Ransomware/BlackBasta/Sigma/file_event_win_blackbasta_target_list.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "f05c5ab2cdc455d8adaca5ecdb7a4040914392c42218707d3fca80c22cc3f800"
+    },
+    {
+      "document": "0",
+      "path": "Ransomware/QuantumLocker/Sigma/file_event_win_icedid_license.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "839d85ba9558b6204643704c9cb85e035a15dcc2be61e7fc3a12c4cede3d1dd2"
+    },
+    {
+      "document": "0",
+      "path": "Ransomware/QuantumLocker/Sigma/file_event_win_quantumlocker_extension.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "1f3aedb8c42b53b4d1665c924f2ab175833c52cc17d4640f3c7c64db71918db6"
+    },
+    {
+      "document": "0",
+      "path": "Ransomware/QuantumLocker/Sigma/file_event_win_quantumlocker_recon.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "7bc7f2be9306659f446f52a842d068ab47299df2b69394cc7b1439ca4d96651c"
+    }
+  ],
+  "failures": [
+    {
+      "approved": true,
+      "document": "0",
+      "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 56), (line:1, col:57)",
+      "path": "Ransomware/BlackBasta/Sigma/file_event_win_blackbasta_ransom_note.yml",
+      "profile": "sysmon",
+      "sha256": "56d591a68c0af250878ba2f8e4e5f8b306c2f9112fa9c3d03999a3c2dbd8ebc2",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 56), (line:1, col:57)",
+      "path": "Ransomware/BlackBasta/Sigma/proc_creation_win_suspicious_lnk.yml",
+      "profile": "sysmon",
+      "sha256": "0388b35900972bb745dbf742bd6d7d99aeca2bc870188e1bd723ff67066622a6",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "Unbalanced parentheses or expression syntax error, found 'AND'  (at char 55), (line:1, col:56)",
+      "path": "Ransomware/QuantumLocker/Sigma/file_event_win_icedid_license.yml",
+      "profile": "sysmon",
+      "sha256": "839d85ba9558b6204643704c9cb85e035a15dcc2be61e7fc3a12c4cede3d1dd2",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "Unbalanced parentheses or expression syntax error, found 'AND'  (at char 55), (line:1, col:56)",
+      "path": "Ransomware/QuantumLocker/Sigma/file_event_win_quantumlocker_recon.yml",
+      "profile": "sysmon",
+      "sha256": "7bc7f2be9306659f446f52a842d068ab47299df2b69394cc7b1439ca4d96651c",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "Unbalanced parentheses or expression syntax error, found 'OR'  (at char 56), (line:1, col:57)",
+      "path": "Ransomware/BlackBasta/Sigma/proc_creation_win_suspicious_lnk.yml",
+      "profile": "generic",
+      "sha256": "0388b35900972bb745dbf742bd6d7d99aeca2bc870188e1bd723ff67066622a6",
+      "stage": "convert"
+    }
+  ],
+  "ignored": [],
+  "input_documents": 13,
+  "official_baseline": {
+    "artifacts": {
+      "rules_linux.json": "9aff43b1e03c68742bfad267105a267f434c691d4782ff8bf2637aacddef92fc",
+      "rules_windows_generic.json": "ddd76af25b8f2da54dfec9f1386eb79c3b9d755a46ed8fa42a850dc9ca4c544e",
+      "rules_windows_sysmon.json": "76561a92622e8849ba9470432d542cdd15e4917f046d83d8b5a2a529e038f429"
+    },
+    "repository": "SigmaHQ/sigma",
+    "revision": "b7920ed31356fb7f6a9275b34737d8604c65bac3"
+  },
+  "official_duplicates_removed": {
+    "generic/correlations": 0,
+    "generic/events": 0,
+    "sysmon/correlations": 0,
+    "sysmon/events": 0
+  },
+  "profiles": {
+    "generic": {
+      "converted": 6,
+      "correlations": 0,
+      "eligible": 7,
+      "events": 6,
+      "reference_only": 0
+    },
+    "sysmon": {
+      "converted": 7,
+      "correlations": 0,
+      "eligible": 11,
+      "events": 7,
+      "reference_only": 0
+    }
+  },
+  "provenance": [
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5ae3e979-fa23-4ef8-9d5b-9bdc68094ee1",
+      "path": "Ransomware/BlackBasta/Sigma/file_event_win_blackbasta_extension.yml",
+      "sha256": "8c1c9325e15edc50d6f342f29c44009dd6a642f824f6622853cca8d34c54446e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3f5ccb4f-b1b9-43d0-aa74-156f8a910d9e",
+      "path": "Ransomware/BlackBasta/Sigma/file_event_win_blackbasta_ransom_note.yml",
+      "sha256": "56d591a68c0af250878ba2f8e4e5f8b306c2f9112fa9c3d03999a3c2dbd8ebc2"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "529b4c96-6d32-4bdd-8338-92e7feb3f4cc",
+      "path": "Ransomware/BlackBasta/Sigma/file_event_win_blackbasta_target_list.yml",
+      "sha256": "f05c5ab2cdc455d8adaca5ecdb7a4040914392c42218707d3fca80c22cc3f800"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "448ce579-2279-41e0-ab63-e84169b6e918",
+      "path": "Ransomware/BlackBasta/Sigma/proc_creation_win_blackbasta_rufus.yml",
+      "sha256": "52b9198ac2ed333485f668694196f012032e63bed4db4f96ad136698fcf16569"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "cef2eecb-65dd-4f44-bbca-a0a9028aef66",
+      "path": "Ransomware/BlackBasta/Sigma/proc_creation_win_suspicious_lnk.yml",
+      "sha256": "0388b35900972bb745dbf742bd6d7d99aeca2bc870188e1bd723ff67066622a6"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "bed401d0-0cf6-4628-9f13-80a4c6d7b6e6",
+      "path": "Ransomware/BlackBasta/Sigma/registry_set_blackbasta_default_icon.yml",
+      "sha256": "4e2a6a5824938246eae048b57f97bff5809dd965334cd59c14086ea0be5f2dd8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "12ec3551-4aab-4293-bab0-2e3076480591",
+      "path": "Ransomware/BlackBasta/Sigma/registry_set_blackbasta_wallpaper.yml",
+      "sha256": "45b9f34e12cdd98a6e51256516c9850bdcfdafcc7b6e4397eac3f5d9052b8c6b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "656ab24c-3841-41a4-9fab-3a248578937a",
+      "path": "Ransomware/QuantumLocker/Sigma/file_event_win_icedid_license.yml",
+      "sha256": "839d85ba9558b6204643704c9cb85e035a15dcc2be61e7fc3a12c4cede3d1dd2"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c962c914-d7cf-4343-a4d8-b9abf7baf0cd",
+      "path": "Ransomware/QuantumLocker/Sigma/file_event_win_quantumlocker_extension.yml",
+      "sha256": "1f3aedb8c42b53b4d1665c924f2ab175833c52cc17d4640f3c7c64db71918db6"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6d7c628f-fd2a-47a6-b704-f59c190c5785",
+      "path": "Ransomware/QuantumLocker/Sigma/file_event_win_quantumlocker_recon.yml",
+      "sha256": "7bc7f2be9306659f446f52a842d068ab47299df2b69394cc7b1439ca4d96651c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "edd59977-7cac-4b5b-abd0-ac96031d23eb",
+      "path": "Ransomware/QuantumLocker/Sigma/proc_creation_win_quantumlocker_recon.yml",
+      "sha256": "5f3c1b9cf2ece424cd372e79e3513fb92aab00b738f232d4e4202048e38e3b68"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "eb00c536-6416-4237-9dbe-f25c21c8ba36",
+      "path": "Ransomware/QuantumLocker/Sigma/registry_set_quantumlocker_extension.yml",
+      "sha256": "7adf967f5b7ef7d4bc15888fcab9fe9cd40fa0c7e0d2c1375127ef4c8d3c152d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8936fc60-4de5-47d1-a9b6-3f6f46533b47",
+      "path": "Ransomware/QuantumLocker/Sigma/win_vhdmp_iso_mounted.yml",
+      "sha256": "2883a9c963364cf9fff9007cf17630eed019cb1aecd1e05afd516108c49bbebb"
+    }
+  ],
+  "repository": "reversinglabs/reversinglabs-siem-rules",
+  "revision": "23fc452b527f2f8e08c26c6dffc0f734e750a2be",
   "source": "reversinglabs",
-  "status": "failed"
+  "status": "validated",
+  "tools": {
+    "pysigma": "2.0.0",
+    "pysigma-backend-sqlite": "2.1.0",
+    "pysigma-pipeline-sysmon": "2.0.0",
+    "pysigma-pipeline-windows": "2.0.0",
+    "python": "3.14.8",
+    "sqlite": "3.45.1"
+  }
 }
