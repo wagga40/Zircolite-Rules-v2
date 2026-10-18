@@ -160,3 +160,13 @@ def test_drifted_exclusions_warn_without_opening_the_issue(tmp_path, monkeypatch
     assert warning.startswith("::warning title=1 excluded rule changed upstream::")
     assert "exclusion_baseline.py" in warning and not issue.exists()
     assert "re-pinned" in summary.read_text() and "## Failed sources" not in summary.read_text()
+
+
+def test_a_report_from_an_earlier_revision_lists_no_failures():
+    # A fetch error resolves no revision and keeps the previous report.
+    manifest = {"sources": {"rules": {**MANIFEST["sources"]["rules"], "failed_revision": None}}}
+    kept = {"rules": {**REPORTS["rules"], "revision": "b" * 40}}
+    item, = failed_sources(manifest, kept)
+    assert item["failures"] == []
+    manifest["sources"]["rules"]["failed_revision"] = "b" * 40
+    assert failed_sources(manifest, kept)[0]["failures"] == [FAILURE]

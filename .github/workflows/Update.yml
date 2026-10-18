@@ -30,6 +30,7 @@ env:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     permissions:
       contents: read
     steps:
@@ -50,7 +51,7 @@ jobs:
 
       - name: Build minimum supported SQLite
         run: |
-          curl --fail --location "$SQLITE_MIN_URL" --output /tmp/sqlite-min.zip
+          curl --fail --location --retry 3 "$SQLITE_MIN_URL" --output /tmp/sqlite-min.zip
           actual=$(openssl dgst -sha3-256 -r /tmp/sqlite-min.zip | cut -d' ' -f1)
           if [ "$actual" != "$SQLITE_MIN_SHA3_256" ]; then
             echo "SQLite archive checksum mismatch: $actual" >&2
@@ -63,14 +64,18 @@ jobs:
       - name: Test generation and release isolation
         run: pdm run pytest -q
 
+      # The publish job verifies main itself, after generating.
       - name: Verify checked-in artifacts and README statistics
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' || github.ref != 'refs/heads/main'
         run: pdm run python gen_ruleset.py --verify-release
 
+  # Only main publishes: a run dispatched on another branch would otherwise
+  # commit rules there and edit the main tracking issue.
   publish:
     needs: verify
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     permissions:
       contents: write
       issues: write
@@ -141,6 +146,12 @@ jobs:
         shell: bash
         run: |
           pdm run python gen_ruleset.py --verify-release
+          # Nothing validated is almost always the network or the toolchain, not
+          # upstream: keep the published state and let the outcome step fail.
+          if ! jq -e 'any(.sources[]; .status == "current")' release-manifest.json > /dev/null; then
+            echo 'No source validated; nothing to publish.'
+            exit 0
+          fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- 'rules_*.json' experimental/ licenses/ provenance/ reports/ release-manifest.json README.md docs/dashboard.md docs/assets/
@@ -216,7 +227,7 @@ jobs:
             exit 1
           fi
           if ! jq -e 'any(.sources[]; .status == "current")' release-manifest.json > /dev/null; then
-            echo '::error title=No source validated::Every source kept its previous rules, so nothing new was published; the tracking issue lists the failures.'
+            echo '::error title=No source validated::Every source kept its previous rules, so nothing was committed; the tracking issue lists the failures.'
             exit 1
           fi
           if [ "$SUMMARIZED" != success ]; then

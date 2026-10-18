@@ -2,9 +2,12 @@
 
 import itertools
 import json
+import os
 import re
+import subprocess
 import tarfile
 import tempfile
+import time
 import uuid
 from copy import deepcopy
 from dataclasses import dataclass, field
@@ -13,6 +16,7 @@ from pathlib import Path
 
 import requests
 import yaml
+from requests.adapters import HTTPAdapter, Retry
 
 # Accept current hyphenated tactics and their legacy Sigma underscore forms.
 # Keep validation offline and deterministic; this checks tag format, not whether
@@ -98,26 +102,61 @@ class Document:
         return {"path": self.path, "sha256": self.sha256, "document": self.document}
 
 
+GIT_URL = "https://github.com/{repository}.git"
+ARCHIVE_URL = "https://codeload.github.com/{repository}/tar.gz/{revision}"
+ATTEMPTS = 3
+
+
+def resolve_revision(repository, branch):
+    """The branch head, read over git's protocol rather than the REST API.
+
+    Unauthenticated REST calls share 60 requests an hour per IP address, which
+    a hosted runner's neighbours can use up before every source is resolved.
+    """
+    ref = f"refs/heads/{branch}"
+    for attempt in range(ATTEMPTS):
+        # No prompt: a renamed or private repository must fail, not wait for credentials.
+        result = subprocess.run(
+            ["git", "ls-remote", "--exit-code", GIT_URL.format(repository=repository), ref],
+            capture_output=True, text=True, timeout=60, env={**os.environ, "GIT_TERMINAL_PROMPT": "0"})
+        if result.returncode != 128 or attempt == ATTEMPTS - 1:
+            break
+        time.sleep(2 ** attempt)
+    if result.returncode == 2:
+        raise ValueError(f"Branch {branch} not found in {repository}")
+    if result.returncode:
+        raise RuntimeError(f"git ls-remote failed for {repository}: {result.stderr.strip()}")
+    for line in result.stdout.splitlines():
+        revision, _, name = line.partition("\t")
+        if name == ref:
+            return revision
+    raise ValueError(f"Branch {branch} not found in {repository}")
+
+
+def http_session():
+    """Retry server errors; the next scheduled run picks up anything left."""
+    session = requests.Session()
+    retry = Retry(total=ATTEMPTS, backoff_factor=2, status_forcelist=(500, 502, 503, 504), allowed_methods=("GET",))
+    for prefix in ("https://", "http://"):
+        session.mount(prefix, HTTPAdapter(max_retries=retry))
+    return session
+
+
 def fetch_source(spec, cache: Path, revision=None):
     """Resolve the branch once, then download only that immutable commit."""
     repository = spec["repository"]
     if revision is None:
-        response = requests.get(
-            f"https://api.github.com/repos/{repository}/commits/{spec['branch']}",
-            timeout=(15, 60),
-        )
-        response.raise_for_status()
-        revision = response.json()["sha"]
+        revision = resolve_revision(repository, spec["branch"])
     if not re.fullmatch(r"[0-9a-f]{40}", revision):
         raise ValueError("Source revision must be a complete commit SHA")
     cache.mkdir(parents=True, exist_ok=True)
     destination = cache / revision
     if not (destination / ".complete").exists():
-        with tempfile.TemporaryDirectory(dir=cache) as temporary:
+        with tempfile.TemporaryDirectory(dir=cache) as temporary, http_session() as session:
             temporary = Path(temporary)
             archive = temporary / "source.tar.gz"
-            with requests.get(
-                f"https://codeload.github.com/{repository}/tar.gz/{revision}",
+            with session.get(
+                ARCHIVE_URL.format(repository=repository, revision=revision),
                 stream=True, timeout=(15, 120),
             ) as response:
                 response.raise_for_status()
