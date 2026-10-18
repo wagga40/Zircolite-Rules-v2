@@ -284,6 +284,8 @@ def test_unsupported_actions_are_reviewable_failures(tmp_path, action):
     exclusion = {**failure, "source": "test", "reason": "Reviewed unsupported collection action"}
     _, report = compile_source("test", SPEC, root, [exclusion])
     assert report["status"] == "validated"
+    # A collection action shapes its sibling documents, which publish, so an
+    # edit to it needs review even when it fails the same way.
     (root / "rules" / "example.yaml").write_text(yaml.safe_dump_all([detection(), dict(action_doc, title="Changed")]))
     _, report = compile_source("test", SPEC, root, [exclusion])
     assert report["status"] == "failed"
@@ -484,3 +486,36 @@ def test_a_message_less_exception_still_records_an_error(tmp_path, monkeypatch):
                                 {"test": root}) == ["test"]
     manifest = json.loads((tmp_path / "out" / "release-manifest.json").read_text())
     assert manifest["sources"]["test"]["error"] == "AssertionError"
+
+
+def test_a_later_error_replaces_an_earlier_attempts_report(tmp_path, monkeypatch):
+    root = source(tmp_path / "source")
+    (root / "rules" / "broken.yml").write_text("detection: [")
+    output = tmp_path / "published"
+    args = ({"test": SPEC}, ["test"], output, tmp_path / "cache")
+    assert gen_ruleset.generate(*args, [], {"test": root}) == ["test"]
+    failures = json.loads((output / "reports" / "test.json").read_text())["failures"]
+    reviewed = [{**failure, "source": "test", "reason": "Reviewed"} for failure in failures]
+    def fail(*args):
+        raise OSError("Disk full")
+    monkeypatch.setattr(gen_ruleset, "promote", fail)
+    # Same revision, now validated, then a promotion error: the report must not
+    # keep showing the earlier attempt's failures.
+    assert gen_ruleset.generate(*args, reviewed, {"test": root}) == ["test"]
+    report = json.loads((output / "reports" / "test.json").read_text())
+    assert report["error"] == "Disk full" and "failures" not in report
+
+
+def test_re_pinning_a_drifted_record_publishes_identical_provenance(tmp_path):
+    root = source(tmp_path / "source")
+    (root / "rules" / "broken.yml").write_text("detection: [")
+    output = tmp_path / "published"
+    args = ({"test": SPEC}, ["test"], output, tmp_path / "cache")
+    assert gen_ruleset.generate(*args, [], {"test": root}) == ["test"]
+    failures = json.loads((output / "reports" / "test.json").read_text())["failures"]
+    reviewed = [{**failure, "source": "test", "reason": "Reviewed"} for failure in failures]
+    assert not gen_ruleset.generate(*args, [{**item, "sha256": "0" * 64} for item in reviewed], {"test": root})
+    assert json.loads((output / "reports" / "test.json").read_text())["failures"][0]["drifted"]
+    drifted = (output / "provenance" / "test.json").read_bytes()
+    assert not gen_ruleset.generate(*args, reviewed, {"test": root})
+    assert (output / "provenance" / "test.json").read_bytes() == drifted

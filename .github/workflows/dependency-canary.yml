@@ -3,6 +3,9 @@ name: Dependency canary
 # Resolves the newest dependencies allowed by the resolution overrides,
 # regenerates the published source revisions with them, and reports what would
 # change. It never commits; upgrades still go through a reviewed lock update.
+# A control run with the locked dependencies at the same revisions is the
+# comparison baseline, so exclusion or code changes made since the release are
+# not reported as effects of the upgrade.
 on:
   schedule:
     - cron: '41 4 * * 1'
@@ -33,6 +36,20 @@ jobs:
           python-version: '3.14'
           version: '2.29.2'
 
+      - name: Install the locked dependencies
+        id: locked
+        continue-on-error: true
+        run: pdm sync --no-self
+
+      # Exit 3 means some sources failed; the comparisons below show which.
+      - name: Regenerate the published revisions as a control
+        id: control
+        if: steps.locked.outcome == 'success'
+        continue-on-error: true
+        run: >-
+          pdm run python gen_ruleset.py --revisions-from release-manifest.json
+          --output-dir "$RUNNER_TEMP/control" || [ $? = 3 ]
+
       - name: Resolve the newest dependencies
         id: resolve
         continue-on-error: true
@@ -60,19 +77,32 @@ jobs:
         id: generate
         if: steps.install.outcome == 'success'
         continue-on-error: true
-        run: pdm run python gen_ruleset.py --revisions-from release-manifest.json --output-dir "$RUNNER_TEMP/candidate"
+        run: >-
+          pdm run python gen_ruleset.py --revisions-from release-manifest.json
+          --output-dir "$RUNNER_TEMP/candidate" || [ $? = 3 ]
 
       - name: Review exclusions against the new reports
         id: exclusions
         if: steps.install.outcome == 'success' && steps.generate.outcome != 'skipped'
         continue-on-error: true
-        run: pdm run python exclusion_baseline.py "$RUNNER_TEMP/candidate/reports" --exit-code > "$RUNNER_TEMP/exclusions.md"
+        env:
+          CONTROL: ${{ steps.control.outcome }}
+        run: |
+          control=()
+          if [ "$CONTROL" = success ]; then control=(--control "$RUNNER_TEMP/control/reports"); fi
+          pdm run python exclusion_baseline.py "$RUNNER_TEMP/candidate/reports" "${control[@]}" --exit-code \
+            > "$RUNNER_TEMP/exclusions.md"
 
-      - name: Compare rulesets with the published release
+      - name: Compare rulesets with the control
         id: diff
         if: steps.install.outcome == 'success' && steps.generate.outcome != 'skipped'
         continue-on-error: true
-        run: pdm run python ruleset_diff.py . "$RUNNER_TEMP/candidate" --exit-code > "$RUNNER_TEMP/diff.md"
+        env:
+          CONTROL: ${{ steps.control.outcome }}
+        run: |
+          baseline=.
+          if [ "$CONTROL" = success ]; then baseline="$RUNNER_TEMP/control"; fi
+          pdm run python ruleset_diff.py "$baseline" "$RUNNER_TEMP/candidate" --exit-code > "$RUNNER_TEMP/diff.md"
 
       - name: Summarize
         id: summary
@@ -80,6 +110,8 @@ jobs:
         shell: bash
         env:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          LOCKED: ${{ steps.locked.outcome }}
+          CONTROL: ${{ steps.control.outcome }}
           RESOLVE: ${{ steps.resolve.outcome }}
           INSTALL: ${{ steps.install.outcome }}
           VERSIONS: ${{ steps.versions.outcome }}
@@ -95,13 +127,31 @@ jobs:
             echo "# Dependency canary"
             echo
             echo "[Run]($RUN_URL). A *failure* outcome for versions, exclusions, or ruleset diff means something changed or needs review."
+            if [ "$CONTROL" = success ]; then
+              echo "Exclusions and rules are compared with the control run of the locked dependencies."
+            else
+              echo "The control run failed, so exclusions and rules are compared with the published release instead."
+            fi
             echo
             echo "| Step | Outcome |"
             echo "|---|---|"
-            for step in RESOLVE INSTALL VERSIONS TESTS GENERATE EXCLUSIONS DIFF; do
+            for step in LOCKED CONTROL RESOLVE INSTALL VERSIONS TESTS GENERATE EXCLUSIONS DIFF; do
               echo "| ${step,,} | ${!step:-skipped} |"
               if [ "${!step}" = failure ]; then attention=yes; fi
             done
+            # Both generations accept failed sources, which leave nothing to compare.
+            uncompared=$(for run in control candidate; do
+                manifest="$RUNNER_TEMP/$run/release-manifest.json"
+                if [ -f "$manifest" ]; then
+                  jq -r '.sources | to_entries[] | select(.value.status != "current") | .key' "$manifest" \
+                    || echo "$run manifest unreadable"
+                fi
+              done | sort -u | paste -sd, - | sed 's/,/, /g')
+            if [ -n "$uncompared" ]; then
+              attention=yes
+              echo
+              echo "Not compared, because generation failed in the control or candidate run: $uncompared. The reports in the artifact say why."
+            fi
             if [ "$RESOLVE" != success ]; then
               echo
               echo '<details><summary>Resolution log</summary>'
@@ -130,6 +180,7 @@ jobs:
             ${{ runner.temp }}/canary/report.md
             ${{ runner.temp }}/resolve.log
             ${{ runner.temp }}/candidate/reports/
+            ${{ runner.temp }}/control/reports/
             pdm.lock
           if-no-files-found: warn
 
