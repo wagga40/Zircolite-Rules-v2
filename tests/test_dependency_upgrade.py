@@ -20,7 +20,7 @@ pysigma = ">=2.0.1,<3"
 
 def lock(**versions):
     packages = "".join(f'[[package]]\nname = "{name}"\nversion = "{version}"\nsummary = "x"\n'
-                       f'files = [{{file = "{name}-{version}.tar.gz", hash = "sha256:00"}}]\n\n'
+                       f'files = [{{file = "{name}-{version}.tar.gz", hash = "sha256:{"0" * 64}"}}]\n\n'
                        for name, version in versions.items())
     return f'[metadata]\ngroups = ["default"]\nstrategy = ["inherit_metadata"]\n\n{packages}'
 
@@ -60,6 +60,8 @@ def test_an_upgrade_that_changes_more_than_pins_is_refused(old, new):
     ('{file = "pysigma-2.1.0.tar.gz", hash', '{url = "https://example.org/a.tar.gz", file = "pysigma-2.1.0.tar.gz", hash'),
     ('strategy = ["inherit_metadata"]', 'strategy = ["static_urls"]'),
     ('version = "2.1.0"', 'version = "2.1.0 | rm -rf"'),
+    ('hash = "sha256:' + "0" * 64, 'hash = "md5:' + "0" * 32),
+    ('files = [{file = "pysigma-2.1.0.tar.gz"', 'files = []\nx = [{file = "pysigma-2.1.0.tar.gz"'),
 ])
 def test_a_lock_from_outside_the_index_is_refused(old, new):
     tampered = RESOLVED.replace(old, new, 1)
@@ -86,3 +88,9 @@ def test_the_cli_checks_an_upgrade_directory(tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(sys, "argv", ["dependency_upgrade.py", "--same-versions", "pdm.lock", "upgrade/pdm.lock"])
     assert dependency_upgrade.main() == 0
     assert lock_versions(LOCKED) != lock_versions(RESOLVED)
+
+
+def test_an_upgrade_that_adds_a_package_is_left_for_review():
+    added = RESOLVED + lock(**{"typo-squat": "1.0"}).split("\n\n", 1)[1]
+    with pytest.raises(ValueError, match="adds packages: typo-squat"):
+        upgrade_changes(PYPROJECT, pin_resolved(PYPROJECT, RESOLVED), LOCKED, added)

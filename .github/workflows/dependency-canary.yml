@@ -296,8 +296,12 @@ jobs:
           done
           python3 -I dependency_upgrade.py --check "$RUNNER_TEMP/upgrade" > "$RUNNER_TEMP/changes.md"
           marker="canary-lock: $(sha256sum "$RUNNER_TEMP/upgrade/pdm.lock" | cut -d' ' -f1)"
+          # Only this repository's own pull requests from the bot count: a fork can
+          # open one from a branch of the same name.
+          ours='.[] | select((.isCrossRepository | not) and (.author.login | ltrimstr("app/")) == "github-actions")'
           # This exact lock was proposed before: open, merged, or rejected.
-          if gh pr list --state all --head "$branch" --json body --jq '.[].body' | grep -qF "$marker"; then
+          if gh pr list --state all --head "$branch" --json body,isCrossRepository,author \
+              --jq "$ours | .body" | grep -qF "$marker"; then
             echo "Already proposed: $marker"
             exit 0
           fi
@@ -315,7 +319,7 @@ jobs:
           git commit --quiet -m 'Update dependencies the canary validated' -- pyproject.toml pdm.lock
           git push --quiet --force origin "$branch"
           {
-            echo "The [dependency canary]($RUN_URL) regenerated the published revisions with these versions: tests passed, and exclusions and rules match the locked dependencies."
+            echo "The [dependency canary]($RUN_URL) reported that, with these versions, its tests passed and the published revisions regenerate with the same exclusions and rules. It ran unreviewed packages, so trust the checks on this branch, not that report."
             echo
             cat "$RUNNER_TEMP/changes.md"
             echo
@@ -323,7 +327,8 @@ jobs:
             echo
             echo "<!-- $marker -->"
           } > "$RUNNER_TEMP/body.md"
-          number=$(gh pr list --state open --head "$branch" --json number --jq '.[0].number // empty')
+          number=$(gh pr list --state open --head "$branch" --json number,isCrossRepository,author \
+            --jq "[$ours | .number][0] // empty")
           if [ -n "$number" ]; then
             gh pr edit "$number" --body-file "$RUNNER_TEMP/body.md"
           else

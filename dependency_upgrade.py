@@ -17,6 +17,7 @@ NAME = re.compile(r"[a-z0-9][a-z0-9-]{0,99}")
 VERSION = re.compile(r"[A-Za-z0-9.+!_-]{1,64}")
 # Index packages only: a lock entry with a URL, path or VCS source is refused.
 PACKAGE_KEYS = {"name", "version", "requires_python", "summary", "groups", "files", "dependencies", "marker"}
+HASH = re.compile(r"sha256:[0-9a-f]{64}")
 
 
 def canonical(name):
@@ -36,7 +37,11 @@ def pin_resolved(pyproject, lock):
 
 
 def upgrade_changes(pyproject, proposed, lock, proposed_lock):
-    """The package versions an upgrade changes; ValueError if it changes anything else."""
+    """The package versions an upgrade changes; ValueError if it changes anything else.
+
+    The proposal comes from a job that ran unreviewed packages, so only versions of
+    packages already locked may change; a new dependency needs a deliberate update.
+    """
     before, after = tomllib.loads(pyproject), tomllib.loads(proposed)
     old, new = before["project"].pop("dependencies", []), after["project"].pop("dependencies", [])
     if before != after or len(old) != len(new):
@@ -50,11 +55,15 @@ def upgrade_changes(pyproject, proposed, lock, proposed_lock):
             relocked["metadata"].get("groups") != locked["metadata"].get("groups"):
         raise ValueError("The upgrade changes how the lock is resolved")
     for package in relocked["package"]:
-        if set(package) - PACKAGE_KEYS or any(set(item) != {"file", "hash"} for item in package.get("files", [])):
+        files = package.get("files") or [{}]
+        if set(package) - PACKAGE_KEYS or any(set(item) != {"file", "hash"} or not HASH.fullmatch(str(item["hash"]))
+                                              for item in files):
             raise ValueError(f"The upgrade locks {package.get('name')!r} from outside the package index")
     versions, upgraded = lock_versions(lock), lock_versions(proposed_lock)
     if not all(NAME.fullmatch(name) and VERSION.fullmatch(version) for name, version in upgraded.items()):
         raise ValueError("The upgrade locks an unexpected package name or version")
+    if upgraded.keys() - versions.keys():
+        raise ValueError("The upgrade adds packages: " + ", ".join(sorted(upgraded.keys() - versions.keys())))
     return sorted((name, versions.get(name), upgraded.get(name)) for name in versions.keys() | upgraded.keys()
                   if versions.get(name) != upgraded.get(name))
 
