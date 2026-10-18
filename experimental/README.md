@@ -10,4 +10,4 @@ These files are generated and SQL-validated, but require integration with the ba
 - Missing group keys and invalid timestamps exclude events; incomplete absence windows do not produce alerts. Preserve these diagnostics in the application.
 - Each source/profile has one full-severity file. Dependencies, including low-severity reference-only rules, are embedded during conversion. Local filtering must preserve complete entries and their plans; see the [filtering instructions](../docs/rulesets.md#filtering).
 
-For the result contract, see the [backend migration guide](https://github.com/SigmaHQ/pySigma-backend-sqlite/blob/v2.1.0/docs/migration-v2.md). Source revisions, licenses, and counts are in [the release manifest](../release-manifest.json).
+For the result contract, see the [backend migration guide](https://github.com/SigmaHQ/pySigma-backend-sqlite/blob/v2.1.1/docs/migration-v2.md). Source revisions, licenses, and counts are in [the release manifest](../release-manifest.json).
