@@ -8,25 +8,25 @@ The Windows and Sysmon pipelines still declare `pysigma<2`. `pyproject.toml` ove
 
 ```bash
 pdm sync --no-self -G test
-pdm run pytest -q                                # set SQLITE_MIN_BINARY to a SQLite 3.38 CLI to also run its tests
-pdm run python gen_ruleset.py                    # fetch, validate, and publish every source
-pdm run python gen_ruleset.py --verify-release   # check hashes, counts, the README summary, dashboard, and figures
+pdm run check      # the tests, then --verify-release; set SQLITE_MIN_BINARY to a SQLite 3.38 CLI for its tests
+pdm run generate   # fetch, validate, and publish every source
 ```
 
 ## Commands
 
-Run each with `pdm run python`.
+`pdm run --list` shows every shortcut. Arguments after one are appended, as in `pdm run audit --sources tsale`.
 
 | Task | Command |
 |---|---|
-| Report without publishing | `gen_ruleset.py --audit --output-dir build/audit` |
-| Update one source | `gen_ruleset.py --sources hayabusa` |
-| Use a pinned revision | `gen_ruleset.py --sources tsale --revision tsale=<40-character SHA>` |
-| Use a local checkout | `gen_ruleset.py --sources sigmahq --source-root sigmahq=./sigma --output-dir build/local` |
-| Reproduce the published inputs | `gen_ruleset.py --revisions-from release-manifest.json --output-dir build/repro` |
-| Compare two releases rule by rule | `ruleset_diff.py . build/repro` |
-| Refresh the README summary, dashboard, and figures | `gen_ruleset.py --update-readme-stats` |
-| Remove unused cached snapshots | `gen_ruleset.py --prune-cache` |
+| Report on the published revisions without publishing | `pdm run audit` |
+| Propose exclusion updates from that report, or draft records for its new failures | `pdm run baseline`, `pdm run draft` |
+| Reproduce the published inputs into `build/repro` | `pdm run repro` |
+| Compare the release with `build/repro` rule by rule | `pdm run diff` |
+| Refresh the README summary, dashboard, and figures | `pdm run stats` |
+| Update one source | `pdm run generate --sources hayabusa` |
+| Use a pinned revision | `pdm run generate --sources tsale --revision tsale=<40-character SHA>` |
+| Use a local checkout | `pdm run generate --sources sigmahq --source-root sigmahq=./sigma --output-dir build/local` |
+| Remove unused cached snapshots | `pdm run prune-cache` |
 
 With unchanged tools, `--revisions-from` reproduces the published rulesets byte for byte. A diff against that output therefore isolates the effect of a code or dependency change.
 
@@ -74,25 +74,25 @@ Validation proves that the SQL runs, not that each rule detects what it intends 
 ## Adding a source
 
 1. Add the source to `sources.json`, including its license file.
-2. Run `pdm run python gen_ruleset.py --audit --sources <name> --output-dir build/audit` and read `build/audit/reports/<name>.json`.
-3. Handle the failures: add reviewed records to `exclusions.json` (`exclusion_baseline.py build/audit/reports --draft-new` drafts them), or `exclude` patterns for non-rule YAML.
+2. Run `pdm run audit --sources <name>` and read `build/audit/reports/<name>.json`.
+3. Handle the failures: add reviewed records to `exclusions.json` (`pdm run draft` drafts them), or `exclude` patterns for non-rule YAML.
 4. Add the source to the table in [Sources](sources.md). The dashboard updates itself.
 
 ## Upgrading dependencies
 
-The daily run never upgrades dependencies.
+The daily run never upgrades dependencies. The weekly canary opens a pull request for an upgrade that changes no test, exclusion, or rule; anything else stays in its issue for a deliberate update:
 
-1. Update the lock deliberately, for example with `pdm update pysigma-backend-sqlite`.
+1. Move the pin in `pyproject.toml`, then update the lock, for example with `pdm update pysigma-backend-sqlite`.
 2. Audit at the published revisions, then re-baseline exclusions whose error text changed:
 
    ```bash
-   pdm run python gen_ruleset.py --audit --revisions-from release-manifest.json --output-dir build/audit
-   pdm run python exclusion_baseline.py build/audit/reports           # review the proposals
-   pdm run python exclusion_baseline.py build/audit/reports --apply   # update messages and hashes, keep reasons
+   pdm run audit
+   pdm run baseline           # review the proposals
+   pdm run baseline --apply   # update messages and hashes, keep reasons
    ```
 
    A rule record is updated only when exactly one field changed: the error at the same content, or the hash with the same error. Class records are never changed. New failures need a written reason.
-3. Regenerate into `build/repro` and attach the output of `ruleset_diff.py . build/repro` to the pull request.
+3. Run `pdm run repro` and attach the output of `pdm run diff` to the pull request.
 
 Do not commit regenerated rulesets: the daily update also commits them, and CI publishes after merge.
 
@@ -102,7 +102,7 @@ Do not commit regenerated rulesets: the daily update also commits them, and CI p
 |---|---|---|
 | `Update.yml` | Daily at 01:23 UTC, on pushes that change generation files, and on demand | Tests in a read-only job, then publishes changed sources, re-pinned exclusions, the README summary, the dashboard, and its figures |
 | `Update.yml` | Pull requests, and runs on other branches | Tests and `--verify-release`; only `main` publishes |
-| `dependency-canary.yml` | Weekly and on demand | Regenerates the published revisions twice: with the locked dependencies as a control, then with the newest allowed ones. Keeps a *Dependency canary* issue open while versions, tests, exclusions, or rules differ from the control. |
+| `dependency-canary.yml` | Weekly and on demand | Regenerates the published revisions twice: with the locked dependencies as a control, then with the newest allowed ones. Keeps a *Dependency canary* issue open while versions, tests, exclusions, or rules differ from the control, and proposes a drop-in upgrade on the `deps/canary-upgrade` branch. |
 
 A publish run:
 
@@ -115,4 +115,4 @@ Security measures:
 - Actions are pinned to commit SHAs, and Dependabot keeps the pins current.
 - The SQLite 3.38 test build is checked against its published SHA3-256.
 - The publish job never restores an Actions cache.
-- The canary runs new packages in a job without write permissions.
+- The canary runs new packages in a job without write permissions. The job that opens its pull request runs only the standard-library `dependency_upgrade.py` with the runner's Python; it refuses any change beyond pinned versions or a package from outside the index, and skips a lock it already proposed or that was rejected. Pull requests made with the workflow token start no workflow, so it dispatches the checks on the branch, where publishing is disabled.
