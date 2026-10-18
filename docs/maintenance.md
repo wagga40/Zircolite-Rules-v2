@@ -4,11 +4,11 @@
 
 Conversion uses pySigma-backend-sqlite 2.1.1 on pySigma 2.0.1 and Python 3.14. Versions are locked in `pdm.lock`, and the versions behind each source are recorded in `release-manifest.json`.
 
-The Windows and Sysmon pipelines still declare `pysigma<2`. `pyproject.toml` overrides that constraint until they are re-released. The `sigma` and `pySigma-backend-sqlite` submodule entries are historical and never used.
+The Windows and Sysmon pipelines still declare `pysigma<2`. `pyproject.toml` overrides that constraint until they are re-released.
 
 ```bash
 pdm sync --no-self -G test
-pdm run pytest -q                                # set SQLITE_MIN_BINARY to a SQLite 3.38 CLI for 16 more tests
+pdm run pytest -q                                # set SQLITE_MIN_BINARY to a SQLite 3.38 CLI to also run its tests
 pdm run python gen_ruleset.py                    # fetch, validate, and publish every source
 pdm run python gen_ruleset.py --verify-release   # check hashes, counts, the README summary, dashboard, and figures
 ```
@@ -30,7 +30,7 @@ Run each with `pdm run python`.
 
 With unchanged tools, `--revisions-from` reproduces the published rulesets byte for byte. A diff against that output therefore isolates the effect of a code or dependency change.
 
-The README and dashboard figures in `docs/assets/` are animated SVGs rendered by `ruleset_charts.py` from the verified release, in light and dark variants. They animate once, except for the status dot, and stay still for readers who prefer reduced motion.
+The figures in `docs/assets/` are animated SVGs that `ruleset_charts.py` renders from the verified release, in light and dark variants: the overview, source status, pipeline, ruleset families, tactics, and log sources. They animate once, except for the status dots and the pipeline's flow, and stay still for readers who prefer reduced motion. `--verify-release` fails when a page shows a figure no release renders.
 
 ## Validation and release
 
@@ -71,6 +71,13 @@ For sources validated in that run, the publish run also drops rule records whose
 
 Validation proves that the SQL runs, not that each rule detects what it intends on every log schema.
 
+## Adding a source
+
+1. Add the source to `sources.json`, including its license file.
+2. Run `pdm run python gen_ruleset.py --audit --sources <name> --output-dir build/audit` and read `build/audit/reports/<name>.json`.
+3. Handle the failures: add reviewed records to `exclusions.json` (`exclusion_baseline.py build/audit/reports --draft-new` drafts them), or `exclude` patterns for non-rule YAML.
+4. Add the source to the table in [Sources](sources.md). The dashboard updates itself.
+
 ## Upgrading dependencies
 
 The daily run never upgrades dependencies.
@@ -93,9 +100,15 @@ Do not commit regenerated rulesets: the daily update also commits them, and CI p
 
 | Workflow | Runs | Does |
 |---|---|---|
-| `Update.yml` | Daily at 01:23 UTC, on pushes that change generation files, and on demand | Tests in a read-only job, then publishes changed sources, the README summary, the dashboard, and its figures. Adds a rule diff to the job summary, and a warning when an edited rule's record needs a re-pin. A source that fails keeps its previous rules. The run then ends green with a warning per source, plus the failures and exclusion baseline in the job summary. A *Rule source validation failures* issue stays open while a source fails and gets a comment when the failures change. The run fails when generation crashes, the issue cannot be updated, or no source validated; in that last case nothing is committed. |
+| `Update.yml` | Daily at 01:23 UTC, on pushes that change generation files, and on demand | Tests in a read-only job, then publishes changed sources, re-pinned exclusions, the README summary, the dashboard, and its figures |
 | `Update.yml` | Pull requests, and runs on other branches | Tests and `--verify-release`; only `main` publishes |
 | `dependency-canary.yml` | Weekly and on demand | Regenerates the published revisions twice: with the locked dependencies as a control, then with the newest allowed ones. Keeps a *Dependency canary* issue open while versions, tests, exclusions, or rules differ from the control. |
+
+A publish run:
+
+- adds a rule diff, the failures, and the exclusion baseline to the job summary;
+- leaves a failing source at its previous rules, with a warning, and keeps a *Rule source validation failures* issue open, commenting when the failures change;
+- fails only when generation crashes, the issue cannot be updated, or no source validated, in which case it commits nothing.
 
 Security measures:
 

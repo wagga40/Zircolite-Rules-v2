@@ -42,14 +42,14 @@ def test_statistics_count_entries_ids_and_exact_levels(tmp_path):
     assert text.startswith(README.partition(START)[0])
     assert text.endswith(README.partition(END)[2])
     assert '<source media="(prefers-color-scheme: dark)" srcset="docs/assets/overview-dark.svg">' in text
-    assert "1 of 1 sources current; 12 rules in rules_windows_all.json (5 unique)" in text
+    assert "1 of 1 sources current; 5 unique Windows detections (12 entries in rules_windows_all.json)" in text
     assert "[dashboard](docs/dashboard.md)" in text
     assert "| 12 | 5 | 4 | 2 | 2 | 2 | 2 |" in board
     assert "[rules_test_windows_merged.json](../rules_test_windows_merged.json)" in board
     assert board.split("## Experimental correlation rulesets")[1].count("No published rulesets.") == 1
     assert ROW.format("test", "current") + " MIT |" in board
     paths = [output / "README.md", output / DASHBOARD, *sorted((output / FIGURES).glob("*.svg"))]
-    assert len(paths) == 8
+    assert len(paths) == 14
     before = [(path.read_bytes(), path.stat().st_mtime_ns) for path in paths]
     update_readme_stats(output)
     assert [(path.read_bytes(), path.stat().st_mtime_ns) for path in paths] == before
@@ -210,8 +210,8 @@ def test_figures_are_valid_animated_svg_in_both_themes(tmp_path):
     docs = [detection(id=str(uuid.uuid4()), level=level, tags=["attack.execution"]) for level in LEVELS]
     _, output, _ = release(tmp_path, docs)
     names = sorted(path.name for path in (output / FIGURES).glob("*.svg"))
-    assert names == [f"{chart}-{theme}.svg" for chart in ("logsources", "overview", "tactics")
-                     for theme in ("dark", "light")]
+    assert names == [f"{chart}-{theme}.svg" for chart in ("families", "logsources", "overview", "pipeline",
+                                                          "sources", "tactics") for theme in ("dark", "light")]
     for name in names:
         text = (output / FIGURES / name).read_text()
         root = ET.fromstring(text)
@@ -221,3 +221,86 @@ def test_figures_are_valid_animated_svg_in_both_themes(tmp_path):
     assert ">1 of 1 sources current<" in card and ">10<" in card
     assert (output / FIGURES / "overview-dark.svg").read_text() != card
     assert "| Execution | 5 |" in dashboard(output) and "<summary>ATT&CK tactic table</summary>" in dashboard(output)
+
+
+def test_the_status_strip_writes_each_status_and_replaces_the_text_line(tmp_path):
+    roots = {name: source(tmp_path / name) for name in ("good", "bad")}
+    registry = {name: SPEC for name in roots}
+    output = tmp_path / "published"
+    output.mkdir()
+    (output / "README.md").write_text(README)
+    assert not gen_ruleset.generate(registry, list(roots), output, tmp_path / "cache", [], roots)
+    (roots["bad"] / "rules" / "bad.yml").write_text("detection: [")
+    assert gen_ruleset.generate(registry, list(roots), output, tmp_path / "cache", [], roots) == ["bad"]
+    readme = (output / "README.md").read_text()
+    assert 'srcset="docs/assets/sources-dark.svg"' in readme
+    assert "\nNot current:" not in readme and 'alt="Source status: 1 of 2 sources current. Not current: bad' in readme
+    strip = (output / FIGURES / "sources-light.svg").read_text()
+    assert strip.count("<circle") == 3 and strip.count('class="pulse"') == 1
+    assert ">good<" in strip and ">current<" in strip and ">stale since 20" in strip
+    verify_release(output)
+
+
+def test_pipeline_counts_come_from_the_published_provenance(tmp_path):
+    from ruleset_stats import pipeline_counts, read_provenance
+    docs = [detection(), detection(id=str(uuid.uuid4()), status="deprecated"),
+            detection(id=str(uuid.uuid4()), logsource={"product": "linux", "category": "process_creation"})]
+    root = source(tmp_path / "source", docs)
+    (root / "rules" / "broken.yml").write_text("detection: [")
+    (root / "rules" / "notes.yml").write_text("just: metadata\n")
+    spec = dict(SPEC, profiles=["sysmon", "generic", "linux"])
+    output = tmp_path / "published"
+    _, report = gen_ruleset.compile_source("test", spec, root, [])
+    reviewed = [{**{k: v for k, v in f.items() if k != "approved"}, "source": "test", "reason": "Reviewed"}
+                for f in report["failures"]]
+    assert not gen_ruleset.generate({"test": spec}, ["test"], output, tmp_path / "cache", reviewed, {"test": root})
+    manifest, rows = read_release(output)
+    counts = pipeline_counts(manifest, rows, read_provenance(output, manifest))
+    assert (counts["sources"], counts["documents"], counts["skipped"], counts["profiles"]) == ("1", "3", "1", 3)
+    assert (counts["policy"], counts["reviewed"], counts["left_out"]) == ("1", "1", "2")
+    assert (counts["detections"], counts["linux"], counts["stale"]) == ("1", "1", 0)
+    assert "3 Sigma documents are read and 1 other files skipped" in counts["alt"]
+
+
+def test_family_counts_explain_merging_and_combining(tmp_path):
+    from ruleset_stats import family_counts
+    docs = [detection(), detection(id=str(uuid.uuid4()), logsource={"product": "windows", "service": "security"},
+                                   detection={"s": {"EventID": 4624}, "condition": "s"})]
+    _, output, _ = release(tmp_path, docs)
+    manifest, rows = read_release(output)
+    families = family_counts(manifest, rows)
+    sizes = {row["name"]: row["entries"] for row in rows}
+    merged = sizes["rules_test_windows_merged.json"]
+    assert families["shared"] == f"{sizes['rules_test_windows_sysmon.json'] + sizes['rules_test_windows_generic.json'] - merged:,}"
+    assert families["shared"] == "1" and families["duplicates"] == "0"
+    assert families["windows_all"] == f"{sizes['rules_windows_all.json']:,}"
+    assert ">From profiles to files<" in (output / FIGURES / "families-dark.svg").read_text()
+
+
+def test_figures_stay_byte_identical_when_counts_do_not_change(tmp_path):
+    root, output, args = release(tmp_path)
+    before = {path.name: path.read_bytes() for path in (output / FIGURES).glob("*.svg")}
+    (root / "LICENSE").write_text("Changed license text\n")
+    assert not gen_ruleset.generate(*args)
+    assert {path.name: path.read_bytes() for path in (output / FIGURES).glob("*.svg")} == before
+
+
+def test_a_page_may_only_show_figures_a_release_renders(tmp_path):
+    _, output, _ = release(tmp_path)
+    (output / "docs" / "guide.md").write_text('<img src="assets/flowchart-light.svg">\n')
+    with pytest.raises(ValueError, match="docs/guide.md shows flowchart"):
+        verify_release(output)
+    (output / "docs" / "guide.md").write_text('<img src="assets/pipeline-light.svg">\n')
+    verify_release(output)
+
+
+def test_the_readme_decision_tree_names_only_published_files():
+    import re
+    from pathlib import Path
+    root = Path(__file__).resolve().parents[1]
+    tree = (root / "README.md").read_text().split("```mermaid", 1)[1].split("```", 1)[0]
+    manifest = json.loads((root / "release-manifest.json").read_text())
+    published = {name for group in (*manifest["sources"].values(), *manifest.get("aggregates", {}).values())
+                 for name in group.get("artifacts", {})}
+    names = set(re.findall(r"rules_[a-z0-9_]+\.json", tree))
+    assert names and names <= published

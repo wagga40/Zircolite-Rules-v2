@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="468" viewBox="0 0 860 468" role="img" aria-labelledby="title desc">
+<title id="title">From profiles to files</title>
+<desc id="desc">From profiles to files: 4,547 Sysmon entries in 12 files and 3,529 Generic entries in 11 files merge per source into 7,150 entries, 920 of them identical in both profiles. With 188 native entries they form rules_windows_all.json: 7,344 entries, 4,696 unique detections, 0 duplicates across sources removed. Linux: 299 entries in 5 files. Experimental correlations: 87 entries in 12 files.</desc>
+<style>
+text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #f0efec; }
+.secondary { fill: #c3c2b7; }
+.muted { fill: #898781; }
+.rise { animation: rise .7s cubic-bezier(.2,.7,.2,1) backwards; }
+.grow { transform-box: fill-box; transform-origin: left center; animation: grow .9s cubic-bezier(.2,.7,.2,1) backwards; }
+.fade { animation: fade .5s ease-out backwards; }
+.pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2.4s ease-out infinite; }
+.draw { stroke-dasharray: 1; animation: draw .6s cubic-bezier(.2,.7,.2,1) backwards; }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } }
+@keyframes draw { from { stroke-dashoffset: 1; } }
+@keyframes grow { from { transform: scaleX(0); } }
+@keyframes fade { from { opacity: 0; } }
+@keyframes pulse { from { opacity: .5; transform: scale(1); } to { opacity: 0; transform: scale(2.8); } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<rect x="0.5" y="0.5" width="859" height="467" rx="12" fill="#1a1a19" stroke="rgba(255,255,255,0.10)"/>
+<text x="24" y="36" font-size="16" font-weight="600">From profiles to files</text>
+<text x="24" y="56" font-size="12" class="secondary">Entries across every source. One rule can have a Sysmon and a Generic variant; identical SQL is kept once.</text>
+<g class="rise" style="animation-delay:100ms"><rect x="24" y="80" width="200" height="76" rx="8" fill="#1a1a19" stroke="#2c2c2a"/><text x="36" y="101" font-size="12" class="secondary">Sysmon · 12 files</text><text x="36" y="126" font-size="20" font-weight="600">4,547</text><text x="36" y="145" font-size="11" class="secondary">categories as Sysmon events</text></g>
+<g class="rise" style="animation-delay:220ms"><rect x="24" y="168" width="200" height="76" rx="8" fill="#1a1a19" stroke="#2c2c2a"/><text x="36" y="189" font-size="12" class="secondary">Generic · 11 files</text><text x="36" y="214" font-size="20" font-weight="600">3,529</text><text x="36" y="233" font-size="11" class="secondary">as Windows audit events (4688…)</text></g>
+<g class="rise" style="animation-delay:340ms"><rect x="24" y="256" width="200" height="76" rx="8" fill="#1a1a19" stroke="#2c2c2a"/><text x="36" y="277" font-size="12" class="secondary">Native · 1 file</text><text x="36" y="302" font-size="20" font-weight="600">188</text><text x="36" y="321" font-size="11" class="secondary">Windows channels as written</text></g>
+<g class="rise" style="animation-delay:520ms"><rect x="330" y="124" width="200" height="76" rx="8" fill="#1a1a19" stroke="#2c2c2a"/><text x="342" y="145" font-size="12" class="secondary">Merged · 11 files</text><text x="342" y="170" font-size="20" font-weight="600">7,150</text><text x="342" y="189" font-size="11" class="secondary">−920 identical in both</text></g>
+<g class="rise" style="animation-delay:820ms"><rect x="636" y="196" width="200" height="104" rx="8" fill="#1a1a19" stroke="#3987e5" stroke-width="1.5"/><text x="648" y="217" font-size="12" class="secondary">rules_windows_all.json</text><text x="648" y="242" font-size="20" font-weight="600">7,344</text><text x="648" y="261" font-size="11" class="secondary">4,696 unique detections</text><text x="648" y="275" font-size="11" class="secondary">0 cross-source duplicates</text><text x="648" y="289" font-size="11" class="secondary">dropped, SigmaHQ kept first</text></g>
+<path class="draw" style="animation-delay:420ms" pathLength="1" d="M224.0 118.0L274.0 118.0L274.0 152.0L330.0 152.0" stroke="#898781" stroke-width="1.5" fill="none"/><path class="fade" style="animation-delay:820ms" d="M330.0 152.0L323.0 148.0L323.0 156.0Z" fill="#898781"/>
+<path class="draw" style="animation-delay:460ms" pathLength="1" d="M224.0 206.0L274.0 206.0L274.0 172.0L330.0 172.0" stroke="#898781" stroke-width="1.5" fill="none"/><path class="fade" style="animation-delay:860ms" d="M330.0 172.0L323.0 168.0L323.0 176.0Z" fill="#898781"/>
+<path class="draw" style="animation-delay:720ms" pathLength="1" d="M530.0 162.0L580.0 162.0L580.0 236.0L636.0 236.0" stroke="#898781" stroke-width="1.5" fill="none"/><path class="fade" style="animation-delay:1120ms" d="M636.0 236.0L629.0 232.0L629.0 240.0Z" fill="#898781"/>
+<path class="draw" style="animation-delay:760ms" pathLength="1" d="M224.0 294.0L600.0 294.0L600.0 260.0L636.0 260.0" stroke="#898781" stroke-width="1.5" fill="none"/><path class="fade" style="animation-delay:1160ms" d="M636.0 260.0L629.0 256.0L629.0 264.0Z" fill="#898781"/>
+<line x1="24" y1="352" x2="836" y2="352" stroke="#2c2c2a"/>
+<g class="rise" style="animation-delay:1000ms"><rect x="24" y="368" width="398" height="76" rx="8" fill="#1a1a19" stroke="#2c2c2a"/><text x="36" y="389" font-size="12" class="secondary">Linux · 5 files</text><text x="36" y="414" font-size="20" font-weight="600">299</text><text x="36" y="433" font-size="11" class="secondary">Sigma field names; never combined with Windows</text></g>
+<g class="rise" style="animation-delay:1100ms"><rect x="438" y="368" width="398" height="76" rx="8" fill="#1a1a19" stroke="#2c2c2a"/><text x="450" y="389" font-size="12" class="secondary">Experimental correlations · 12 files</text><text x="450" y="414" font-size="20" font-weight="600">87</text><text x="450" y="433" font-size="11" class="secondary">experimental/, for Zircolite 4.1 or newer</text></g>
+</svg>
