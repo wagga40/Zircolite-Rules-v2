@@ -115,3 +115,12 @@ def test_an_archive_with_links_is_rejected(tmp_path, server):
     with pytest.raises(ValueError, match="non-regular entries"):
         fetch_source(SPEC, tmp_path, REVISION)
     assert not (tmp_path / REVISION).exists()
+
+
+@pytest.mark.parametrize("name", ["rules-main/../../escaped.yml", "/tmp/escaped.yml"])
+def test_an_archive_entry_outside_its_directory_is_rejected(tmp_path, server, name):
+    responses, _ = server
+    responses.append((200, archive([regular("rules-main/rules/a.yml", b"title: A\n"), regular(name, b"x")])))
+    with pytest.raises(ValueError, match="escapes the extraction directory"):
+        fetch_source(SPEC, tmp_path / "cache", REVISION)
+    assert not list(tmp_path.rglob("escaped.yml")) and not (tmp_path / "cache" / REVISION).exists()

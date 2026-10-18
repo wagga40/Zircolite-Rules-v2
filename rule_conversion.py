@@ -105,6 +105,18 @@ def sql_regexes(query):
         previous = token
 
 
+def explain(connection, queries):
+    """Compile each query without running it.
+
+    The SQL is the converter's output under test, so it cannot be a bound
+    parameter. It runs on a throwaway in-memory database, and sqlite3 refuses
+    a second statement in one call.
+    """
+    for query in queries:
+        # nosemgrep: python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query
+        connection.execute("EXPLAIN " + query).fetchall()
+
+
 def validate_entry(entry):
     if entry.get("schema_version") != 2:
         raise ValueError("Expected backend schema_version 2")
@@ -129,8 +141,7 @@ def validate_entry(entry):
                 raise ValueError("Correlations require SQLite >=3.38")
             plan = entry["correlation_plan"]
             ensure_fields(connection, plan["required_fields"])
-            for query in entry["rule"]:
-                connection.execute("EXPLAIN " + query).fetchall()
+            explain(connection, entry["rule"])
             execute_plan(connection, plan, include_events=False)
         elif entry.get("result_type") == "event":
             if entry.get("source_table") != "logs":
@@ -140,8 +151,7 @@ def validate_entry(entry):
             if any(token.upper() == "COLLATE" for query in entry["rule"] for token in sql_tokens(query)):
                 raise ValueError("Event SQL must not name a collation")
             ensure_fields(connection, {"logs": entry["required_fields"]})
-            for query in entry["rule"]:
-                connection.execute("EXPLAIN " + query).fetchall()
+            explain(connection, entry["rule"])
         else:
             raise ValueError("Unknown result_type")
     finally:
