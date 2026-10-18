@@ -51,10 +51,11 @@ def pair(failures, unused, exclusions, field):
     """Pair each unused record with the failures it matches in everything but field.
 
     A record takes its failures only when it is the sole candidate of each and
-    they agree on the new value; a record for one profile takes one failure.
+    they agree on the new value; a record for one profile takes one failure. An
+    edited collection action is never re-pinned, as approval never drifts it.
     """
     candidates = [[index for index in unused if matches(exclusions[index], failure["source"], failure, (field,))]
-                  for failure in failures]
+                  if field != "sha256" or failure["stage"] != "discovery" else [] for failure in failures]
     proposals, taken = [], set()
     for index in list(unused):
         mine = [position for position, found in enumerate(candidates) if index in found]
@@ -152,7 +153,7 @@ def canonical(exclusions, registry):
         elif record not in records:
             records.append(record)
     for group in groups.values():
-        profiles = set(registry[group[0]["source"]]["profiles"])
+        profiles = set(registry.get(group[0]["source"], {}).get("profiles", ()))
         covered = {record["profile"] for record in group}
         if len(covered) > 1 and covered in (profiles, profiles - {"linux"}):
             group = [{**group[0], "profile": "*"}]

@@ -297,3 +297,18 @@ def test_the_publish_run_never_rewords(tmp_path, monkeypatch):
                                       "--only", "reword"])
     with pytest.raises(SystemExit):
         exclusion_baseline.main()
+
+
+def test_an_edited_collection_action_is_never_proposed_for_re_pinning():
+    failure = {"source": "test", "path": "a.yml", "sha256": "1" * 64, "document": "*", "stage": "discovery",
+               "profile": "*", "error": "Unsupported Sigma collection action: 'correlation'"}
+    record = {**failure, "sha256": "0" * 64, "reason": "Reviewed"}
+    result = rebaseline([record], [{"source": "test", "failures": [failure]}])
+    assert result["proposals"] == [] and len(result["new_failures"]) == 1 and len(result["stale"]) == 1
+
+
+def test_canonicalizing_keeps_records_of_a_removed_source():
+    record = {"source": "gone", "path": "a.yml", "sha256": "1" * 64, "document": "0", "stage": "convert",
+              "profile": "sysmon", "error": "E", "reason": "R"}
+    assert exclusion_baseline.canonical([record, {**record, "profile": "generic"}], {}) == [
+        {**record, "profile": "generic"}, record]
