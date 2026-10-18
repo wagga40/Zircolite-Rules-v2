@@ -36,14 +36,14 @@ The README and dashboard figures in `docs/assets/` are animated SVGs rendered by
 
 Each source goes through the same pipeline:
 
-1. Fetch an immutable snapshot.
+1. Fetch an immutable snapshot: `git ls-remote` resolves the branch, which needs no GitHub API quota, and the commit's archive is downloaded, retrying server errors.
 2. Adapt metadata.
 3. Resolve correlation references.
 4. Select rules per profile.
 5. Convert.
 6. Prepare every query in a fresh SQLite database with its declared fields. Regexes and ATT&CK tags are checked, and correlation plans are executed.
 
-A source is published only when every failure has a reviewed exclusion. Otherwise its previous files stay, the manifest marks it `stale`, and `gen_ruleset.py` exits with status 3. An uncaught error exits with 1.
+A source is published only when every failure has a reviewed exclusion. Otherwise its previous files stay, the manifest marks it `stale`, and `gen_ruleset.py` exits with status 3. A fetch error also keeps the previous report. An uncaught error exits with 1.
 
 A record matches a failure by path, document, stage, profile, error, and content hash. An upstream edit to an excluded rule that fails with the same error still matches. The rule stays out, the source publishes, and the run warns that the record needs a re-pin; `exclusion_baseline.py <reports> --apply` updates the hash. An edit that changes the error, or any edit to a collection action such as `action: global`, blocks the source until reviewed: such an action shapes sibling documents that do publish.
 
@@ -78,8 +78,8 @@ Do not commit regenerated rulesets: the daily update also commits them, and CI p
 
 | Workflow | Runs | Does |
 |---|---|---|
-| `Update.yml` | Daily at 01:23 UTC, on pushes that change generation files, and on demand | Tests in a read-only job, then publishes changed sources, the README summary, the dashboard, and its figures. Adds a rule diff to the job summary, and a warning when an edited rule's record needs a re-pin. A source that fails keeps its previous rules. The run then ends green with a warning per source, plus the failures and exclusion baseline in the job summary. A *Rule source validation failures* issue stays open while a source fails and gets a comment when the failures change. The run fails only when generation crashes or the issue cannot be updated. |
-| `Update.yml` | Pull requests | Tests and `--verify-release`; never publishes |
+| `Update.yml` | Daily at 01:23 UTC, on pushes that change generation files, and on demand | Tests in a read-only job, then publishes changed sources, the README summary, the dashboard, and its figures. Adds a rule diff to the job summary, and a warning when an edited rule's record needs a re-pin. A source that fails keeps its previous rules. The run then ends green with a warning per source, plus the failures and exclusion baseline in the job summary. A *Rule source validation failures* issue stays open while a source fails and gets a comment when the failures change. The run fails when generation crashes, the issue cannot be updated, or no source validated; in that last case nothing is committed. |
+| `Update.yml` | Pull requests, and runs on other branches | Tests and `--verify-release`; only `main` publishes |
 | `dependency-canary.yml` | Weekly and on demand | Regenerates the published revisions twice: with the locked dependencies as a control, then with the newest allowed ones. Keeps a *Dependency canary* issue open while versions, tests, exclusions, or rules differ from the control. |
 
 Security measures:

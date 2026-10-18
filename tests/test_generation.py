@@ -196,6 +196,28 @@ def test_fetch_failure_and_empty_source_cannot_publish(tmp_path, monkeypatch):
     assert gen_ruleset.generate({"test": SPEC}, ["test"], tmp_path, tmp_path / "cache", [], {"test": empty}) == ["test"]
 
 
+def test_a_fetch_failure_keeps_every_published_file_and_report(tmp_path, monkeypatch):
+    roots = {name: source(tmp_path / name) for name in ("one", "two")}
+    registry = {name: SPEC for name in roots}
+    output = tmp_path / "published"
+    assert not gen_ruleset.generate(registry, list(roots), output, tmp_path / "cache", [], roots)
+    def files():
+        # The manifest and the bundle's lineage record each source's status, which does change.
+        return {name: path.read_bytes() for path in output.rglob("*.json")
+                if (name := str(path.relative_to(output))) not in ("release-manifest.json", "provenance/windows_all.json")}
+    published = files()
+    assert "reports/one.json" in published
+    def fail(*args, **kwargs):
+        raise RuntimeError("git ls-remote failed for example/rules: rate limited")
+    monkeypatch.setattr(gen_ruleset, "fetch_source", fail)
+    # Every source fails before a revision is known, as when GitHub refuses them all.
+    assert gen_ruleset.generate(registry, list(roots), output, tmp_path / "cache", []) == ["one", "two"]
+    assert files() == published
+    sources = json.loads((output / "release-manifest.json").read_text())["sources"]
+    assert {details["status"] for details in sources.values()} == {"stale"}
+    assert sources["one"]["failed_revision"] is None
+
+
 def test_audit_never_promotes_and_does_not_change_manifest(tmp_path):
     root = source(tmp_path / "source")
     output = tmp_path / "output"

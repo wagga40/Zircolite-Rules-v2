@@ -46,7 +46,10 @@ def failed_sources(manifest, reports, since=None):
         if since and not (attempted and parse_time(attempted) >= since):
             continue
         if details.get("status") in FAILED:
-            failures = [item for item in reports.get(name, {}).get("failures", []) if not item.get("approved")]
+            # A fetch error keeps the previous report, whose failures are not this attempt's.
+            report = reports.get(name, {})
+            current = report.get("revision") == details.get("failed_revision")
+            failures = [item for item in report.get("failures", []) if current and not item.get("approved")]
             result.append({"source": name, "status": details["status"],
                            "error": details.get("error") or "No error message was recorded.",
                            "last_success": details.get("last_success"), "failures": failures})

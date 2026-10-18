@@ -21,6 +21,7 @@ jobs:
   # Runs newly published, unreviewed packages, so it holds no write permission.
   canary:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
       contents: read
     outputs:
@@ -190,6 +191,7 @@ jobs:
     needs: canary
     if: always() && needs.canary.outputs.attention != ''
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       issues: write
     steps:

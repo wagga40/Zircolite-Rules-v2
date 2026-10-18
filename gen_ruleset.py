@@ -179,7 +179,9 @@ def generate(registry, sources, output, cache, exclusions, local_roots=None, rev
             failed.append(source)
             error = str(exc) or type(exc).__name__
             # Keep the detailed report this attempt wrote; replace any older one.
-            if not reported:
+            # Without a revision nothing was fetched, so the previous report
+            # still describes the rules on offer.
+            if not reported and revision is not None:
                 write_json(output / "reports" / f"{source}.json",
                            {"source": source, "status": "failed", "revision": revision, "error": error})
             if not audit:
