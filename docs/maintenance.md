@@ -2,7 +2,7 @@
 
 ## Toolchain
 
-Conversion uses pySigma-backend-sqlite 2.1.0 on pySigma 2 and Python 3.14. Versions are locked in `pdm.lock`, and the versions behind each source are recorded in `release-manifest.json`.
+Conversion uses pySigma-backend-sqlite 2.1.1 on pySigma 2.0.1 and Python 3.14. Versions are locked in `pdm.lock`, and the versions behind each source are recorded in `release-manifest.json`.
 
 The Windows and Sysmon pipelines still declare `pysigma<2`. `pyproject.toml` overrides that constraint until they are re-released. The `sigma` and `pySigma-backend-sqlite` submodule entries are historical and never used.
 

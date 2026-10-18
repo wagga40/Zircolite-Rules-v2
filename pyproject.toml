@@ -6,8 +6,8 @@ authors = [
     {name = "wagga40", email = "6437862+wagga40@users.noreply.github.com"},
 ]
 dependencies = [
-    "pysigma-backend-sqlite==2.1.0",
-    "pysigma>=2.0.0,<3",
+    "pysigma-backend-sqlite==2.1.1",
+    "pysigma>=2.0.1,<3",
     "pysigma-pipeline-windows==2.0.0",
     "pysigma-pipeline-sysmon==2.0.0",
     "PyYAML>=6.0.3,<7",
@@ -26,7 +26,7 @@ distribution = false
 # https://github.com/SigmaHQ/pySigma-pipeline-windows/pull/15
 # https://github.com/SigmaHQ/pySigma-pipeline-sysmon/pull/15
 [tool.pdm.resolution.overrides]
-pysigma = ">=2.0.0,<3"
+pysigma = ">=2.0.1,<3"
 
 [dependency-groups]
 test = ["pytest>=9,<10"]
