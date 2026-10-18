@@ -2,10 +2,10 @@ name: Dependency canary
 
 # Resolves the newest dependencies allowed by the resolution overrides,
 # regenerates the published source revisions with them, and reports what would
-# change. It never commits; upgrades still go through a reviewed lock update.
-# A control run with the locked dependencies at the same revisions is the
-# comparison baseline, so exclusion or code changes made since the release are
-# not reported as effects of the upgrade.
+# change. A control run with the locked dependencies at the same revisions is
+# the comparison baseline, so exclusion or code changes made since the release
+# are not reported as effects of the upgrade. When nothing it checks changes,
+# it proposes the upgrade as a pull request; it never commits to main.
 on:
   schedule:
     - cron: '41 4 * * 1'
@@ -26,6 +26,7 @@ jobs:
       contents: read
     outputs:
       attention: ${{ steps.summary.outputs.attention }}
+      upgrade: ${{ steps.summary.outputs.upgrade }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -54,7 +55,10 @@ jobs:
       - name: Resolve the newest dependencies
         id: resolve
         continue-on-error: true
-        run: pdm update --unconstrained --update-all --no-sync 2>&1 | tee "$RUNNER_TEMP/resolve.log"
+        run: |
+          cp pyproject.toml "$RUNNER_TEMP/pyproject.toml"
+          pdm update --unconstrained --update-all --no-sync 2>&1 | tee "$RUNNER_TEMP/resolve.log"
+          cp pdm.lock "$RUNNER_TEMP/resolved.lock"
 
       - name: Install the resolved dependencies
         id: install
@@ -105,6 +109,21 @@ jobs:
           if [ "$CONTROL" = success ]; then baseline="$RUNNER_TEMP/control"; fi
           pdm run python ruleset_diff.py "$baseline" "$RUNNER_TEMP/candidate" --exit-code > "$RUNNER_TEMP/diff.md"
 
+      # --unconstrained also rewrote pyproject.toml. The proposal is the original
+      # with only its exact pins moved, relocked; it must lock exactly what was tested.
+      - name: Propose the upgrade
+        id: propose
+        if: steps.install.outcome == 'success'
+        continue-on-error: true
+        run: |
+          mkdir -p "$RUNNER_TEMP/upgrade"
+          python3 -I dependency_upgrade.py --propose "$RUNNER_TEMP/pyproject.toml" > "$RUNNER_TEMP/upgrade/pyproject.toml"
+          cp "$RUNNER_TEMP/upgrade/pyproject.toml" pyproject.toml
+          pdm lock --update-reuse
+          cp pdm.lock "$RUNNER_TEMP/upgrade/pdm.lock"
+          python3 -I dependency_upgrade.py --same-versions "$RUNNER_TEMP/resolved.lock" pdm.lock
+          if git diff --quiet HEAD -- pyproject.toml pdm.lock; then echo changed=no; else echo changed=yes; fi >> "$GITHUB_OUTPUT"
+
       - name: Summarize
         id: summary
         if: always()
@@ -120,10 +139,15 @@ jobs:
           GENERATE: ${{ steps.generate.outcome }}
           EXCLUSIONS: ${{ steps.exclusions.outcome }}
           DIFF: ${{ steps.diff.outcome }}
+          PROPOSE: ${{ steps.propose.outcome }}
+          CHANGED: ${{ steps.propose.outputs.changed }}
         run: |
           mkdir -p "$RUNNER_TEMP/canary"
           report="$RUNNER_TEMP/canary/report.md"
           attention=no
+          # A drop-in upgrade: everything but the version comparison passed, and
+          # the versions differ. The versions step fails for any upgrade.
+          upgrade=$([ "$CHANGED" = yes ] && echo yes || echo no)
           {
             echo "# Dependency canary"
             echo
@@ -136,9 +160,10 @@ jobs:
             echo
             echo "| Step | Outcome |"
             echo "|---|---|"
-            for step in LOCKED CONTROL RESOLVE INSTALL VERSIONS TESTS GENERATE EXCLUSIONS DIFF; do
+            for step in LOCKED CONTROL RESOLVE INSTALL VERSIONS TESTS GENERATE EXCLUSIONS DIFF PROPOSE; do
               echo "| ${step,,} | ${!step:-skipped} |"
               if [ "${!step}" = failure ]; then attention=yes; fi
+              if [ "$step" != VERSIONS ] && [ "${!step}" != success ]; then upgrade=no; fi
             done
             # Both generations accept failed sources, which leave nothing to compare.
             uncompared=$(for run in control candidate; do
@@ -150,6 +175,7 @@ jobs:
               done | sort -u | paste -sd, - | sed 's/,/, /g')
             if [ -n "$uncompared" ]; then
               attention=yes
+              upgrade=no
               echo
               echo "Not compared, because generation failed in the control or candidate run: $uncompared. The reports in the artifact say why."
             fi
@@ -169,8 +195,11 @@ jobs:
               fi
             done
           } > "$report"
+          if [ "$upgrade" = yes ]; then
+            printf '\nNothing checked changed, so the upgrade is proposed as a pull request.\n' >> "$report"
+          fi
           cat "$report" >> "$GITHUB_STEP_SUMMARY"
-          echo "attention=$attention" >> "$GITHUB_OUTPUT"
+          { echo "attention=$attention"; echo "upgrade=$upgrade"; } >> "$GITHUB_OUTPUT"
 
       - name: Upload canary results
         if: always()
@@ -184,6 +213,16 @@ jobs:
             ${{ runner.temp }}/control/reports/
             pdm.lock
           if-no-files-found: warn
+
+      - name: Upload the proposed upgrade
+        if: steps.summary.outputs.upgrade == 'yes'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: dependency-upgrade
+          path: |
+            ${{ runner.temp }}/upgrade/pyproject.toml
+            ${{ runner.temp }}/upgrade/pdm.lock
+          if-no-files-found: error
 
   # Installs nothing, runs no repository code, and publishes no text produced
   # by the canary job; the details stay in that job's summary and artifact.
@@ -222,3 +261,74 @@ jobs:
           elif [ -n "$number" ]; then
             gh issue close "$number" --comment "Dependencies match the published release again: $RUN_URL"
           fi
+
+  # Proposes a drop-in upgrade. It runs only this branch's standard-library
+  # checker with the runner's Python, never the resolved packages, and the pull
+  # request shows only versions read from the checked lock.
+  upgrade-pr:
+    needs: canary
+    if: needs.canary.outputs.upgrade == 'yes' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: write
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: dependency-upgrade
+          path: ${{ runner.temp }}/upgrade
+
+      - name: Open or update the upgrade pull request
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          branch=deps/canary-upgrade
+          for file in pyproject.toml pdm.lock; do
+            if [ "$(stat -c %s "$RUNNER_TEMP/upgrade/$file")" -gt 1000000 ]; then
+              echo "::error::The proposed $file is too large." && exit 1
+            fi
+          done
+          python3 -I dependency_upgrade.py --check "$RUNNER_TEMP/upgrade" > "$RUNNER_TEMP/changes.md"
+          marker="canary-lock: $(sha256sum "$RUNNER_TEMP/upgrade/pdm.lock" | cut -d' ' -f1)"
+          # This exact lock was proposed before: open, merged, or rejected.
+          if gh pr list --state all --head "$branch" --json body --jq '.[].body' | grep -qF "$marker"; then
+            echo "Already proposed: $marker"
+            exit 0
+          fi
+          if git ls-remote --exit-code --heads origin "$branch" > /dev/null; then
+            authors=$(gh api "repos/$GITHUB_REPOSITORY/compare/main...$branch" --jq '.commits[].commit.author.email')
+            if [ -n "$authors" ] && grep -qvx '41898282+github-actions\[bot\]@users.noreply.github.com' <<< "$authors"; then
+              echo "::warning::$branch has commits by people; it is left alone."
+              exit 0
+            fi
+          fi
+          git switch --quiet -C "$branch"
+          cp "$RUNNER_TEMP/upgrade/pyproject.toml" "$RUNNER_TEMP/upgrade/pdm.lock" .
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit --quiet -m 'Update dependencies the canary validated' -- pyproject.toml pdm.lock
+          git push --quiet --force origin "$branch"
+          {
+            echo "The [dependency canary]($RUN_URL) regenerated the published revisions with these versions: tests passed, and exclusions and rules match the locked dependencies."
+            echo
+            cat "$RUNNER_TEMP/changes.md"
+            echo
+            echo "Its checks run as a dispatched *Validate and publish Zircolite rules* run on \`$branch\`, which never publishes. Review the lock diff before merging."
+            echo
+            echo "<!-- $marker -->"
+          } > "$RUNNER_TEMP/body.md"
+          number=$(gh pr list --state open --head "$branch" --json number --jq '.[0].number // empty')
+          if [ -n "$number" ]; then
+            gh pr edit "$number" --body-file "$RUNNER_TEMP/body.md"
+          else
+            gh pr create --base main --head "$branch" --title 'Update dependencies the canary validated' \
+              --body-file "$RUNNER_TEMP/body.md"
+          fi
+          # Pull requests and pushes made with this token start no workflow.
+          gh workflow run Update.yml --ref "$branch"

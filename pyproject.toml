@@ -21,6 +21,20 @@ license = {text = "MIT"}
 [tool.pdm]
 distribution = false
 
+# Shortcuts for docs/maintenance.md; extra arguments are appended, as in `pdm run audit --sources tsale`.
+[tool.pdm.scripts]
+test = {cmd = "pytest -q", help = "Run the tests; set SQLITE_MIN_BINARY to a SQLite 3.38 CLI to run its tests too"}
+generate = {cmd = "python gen_ruleset.py", help = "Fetch, validate, and publish every source"}
+verify = {cmd = "python gen_ruleset.py --verify-release", help = "Check published hashes, counts, the README, dashboard, and figures"}
+stats = {cmd = "python gen_ruleset.py --update-readme-stats", help = "Refresh the README summary, dashboard, and figures"}
+audit = {cmd = "python gen_ruleset.py --audit --revisions-from release-manifest.json --output-dir build/audit", help = "Report on the published revisions without publishing"}
+repro = {cmd = "python gen_ruleset.py --revisions-from release-manifest.json --output-dir build/repro", help = "Regenerate the published revisions into build/repro"}
+diff = {cmd = "python ruleset_diff.py . build/repro", help = "Compare the release with build/repro rule by rule"}
+baseline = {cmd = "python exclusion_baseline.py build/audit/reports", help = "Propose exclusion updates from the audit"}
+draft = {cmd = "python exclusion_baseline.py build/audit/reports --draft-new", help = "Draft records for the audit's new failures"}
+prune-cache = {cmd = "python gen_ruleset.py --prune-cache", help = "Remove cached snapshots the release no longer uses"}
+check = {composite = ["test", "verify"], help = "Run the tests, then verify the release"}
+
 # The Windows and Sysmon pipeline releases still declare pysigma<2 but work
 # unchanged on pySigma 2. Remove once these pull requests are released:
 # https://github.com/SigmaHQ/pySigma-pipeline-windows/pull/15
