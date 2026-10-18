@@ -11,7 +11,7 @@
       "license": "MIT",
       "repository": "frknaykc/Dragon-ThreatResearchHQ",
       "revision": "47b5f65e6e65dc9ce1a4829242cf61ff6e12eb98",
-      "status": "current"
+      "status": "stale"
     },
     "hatchepsoute": {
       "artifacts": {
@@ -20,7 +20,7 @@
       "license": "Apache-2.0",
       "repository": "Hatchepsoute/sigma-rules",
       "revision": "c04c81bb42b926677d596991a4a50a8afd2c91db",
-      "status": "current"
+      "status": "stale"
     },
     "hayabusa": {
       "artifacts": {
@@ -29,7 +29,7 @@
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
       "revision": "3264c6f733ddf223fdb3825adc1df9c14104ed87",
-      "status": "current"
+      "status": "stale"
     },
     "joesecurity": {
       "artifacts": {
@@ -38,7 +38,7 @@
       "license": "GPL-3.0",
       "repository": "joesecurity/sigma-rules",
       "revision": "cb91be06c8c95ce63aa9aa5006a7835678136a96",
-      "status": "current"
+      "status": "stale"
     },
     "loldrivers": {
       "artifacts": {
@@ -47,7 +47,7 @@
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLDrivers",
       "revision": "f1ba732915876d7c3ea4bc81150e070f84528cea",
-      "status": "current"
+      "status": "stale"
     },
     "lolrmm": {
       "artifacts": {
@@ -56,7 +56,7 @@
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLRMM",
       "revision": "0922dcedb37861685f77c22b190318e53a5d47c1",
-      "status": "current"
+      "status": "stale"
     },
     "mbabinski": {
       "artifacts": {
@@ -65,7 +65,7 @@
       "license": "GPL-3.0",
       "repository": "mbabinski/Sigma-Rules",
       "revision": "9dea7a5c15cfd422ec320e7fabd93f0c3634181d",
-      "status": "current"
+      "status": "stale"
     },
     "mdecrevoisier": {
       "artifacts": {
@@ -74,7 +74,7 @@
       "license": "CC0-1.0",
       "repository": "mdecrevoisier/SIGMA-detection-rules",
       "revision": "d61408af8769c74c96296b7ccc92d4bc3abb15af",
-      "status": "current"
+      "status": "stale"
     },
     "reversinglabs": {
       "artifacts": {
@@ -83,7 +83,7 @@
       "license": "MIT",
       "repository": "reversinglabs/reversinglabs-siem-rules",
       "revision": "23fc452b527f2f8e08c26c6dffc0f734e750a2be",
-      "status": "current"
+      "status": "stale"
     },
     "sigmahq": {
       "artifacts": {
@@ -92,7 +92,7 @@
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
       "revision": "c04ad420b46c0fb4dba3ce55ce52d0e4f570cc86",
-      "status": "current"
+      "status": "stale"
     },
     "tsale": {
       "artifacts": {
@@ -101,7 +101,7 @@
       "license": "GPL-3.0",
       "repository": "tsale/Sigma_rules",
       "revision": "f5190e6b6c5ba9e6729845f13ac916590e90b0d8",
-      "status": "current"
+      "status": "stale"
     },
     "tyrian": {
       "artifacts": {
@@ -110,7 +110,7 @@
       "license": "MIT",
       "repository": "zshguy/tyrian-detection-pack",
       "revision": "b2cea417bcbd1316ac571b29a5dc459ce387a7c2",
-      "status": "current"
+      "status": "stale"
     },
     "wrg11": {
       "artifacts": {
@@ -119,9 +119,9 @@
       "license": "MIT",
       "repository": "WRG-11/wrg-sigma-rules",
       "revision": "af3d0ffb023f6374f53187682eab25dbfa8e18cf",
-      "status": "current"
+      "status": "stale"
     }
   },
   "name": "windows_all",
-  "status": "current"
+  "status": "stale"
 }

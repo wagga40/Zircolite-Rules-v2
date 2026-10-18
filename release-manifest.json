@@ -2,7 +2,7 @@
   "aggregates": {
     "windows_all": {
       "artifacts": {
-        "provenance/windows_all.json": "a2c1b9f2567519442930f3dd873252ebe19231fc45ebb37df364af3cb2a409d5",
+        "provenance/windows_all.json": "9e5add691f645c19ebce2781563fed5b1478430b2d5a4409aa770ed0baf37ff2",
         "rules_windows_all.json": "e3826231c272a94e7bf698ad8b6e3d4c84497efd40eba011c38e03ee97b9e3b7"
       },
       "inputs": {
@@ -13,7 +13,7 @@
           "license": "MIT",
           "repository": "frknaykc/Dragon-ThreatResearchHQ",
           "revision": "47b5f65e6e65dc9ce1a4829242cf61ff6e12eb98",
-          "status": "current"
+          "status": "stale"
         },
         "hatchepsoute": {
           "artifacts": {
@@ -22,7 +22,7 @@
           "license": "Apache-2.0",
           "repository": "Hatchepsoute/sigma-rules",
           "revision": "c04c81bb42b926677d596991a4a50a8afd2c91db",
-          "status": "current"
+          "status": "stale"
         },
         "hayabusa": {
           "artifacts": {
@@ -31,7 +31,7 @@
           "license": "DRL-1.1",
           "repository": "Yamato-Security/hayabusa-rules",
           "revision": "3264c6f733ddf223fdb3825adc1df9c14104ed87",
-          "status": "current"
+          "status": "stale"
         },
         "joesecurity": {
           "artifacts": {
@@ -40,7 +40,7 @@
           "license": "GPL-3.0",
           "repository": "joesecurity/sigma-rules",
           "revision": "cb91be06c8c95ce63aa9aa5006a7835678136a96",
-          "status": "current"
+          "status": "stale"
         },
         "loldrivers": {
           "artifacts": {
@@ -49,7 +49,7 @@
           "license": "Apache-2.0",
           "repository": "magicsword-io/LOLDrivers",
           "revision": "f1ba732915876d7c3ea4bc81150e070f84528cea",
-          "status": "current"
+          "status": "stale"
         },
         "lolrmm": {
           "artifacts": {
@@ -58,7 +58,7 @@
           "license": "Apache-2.0",
           "repository": "magicsword-io/LOLRMM",
           "revision": "0922dcedb37861685f77c22b190318e53a5d47c1",
-          "status": "current"
+          "status": "stale"
         },
         "mbabinski": {
           "artifacts": {
@@ -67,7 +67,7 @@
           "license": "GPL-3.0",
           "repository": "mbabinski/Sigma-Rules",
           "revision": "9dea7a5c15cfd422ec320e7fabd93f0c3634181d",
-          "status": "current"
+          "status": "stale"
         },
         "mdecrevoisier": {
           "artifacts": {
@@ -76,7 +76,7 @@
           "license": "CC0-1.0",
           "repository": "mdecrevoisier/SIGMA-detection-rules",
           "revision": "d61408af8769c74c96296b7ccc92d4bc3abb15af",
-          "status": "current"
+          "status": "stale"
         },
         "reversinglabs": {
           "artifacts": {
@@ -85,7 +85,7 @@
           "license": "MIT",
           "repository": "reversinglabs/reversinglabs-siem-rules",
           "revision": "23fc452b527f2f8e08c26c6dffc0f734e750a2be",
-          "status": "current"
+          "status": "stale"
         },
         "sigmahq": {
           "artifacts": {
@@ -94,7 +94,7 @@
           "license": "DRL-1.1",
           "repository": "SigmaHQ/sigma",
           "revision": "c04ad420b46c0fb4dba3ce55ce52d0e4f570cc86",
-          "status": "current"
+          "status": "stale"
         },
         "tsale": {
           "artifacts": {
@@ -103,7 +103,7 @@
           "license": "GPL-3.0",
           "repository": "tsale/Sigma_rules",
           "revision": "f5190e6b6c5ba9e6729845f13ac916590e90b0d8",
-          "status": "current"
+          "status": "stale"
         },
         "tyrian": {
           "artifacts": {
@@ -112,7 +112,7 @@
           "license": "MIT",
           "repository": "zshguy/tyrian-detection-pack",
           "revision": "b2cea417bcbd1316ac571b29a5dc459ce387a7c2",
-          "status": "current"
+          "status": "stale"
         },
         "wrg11": {
           "artifacts": {
@@ -121,13 +121,13 @@
           "license": "MIT",
           "repository": "WRG-11/wrg-sigma-rules",
           "revision": "af3d0ffb023f6374f53187682eab25dbfa8e18cf",
-          "status": "current"
+          "status": "stale"
         }
       },
       "rule_counts": {
         "rules_windows_all.json": 7348
       },
-      "status": "current"
+      "status": "stale"
     }
   },
   "schema_version": 1,
@@ -141,6 +141,9 @@
         "rules_dragon_windows_merged.json": "5586583b2d9ac986481cf07aa4c0d6fbb0c151c72f650e244e4f5ff527f6f316",
         "rules_dragon_windows_sysmon.json": "24b6d20b0c1c4ba10fb437e849c44b2686033da3463dbf4eefe914b7a81dfac5"
       },
+      "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/frknaykc/Dragon-ThreatResearchHQ/commits/main",
+      "failed_revision": null,
+      "last_attempt": "2026-10-18T06:02:07+00:00",
       "last_success": "2026-10-17T05:40:59+00:00",
       "license": "MIT",
       "repository": "frknaykc/Dragon-ThreatResearchHQ",
@@ -151,7 +154,7 @@
         "rules_dragon_windows_merged.json": 61,
         "rules_dragon_windows_sysmon.json": 32
       },
-      "status": "current",
+      "status": "stale",
       "tools": {
         "pysigma": "2.0.0",
         "pysigma-backend-sqlite": "2.1.0",
@@ -172,6 +175,9 @@
         "rules_hatchepsoute_windows_merged.json": "ca719377043443facbd13dd709fc7285d0e286aa5ce08ce0d2c1e9f15f31d90d",
         "rules_hatchepsoute_windows_sysmon.json": "0329a8f917a27ce7a55f78a5efaabcc57726f13b2fa5d389223a3b69e9e60ffb"
       },
+      "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/Hatchepsoute/sigma-rules/commits/main",
+      "failed_revision": null,
+      "last_attempt": "2026-10-18T06:02:07+00:00",
       "last_success": "2026-10-17T05:41:00+00:00",
       "license": "Apache-2.0",
       "repository": "Hatchepsoute/sigma-rules",
@@ -184,7 +190,7 @@
         "rules_hatchepsoute_windows_merged.json": 162,
         "rules_hatchepsoute_windows_sysmon.json": 97
       },
-      "status": "current",
+      "status": "stale",
       "tools": {
         "pysigma": "2.0.0",
         "pysigma-backend-sqlite": "2.1.0",
@@ -201,6 +207,9 @@
         "provenance/hayabusa.json": "f6f7291d180a955c1c10ceee48e8e55a3d0ebcda0c27b47393c56447cc97a2f4",
         "rules_hayabusa_windows_native.json": "071281357ee3cb92ec134d1e4595148f6c706b830a89a56164fc964d90cfad90"
       },
+      "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/Yamato-Security/hayabusa-rules/commits/main",
+      "failed_revision": null,
+      "last_attempt": "2026-10-18T06:02:07+00:00",
       "last_success": "2026-10-17T05:41:06+00:00",
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
@@ -209,7 +218,7 @@
         "experimental/rules_hayabusa_windows_native_correlation.json": 3,
         "rules_hayabusa_windows_native.json": 188
       },
-      "status": "current",
+      "status": "stale",
       "tools": {
         "pysigma": "2.0.0",
         "pysigma-backend-sqlite": "2.1.0",
@@ -227,6 +236,9 @@
         "rules_joesecurity_windows_merged.json": "ddae4034d06e16e3fd7ea7ae56de6317afd8c9644456eb8f40559ea5ea63a14a",
         "rules_joesecurity_windows_sysmon.json": "51ac96e37d27274bc2f8832cc93861ba65155627dca4496e39d4b3e1136f258b"
       },
+      "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/joesecurity/sigma-rules/commits/master",
+      "failed_revision": null,
+      "last_attempt": "2026-10-18T06:02:07+00:00",
       "last_success": "2026-10-17T05:41:09+00:00",
       "license": "GPL-3.0",
       "repository": "joesecurity/sigma-rules",
@@ -236,7 +248,7 @@
         "rules_joesecurity_windows_merged.json": 201,
         "rules_joesecurity_windows_sysmon.json": 110
       },
-      "status": "current",
+      "status": "stale",
       "tools": {
         "pysigma": "2.0.0",
         "pysigma-backend-sqlite": "2.1.0",
@@ -252,6 +264,9 @@
         "provenance/loldrivers.json": "4c38f31aeb38f1803fbf29dd45f279213ca4222c4bd04889e70f8e79083992d4",
         "rules_loldrivers_windows_sysmon.json": "9d63000c1bd96afa11952f29ae8f52286ce8ca8e0355a4aa3e09ef1f4cbb1c7c"
       },
+      "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/magicsword-io/LOLDrivers/commits/main",
+      "failed_revision": null,
+      "last_attempt": "2026-10-18T06:02:07+00:00",
       "last_success": "2026-10-17T05:41:10+00:00",
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLDrivers",
@@ -259,7 +274,7 @@
       "rule_counts": {
         "rules_loldrivers_windows_sysmon.json": 6
       },
-      "status": "current",
+      "status": "stale",
       "tools": {
         "pysigma": "2.0.0",
         "pysigma-backend-sqlite": "2.1.0",
@@ -277,6 +292,9 @@
         "rules_lolrmm_windows_merged.json": "5a047a62215a2a038ee129db609e82c02b8380b3920397ca0bce49057d848c08",
         "rules_lolrmm_windows_sysmon.json": "db862ef8e8fdfe6507ac51a3fb3237eb3bed25a119fec2d88c07143e8f1a8ffa"
       },
+      "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/magicsword-io/LOLRMM/commits/main",
+      "failed_revision": null,
+      "last_attempt": "2026-10-18T06:02:07+00:00",
       "last_success": "2026-10-17T05:41:16+00:00",
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLRMM",
@@ -286,7 +304,7 @@
         "rules_lolrmm_windows_merged.json": 1098,
         "rules_lolrmm_windows_sysmon.json": 727
       },
-      "status": "current",
+      "status": "stale",
       "tools": {
         "pysigma": "2.0.0",
         "pysigma-backend-sqlite": "2.1.0",
@@ -307,6 +325,9 @@
         "rules_mbabinski_windows_merged.json": "13b7404fde4871468094edd652dfcad7a6708c97cdec9c1d57ca3f061b0c2687",
         "rules_mbabinski_windows_sysmon.json": "30ec461957ad6633a339acc9e8655942f51b850e92d4715995a63b4d1f34e6b5"
       },
+      "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/mbabinski/Sigma-Rules/commits/main",
+      "failed_revision": null,
+      "last_attempt": "2026-10-18T06:02:07+00:00",
       "last_success": "2026-10-17T05:41:20+00:00",
       "license": "GPL-3.0",
       "repository": "mbabinski/Sigma-Rules",
@@ -319,7 +340,7 @@
         "rules_mbabinski_windows_merged.json": 364,
         "rules_mbabinski_windows_sysmon.json": 209
       },
-      "status": "current",
+      "status": "stale",
       "tools": {
         "pysigma": "2.0.0",
         "pysigma-backend-sqlite": "2.1.0",
@@ -340,6 +361,9 @@
         "rules_mdecrevoisier_windows_merged.json": "1fbceb54598827c0b12e727d5df662049b28c9179e7a329459c750db2fa2e248",
         "rules_mdecrevoisier_windows_sysmon.json": "cb8b7c9e77f502c8bb4e075f4c35054c86173539930bd1e50ddf7093bddf4b5c"
       },
+      "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/mdecrevoisier/SIGMA-detection-rules/commits/main",
+      "failed_revision": null,
+      "last_attempt": "2026-10-18T06:02:07+00:00",
       "last_success": "2026-10-17T05:41:22+00:00",
       "license": "CC0-1.0",
       "repository": "mdecrevoisier/SIGMA-detection-rules",
@@ -352,7 +376,7 @@
         "rules_mdecrevoisier_windows_merged.json": 429,
         "rules_mdecrevoisier_windows_sysmon.json": 330
       },
-      "status": "current",
+      "status": "stale",
       "tools": {
         "pysigma": "2.0.0",
         "pysigma-backend-sqlite": "2.1.0",
@@ -370,6 +394,9 @@
         "rules_reversinglabs_windows_merged.json": "caa8aee3df8f1d52005e02df0a8df5e9fb8a9398c51e0b94cf65f58d30a20796",
         "rules_reversinglabs_windows_sysmon.json": "82758485c9b2621a38e8f24136084af5141349bf9be64a9f5497a1b4e701f224"
       },
+      "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/reversinglabs/reversinglabs-siem-rules/commits/master",
+      "failed_revision": null,
+      "last_attempt": "2026-10-18T06:02:07+00:00",
       "last_success": "2026-10-17T05:41:25+00:00",
       "license": "MIT",
       "repository": "reversinglabs/reversinglabs-siem-rules",
@@ -379,7 +406,7 @@
         "rules_reversinglabs_windows_merged.json": 12,
         "rules_reversinglabs_windows_sysmon.json": 7
       },
-      "status": "current",
+      "status": "stale",
       "tools": {
         "pysigma": "2.0.0",
         "pysigma-backend-sqlite": "2.1.0",
@@ -398,6 +425,9 @@
         "rules_windows_merged.json": "21e28881dbe1aa25b6ffb9be2184611ef6550d6e2bb6959898befacca906c7bf",
         "rules_windows_sysmon.json": "189f5a98ae6b80d9d470b011afb93c1f3c25587d545e2c93e04eadbebd644b17"
       },
+      "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/SigmaHQ/sigma/commits/master",
+      "failed_revision": null,
+      "last_attempt": "2026-10-18T06:02:06+00:00",
       "last_success": "2026-10-17T05:40:27+00:00",
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
@@ -408,7 +438,7 @@
         "rules_windows_merged.json": 4527,
         "rules_windows_sysmon.json": 2835
       },
-      "status": "current",
+      "status": "stale",
       "tools": {
         "pysigma": "2.0.0",
         "pysigma-backend-sqlite": "2.1.0",
@@ -426,6 +456,9 @@
         "rules_tsale_windows_merged.json": "f8208acb83742ba4ebb362030c2561d527f9b8c17ab7b714a84790452693ce09",
         "rules_tsale_windows_sysmon.json": "24efe16c0de2f2e41abc91ce331795d5e09ca52a653b9162798a49078439da50"
       },
+      "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/tsale/Sigma_rules/commits/main",
+      "failed_revision": null,
+      "last_attempt": "2026-10-18T06:02:07+00:00",
       "last_success": "2026-10-17T05:41:25+00:00",
       "license": "GPL-3.0",
       "repository": "tsale/Sigma_rules",
@@ -435,7 +468,7 @@
         "rules_tsale_windows_merged.json": 89,
         "rules_tsale_windows_sysmon.json": 47
       },
-      "status": "current",
+      "status": "stale",
       "tools": {
         "pysigma": "2.0.0",
         "pysigma-backend-sqlite": "2.1.0",
@@ -454,6 +487,9 @@
         "rules_tyrian_windows_merged.json": "50904ccedfd490064fd0d8f514d07177d91e9c9056d112bbb26d2ddb90aafbf8",
         "rules_tyrian_windows_sysmon.json": "af51226231dd8413b422f8bdb313137b6a253c136d9f0f3dd649300eef8e0724"
       },
+      "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/zshguy/tyrian-detection-pack/commits/main",
+      "failed_revision": null,
+      "last_attempt": "2026-10-18T06:02:07+00:00",
       "last_success": "2026-10-17T05:41:27+00:00",
       "license": "MIT",
       "repository": "zshguy/tyrian-detection-pack",
@@ -464,7 +500,7 @@
         "rules_tyrian_windows_merged.json": 61,
         "rules_tyrian_windows_sysmon.json": 58
       },
-      "status": "current",
+      "status": "stale",
       "tools": {
         "pysigma": "2.0.0",
         "pysigma-backend-sqlite": "2.1.0",
@@ -486,6 +522,9 @@
         "rules_wrg11_windows_merged.json": "af6179590238859513801492eacefd20343201c64540700810026ab4770f6b3f",
         "rules_wrg11_windows_sysmon.json": "0769e9754f2a0a8e08d7693c5a7c51eb1bbf5749259e3593ebd204992e69a852"
       },
+      "error": "403 Client Error: rate limit exceeded for url: https://api.github.com/repos/WRG-11/wrg-sigma-rules/commits/main",
+      "failed_revision": null,
+      "last_attempt": "2026-10-18T06:02:08+00:00",
       "last_success": "2026-10-17T05:41:28+00:00",
       "license": "MIT",
       "repository": "WRG-11/wrg-sigma-rules",
@@ -499,7 +538,7 @@
         "rules_wrg11_windows_merged.json": 150,
         "rules_wrg11_windows_sysmon.json": 91
       },
-      "status": "current",
+      "status": "stale",
       "tools": {
         "pysigma": "2.0.0",
         "pysigma-backend-sqlite": "2.1.0",

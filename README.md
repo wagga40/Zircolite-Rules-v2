@@ -8,8 +8,10 @@ Ready-to-use [Zircolite](https://github.com/wagga40/Zircolite) rulesets, convert
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/overview-dark.svg">
-  <img alt="13 of 13 sources current; 7,348 rules in rules_windows_all.json (4,698 unique); 299 Linux rules; 31 experimental correlations; updated 2026-10-17. Severity of unique detections: informational 114, low 351, medium 2,080, high 1,867, critical 290." src="docs/assets/overview-light.svg" width="100%">
+  <img alt="0 of 13 sources current; 7,348 rules in rules_windows_all.json (4,698 unique); 299 Linux rules; 31 experimental correlations; updated 2026-10-17. Severity of unique detections: informational 114, low 351, medium 2,080, high 1,867, critical 290." src="docs/assets/overview-light.svg" width="100%">
 </picture>
+
+Not current: dragon (stale since 2026-10-17), hatchepsoute (stale since 2026-10-17), hayabusa (stale since 2026-10-17), joesecurity (stale since 2026-10-17), loldrivers (stale since 2026-10-17), lolrmm (stale since 2026-10-17), mbabinski (stale since 2026-10-17), mdecrevoisier (stale since 2026-10-17), reversinglabs (stale since 2026-10-17), sigmahq (stale since 2026-10-17), tsale (stale since 2026-10-17), tyrian (stale since 2026-10-17), wrg11 (stale since 2026-10-17). Stale sources keep their last good rules.
 
 Every ruleset, source, severity, ATT&CK tactic, and log source: [dashboard](docs/dashboard.md).
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="228" viewBox="0 0 860 228" role="img" aria-labelledby="title desc">
 <title id="title">Zircolite rules overview</title>
-<desc id="desc">13 of 13 sources current; 7,348 rules in rules_windows_all.json (4,698 unique); 299 Linux rules; 31 experimental correlations; updated 2026-10-17. Severity of unique detections: informational 114, low 351, medium 2,080, high 1,867, critical 290.</desc>
+<desc id="desc">0 of 13 sources current; 7,348 rules in rules_windows_all.json (4,698 unique); 299 Linux rules; 31 experimental correlations; updated 2026-10-17. Severity of unique detections: informational 114, low 351, medium 2,080, high 1,867, critical 290.</desc>
 <style>
 text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #f0efec; }
 .secondary { fill: #c3c2b7; }
@@ -17,9 +17,9 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 </style>
 <rect x="0.5" y="0.5" width="859" height="227" rx="12" fill="#1a1a19" stroke="rgba(255,255,255,0.10)"/>
 <text x="24" y="38" font-size="17" font-weight="600">Zircolite rules</text>
-<circle class="pulse" cx="620" cy="32" r="5" fill="#0ca30c"/>
-<circle cx="620" cy="32" r="5" fill="#0ca30c"/>
-<text x="634" y="37" font-size="13" class="secondary">13 of 13 sources current</text>
+<circle class="pulse" cx="620" cy="32" r="5" fill="#fab219"/>
+<circle cx="620" cy="32" r="5" fill="#fab219"/>
+<text x="634" y="37" font-size="13" class="secondary">0 of 13 sources current</text>
 <g transform="translate(24 0)"><g class="rise" style="animation-delay:80ms"><text y="78" font-size="12" class="secondary">Rules in rules_windows_all.json</text><text y="126" font-size="40" font-weight="600">7,348</text></g></g>
 <line x1="280" y1="68" x2="280" y2="122" stroke="#2c2c2a"/>
 <g transform="translate(296 0)"><g class="rise" style="animation-delay:170ms"><text y="78" font-size="12" class="secondary">Unique detections</text><text y="114" font-size="28" font-weight="600">4,698</text></g></g>
