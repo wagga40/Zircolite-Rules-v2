@@ -20,10 +20,14 @@ A source has no file for a profile it has no rules for. Every file contains all 
 
 `rules_windows_all.json` merges each source's `merged` file, or its `sysmon`, `generic`, and `native` files, into one Windows ruleset.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/families-dark.svg">
+  <img alt="Sysmon and Generic entries merge per source, keeping identical SQL once; with the native entries they form rules_windows_all.json, without duplicates across sources. Linux rules and experimental correlations stay in their own files." src="assets/families-light.svg" width="100%">
+</picture>
+
 - It drops exact duplicates (same ID and SQL), keeping SigmaHQ first and then sources in name order. Different SQL variants of one rule remain.
 - It excludes Linux rules and correlations.
-- It is rebuilt after every update and keeps the last good rules of a stale source.
-- Its inputs are recorded in `provenance/windows_all.json`.
+- It is rebuilt after every update from each source's published files; its inputs are recorded in `provenance/windows_all.json`.
 
 ## Rule fields
 
@@ -42,18 +46,18 @@ This repository adds three fields:
 
 ## Filtering
 
-Zircolite has no minimum-severity option (`--rulefilter` matches titles), so filter a copy with `jq`:
+Zircolite 4.1 or newer loads only the rules at a level and above with `--min-level`. To drop a source or a license, filter a copy with `jq`:
 
 ```bash
-# High and critical only
-jq '[.[] | select(.level == "high" or .level == "critical")]' rules_windows_all.json > high_plus.json
-
-# Without one source, or without GPL-licensed rules
+# Without one source: LOLRMM also matches legitimate remote-management use
 jq '[.[] | select(.source != "lolrmm")]' rules_windows_all.json > no_rmm.json
-jq '[.[] | select(.license != "GPL-3.0")]' rules_windows_all.json > no_gpl.json
-```
 
-The former `_medium.json` and `_high.json` downloads are retired; filter the full file instead.
+# Without GPL-licensed rules
+jq '[.[] | select(.license != "GPL-3.0")]' rules_windows_all.json > no_gpl.json
+
+# High and critical only, for tools without --min-level
+jq '[.[] | select(.level == "high" or .level == "critical")]' rules_windows_all.json > high_plus.json
+```
 
 ## Experimental correlations
 

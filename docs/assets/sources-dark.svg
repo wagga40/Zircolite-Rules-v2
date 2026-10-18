@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="160" viewBox="0 0 860 160" role="img" aria-labelledby="title desc">
+<title id="title">Source status</title>
+<desc id="desc">Source status: sigmahq current, dragon current, hatchepsoute current, hayabusa current, joesecurity current, loldrivers current, lolrmm current, mbabinski current, mdecrevoisier current, reversinglabs current, tsale current, tyrian current, wrg11 current.</desc>
+<style>
+text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #f0efec; }
+.secondary { fill: #c3c2b7; }
+.muted { fill: #898781; }
+.rise { animation: rise .7s cubic-bezier(.2,.7,.2,1) backwards; }
+.grow { transform-box: fill-box; transform-origin: left center; animation: grow .9s cubic-bezier(.2,.7,.2,1) backwards; }
+.fade { animation: fade .5s ease-out backwards; }
+.pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2.4s ease-out infinite; }
+.draw { stroke-dasharray: 1; animation: draw .6s cubic-bezier(.2,.7,.2,1) backwards; }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } }
+@keyframes draw { from { stroke-dashoffset: 1; } }
+@keyframes grow { from { transform: scaleX(0); } }
+@keyframes fade { from { opacity: 0; } }
+@keyframes pulse { from { opacity: .5; transform: scale(1); } to { opacity: 0; transform: scale(2.8); } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<rect x="0.5" y="0.5" width="859" height="159" rx="12" fill="#1a1a19" stroke="rgba(255,255,255,0.10)"/>
+<g class="fade" style="animation-delay:60ms"><circle cx="30.0" cy="28" r="5" fill="#0ca30c"/><text x="42.0" y="32" font-size="12">sigmahq</text><text x="42.0" y="47" font-size="11" class="secondary">current</text></g>
+<g class="fade" style="animation-delay:110ms"><circle cx="192.4" cy="28" r="5" fill="#0ca30c"/><text x="204.4" y="32" font-size="12">dragon</text><text x="204.4" y="47" font-size="11" class="secondary">current</text></g>
+<g class="fade" style="animation-delay:160ms"><circle cx="354.8" cy="28" r="5" fill="#0ca30c"/><text x="366.8" y="32" font-size="12">hatchepsoute</text><text x="366.8" y="47" font-size="11" class="secondary">current</text></g>
+<g class="fade" style="animation-delay:210ms"><circle cx="517.2" cy="28" r="5" fill="#0ca30c"/><text x="529.2" y="32" font-size="12">hayabusa</text><text x="529.2" y="47" font-size="11" class="secondary">current</text></g>
+<g class="fade" style="animation-delay:260ms"><circle cx="679.6" cy="28" r="5" fill="#0ca30c"/><text x="691.6" y="32" font-size="12">joesecurity</text><text x="691.6" y="47" font-size="11" class="secondary">current</text></g>
+<g class="fade" style="animation-delay:310ms"><circle cx="30.0" cy="74" r="5" fill="#0ca30c"/><text x="42.0" y="78" font-size="12">loldrivers</text><text x="42.0" y="93" font-size="11" class="secondary">current</text></g>
+<g class="fade" style="animation-delay:360ms"><circle cx="192.4" cy="74" r="5" fill="#0ca30c"/><text x="204.4" y="78" font-size="12">lolrmm</text><text x="204.4" y="93" font-size="11" class="secondary">current</text></g>
+<g class="fade" style="animation-delay:410ms"><circle cx="354.8" cy="74" r="5" fill="#0ca30c"/><text x="366.8" y="78" font-size="12">mbabinski</text><text x="366.8" y="93" font-size="11" class="secondary">current</text></g>
+<g class="fade" style="animation-delay:460ms"><circle cx="517.2" cy="74" r="5" fill="#0ca30c"/><text x="529.2" y="78" font-size="12">mdecrevoisier</text><text x="529.2" y="93" font-size="11" class="secondary">current</text></g>
+<g class="fade" style="animation-delay:510ms"><circle cx="679.6" cy="74" r="5" fill="#0ca30c"/><text x="691.6" y="78" font-size="12">reversinglabs</text><text x="691.6" y="93" font-size="11" class="secondary">current</text></g>
+<g class="fade" style="animation-delay:560ms"><circle cx="30.0" cy="120" r="5" fill="#0ca30c"/><text x="42.0" y="124" font-size="12">tsale</text><text x="42.0" y="139" font-size="11" class="secondary">current</text></g>
+<g class="fade" style="animation-delay:610ms"><circle cx="192.4" cy="120" r="5" fill="#0ca30c"/><text x="204.4" y="124" font-size="12">tyrian</text><text x="204.4" y="139" font-size="11" class="secondary">current</text></g>
+<g class="fade" style="animation-delay:660ms"><circle cx="354.8" cy="120" r="5" fill="#0ca30c"/><text x="366.8" y="124" font-size="12">wrg11</text><text x="366.8" y="139" font-size="11" class="secondary">current</text></g>
+</svg>

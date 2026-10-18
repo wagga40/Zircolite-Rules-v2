@@ -2,6 +2,7 @@
 
 import json
 import os
+import re
 import tempfile
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -11,7 +12,7 @@ from html import escape
 from rule_bundles import WINDOWS_ALL, windows_all_files
 from rule_conversion import LEVELS
 from rule_sources import ATTACK_TACTICS, digest
-from ruleset_charts import THEMES, bar_chart
+from ruleset_charts import THEMES, bar_chart, family_map, pipeline, status_strip
 from ruleset_charts import overview as overview_card
 
 START = "<!-- ruleset-stats:start -->"
@@ -19,6 +20,9 @@ END = "<!-- ruleset-stats:end -->"
 DASHBOARD = Path("docs/dashboard.md")
 FIGURES = Path("docs/assets")
 NO_TACTIC = "(no tactic tag)"
+FAMILIES = ("sysmon", "generic", "merged", "native")
+# A figure a README or doc shows by its light or dark file.
+REFERENCE = re.compile(r"assets/([a-z]+)-(?:light|dark)\.svg")
 
 
 def is_ruleset(name):
@@ -100,6 +104,19 @@ def read_release(output):
     return manifest, rulesets
 
 
+def read_provenance(output, manifest):
+    """Each source's published report, verified against the manifest like its rules."""
+    reports = {}
+    for source, details in sorted(manifest["sources"].items()):
+        name = f"provenance/{source}.json"
+        if name in details.get("artifacts", {}):
+            raw = (output / name).read_bytes()
+            if digest(raw) != details["artifacts"][name]:
+                raise ValueError(f"Artifact hash mismatch: {source}/{name}")
+            reports[source] = json.loads(raw)
+    return reports
+
+
 def updated(manifest):
     return max((details.get("last_success") or "" for details in manifest["sources"].values()), default="")[:10] or "—"
 
@@ -116,9 +133,9 @@ def summary(manifest, rulesets):
             "linux": f"{union([row for row in detections if row['name'].endswith('_linux.json')]):,}",
             "correlations": f"{union([row for row in rulesets if row['name'].startswith('experimental/')]):,}",
             "updated": updated(manifest), "severity": combined["severity"] if combined else Counter()}
-    data["alt"] = (f"{data['current']} of {data['sources']} sources current; {data['windows_rules']} rules in "
-                   f"{WINDOWS_ALL} ({data['windows_unique']} unique); {data['linux']} Linux rules; "
-                   f"{data['correlations']} experimental correlations; updated {data['updated']}.")
+    data["alt"] = (f"{data['current']} of {data['sources']} sources current; {data['windows_unique']} unique Windows "
+                   f"detections ({data['windows_rules']} entries in {WINDOWS_ALL}); {data['linux']} Linux rules; "
+                   f"{data['correlations']} experimental correlations; rules last changed {data['updated']}.")
     if combined:
         data["alt"] += " Severity of unique detections: " + ", ".join(
             f"{level} {data['severity'][level]:,}" for level in LEVELS) + "."
@@ -129,7 +146,80 @@ def behind(manifest):
     names = [f"{name} ({details['status']}"
              + (f" since {details['last_success'][:10]})" if details.get("last_success") else ")")
              for name, details in sorted(manifest["sources"].items()) if details["status"] != "current"]
-    return ["", "Not current: " + ", ".join(names) + ". Stale sources keep their last good rules."] if names else []
+    return "Not current: " + ", ".join(names) + ". Stale sources keep their last good rules." if names else ""
+
+
+def status_rows(manifest):
+    """Each source's status and, when it is not current, the date of its published rules."""
+    return [(name, details["status"], (details.get("last_success") or "")[:10] or None)
+            for name, details in sorted(manifest["sources"].items(), key=lambda item: (item[0] != "sigmahq", item[0]))]
+
+
+def status_alt(manifest):
+    data = manifest["sources"]
+    current = sum(details["status"] == "current" for details in data.values())
+    return f"Source status: {current} of {len(data)} sources current. " + (behind(manifest) or "None is stale.")
+
+
+def family(name):
+    """What a published ruleset holds, from its file name."""
+    if name.startswith("experimental/"):
+        return "correlations"
+    if name == WINDOWS_ALL:
+        return "windows_all"
+    return next((kind for kind in FAMILIES if name.endswith(f"windows_{kind}.json")),
+                "linux" if name.endswith("linux.json") else None)
+
+
+def pipeline_counts(manifest, rulesets, provenance):
+    """The publishing stages' counts, from the verified provenance of every published source."""
+    data, reports = summary(manifest, rulesets), list(provenance.values())
+    policy = {(report["source"], item["path"], item["document"]) for report in reports
+              for item in report.get("exclusions", []) if item.get("profile") == "*"}
+    reviewed = {(report["source"], item["path"], item["document"]) for report in reports
+                for item in report.get("failures", [])}
+    counts = {"sources": f"{data['sources']}", "stale": data["sources"] - data["current"],
+              "documents": f"{sum(report.get('input_documents', 0) for report in reports):,}",
+              "skipped": f"{sum(len(report.get('ignored', [])) for report in reports):,}",
+              "profiles": len({profile for report in reports for profile in report.get("profiles", {})}),
+              "left_out": f"{len(policy | reviewed):,}", "policy": f"{len(policy):,}", "reviewed": f"{len(reviewed):,}",
+              "detections": data["windows_unique"], "linux": data["linux"], "correlations": data["correlations"],
+              "windows_all": data["windows_rules"]}
+    counts["alt"] = (
+        f"How a rule is published, daily at 01:23 UTC: {counts['sources']} sources are fetched at pinned commits; "
+        f"{counts['documents']} Sigma documents are read and {counts['skipped']} other files skipped; rules are "
+        f"converted for {counts['profiles']} profiles and every query is prepared in SQLite; {counts['left_out']} "
+        f"rules are left out, {counts['policy']} by policy and {counts['reviewed']} after review; "
+        f"{counts['detections']} Windows detections, {counts['linux']} Linux rules and {counts['correlations']} "
+        f"correlations are published, and {counts['windows_all']} entries are combined in {WINDOWS_ALL}. A source "
+        f"with an unreviewed failure keeps its last good rules; {counts['stale']} of {counts['sources']} are stale.")
+    return counts
+
+
+def family_counts(manifest, rulesets):
+    """Entries and files per kind of ruleset, and what merging and combining removed."""
+    groups, entries = defaultdict(list), {row["name"]: row["entries"] for row in rulesets}
+    for row in rulesets:
+        groups[family(row["name"])].append(row)
+    data = {kind: {"entries": f"{sum(row['entries'] for row in groups[kind]):,}", "files": len(groups[kind])}
+            for kind in (*FAMILIES, "linux", "correlations")}
+    sized = {(row["source"], family(row["name"])): row["entries"] for row in rulesets}
+    shared = sum(sized.get((source, "sysmon"), 0) + sized.get((source, "generic"), 0) - count
+                 for (source, kind), count in sized.items() if kind == "merged")
+    combined = next(row for row in rulesets if row["name"] == WINDOWS_ALL)
+    inputs = manifest["aggregates"]["windows_all"]["inputs"].values()
+    duplicates = sum(entries.get(name, 0) for details in inputs for name in details["artifacts"]) - combined["entries"]
+    data.update(shared=f"{shared:,}", windows_all=f"{combined['entries']:,}", unique=f"{combined['unique_ids']:,}",
+                duplicates=f"{duplicates:,}")
+    data["alt"] = (
+        f"From profiles to files: {data['sysmon']['entries']} Sysmon entries in {data['sysmon']['files']} files and "
+        f"{data['generic']['entries']} Generic entries in {data['generic']['files']} files merge per source into "
+        f"{data['merged']['entries']} entries, {data['shared']} of them identical in both profiles. With "
+        f"{data['native']['entries']} native entries they form {WINDOWS_ALL}: {data['windows_all']} entries, "
+        f"{data['unique']} unique detections, {data['duplicates']} duplicates across sources removed. Linux: "
+        f"{data['linux']['entries']} entries in {data['linux']['files']} files. Experimental correlations: "
+        f"{data['correlations']['entries']} entries in {data['correlations']['files']} files.")
+    return data
 
 
 def picture(name, alt, prefix):
@@ -140,13 +230,18 @@ def picture(name, alt, prefix):
                       "</picture>"])
 
 
-def figures(manifest, rulesets):
+def figures(manifest, rulesets, provenance):
     data = summary(manifest, rulesets)
     combined = next((row for row in rulesets if row["name"] == WINDOWS_ALL), None)
+    counts = pipeline_counts(manifest, rulesets, provenance)
+    families = family_counts(manifest, rulesets) if combined else None
     files = {}
     for theme in THEMES:
         files[FIGURES / f"overview-{theme}.svg"] = overview_card(data, theme)
+        files[FIGURES / f"sources-{theme}.svg"] = status_strip(status_rows(manifest), theme)
+        files[FIGURES / f"pipeline-{theme}.svg"] = pipeline(counts, theme)
         if combined:
+            files[FIGURES / f"families-{theme}.svg"] = family_map(families, theme)
             files[FIGURES / f"tactics-{theme}.svg"] = bar_chart(
                 "ATT&CK tactics", f"Unique detections in {WINDOWS_ALL} per tactic; a rule can have several",
                 [(label, count, label == NO_TACTIC) for label, count in tactic_rows(combined["tactics"])], theme)
@@ -187,8 +282,9 @@ def collapsed(summary_text, lines):
 
 
 def render_summary(manifest, rulesets):
-    return "\n".join([picture("overview", summary(manifest, rulesets)["alt"], f"{FIGURES.as_posix()}/"),
-                      *behind(manifest), "",
+    prefix = f"{FIGURES.as_posix()}/"
+    return "\n".join([picture("overview", summary(manifest, rulesets)["alt"], prefix), "",
+                      picture("sources", status_alt(manifest), prefix), "",
                       f"Every ruleset, source, severity, ATT&CK tactic, and log source: [dashboard]({DASHBOARD.as_posix()})."])
 
 
@@ -196,7 +292,7 @@ def render_dashboard(manifest, rulesets):
     prefix = "../"
     lines = ["# Ruleset dashboard", "",
              "Generated from the verified release on every update; do not edit.", "",
-             picture("overview", summary(manifest, rulesets)["alt"], "assets/"), *behind(manifest),
+             picture("overview", summary(manifest, rulesets)["alt"], "assets/"),
              "", "## Sources", "",
              "| Source | Status | License | Revision | Last success (UTC) | Detection rules |",
              "|---|---|---|---|---|---:|"]
@@ -214,9 +310,10 @@ def render_dashboard(manifest, rulesets):
     combined = next((row for row in rulesets if row["name"] == WINDOWS_ALL), None)
     if combined:
         lines.extend(["", f"## Inside `{WINDOWS_ALL}`", "",
-                      "Counts are distinct rules; a rule with several tactics counts once per tactic.", "",
+                      "Unique detections per severity, counting each rule once:", "",
                       "| Info | Low | Medium | High | Critical |", "|---:|---:|---:|---:|---:|",
                       "| " + " | ".join(f"{combined['severity'][level]:,}" for level in LEVELS) + " |", "",
+                      "A rule with several tactics counts once per tactic.", "",
                       picture("tactics", "Unique detections per ATT&CK tactic; the table below lists the values.",
                               "assets/"), "",
                       *collapsed("ATT&CK tactic table", count_table("ATT&CK tactic", tactic_rows(combined["tactics"]))),
@@ -230,7 +327,7 @@ def render_dashboard(manifest, rulesets):
                   "Zircolite 4.1 or newer runs these; see [experimental/](../experimental/README.md).", "",
                   *ruleset_table([row for row in rulesets if row["name"].startswith("experimental/")], prefix),
                   "", "Entries are exported rule objects; SQL variants of one rule share its ID. Profiles overlap, "
-                  "so do not add counts across files. Severity columns are exact levels."])
+                  "so do not add counts across files. Severity columns count entries at each exact level."])
     return "\n".join(lines) + "\n"
 
 
@@ -247,7 +344,8 @@ def documentation(output, release):
     """Current and refreshed README and dashboard text for a verified release."""
     manifest, rulesets = release
     original, readme = readme_with_statistics(output, manifest, rulesets)
-    generated = {DASHBOARD: render_dashboard(manifest, rulesets), **figures(manifest, rulesets)}
+    generated = {DASHBOARD: render_dashboard(manifest, rulesets),
+                 **figures(manifest, rulesets, read_provenance(output, manifest))}
     current = lambda name: (output / name).read_bytes().decode("utf-8") if (output / name).exists() else None
     return {Path("README.md"): (original, readme), **{name: (current(name), text) for name, text in generated.items()}}
 
@@ -266,7 +364,14 @@ def update_readme_stats(output):
 def verify_release(output):
     release = read_release(output)
     if (output / "README.md").exists():
-        for name, (original, updated) in documentation(output, release).items():
+        generated = documentation(output, release)
+        for name, (original, updated) in generated.items():
             if original != updated:
                 label = "README statistics are" if name.name == "README.md" else f"{name.as_posix()} is"
                 raise ValueError(f"{label} out of date; run gen_ruleset.py --update-readme-stats")
+        # A page may show a figure outside the generated summary; it must be one a release renders.
+        shown = {name.name.rpartition("-")[0] for name in generated if name.suffix == ".svg"}
+        for page in [output / "README.md", *sorted((output / "docs").glob("*.md"))]:
+            for figure in REFERENCE.findall(page.read_text(encoding="utf-8")):
+                if figure not in shown:
+                    raise ValueError(f"{page.relative_to(output).as_posix()} shows {figure}, which no release renders")

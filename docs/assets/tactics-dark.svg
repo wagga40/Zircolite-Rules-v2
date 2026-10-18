@@ -9,7 +9,9 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 .grow { transform-box: fill-box; transform-origin: left center; animation: grow .9s cubic-bezier(.2,.7,.2,1) backwards; }
 .fade { animation: fade .5s ease-out backwards; }
 .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2.4s ease-out infinite; }
+.draw { stroke-dasharray: 1; animation: draw .6s cubic-bezier(.2,.7,.2,1) backwards; }
 @keyframes rise { from { opacity: 0; transform: translateY(8px); } }
+@keyframes draw { from { stroke-dashoffset: 1; } }
 @keyframes grow { from { transform: scaleX(0); } }
 @keyframes fade { from { opacity: 0; } }
 @keyframes pulse { from { opacity: .5; transform: scale(1); } to { opacity: 0; transform: scale(2.8); } }

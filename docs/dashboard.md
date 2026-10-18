@@ -4,7 +4,7 @@ Generated from the verified release on every update; do not edit.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/overview-dark.svg">
-  <img alt="13 of 13 sources current; 7,348 rules in rules_windows_all.json (4,698 unique); 300 Linux rules; 31 experimental correlations; updated 2026-10-18. Severity of unique detections: informational 114, low 351, medium 2,080, high 1,867, critical 290." src="assets/overview-light.svg" width="100%">
+  <img alt="13 of 13 sources current; 4,698 unique Windows detections (7,348 entries in rules_windows_all.json); 300 Linux rules; 31 experimental correlations; rules last changed 2026-10-18. Severity of unique detections: informational 114, low 351, medium 2,080, high 1,867, critical 290." src="assets/overview-light.svg" width="100%">
 </picture>
 
 ## Sources
@@ -27,11 +27,13 @@ Generated from the verified release on every update; do not edit.
 
 ## Inside `rules_windows_all.json`
 
-Counts are distinct rules; a rule with several tactics counts once per tactic.
+Unique detections per severity, counting each rule once:
 
 | Info | Low | Medium | High | Critical |
 |---:|---:|---:|---:|---:|
 | 114 | 351 | 2,080 | 1,867 | 290 |
+
+A rule with several tactics counts once per tactic.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/tactics-dark.svg">
@@ -156,4 +158,4 @@ Zircolite 4.1 or newer runs these; see [experimental/](../experimental/README.md
 | [rules_wrg11_windows_merged_correlation.json](../experimental/rules_wrg11_windows_merged_correlation.json) | 24 | 18 | 2 | 0 | 7 | 13 | 2 |
 | [rules_wrg11_windows_sysmon_correlation.json](../experimental/rules_wrg11_windows_sysmon_correlation.json) | 18 | 18 | 2 | 0 | 5 | 9 | 2 |
 
-Entries are exported rule objects; SQL variants of one rule share its ID. Profiles overlap, so do not add counts across files. Severity columns are exact levels.
+Entries are exported rule objects; SQL variants of one rule share its ID. Profiles overlap, so do not add counts across files. Severity columns count entries at each exact level.
