@@ -69,6 +69,18 @@ jobs:
         if: github.event_name == 'pull_request' || github.ref != 'refs/heads/main'
         run: pdm run python gen_ruleset.py --verify-release
 
+      # Which published failures a change to exclusions.json approves or no
+      # longer approves; review it alongside the records themselves.
+      - name: Summarize approval changes
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          git fetch --quiet --depth=1 origin "$BASE_REF"
+          git show FETCH_HEAD:exclusions.json > "$RUNNER_TEMP/base-exclusions.json"
+          pdm run python exclusion_baseline.py reports --compare "$RUNNER_TEMP/base-exclusions.json" >> "$GITHUB_STEP_SUMMARY"
+
   # Only main publishes: a run dispatched on another branch would otherwise
   # commit rules there and edit the main tracking issue.
   publish:
@@ -141,6 +153,25 @@ jobs:
         continue-on-error: true
         run: pdm run python ruleset_diff.py "$RUNNER_TEMP/published" . >> "$GITHUB_STEP_SUMMARY"
 
+      # For sources validated in this run only: re-pin the records of rules
+      # edited upstream that still fail as reviewed, and drop records whose rule
+      # no longer fails. Anything that would change an approval is refused.
+      - name: Re-pin and prune reviewed exclusions
+        id: exclusions
+        if: steps.generate.outputs.result == '0' || steps.generate.outputs.result == '3'
+        continue-on-error: true
+        shell: bash
+        run: |
+          token=$(openssl rand -hex 16)
+          echo "::stop-commands::$token"
+          status=0
+          pdm run python exclusion_baseline.py reports --validated-only --apply > "$RUNNER_TEMP/exclusions.md" || status=$?
+          echo "::$token::"
+          if ! git diff --quiet -- exclusions.json; then
+            { echo '## Exclusions updated for validated sources'; echo; cat "$RUNNER_TEMP/exclusions.md"; } >> "$GITHUB_STEP_SUMMARY"
+          fi
+          exit "$status"
+
       - name: Publish successful sources and source status
         if: steps.generate.outcome == 'success'
         shell: bash
@@ -154,7 +185,7 @@ jobs:
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- 'rules_*.json' experimental/ licenses/ provenance/ reports/ release-manifest.json README.md docs/dashboard.md docs/assets/
+          git add -- 'rules_*.json' experimental/ licenses/ provenance/ reports/ release-manifest.json README.md docs/dashboard.md docs/assets/ exclusions.json
           if ! git diff --cached --quiet; then
             git commit -m 'Update validated rulesets'
             git push
@@ -203,12 +234,16 @@ jobs:
         if: >-
           ${{ !cancelled() && steps.generate.outputs.result != '' &&
           (steps.generate.outputs.result != '0' || steps.track.outcome == 'failure' ||
-          steps.summarize.outcome == 'failure') }}
+          steps.summarize.outcome == 'failure' || steps.exclusions.outcome == 'failure') }}
         env:
+          EXCLUSIONS: ${{ steps.exclusions.outcome }}
           RESULT: ${{ steps.generate.outputs.result }}
           SUMMARIZED: ${{ steps.summarize.outcome }}
           TRACKED: ${{ steps.track.outcome }}
         run: |
+          if [ "$EXCLUSIONS" = failure ]; then
+            echo '::warning title=Exclusions not updated::Records of edited or fixed rules were not re-pinned or pruned; see the Re-pin and prune reviewed exclusions log.'
+          fi
           if [ "$RESULT" = 0 ]; then
             if [ "$TRACKED" != success ]; then
               echo '::warning title=Issue not closed::Every source validated, but the tracking issue could not be closed; see the Track failed sources in an issue log.'

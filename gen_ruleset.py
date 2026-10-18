@@ -14,6 +14,7 @@ from copy import deepcopy
 from datetime import UTC, datetime
 from pathlib import Path
 
+from exclusion_records import check_exclusions
 from rule_bundles import windows_all_files
 from rule_conversion import artifact_name, artifact_rules, compile_source, retired_artifacts
 from rule_sources import digest, fetch_source, json_bytes, local_revision
@@ -271,8 +272,11 @@ def main():
         parser.error("Unknown sources: " + ", ".join(sorted(unknown)))
     if roots.keys() & revisions.keys():
         parser.error("Use either a local root or a remote revision for each source")
+    # A malformed record must stop the run, not quietly approve or block a source.
+    exclusions = read_json(args.exclusions, [])
+    check_exclusions(exclusions)
     failed = generate(registry, selected, args.output_dir.resolve(), args.cache_dir.resolve(),
-                      read_json(args.exclusions, []), roots, revisions, args.audit)
+                      exclusions, roots, revisions, args.audit)
     return SOURCES_FAILED if failed else 0
 
 

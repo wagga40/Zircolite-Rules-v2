@@ -45,7 +45,22 @@ Each source goes through the same pipeline:
 
 A source is published only when every failure has a reviewed exclusion. Otherwise its previous files stay, the manifest marks it `stale`, and `gen_ruleset.py` exits with status 3. A fetch error also keeps the previous report. An uncaught error exits with 1.
 
-A record matches a failure by path, document, stage, profile, error, and content hash. An upstream edit to an excluded rule that fails with the same error still matches. The rule stays out, the source publishes, and the run warns that the record needs a re-pin; `exclusion_baseline.py <reports> --apply` updates the hash. An edit that changes the error, or any edit to a collection action such as `action: global`, blocks the source until reviewed: such an action shapes sibling documents that do publish.
+### Exclusions
+
+[exclusions.json](../exclusions.json) holds two kinds of reviewed record:
+
+- A **rule record** names one failure: source, path, content hash, document, stage, profile (`*` for every profile), and error. Line, column, and character positions in the error are ignored.
+- A **class record** approves every failure at the `parse` or `convert` stage whose error matches its `error_pattern`. Each covers a capability the backend or Zircolite lacks, such as keyword search or regexes RE2 rejects, so a new rule that needs it stays out without a record of its own.
+
+| Failure | Outcome |
+|---|---|
+| Matches a record | The rule stays out and the source publishes. |
+| Matches a rule record except for the hash: an upstream edit that fails as reviewed | The rule stays out, the source publishes, and the publish run re-pins the record. Never for a collection action such as `action: global`, which shapes sibling documents that do publish. |
+| Anything else | The source keeps its previous rules until the conversion is fixed or a record is reviewed. |
+
+For sources validated in that run, the publish run also drops rule records whose rule no longer fails, at most 10 at a time. It refuses any change that would approve or unapprove a failure. On a pull request, the job summary lists the published failures that a change to `exclusions.json` approves or no longer approves.
+
+`exclusion_baseline.py <reports> --draft-new` appends a draft record for each new failure. A draft approves nothing until it has a `reason`, and the tests reject drafts, so none merges unreviewed.
 
 | File | Contents |
 |---|---|
@@ -69,7 +84,7 @@ The daily run never upgrades dependencies.
    pdm run python exclusion_baseline.py build/audit/reports --apply   # update messages and hashes, keep reasons
    ```
 
-   A record is updated only when exactly one field changed: the error at the same content, or the hash with the same error. New failures need a written reason.
+   A rule record is updated only when exactly one field changed: the error at the same content, or the hash with the same error. Class records are never changed. New failures need a written reason.
 3. Regenerate into `build/repro` and attach the output of `ruleset_diff.py . build/repro` to the pull request.
 
 Do not commit regenerated rulesets: the daily update also commits them, and CI publishes after merge.

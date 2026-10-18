@@ -155,9 +155,27 @@ def test_hash_bound_exclusions_do_not_hide_changed_errors(tmp_path):
     exclusions = [{**f, "source": "test", "reason": "Reviewed invalid YAML"} for f in report["failures"]]
     _, report = compile_source("test", SPEC, root, exclusions)
     assert report["status"] == "validated"
-    broken.write_text(broken.read_text() + "# upstream changed\n")
+    # An unrelated edit that only moves the error's line fails as reviewed.
+    broken.write_text("# upstream changed\n" + broken.read_text())
+    _, report = compile_source("test", SPEC, root, exclusions)
+    failure, = report["failures"]
+    assert report["status"] == "validated" and failure["drifted"]
+    assert failure["error"] != exclusions[0]["error"]
+    broken.write_text("title: Broken\ndetection: *undefined\n")
     _, report = compile_source("test", SPEC, root, exclusions)
     assert report["status"] == "failed"
+
+
+def test_a_moved_condition_error_fails_as_reviewed(tmp_path):
+    value = detection(id=str(uuid.uuid4()), detection={"a": {"Image": "a.exe"}, "condition": "a and ("})
+    _, report = compile_source("test", SPEC, source(tmp_path, [detection(), value]), [])
+    exclusions = [{**{k: v for k, v in f.items() if k != "approved"}, "source": "test", "reason": "Reviewed"}
+                  for f in report["failures"]]
+    assert any("(at char" in record["error"] for record in exclusions)
+    value["detection"]["condition"] = "a  and ("
+    _, report = compile_source("test", SPEC, source(tmp_path, [detection(), value]), exclusions)
+    assert report["status"] == "validated"
+    assert len(report["failures"]) == 2 and all(failure["drifted"] for failure in report["failures"])
 
 
 def test_reproducible_corpus_output(tmp_path):
