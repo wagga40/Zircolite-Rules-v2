@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="456" viewBox="0 0 860 456" role="img" aria-labelledby="title desc">
 <title id="title">Log sources</title>
-<desc id="desc">Unique detections in rules_windows_all.json per Sigma category or service, top 15. process_creation: 2,224; file_event: 374; service: security: 362; network_connection: 331; registry_set: 237; ps_script: 220; image_load: 132; service: sysmon: 114; registry_event: 112; service: system: 106; ps_module: 70; process_access: 39; ps_classic_script: 35; dns_query: 32; service: application: 32.</desc>
+<desc id="desc">Unique detections in rules_windows_all.json per Sigma category or service, top 15. process_creation: 2,225; file_event: 374; service: security: 362; network_connection: 331; registry_set: 237; ps_script: 220; image_load: 132; service: sysmon: 114; registry_event: 112; service: system: 106; ps_module: 70; process_access: 39; ps_classic_script: 35; dns_query: 32; service: application: 32.</desc>
 <style>
 text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #0b0b0b; }
 .secondary { fill: #52514e; }
@@ -23,7 +23,7 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 <line x1="224" y1="76" x2="224" y2="438" stroke="#e1e0d9"/>
 <text x="214" y="93" font-size="12" text-anchor="end" class="secondary">process_creation</text>
 <path class="grow" style="animation-delay:120ms" fill="#2a78d6" d="M224.0 82.0H784.0Q788.0 82.0 788.0 86.0V92.0Q788.0 96.0 784.0 96.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:700ms" x="796.0" y="93" font-size="12">2,224</text>
+<text class="fade secondary" style="animation-delay:700ms" x="796.0" y="93" font-size="12">2,225</text>
 <text x="214" y="117" font-size="12" text-anchor="end" class="secondary">file_event</text>
 <path class="grow" style="animation-delay:165ms" fill="#2a78d6" d="M224.0 106.0H314.8Q318.8 106.0 318.8 110.0V116.0Q318.8 120.0 314.8 120.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:745ms" x="326.8" y="117" font-size="12">374</text>
@@ -52,8 +52,8 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 <path class="grow" style="animation-delay:525ms" fill="#2a78d6" d="M224.0 298.0H246.9Q250.9 298.0 250.9 302.0V308.0Q250.9 312.0 246.9 312.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:1105ms" x="258.9" y="309" font-size="12">106</text>
 <text x="214" y="333" font-size="12" text-anchor="end" class="secondary">ps_module</text>
-<path class="grow" style="animation-delay:570ms" fill="#2a78d6" d="M224.0 322.0H237.8Q241.8 322.0 241.8 326.0V332.0Q241.8 336.0 237.8 336.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1150ms" x="249.8" y="333" font-size="12">70</text>
+<path class="grow" style="animation-delay:570ms" fill="#2a78d6" d="M224.0 322.0H237.7Q241.7 322.0 241.7 326.0V332.0Q241.7 336.0 237.7 336.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1150ms" x="249.7" y="333" font-size="12">70</text>
 <text x="214" y="357" font-size="12" text-anchor="end" class="secondary">process_access</text>
 <path class="grow" style="animation-delay:615ms" fill="#2a78d6" d="M224.0 346.0H229.9Q233.9 346.0 233.9 350.0V356.0Q233.9 360.0 229.9 360.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:1195ms" x="241.9" y="357" font-size="12">39</text>

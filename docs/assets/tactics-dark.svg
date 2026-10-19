@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="504" viewBox="0 0 860 504" role="img" aria-labelledby="title desc">
 <title id="title">ATT&amp;CK tactics</title>
-<desc id="desc">Unique detections in rules_windows_all.json per tactic; a rule can have several. Reconnaissance: 14; Resource Development: 28; Initial Access: 144; Execution: 1,138; Persistence: 809; Privilege Escalation: 661; Defense Evasion: 230; Defense Impairment: 339; Stealth: 933; Credential Access: 352; Discovery: 206; Lateral Movement: 206; Collection: 83; Command and Control: 955; Exfiltration: 68; Impact: 111; (no tactic tag): 352.</desc>
+<desc id="desc">Unique detections in rules_windows_all.json per tactic; a rule can have several. Reconnaissance: 14; Resource Development: 28; Initial Access: 144; Execution: 1,138; Persistence: 809; Privilege Escalation: 661; Defense Evasion: 230; Defense Impairment: 339; Stealth: 933; Credential Access: 352; Discovery: 206; Lateral Movement: 206; Collection: 83; Command and Control: 955; Exfiltration: 68; Impact: 112; (no tactic tag): 352.</desc>
 <style>
 text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #f0efec; }
 .secondary { fill: #c3c2b7; }
@@ -67,8 +67,8 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 <path class="grow" style="animation-delay:750ms" fill="#3987e5" d="M224.0 418.0H253.7Q257.7 418.0 257.7 422.0V428.0Q257.7 432.0 253.7 432.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:1330ms" x="265.7" y="429" font-size="12">68</text>
 <text x="214" y="453" font-size="12" text-anchor="end" class="secondary">Impact</text>
-<path class="grow" style="animation-delay:795ms" fill="#3987e5" d="M224.0 442.0H275.0Q279.0 442.0 279.0 446.0V452.0Q279.0 456.0 275.0 456.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1375ms" x="287.0" y="453" font-size="12">111</text>
+<path class="grow" style="animation-delay:795ms" fill="#3987e5" d="M224.0 442.0H275.5Q279.5 442.0 279.5 446.0V452.0Q279.5 456.0 275.5 456.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1375ms" x="287.5" y="453" font-size="12">112</text>
 <text x="214" y="477" font-size="12" text-anchor="end" class="secondary">(no tactic tag)</text>
 <path class="grow" style="animation-delay:840ms" fill="#898781" d="M224.0 466.0H394.5Q398.5 466.0 398.5 470.0V476.0Q398.5 480.0 394.5 480.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:1420ms" x="406.5" y="477" font-size="12">352</text>

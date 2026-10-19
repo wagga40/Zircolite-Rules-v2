@@ -1,9 +1,9 @@
 {
   "artifacts": {
     "rules_linux.json": 217,
-    "rules_windows_generic.json": 2284,
-    "rules_windows_merged.json": 4527,
-    "rules_windows_sysmon.json": 2835
+    "rules_windows_generic.json": 2285,
+    "rules_windows_merged.json": 4529,
+    "rules_windows_sysmon.json": 2836
   },
   "exclusions": [
     {
@@ -40321,6 +40321,13 @@
     },
     {
       "document": "0",
+      "path": "rules-emerging-threats/2026/Malware/Lynx-Ransomware/proc_creation_win_malware_lynx.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "6aabdc3819cc267a4c751a02f67075354917a8fc388443a4bd766366eb5b002f"
+    },
+    {
+      "document": "0",
       "path": "rules-emerging-threats/2026/Malware/RedTail-Cryptominer/web_malware_redtail_useragent.yml",
       "profile": "linux",
       "reason": "logsource product None is outside this profile",
@@ -41924,7 +41931,7 @@
     }
   ],
   "ignored": [],
-  "input_documents": 3768,
+  "input_documents": 3769,
   "official_duplicates_removed": {
     "generic/correlations": 0,
     "generic/events": 0,
@@ -41935,10 +41942,10 @@
   },
   "profiles": {
     "generic": {
-      "converted": 2284,
+      "converted": 2285,
       "correlations": 0,
-      "eligible": 2302,
-      "events": 2284,
+      "eligible": 2303,
+      "events": 2285,
       "reference_only": 0
     },
     "linux": {
@@ -41949,10 +41956,10 @@
       "reference_only": 0
     },
     "sysmon": {
-      "converted": 2835,
+      "converted": 2836,
       "correlations": 0,
-      "eligible": 2854,
-      "events": 2835,
+      "eligible": 2855,
+      "events": 2836,
       "reference_only": 0
     }
   },
@@ -67300,6 +67307,13 @@
     {
       "adaptations": {},
       "document": "0",
+      "id": "a30c7711-1b6d-49eb-9925-a4b2c0e9f039",
+      "path": "rules-emerging-threats/2026/Malware/Lynx-Ransomware/proc_creation_win_malware_lynx.yml",
+      "sha256": "6aabdc3819cc267a4c751a02f67075354917a8fc388443a4bd766366eb5b002f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
       "id": "6fd25dd1-527b-47c8-baa4-2a0e77279c6f",
       "path": "rules-emerging-threats/2026/Malware/RedTail-Cryptominer/web_malware_redtail_useragent.yml",
       "sha256": "59cbba3fd69c75e4b3a95c39e1a53f3aae9d161da82e9c7815711771dee2bf4c"
@@ -68335,7 +68349,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "b7920ed31356fb7f6a9275b34737d8604c65bac3",
+  "revision": "92207f8accb4211b56f0d09bd13c473bb80881f7",
   "source": "sigmahq",
   "status": "validated",
   "tools": {

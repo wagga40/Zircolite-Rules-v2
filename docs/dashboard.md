@@ -4,26 +4,26 @@ Generated from the verified release on every update; do not edit.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/overview-dark.svg">
-  <img alt="13 of 13 sources current; 4,698 unique Windows detections (7,348 entries in rules_windows_all.json); 300 Linux rules; 31 experimental correlations; rules last changed 2026-10-18. Severity of unique detections: informational 114, low 351, medium 2,080, high 1,867, critical 290." src="assets/overview-light.svg" width="100%">
+  <img alt="13 of 13 sources current; 4,699 unique Windows detections (7,350 entries in rules_windows_all.json); 300 Linux rules; 31 experimental correlations; rules last changed 2026-10-19. Severity of unique detections: informational 114, low 351, medium 2,080, high 1,868, critical 290." src="assets/overview-light.svg" width="100%">
 </picture>
 
 ## Sources
 
 | Source | Status | License | Revision | Last success (UTC) | Detection rules |
 |---|---|---|---|---|---:|
-| [sigmahq](https://github.com/SigmaHQ/sigma) | current | DRL-1.1 | [b7920ed31356](https://github.com/SigmaHQ/sigma/tree/b7920ed31356fb7f6a9275b34737d8604c65bac3) | 2026-10-18 10:45 | 3,052 |
-| [dragon](https://github.com/frknaykc/Dragon-ThreatResearchHQ) | current | MIT | [47b5f65e6e65](https://github.com/frknaykc/Dragon-ThreatResearchHQ/tree/47b5f65e6e65dc9ce1a4829242cf61ff6e12eb98) | 2026-10-18 10:46 | 37 |
-| [hatchepsoute](https://github.com/Hatchepsoute/sigma-rules) | current | Apache-2.0 | [c04c81bb42b9](https://github.com/Hatchepsoute/sigma-rules/tree/c04c81bb42b926677d596991a4a50a8afd2c91db) | 2026-10-18 10:46 | 142 |
-| [hayabusa](https://github.com/Yamato-Security/hayabusa-rules) | current | DRL-1.1 | [3264c6f733dd](https://github.com/Yamato-Security/hayabusa-rules/tree/3264c6f733ddf223fdb3825adc1df9c14104ed87) | 2026-10-18 10:46 | 188 |
-| [joesecurity](https://github.com/joesecurity/sigma-rules) | current | GPL-3.0 | [cb91be06c8c9](https://github.com/joesecurity/sigma-rules/tree/cb91be06c8c95ce63aa9aa5006a7835678136a96) | 2026-10-18 10:46 | 110 |
-| [loldrivers](https://github.com/magicsword-io/LOLDrivers) | current | Apache-2.0 | [f1ba73291587](https://github.com/magicsword-io/LOLDrivers/tree/f1ba732915876d7c3ea4bc81150e070f84528cea) | 2026-10-18 10:46 | 6 |
-| [lolrmm](https://github.com/magicsword-io/LOLRMM) | current | Apache-2.0 | [0922dcedb378](https://github.com/magicsword-io/LOLRMM/tree/0922dcedb37861685f77c22b190318e53a5d47c1) | 2026-10-18 10:46 | 727 |
-| [mbabinski](https://github.com/mbabinski/Sigma-Rules) | current | GPL-3.0 | [9dea7a5c15cf](https://github.com/mbabinski/Sigma-Rules/tree/9dea7a5c15cfd422ec320e7fabd93f0c3634181d) | 2026-10-18 10:46 | 208 |
-| [mdecrevoisier](https://github.com/mdecrevoisier/SIGMA-detection-rules) | current | CC0-1.0 | [d61408af8769](https://github.com/mdecrevoisier/SIGMA-detection-rules/tree/d61408af8769c74c96296b7ccc92d4bc3abb15af) | 2026-10-18 10:46 | 330 |
-| [reversinglabs](https://github.com/reversinglabs/reversinglabs-siem-rules) | current | MIT | [23fc452b527f](https://github.com/reversinglabs/reversinglabs-siem-rules/tree/23fc452b527f2f8e08c26c6dffc0f734e750a2be) | 2026-10-18 10:46 | 7 |
-| [tsale](https://github.com/tsale/Sigma_rules) | current | GPL-3.0 | [f5190e6b6c5b](https://github.com/tsale/Sigma_rules/tree/f5190e6b6c5ba9e6729845f13ac916590e90b0d8) | 2026-10-18 10:46 | 47 |
-| [tyrian](https://github.com/zshguy/tyrian-detection-pack) | current | MIT | [b2cea417bcbd](https://github.com/zshguy/tyrian-detection-pack/tree/b2cea417bcbd1316ac571b29a5dc459ce387a7c2) | 2026-10-18 10:46 | 73 |
-| [wrg11](https://github.com/WRG-11/wrg-sigma-rules) | current | MIT | [af3d0ffb023f](https://github.com/WRG-11/wrg-sigma-rules/tree/af3d0ffb023f6374f53187682eab25dbfa8e18cf) | 2026-10-18 10:46 | 110 |
+| [sigmahq](https://github.com/SigmaHQ/sigma) | current | DRL-1.1 | [92207f8accb4](https://github.com/SigmaHQ/sigma/tree/92207f8accb4211b56f0d09bd13c473bb80881f7) | 2026-10-19 06:18 | 3,053 |
+| [dragon](https://github.com/frknaykc/Dragon-ThreatResearchHQ) | current | MIT | [47b5f65e6e65](https://github.com/frknaykc/Dragon-ThreatResearchHQ/tree/47b5f65e6e65dc9ce1a4829242cf61ff6e12eb98) | 2026-10-19 06:19 | 37 |
+| [hatchepsoute](https://github.com/Hatchepsoute/sigma-rules) | current | Apache-2.0 | [c04c81bb42b9](https://github.com/Hatchepsoute/sigma-rules/tree/c04c81bb42b926677d596991a4a50a8afd2c91db) | 2026-10-19 06:19 | 142 |
+| [hayabusa](https://github.com/Yamato-Security/hayabusa-rules) | current | DRL-1.1 | [1d29ba594f01](https://github.com/Yamato-Security/hayabusa-rules/tree/1d29ba594f01a35eb21df8f66cbe6a689fa87536) | 2026-10-19 06:19 | 188 |
+| [joesecurity](https://github.com/joesecurity/sigma-rules) | current | GPL-3.0 | [cb91be06c8c9](https://github.com/joesecurity/sigma-rules/tree/cb91be06c8c95ce63aa9aa5006a7835678136a96) | 2026-10-19 06:19 | 110 |
+| [loldrivers](https://github.com/magicsword-io/LOLDrivers) | current | Apache-2.0 | [f1ba73291587](https://github.com/magicsword-io/LOLDrivers/tree/f1ba732915876d7c3ea4bc81150e070f84528cea) | 2026-10-19 06:19 | 6 |
+| [lolrmm](https://github.com/magicsword-io/LOLRMM) | current | Apache-2.0 | [0922dcedb378](https://github.com/magicsword-io/LOLRMM/tree/0922dcedb37861685f77c22b190318e53a5d47c1) | 2026-10-19 06:19 | 727 |
+| [mbabinski](https://github.com/mbabinski/Sigma-Rules) | current | GPL-3.0 | [9dea7a5c15cf](https://github.com/mbabinski/Sigma-Rules/tree/9dea7a5c15cfd422ec320e7fabd93f0c3634181d) | 2026-10-19 06:19 | 208 |
+| [mdecrevoisier](https://github.com/mdecrevoisier/SIGMA-detection-rules) | current | CC0-1.0 | [d61408af8769](https://github.com/mdecrevoisier/SIGMA-detection-rules/tree/d61408af8769c74c96296b7ccc92d4bc3abb15af) | 2026-10-19 06:19 | 330 |
+| [reversinglabs](https://github.com/reversinglabs/reversinglabs-siem-rules) | current | MIT | [23fc452b527f](https://github.com/reversinglabs/reversinglabs-siem-rules/tree/23fc452b527f2f8e08c26c6dffc0f734e750a2be) | 2026-10-19 06:19 | 7 |
+| [tsale](https://github.com/tsale/Sigma_rules) | current | GPL-3.0 | [f5190e6b6c5b](https://github.com/tsale/Sigma_rules/tree/f5190e6b6c5ba9e6729845f13ac916590e90b0d8) | 2026-10-19 06:19 | 47 |
+| [tyrian](https://github.com/zshguy/tyrian-detection-pack) | current | MIT | [b2cea417bcbd](https://github.com/zshguy/tyrian-detection-pack/tree/b2cea417bcbd1316ac571b29a5dc459ce387a7c2) | 2026-10-19 06:19 | 73 |
+| [wrg11](https://github.com/WRG-11/wrg-sigma-rules) | current | MIT | [af3d0ffb023f](https://github.com/WRG-11/wrg-sigma-rules/tree/af3d0ffb023f6374f53187682eab25dbfa8e18cf) | 2026-10-19 06:19 | 110 |
 
 ## Inside `rules_windows_all.json`
 
@@ -31,7 +31,7 @@ Unique detections per severity, counting each rule once:
 
 | Info | Low | Medium | High | Critical |
 |---:|---:|---:|---:|---:|
-| 114 | 351 | 2,080 | 1,867 | 290 |
+| 114 | 351 | 2,080 | 1,868 | 290 |
 
 A rule with several tactics counts once per tactic.
 
@@ -60,7 +60,7 @@ A rule with several tactics counts once per tactic.
 | Collection | 83 |
 | Command and Control | 955 |
 | Exfiltration | 68 |
-| Impact | 111 |
+| Impact | 112 |
 | (no tactic tag) | 352 |
 
 </details>
@@ -75,7 +75,7 @@ A rule with several tactics counts once per tactic.
 
 | Log source (top 15) | Rules |
 |---|---:|
-| process_creation | 2,224 |
+| process_creation | 2,225 |
 | file_event | 374 |
 | service: security | 362 |
 | network_connection | 331 |
@@ -97,11 +97,11 @@ A rule with several tactics counts once per tactic.
 
 | Ruleset | Entries | Unique IDs | Info | Low | Medium | High | Critical |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [rules_windows_all.json](../rules_windows_all.json) | 7,348 | 4,698 | 118 | 532 | 3,230 | 2,987 | 481 |
+| [rules_windows_all.json](../rules_windows_all.json) | 7,350 | 4,699 | 118 | 532 | 3,230 | 2,989 | 481 |
 | [rules_linux.json](../rules_linux.json) | 217 | 217 | 5 | 56 | 72 | 79 | 5 |
-| [rules_windows_generic.json](../rules_windows_generic.json) | 2,284 | 2,284 | 11 | 163 | 909 | 1,101 | 100 |
-| [rules_windows_merged.json](../rules_windows_merged.json) | 4,527 | 2,835 | 17 | 295 | 1,792 | 2,218 | 205 |
-| [rules_windows_sysmon.json](../rules_windows_sysmon.json) | 2,835 | 2,835 | 13 | 205 | 1,123 | 1,367 | 127 |
+| [rules_windows_generic.json](../rules_windows_generic.json) | 2,285 | 2,285 | 11 | 163 | 909 | 1,102 | 100 |
+| [rules_windows_merged.json](../rules_windows_merged.json) | 4,529 | 2,836 | 17 | 295 | 1,792 | 2,220 | 205 |
+| [rules_windows_sysmon.json](../rules_windows_sysmon.json) | 2,836 | 2,836 | 13 | 205 | 1,123 | 1,368 | 127 |
 | [rules_dragon_linux.json](../rules_dragon_linux.json) | 5 | 5 | 0 | 0 | 0 | 1 | 4 |
 | [rules_dragon_windows_generic.json](../rules_dragon_windows_generic.json) | 29 | 29 | 0 | 0 | 1 | 21 | 7 |
 | [rules_dragon_windows_merged.json](../rules_dragon_windows_merged.json) | 61 | 32 | 0 | 0 | 2 | 44 | 15 |
