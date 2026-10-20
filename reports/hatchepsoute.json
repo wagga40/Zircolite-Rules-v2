@@ -4018,11 +4018,11 @@
   "official_baseline": {
     "artifacts": {
       "rules_linux.json": "9aff43b1e03c68742bfad267105a267f434c691d4782ff8bf2637aacddef92fc",
-      "rules_windows_generic.json": "3b0ae7bae55932df8ae5306e0636a4a58f1aea0345e160426f575eefe12deaac",
-      "rules_windows_sysmon.json": "743d61535222c3eb2f10877be3f1fea067f8df58510d63caf93c5e5f5c50f837"
+      "rules_windows_generic.json": "c34fc9d57108105a72b53cc8aa30584c1945dd03180cc5df8cf03119d6db10b7",
+      "rules_windows_sysmon.json": "a51760f3bcd847e7d9157ef08fff6f5128b24fc02cbda5f2c80224c5d7b47cd5"
     },
     "repository": "SigmaHQ/sigma",
-    "revision": "92207f8accb4211b56f0d09bd13c473bb80881f7"
+    "revision": "f083329893e4f44869bf7d283c7aa001ad86a0cd"
   },
   "official_duplicates_removed": {
     "generic/correlations": 0,
@@ -5803,6 +5803,6 @@
     "pysigma-pipeline-sysmon": "2.0.0",
     "pysigma-pipeline-windows": "2.0.0",
     "python": "3.14.8",
-    "sqlite": "3.45.1"
+    "sqlite": "3.46.1"
   }
 }

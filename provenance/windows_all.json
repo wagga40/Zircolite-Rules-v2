@@ -1,8 +1,8 @@
 {
   "deduplication": "Same ID and SQL; prefer SigmaHQ, then source name order. Distinct SQL variants remain.",
   "duplicates_removed": 0,
-  "entries": 7350,
-  "input_entries": 7350,
+  "entries": 7362,
+  "input_entries": 7362,
   "inputs": {
     "dragon": {
       "artifacts": {
@@ -28,7 +28,7 @@
       },
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
-      "revision": "1d29ba594f01a35eb21df8f66cbe6a689fa87536",
+      "revision": "c1401ec655e246ffacf6c55abf0ff98fa8daad2b",
       "status": "current"
     },
     "joesecurity": {
@@ -42,20 +42,20 @@
     },
     "loldrivers": {
       "artifacts": {
-        "rules_loldrivers_windows_sysmon.json": "9d63000c1bd96afa11952f29ae8f52286ce8ca8e0355a4aa3e09ef1f4cbb1c7c"
+        "rules_loldrivers_windows_sysmon.json": "403337bbb4e99675192534a515f9cb26b4eecf59b1823ea7340f2fdd40e3cfab"
       },
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLDrivers",
-      "revision": "f1ba732915876d7c3ea4bc81150e070f84528cea",
+      "revision": "75c2a244ebda1a551e6cf2a35968ac3d4eff95d6",
       "status": "current"
     },
     "lolrmm": {
       "artifacts": {
-        "rules_lolrmm_windows_merged.json": "5a047a62215a2a038ee129db609e82c02b8380b3920397ca0bce49057d848c08"
+        "rules_lolrmm_windows_merged.json": "d91af73a95bc8454fdcfcfd624c104625fa4c41a844aa62322dc2c9f9798b5d8"
       },
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLRMM",
-      "revision": "0922dcedb37861685f77c22b190318e53a5d47c1",
+      "revision": "e05c1632530713d87c825423a829edd9f65580c1",
       "status": "current"
     },
     "mbabinski": {
@@ -87,11 +87,11 @@
     },
     "sigmahq": {
       "artifacts": {
-        "rules_windows_merged.json": "5e46a7494a40fe655834b650bca58b38c2edade009478981930e462462ab05a4"
+        "rules_windows_merged.json": "33c95e73b3a66ebcd7fa2147150d3b33025a67d0aee54484b2617b22b129360b"
       },
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
-      "revision": "92207f8accb4211b56f0d09bd13c473bb80881f7",
+      "revision": "f083329893e4f44869bf7d283c7aa001ad86a0cd",
       "status": "current"
     },
     "tsale": {

@@ -9,11 +9,11 @@
   "official_baseline": {
     "artifacts": {
       "rules_linux.json": "9aff43b1e03c68742bfad267105a267f434c691d4782ff8bf2637aacddef92fc",
-      "rules_windows_generic.json": "3b0ae7bae55932df8ae5306e0636a4a58f1aea0345e160426f575eefe12deaac",
-      "rules_windows_sysmon.json": "743d61535222c3eb2f10877be3f1fea067f8df58510d63caf93c5e5f5c50f837"
+      "rules_windows_generic.json": "c34fc9d57108105a72b53cc8aa30584c1945dd03180cc5df8cf03119d6db10b7",
+      "rules_windows_sysmon.json": "a51760f3bcd847e7d9157ef08fff6f5128b24fc02cbda5f2c80224c5d7b47cd5"
     },
     "repository": "SigmaHQ/sigma",
-    "revision": "92207f8accb4211b56f0d09bd13c473bb80881f7"
+    "revision": "f083329893e4f44869bf7d283c7aa001ad86a0cd"
   },
   "official_duplicates_removed": {
     "sysmon/correlations": 0,
@@ -34,46 +34,46 @@
       "document": "0",
       "id": "05296024-fe8a-4baf-8f3d-9a5f5624ceb2",
       "path": "detections/sigma/driver_load_win_mal_drivers.yml",
-      "sha256": "4e3a982b824f5ba598bd0479d731700a35ce4d432b91dbd1a8193bf7d8846c40"
+      "sha256": "aa896be74cecc5f6fd956abaf6803b3bfdd812251e77f3e96a4f85367b794e03"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "bd17303b-1003-437e-93e4-97f79c03aeb3",
       "path": "detections/sigma/driver_load_win_mal_drivers_hvci_load.yml",
-      "sha256": "cd7281d476b28ebc829ed301dff189ef2a40eb74945485ff74a24d59a2d7c8b0"
+      "sha256": "0df470c83be36f7bd1c4668ee39e16181b7bd3690131804cdce8914ac11c4138"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "39b64854-5497-4b57-a448-40977b8c9679",
       "path": "detections/sigma/driver_load_win_mal_drivers_names.yml",
-      "sha256": "e6be05a5a3daf5b7bf3aa96a040fe500918ace7181dde8c9ed10d6e109581ae8"
+      "sha256": "da9cc4748e95dd602116cd07d22703b22afaa8292b646383c4ca0be352f964a7"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "7aaaf4b8-e47c-4295-92ee-6ed40a6f60c8",
       "path": "detections/sigma/driver_load_win_vuln_drivers.yml",
-      "sha256": "6c03fc30063b64f04372b6553c12602ea639b9c4d8b55664811747e16f2a78e3"
+      "sha256": "8abc844ee64b586cef9e802ae906ea9558b2c7b935999991cc804a68f2c2f3c6"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "45b4716d-9845-463c-83d9-24c9652832ce",
       "path": "detections/sigma/driver_load_win_vuln_drivers_hvci_load.yml",
-      "sha256": "b1dfa79d2ec0d2cbeeb467bbe1fe5b101d7762c9e781482df4d1aaa96a253e58"
+      "sha256": "224f6f8b9a551c299c89e9fe76cb702831e68176ccae5e675d57710d945000b4"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "72cd00d6-490c-4650-86ff-1d11f491daa1",
       "path": "detections/sigma/driver_load_win_vuln_drivers_names.yml",
-      "sha256": "6ceef438bf4a773b3d94dbb3b470673ef19bebeda1f459d3502680480024525f"
+      "sha256": "56c21ac88773a05c56fa708808e4ab237c21c90800ab15162b6f2545f921d022"
     }
   ],
   "repository": "magicsword-io/LOLDrivers",
-  "revision": "f1ba732915876d7c3ea4bc81150e070f84528cea",
+  "revision": "75c2a244ebda1a551e6cf2a35968ac3d4eff95d6",
   "source": "loldrivers",
   "status": "validated",
   "tools": {
@@ -82,6 +82,6 @@
     "pysigma-pipeline-sysmon": "2.0.0",
     "pysigma-pipeline-windows": "2.0.0",
     "python": "3.14.8",
-    "sqlite": "3.45.1"
+    "sqlite": "3.46.1"
   }
 }
