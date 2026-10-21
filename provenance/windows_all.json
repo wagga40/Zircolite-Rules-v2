@@ -1,8 +1,8 @@
 {
   "deduplication": "Same ID and SQL; prefer SigmaHQ, then source name order. Distinct SQL variants remain.",
   "duplicates_removed": 0,
-  "entries": 7362,
-  "input_entries": 7362,
+  "entries": 7367,
+  "input_entries": 7367,
   "inputs": {
     "dragon": {
       "artifacts": {
@@ -28,7 +28,7 @@
       },
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
-      "revision": "c1401ec655e246ffacf6c55abf0ff98fa8daad2b",
+      "revision": "4c8427c59a6080c993cd115ec837b97ca99ec0e2",
       "status": "current"
     },
     "joesecurity": {
@@ -51,11 +51,11 @@
     },
     "lolrmm": {
       "artifacts": {
-        "rules_lolrmm_windows_merged.json": "d91af73a95bc8454fdcfcfd624c104625fa4c41a844aa62322dc2c9f9798b5d8"
+        "rules_lolrmm_windows_merged.json": "81f76d871fe515e023656721db526e509cf9960a10fa036c58bb051aa4e0a3a3"
       },
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLRMM",
-      "revision": "e05c1632530713d87c825423a829edd9f65580c1",
+      "revision": "c80ef30a7295f2ca72701195c7977b751371726f",
       "status": "current"
     },
     "mbabinski": {
@@ -87,11 +87,11 @@
     },
     "sigmahq": {
       "artifacts": {
-        "rules_windows_merged.json": "33c95e73b3a66ebcd7fa2147150d3b33025a67d0aee54484b2617b22b129360b"
+        "rules_windows_merged.json": "3a90561eb40e8008b03a2c6a018bfca719b42d0d7861306e4fb487b54dcf3da9"
       },
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
-      "revision": "f083329893e4f44869bf7d283c7aa001ad86a0cd",
+      "revision": "05d1031f537e830b76da53bae2400c5814c89165",
       "status": "current"
     },
     "tsale": {

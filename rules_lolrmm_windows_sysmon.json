@@ -1546,6 +1546,46 @@
     "channel": [
       "Microsoft-Windows-Sysmon/Operational"
     ],
+    "description": "Detects potential files activity of VS Code Remote Tunnels RMM tool\n",
+    "eventid": [
+      11
+    ],
+    "falsepositives": [
+      "Legitimate use of VS Code Remote Tunnels"
+    ],
+    "filename": "detections/sigma/vs_code_remote_tunnels_files_sigma.yml",
+    "id": "0f26737a-9b0f-5f03-a0ef-62789938533d",
+    "level": "medium",
+    "license": "Apache-2.0",
+    "logsource": {
+      "category": "file_event",
+      "product": "windows",
+      "service": "sysmon"
+    },
+    "required_fields": [
+      "Channel",
+      "EventID",
+      "TargetFilename"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=11 AND TargetFilename LIKE '%C:\\\\Windows\\\\debug\\\\code-insiders.exe' ESCAPE '\\')"
+    ],
+    "schema_version": 2,
+    "source": "lolrmm",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.command-and-control",
+      "attack.t1219"
+    ],
+    "title": "Potential VS Code Remote Tunnels RMM Tool File Activity"
+  },
+  {
+    "author": "LOLRMM Project",
+    "channel": [
+      "Microsoft-Windows-Sysmon/Operational"
+    ],
     "description": "Detects potential processes activity of ZOC RMM tool\n",
     "eventid": [
       1
@@ -24124,6 +24164,46 @@
       "attack.t1219"
     ],
     "title": "Potential Domotz RMM Tool Process Activity"
+  },
+  {
+    "author": "LOLRMM Project",
+    "channel": [
+      "Microsoft-Windows-Sysmon/Operational"
+    ],
+    "description": "Detects potential network activity of VS Code Remote Tunnels RMM tool\n",
+    "eventid": [
+      3
+    ],
+    "falsepositives": [
+      "Legitimate use of VS Code Remote Tunnels"
+    ],
+    "filename": "detections/sigma/vs_code_remote_tunnels_network_sigma.yml",
+    "id": "ce5264b9-0a03-5738-9b97-2171bfdbe395",
+    "level": "medium",
+    "license": "Apache-2.0",
+    "logsource": {
+      "category": "network_connection",
+      "product": "windows",
+      "service": "sysmon"
+    },
+    "required_fields": [
+      "Channel",
+      "DestinationHostname",
+      "EventID"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=3 AND DestinationHostname LIKE '%global.rel.tunnels.api.visualstudio.com' ESCAPE '\\')"
+    ],
+    "schema_version": 2,
+    "source": "lolrmm",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.command-and-control",
+      "attack.t1219"
+    ],
+    "title": "Potential VS Code Remote Tunnels RMM Tool Network Activity"
   },
   {
     "author": "LOLRMM Project",

@@ -1,8 +1,8 @@
 {
   "artifacts": {
     "rules_lolrmm_windows_generic.json": 373,
-    "rules_lolrmm_windows_merged.json": 1104,
-    "rules_lolrmm_windows_sysmon.json": 731
+    "rules_lolrmm_windows_merged.json": 1106,
+    "rules_lolrmm_windows_sysmon.json": 733
   },
   "exclusions": [
     {
@@ -10,7 +10,7 @@
       "path": "detections/sigma/rmm_domains_dns_queries.yml",
       "profile": "sysmon",
       "reason": "logsource product 'any' is outside this profile",
-      "sha256": "02e9d28e689213a7e1514f1e6c123607e6f1f3b5da9b459dd9c4c8c1692ebf24"
+      "sha256": "c87dcf5fe3602b11d9a6820891ce74a06824b69ec44925057f63221e150be147"
     },
     {
       "document": "0",
@@ -913,7 +913,7 @@
       "path": "detections/sigma/instant_housecall_network_sigma.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "e5d80bc662426a8ad6ac33e865f19461ed1eb8a5f0a197e5ed1b8ec93fe6c9cb"
+      "sha256": "57aff8d216ae2a03a690338b9ae7dab5ddcf6a58fe94f645e17a748aa920f210"
     },
     {
       "document": "0",
@@ -976,7 +976,7 @@
       "path": "detections/sigma/itsupport247__connectwise__network_sigma.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "6c659c26e25054d782c1b169e08764ba291b38b9254ac64534a5cf36a907b34d"
+      "sha256": "0e13e1c230e2ca05215fe33c75df116ecbfdfca64d7665760aa97f4e0bdff916"
     },
     {
       "document": "0",
@@ -1347,7 +1347,7 @@
       "path": "detections/sigma/n-able_advanced_monitoring_agent_network_sigma.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "42c719900ded06516e639a2ea006d29e3eee9c7e06e453b00685b0bf0ce3503a"
+      "sha256": "fe31b6138013a8ec3cf37e7dc0a1612fe924053d0a14ee8c9b69bbba22c59399"
     },
     {
       "document": "0",
@@ -1956,7 +1956,7 @@
       "path": "detections/sigma/rmm_domains_dns_queries.yml",
       "profile": "generic",
       "reason": "logsource product 'any' is outside this profile",
-      "sha256": "02e9d28e689213a7e1514f1e6c123607e6f1f3b5da9b459dd9c4c8c1692ebf24"
+      "sha256": "c87dcf5fe3602b11d9a6820891ce74a06824b69ec44925057f63221e150be147"
     },
     {
       "document": "0",
@@ -2159,7 +2159,7 @@
       "path": "detections/sigma/simplehelp_network_sigma.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "80ad59b5210d2673cb13530bc156b3227e7d6a2da33cc19bd843f95e19055f42"
+      "sha256": "0fcc53cecd4c4fcb385f920d13d9f348a3318e3cf7c2c76c483279864446713f"
     },
     {
       "document": "0",
@@ -2471,6 +2471,20 @@
     },
     {
       "document": "0",
+      "path": "detections/sigma/vs_code_remote_tunnels_files_sigma.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "60d500be6557e4e483586936e5c5e903d25991a8191e781f0ffbd1f2bc7fbfa7"
+    },
+    {
+      "document": "0",
+      "path": "detections/sigma/vs_code_remote_tunnels_network_sigma.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "ea22dd7283f02e9ee1656096470b2461ecd9347121341ce11289d7aa3410f4d8"
+    },
+    {
+      "document": "0",
       "path": "detections/sigma/webrdp_network_sigma.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
@@ -2528,15 +2542,15 @@
   ],
   "failures": [],
   "ignored": [],
-  "input_documents": 732,
+  "input_documents": 734,
   "official_baseline": {
     "artifacts": {
-      "rules_linux.json": "9aff43b1e03c68742bfad267105a267f434c691d4782ff8bf2637aacddef92fc",
-      "rules_windows_generic.json": "c34fc9d57108105a72b53cc8aa30584c1945dd03180cc5df8cf03119d6db10b7",
-      "rules_windows_sysmon.json": "a51760f3bcd847e7d9157ef08fff6f5128b24fc02cbda5f2c80224c5d7b47cd5"
+      "rules_linux.json": "09860440b03c09ab0d4dfc6a3e722bcacf8dd80f9fbc07caf440164a38897660",
+      "rules_windows_generic.json": "285b16d84423fbd58d3ea44d5b2061334c379f039adf1f11cdcfd2cb57a5e829",
+      "rules_windows_sysmon.json": "38c19c2ce9154e749a84ebda59332a99e9465c30ee143d5854b3c675f7282ce0"
     },
     "repository": "SigmaHQ/sigma",
-    "revision": "f083329893e4f44869bf7d283c7aa001ad86a0cd"
+    "revision": "05d1031f537e830b76da53bae2400c5814c89165"
   },
   "official_duplicates_removed": {
     "generic/correlations": 0,
@@ -2553,10 +2567,10 @@
       "reference_only": 0
     },
     "sysmon": {
-      "converted": 731,
+      "converted": 733,
       "correlations": 0,
-      "eligible": 731,
-      "events": 731,
+      "eligible": 733,
+      "events": 733,
       "reference_only": 0
     }
   },
@@ -3987,7 +4001,7 @@
       "document": "0",
       "id": "ba1e3a37-6751-48e8-9f7a-73d9062f137c",
       "path": "detections/sigma/generic_rmm_detection.yml",
-      "sha256": "4369049c39b64c3fda485efbbcd4dd720f0cd7f69c99991b7beec8cbc59ba9b9"
+      "sha256": "08c15da00e3b1cb3330b23fd0631de0702871068134a02b77fc03c30299d21fc"
     },
     {
       "adaptations": {},
@@ -4372,14 +4386,14 @@
       "document": "0",
       "id": "e65c0189-e2f8-4d59-ac5d-95550fd5a2ab",
       "path": "detections/sigma/instant_housecall_network_sigma.yml",
-      "sha256": "e5d80bc662426a8ad6ac33e865f19461ed1eb8a5f0a197e5ed1b8ec93fe6c9cb"
+      "sha256": "57aff8d216ae2a03a690338b9ae7dab5ddcf6a58fe94f645e17a748aa920f210"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "d1610f9a-a13c-4033-80f5-695b87d8506c",
       "path": "detections/sigma/instant_housecall_processes_sigma.yml",
-      "sha256": "22b0bfeba09f310df388fc2f2f64f2c567f4095e95b77970ccbb1279c7d54f22"
+      "sha256": "fff2da666f2caf9041dc4148a1109e5266ec4aab30ac7a7dfe8340f9d57b235c"
     },
     {
       "adaptations": {},
@@ -4470,7 +4484,7 @@
       "document": "0",
       "id": "eb9d5ff4-9478-4edd-b83f-daa9eb04d756",
       "path": "detections/sigma/isl_online_processes_sigma.yml",
-      "sha256": "8e4e3056e8912320df3f7f5f15aac39ba53416efc199c104bf54631665328a9f"
+      "sha256": "f7516507d42b9b88491084ee0b94d1e1066e386d3bc589d054933009ece415e0"
     },
     {
       "adaptations": {},
@@ -4505,7 +4519,7 @@
       "document": "0",
       "id": "2966b368-1e5b-4abb-9cde-30a84e747b6f",
       "path": "detections/sigma/itsupport247__connectwise__network_sigma.yml",
-      "sha256": "6c659c26e25054d782c1b169e08764ba291b38b9254ac64534a5cf36a907b34d"
+      "sha256": "0e13e1c230e2ca05215fe33c75df116ecbfdfca64d7665760aa97f4e0bdff916"
     },
     {
       "adaptations": {},
@@ -5212,14 +5226,14 @@
       "document": "0",
       "id": "343b65e8-9f87-4009-9649-fb77db5d1e7f",
       "path": "detections/sigma/n-able_advanced_monitoring_agent_network_sigma.yml",
-      "sha256": "42c719900ded06516e639a2ea006d29e3eee9c7e06e453b00685b0bf0ce3503a"
+      "sha256": "fe31b6138013a8ec3cf37e7dc0a1612fe924053d0a14ee8c9b69bbba22c59399"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "9528e78f-1698-4561-8344-f45a6086bfc5",
       "path": "detections/sigma/n-able_advanced_monitoring_agent_processes_sigma.yml",
-      "sha256": "adf19671abc97e966f2c9517c39e60a54c6decbf8cf84b6ed214084eb43ed0df"
+      "sha256": "48423cccf73868a7409b25969697b1b94ac4ede247910f57c4fdebf2fa1fa33d"
     },
     {
       "adaptations": {},
@@ -6493,7 +6507,7 @@
       "document": "0",
       "id": "9fa68c28-79b2-4ab5-af95-0c7b2f706c63",
       "path": "detections/sigma/rmm_domains_dns_queries.yml",
-      "sha256": "02e9d28e689213a7e1514f1e6c123607e6f1f3b5da9b459dd9c4c8c1692ebf24"
+      "sha256": "c87dcf5fe3602b11d9a6820891ce74a06824b69ec44925057f63221e150be147"
     },
     {
       "adaptations": {},
@@ -6881,14 +6895,14 @@
       "document": "0",
       "id": "5664ef88-4683-4f3c-9147-506eb5416d5e",
       "path": "detections/sigma/simplehelp_network_sigma.yml",
-      "sha256": "80ad59b5210d2673cb13530bc156b3227e7d6a2da33cc19bd843f95e19055f42"
+      "sha256": "0fcc53cecd4c4fcb385f920d13d9f348a3318e3cf7c2c76c483279864446713f"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "85602ba4-712d-4524-ac2e-7cf7511de816",
       "path": "detections/sigma/simplehelp_processes_sigma.yml",
-      "sha256": "8197be67850e19fe1ffb2b6c70a0a99722128dc082c10c88210606f43b613c2d"
+      "sha256": "6f7a8a8f75bc450ff3ada203019d4c73c82b28301835730915d32dc0458647ae"
     },
     {
       "adaptations": {},
@@ -7551,6 +7565,20 @@
     {
       "adaptations": {},
       "document": "0",
+      "id": "0f26737a-9b0f-5f03-a0ef-62789938533d",
+      "path": "detections/sigma/vs_code_remote_tunnels_files_sigma.yml",
+      "sha256": "60d500be6557e4e483586936e5c5e903d25991a8191e781f0ffbd1f2bc7fbfa7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ce5264b9-0a03-5738-9b97-2171bfdbe395",
+      "path": "detections/sigma/vs_code_remote_tunnels_network_sigma.yml",
+      "sha256": "ea22dd7283f02e9ee1656096470b2461ecd9347121341ce11289d7aa3410f4d8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
       "id": "d6cf8756-43e2-4fa0-adfa-31a51dbf7602",
       "path": "detections/sigma/webrdp_network_sigma.yml",
       "sha256": "10f7d042931c2322e682bec048578f7884c3602c07fde5bdf5460dd83e4ec983"
@@ -7697,7 +7725,7 @@
     }
   ],
   "repository": "magicsword-io/LOLRMM",
-  "revision": "e05c1632530713d87c825423a829edd9f65580c1",
+  "revision": "c80ef30a7295f2ca72701195c7977b751371726f",
   "source": "lolrmm",
   "status": "validated",
   "tools": {
