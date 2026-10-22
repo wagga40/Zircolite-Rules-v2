@@ -4,7 +4,7 @@ Generated from the verified release on every update; do not edit.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/overview-dark.svg">
-  <img alt="13 of 13 sources current; 4,711 unique Windows detections (7,367 entries in rules_windows_all.json); 300 Linux rules; 31 experimental correlations; rules last changed 2026-10-21. Severity of unique detections: informational 114, low 352, medium 2,087, high 1,872, critical 290." src="assets/overview-light.svg" width="100%">
+  <img alt="13 of 13 sources current; 4,711 unique Windows detections (7,367 entries in rules_windows_all.json); 300 Linux rules; 31 experimental correlations; rules last changed 2026-10-22. Severity of unique detections: informational 114, low 352, medium 2,087, high 1,872, critical 290." src="assets/overview-light.svg" width="100%">
 </picture>
 
 ## Sources
@@ -14,7 +14,7 @@ Generated from the verified release on every update; do not edit.
 | [sigmahq](https://github.com/SigmaHQ/sigma) | current | DRL-1.1 | [05d1031f537e](https://github.com/SigmaHQ/sigma/tree/05d1031f537e830b76da53bae2400c5814c89165) | 2026-10-21 06:07 | 3,059 |
 | [dragon](https://github.com/frknaykc/Dragon-ThreatResearchHQ) | current | MIT | [47b5f65e6e65](https://github.com/frknaykc/Dragon-ThreatResearchHQ/tree/47b5f65e6e65dc9ce1a4829242cf61ff6e12eb98) | 2026-10-21 06:07 | 37 |
 | [hatchepsoute](https://github.com/Hatchepsoute/sigma-rules) | current | Apache-2.0 | [c04c81bb42b9](https://github.com/Hatchepsoute/sigma-rules/tree/c04c81bb42b926677d596991a4a50a8afd2c91db) | 2026-10-21 06:07 | 142 |
-| [hayabusa](https://github.com/Yamato-Security/hayabusa-rules) | current | DRL-1.1 | [4c8427c59a60](https://github.com/Yamato-Security/hayabusa-rules/tree/4c8427c59a6080c993cd115ec837b97ca99ec0e2) | 2026-10-21 06:07 | 188 |
+| [hayabusa](https://github.com/Yamato-Security/hayabusa-rules) | current | DRL-1.1 | [8f6797f20a5b](https://github.com/Yamato-Security/hayabusa-rules/tree/8f6797f20a5b9f61b89f08d9ec11c5bd94a151cb) | 2026-10-22 06:10 | 188 |
 | [joesecurity](https://github.com/joesecurity/sigma-rules) | current | GPL-3.0 | [cb91be06c8c9](https://github.com/joesecurity/sigma-rules/tree/cb91be06c8c95ce63aa9aa5006a7835678136a96) | 2026-10-21 06:07 | 110 |
 | [loldrivers](https://github.com/magicsword-io/LOLDrivers) | current | Apache-2.0 | [75c2a244ebda](https://github.com/magicsword-io/LOLDrivers/tree/75c2a244ebda1a551e6cf2a35968ac3d4eff95d6) | 2026-10-21 06:07 | 6 |
 | [lolrmm](https://github.com/magicsword-io/LOLRMM) | current | Apache-2.0 | [c80ef30a7295](https://github.com/magicsword-io/LOLRMM/tree/c80ef30a7295f2ca72701195c7977b751371726f) | 2026-10-21 06:08 | 733 |
