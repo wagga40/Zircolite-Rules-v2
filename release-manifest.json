@@ -2,8 +2,8 @@
   "aggregates": {
     "windows_all": {
       "artifacts": {
-        "provenance/windows_all.json": "ec2f243648ec679537b36aa16ba39507719c2f014c3c88531449d8fd21d10c16",
-        "rules_windows_all.json": "d4d1ef22e401825020fa534d81abe7ff125e8957ad87b45e3f0d72a86637d208"
+        "provenance/windows_all.json": "0e85d553b90e03d5c5b79e37a0797cb5f3b58bd03358a2c94030af3e99ba9204",
+        "rules_windows_all.json": "9f8f852977770c31ba2d2b5a8f4a3bc0f2f2871f525c87b0cfc9b4d35285254e"
       },
       "inputs": {
         "dragon": {
@@ -17,11 +17,11 @@
         },
         "hatchepsoute": {
           "artifacts": {
-            "rules_hatchepsoute_windows_merged.json": "ca719377043443facbd13dd709fc7285d0e286aa5ce08ce0d2c1e9f15f31d90d"
+            "rules_hatchepsoute_windows_merged.json": "63149ef4d3d08c3535614ce11014e61958c9ac67db4775e8dc8c99e84e5ea990"
           },
           "license": "Apache-2.0",
           "repository": "Hatchepsoute/sigma-rules",
-          "revision": "c04c81bb42b926677d596991a4a50a8afd2c91db",
+          "revision": "8ec2c4ac5f6792b5551a3720c19a8ef36d2b7ddc",
           "status": "current"
         },
         "hayabusa": {
@@ -120,12 +120,12 @@
           },
           "license": "MIT",
           "repository": "WRG-11/wrg-sigma-rules",
-          "revision": "af3d0ffb023f6374f53187682eab25dbfa8e18cf",
+          "revision": "133b53f2b17462c7d71fd4def47f25c7625e6137",
           "status": "current"
         }
       },
       "rule_counts": {
-        "rules_windows_all.json": 7367
+        "rules_windows_all.json": 7369
       },
       "status": "current"
     }
@@ -166,23 +166,23 @@
         "experimental/rules_hatchepsoute_windows_merged_correlation.json": "5febb6704852f96b7cf0f3cd98d04c67ad4780d6f0e340414c9235cf3d6d74bd",
         "experimental/rules_hatchepsoute_windows_sysmon_correlation.json": "5febb6704852f96b7cf0f3cd98d04c67ad4780d6f0e340414c9235cf3d6d74bd",
         "licenses/hatchepsoute.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
-        "provenance/hatchepsoute.json": "effed9cfcbb0e97de358644c7c4a9ecea54c229adf19600b10562d4429215c9d",
-        "rules_hatchepsoute_linux.json": "7a00cddba392ef18fde74e7e5373852e060b678d0b3e58b3b36ebdecdf4a719f",
-        "rules_hatchepsoute_windows_generic.json": "46b0c9fe59a59318abcfe73d88e36b9cfb2c0cc1e208195b0fe434460403f392",
-        "rules_hatchepsoute_windows_merged.json": "ca719377043443facbd13dd709fc7285d0e286aa5ce08ce0d2c1e9f15f31d90d",
-        "rules_hatchepsoute_windows_sysmon.json": "0329a8f917a27ce7a55f78a5efaabcc57726f13b2fa5d389223a3b69e9e60ffb"
+        "provenance/hatchepsoute.json": "6f8ca446be07e4671e2a71c244585c07b17fb375c6d043cb3c497df50adb418b",
+        "rules_hatchepsoute_linux.json": "f433159e4eca98eff6b88f8fc979066de95d555cce7d1c9acb64b7385a4a261e",
+        "rules_hatchepsoute_windows_generic.json": "b325eee19efe562e82e79cb6ed193e157fe5163238fcd395e3c2d6e9a9bc31cc",
+        "rules_hatchepsoute_windows_merged.json": "63149ef4d3d08c3535614ce11014e61958c9ac67db4775e8dc8c99e84e5ea990",
+        "rules_hatchepsoute_windows_sysmon.json": "114f4ecbbae4dd2d58d1cc91b9a11c087b5d07641aecff563157de8b6b2dded2"
       },
-      "last_success": "2026-10-21T06:07:47+00:00",
+      "last_success": "2026-10-23T06:06:26+00:00",
       "license": "Apache-2.0",
       "repository": "Hatchepsoute/sigma-rules",
-      "revision": "c04c81bb42b926677d596991a4a50a8afd2c91db",
+      "revision": "8ec2c4ac5f6792b5551a3720c19a8ef36d2b7ddc",
       "rule_counts": {
         "experimental/rules_hatchepsoute_windows_merged_correlation.json": 1,
         "experimental/rules_hatchepsoute_windows_sysmon_correlation.json": 1,
-        "rules_hatchepsoute_linux.json": 45,
-        "rules_hatchepsoute_windows_generic.json": 73,
-        "rules_hatchepsoute_windows_merged.json": 162,
-        "rules_hatchepsoute_windows_sysmon.json": 97
+        "rules_hatchepsoute_linux.json": 47,
+        "rules_hatchepsoute_windows_generic.json": 74,
+        "rules_hatchepsoute_windows_merged.json": 164,
+        "rules_hatchepsoute_windows_sysmon.json": 98
       },
       "status": "current",
       "tools": {
@@ -480,16 +480,16 @@
         "experimental/rules_wrg11_windows_merged_correlation.json": "c3f4b63ab1be753b40b0e021a570d4175239c17eaa54235bfe4e5aec8bc7d92c",
         "experimental/rules_wrg11_windows_sysmon_correlation.json": "da91826c0f0ea121c85d7555966aa18e9408ffef7bb1f9028b661c596cd7887b",
         "licenses/wrg11.txt": "2af072a300d0c32eac227a1649b34221128b2396c2e44f7571716ff45154c5a1",
-        "provenance/wrg11.json": "fa4c35ce9ed341e4f47d56e2c73cec6669bf21cc71ab606b31490a27119a43a6",
+        "provenance/wrg11.json": "934cbde26d4bcea7ee75bf65f2dbf2653b724067f04f37b0c67074ec7867741e",
         "rules_wrg11_linux.json": "2df0b6de838e90b92a053fd99cdf9febc23ccd8db99f382c7b361cfa62fd83b9",
         "rules_wrg11_windows_generic.json": "5b68f0f80248072e1e0290fe699ba5944db9930962877664a12647d58f337e82",
         "rules_wrg11_windows_merged.json": "af6179590238859513801492eacefd20343201c64540700810026ab4770f6b3f",
         "rules_wrg11_windows_sysmon.json": "0769e9754f2a0a8e08d7693c5a7c51eb1bbf5749259e3593ebd204992e69a852"
       },
-      "last_success": "2026-10-21T06:08:17+00:00",
+      "last_success": "2026-10-23T06:06:56+00:00",
       "license": "MIT",
       "repository": "WRG-11/wrg-sigma-rules",
-      "revision": "af3d0ffb023f6374f53187682eab25dbfa8e18cf",
+      "revision": "133b53f2b17462c7d71fd4def47f25c7625e6137",
       "rule_counts": {
         "experimental/rules_wrg11_windows_generic_correlation.json": 12,
         "experimental/rules_wrg11_windows_merged_correlation.json": 24,

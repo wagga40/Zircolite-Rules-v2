@@ -4,7 +4,7 @@ Generated from the verified release on every update; do not edit.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/overview-dark.svg">
-  <img alt="13 of 13 sources current; 4,711 unique Windows detections (7,367 entries in rules_windows_all.json); 300 Linux rules; 31 experimental correlations; rules last changed 2026-10-22. Severity of unique detections: informational 114, low 352, medium 2,087, high 1,872, critical 290." src="assets/overview-light.svg" width="100%">
+  <img alt="13 of 13 sources current; 4,712 unique Windows detections (7,369 entries in rules_windows_all.json); 302 Linux rules; 31 experimental correlations; rules last changed 2026-10-23. Severity of unique detections: informational 114, low 352, medium 2,087, high 1,873, critical 290." src="assets/overview-light.svg" width="100%">
 </picture>
 
 ## Sources
@@ -13,7 +13,7 @@ Generated from the verified release on every update; do not edit.
 |---|---|---|---|---|---:|
 | [sigmahq](https://github.com/SigmaHQ/sigma) | current | DRL-1.1 | [05d1031f537e](https://github.com/SigmaHQ/sigma/tree/05d1031f537e830b76da53bae2400c5814c89165) | 2026-10-21 06:07 | 3,059 |
 | [dragon](https://github.com/frknaykc/Dragon-ThreatResearchHQ) | current | MIT | [47b5f65e6e65](https://github.com/frknaykc/Dragon-ThreatResearchHQ/tree/47b5f65e6e65dc9ce1a4829242cf61ff6e12eb98) | 2026-10-21 06:07 | 37 |
-| [hatchepsoute](https://github.com/Hatchepsoute/sigma-rules) | current | Apache-2.0 | [c04c81bb42b9](https://github.com/Hatchepsoute/sigma-rules/tree/c04c81bb42b926677d596991a4a50a8afd2c91db) | 2026-10-21 06:07 | 142 |
+| [hatchepsoute](https://github.com/Hatchepsoute/sigma-rules) | current | Apache-2.0 | [8ec2c4ac5f67](https://github.com/Hatchepsoute/sigma-rules/tree/8ec2c4ac5f6792b5551a3720c19a8ef36d2b7ddc) | 2026-10-23 06:06 | 145 |
 | [hayabusa](https://github.com/Yamato-Security/hayabusa-rules) | current | DRL-1.1 | [8f6797f20a5b](https://github.com/Yamato-Security/hayabusa-rules/tree/8f6797f20a5b9f61b89f08d9ec11c5bd94a151cb) | 2026-10-22 06:10 | 188 |
 | [joesecurity](https://github.com/joesecurity/sigma-rules) | current | GPL-3.0 | [cb91be06c8c9](https://github.com/joesecurity/sigma-rules/tree/cb91be06c8c95ce63aa9aa5006a7835678136a96) | 2026-10-21 06:07 | 110 |
 | [loldrivers](https://github.com/magicsword-io/LOLDrivers) | current | Apache-2.0 | [75c2a244ebda](https://github.com/magicsword-io/LOLDrivers/tree/75c2a244ebda1a551e6cf2a35968ac3d4eff95d6) | 2026-10-21 06:07 | 6 |
@@ -23,7 +23,7 @@ Generated from the verified release on every update; do not edit.
 | [reversinglabs](https://github.com/reversinglabs/reversinglabs-siem-rules) | current | MIT | [23fc452b527f](https://github.com/reversinglabs/reversinglabs-siem-rules/tree/23fc452b527f2f8e08c26c6dffc0f734e750a2be) | 2026-10-21 06:08 | 7 |
 | [tsale](https://github.com/tsale/Sigma_rules) | current | GPL-3.0 | [f5190e6b6c5b](https://github.com/tsale/Sigma_rules/tree/f5190e6b6c5ba9e6729845f13ac916590e90b0d8) | 2026-10-21 06:08 | 47 |
 | [tyrian](https://github.com/zshguy/tyrian-detection-pack) | current | MIT | [b2cea417bcbd](https://github.com/zshguy/tyrian-detection-pack/tree/b2cea417bcbd1316ac571b29a5dc459ce387a7c2) | 2026-10-21 06:08 | 73 |
-| [wrg11](https://github.com/WRG-11/wrg-sigma-rules) | current | MIT | [af3d0ffb023f](https://github.com/WRG-11/wrg-sigma-rules/tree/af3d0ffb023f6374f53187682eab25dbfa8e18cf) | 2026-10-21 06:08 | 110 |
+| [wrg11](https://github.com/WRG-11/wrg-sigma-rules) | current | MIT | [133b53f2b174](https://github.com/WRG-11/wrg-sigma-rules/tree/133b53f2b17462c7d71fd4def47f25c7625e6137) | 2026-10-23 06:06 | 110 |
 
 ## Inside `rules_windows_all.json`
 
@@ -31,7 +31,7 @@ Unique detections per severity, counting each rule once:
 
 | Info | Low | Medium | High | Critical |
 |---:|---:|---:|---:|---:|
-| 114 | 352 | 2,087 | 1,872 | 290 |
+| 114 | 352 | 2,087 | 1,873 | 290 |
 
 A rule with several tactics counts once per tactic.
 
@@ -48,7 +48,7 @@ A rule with several tactics counts once per tactic.
 | Reconnaissance | 14 |
 | Resource Development | 28 |
 | Initial Access | 144 |
-| Execution | 1,139 |
+| Execution | 1,140 |
 | Persistence | 811 |
 | Privilege Escalation | 663 |
 | Defense Evasion | 230 |
@@ -75,7 +75,7 @@ A rule with several tactics counts once per tactic.
 
 | Log source (top 15) | Rules |
 |---|---:|
-| process_creation | 2,228 |
+| process_creation | 2,229 |
 | file_event | 376 |
 | service: security | 364 |
 | network_connection | 333 |
@@ -97,7 +97,7 @@ A rule with several tactics counts once per tactic.
 
 | Ruleset | Entries | Unique IDs | Info | Low | Medium | High | Critical |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [rules_windows_all.json](../rules_windows_all.json) | 7,367 | 4,711 | 118 | 533 | 3,240 | 2,995 | 481 |
+| [rules_windows_all.json](../rules_windows_all.json) | 7,369 | 4,712 | 118 | 533 | 3,240 | 2,997 | 481 |
 | [rules_linux.json](../rules_linux.json) | 217 | 217 | 5 | 56 | 72 | 79 | 5 |
 | [rules_windows_generic.json](../rules_windows_generic.json) | 2,291 | 2,291 | 11 | 164 | 910 | 1,106 | 100 |
 | [rules_windows_merged.json](../rules_windows_merged.json) | 4,538 | 2,842 | 17 | 296 | 1,794 | 2,226 | 205 |
@@ -106,10 +106,10 @@ A rule with several tactics counts once per tactic.
 | [rules_dragon_windows_generic.json](../rules_dragon_windows_generic.json) | 29 | 29 | 0 | 0 | 1 | 21 | 7 |
 | [rules_dragon_windows_merged.json](../rules_dragon_windows_merged.json) | 61 | 32 | 0 | 0 | 2 | 44 | 15 |
 | [rules_dragon_windows_sysmon.json](../rules_dragon_windows_sysmon.json) | 32 | 32 | 0 | 0 | 1 | 23 | 8 |
-| [rules_hatchepsoute_linux.json](../rules_hatchepsoute_linux.json) | 45 | 45 | 0 | 1 | 9 | 22 | 13 |
-| [rules_hatchepsoute_windows_generic.json](../rules_hatchepsoute_windows_generic.json) | 73 | 73 | 0 | 0 | 25 | 34 | 14 |
-| [rules_hatchepsoute_windows_merged.json](../rules_hatchepsoute_windows_merged.json) | 162 | 97 | 0 | 0 | 53 | 74 | 35 |
-| [rules_hatchepsoute_windows_sysmon.json](../rules_hatchepsoute_windows_sysmon.json) | 97 | 97 | 0 | 0 | 31 | 44 | 22 |
+| [rules_hatchepsoute_linux.json](../rules_hatchepsoute_linux.json) | 47 | 47 | 0 | 1 | 9 | 24 | 13 |
+| [rules_hatchepsoute_windows_generic.json](../rules_hatchepsoute_windows_generic.json) | 74 | 74 | 0 | 0 | 25 | 35 | 14 |
+| [rules_hatchepsoute_windows_merged.json](../rules_hatchepsoute_windows_merged.json) | 164 | 98 | 0 | 0 | 53 | 76 | 35 |
+| [rules_hatchepsoute_windows_sysmon.json](../rules_hatchepsoute_windows_sysmon.json) | 98 | 98 | 0 | 0 | 31 | 45 | 22 |
 | [rules_hayabusa_windows_native.json](../rules_hayabusa_windows_native.json) | 188 | 188 | 100 | 26 | 40 | 21 | 1 |
 | [rules_joesecurity_windows_generic.json](../rules_joesecurity_windows_generic.json) | 110 | 110 | 0 | 1 | 0 | 1 | 108 |
 | [rules_joesecurity_windows_merged.json](../rules_joesecurity_windows_merged.json) | 201 | 110 | 0 | 2 | 0 | 2 | 197 |

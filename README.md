@@ -8,7 +8,7 @@ Ready-to-use [Zircolite](https://github.com/wagga40/Zircolite) rulesets, convert
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/overview-dark.svg">
-  <img alt="13 of 13 sources current; 4,711 unique Windows detections (7,367 entries in rules_windows_all.json); 300 Linux rules; 31 experimental correlations; rules last changed 2026-10-22. Severity of unique detections: informational 114, low 352, medium 2,087, high 1,872, critical 290." src="docs/assets/overview-light.svg" width="100%">
+  <img alt="13 of 13 sources current; 4,712 unique Windows detections (7,369 entries in rules_windows_all.json); 302 Linux rules; 31 experimental correlations; rules last changed 2026-10-23. Severity of unique detections: informational 114, low 352, medium 2,087, high 1,873, critical 290." src="docs/assets/overview-light.svg" width="100%">
 </picture>
 
 <picture>

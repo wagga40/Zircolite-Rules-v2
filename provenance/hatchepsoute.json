@@ -2,10 +2,10 @@
   "artifacts": {
     "experimental/rules_hatchepsoute_windows_merged_correlation.json": 1,
     "experimental/rules_hatchepsoute_windows_sysmon_correlation.json": 1,
-    "rules_hatchepsoute_linux.json": 45,
-    "rules_hatchepsoute_windows_generic.json": 73,
-    "rules_hatchepsoute_windows_merged.json": 162,
-    "rules_hatchepsoute_windows_sysmon.json": 97
+    "rules_hatchepsoute_linux.json": 47,
+    "rules_hatchepsoute_windows_generic.json": 74,
+    "rules_hatchepsoute_windows_merged.json": 164,
+    "rules_hatchepsoute_windows_sysmon.json": 98
   },
   "exclusions": [
     {
@@ -231,6 +231,41 @@
       "profile": "sysmon",
       "reason": "logsource product 'palo_alto' is outside this profile",
       "sha256": "184725ce8877c72369ac29674cc84f680286a38872b238a20747edf0ece6b019"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_worker_child_process_php2shell_strict.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "16e2fe483b8e8a9c2cde6e3518ff8e19eb4c49eef299554691379d2ae0322644"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_worker_webshell_creation_php2shell_strict.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "7ab92663480dc85ddf698a33304d0a7f8b6b324ce2f066ba6a721d0e78b5634f"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_oom_probe_broad.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "353636e3aefbb1ccd7a439bd15fc9453b7970f5438ea40590b81dee48f75c57b"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_upload_progress_broad.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "a9ea9cb91c1b63668d9d564ff00a44ada749e6298aa5151deddf264a326c5891"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_serialized_post_probe_broad.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "4c71d23ef905240f039875f086baeb3acc99d2ae6decf070adfeeb3f2fff0fcd"
     },
     {
       "document": "0",
@@ -1295,6 +1330,41 @@
       "profile": "generic",
       "reason": "logsource product 'palo_alto' is outside this profile",
       "sha256": "184725ce8877c72369ac29674cc84f680286a38872b238a20747edf0ece6b019"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_worker_child_process_php2shell_strict.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "16e2fe483b8e8a9c2cde6e3518ff8e19eb4c49eef299554691379d2ae0322644"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_worker_webshell_creation_php2shell_strict.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "7ab92663480dc85ddf698a33304d0a7f8b6b324ce2f066ba6a721d0e78b5634f"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_oom_probe_broad.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "353636e3aefbb1ccd7a439bd15fc9453b7970f5438ea40590b81dee48f75c57b"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_upload_progress_broad.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "a9ea9cb91c1b63668d9d564ff00a44ada749e6298aa5151deddf264a326c5891"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_serialized_post_probe_broad.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "4c71d23ef905240f039875f086baeb3acc99d2ae6decf070adfeeb3f2fff0fcd"
     },
     {
       "document": "0",
@@ -2625,6 +2695,34 @@
       "profile": "linux",
       "reason": "logsource product 'palo_alto' is outside this profile",
       "sha256": "184725ce8877c72369ac29674cc84f680286a38872b238a20747edf0ece6b019"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_oom_probe_broad.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "353636e3aefbb1ccd7a439bd15fc9453b7970f5438ea40590b81dee48f75c57b"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_upload_progress_broad.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "a9ea9cb91c1b63668d9d564ff00a44ada749e6298aa5151deddf264a326c5891"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_serialized_post_probe_broad.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "4c71d23ef905240f039875f086baeb3acc99d2ae6decf070adfeeb3f2fff0fcd"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/windows_php_worker_child_process_php2shell_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "298cfde6d7b25c4674c4bd86ca34b319efd55ae970e1f7e8b44014194a5b309d"
     },
     {
       "document": "0",
@@ -4014,7 +4112,7 @@
       "sha256": "bdcb1a687886e07613b25ceecc7c108822a502be44f8c82aa076258f8ca5f2b0"
     }
   ],
-  "input_documents": 248,
+  "input_documents": 254,
   "official_baseline": {
     "artifacts": {
       "rules_linux.json": "09860440b03c09ab0d4dfc6a3e722bcacf8dd80f9fbc07caf440164a38897660",
@@ -4034,24 +4132,24 @@
   },
   "profiles": {
     "generic": {
-      "converted": 73,
+      "converted": 74,
       "correlations": 0,
-      "eligible": 73,
-      "events": 73,
+      "eligible": 74,
+      "events": 74,
       "reference_only": 0
     },
     "linux": {
-      "converted": 45,
+      "converted": 47,
       "correlations": 0,
-      "eligible": 45,
-      "events": 45,
+      "eligible": 47,
+      "events": 47,
       "reference_only": 0
     },
     "sysmon": {
-      "converted": 99,
+      "converted": 100,
       "correlations": 1,
-      "eligible": 99,
-      "events": 97,
+      "eligible": 100,
+      "events": 98,
       "reference_only": 1
     }
   },
@@ -4545,6 +4643,48 @@
       "id": "9c8d2f47-3b1a-4e7c-8f0d-a1e5c9b72d84",
       "path": "CVE-2026-0300_Palo_Alto_PAN-OS/rules/cve_2026_0300_post_exploitation_strict.yml",
       "sha256": "184725ce8877c72369ac29674cc84f680286a38872b238a20747edf0ece6b019"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3d6f8b21-5a74-4c90-b1e3-7f2d9a6c5e48",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_worker_child_process_php2shell_strict.yml",
+      "sha256": "16e2fe483b8e8a9c2cde6e3518ff8e19eb4c49eef299554691379d2ae0322644"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5f8c2a14-9e63-4b70-a1d5-7c3f6e8b2049",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_worker_webshell_creation_php2shell_strict.yml",
+      "sha256": "7ab92663480dc85ddf698a33304d0a7f8b6b324ce2f066ba6a721d0e78b5634f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4e7a2c91-6d35-4f80-a1b9-5c8e3d7f2046",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_oom_probe_broad.yml",
+      "sha256": "353636e3aefbb1ccd7a439bd15fc9453b7970f5438ea40590b81dee48f75c57b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1b4d6f1e-7f3b-4e0d-9c2f-8d5b7a1e42c6",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_upload_progress_broad.yml",
+      "sha256": "a9ea9cb91c1b63668d9d564ff00a44ada749e6298aa5151deddf264a326c5891"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2c5e7a90-1d44-4b6f-8e2a-9c7d3f5b1a60",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_serialized_post_probe_broad.yml",
+      "sha256": "4c71d23ef905240f039875f086baeb3acc99d2ae6decf070adfeeb3f2fff0fcd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6a1e4d93-7b52-4f80-9c21-5e8d3a6f2047",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/windows_php_worker_child_process_php2shell_strict.yml",
+      "sha256": "298cfde6d7b25c4674c4bd86ca34b319efd55ae970e1f7e8b44014194a5b309d"
     },
     {
       "adaptations": {},
@@ -5794,7 +5934,7 @@
     }
   ],
   "repository": "Hatchepsoute/sigma-rules",
-  "revision": "c04c81bb42b926677d596991a4a50a8afd2c91db",
+  "revision": "8ec2c4ac5f6792b5551a3720c19a8ef36d2b7ddc",
   "source": "hatchepsoute",
   "status": "validated",
   "tools": {

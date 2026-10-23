@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="504" viewBox="0 0 860 504" role="img" aria-labelledby="title desc">
 <title id="title">ATT&amp;CK tactics</title>
-<desc id="desc">Unique detections in rules_windows_all.json per tactic; a rule can have several. Reconnaissance: 14; Resource Development: 28; Initial Access: 144; Execution: 1,139; Persistence: 811; Privilege Escalation: 663; Defense Evasion: 230; Defense Impairment: 343; Stealth: 933; Credential Access: 354; Discovery: 206; Lateral Movement: 206; Collection: 83; Command and Control: 961; Exfiltration: 68; Impact: 112; (no tactic tag): 352.</desc>
+<desc id="desc">Unique detections in rules_windows_all.json per tactic; a rule can have several. Reconnaissance: 14; Resource Development: 28; Initial Access: 144; Execution: 1,140; Persistence: 811; Privilege Escalation: 663; Defense Evasion: 230; Defense Impairment: 343; Stealth: 933; Credential Access: 354; Discovery: 206; Lateral Movement: 206; Collection: 83; Command and Control: 961; Exfiltration: 68; Impact: 112; (no tactic tag): 352.</desc>
 <style>
 text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #0b0b0b; }
 .secondary { fill: #52514e; }
@@ -28,48 +28,48 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 <path class="grow" style="animation-delay:165ms" fill="#2a78d6" d="M224.0 106.0H233.9Q237.9 106.0 237.9 110.0V116.0Q237.9 120.0 233.9 120.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:745ms" x="245.9" y="117" font-size="12">28</text>
 <text x="214" y="141" font-size="12" text-anchor="end" class="secondary">Initial Access</text>
-<path class="grow" style="animation-delay:210ms" fill="#2a78d6" d="M224.0 130.0H291.3Q295.3 130.0 295.3 134.0V140.0Q295.3 144.0 291.3 144.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:790ms" x="303.3" y="141" font-size="12">144</text>
+<path class="grow" style="animation-delay:210ms" fill="#2a78d6" d="M224.0 130.0H291.2Q295.2 130.0 295.2 134.0V140.0Q295.2 144.0 291.2 144.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:790ms" x="303.2" y="141" font-size="12">144</text>
 <text x="214" y="165" font-size="12" text-anchor="end" class="secondary">Execution</text>
 <path class="grow" style="animation-delay:255ms" fill="#2a78d6" d="M224.0 154.0H784.0Q788.0 154.0 788.0 158.0V164.0Q788.0 168.0 784.0 168.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:835ms" x="796.0" y="165" font-size="12">1,139</text>
+<text class="fade secondary" style="animation-delay:835ms" x="796.0" y="165" font-size="12">1,140</text>
 <text x="214" y="189" font-size="12" text-anchor="end" class="secondary">Persistence</text>
-<path class="grow" style="animation-delay:300ms" fill="#2a78d6" d="M224.0 178.0H621.6Q625.6 178.0 625.6 182.0V188.0Q625.6 192.0 621.6 192.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:880ms" x="633.6" y="189" font-size="12">811</text>
+<path class="grow" style="animation-delay:300ms" fill="#2a78d6" d="M224.0 178.0H621.2Q625.2 178.0 625.2 182.0V188.0Q625.2 192.0 621.2 192.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:880ms" x="633.2" y="189" font-size="12">811</text>
 <text x="214" y="213" font-size="12" text-anchor="end" class="secondary">Privilege Escalation</text>
-<path class="grow" style="animation-delay:345ms" fill="#2a78d6" d="M224.0 202.0H548.3Q552.3 202.0 552.3 206.0V212.0Q552.3 216.0 548.3 216.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:925ms" x="560.3" y="213" font-size="12">663</text>
+<path class="grow" style="animation-delay:345ms" fill="#2a78d6" d="M224.0 202.0H548.0Q552.0 202.0 552.0 206.0V212.0Q552.0 216.0 548.0 216.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:925ms" x="560.0" y="213" font-size="12">663</text>
 <text x="214" y="237" font-size="12" text-anchor="end" class="secondary">Defense Evasion</text>
-<path class="grow" style="animation-delay:390ms" fill="#2a78d6" d="M224.0 226.0H333.9Q337.9 226.0 337.9 230.0V236.0Q337.9 240.0 333.9 240.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:970ms" x="345.9" y="237" font-size="12">230</text>
+<path class="grow" style="animation-delay:390ms" fill="#2a78d6" d="M224.0 226.0H333.8Q337.8 226.0 337.8 230.0V236.0Q337.8 240.0 333.8 240.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:970ms" x="345.8" y="237" font-size="12">230</text>
 <text x="214" y="261" font-size="12" text-anchor="end" class="secondary">Defense Impairment</text>
-<path class="grow" style="animation-delay:435ms" fill="#2a78d6" d="M224.0 250.0H389.8Q393.8 250.0 393.8 254.0V260.0Q393.8 264.0 389.8 264.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1015ms" x="401.8" y="261" font-size="12">343</text>
+<path class="grow" style="animation-delay:435ms" fill="#2a78d6" d="M224.0 250.0H389.7Q393.7 250.0 393.7 254.0V260.0Q393.7 264.0 389.7 264.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1015ms" x="401.7" y="261" font-size="12">343</text>
 <text x="214" y="285" font-size="12" text-anchor="end" class="secondary">Stealth</text>
-<path class="grow" style="animation-delay:480ms" fill="#2a78d6" d="M224.0 274.0H682.0Q686.0 274.0 686.0 278.0V284.0Q686.0 288.0 682.0 288.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1060ms" x="694.0" y="285" font-size="12">933</text>
+<path class="grow" style="animation-delay:480ms" fill="#2a78d6" d="M224.0 274.0H681.6Q685.6 274.0 685.6 278.0V284.0Q685.6 288.0 681.6 288.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1060ms" x="693.6" y="285" font-size="12">933</text>
 <text x="214" y="309" font-size="12" text-anchor="end" class="secondary">Credential Access</text>
-<path class="grow" style="animation-delay:525ms" fill="#2a78d6" d="M224.0 298.0H395.3Q399.3 298.0 399.3 302.0V308.0Q399.3 312.0 395.3 312.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1105ms" x="407.3" y="309" font-size="12">354</text>
+<path class="grow" style="animation-delay:525ms" fill="#2a78d6" d="M224.0 298.0H395.1Q399.1 298.0 399.1 302.0V308.0Q399.1 312.0 395.1 312.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1105ms" x="407.1" y="309" font-size="12">354</text>
 <text x="214" y="333" font-size="12" text-anchor="end" class="secondary">Discovery</text>
-<path class="grow" style="animation-delay:570ms" fill="#2a78d6" d="M224.0 322.0H322.0Q326.0 322.0 326.0 326.0V332.0Q326.0 336.0 322.0 336.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1150ms" x="334.0" y="333" font-size="12">206</text>
+<path class="grow" style="animation-delay:570ms" fill="#2a78d6" d="M224.0 322.0H321.9Q325.9 322.0 325.9 326.0V332.0Q325.9 336.0 321.9 336.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1150ms" x="333.9" y="333" font-size="12">206</text>
 <text x="214" y="357" font-size="12" text-anchor="end" class="secondary">Lateral Movement</text>
-<path class="grow" style="animation-delay:615ms" fill="#2a78d6" d="M224.0 346.0H322.0Q326.0 346.0 326.0 350.0V356.0Q326.0 360.0 322.0 360.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1195ms" x="334.0" y="357" font-size="12">206</text>
+<path class="grow" style="animation-delay:615ms" fill="#2a78d6" d="M224.0 346.0H321.9Q325.9 346.0 325.9 350.0V356.0Q325.9 360.0 321.9 360.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1195ms" x="333.9" y="357" font-size="12">206</text>
 <text x="214" y="381" font-size="12" text-anchor="end" class="secondary">Collection</text>
 <path class="grow" style="animation-delay:660ms" fill="#2a78d6" d="M224.0 370.0H261.1Q265.1 370.0 265.1 374.0V380.0Q265.1 384.0 261.1 384.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:1240ms" x="273.1" y="381" font-size="12">83</text>
 <text x="214" y="405" font-size="12" text-anchor="end" class="secondary">Command and Control</text>
-<path class="grow" style="animation-delay:705ms" fill="#2a78d6" d="M224.0 394.0H695.9Q699.9 394.0 699.9 398.0V404.0Q699.9 408.0 695.9 408.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1285ms" x="707.9" y="405" font-size="12">961</text>
+<path class="grow" style="animation-delay:705ms" fill="#2a78d6" d="M224.0 394.0H695.4Q699.4 394.0 699.4 398.0V404.0Q699.4 408.0 695.4 408.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1285ms" x="707.4" y="405" font-size="12">961</text>
 <text x="214" y="429" font-size="12" text-anchor="end" class="secondary">Exfiltration</text>
-<path class="grow" style="animation-delay:750ms" fill="#2a78d6" d="M224.0 418.0H253.7Q257.7 418.0 257.7 422.0V428.0Q257.7 432.0 253.7 432.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1330ms" x="265.7" y="429" font-size="12">68</text>
+<path class="grow" style="animation-delay:750ms" fill="#2a78d6" d="M224.0 418.0H253.6Q257.6 418.0 257.6 422.0V428.0Q257.6 432.0 253.6 432.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1330ms" x="265.6" y="429" font-size="12">68</text>
 <text x="214" y="453" font-size="12" text-anchor="end" class="secondary">Impact</text>
-<path class="grow" style="animation-delay:795ms" fill="#2a78d6" d="M224.0 442.0H275.5Q279.5 442.0 279.5 446.0V452.0Q279.5 456.0 275.5 456.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1375ms" x="287.5" y="453" font-size="12">112</text>
+<path class="grow" style="animation-delay:795ms" fill="#2a78d6" d="M224.0 442.0H275.4Q279.4 442.0 279.4 446.0V452.0Q279.4 456.0 275.4 456.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1375ms" x="287.4" y="453" font-size="12">112</text>
 <text x="214" y="477" font-size="12" text-anchor="end" class="secondary">(no tactic tag)</text>
-<path class="grow" style="animation-delay:840ms" fill="#898781" d="M224.0 466.0H394.3Q398.3 466.0 398.3 470.0V476.0Q398.3 480.0 394.3 480.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1420ms" x="406.3" y="477" font-size="12">352</text>
+<path class="grow" style="animation-delay:840ms" fill="#898781" d="M224.0 466.0H394.1Q398.1 466.0 398.1 470.0V476.0Q398.1 480.0 394.1 480.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1420ms" x="406.1" y="477" font-size="12">352</text>
 </svg>
