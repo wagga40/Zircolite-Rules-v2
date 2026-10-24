@@ -34,46 +34,46 @@
       "document": "0",
       "id": "05296024-fe8a-4baf-8f3d-9a5f5624ceb2",
       "path": "detections/sigma/driver_load_win_mal_drivers.yml",
-      "sha256": "aa896be74cecc5f6fd956abaf6803b3bfdd812251e77f3e96a4f85367b794e03"
+      "sha256": "d66e37f3a7aa92063bad3edbd6087e1fc6c3a7f8979f97d4ca6e1c81bc3935e8"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "bd17303b-1003-437e-93e4-97f79c03aeb3",
       "path": "detections/sigma/driver_load_win_mal_drivers_hvci_load.yml",
-      "sha256": "0df470c83be36f7bd1c4668ee39e16181b7bd3690131804cdce8914ac11c4138"
+      "sha256": "90d727b89764f4f208aae488e1ab4f157e408bbb3563a086af9a9e571525d363"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "39b64854-5497-4b57-a448-40977b8c9679",
       "path": "detections/sigma/driver_load_win_mal_drivers_names.yml",
-      "sha256": "da9cc4748e95dd602116cd07d22703b22afaa8292b646383c4ca0be352f964a7"
+      "sha256": "ea0fae919dbc6f6fcb38fe3fff595cb07e9f9b84045b5cf3165ca512788398bb"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "7aaaf4b8-e47c-4295-92ee-6ed40a6f60c8",
       "path": "detections/sigma/driver_load_win_vuln_drivers.yml",
-      "sha256": "8abc844ee64b586cef9e802ae906ea9558b2c7b935999991cc804a68f2c2f3c6"
+      "sha256": "e4198b18f9ee6d228eac59b48d8c4e24db52f71d79486334e311e20faba1459a"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "45b4716d-9845-463c-83d9-24c9652832ce",
       "path": "detections/sigma/driver_load_win_vuln_drivers_hvci_load.yml",
-      "sha256": "224f6f8b9a551c299c89e9fe76cb702831e68176ccae5e675d57710d945000b4"
+      "sha256": "f7a0fe027d0e7cb8371615b6a2fe2694dc8a44802225f288d79a25bbe0679cec"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "72cd00d6-490c-4650-86ff-1d11f491daa1",
       "path": "detections/sigma/driver_load_win_vuln_drivers_names.yml",
-      "sha256": "56c21ac88773a05c56fa708808e4ab237c21c90800ab15162b6f2545f921d022"
+      "sha256": "c77beeed9c2585093dffdc7014a288c28d59b0241e5f67a9335de096bde4133d"
     }
   ],
   "repository": "magicsword-io/LOLDrivers",
-  "revision": "75c2a244ebda1a551e6cf2a35968ac3d4eff95d6",
+  "revision": "96a491d410f849fd392762c83cea8ccbe81a5bff",
   "source": "loldrivers",
   "status": "validated",
   "tools": {

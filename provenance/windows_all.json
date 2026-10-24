@@ -42,11 +42,11 @@
     },
     "loldrivers": {
       "artifacts": {
-        "rules_loldrivers_windows_sysmon.json": "403337bbb4e99675192534a515f9cb26b4eecf59b1823ea7340f2fdd40e3cfab"
+        "rules_loldrivers_windows_sysmon.json": "74e33079749300ad5a7df217d4bf9c29e8da2a6158447026b860471bf0a2577d"
       },
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLDrivers",
-      "revision": "75c2a244ebda1a551e6cf2a35968ac3d4eff95d6",
+      "revision": "96a491d410f849fd392762c83cea8ccbe81a5bff",
       "status": "current"
     },
     "lolrmm": {
@@ -55,7 +55,7 @@
       },
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLRMM",
-      "revision": "c80ef30a7295f2ca72701195c7977b751371726f",
+      "revision": "c2b736c376b959432568927a9dfca07b9f3f2a61",
       "status": "current"
     },
     "mbabinski": {

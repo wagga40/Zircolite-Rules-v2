@@ -4,7 +4,7 @@ Generated from the verified release on every update; do not edit.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/overview-dark.svg">
-  <img alt="13 of 13 sources current; 4,712 unique Windows detections (7,369 entries in rules_windows_all.json); 302 Linux rules; 31 experimental correlations; rules last changed 2026-10-23. Severity of unique detections: informational 114, low 352, medium 2,087, high 1,873, critical 290." src="assets/overview-light.svg" width="100%">
+  <img alt="13 of 13 sources current; 4,712 unique Windows detections (7,369 entries in rules_windows_all.json); 302 Linux rules; 31 experimental correlations; rules last changed 2026-10-24. Severity of unique detections: informational 114, low 352, medium 2,087, high 1,873, critical 290." src="assets/overview-light.svg" width="100%">
 </picture>
 
 ## Sources
@@ -16,8 +16,8 @@ Generated from the verified release on every update; do not edit.
 | [hatchepsoute](https://github.com/Hatchepsoute/sigma-rules) | current | Apache-2.0 | [8ec2c4ac5f67](https://github.com/Hatchepsoute/sigma-rules/tree/8ec2c4ac5f6792b5551a3720c19a8ef36d2b7ddc) | 2026-10-23 06:06 | 145 |
 | [hayabusa](https://github.com/Yamato-Security/hayabusa-rules) | current | DRL-1.1 | [8f6797f20a5b](https://github.com/Yamato-Security/hayabusa-rules/tree/8f6797f20a5b9f61b89f08d9ec11c5bd94a151cb) | 2026-10-22 06:10 | 188 |
 | [joesecurity](https://github.com/joesecurity/sigma-rules) | current | GPL-3.0 | [cb91be06c8c9](https://github.com/joesecurity/sigma-rules/tree/cb91be06c8c95ce63aa9aa5006a7835678136a96) | 2026-10-21 06:07 | 110 |
-| [loldrivers](https://github.com/magicsword-io/LOLDrivers) | current | Apache-2.0 | [75c2a244ebda](https://github.com/magicsword-io/LOLDrivers/tree/75c2a244ebda1a551e6cf2a35968ac3d4eff95d6) | 2026-10-21 06:07 | 6 |
-| [lolrmm](https://github.com/magicsword-io/LOLRMM) | current | Apache-2.0 | [c80ef30a7295](https://github.com/magicsword-io/LOLRMM/tree/c80ef30a7295f2ca72701195c7977b751371726f) | 2026-10-21 06:08 | 733 |
+| [loldrivers](https://github.com/magicsword-io/LOLDrivers) | current | Apache-2.0 | [96a491d410f8](https://github.com/magicsword-io/LOLDrivers/tree/96a491d410f849fd392762c83cea8ccbe81a5bff) | 2026-10-24 06:01 | 6 |
+| [lolrmm](https://github.com/magicsword-io/LOLRMM) | current | Apache-2.0 | [c2b736c376b9](https://github.com/magicsword-io/LOLRMM/tree/c2b736c376b959432568927a9dfca07b9f3f2a61) | 2026-10-24 06:01 | 733 |
 | [mbabinski](https://github.com/mbabinski/Sigma-Rules) | current | GPL-3.0 | [9dea7a5c15cf](https://github.com/mbabinski/Sigma-Rules/tree/9dea7a5c15cfd422ec320e7fabd93f0c3634181d) | 2026-10-21 06:08 | 208 |
 | [mdecrevoisier](https://github.com/mdecrevoisier/SIGMA-detection-rules) | current | CC0-1.0 | [d61408af8769](https://github.com/mdecrevoisier/SIGMA-detection-rules/tree/d61408af8769c74c96296b7ccc92d4bc3abb15af) | 2026-10-21 06:08 | 330 |
 | [reversinglabs](https://github.com/reversinglabs/reversinglabs-siem-rules) | current | MIT | [23fc452b527f](https://github.com/reversinglabs/reversinglabs-siem-rules/tree/23fc452b527f2f8e08c26c6dffc0f734e750a2be) | 2026-10-21 06:08 | 7 |
