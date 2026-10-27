@@ -24,11 +24,11 @@
     },
     "hayabusa": {
       "artifacts": {
-        "rules_hayabusa_windows_native.json": "071281357ee3cb92ec134d1e4595148f6c706b830a89a56164fc964d90cfad90"
+        "rules_hayabusa_windows_native.json": "028af27fd7aa78858a602556c38b87f442d2ec634ea41439f5ae8a88186c5c89"
       },
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
-      "revision": "8f6797f20a5b9f61b89f08d9ec11c5bd94a151cb",
+      "revision": "b06549d3c798e5940f4798bd601067fefaee20a7",
       "status": "current"
     },
     "joesecurity": {
@@ -42,11 +42,11 @@
     },
     "loldrivers": {
       "artifacts": {
-        "rules_loldrivers_windows_sysmon.json": "74e33079749300ad5a7df217d4bf9c29e8da2a6158447026b860471bf0a2577d"
+        "rules_loldrivers_windows_sysmon.json": "57b6308967a889de9636cc175d2dd05db8016ea4eaeb88c726c88c14c077fe36"
       },
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLDrivers",
-      "revision": "96a491d410f849fd392762c83cea8ccbe81a5bff",
+      "revision": "39c70ca64ae9b66650e2c50e011eec6f7354e9cf",
       "status": "current"
     },
     "lolrmm": {
@@ -55,7 +55,7 @@
       },
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLRMM",
-      "revision": "c2b736c376b959432568927a9dfca07b9f3f2a61",
+      "revision": "59f5e374146e5664e084680c198e2233e0249f70",
       "status": "current"
     },
     "mbabinski": {

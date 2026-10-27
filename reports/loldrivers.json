@@ -32,48 +32,48 @@
     {
       "adaptations": {},
       "document": "0",
-      "id": "05296024-fe8a-4baf-8f3d-9a5f5624ceb2",
+      "id": "79a7b7a0-e6f4-5807-a05a-545ed9b04836",
       "path": "detections/sigma/driver_load_win_mal_drivers.yml",
-      "sha256": "d66e37f3a7aa92063bad3edbd6087e1fc6c3a7f8979f97d4ca6e1c81bc3935e8"
+      "sha256": "d44154ebd9a8457fe1f03cc7b25064a53d1b0884ecd57c187724eafba3489730"
     },
     {
       "adaptations": {},
       "document": "0",
-      "id": "bd17303b-1003-437e-93e4-97f79c03aeb3",
+      "id": "40a5c21b-4078-5b11-a189-623dd1289470",
       "path": "detections/sigma/driver_load_win_mal_drivers_hvci_load.yml",
-      "sha256": "90d727b89764f4f208aae488e1ab4f157e408bbb3563a086af9a9e571525d363"
+      "sha256": "3425fa758fcbf87a9da503b06ec0371bb934a6b4f47242e2d8c82635e251e993"
     },
     {
       "adaptations": {},
       "document": "0",
-      "id": "39b64854-5497-4b57-a448-40977b8c9679",
+      "id": "96bc3eff-69a5-57da-9fc7-a16d8b1cc645",
       "path": "detections/sigma/driver_load_win_mal_drivers_names.yml",
-      "sha256": "ea0fae919dbc6f6fcb38fe3fff595cb07e9f9b84045b5cf3165ca512788398bb"
+      "sha256": "4ec3de21741d32f87a1bb9faaf314fa7b8f4e7999628ab6f117067c7cffef24f"
     },
     {
       "adaptations": {},
       "document": "0",
-      "id": "7aaaf4b8-e47c-4295-92ee-6ed40a6f60c8",
+      "id": "f964d53c-914e-50cd-b05f-793f557e355b",
       "path": "detections/sigma/driver_load_win_vuln_drivers.yml",
-      "sha256": "e4198b18f9ee6d228eac59b48d8c4e24db52f71d79486334e311e20faba1459a"
+      "sha256": "8d9602d1a75f4fbec76d077ad26893b9ff828b0ff986c05da8de436cc80ff3b6"
     },
     {
       "adaptations": {},
       "document": "0",
-      "id": "45b4716d-9845-463c-83d9-24c9652832ce",
+      "id": "1289bfe0-9cd6-5581-9aa6-1ca8964132fe",
       "path": "detections/sigma/driver_load_win_vuln_drivers_hvci_load.yml",
-      "sha256": "f7a0fe027d0e7cb8371615b6a2fe2694dc8a44802225f288d79a25bbe0679cec"
+      "sha256": "0c2247130f6a57522e8b896b295119bd5dca0bd71f038232b043a5956c59989b"
     },
     {
       "adaptations": {},
       "document": "0",
-      "id": "72cd00d6-490c-4650-86ff-1d11f491daa1",
+      "id": "2a0370e3-be75-568d-bcb1-efaeef72e433",
       "path": "detections/sigma/driver_load_win_vuln_drivers_names.yml",
-      "sha256": "c77beeed9c2585093dffdc7014a288c28d59b0241e5f67a9335de096bde4133d"
+      "sha256": "dde08e5a6bafffc28ebebbf95bffb0c38cfbf11568262a85187d7dc20278c533"
     }
   ],
   "repository": "magicsword-io/LOLDrivers",
-  "revision": "96a491d410f849fd392762c83cea8ccbe81a5bff",
+  "revision": "39c70ca64ae9b66650e2c50e011eec6f7354e9cf",
   "source": "loldrivers",
   "status": "validated",
   "tools": {

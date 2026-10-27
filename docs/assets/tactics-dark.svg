@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="504" viewBox="0 0 860 504" role="img" aria-labelledby="title desc">
 <title id="title">ATT&amp;CK tactics</title>
-<desc id="desc">Unique detections in rules_windows_all.json per tactic; a rule can have several. Reconnaissance: 14; Resource Development: 28; Initial Access: 144; Execution: 1,140; Persistence: 811; Privilege Escalation: 663; Defense Evasion: 230; Defense Impairment: 343; Stealth: 933; Credential Access: 354; Discovery: 206; Lateral Movement: 206; Collection: 83; Command and Control: 961; Exfiltration: 68; Impact: 112; (no tactic tag): 352.</desc>
+<desc id="desc">Unique detections in rules_windows_all.json per tactic; a rule can have several. Reconnaissance: 14; Resource Development: 28; Initial Access: 144; Execution: 1,140; Persistence: 811; Privilege Escalation: 661; Defense Evasion: 230; Defense Impairment: 343; Stealth: 933; Credential Access: 354; Discovery: 206; Lateral Movement: 206; Collection: 83; Command and Control: 961; Exfiltration: 68; Impact: 112; (no tactic tag): 358.</desc>
 <style>
 text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #f0efec; }
 .secondary { fill: #c3c2b7; }
@@ -37,8 +37,8 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 <path class="grow" style="animation-delay:300ms" fill="#3987e5" d="M224.0 178.0H621.2Q625.2 178.0 625.2 182.0V188.0Q625.2 192.0 621.2 192.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:880ms" x="633.2" y="189" font-size="12">811</text>
 <text x="214" y="213" font-size="12" text-anchor="end" class="secondary">Privilege Escalation</text>
-<path class="grow" style="animation-delay:345ms" fill="#3987e5" d="M224.0 202.0H548.0Q552.0 202.0 552.0 206.0V212.0Q552.0 216.0 548.0 216.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:925ms" x="560.0" y="213" font-size="12">663</text>
+<path class="grow" style="animation-delay:345ms" fill="#3987e5" d="M224.0 202.0H547.0Q551.0 202.0 551.0 206.0V212.0Q551.0 216.0 547.0 216.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:925ms" x="559.0" y="213" font-size="12">661</text>
 <text x="214" y="237" font-size="12" text-anchor="end" class="secondary">Defense Evasion</text>
 <path class="grow" style="animation-delay:390ms" fill="#3987e5" d="M224.0 226.0H333.8Q337.8 226.0 337.8 230.0V236.0Q337.8 240.0 333.8 240.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:970ms" x="345.8" y="237" font-size="12">230</text>
@@ -70,6 +70,6 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 <path class="grow" style="animation-delay:795ms" fill="#3987e5" d="M224.0 442.0H275.4Q279.4 442.0 279.4 446.0V452.0Q279.4 456.0 275.4 456.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:1375ms" x="287.4" y="453" font-size="12">112</text>
 <text x="214" y="477" font-size="12" text-anchor="end" class="secondary">(no tactic tag)</text>
-<path class="grow" style="animation-delay:840ms" fill="#898781" d="M224.0 466.0H394.1Q398.1 466.0 398.1 470.0V476.0Q398.1 480.0 394.1 480.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1420ms" x="406.1" y="477" font-size="12">352</text>
+<path class="grow" style="animation-delay:840ms" fill="#898781" d="M224.0 466.0H397.1Q401.1 466.0 401.1 470.0V476.0Q401.1 480.0 397.1 480.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1420ms" x="409.1" y="477" font-size="12">358</text>
 </svg>

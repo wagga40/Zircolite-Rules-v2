@@ -1060,7 +1060,7 @@
       "document": "0",
       "id": "0694c340-3a46-40ac-acfc-c3444ae6572c",
       "path": "hayabusa/builtin/System/Sys_7045_Med_LateralMovement-PSEXEC.yml",
-      "sha256": "010a8d0a1dcf376439614d482e106afd8810085d5494b61ff376e438681ee89e"
+      "sha256": "d57bb52b042c7a972d4291a28f304127e8dc6c3e8ed5c2d7ccfb7faa25e905ea"
     },
     {
       "adaptations": {
@@ -2400,7 +2400,7 @@
     }
   ],
   "repository": "Yamato-Security/hayabusa-rules",
-  "revision": "8f6797f20a5b9f61b89f08d9ec11c5bd94a151cb",
+  "revision": "b06549d3c798e5940f4798bd601067fefaee20a7",
   "source": "hayabusa",
   "status": "validated",
   "tools": {

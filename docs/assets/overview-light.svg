@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="228" viewBox="0 0 860 228" role="img" aria-labelledby="title desc">
 <title id="title">Zircolite rules overview</title>
-<desc id="desc">13 of 13 sources current; 4,712 unique Windows detections (7,369 entries in rules_windows_all.json); 302 Linux rules; 31 experimental correlations; rules last changed 2026-10-24. Severity of unique detections: informational 114, low 352, medium 2,087, high 1,873, critical 290.</desc>
+<desc id="desc">13 of 13 sources current; 4,716 unique Windows detections (7,369 entries in rules_windows_all.json); 302 Linux rules; 31 experimental correlations; rules last changed 2026-10-27. Severity of unique detections: informational 114, low 354, medium 2,087, high 1,875, critical 290.</desc>
 <style>
 text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #0b0b0b; }
 .secondary { fill: #52514e; }
@@ -22,7 +22,7 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 <circle class="pulse" cx="620" cy="32" r="5" fill="#0ca30c"/>
 <circle cx="620" cy="32" r="5" fill="#0ca30c"/>
 <text x="634" y="37" font-size="13" class="secondary">13 of 13 sources current</text>
-<g transform="translate(24 0)"><g class="rise" style="animation-delay:80ms"><text y="78" font-size="12" class="secondary">Unique Windows detections</text><text y="126" font-size="40" font-weight="600">4,712</text></g></g>
+<g transform="translate(24 0)"><g class="rise" style="animation-delay:80ms"><text y="78" font-size="12" class="secondary">Unique Windows detections</text><text y="126" font-size="40" font-weight="600">4,716</text></g></g>
 <line x1="280" y1="68" x2="280" y2="122" stroke="#e1e0d9"/>
 <g transform="translate(296 0)"><g class="rise" style="animation-delay:170ms"><text y="78" font-size="12" class="secondary">Rule entries</text><text y="114" font-size="28" font-weight="600">7,369</text></g></g>
 <line x1="419" y1="68" x2="419" y2="122" stroke="#e1e0d9"/>
@@ -30,16 +30,16 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 <line x1="558" y1="68" x2="558" y2="122" stroke="#e1e0d9"/>
 <g transform="translate(574 0)"><g class="rise" style="animation-delay:350ms"><text y="78" font-size="12" class="secondary">Correlations</text><text y="114" font-size="28" font-weight="600">31</text></g></g>
 <line x1="697" y1="68" x2="697" y2="122" stroke="#e1e0d9"/>
-<g transform="translate(713 0)"><g class="rise" style="animation-delay:440ms"><text y="78" font-size="12" class="secondary">Last change (UTC)</text><text y="108" font-size="22" font-weight="600">2026-10-24</text></g></g>
+<g transform="translate(713 0)"><g class="rise" style="animation-delay:440ms"><text y="78" font-size="12" class="secondary">Last change (UTC)</text><text y="108" font-size="22" font-weight="600">2026-10-27</text></g></g>
 <text x="24" y="160" font-size="12" class="secondary">Severity of unique detections in rules_windows_all.json</text>
 <rect class="grow" style="animation-delay:500ms" x="24.0" y="172" width="19.4" height="12" fill="#86b6ef"/>
-<rect class="grow" style="animation-delay:640ms" x="45.4" y="172" width="60.0" height="12" fill="#5598e7"/>
-<rect class="grow" style="animation-delay:780ms" x="107.4" y="172" width="355.8" height="12" fill="#2a78d6"/>
-<rect class="grow" style="animation-delay:920ms" x="465.2" y="172" width="319.3" height="12" fill="#1c5cab"/>
+<rect class="grow" style="animation-delay:640ms" x="45.4" y="172" width="60.3" height="12" fill="#5598e7"/>
+<rect class="grow" style="animation-delay:780ms" x="107.7" y="172" width="355.5" height="12" fill="#2a78d6"/>
+<rect class="grow" style="animation-delay:920ms" x="465.2" y="172" width="319.4" height="12" fill="#1c5cab"/>
 <path class="grow" style="animation-delay:1060ms" fill="#104281" d="M786.6 172.0H832.0Q836.0 172.0 836.0 176.0V180.0Q836.0 184.0 832.0 184.0H786.6Z"/>
 <g class="fade" style="animation-delay:900ms"><rect x="24.0" y="200" width="10" height="10" rx="2" fill="#86b6ef"/><text x="40.0" y="209.5" font-size="12" class="secondary">Informational <tspan class="muted">114</tspan></text></g>
-<g class="fade" style="animation-delay:980ms"><rect x="186.4" y="200" width="10" height="10" rx="2" fill="#5598e7"/><text x="202.4" y="209.5" font-size="12" class="secondary">Low <tspan class="muted">352</tspan></text></g>
+<g class="fade" style="animation-delay:980ms"><rect x="186.4" y="200" width="10" height="10" rx="2" fill="#5598e7"/><text x="202.4" y="209.5" font-size="12" class="secondary">Low <tspan class="muted">354</tspan></text></g>
 <g class="fade" style="animation-delay:1060ms"><rect x="348.8" y="200" width="10" height="10" rx="2" fill="#2a78d6"/><text x="364.8" y="209.5" font-size="12" class="secondary">Medium <tspan class="muted">2,087</tspan></text></g>
-<g class="fade" style="animation-delay:1140ms"><rect x="511.2" y="200" width="10" height="10" rx="2" fill="#1c5cab"/><text x="527.2" y="209.5" font-size="12" class="secondary">High <tspan class="muted">1,873</tspan></text></g>
+<g class="fade" style="animation-delay:1140ms"><rect x="511.2" y="200" width="10" height="10" rx="2" fill="#1c5cab"/><text x="527.2" y="209.5" font-size="12" class="secondary">High <tspan class="muted">1,875</tspan></text></g>
 <g class="fade" style="animation-delay:1220ms"><rect x="673.6" y="200" width="10" height="10" rx="2" fill="#104281"/><text x="689.6" y="209.5" font-size="12" class="secondary">Critical <tspan class="muted">290</tspan></text></g>
 </svg>
