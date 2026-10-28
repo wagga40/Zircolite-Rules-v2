@@ -2400,7 +2400,7 @@
     }
   ],
   "repository": "Yamato-Security/hayabusa-rules",
-  "revision": "b06549d3c798e5940f4798bd601067fefaee20a7",
+  "revision": "97b3fd90cb87ad7087ed4259151839b64eadb978",
   "source": "hayabusa",
   "status": "validated",
   "tools": {
