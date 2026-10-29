@@ -1,8 +1,8 @@
 {
   "deduplication": "Same ID and SQL; prefer SigmaHQ, then source name order. Distinct SQL variants remain.",
   "duplicates_removed": 0,
-  "entries": 7369,
-  "input_entries": 7369,
+  "entries": 7341,
+  "input_entries": 7341,
   "inputs": {
     "dragon": {
       "artifacts": {
@@ -51,11 +51,11 @@
     },
     "lolrmm": {
       "artifacts": {
-        "rules_lolrmm_windows_merged.json": "81f76d871fe515e023656721db526e509cf9960a10fa036c58bb051aa4e0a3a3"
+        "rules_lolrmm_windows_merged.json": "ba7a845fcb7f162b76edb24d6e1e51934b554c09ff3f6fcabd870500740f180a"
       },
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLRMM",
-      "revision": "59f5e374146e5664e084680c198e2233e0249f70",
+      "revision": "e6a5b6e86435d11ca8b48e269ea5eb7ef8eb1e82",
       "status": "current"
     },
     "mbabinski": {
@@ -118,7 +118,7 @@
       },
       "license": "MIT",
       "repository": "WRG-11/wrg-sigma-rules",
-      "revision": "133b53f2b17462c7d71fd4def47f25c7625e6137",
+      "revision": "41c54e3fd9042b29ebe458f6c7388b14b8a62df1",
       "status": "current"
     }
   },
