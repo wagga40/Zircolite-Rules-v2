@@ -15747,7 +15747,7 @@
       "path": "rules-emerging-threats/2023/TA/FIN7/file_event_win_apt_fin7_powershell_scripts_naming_convention.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "8c95e72c9373cfedb736e74f69d94247dcb2e7b7ae73499f3bf4a90d39061b36"
+      "sha256": "2f8815863ec3097af86e551c5d0c8038a31caea0e86632f587aacd31fdfe9768"
     },
     {
       "document": "0",
@@ -15761,7 +15761,7 @@
       "path": "rules-emerging-threats/2023/TA/Lazarus/image_load_apt_lazarus_side_load_activity.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "6fb8d889bb3bcf694fb83adaaa78f031949d1aeee8b3a9dab98f42378a040989"
+      "sha256": "d8eeff2803dfe20e48d7414db8c7c5ba7075abdd88b78736bf12e5f8ac4c5b05"
     },
     {
       "document": "0",
@@ -16482,7 +16482,7 @@
       "path": "rules-threat-hunting/windows/file/file_event/file_event_win_susp_binary_dropper.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "51295e6fb150541cdb47dd9ee2858ecb926cb158e8902174da89482a9fb58d24"
+      "sha256": "dca68aabd8927780167f592525590db5a6f27389bb0312c4792ca190b36312e1"
     },
     {
       "document": "0",
@@ -36957,7 +36957,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_sentinelone_shell_context_tampering.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "88edc53991ed9b6974b97c2fd5b66ee6ca06f7ab7ba8519671288f60cef904ec"
+      "sha256": "ca1c8835ff289f4e505ab8e53977c7cce3a178d8ce029f906b3f60cbeb58ee33"
     },
     {
       "document": "0",
@@ -39589,7 +39589,7 @@
       "path": "rules-emerging-threats/2023/TA/FIN7/file_event_win_apt_fin7_powershell_scripts_naming_convention.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "8c95e72c9373cfedb736e74f69d94247dcb2e7b7ae73499f3bf4a90d39061b36"
+      "sha256": "2f8815863ec3097af86e551c5d0c8038a31caea0e86632f587aacd31fdfe9768"
     },
     {
       "document": "0",
@@ -39652,7 +39652,7 @@
       "path": "rules-emerging-threats/2023/TA/Lazarus/image_load_apt_lazarus_side_load_activity.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "6fb8d889bb3bcf694fb83adaaa78f031949d1aeee8b3a9dab98f42378a040989"
+      "sha256": "d8eeff2803dfe20e48d7414db8c7c5ba7075abdd88b78736bf12e5f8ac4c5b05"
     },
     {
       "document": "0",
@@ -39806,7 +39806,7 @@
       "path": "rules-emerging-threats/2024/Exploits/CVE-2024-49113/win_application_error_exploit_cve_2024_49113_ldap_nightmare.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "1d11d86379e67e1d2b38b890f7a92b31219bb2405a53da4cdd72d07fba4cb9f2"
+      "sha256": "4613f3a0da07cc1048965901b22671298fe82e47d2dc965f8f656d679e6de807"
     },
     {
       "document": "0",
@@ -40618,7 +40618,7 @@
       "path": "rules-threat-hunting/windows/file/file_event/file_event_win_susp_binary_dropper.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "51295e6fb150541cdb47dd9ee2858ecb926cb158e8902174da89482a9fb58d24"
+      "sha256": "dca68aabd8927780167f592525590db5a6f27389bb0312c4792ca190b36312e1"
     },
     {
       "document": "0",
@@ -41003,7 +41003,7 @@
       "path": "rules-threat-hunting/windows/process_creation/proc_creation_win_dfsvc_child_processes.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "dbb9e64d403c35503429deed9e7d6503e78fb66f372a1b9ae7fed23f2d443acd"
+      "sha256": "c5bdf655a14935d7dd00848fe05c792ef45d9ae784a5a4c4c1a9ded99a1a2296"
     },
     {
       "document": "0",
@@ -63781,7 +63781,7 @@
       "document": "0",
       "id": "6c304b02-06e6-402d-8be4-d5833cdf8198",
       "path": "rules/windows/registry/registry_set/registry_set_sentinelone_shell_context_tampering.yml",
-      "sha256": "88edc53991ed9b6974b97c2fd5b66ee6ca06f7ab7ba8519671288f60cef904ec"
+      "sha256": "ca1c8835ff289f4e505ab8e53977c7cce3a178d8ce029f906b3f60cbeb58ee33"
     },
     {
       "adaptations": {},
@@ -66476,7 +66476,7 @@
       "document": "0",
       "id": "a88d9f45-ec8a-4b0e-85ee-c9f6a65e9128",
       "path": "rules-emerging-threats/2023/TA/FIN7/file_event_win_apt_fin7_powershell_scripts_naming_convention.yml",
-      "sha256": "8c95e72c9373cfedb736e74f69d94247dcb2e7b7ae73499f3bf4a90d39061b36"
+      "sha256": "2f8815863ec3097af86e551c5d0c8038a31caea0e86632f587aacd31fdfe9768"
     },
     {
       "adaptations": {},
@@ -66539,7 +66539,7 @@
       "document": "0",
       "id": "24007168-a26b-4049-90d0-ce138e13a5cf",
       "path": "rules-emerging-threats/2023/TA/Lazarus/image_load_apt_lazarus_side_load_activity.yml",
-      "sha256": "6fb8d889bb3bcf694fb83adaaa78f031949d1aeee8b3a9dab98f42378a040989"
+      "sha256": "d8eeff2803dfe20e48d7414db8c7c5ba7075abdd88b78736bf12e5f8ac4c5b05"
     },
     {
       "adaptations": {},
@@ -66742,7 +66742,7 @@
       "document": "0",
       "id": "3f2c93c7-7b2a-4d58-bb8d-6f39422d8148",
       "path": "rules-emerging-threats/2024/Exploits/CVE-2024-49113/win_application_error_exploit_cve_2024_49113_ldap_nightmare.yml",
-      "sha256": "1d11d86379e67e1d2b38b890f7a92b31219bb2405a53da4cdd72d07fba4cb9f2"
+      "sha256": "4613f3a0da07cc1048965901b22671298fe82e47d2dc965f8f656d679e6de807"
     },
     {
       "adaptations": {},
@@ -67708,7 +67708,7 @@
       "document": "0",
       "id": "297afac9-5d02-4138-8c58-b977bac60556",
       "path": "rules-threat-hunting/windows/file/file_event/file_event_win_susp_binary_dropper.yml",
-      "sha256": "51295e6fb150541cdb47dd9ee2858ecb926cb158e8902174da89482a9fb58d24"
+      "sha256": "dca68aabd8927780167f592525590db5a6f27389bb0312c4792ca190b36312e1"
     },
     {
       "adaptations": {},
@@ -68093,7 +68093,7 @@
       "document": "0",
       "id": "241d52b5-eee0-49d0-ac8a-8b9c15c7221c",
       "path": "rules-threat-hunting/windows/process_creation/proc_creation_win_dfsvc_child_processes.yml",
-      "sha256": "dbb9e64d403c35503429deed9e7d6503e78fb66f372a1b9ae7fed23f2d443acd"
+      "sha256": "c5bdf655a14935d7dd00848fe05c792ef45d9ae784a5a4c4c1a9ded99a1a2296"
     },
     {
       "adaptations": {},
@@ -68461,7 +68461,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "05d1031f537e830b76da53bae2400c5814c89165",
+  "revision": "e55e9e93068012e6111e3c561314ca6582494bcc",
   "source": "sigmahq",
   "status": "validated",
   "tools": {

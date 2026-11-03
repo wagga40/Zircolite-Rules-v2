@@ -12762,7 +12762,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (ParentProcessName LIKE '%\\\\dfsvc.exe' ESCAPE '\\' AND NewProcessName LIKE '%\\\\AppData\\\\Local\\\\Apps\\\\2.0\\\\' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (ParentProcessName LIKE '%\\\\dfsvc.exe' ESCAPE '\\' AND NewProcessName LIKE '%\\\\AppData\\\\Local\\\\Apps\\\\2.0\\\\%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -22339,7 +22339,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND (TargetObject LIKE '%\\\\shell\\\\SentinelOneScan\\\\command\\\\%' ESCAPE '\\' AND (NOT COALESCE((((NewValue LIKE 'C:\\\\Program Files\\\\SentinelOne\\\\Sentinel Agent%' ESCAPE '\\' OR NewValue LIKE 'C:\\\\Program Files (x86)\\\\SentinelOne\\\\Sentinel Agent%' ESCAPE '\\') AND NewValue LIKE '%\\\\SentinelScanFromContextMenu.exe%' ESCAPE '\\') OR (NewProcessName LIKE '%C:\\\\Program Files\\\\SentinelOne\\\\' ESCAPE '\\' OR NewProcessName LIKE '%C:\\\\Program Files (x86)\\\\SentinelOne\\\\' ESCAPE '\\')), 0))))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND (TargetObject LIKE '%\\\\shell\\\\SentinelOneScan\\\\command\\\\%' ESCAPE '\\' AND (NOT COALESCE((((NewValue LIKE 'C:\\\\Program Files\\\\SentinelOne\\\\Sentinel Agent%' ESCAPE '\\' OR NewValue LIKE 'C:\\\\Program Files (x86)\\\\SentinelOne\\\\Sentinel Agent%' ESCAPE '\\') AND NewValue LIKE '%\\\\SentinelScanFromContextMenu.exe%' ESCAPE '\\') OR (NewProcessName LIKE 'C:\\\\Program Files\\\\SentinelOne\\\\%' ESCAPE '\\' OR NewProcessName LIKE 'C:\\\\Program Files (x86)\\\\SentinelOne\\\\%' ESCAPE '\\')), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -55171,12 +55171,12 @@
     "channel": [
       "Application"
     ],
-    "description": "Detects exploitation attempt of CVE-2024-49113 known as LDAP Nightmare, based on \"Application Error\" log where the faulting application is \"lsass.exe\" and the faulting module is \"WLDAP32.dll\".\n",
+    "description": "Detects an Application Error (EventID 1000) where LSASS crashes in the Windows LDAP client module WLDAP32.dll.\nThis is the crash telemetry produced by the public LDAP Nightmare proof-of-concept for CVE-2024-49113 (denial of service).\nCVE-2024-49112 is the related LDAP remote code execution issue on the same LDAP client path. The published exploit chain covers the denial of service only: code execution would run inside LSASS and leave no Windows log of its own.\nThe cve.2024-49112 tag marks that shared path, not a coverage claim: this rule detects the CVE-2024-49113 denial of service only.\n",
     "eventid": [
       1000
     ],
     "falsepositives": [
-      "Unknown"
+      "Rare legitimate LSASS memory corruption or driver faults that happen to crash inside WLDAP32.dll. This combination is uncommon on patched, stable domain controllers and should be triaged immediately."
     ],
     "filename": "rules-emerging-threats/2024/Exploits/CVE-2024-49113/win_application_error_exploit_cve_2024_49113_ldap_nightmare.yml",
     "id": "3f2c93c7-7b2a-4d58-bb8d-6f39422d8148",
@@ -55187,14 +55187,16 @@
       "service": "application"
     },
     "required_fields": [
+      "AppName",
       "Channel",
       "Data",
       "EventID",
+      "ModuleName",
       "Provider_Name"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Application' AND (Provider_Name='Application Error' AND EventID=1000 AND (Data LIKE '%lsass.exe%' ESCAPE '\\' AND Data LIKE '%WLDAP32.dll%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Application' AND ((Provider_Name='Application Error' AND EventID=1000 AND AppName='lsass.exe' AND ModuleName='WLDAP32.dll') OR (Provider_Name='Application Error' AND EventID=1000 AND (Data LIKE '%lsass.exe%' ESCAPE '\\' AND Data LIKE '%WLDAP32.dll%' ESCAPE '\\')))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -55203,6 +55205,7 @@
     "tags": [
       "attack.impact",
       "attack.t1499",
+      "cve.2024-49112",
       "cve.2024-49113",
       "detection.emerging-threats"
     ],

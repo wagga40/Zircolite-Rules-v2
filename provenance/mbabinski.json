@@ -529,11 +529,11 @@
   "official_baseline": {
     "artifacts": {
       "rules_linux.json": "09860440b03c09ab0d4dfc6a3e722bcacf8dd80f9fbc07caf440164a38897660",
-      "rules_windows_generic.json": "285b16d84423fbd58d3ea44d5b2061334c379f039adf1f11cdcfd2cb57a5e829",
-      "rules_windows_sysmon.json": "38c19c2ce9154e749a84ebda59332a99e9465c30ee143d5854b3c675f7282ce0"
+      "rules_windows_generic.json": "18eb6f01e05bf1ab8e00f2567ef21ee682b7d387c6db840c904976c1a151d649",
+      "rules_windows_sysmon.json": "4b3a7fa74787ae12743222c2f8b97f0baf792c5e7e3bdc0babe0823a78c2b76b"
     },
     "repository": "SigmaHQ/sigma",
-    "revision": "05d1031f537e830b76da53bae2400c5814c89165"
+    "revision": "e55e9e93068012e6111e3c561314ca6582494bcc"
   },
   "official_duplicates_removed": {
     "generic/correlations": 0,
