@@ -5282,7 +5282,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (Image LIKE '%\\\\te.exe' ESCAPE '\\' OR ParentImage LIKE '%\\\\te.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\te.exe' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (Image LIKE '%\\\\te.exe' ESCAPE '\\' OR ParentImage LIKE '%\\\\te.exe' ESCAPE '\\' OR OriginalFileName='te.exe'))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -5323,7 +5323,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (NewProcessName LIKE '%\\\\te.exe' ESCAPE '\\' OR ParentProcessName LIKE '%\\\\te.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\te.exe' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (NewProcessName LIKE '%\\\\te.exe' ESCAPE '\\' OR ParentProcessName LIKE '%\\\\te.exe' ESCAPE '\\' OR OriginalFileName='te.exe'))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -36966,11 +36966,13 @@
     "required_fields": [
       "Channel",
       "CommandLine",
-      "EventID"
+      "EventID",
+      "Image",
+      "OriginalFileName"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (CommandLine='RunWizard' AND CommandLine REGEXP '\\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\\}'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((Image LIKE '%/xwizard.exe' ESCAPE '\\' OR OriginalFileName='xwizard.exe') AND (CommandLine LIKE '%RunWizard%' ESCAPE '\\' AND CommandLine REGEXP '\\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\\}')))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -37005,11 +37007,13 @@
     "required_fields": [
       "Channel",
       "CommandLine",
-      "EventID"
+      "EventID",
+      "NewProcessName",
+      "OriginalFileName"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (CommandLine='RunWizard' AND CommandLine REGEXP '\\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\\}'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%/xwizard.exe' ESCAPE '\\' OR OriginalFileName='xwizard.exe') AND (CommandLine LIKE '%RunWizard%' ESCAPE '\\' AND CommandLine REGEXP '\\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\\}')))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -49759,7 +49763,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (((Image LIKE '%\\\\msiexec.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\msiexec.exe' ESCAPE '\\') AND ((CommandLine LIKE '% -z %' ESCAPE '\\' OR CommandLine LIKE '% /z %' ESCAPE '\\' OR CommandLine LIKE '% \u2013z %' ESCAPE '\\' OR CommandLine LIKE '% \u2014z %' ESCAPE '\\' OR CommandLine LIKE '% \u2015z %' ESCAPE '\\') AND CommandLine LIKE '%.dll%' ESCAPE '\\')) AND (NOT COALESCE((CommandLine LIKE '%\\\\MsiExec.exe\" /Z \"C:\\\\Windows\\\\CCM\\\\MsiHandler.dll\"' ESCAPE '\\'), 0))))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (((Image LIKE '%\\\\msiexec.exe' ESCAPE '\\' OR OriginalFileName='msiexec.exe') AND ((CommandLine LIKE '% -z %' ESCAPE '\\' OR CommandLine LIKE '% /z %' ESCAPE '\\' OR CommandLine LIKE '% \u2013z %' ESCAPE '\\' OR CommandLine LIKE '% \u2014z %' ESCAPE '\\' OR CommandLine LIKE '% \u2015z %' ESCAPE '\\') AND CommandLine LIKE '%.dll%' ESCAPE '\\')) AND (NOT COALESCE((CommandLine LIKE '%\\\\MsiExec.exe\" /Z \"C:\\\\Windows\\\\CCM\\\\MsiHandler.dll\"' ESCAPE '\\'), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -49800,7 +49804,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (((NewProcessName LIKE '%\\\\msiexec.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\msiexec.exe' ESCAPE '\\') AND ((CommandLine LIKE '% -z %' ESCAPE '\\' OR CommandLine LIKE '% /z %' ESCAPE '\\' OR CommandLine LIKE '% \u2013z %' ESCAPE '\\' OR CommandLine LIKE '% \u2014z %' ESCAPE '\\' OR CommandLine LIKE '% \u2015z %' ESCAPE '\\') AND CommandLine LIKE '%.dll%' ESCAPE '\\')) AND (NOT COALESCE((CommandLine LIKE '%\\\\MsiExec.exe\" /Z \"C:\\\\Windows\\\\CCM\\\\MsiHandler.dll\"' ESCAPE '\\'), 0))))"
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (((NewProcessName LIKE '%\\\\msiexec.exe' ESCAPE '\\' OR OriginalFileName='msiexec.exe') AND ((CommandLine LIKE '% -z %' ESCAPE '\\' OR CommandLine LIKE '% /z %' ESCAPE '\\' OR CommandLine LIKE '% \u2013z %' ESCAPE '\\' OR CommandLine LIKE '% \u2014z %' ESCAPE '\\' OR CommandLine LIKE '% \u2015z %' ESCAPE '\\') AND CommandLine LIKE '%.dll%' ESCAPE '\\')) AND (NOT COALESCE((CommandLine LIKE '%\\\\MsiExec.exe\" /Z \"C:\\\\Windows\\\\CCM\\\\MsiHandler.dll\"' ESCAPE '\\'), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -54023,7 +54027,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (((Image LIKE '%\\\\RpcPing.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\RpcPing.exe' ESCAPE '\\') AND (CommandLine LIKE '%-s%' ESCAPE '\\' OR CommandLine LIKE '%/s%' ESCAPE '\\' OR CommandLine LIKE '%\u2013s%' ESCAPE '\\' OR CommandLine LIKE '%\u2014s%' ESCAPE '\\' OR CommandLine LIKE '%\u2015s%' ESCAPE '\\')) AND (((CommandLine LIKE '%-u%' ESCAPE '\\' OR CommandLine LIKE '%/u%' ESCAPE '\\' OR CommandLine LIKE '%\u2013u%' ESCAPE '\\' OR CommandLine LIKE '%\u2014u%' ESCAPE '\\' OR CommandLine LIKE '%\u2015u%' ESCAPE '\\') AND CommandLine LIKE '%NTLM%' ESCAPE '\\') OR ((CommandLine LIKE '%-t%' ESCAPE '\\' OR CommandLine LIKE '%/t%' ESCAPE '\\' OR CommandLine LIKE '%\u2013t%' ESCAPE '\\' OR CommandLine LIKE '%\u2014t%' ESCAPE '\\' OR CommandLine LIKE '%\u2015t%' ESCAPE '\\') AND CommandLine LIKE '%ncacn\\_np%' ESCAPE '\\'))))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (((Image LIKE '%\\\\RpcPing.exe' ESCAPE '\\' OR OriginalFileName='RpcPing.exe') AND (CommandLine LIKE '%-s%' ESCAPE '\\' OR CommandLine LIKE '%/s%' ESCAPE '\\' OR CommandLine LIKE '%\u2013s%' ESCAPE '\\' OR CommandLine LIKE '%\u2014s%' ESCAPE '\\' OR CommandLine LIKE '%\u2015s%' ESCAPE '\\')) AND (((CommandLine LIKE '%-u%' ESCAPE '\\' OR CommandLine LIKE '%/u%' ESCAPE '\\' OR CommandLine LIKE '%\u2013u%' ESCAPE '\\' OR CommandLine LIKE '%\u2014u%' ESCAPE '\\' OR CommandLine LIKE '%\u2015u%' ESCAPE '\\') AND CommandLine LIKE '%NTLM%' ESCAPE '\\') OR ((CommandLine LIKE '%-t%' ESCAPE '\\' OR CommandLine LIKE '%/t%' ESCAPE '\\' OR CommandLine LIKE '%\u2013t%' ESCAPE '\\' OR CommandLine LIKE '%\u2014t%' ESCAPE '\\' OR CommandLine LIKE '%\u2015t%' ESCAPE '\\') AND CommandLine LIKE '%ncacn\\_np%' ESCAPE '\\'))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -54064,7 +54068,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (((NewProcessName LIKE '%\\\\RpcPing.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\RpcPing.exe' ESCAPE '\\') AND (CommandLine LIKE '%-s%' ESCAPE '\\' OR CommandLine LIKE '%/s%' ESCAPE '\\' OR CommandLine LIKE '%\u2013s%' ESCAPE '\\' OR CommandLine LIKE '%\u2014s%' ESCAPE '\\' OR CommandLine LIKE '%\u2015s%' ESCAPE '\\')) AND (((CommandLine LIKE '%-u%' ESCAPE '\\' OR CommandLine LIKE '%/u%' ESCAPE '\\' OR CommandLine LIKE '%\u2013u%' ESCAPE '\\' OR CommandLine LIKE '%\u2014u%' ESCAPE '\\' OR CommandLine LIKE '%\u2015u%' ESCAPE '\\') AND CommandLine LIKE '%NTLM%' ESCAPE '\\') OR ((CommandLine LIKE '%-t%' ESCAPE '\\' OR CommandLine LIKE '%/t%' ESCAPE '\\' OR CommandLine LIKE '%\u2013t%' ESCAPE '\\' OR CommandLine LIKE '%\u2014t%' ESCAPE '\\' OR CommandLine LIKE '%\u2015t%' ESCAPE '\\') AND CommandLine LIKE '%ncacn\\_np%' ESCAPE '\\'))))"
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (((NewProcessName LIKE '%\\\\RpcPing.exe' ESCAPE '\\' OR OriginalFileName='RpcPing.exe') AND (CommandLine LIKE '%-s%' ESCAPE '\\' OR CommandLine LIKE '%/s%' ESCAPE '\\' OR CommandLine LIKE '%\u2013s%' ESCAPE '\\' OR CommandLine LIKE '%\u2014s%' ESCAPE '\\' OR CommandLine LIKE '%\u2015s%' ESCAPE '\\')) AND (((CommandLine LIKE '%-u%' ESCAPE '\\' OR CommandLine LIKE '%/u%' ESCAPE '\\' OR CommandLine LIKE '%\u2013u%' ESCAPE '\\' OR CommandLine LIKE '%\u2014u%' ESCAPE '\\' OR CommandLine LIKE '%\u2015u%' ESCAPE '\\') AND CommandLine LIKE '%NTLM%' ESCAPE '\\') OR ((CommandLine LIKE '%-t%' ESCAPE '\\' OR CommandLine LIKE '%/t%' ESCAPE '\\' OR CommandLine LIKE '%\u2013t%' ESCAPE '\\' OR CommandLine LIKE '%\u2014t%' ESCAPE '\\' OR CommandLine LIKE '%\u2015t%' ESCAPE '\\') AND CommandLine LIKE '%ncacn\\_np%' ESCAPE '\\'))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -61804,7 +61808,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((Image LIKE '%\\\\sqltoolsps.exe' ESCAPE '\\' OR ParentImage LIKE '%\\\\sqltoolsps.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\sqltoolsps.exe' ESCAPE '\\') AND (NOT COALESCE((ParentImage LIKE '%\\\\smss.exe' ESCAPE '\\'), 0))))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((Image LIKE '%\\\\sqltoolsps.exe' ESCAPE '\\' OR ParentImage LIKE '%\\\\sqltoolsps.exe' ESCAPE '\\' OR OriginalFileName='sqltoolsps.exe') AND (NOT COALESCE((ParentImage LIKE '%\\\\smss.exe' ESCAPE '\\'), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -61847,7 +61851,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\sqltoolsps.exe' ESCAPE '\\' OR ParentProcessName LIKE '%\\\\sqltoolsps.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\sqltoolsps.exe' ESCAPE '\\') AND (NOT COALESCE((ParentProcessName LIKE '%\\\\smss.exe' ESCAPE '\\'), 0))))"
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\sqltoolsps.exe' ESCAPE '\\' OR ParentProcessName LIKE '%\\\\sqltoolsps.exe' ESCAPE '\\' OR OriginalFileName='sqltoolsps.exe') AND (NOT COALESCE((ParentProcessName LIKE '%\\\\smss.exe' ESCAPE '\\'), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -169473,7 +169477,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((Image LIKE '%\\\\msiexec.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\msiexec.exe' ESCAPE '\\') AND (NOT COALESCE((Image LIKE 'C:\\\\Windows\\\\System32\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Windows\\\\SysWOW64\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Windows\\\\WinSxS\\\\%' ESCAPE '\\'), 0))))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((Image LIKE '%\\\\msiexec.exe' ESCAPE '\\' OR OriginalFileName='msiexec.exe') AND (NOT COALESCE((Image LIKE 'C:\\\\Windows\\\\System32\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Windows\\\\SysWOW64\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Windows\\\\WinSxS\\\\%' ESCAPE '\\'), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -169513,7 +169517,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\msiexec.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\msiexec.exe' ESCAPE '\\') AND (NOT COALESCE((NewProcessName LIKE 'C:\\\\Windows\\\\System32\\\\%' ESCAPE '\\' OR NewProcessName LIKE 'C:\\\\Windows\\\\SysWOW64\\\\%' ESCAPE '\\' OR NewProcessName LIKE 'C:\\\\Windows\\\\WinSxS\\\\%' ESCAPE '\\'), 0))))"
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\msiexec.exe' ESCAPE '\\' OR OriginalFileName='msiexec.exe') AND (NOT COALESCE((NewProcessName LIKE 'C:\\\\Windows\\\\System32\\\\%' ESCAPE '\\' OR NewProcessName LIKE 'C:\\\\Windows\\\\SysWOW64\\\\%' ESCAPE '\\' OR NewProcessName LIKE 'C:\\\\Windows\\\\WinSxS\\\\%' ESCAPE '\\'), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -171821,7 +171825,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (((Image LIKE '%\\\\esentutl.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\esentutl.exe' ESCAPE '\\') AND (CommandLine LIKE '%vss%' ESCAPE '\\' OR CommandLine LIKE '% -m %' ESCAPE '\\' OR CommandLine LIKE '% /m %' ESCAPE '\\' OR CommandLine LIKE '% \u2013m %' ESCAPE '\\' OR CommandLine LIKE '% \u2014m %' ESCAPE '\\' OR CommandLine LIKE '% \u2015m %' ESCAPE '\\' OR CommandLine LIKE '% -y %' ESCAPE '\\' OR CommandLine LIKE '% /y %' ESCAPE '\\' OR CommandLine LIKE '% \u2013y %' ESCAPE '\\' OR CommandLine LIKE '% \u2014y %' ESCAPE '\\' OR CommandLine LIKE '% \u2015y %' ESCAPE '\\')) OR (CommandLine LIKE '%\\\\config\\\\RegBack\\\\sam%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\RegBack\\\\security%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\RegBack\\\\system%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\sam%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\security%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\system %' ESCAPE '\\' OR CommandLine LIKE '%\\\\repair\\\\sam%' ESCAPE '\\' OR CommandLine LIKE '%\\\\repair\\\\security%' ESCAPE '\\' OR CommandLine LIKE '%\\\\repair\\\\system%' ESCAPE '\\' OR CommandLine LIKE '%\\\\windows\\\\ntds\\\\ntds.dit%' ESCAPE '\\')))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (((Image LIKE '%\\\\esentutl.exe' ESCAPE '\\' OR OriginalFileName='esentutl.exe') AND (CommandLine LIKE '%vss%' ESCAPE '\\' OR CommandLine LIKE '% -m %' ESCAPE '\\' OR CommandLine LIKE '% /m %' ESCAPE '\\' OR CommandLine LIKE '% \u2013m %' ESCAPE '\\' OR CommandLine LIKE '% \u2014m %' ESCAPE '\\' OR CommandLine LIKE '% \u2015m %' ESCAPE '\\' OR CommandLine LIKE '% -y %' ESCAPE '\\' OR CommandLine LIKE '% /y %' ESCAPE '\\' OR CommandLine LIKE '% \u2013y %' ESCAPE '\\' OR CommandLine LIKE '% \u2014y %' ESCAPE '\\' OR CommandLine LIKE '% \u2015y %' ESCAPE '\\')) OR (CommandLine LIKE '%\\\\config\\\\RegBack\\\\sam%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\RegBack\\\\security%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\RegBack\\\\system%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\sam%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\security%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\system %' ESCAPE '\\' OR CommandLine LIKE '%\\\\repair\\\\sam%' ESCAPE '\\' OR CommandLine LIKE '%\\\\repair\\\\security%' ESCAPE '\\' OR CommandLine LIKE '%\\\\repair\\\\system%' ESCAPE '\\' OR CommandLine LIKE '%\\\\windows\\\\ntds\\\\ntds.dit%' ESCAPE '\\')))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -171865,7 +171869,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (((NewProcessName LIKE '%\\\\esentutl.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\esentutl.exe' ESCAPE '\\') AND (CommandLine LIKE '%vss%' ESCAPE '\\' OR CommandLine LIKE '% -m %' ESCAPE '\\' OR CommandLine LIKE '% /m %' ESCAPE '\\' OR CommandLine LIKE '% \u2013m %' ESCAPE '\\' OR CommandLine LIKE '% \u2014m %' ESCAPE '\\' OR CommandLine LIKE '% \u2015m %' ESCAPE '\\' OR CommandLine LIKE '% -y %' ESCAPE '\\' OR CommandLine LIKE '% /y %' ESCAPE '\\' OR CommandLine LIKE '% \u2013y %' ESCAPE '\\' OR CommandLine LIKE '% \u2014y %' ESCAPE '\\' OR CommandLine LIKE '% \u2015y %' ESCAPE '\\')) OR (CommandLine LIKE '%\\\\config\\\\RegBack\\\\sam%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\RegBack\\\\security%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\RegBack\\\\system%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\sam%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\security%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\system %' ESCAPE '\\' OR CommandLine LIKE '%\\\\repair\\\\sam%' ESCAPE '\\' OR CommandLine LIKE '%\\\\repair\\\\security%' ESCAPE '\\' OR CommandLine LIKE '%\\\\repair\\\\system%' ESCAPE '\\' OR CommandLine LIKE '%\\\\windows\\\\ntds\\\\ntds.dit%' ESCAPE '\\')))"
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (((NewProcessName LIKE '%\\\\esentutl.exe' ESCAPE '\\' OR OriginalFileName='esentutl.exe') AND (CommandLine LIKE '%vss%' ESCAPE '\\' OR CommandLine LIKE '% -m %' ESCAPE '\\' OR CommandLine LIKE '% /m %' ESCAPE '\\' OR CommandLine LIKE '% \u2013m %' ESCAPE '\\' OR CommandLine LIKE '% \u2014m %' ESCAPE '\\' OR CommandLine LIKE '% \u2015m %' ESCAPE '\\' OR CommandLine LIKE '% -y %' ESCAPE '\\' OR CommandLine LIKE '% /y %' ESCAPE '\\' OR CommandLine LIKE '% \u2013y %' ESCAPE '\\' OR CommandLine LIKE '% \u2014y %' ESCAPE '\\' OR CommandLine LIKE '% \u2015y %' ESCAPE '\\')) OR (CommandLine LIKE '%\\\\config\\\\RegBack\\\\sam%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\RegBack\\\\security%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\RegBack\\\\system%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\sam%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\security%' ESCAPE '\\' OR CommandLine LIKE '%\\\\config\\\\system %' ESCAPE '\\' OR CommandLine LIKE '%\\\\repair\\\\sam%' ESCAPE '\\' OR CommandLine LIKE '%\\\\repair\\\\security%' ESCAPE '\\' OR CommandLine LIKE '%\\\\repair\\\\system%' ESCAPE '\\' OR CommandLine LIKE '%\\\\windows\\\\ntds\\\\ntds.dit%' ESCAPE '\\')))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -188324,7 +188328,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (Image LIKE '%\\\\Inveigh.exe' ESCAPE '\\' OR (OriginalFileName LIKE '\\\\Inveigh.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\Inveigh.dll' ESCAPE '\\') OR Description='Inveigh' OR (CommandLine LIKE '% -SpooferIP%' ESCAPE '\\' OR CommandLine LIKE '% -ReplyToIPs %' ESCAPE '\\' OR CommandLine LIKE '% -ReplyToDomains %' ESCAPE '\\' OR CommandLine LIKE '% -ReplyToMACs %' ESCAPE '\\' OR CommandLine LIKE '% -SnifferIP%' ESCAPE '\\')))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND (Image LIKE '%\\\\Inveigh.exe' ESCAPE '\\' OR (OriginalFileName='Inveigh.exe' OR OriginalFileName='Inveigh.dll') OR Description='Inveigh' OR (CommandLine LIKE '% -SpooferIP%' ESCAPE '\\' OR CommandLine LIKE '% -ReplyToIPs %' ESCAPE '\\' OR CommandLine LIKE '% -ReplyToDomains %' ESCAPE '\\' OR CommandLine LIKE '% -ReplyToMACs %' ESCAPE '\\' OR CommandLine LIKE '% -SnifferIP%' ESCAPE '\\')))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -188366,7 +188370,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (NewProcessName LIKE '%\\\\Inveigh.exe' ESCAPE '\\' OR (OriginalFileName LIKE '\\\\Inveigh.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\Inveigh.dll' ESCAPE '\\') OR Description='Inveigh' OR (CommandLine LIKE '% -SpooferIP%' ESCAPE '\\' OR CommandLine LIKE '% -ReplyToIPs %' ESCAPE '\\' OR CommandLine LIKE '% -ReplyToDomains %' ESCAPE '\\' OR CommandLine LIKE '% -ReplyToMACs %' ESCAPE '\\' OR CommandLine LIKE '% -SnifferIP%' ESCAPE '\\')))"
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (NewProcessName LIKE '%\\\\Inveigh.exe' ESCAPE '\\' OR (OriginalFileName='Inveigh.exe' OR OriginalFileName='Inveigh.dll') OR Description='Inveigh' OR (CommandLine LIKE '% -SpooferIP%' ESCAPE '\\' OR CommandLine LIKE '% -ReplyToIPs %' ESCAPE '\\' OR CommandLine LIKE '% -ReplyToDomains %' ESCAPE '\\' OR CommandLine LIKE '% -ReplyToMACs %' ESCAPE '\\' OR CommandLine LIKE '% -SnifferIP%' ESCAPE '\\')))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
