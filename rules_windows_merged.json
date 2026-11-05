@@ -35993,6 +35993,47 @@
     "title": "New DLL Added to AppInit_DLLs Registry Key - Generic"
   },
   {
+    "author": "MahirAli Khan, Swachchhanda Shrawan Poudel (Nextron Systems)",
+    "channel": [
+      "Microsoft-Windows-Sysmon/Operational"
+    ],
+    "description": "Detects DNS queries to public wildcard DNS services that dynamically resolve subdomains to IP addresses embedded in the subdomain.\nAdversaries abuse these services to establish C2 channels or stage phishing infrastructure without registering a custom domain, potentially to evade detection and attribution.\n",
+    "eventid": [
+      22
+    ],
+    "falsepositives": [
+      "Developers on Windows workstations testing local services or web applications without editing the hosts file"
+    ],
+    "filename": "rules/windows/dns_query/dns_query_win_wildcard_dns_service.yml",
+    "id": "4f8a1c2e-7d3b-4e5f-9a6c-0b1d2e3f4a5b",
+    "level": "medium",
+    "license": "DRL-1.1",
+    "logsource": {
+      "category": "dns_query",
+      "product": "windows",
+      "service": "sysmon"
+    },
+    "required_fields": [
+      "Channel",
+      "EventID",
+      "QueryName"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=22 AND (QueryName LIKE '%.1u.ms' ESCAPE '\\' OR QueryName LIKE '%.backname.io' ESCAPE '\\' OR QueryName LIKE '%.nip.io' ESCAPE '\\' OR QueryName LIKE '%.sslip.io' ESCAPE '\\' OR QueryName LIKE '%.traefik.me' ESCAPE '\\' OR QueryName LIKE '%.xip.io' ESCAPE '\\'))"
+    ],
+    "schema_version": 2,
+    "source": "sigmahq",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.command-and-control",
+      "attack.t1071.004",
+      "attack.t1568"
+    ],
+    "title": "DNS Query to Wildcard DNS Services - Windows"
+  },
+  {
     "author": "Swachchhanda Shrawan Poudel (Nextron Systems)",
     "channel": [
       "Microsoft-Windows-Sysmon/Operational"
@@ -52209,6 +52250,51 @@
       "attack.t1123"
     ],
     "title": "Processes Accessing the Microphone and Webcam"
+  },
+  {
+    "author": "Saksham Bhattarai, Swachchhanda Shrawan Poudel (Nextron Systems)",
+    "channel": [
+      "Microsoft-Windows-Sysmon/Operational"
+    ],
+    "description": "Detects a Microsoft Office application loading taskschd.dll, which exposes COM interfaces for managing Windows Scheduled Tasks.\nThis load is an early precursor to scheduled task creation or modification and has been frequently observed in macro-enabled\nmalicious documents attempting to establish persistence.\n",
+    "eventid": [
+      7
+    ],
+    "falsepositives": [
+      "Legitimate add-ins or automation scripts that use Office applications to manage scheduled tasks (rare in most environments)"
+    ],
+    "filename": "rules/windows/image_load/image_load_office_taskschd_dll_load.yml",
+    "id": "8d1e674c-5c03-4be1-949c-4b85a472dc16",
+    "level": "medium",
+    "license": "DRL-1.1",
+    "logsource": {
+      "category": "image_load",
+      "product": "windows",
+      "service": "sysmon"
+    },
+    "required_fields": [
+      "Channel",
+      "EventID",
+      "Image",
+      "ImageLoaded",
+      "OriginalFileName"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=7 AND ((ImageLoaded LIKE '%\\\\taskschd.dll' ESCAPE '\\' OR OriginalFileName='taskschd.dll') AND (Image LIKE '%\\\\eqnedt32.exe' ESCAPE '\\' OR Image LIKE '%\\\\excel.exe' ESCAPE '\\' OR Image LIKE '%\\\\fltldr.exe' ESCAPE '\\' OR Image LIKE '%\\\\graph.exe' ESCAPE '\\' OR Image LIKE '%\\\\msaccess.exe' ESCAPE '\\' OR Image LIKE '%\\\\mspub.exe' ESCAPE '\\' OR Image LIKE '%\\\\onenote.exe' ESCAPE '\\' OR Image LIKE '%\\\\onenoteim.exe' ESCAPE '\\' OR Image LIKE '%\\\\onenotem.exe' ESCAPE '\\' OR Image LIKE '%\\\\outlook.exe' ESCAPE '\\' OR Image LIKE '%\\\\powerpnt.exe' ESCAPE '\\' OR Image LIKE '%\\\\visio.exe' ESCAPE '\\' OR Image LIKE '%\\\\winproj.exe' ESCAPE '\\' OR Image LIKE '%\\\\winword.exe' ESCAPE '\\')))"
+    ],
+    "schema_version": 2,
+    "source": "sigmahq",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.persistence",
+      "attack.privilege-escalation",
+      "attack.t1053.005",
+      "attack.execution",
+      "attack.t1204.002"
+    ],
+    "title": "Microsoft Office Application Loading Task Scheduler DLL"
   },
   {
     "author": "frack113, Florian Roth (Nextron Systems)",
@@ -68900,7 +68986,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=13 AND (TargetObject LIKE '%SOFTWARE\\\\Policies\\\\Microsoft\\\\Windows Defender Security Center\\\\App and Browser protection\\\\DisallowExploitProtectionOverride%' ESCAPE '\\' AND Details='DWORD (00000001)'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=13 AND (TargetObject LIKE '%SOFTWARE\\\\Policies\\\\Microsoft\\\\Windows Defender Security Center\\\\App and Browser protection\\\\DisallowExploitProtectionOverride%' ESCAPE '\\' AND Details='DWORD (0x00000001)'))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -68941,7 +69027,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND (TargetObject LIKE '%SOFTWARE\\\\Policies\\\\Microsoft\\\\Windows Defender Security Center\\\\App and Browser protection\\\\DisallowExploitProtectionOverride%' ESCAPE '\\' AND NewValue='DWORD (00000001)'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND (TargetObject LIKE '%SOFTWARE\\\\Policies\\\\Microsoft\\\\Windows Defender Security Center\\\\App and Browser protection\\\\DisallowExploitProtectionOverride%' ESCAPE '\\' AND NewValue='DWORD (0x00000001)'))"
     ],
     "schema_version": 2,
     "source": "sigmahq",

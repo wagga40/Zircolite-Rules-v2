@@ -2,8 +2,8 @@
   "aggregates": {
     "windows_all": {
       "artifacts": {
-        "provenance/windows_all.json": "81535c3c235eb7ec1f91050e58d8d647ee4fe6f82654f14dea12165b7a66b53d",
-        "rules_windows_all.json": "b2213a9ae9f1cdb3c0de026edf8fbd7f1e2e95e858861ee954fb926a020e9b18"
+        "provenance/windows_all.json": "ab0379ffce0b3ad9c399b0570a8d2ab230af82fff65c7f2d7ab4e4a50d196ca8",
+        "rules_windows_all.json": "6ab5b4a7e25df601cafefa87446e857c9cfc1182f05c1f28c8b088955571f6a4"
       },
       "inputs": {
         "dragon": {
@@ -30,7 +30,7 @@
           },
           "license": "DRL-1.1",
           "repository": "Yamato-Security/hayabusa-rules",
-          "revision": "515e225ec8bd601d07a3f8c5d2257115e7739384",
+          "revision": "7950bbabf54a2cddac1abe7fa83b355b4cb1abb2",
           "status": "current"
         },
         "joesecurity": {
@@ -89,11 +89,11 @@
         },
         "sigmahq": {
           "artifacts": {
-            "rules_windows_merged.json": "3bd93904d93c2311fa54b8b5e3f35c2aec929f407f0b6e1da27e40cbaf7607bf"
+            "rules_windows_merged.json": "6882b7bff3193fb2df3e31c2fb7ad5d4c300403fa4030bc10d68a3d7248ab9e1"
           },
           "license": "DRL-1.1",
           "repository": "SigmaHQ/sigma",
-          "revision": "483b91bb583250faca0aa87415d4187a3ea2c957",
+          "revision": "77145ed8fae37f06acefe3822317bd2a93e8a8c5",
           "status": "current"
         },
         "tsale": {
@@ -125,7 +125,7 @@
         }
       },
       "rule_counts": {
-        "rules_windows_all.json": 7341
+        "rules_windows_all.json": 7343
       },
       "status": "current"
     }
@@ -135,13 +135,13 @@
     "dragon": {
       "artifacts": {
         "licenses/dragon.txt": "a7cbd353d10a0d200d812d2df0a2e62788fca4561c7fd31ca54ebec7382312d1",
-        "provenance/dragon.json": "080dc931f8e5b7d2829a3bcdab7de4201076dc045c616d466a725d5533c96be6",
+        "provenance/dragon.json": "9bafccdac0e8520e7d34d7c4bed40b919fb75cc9a62aaec88969fea8389bcad8",
         "rules_dragon_linux.json": "9e1218e721869d5c57ecb7c719c028b441bdb3cb1be09a4c0bda4fa3280eeb68",
         "rules_dragon_windows_generic.json": "1c82f096a3e250ae8d5f59d4cb475669e52a78d153243a4580cd9c48ca910e95",
         "rules_dragon_windows_merged.json": "5586583b2d9ac986481cf07aa4c0d6fbb0c151c72f650e244e4f5ff527f6f316",
         "rules_dragon_windows_sysmon.json": "24b6d20b0c1c4ba10fb437e849c44b2686033da3463dbf4eefe914b7a81dfac5"
       },
-      "last_success": "2026-11-04T07:34:28+00:00",
+      "last_success": "2026-11-05T07:59:19+00:00",
       "license": "MIT",
       "repository": "frknaykc/Dragon-ThreatResearchHQ",
       "revision": "47b5f65e6e65dc9ce1a4829242cf61ff6e12eb98",
@@ -166,13 +166,13 @@
         "experimental/rules_hatchepsoute_windows_merged_correlation.json": "5febb6704852f96b7cf0f3cd98d04c67ad4780d6f0e340414c9235cf3d6d74bd",
         "experimental/rules_hatchepsoute_windows_sysmon_correlation.json": "5febb6704852f96b7cf0f3cd98d04c67ad4780d6f0e340414c9235cf3d6d74bd",
         "licenses/hatchepsoute.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
-        "provenance/hatchepsoute.json": "c4ea96ca1b5a03a84f5776f9b7f45d27a56bc1a7d73116397de327aaea3c1788",
+        "provenance/hatchepsoute.json": "fa04376a8fee327db52c37bb073a06044109b8102d034ec03071785aae315672",
         "rules_hatchepsoute_linux.json": "f433159e4eca98eff6b88f8fc979066de95d555cce7d1c9acb64b7385a4a261e",
         "rules_hatchepsoute_windows_generic.json": "b325eee19efe562e82e79cb6ed193e157fe5163238fcd395e3c2d6e9a9bc31cc",
         "rules_hatchepsoute_windows_merged.json": "63149ef4d3d08c3535614ce11014e61958c9ac67db4775e8dc8c99e84e5ea990",
         "rules_hatchepsoute_windows_sysmon.json": "114f4ecbbae4dd2d58d1cc91b9a11c087b5d07641aecff563157de8b6b2dded2"
       },
-      "last_success": "2026-11-04T07:34:29+00:00",
+      "last_success": "2026-11-05T07:59:20+00:00",
       "license": "Apache-2.0",
       "repository": "Hatchepsoute/sigma-rules",
       "revision": "8ec2c4ac5f6792b5551a3720c19a8ef36d2b7ddc",
@@ -198,13 +198,13 @@
       "artifacts": {
         "experimental/rules_hayabusa_windows_native_correlation.json": "61fd01e2ba2236bcc68b9a9c88eb70725ef335ffa795e7478c7aae30a8e7e816",
         "licenses/hayabusa.txt": "d5f4c36a0528e01cfdd9e4fc60879201d3af49b41c520200643d321fe53da5f9",
-        "provenance/hayabusa.json": "62cdfbeb58173c66e5658469c3695d379f50adbef443027beffe8ac495ad1208",
+        "provenance/hayabusa.json": "2022fd194ca0a5bc923f91e42821e62e1463f9b314576a074d7c41b5dc77dfe8",
         "rules_hayabusa_windows_native.json": "028af27fd7aa78858a602556c38b87f442d2ec634ea41439f5ae8a88186c5c89"
       },
-      "last_success": "2026-11-04T07:34:36+00:00",
+      "last_success": "2026-11-05T07:59:28+00:00",
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
-      "revision": "515e225ec8bd601d07a3f8c5d2257115e7739384",
+      "revision": "7950bbabf54a2cddac1abe7fa83b355b4cb1abb2",
       "rule_counts": {
         "experimental/rules_hayabusa_windows_native_correlation.json": 3,
         "rules_hayabusa_windows_native.json": 188
@@ -222,12 +222,12 @@
     "joesecurity": {
       "artifacts": {
         "licenses/joesecurity.txt": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
-        "provenance/joesecurity.json": "d15f77ad668ad844306d52d9300577140529435ff239233271983de3887e33da",
+        "provenance/joesecurity.json": "7cf76cca042a812d4b6fc3233130021b62170d12a0d313172a53d954e236189e",
         "rules_joesecurity_windows_generic.json": "92c43370247abdae11e540d6cbc59bcc0e4c91a3887577a43dd00cdf05b51e98",
         "rules_joesecurity_windows_merged.json": "ddae4034d06e16e3fd7ea7ae56de6317afd8c9644456eb8f40559ea5ea63a14a",
         "rules_joesecurity_windows_sysmon.json": "51ac96e37d27274bc2f8832cc93861ba65155627dca4496e39d4b3e1136f258b"
       },
-      "last_success": "2026-11-04T07:34:39+00:00",
+      "last_success": "2026-11-05T07:59:32+00:00",
       "license": "GPL-3.0",
       "repository": "joesecurity/sigma-rules",
       "revision": "cb91be06c8c95ce63aa9aa5006a7835678136a96",
@@ -249,10 +249,10 @@
     "loldrivers": {
       "artifacts": {
         "licenses/loldrivers.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
-        "provenance/loldrivers.json": "6c1bf741852416dcc8374994bdf6ce28b2b586d6628a401ec16c4b2f911865c7",
+        "provenance/loldrivers.json": "e6669084fd587e1267d759e3fd39d8415d2b8c1cefc1825b21eacf2f1b0b1bed",
         "rules_loldrivers_windows_sysmon.json": "57b6308967a889de9636cc175d2dd05db8016ea4eaeb88c726c88c14c077fe36"
       },
-      "last_success": "2026-11-04T07:34:40+00:00",
+      "last_success": "2026-11-05T07:59:34+00:00",
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLDrivers",
       "revision": "39c70ca64ae9b66650e2c50e011eec6f7354e9cf",
@@ -272,12 +272,12 @@
     "lolrmm": {
       "artifacts": {
         "licenses/lolrmm.txt": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
-        "provenance/lolrmm.json": "cd6daa8f919e4f8279ce3ef9e0bd5f5feff80539a872eddd25a0b2fe4508e980",
+        "provenance/lolrmm.json": "ae75e1383da6e5a261ae07c8a6cae7ccb250af41bd46031997fa8299022dda18",
         "rules_lolrmm_windows_generic.json": "33c2db4f145bb7bc7eb8c889d3f215f4495fbfad269d3d0961291b6473abd9fb",
         "rules_lolrmm_windows_merged.json": "ba7a845fcb7f162b76edb24d6e1e51934b554c09ff3f6fcabd870500740f180a",
         "rules_lolrmm_windows_sysmon.json": "e858f50332e70c3d9bc60f1d0edca6540d1c9fee87830ed1b518857c60fa03ad"
       },
-      "last_success": "2026-11-04T07:34:46+00:00",
+      "last_success": "2026-11-05T07:59:40+00:00",
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLRMM",
       "revision": "0c2d56639673a232ff9d2548e16c6d045d3a1217",
@@ -302,12 +302,12 @@
         "experimental/rules_mbabinski_windows_merged_correlation.json": "8bd78cb823c14e071d792c159c57ec42e719434e8b758fefccab7f5c530de2fa",
         "experimental/rules_mbabinski_windows_sysmon_correlation.json": "9dfc0b4b3bf040d279f25516497b5485404063658d4f09ab80f9ad07c53d9ed7",
         "licenses/mbabinski.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
-        "provenance/mbabinski.json": "9a144640c4ff96ca5abe9682cf82ed75c15ea4fe34e443c17a66f4ab9c85897a",
+        "provenance/mbabinski.json": "fb7a3275ac0cecd0d469da214d52ceeae952561c6f64f28354322b4f83176081",
         "rules_mbabinski_windows_generic.json": "4e9bc752109ba446a9085d070146586d9e66b1ca2b8b230a3bf1ae36a6ebdf19",
         "rules_mbabinski_windows_merged.json": "13b7404fde4871468094edd652dfcad7a6708c97cdec9c1d57ca3f061b0c2687",
         "rules_mbabinski_windows_sysmon.json": "30ec461957ad6633a339acc9e8655942f51b850e92d4715995a63b4d1f34e6b5"
       },
-      "last_success": "2026-11-04T07:34:50+00:00",
+      "last_success": "2026-11-05T07:59:45+00:00",
       "license": "GPL-3.0",
       "repository": "mbabinski/Sigma-Rules",
       "revision": "9dea7a5c15cfd422ec320e7fabd93f0c3634181d",
@@ -335,12 +335,12 @@
         "experimental/rules_mdecrevoisier_windows_merged_correlation.json": "43b7e364766922e7b432eb2c890bd7ae0572910c28af2acbbc471a3a5287fa20",
         "experimental/rules_mdecrevoisier_windows_sysmon_correlation.json": "43b7e364766922e7b432eb2c890bd7ae0572910c28af2acbbc471a3a5287fa20",
         "licenses/mdecrevoisier.txt": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
-        "provenance/mdecrevoisier.json": "3b675fb4f15ca371205920379b757c795a5a7a20b2869394b7dd9017f0fe661a",
+        "provenance/mdecrevoisier.json": "d7f1f102b13dc7ce2e5cc15c083123f2220a1ade409c6e1f7724aabf3f33fe28",
         "rules_mdecrevoisier_windows_generic.json": "931dc0230cfcd5477e6fddbf5ba39ca0f6d4e145a53d0b60fa9e1c09b98093c7",
         "rules_mdecrevoisier_windows_merged.json": "1fbceb54598827c0b12e727d5df662049b28c9179e7a329459c750db2fa2e248",
         "rules_mdecrevoisier_windows_sysmon.json": "cb8b7c9e77f502c8bb4e075f4c35054c86173539930bd1e50ddf7093bddf4b5c"
       },
-      "last_success": "2026-11-04T07:34:52+00:00",
+      "last_success": "2026-11-05T07:59:48+00:00",
       "license": "CC0-1.0",
       "repository": "mdecrevoisier/SIGMA-detection-rules",
       "revision": "d61408af8769c74c96296b7ccc92d4bc3abb15af",
@@ -365,12 +365,12 @@
     "reversinglabs": {
       "artifacts": {
         "licenses/reversinglabs.txt": "fc712c1de7dab79a854640c74eda8a93dcbbf6d8eb8d9a54c4a5ccbc532dd0c1",
-        "provenance/reversinglabs.json": "f0ff377287f8b70bae592c7e4f146e20ef4ccaa9dc4f542c855867805efa058c",
+        "provenance/reversinglabs.json": "d0f58800e62b98ff6453331dbf38b99058110ad7bb8d94d835dcc43f4c74813b",
         "rules_reversinglabs_windows_generic.json": "d264045fe3134a6c33f0fa87e178defe6b9741752b740c88b5e063886d8abc84",
         "rules_reversinglabs_windows_merged.json": "caa8aee3df8f1d52005e02df0a8df5e9fb8a9398c51e0b94cf65f58d30a20796",
         "rules_reversinglabs_windows_sysmon.json": "82758485c9b2621a38e8f24136084af5141349bf9be64a9f5497a1b4e701f224"
       },
-      "last_success": "2026-11-04T07:34:54+00:00",
+      "last_success": "2026-11-05T07:59:51+00:00",
       "license": "MIT",
       "repository": "reversinglabs/reversinglabs-siem-rules",
       "revision": "23fc452b527f2f8e08c26c6dffc0f734e750a2be",
@@ -392,21 +392,21 @@
     "sigmahq": {
       "artifacts": {
         "licenses/sigmahq.txt": "4213ed7e21d9435b0aa0aa7d11016e6ab3e4664fa71738ff507306fadce79597",
-        "provenance/sigmahq.json": "ec69dae78846776baea7c48abca2cac0b16cdd5c3bd1300d6eeb4c2b43e2e6d3",
+        "provenance/sigmahq.json": "844ac9af70e82950173ce0d30fa3d46cdd8fc46d3705d8376f23a9978d2c39f1",
         "rules_linux.json": "d28e22b981c21100e647be961570471ceb40b1fde85cbe80a0c771f6d2a6fd92",
-        "rules_windows_generic.json": "8733329b4ceff5633463262966227c899cb2a0dcb8652024a9da437fa85f5fda",
-        "rules_windows_merged.json": "3bd93904d93c2311fa54b8b5e3f35c2aec929f407f0b6e1da27e40cbaf7607bf",
-        "rules_windows_sysmon.json": "671a4cd6e4b3b1a4a44f26ffcf7be89da164c0f1d3d6eb0fd308c32f43cd12b4"
+        "rules_windows_generic.json": "b5a71bcfead617154bbd25d61045d51693a947d3b7a04fb81d4b594b067a35a3",
+        "rules_windows_merged.json": "6882b7bff3193fb2df3e31c2fb7ad5d4c300403fa4030bc10d68a3d7248ab9e1",
+        "rules_windows_sysmon.json": "59d383b23e0ab71802b434ff63011a183fb629185534aef726ac8f2d151d4d2e"
       },
-      "last_success": "2026-11-04T07:34:03+00:00",
+      "last_success": "2026-11-05T07:58:45+00:00",
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
-      "revision": "483b91bb583250faca0aa87415d4187a3ea2c957",
+      "revision": "77145ed8fae37f06acefe3822317bd2a93e8a8c5",
       "rule_counts": {
         "rules_linux.json": 217,
         "rules_windows_generic.json": 2291,
-        "rules_windows_merged.json": 4538,
-        "rules_windows_sysmon.json": 2842
+        "rules_windows_merged.json": 4540,
+        "rules_windows_sysmon.json": 2844
       },
       "status": "current",
       "tools": {
@@ -421,12 +421,12 @@
     "tsale": {
       "artifacts": {
         "licenses/tsale.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
-        "provenance/tsale.json": "10270e81924e477257d207e9d64df5db704d2330b75e6910a58c1a6143cb3b1b",
+        "provenance/tsale.json": "3ab43a92baec5d3cbab9b4379b5607d27b1276aafa6fe1dead9299bb0835ef82",
         "rules_tsale_windows_generic.json": "9bf3668d73fd3f791b5ed00dd2f10ae777d57d3c98a308824b97d2e2f5902aac",
         "rules_tsale_windows_merged.json": "f8208acb83742ba4ebb362030c2561d527f9b8c17ab7b714a84790452693ce09",
         "rules_tsale_windows_sysmon.json": "24efe16c0de2f2e41abc91ce331795d5e09ca52a653b9162798a49078439da50"
       },
-      "last_success": "2026-11-04T07:34:55+00:00",
+      "last_success": "2026-11-05T07:59:52+00:00",
       "license": "GPL-3.0",
       "repository": "tsale/Sigma_rules",
       "revision": "f5190e6b6c5ba9e6729845f13ac916590e90b0d8",
@@ -448,13 +448,13 @@
     "tyrian": {
       "artifacts": {
         "licenses/tyrian.txt": "440e050b15431621a0768e2be8f5a0e9c4eaca730989b31e3e45130a0043b85a",
-        "provenance/tyrian.json": "53fc0c8b5970758eb02703121065c7f3ac38fb5a5b27e03d46724c0ec858eae2",
+        "provenance/tyrian.json": "0f35f98f14a4aae2d578f3e343f0d6b24a5eb7007c0bf64d6f42ce5dce300145",
         "rules_tyrian_linux.json": "40c40193fbea17f4266c4c8c9b4f2ed2a428dd2c10df0bd55bc2fdaa311acd8e",
         "rules_tyrian_windows_generic.json": "f6fa9885cb47bf4549d2b5b7303363d540aeed9a39f6fae8e1cc7faeef2545f7",
         "rules_tyrian_windows_merged.json": "50904ccedfd490064fd0d8f514d07177d91e9c9056d112bbb26d2ddb90aafbf8",
         "rules_tyrian_windows_sysmon.json": "af51226231dd8413b422f8bdb313137b6a253c136d9f0f3dd649300eef8e0724"
       },
-      "last_success": "2026-11-04T07:34:57+00:00",
+      "last_success": "2026-11-05T07:59:54+00:00",
       "license": "MIT",
       "repository": "zshguy/tyrian-detection-pack",
       "revision": "b2cea417bcbd1316ac571b29a5dc459ce387a7c2",
@@ -480,13 +480,13 @@
         "experimental/rules_wrg11_windows_merged_correlation.json": "c3f4b63ab1be753b40b0e021a570d4175239c17eaa54235bfe4e5aec8bc7d92c",
         "experimental/rules_wrg11_windows_sysmon_correlation.json": "da91826c0f0ea121c85d7555966aa18e9408ffef7bb1f9028b661c596cd7887b",
         "licenses/wrg11.txt": "2af072a300d0c32eac227a1649b34221128b2396c2e44f7571716ff45154c5a1",
-        "provenance/wrg11.json": "8c0fc39a38ab53130396d366396bd4ea754ee25f4614bae8342e1f76ab90b15f",
+        "provenance/wrg11.json": "7b3bcccd3cfd1f9080c357cb161fd0c0ce1f65389237343b09f9fb1a2a34ad50",
         "rules_wrg11_linux.json": "2df0b6de838e90b92a053fd99cdf9febc23ccd8db99f382c7b361cfa62fd83b9",
         "rules_wrg11_windows_generic.json": "5b68f0f80248072e1e0290fe699ba5944db9930962877664a12647d58f337e82",
         "rules_wrg11_windows_merged.json": "af6179590238859513801492eacefd20343201c64540700810026ab4770f6b3f",
         "rules_wrg11_windows_sysmon.json": "0769e9754f2a0a8e08d7693c5a7c51eb1bbf5749259e3593ebd204992e69a852"
       },
-      "last_success": "2026-11-04T07:34:58+00:00",
+      "last_success": "2026-11-05T07:59:55+00:00",
       "license": "MIT",
       "repository": "WRG-11/wrg-sigma-rules",
       "revision": "41c54e3fd9042b29ebe458f6c7388b14b8a62df1",

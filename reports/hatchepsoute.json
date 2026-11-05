@@ -4116,11 +4116,11 @@
   "official_baseline": {
     "artifacts": {
       "rules_linux.json": "d28e22b981c21100e647be961570471ceb40b1fde85cbe80a0c771f6d2a6fd92",
-      "rules_windows_generic.json": "8733329b4ceff5633463262966227c899cb2a0dcb8652024a9da437fa85f5fda",
-      "rules_windows_sysmon.json": "671a4cd6e4b3b1a4a44f26ffcf7be89da164c0f1d3d6eb0fd308c32f43cd12b4"
+      "rules_windows_generic.json": "b5a71bcfead617154bbd25d61045d51693a947d3b7a04fb81d4b594b067a35a3",
+      "rules_windows_sysmon.json": "59d383b23e0ab71802b434ff63011a183fb629185534aef726ac8f2d151d4d2e"
     },
     "repository": "SigmaHQ/sigma",
-    "revision": "483b91bb583250faca0aa87415d4187a3ea2c957"
+    "revision": "77145ed8fae37f06acefe3822317bd2a93e8a8c5"
   },
   "official_duplicates_removed": {
     "generic/correlations": 0,

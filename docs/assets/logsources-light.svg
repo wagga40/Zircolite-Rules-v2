@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="456" viewBox="0 0 860 456" role="img" aria-labelledby="title desc">
 <title id="title">Log sources</title>
-<desc id="desc">Unique detections in rules_windows_all.json per Sigma category or service, top 15. process_creation: 2,230; file_event: 371; service: security: 364; network_connection: 304; registry_set: 238; ps_script: 221; image_load: 132; registry_event: 115; service: sysmon: 114; service: system: 106; ps_module: 70; process_access: 39; ps_classic_script: 35; dns_query: 32; service: application: 32.</desc>
+<desc id="desc">Unique detections in rules_windows_all.json per Sigma category or service, top 15. process_creation: 2,230; file_event: 371; service: security: 364; network_connection: 304; registry_set: 238; ps_script: 221; image_load: 133; registry_event: 115; service: sysmon: 114; service: system: 106; ps_module: 70; process_access: 39; ps_classic_script: 35; dns_query: 33; service: application: 32.</desc>
 <style>
 text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #0b0b0b; }
 .secondary { fill: #52514e; }
@@ -40,8 +40,8 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 <path class="grow" style="animation-delay:345ms" fill="#2a78d6" d="M224.0 202.0H275.9Q279.9 202.0 279.9 206.0V212.0Q279.9 216.0 275.9 216.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:925ms" x="287.9" y="213" font-size="12">221</text>
 <text x="214" y="237" font-size="12" text-anchor="end" class="secondary">image_load</text>
-<path class="grow" style="animation-delay:390ms" fill="#2a78d6" d="M224.0 226.0H253.4Q257.4 226.0 257.4 230.0V236.0Q257.4 240.0 253.4 240.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:970ms" x="265.4" y="237" font-size="12">132</text>
+<path class="grow" style="animation-delay:390ms" fill="#2a78d6" d="M224.0 226.0H253.6Q257.6 226.0 257.6 230.0V236.0Q257.6 240.0 253.6 240.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:970ms" x="265.6" y="237" font-size="12">133</text>
 <text x="214" y="261" font-size="12" text-anchor="end" class="secondary">registry_event</text>
 <path class="grow" style="animation-delay:435ms" fill="#2a78d6" d="M224.0 250.0H249.1Q253.1 250.0 253.1 254.0V260.0Q253.1 264.0 249.1 264.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:1015ms" x="261.1" y="261" font-size="12">115</text>
@@ -61,8 +61,8 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 <path class="grow" style="animation-delay:660ms" fill="#2a78d6" d="M224.0 370.0H228.9Q232.9 370.0 232.9 374.0V380.0Q232.9 384.0 228.9 384.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:1240ms" x="240.9" y="381" font-size="12">35</text>
 <text x="214" y="405" font-size="12" text-anchor="end" class="secondary">dns_query</text>
-<path class="grow" style="animation-delay:705ms" fill="#2a78d6" d="M224.0 394.0H228.1Q232.1 394.0 232.1 398.0V404.0Q232.1 408.0 228.1 408.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1285ms" x="240.1" y="405" font-size="12">32</text>
+<path class="grow" style="animation-delay:705ms" fill="#2a78d6" d="M224.0 394.0H228.3Q232.3 394.0 232.3 398.0V404.0Q232.3 408.0 228.3 408.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1285ms" x="240.3" y="405" font-size="12">33</text>
 <text x="214" y="429" font-size="12" text-anchor="end" class="secondary">service: application</text>
 <path class="grow" style="animation-delay:750ms" fill="#2a78d6" d="M224.0 418.0H228.1Q232.1 418.0 232.1 422.0V428.0Q232.1 432.0 228.1 432.0H224.0Z"/>
 <text class="fade secondary" style="animation-delay:1330ms" x="240.1" y="429" font-size="12">32</text>

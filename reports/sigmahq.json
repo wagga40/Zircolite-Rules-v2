@@ -2,8 +2,8 @@
   "artifacts": {
     "rules_linux.json": 217,
     "rules_windows_generic.json": 2291,
-    "rules_windows_merged.json": 4538,
-    "rules_windows_sysmon.json": 2842
+    "rules_windows_merged.json": 4540,
+    "rules_windows_sysmon.json": 2844
   },
   "exclusions": [
     {
@@ -4625,6 +4625,13 @@
       "profile": "sysmon",
       "reason": "logsource product None is outside this profile",
       "sha256": "ffe9f06fa10ede2bdff7d7c0a31910e81dd2d7ab97f85ce097b7d5197e785fba"
+    },
+    {
+      "document": "0",
+      "path": "rules/network/dns/net_dns_wildcard_dns_service.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "d8c5f3416a66914c6fcb5b14cb24bae37db2fb8a3d8af880d2759d74dadfb9d8"
     },
     {
       "document": "0",
@@ -11033,6 +11040,13 @@
     },
     {
       "document": "0",
+      "path": "rules/network/dns/net_dns_wildcard_dns_service.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "d8c5f3416a66914c6fcb5b14cb24bae37db2fb8a3d8af880d2759d74dadfb9d8"
+    },
+    {
+      "document": "0",
       "path": "rules/network/firewall/net_firewall_cleartext_protocols.yml",
       "profile": "generic",
       "reason": "logsource product None is outside this profile",
@@ -11863,6 +11877,13 @@
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
       "sha256": "33d6d7770e9a886902b97be6d98ec59b3e68c1f9c74dd59ecc2ca99510955d4a"
+    },
+    {
+      "document": "0",
+      "path": "rules/windows/dns_query/dns_query_win_wildcard_dns_service.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "3975896db1ca8309eaf3ebde9e429afb392e2bbe6d66ea85dafa922cce916ee1"
     },
     {
       "document": "0",
@@ -13445,6 +13466,13 @@
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
       "sha256": "b58b201a23ac99035b0581cba919e1569a43e449aeeeaab04f8827cf08916669"
+    },
+    {
+      "document": "0",
+      "path": "rules/windows/image_load/image_load_office_taskschd_dll_load.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "bb7380c762598a66e61f2e1d4548fb698fe1041aba891317c547851f5e98eb2d"
     },
     {
       "document": "0",
@@ -19825,6 +19853,13 @@
     },
     {
       "document": "0",
+      "path": "rules/network/dns/net_dns_wildcard_dns_service.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "d8c5f3416a66914c6fcb5b14cb24bae37db2fb8a3d8af880d2759d74dadfb9d8"
+    },
+    {
+      "document": "0",
       "path": "rules/network/firewall/net_firewall_cleartext_protocols.yml",
       "profile": "linux",
       "reason": "logsource product None is outside this profile",
@@ -22947,6 +22982,13 @@
     },
     {
       "document": "0",
+      "path": "rules/windows/dns_query/dns_query_win_wildcard_dns_service.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "3975896db1ca8309eaf3ebde9e429afb392e2bbe6d66ea85dafa922cce916ee1"
+    },
+    {
+      "document": "0",
       "path": "rules/windows/driver_load/driver_load_win_mal_drivers.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
@@ -24526,6 +24568,13 @@
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
       "sha256": "b58b201a23ac99035b0581cba919e1569a43e449aeeeaab04f8827cf08916669"
+    },
+    {
+      "document": "0",
+      "path": "rules/windows/image_load/image_load_office_taskschd_dll_load.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "bb7380c762598a66e61f2e1d4548fb698fe1041aba891317c547851f5e98eb2d"
     },
     {
       "document": "0",
@@ -36243,7 +36292,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_disabled_exploit_guard_net_protection_on_ms_defender.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "78a50bbbd51fd6c51734c204fd1d9e5183fce65ace40fddec4a5f16564b87b09"
+      "sha256": "df8066fa5f8f277a79b9404f01b0d74adff074213b0d23b0a7292182f62328bc"
     },
     {
       "document": "0",
@@ -41994,7 +42043,7 @@
     }
   ],
   "ignored": [],
-  "input_documents": 3776,
+  "input_documents": 3779,
   "official_duplicates_removed": {
     "generic/correlations": 0,
     "generic/events": 0,
@@ -42019,10 +42068,10 @@
       "reference_only": 0
     },
     "sysmon": {
-      "converted": 2842,
+      "converted": 2844,
       "correlations": 0,
-      "eligible": 2861,
-      "events": 2842,
+      "eligible": 2863,
+      "events": 2844,
       "reference_only": 0
     }
   },
@@ -46650,6 +46699,13 @@
     {
       "adaptations": {},
       "document": "0",
+      "id": "139ddcb3-ba90-4407-b0b1-1838131ce8e7",
+      "path": "rules/network/dns/net_dns_wildcard_dns_service.yml",
+      "sha256": "d8c5f3416a66914c6fcb5b14cb24bae37db2fb8a3d8af880d2759d74dadfb9d8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
       "id": "d7fb8f0e-bd5f-45c2-b467-19571c490d7e",
       "path": "rules/network/firewall/net_firewall_cleartext_protocols.yml",
       "sha256": "d703463915f669fbda8bd612cb01181e549f0bc42e2cdd0fe8b1f5d8cc0a38c8"
@@ -49772,6 +49828,13 @@
     {
       "adaptations": {},
       "document": "0",
+      "id": "4f8a1c2e-7d3b-4e5f-9a6c-0b1d2e3f4a5b",
+      "path": "rules/windows/dns_query/dns_query_win_wildcard_dns_service.yml",
+      "sha256": "3975896db1ca8309eaf3ebde9e429afb392e2bbe6d66ea85dafa922cce916ee1"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
       "id": "05296024-fe8a-4baf-8f3d-9a5f5624ceb2",
       "path": "rules/windows/driver_load/driver_load_win_mal_drivers.yml",
       "sha256": "87a0d6ed5b8cd08a683df1e3d80640da4c13310216110335ab0a3904eb8d59b3"
@@ -51350,6 +51413,13 @@
       "id": "bb2ba6fb-95d4-4a25-89fc-30bb736c021a",
       "path": "rules/windows/image_load/image_load_office_powershell_dll_load.yml",
       "sha256": "b58b201a23ac99035b0581cba919e1569a43e449aeeeaab04f8827cf08916669"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8d1e674c-5c03-4be1-949c-4b85a472dc16",
+      "path": "rules/windows/image_load/image_load_office_taskschd_dll_load.yml",
+      "sha256": "bb7380c762598a66e61f2e1d4548fb698fe1041aba891317c547851f5e98eb2d"
     },
     {
       "adaptations": {},
@@ -63067,7 +63137,7 @@
       "document": "0",
       "id": "bf9e1387-b040-4393-9851-1598f8ecfae9",
       "path": "rules/windows/registry/registry_set/registry_set_disabled_exploit_guard_net_protection_on_ms_defender.yml",
-      "sha256": "78a50bbbd51fd6c51734c204fd1d9e5183fce65ace40fddec4a5f16564b87b09"
+      "sha256": "df8066fa5f8f277a79b9404f01b0d74adff074213b0d23b0a7292182f62328bc"
     },
     {
       "adaptations": {},
@@ -68461,7 +68531,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "483b91bb583250faca0aa87415d4187a3ea2c957",
+  "revision": "77145ed8fae37f06acefe3822317bd2a93e8a8c5",
   "source": "sigmahq",
   "status": "validated",
   "tools": {

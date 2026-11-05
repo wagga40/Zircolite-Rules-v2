@@ -35039,7 +35039,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND (TargetObject LIKE '%SOFTWARE\\\\Policies\\\\Microsoft\\\\Windows Defender Security Center\\\\App and Browser protection\\\\DisallowExploitProtectionOverride%' ESCAPE '\\' AND NewValue='DWORD (00000001)'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND (TargetObject LIKE '%SOFTWARE\\\\Policies\\\\Microsoft\\\\Windows Defender Security Center\\\\App and Browser protection\\\\DisallowExploitProtectionOverride%' ESCAPE '\\' AND NewValue='DWORD (0x00000001)'))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
