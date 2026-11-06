@@ -13054,7 +13054,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4624 AND LogonType=10) AND (NOT COALESCE(((IpAddress='::1' OR IpAddress LIKE '10.%' ESCAPE '\\' OR IpAddress LIKE '127.%' ESCAPE '\\' OR IpAddress LIKE '172.16.%' ESCAPE '\\' OR IpAddress LIKE '172.17.%' ESCAPE '\\' OR IpAddress LIKE '172.18.%' ESCAPE '\\' OR IpAddress LIKE '172.19.%' ESCAPE '\\' OR IpAddress LIKE '172.20.%' ESCAPE '\\' OR IpAddress LIKE '172.21.%' ESCAPE '\\' OR IpAddress LIKE '172.22.%' ESCAPE '\\' OR IpAddress LIKE '172.23.%' ESCAPE '\\' OR IpAddress LIKE '172.24.%' ESCAPE '\\' OR IpAddress LIKE '172.25.%' ESCAPE '\\' OR IpAddress LIKE '172.26.%' ESCAPE '\\' OR IpAddress LIKE '172.27.%' ESCAPE '\\' OR IpAddress LIKE '172.28.%' ESCAPE '\\' OR IpAddress LIKE '172.29.%' ESCAPE '\\' OR IpAddress LIKE '172.30.%' ESCAPE '\\' OR IpAddress LIKE '172.31.%' ESCAPE '\\' OR IpAddress LIKE '192.168.%' ESCAPE '\\' OR IpAddress LIKE '169.254.%' ESCAPE '\\' OR IpAddress LIKE 'fc__:%' ESCAPE '\\' OR IpAddress LIKE 'fd__:%' ESCAPE '\\' OR IpAddress LIKE 'fe8_:%' ESCAPE '\\' OR IpAddress LIKE 'fe9_:%' ESCAPE '\\' OR IpAddress LIKE 'fea_:%' ESCAPE '\\' OR IpAddress LIKE 'feb_:%' ESCAPE '\\') OR IpAddress='-'), 0)))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4624 AND LogonType=10) AND (NOT COALESCE(((IpAddress='::1' OR IpAddress LIKE '10.%' ESCAPE '\\' OR IpAddress LIKE '127.%' ESCAPE '\\' OR IpAddress LIKE '172.16.%' ESCAPE '\\' OR IpAddress LIKE '172.17.%' ESCAPE '\\' OR IpAddress LIKE '172.18.%' ESCAPE '\\' OR IpAddress LIKE '172.19.%' ESCAPE '\\' OR IpAddress LIKE '172.20.%' ESCAPE '\\' OR IpAddress LIKE '172.21.%' ESCAPE '\\' OR IpAddress LIKE '172.22.%' ESCAPE '\\' OR IpAddress LIKE '172.23.%' ESCAPE '\\' OR IpAddress LIKE '172.24.%' ESCAPE '\\' OR IpAddress LIKE '172.25.%' ESCAPE '\\' OR IpAddress LIKE '172.26.%' ESCAPE '\\' OR IpAddress LIKE '172.27.%' ESCAPE '\\' OR IpAddress LIKE '172.28.%' ESCAPE '\\' OR IpAddress LIKE '172.29.%' ESCAPE '\\' OR IpAddress LIKE '172.30.%' ESCAPE '\\' OR IpAddress LIKE '172.31.%' ESCAPE '\\' OR IpAddress LIKE '192.168.%' ESCAPE '\\' OR IpAddress LIKE '169.254.%' ESCAPE '\\' OR IpAddress LIKE 'fc__:%' ESCAPE '\\' OR IpAddress LIKE 'fd__:%' ESCAPE '\\' OR IpAddress LIKE 'fe8_:%' ESCAPE '\\' OR IpAddress LIKE 'fe9_:%' ESCAPE '\\' OR IpAddress LIKE 'fea_:%' ESCAPE '\\' OR IpAddress LIKE 'feb_:%' ESCAPE '\\') OR IpAddress IS NULL OR (IpAddress='-' OR IpAddress='')), 0)))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -19348,7 +19348,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%/xwizard.exe' ESCAPE '\\' OR OriginalFileName='xwizard.exe') AND (CommandLine LIKE '%RunWizard%' ESCAPE '\\' AND CommandLine REGEXP '\\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\\}')))"
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\xwizard.exe' ESCAPE '\\' OR OriginalFileName='xwizard.exe') AND (CommandLine LIKE '%RunWizard%' ESCAPE '\\' AND CommandLine REGEXP '\\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\\}')))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -48113,7 +48113,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE ':\\\\Program Files%' ESCAPE '\\' AND NewProcessName LIKE '%\\\\Microsoft Visual Studio\\\\%' ESCAPE '\\' AND NewProcessName LIKE '%\\\\dump64.exe' ESCAPE '\\') AND (OriginalFileName='procdump' OR (CommandLine LIKE '% -ma %' ESCAPE '\\' OR CommandLine LIKE '% -mp %' ESCAPE '\\'))))"
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE 'C:\\\\Program Files%' ESCAPE '\\' AND NewProcessName LIKE '%\\\\Microsoft Visual Studio\\\\%' ESCAPE '\\' AND NewProcessName LIKE '%\\\\dump64.exe' ESCAPE '\\') AND (OriginalFileName='procdump' OR (CommandLine LIKE '% -ma %' ESCAPE '\\' OR CommandLine LIKE '% -mp %' ESCAPE '\\'))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -64985,7 +64985,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4624 AND LogonType=3) AND (NOT COALESCE(((IpAddress='::1' OR IpAddress LIKE '10.%' ESCAPE '\\' OR IpAddress LIKE '127.%' ESCAPE '\\' OR IpAddress LIKE '172.16.%' ESCAPE '\\' OR IpAddress LIKE '172.17.%' ESCAPE '\\' OR IpAddress LIKE '172.18.%' ESCAPE '\\' OR IpAddress LIKE '172.19.%' ESCAPE '\\' OR IpAddress LIKE '172.20.%' ESCAPE '\\' OR IpAddress LIKE '172.21.%' ESCAPE '\\' OR IpAddress LIKE '172.22.%' ESCAPE '\\' OR IpAddress LIKE '172.23.%' ESCAPE '\\' OR IpAddress LIKE '172.24.%' ESCAPE '\\' OR IpAddress LIKE '172.25.%' ESCAPE '\\' OR IpAddress LIKE '172.26.%' ESCAPE '\\' OR IpAddress LIKE '172.27.%' ESCAPE '\\' OR IpAddress LIKE '172.28.%' ESCAPE '\\' OR IpAddress LIKE '172.29.%' ESCAPE '\\' OR IpAddress LIKE '172.30.%' ESCAPE '\\' OR IpAddress LIKE '172.31.%' ESCAPE '\\' OR IpAddress LIKE '192.168.%' ESCAPE '\\' OR IpAddress LIKE '169.254.%' ESCAPE '\\' OR IpAddress LIKE 'fc__:%' ESCAPE '\\' OR IpAddress LIKE 'fd__:%' ESCAPE '\\' OR IpAddress LIKE 'fe8_:%' ESCAPE '\\' OR IpAddress LIKE 'fe9_:%' ESCAPE '\\' OR IpAddress LIKE 'fea_:%' ESCAPE '\\' OR IpAddress LIKE 'feb_:%' ESCAPE '\\') OR IpAddress='-'), 0)))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4624 AND LogonType=3) AND (NOT COALESCE(((IpAddress='::1' OR IpAddress LIKE '10.%' ESCAPE '\\' OR IpAddress LIKE '127.%' ESCAPE '\\' OR IpAddress LIKE '172.16.%' ESCAPE '\\' OR IpAddress LIKE '172.17.%' ESCAPE '\\' OR IpAddress LIKE '172.18.%' ESCAPE '\\' OR IpAddress LIKE '172.19.%' ESCAPE '\\' OR IpAddress LIKE '172.20.%' ESCAPE '\\' OR IpAddress LIKE '172.21.%' ESCAPE '\\' OR IpAddress LIKE '172.22.%' ESCAPE '\\' OR IpAddress LIKE '172.23.%' ESCAPE '\\' OR IpAddress LIKE '172.24.%' ESCAPE '\\' OR IpAddress LIKE '172.25.%' ESCAPE '\\' OR IpAddress LIKE '172.26.%' ESCAPE '\\' OR IpAddress LIKE '172.27.%' ESCAPE '\\' OR IpAddress LIKE '172.28.%' ESCAPE '\\' OR IpAddress LIKE '172.29.%' ESCAPE '\\' OR IpAddress LIKE '172.30.%' ESCAPE '\\' OR IpAddress LIKE '172.31.%' ESCAPE '\\' OR IpAddress LIKE '192.168.%' ESCAPE '\\' OR IpAddress LIKE '169.254.%' ESCAPE '\\' OR IpAddress LIKE 'fc__:%' ESCAPE '\\' OR IpAddress LIKE 'fd__:%' ESCAPE '\\' OR IpAddress LIKE 'fe8_:%' ESCAPE '\\' OR IpAddress LIKE 'fe9_:%' ESCAPE '\\' OR IpAddress LIKE 'fea_:%' ESCAPE '\\' OR IpAddress LIKE 'feb_:%' ESCAPE '\\') OR IpAddress IS NULL OR (IpAddress='-' OR IpAddress='')), 0)))"
     ],
     "schema_version": 2,
     "source": "sigmahq",

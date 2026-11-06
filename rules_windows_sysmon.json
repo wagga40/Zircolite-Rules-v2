@@ -16412,7 +16412,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4624 AND LogonType=10) AND (NOT COALESCE(((IpAddress='::1' OR IpAddress LIKE '10.%' ESCAPE '\\' OR IpAddress LIKE '127.%' ESCAPE '\\' OR IpAddress LIKE '172.16.%' ESCAPE '\\' OR IpAddress LIKE '172.17.%' ESCAPE '\\' OR IpAddress LIKE '172.18.%' ESCAPE '\\' OR IpAddress LIKE '172.19.%' ESCAPE '\\' OR IpAddress LIKE '172.20.%' ESCAPE '\\' OR IpAddress LIKE '172.21.%' ESCAPE '\\' OR IpAddress LIKE '172.22.%' ESCAPE '\\' OR IpAddress LIKE '172.23.%' ESCAPE '\\' OR IpAddress LIKE '172.24.%' ESCAPE '\\' OR IpAddress LIKE '172.25.%' ESCAPE '\\' OR IpAddress LIKE '172.26.%' ESCAPE '\\' OR IpAddress LIKE '172.27.%' ESCAPE '\\' OR IpAddress LIKE '172.28.%' ESCAPE '\\' OR IpAddress LIKE '172.29.%' ESCAPE '\\' OR IpAddress LIKE '172.30.%' ESCAPE '\\' OR IpAddress LIKE '172.31.%' ESCAPE '\\' OR IpAddress LIKE '192.168.%' ESCAPE '\\' OR IpAddress LIKE '169.254.%' ESCAPE '\\' OR IpAddress LIKE 'fc__:%' ESCAPE '\\' OR IpAddress LIKE 'fd__:%' ESCAPE '\\' OR IpAddress LIKE 'fe8_:%' ESCAPE '\\' OR IpAddress LIKE 'fe9_:%' ESCAPE '\\' OR IpAddress LIKE 'fea_:%' ESCAPE '\\' OR IpAddress LIKE 'feb_:%' ESCAPE '\\') OR IpAddress='-'), 0)))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4624 AND LogonType=10) AND (NOT COALESCE(((IpAddress='::1' OR IpAddress LIKE '10.%' ESCAPE '\\' OR IpAddress LIKE '127.%' ESCAPE '\\' OR IpAddress LIKE '172.16.%' ESCAPE '\\' OR IpAddress LIKE '172.17.%' ESCAPE '\\' OR IpAddress LIKE '172.18.%' ESCAPE '\\' OR IpAddress LIKE '172.19.%' ESCAPE '\\' OR IpAddress LIKE '172.20.%' ESCAPE '\\' OR IpAddress LIKE '172.21.%' ESCAPE '\\' OR IpAddress LIKE '172.22.%' ESCAPE '\\' OR IpAddress LIKE '172.23.%' ESCAPE '\\' OR IpAddress LIKE '172.24.%' ESCAPE '\\' OR IpAddress LIKE '172.25.%' ESCAPE '\\' OR IpAddress LIKE '172.26.%' ESCAPE '\\' OR IpAddress LIKE '172.27.%' ESCAPE '\\' OR IpAddress LIKE '172.28.%' ESCAPE '\\' OR IpAddress LIKE '172.29.%' ESCAPE '\\' OR IpAddress LIKE '172.30.%' ESCAPE '\\' OR IpAddress LIKE '172.31.%' ESCAPE '\\' OR IpAddress LIKE '192.168.%' ESCAPE '\\' OR IpAddress LIKE '169.254.%' ESCAPE '\\' OR IpAddress LIKE 'fc__:%' ESCAPE '\\' OR IpAddress LIKE 'fd__:%' ESCAPE '\\' OR IpAddress LIKE 'fe8_:%' ESCAPE '\\' OR IpAddress LIKE 'fe9_:%' ESCAPE '\\' OR IpAddress LIKE 'fea_:%' ESCAPE '\\' OR IpAddress LIKE 'feb_:%' ESCAPE '\\') OR IpAddress IS NULL OR (IpAddress='-' OR IpAddress='')), 0)))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -24305,7 +24305,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((Image LIKE '%/xwizard.exe' ESCAPE '\\' OR OriginalFileName='xwizard.exe') AND (CommandLine LIKE '%RunWizard%' ESCAPE '\\' AND CommandLine REGEXP '\\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\\}')))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((Image LIKE '%\\\\xwizard.exe' ESCAPE '\\' OR OriginalFileName='xwizard.exe') AND (CommandLine LIKE '%RunWizard%' ESCAPE '\\' AND CommandLine REGEXP '\\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\\}')))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -42296,7 +42296,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=3 AND (((Initiated='true' OR Initiated=1) AND DestinationPort=9389) AND (NOT COALESCE((Image LIKE 'C:\\\\Windows\\\\system32\\\\dsac.exe' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files\\\\Microsoft Monitoring Agent\\\\' ESCAPE '\\' OR (Image LIKE 'C:\\\\Program Files\\\\PowerShell\\\\7\\\\pwsh.exe%' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files\\\\PowerShell\\\\7-preview\\\\pwsh.ex%' ESCAPE '\\' OR Image LIKE 'C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\%' ESCAPE '\\')), 0))))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=3 AND (((Initiated='true' OR Initiated=1) AND DestinationPort=9389) AND (NOT COALESCE((Image LIKE 'C:\\\\Windows\\\\system32\\\\dsac.exe' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files\\\\Microsoft Monitoring Agent\\\\%' ESCAPE '\\' OR (Image LIKE 'C:\\\\Program Files\\\\PowerShell\\\\7-preview\\\\pwsh.exe' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files\\\\PowerShell\\\\7\\\\pwsh.exe' ESCAPE '\\' OR Image LIKE 'C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell\\_ise.exe' ESCAPE '\\' OR Image LIKE 'C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe' ESCAPE '\\' OR Image LIKE 'C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell\\_ise.exe' ESCAPE '\\' OR Image LIKE 'C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe' ESCAPE '\\') OR ((Image LIKE '%C:\\\\Program Files\\\\WindowsApps\\\\Microsoft.PowerShellPreview%' ESCAPE '\\' OR Image LIKE '%\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\Microsoft.PowerShellPreview%' ESCAPE '\\') AND Image LIKE '%\\\\pwsh.exe' ESCAPE '\\')), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -54797,7 +54797,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=7 AND ((ImageLoaded LIKE '%\\\\roboform.dll' ESCAPE '\\' OR ImageLoaded LIKE '%\\\\roboform-x64.dll' ESCAPE '\\') AND (NOT COALESCE(((Image LIKE ' C:\\\\Program Files (x86)\\\\Siber Systems\\\\AI RoboForm\\\\%' ESCAPE '\\' OR Image LIKE ' C:\\\\Program Files\\\\Siber Systems\\\\AI RoboForm\\\\%' ESCAPE '\\') AND (Image LIKE '%\\\\robotaskbaricon.exe' ESCAPE '\\' OR Image LIKE '%\\\\robotaskbaricon-x64.exe' ESCAPE '\\')), 0))))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=7 AND ((ImageLoaded LIKE '%\\\\roboform.dll' ESCAPE '\\' OR ImageLoaded LIKE '%\\\\roboform-x64.dll' ESCAPE '\\') AND (NOT COALESCE(((Image LIKE 'C:\\\\Program Files (x86)\\\\Siber Systems\\\\AI RoboForm\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files\\\\Siber Systems\\\\AI RoboForm\\\\%' ESCAPE '\\') AND (Image LIKE '%\\\\robotaskbaricon.exe' ESCAPE '\\' OR Image LIKE '%\\\\robotaskbaricon-x64.exe' ESCAPE '\\')), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -59978,7 +59978,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=7 AND ((ImageLoaded LIKE '%\\\\RjvPlatform.dll' ESCAPE '\\' AND Image LIKE '\\\\SystemResetPlatform.exe' ESCAPE '\\') AND (NOT COALESCE((Image LIKE 'C:\\\\Windows\\\\System32\\\\SystemResetPlatform\\\\%' ESCAPE '\\'), 0))))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=7 AND ((ImageLoaded LIKE '%\\\\RjvPlatform.dll' ESCAPE '\\' AND Image LIKE '%\\\\SystemResetPlatform.exe' ESCAPE '\\') AND (NOT COALESCE((Image LIKE 'C:\\\\Windows\\\\System32\\\\SystemResetPlatform\\\\%' ESCAPE '\\'), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -60970,7 +60970,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((Image LIKE ':\\\\Program Files%' ESCAPE '\\' AND Image LIKE '%\\\\Microsoft Visual Studio\\\\%' ESCAPE '\\' AND Image LIKE '%\\\\dump64.exe' ESCAPE '\\') AND (OriginalFileName='procdump' OR (CommandLine LIKE '% -ma %' ESCAPE '\\' OR CommandLine LIKE '% -mp %' ESCAPE '\\'))))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((Image LIKE 'C:\\\\Program Files%' ESCAPE '\\' AND Image LIKE '%\\\\Microsoft Visual Studio\\\\%' ESCAPE '\\' AND Image LIKE '%\\\\dump64.exe' ESCAPE '\\') AND (OriginalFileName='procdump' OR (CommandLine LIKE '% -ma %' ESCAPE '\\' OR CommandLine LIKE '% -mp %' ESCAPE '\\'))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -82663,7 +82663,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4624 AND LogonType=3) AND (NOT COALESCE(((IpAddress='::1' OR IpAddress LIKE '10.%' ESCAPE '\\' OR IpAddress LIKE '127.%' ESCAPE '\\' OR IpAddress LIKE '172.16.%' ESCAPE '\\' OR IpAddress LIKE '172.17.%' ESCAPE '\\' OR IpAddress LIKE '172.18.%' ESCAPE '\\' OR IpAddress LIKE '172.19.%' ESCAPE '\\' OR IpAddress LIKE '172.20.%' ESCAPE '\\' OR IpAddress LIKE '172.21.%' ESCAPE '\\' OR IpAddress LIKE '172.22.%' ESCAPE '\\' OR IpAddress LIKE '172.23.%' ESCAPE '\\' OR IpAddress LIKE '172.24.%' ESCAPE '\\' OR IpAddress LIKE '172.25.%' ESCAPE '\\' OR IpAddress LIKE '172.26.%' ESCAPE '\\' OR IpAddress LIKE '172.27.%' ESCAPE '\\' OR IpAddress LIKE '172.28.%' ESCAPE '\\' OR IpAddress LIKE '172.29.%' ESCAPE '\\' OR IpAddress LIKE '172.30.%' ESCAPE '\\' OR IpAddress LIKE '172.31.%' ESCAPE '\\' OR IpAddress LIKE '192.168.%' ESCAPE '\\' OR IpAddress LIKE '169.254.%' ESCAPE '\\' OR IpAddress LIKE 'fc__:%' ESCAPE '\\' OR IpAddress LIKE 'fd__:%' ESCAPE '\\' OR IpAddress LIKE 'fe8_:%' ESCAPE '\\' OR IpAddress LIKE 'fe9_:%' ESCAPE '\\' OR IpAddress LIKE 'fea_:%' ESCAPE '\\' OR IpAddress LIKE 'feb_:%' ESCAPE '\\') OR IpAddress='-'), 0)))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4624 AND LogonType=3) AND (NOT COALESCE(((IpAddress='::1' OR IpAddress LIKE '10.%' ESCAPE '\\' OR IpAddress LIKE '127.%' ESCAPE '\\' OR IpAddress LIKE '172.16.%' ESCAPE '\\' OR IpAddress LIKE '172.17.%' ESCAPE '\\' OR IpAddress LIKE '172.18.%' ESCAPE '\\' OR IpAddress LIKE '172.19.%' ESCAPE '\\' OR IpAddress LIKE '172.20.%' ESCAPE '\\' OR IpAddress LIKE '172.21.%' ESCAPE '\\' OR IpAddress LIKE '172.22.%' ESCAPE '\\' OR IpAddress LIKE '172.23.%' ESCAPE '\\' OR IpAddress LIKE '172.24.%' ESCAPE '\\' OR IpAddress LIKE '172.25.%' ESCAPE '\\' OR IpAddress LIKE '172.26.%' ESCAPE '\\' OR IpAddress LIKE '172.27.%' ESCAPE '\\' OR IpAddress LIKE '172.28.%' ESCAPE '\\' OR IpAddress LIKE '172.29.%' ESCAPE '\\' OR IpAddress LIKE '172.30.%' ESCAPE '\\' OR IpAddress LIKE '172.31.%' ESCAPE '\\' OR IpAddress LIKE '192.168.%' ESCAPE '\\' OR IpAddress LIKE '169.254.%' ESCAPE '\\' OR IpAddress LIKE 'fc__:%' ESCAPE '\\' OR IpAddress LIKE 'fd__:%' ESCAPE '\\' OR IpAddress LIKE 'fe8_:%' ESCAPE '\\' OR IpAddress LIKE 'fe9_:%' ESCAPE '\\' OR IpAddress LIKE 'fea_:%' ESCAPE '\\' OR IpAddress LIKE 'feb_:%' ESCAPE '\\') OR IpAddress IS NULL OR (IpAddress='-' OR IpAddress='')), 0)))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -107585,7 +107585,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=7 AND (ImageLoaded LIKE '%\\\\edputil.dll' ESCAPE '\\' AND (NOT COALESCE((ImageLoaded LIKE 'C:\\\\Windows\\\\System32\\\\%' ESCAPE '\\' OR ImageLoaded LIKE 'C:\\\\Windows\\\\SysWOW64\\\\%' ESCAPE '\\' OR ImageLoaded LIKE 'C\\\\Windows\\\\WinSxS\\\\%' ESCAPE '\\'), 0))))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=7 AND (ImageLoaded LIKE '%\\\\edputil.dll' ESCAPE '\\' AND (NOT COALESCE((ImageLoaded LIKE 'C:\\\\Windows\\\\System32\\\\%' ESCAPE '\\' OR ImageLoaded LIKE 'C:\\\\Windows\\\\SysWOW64\\\\%' ESCAPE '\\' OR ImageLoaded LIKE 'C:\\\\Windows\\\\WinSxS\\\\%' ESCAPE '\\'), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",

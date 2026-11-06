@@ -13619,7 +13619,7 @@
       "path": "rules/windows/image_load/image_load_side_load_edputil.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "eb9effe23b19b2b7a39fad392f50c2ae9650db14749ea42f2f0eca0c875c46c7"
+      "sha256": "41af247660a06ef77460621aae7997451a8dfb44a4751f3c65a8208a60eb8f63"
     },
     {
       "document": "0",
@@ -13745,14 +13745,14 @@
       "path": "rules/windows/image_load/image_load_side_load_rjvplatform_non_default_location.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "442ebefea8adff9f080fe0ca11e598316541c6229312249efda0bcfefb48c5b2"
+      "sha256": "08e468cbdee060130095f3cc86eb5c8ad9c6bfc60287b68ab42c2998239dc238"
     },
     {
       "document": "0",
       "path": "rules/windows/image_load/image_load_side_load_robform.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "0960d8b9e2101ba067c88ff010b7fb3162bec990007d3fc2557779c580b22688"
+      "sha256": "e638c44575df0934917eaf3b5c169964992cf2903b22771d16075e1954398831"
     },
     {
       "document": "0",
@@ -13997,7 +13997,7 @@
       "path": "rules/windows/network_connection/net_connection_win_adws_unusual_connection.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "4ae565602de74786604f83f1a0a44872e5c99bd9785fb0ae1c105f9a84cd4f37"
+      "sha256": "f4eb03f7f6a088e8f4ec9ba536752165ccc1213b1239fd71325ac79bce6a36f7"
     },
     {
       "document": "0",
@@ -21088,14 +21088,14 @@
       "path": "rules/windows/builtin/security/account_management/win_security_successful_external_remote_rdp_login.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "39e0573c1af9fbdb767afe001b512e9f55bde300dc04e9bb5f3f1f3a5c140d3d"
+      "sha256": "aa48af306b892a47e3ef49687cf93b95ab2d93d00cdb405285b530c53e2a457f"
     },
     {
       "document": "0",
       "path": "rules/windows/builtin/security/account_management/win_security_successful_external_remote_smb_login.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "3cfdd25fc8490d0eb062a7782b653102c44e201e35d50b6cdb85f55847db9d59"
+      "sha256": "1ee85a2fe5e90420f3eb4dc195f89db32620eb5b4f27ea0e2bcfcb4bb92ddcc4"
     },
     {
       "document": "0",
@@ -24721,7 +24721,7 @@
       "path": "rules/windows/image_load/image_load_side_load_edputil.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "eb9effe23b19b2b7a39fad392f50c2ae9650db14749ea42f2f0eca0c875c46c7"
+      "sha256": "41af247660a06ef77460621aae7997451a8dfb44a4751f3c65a8208a60eb8f63"
     },
     {
       "document": "0",
@@ -24847,14 +24847,14 @@
       "path": "rules/windows/image_load/image_load_side_load_rjvplatform_non_default_location.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "442ebefea8adff9f080fe0ca11e598316541c6229312249efda0bcfefb48c5b2"
+      "sha256": "08e468cbdee060130095f3cc86eb5c8ad9c6bfc60287b68ab42c2998239dc238"
     },
     {
       "document": "0",
       "path": "rules/windows/image_load/image_load_side_load_robform.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "0960d8b9e2101ba067c88ff010b7fb3162bec990007d3fc2557779c580b22688"
+      "sha256": "e638c44575df0934917eaf3b5c169964992cf2903b22771d16075e1954398831"
     },
     {
       "document": "0",
@@ -25099,7 +25099,7 @@
       "path": "rules/windows/network_connection/net_connection_win_adws_unusual_connection.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "4ae565602de74786604f83f1a0a44872e5c99bd9785fb0ae1c105f9a84cd4f37"
+      "sha256": "f4eb03f7f6a088e8f4ec9ba536752165ccc1213b1239fd71325ac79bce6a36f7"
     },
     {
       "document": "0",
@@ -28382,7 +28382,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_dump64_defender_av_bypass_rename.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "a42b5ffc23a8db731da5e77cf226c7983cb4b992aa460c700d78dbd059dbf450"
+      "sha256": "5a2e035ac22de75afa215bc068b830d7889fcb6b377b4ba64b7f4baff75b3946"
     },
     {
       "document": "0",
@@ -35550,7 +35550,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_xwizard_runwizard_com_object_exec.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "c883c0dbd865d9ef0b82635371c47e177511b845aeb20238b7b0e9a4ae18177b"
+      "sha256": "cd59c6b127deaa1f767f96dc9558a80c6ceb6be7f5a53f561d96a68faa260b4e"
     },
     {
       "document": "0",
@@ -47933,14 +47933,14 @@
       "document": "0",
       "id": "259a9cdf-c4dd-4fa2-b243-2269e5ab18a2",
       "path": "rules/windows/builtin/security/account_management/win_security_successful_external_remote_rdp_login.yml",
-      "sha256": "39e0573c1af9fbdb767afe001b512e9f55bde300dc04e9bb5f3f1f3a5c140d3d"
+      "sha256": "aa48af306b892a47e3ef49687cf93b95ab2d93d00cdb405285b530c53e2a457f"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "78d5cab4-557e-454f-9fb9-a222bd0d5edc",
       "path": "rules/windows/builtin/security/account_management/win_security_successful_external_remote_smb_login.yml",
-      "sha256": "3cfdd25fc8490d0eb062a7782b653102c44e201e35d50b6cdb85f55847db9d59"
+      "sha256": "1ee85a2fe5e90420f3eb4dc195f89db32620eb5b4f27ea0e2bcfcb4bb92ddcc4"
     },
     {
       "adaptations": {},
@@ -51566,7 +51566,7 @@
       "document": "0",
       "id": "e4903324-1a10-4ed3-981b-f6fe3be3a2c2",
       "path": "rules/windows/image_load/image_load_side_load_edputil.yml",
-      "sha256": "eb9effe23b19b2b7a39fad392f50c2ae9650db14749ea42f2f0eca0c875c46c7"
+      "sha256": "41af247660a06ef77460621aae7997451a8dfb44a4751f3c65a8208a60eb8f63"
     },
     {
       "adaptations": {},
@@ -51692,14 +51692,14 @@
       "document": "0",
       "id": "0e0bc253-07ed-43f1-816d-e1b220fe8971",
       "path": "rules/windows/image_load/image_load_side_load_rjvplatform_non_default_location.yml",
-      "sha256": "442ebefea8adff9f080fe0ca11e598316541c6229312249efda0bcfefb48c5b2"
+      "sha256": "08e468cbdee060130095f3cc86eb5c8ad9c6bfc60287b68ab42c2998239dc238"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "f64c9b2d-b0ad-481d-9d03-7fc75020892a",
       "path": "rules/windows/image_load/image_load_side_load_robform.yml",
-      "sha256": "0960d8b9e2101ba067c88ff010b7fb3162bec990007d3fc2557779c580b22688"
+      "sha256": "e638c44575df0934917eaf3b5c169964992cf2903b22771d16075e1954398831"
     },
     {
       "adaptations": {},
@@ -51944,7 +51944,7 @@
       "document": "0",
       "id": "b3ad3c0f-c949-47a1-a30e-b0491ccae876",
       "path": "rules/windows/network_connection/net_connection_win_adws_unusual_connection.yml",
-      "sha256": "4ae565602de74786604f83f1a0a44872e5c99bd9785fb0ae1c105f9a84cd4f37"
+      "sha256": "f4eb03f7f6a088e8f4ec9ba536752165ccc1213b1239fd71325ac79bce6a36f7"
     },
     {
       "adaptations": {},
@@ -55227,7 +55227,7 @@
       "document": "0",
       "id": "129966c9-de17-4334-a123-8b58172e664d",
       "path": "rules/windows/process_creation/proc_creation_win_dump64_defender_av_bypass_rename.yml",
-      "sha256": "a42b5ffc23a8db731da5e77cf226c7983cb4b992aa460c700d78dbd059dbf450"
+      "sha256": "5a2e035ac22de75afa215bc068b830d7889fcb6b377b4ba64b7f4baff75b3946"
     },
     {
       "adaptations": {},
@@ -62395,7 +62395,7 @@
       "document": "0",
       "id": "53d4bb30-3f36-4e8a-b078-69d36c4a79ff",
       "path": "rules/windows/process_creation/proc_creation_win_xwizard_runwizard_com_object_exec.yml",
-      "sha256": "c883c0dbd865d9ef0b82635371c47e177511b845aeb20238b7b0e9a4ae18177b"
+      "sha256": "cd59c6b127deaa1f767f96dc9558a80c6ceb6be7f5a53f561d96a68faa260b4e"
     },
     {
       "adaptations": {},
@@ -68531,7 +68531,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "77145ed8fae37f06acefe3822317bd2a93e8a8c5",
+  "revision": "52f81d60d5ea122e49a34b2289ea0c2a7bb0b113",
   "source": "sigmahq",
   "status": "validated",
   "tools": {
@@ -68539,7 +68539,7 @@
     "pysigma-backend-sqlite": "2.1.1",
     "pysigma-pipeline-sysmon": "2.0.0",
     "pysigma-pipeline-windows": "2.0.0",
-    "python": "3.14.9",
+    "python": "3.14.10",
     "sqlite": "3.46.1"
   }
 }
