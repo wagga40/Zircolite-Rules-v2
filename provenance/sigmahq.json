@@ -12912,7 +12912,7 @@
       "path": "rules/windows/file/file_event/file_event_win_susp_legitimate_app_dropping_in_uncommon_location.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "5fdf7eb0843540873e63cce7c1b00d78f220bde650783293ee2792baca3291c0"
+      "sha256": "06db4521d7e01a02ef678d4d25f7048ed974de49b969d8cb62fb9f2e5762ebc1"
     },
     {
       "document": "0",
@@ -14284,7 +14284,7 @@
       "path": "rules/windows/network_connection/net_connection_win_susp_outbound_kerberos_connection.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "04de6d48738862feb52d8a923d05d0f3795b770957cbaa10554940505074d935"
+      "sha256": "ab60429c70cd60775dc7a15a1aa58f45f3a2bc45f553dba4b73d925a9367ce9c"
     },
     {
       "document": "0",
@@ -24014,7 +24014,7 @@
       "path": "rules/windows/file/file_event/file_event_win_susp_legitimate_app_dropping_in_uncommon_location.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "5fdf7eb0843540873e63cce7c1b00d78f220bde650783293ee2792baca3291c0"
+      "sha256": "06db4521d7e01a02ef678d4d25f7048ed974de49b969d8cb62fb9f2e5762ebc1"
     },
     {
       "document": "0",
@@ -25386,7 +25386,7 @@
       "path": "rules/windows/network_connection/net_connection_win_susp_outbound_kerberos_connection.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "04de6d48738862feb52d8a923d05d0f3795b770957cbaa10554940505074d935"
+      "sha256": "ab60429c70cd60775dc7a15a1aa58f45f3a2bc45f553dba4b73d925a9367ce9c"
     },
     {
       "document": "0",
@@ -27262,7 +27262,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_agentexecutor_potential_abuse.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "02ed131c2f682d5783f79439bdc484265f1774b67ce044d5b93ffc26c2f192d5"
+      "sha256": "d8dfbb7e3106d49292b50059f254f028c669d24330e04c70f9d77ab3bc592b35"
     },
     {
       "document": "0",
@@ -28515,7 +28515,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_findstr_security_keyword_lookup.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "30e29aa6bbab1d6335f15757e5a13620ca3d70ce2b3e3c8cf42ce28f3b3c6d59"
+      "sha256": "4787116328c7533b5d1189ce46af6b95b5b1c2f6d8549df727b60be2fac421a3"
     },
     {
       "document": "0",
@@ -29166,7 +29166,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_hktl_quarks_pwdump.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "9128e06bc7df4d234d48ed2c688e880c9c3a2f7a4dec1843c6cc860cf0dda865"
+      "sha256": "250382d474ed9e72834c04fcfb660a31540d4290a6715018b82a750d08a82353"
     },
     {
       "document": "0",
@@ -31273,7 +31273,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_powershell_non_interactive_execution.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "e4310d2179dec258be5c8c294f3b8cb1bd67ff4db587a3d04339303c2e04aeb7"
+      "sha256": "2e723dc1642df3c81060fd47330d529ca4459faec174ba2db4e8b661660d88ff"
     },
     {
       "document": "0",
@@ -31343,7 +31343,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_powershell_script_exec_from_temp_folder.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "b9508a9893b2ea0a92fed09c198cd1e81b394ea4a88eff2828f398dda3476716"
+      "sha256": "65649f139121296272e1bb21836dc9c140527a5a8273c61580c946def620069b"
     },
     {
       "document": "0",
@@ -32533,7 +32533,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_remote_access_tools_teamviewer_incoming_connection.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "d365fe22ef17912ed7feea4bdaf3933656ac5221d62e1a515483ee3eb32e349b"
+      "sha256": "8b624e325b60dcc69d04bfddea7cf9786c6b2fbb13556e5e6f5f29749471c770"
     },
     {
       "document": "0",
@@ -35746,7 +35746,7 @@
       "path": "rules/windows/registry/registry_event/registry_event_new_dll_added_to_appcertdlls_registry_key.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "e605e26f9afd15dadda4a3b960b06c8dc2b46b6f16b656ff3995513dab7bf02c"
+      "sha256": "d8cd70d91298ae705e0d4cc04e920f740a68ff06a402e747bdec8195213a1c6f"
     },
     {
       "document": "0",
@@ -36285,7 +36285,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_disable_winevt_logging.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "2d8718ab6e4692fa0afd9210cae634fb54beb7d7e921c4c8e5bd0ba4711be2c4"
+      "sha256": "3d7e9cc9d01c48377f64ac6bdf59709d4c1d6bd0406f78178586c627cf756b0f"
     },
     {
       "document": "0",
@@ -50859,7 +50859,7 @@
       "document": "0",
       "id": "1cf465a1-2609-4c15-9b66-c32dbe4bfd67",
       "path": "rules/windows/file/file_event/file_event_win_susp_legitimate_app_dropping_in_uncommon_location.yml",
-      "sha256": "5fdf7eb0843540873e63cce7c1b00d78f220bde650783293ee2792baca3291c0"
+      "sha256": "06db4521d7e01a02ef678d4d25f7048ed974de49b969d8cb62fb9f2e5762ebc1"
     },
     {
       "adaptations": {},
@@ -52231,7 +52231,7 @@
       "document": "0",
       "id": "e54979bd-c5f9-4d6c-967b-a04b19ac4c74",
       "path": "rules/windows/network_connection/net_connection_win_susp_outbound_kerberos_connection.yml",
-      "sha256": "04de6d48738862feb52d8a923d05d0f3795b770957cbaa10554940505074d935"
+      "sha256": "ab60429c70cd60775dc7a15a1aa58f45f3a2bc45f553dba4b73d925a9367ce9c"
     },
     {
       "adaptations": {},
@@ -54107,7 +54107,7 @@
       "document": "0",
       "id": "7efd2c8d-8b18-45b7-947d-adfe9ed04f61",
       "path": "rules/windows/process_creation/proc_creation_win_agentexecutor_potential_abuse.yml",
-      "sha256": "02ed131c2f682d5783f79439bdc484265f1774b67ce044d5b93ffc26c2f192d5"
+      "sha256": "d8dfbb7e3106d49292b50059f254f028c669d24330e04c70f9d77ab3bc592b35"
     },
     {
       "adaptations": {},
@@ -55360,7 +55360,7 @@
       "document": "0",
       "id": "4fe074b4-b833-4081-8f24-7dcfeca72b42",
       "path": "rules/windows/process_creation/proc_creation_win_findstr_security_keyword_lookup.yml",
-      "sha256": "30e29aa6bbab1d6335f15757e5a13620ca3d70ce2b3e3c8cf42ce28f3b3c6d59"
+      "sha256": "4787116328c7533b5d1189ce46af6b95b5b1c2f6d8549df727b60be2fac421a3"
     },
     {
       "adaptations": {},
@@ -56011,7 +56011,7 @@
       "document": "0",
       "id": "0685b176-c816-4837-8e7b-1216f346636b",
       "path": "rules/windows/process_creation/proc_creation_win_hktl_quarks_pwdump.yml",
-      "sha256": "9128e06bc7df4d234d48ed2c688e880c9c3a2f7a4dec1843c6cc860cf0dda865"
+      "sha256": "250382d474ed9e72834c04fcfb660a31540d4290a6715018b82a750d08a82353"
     },
     {
       "adaptations": {},
@@ -58118,7 +58118,7 @@
       "document": "0",
       "id": "f4bbd493-b796-416e-bbf2-121235348529",
       "path": "rules/windows/process_creation/proc_creation_win_powershell_non_interactive_execution.yml",
-      "sha256": "e4310d2179dec258be5c8c294f3b8cb1bd67ff4db587a3d04339303c2e04aeb7"
+      "sha256": "2e723dc1642df3c81060fd47330d529ca4459faec174ba2db4e8b661660d88ff"
     },
     {
       "adaptations": {},
@@ -58188,7 +58188,7 @@
       "document": "0",
       "id": "a6a39bdb-935c-4f0a-ab77-35f4bbf44d33",
       "path": "rules/windows/process_creation/proc_creation_win_powershell_script_exec_from_temp_folder.yml",
-      "sha256": "b9508a9893b2ea0a92fed09c198cd1e81b394ea4a88eff2828f398dda3476716"
+      "sha256": "65649f139121296272e1bb21836dc9c140527a5a8273c61580c946def620069b"
     },
     {
       "adaptations": {},
@@ -59378,7 +59378,7 @@
       "document": "0",
       "id": "ab70c354-d9ac-4e11-bbb6-ec8e3b153357",
       "path": "rules/windows/process_creation/proc_creation_win_remote_access_tools_teamviewer_incoming_connection.yml",
-      "sha256": "d365fe22ef17912ed7feea4bdaf3933656ac5221d62e1a515483ee3eb32e349b"
+      "sha256": "8b624e325b60dcc69d04bfddea7cf9786c6b2fbb13556e5e6f5f29749471c770"
     },
     {
       "adaptations": {},
@@ -62591,7 +62591,7 @@
       "document": "0",
       "id": "6aa1d992-5925-4e9f-a49b-845e51d1de01",
       "path": "rules/windows/registry/registry_event/registry_event_new_dll_added_to_appcertdlls_registry_key.yml",
-      "sha256": "e605e26f9afd15dadda4a3b960b06c8dc2b46b6f16b656ff3995513dab7bf02c"
+      "sha256": "d8cd70d91298ae705e0d4cc04e920f740a68ff06a402e747bdec8195213a1c6f"
     },
     {
       "adaptations": {},
@@ -63130,7 +63130,7 @@
       "document": "0",
       "id": "2f78da12-f7c7-430b-8b19-a28f269b77a3",
       "path": "rules/windows/registry/registry_set/registry_set_disable_winevt_logging.yml",
-      "sha256": "2d8718ab6e4692fa0afd9210cae634fb54beb7d7e921c4c8e5bd0ba4711be2c4"
+      "sha256": "3d7e9cc9d01c48377f64ac6bdf59709d4c1d6bd0406f78178586c627cf756b0f"
     },
     {
       "adaptations": {},
@@ -68531,7 +68531,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "52f81d60d5ea122e49a34b2289ea0c2a7bb0b113",
+  "revision": "53b90df66c5b6d1b9be6ba9289c56fe49dd74a73",
   "source": "sigmahq",
   "status": "validated",
   "tools": {

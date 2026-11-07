@@ -15,11 +15,11 @@
     },
     "hatchepsoute": {
       "artifacts": {
-        "rules_hatchepsoute_windows_merged.json": "63149ef4d3d08c3535614ce11014e61958c9ac67db4775e8dc8c99e84e5ea990"
+        "rules_hatchepsoute_windows_merged.json": "be983b503b951cdf8587bfa9914b75d8c0b1710472305428a69b78697ad8ff9e"
       },
       "license": "Apache-2.0",
       "repository": "Hatchepsoute/sigma-rules",
-      "revision": "8ec2c4ac5f6792b5551a3720c19a8ef36d2b7ddc",
+      "revision": "599b824020a269343501d19bd99a4da529df433a",
       "status": "current"
     },
     "hayabusa": {
@@ -28,7 +28,7 @@
       },
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
-      "revision": "9a1b0f58ee4f3fc769d7717dc1fd7f9b1038ba90",
+      "revision": "9e2db772119c03044fc728c95312fa366be9b38a",
       "status": "current"
     },
     "joesecurity": {
@@ -87,11 +87,11 @@
     },
     "sigmahq": {
       "artifacts": {
-        "rules_windows_merged.json": "8c0af727761ad88a4164e1a9e8ad2440c705af049e84848dcdd37b60c6c93268"
+        "rules_windows_merged.json": "419ba3d50c4868feef8e0db5d8076f3308b129269fddf085fb73a71898f85180"
       },
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
-      "revision": "52f81d60d5ea122e49a34b2289ea0c2a7bb0b113",
+      "revision": "53b90df66c5b6d1b9be6ba9289c56fe49dd74a73",
       "status": "current"
     },
     "tsale": {

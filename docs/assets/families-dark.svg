@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="468" viewBox="0 0 860 468" role="img" aria-labelledby="title desc">
 <title id="title">From profiles to files</title>
-<desc id="desc">From profiles to files: 4,534 Sysmon entries in 12 files and 3,544 Generic entries in 11 files merge per source into 7,149 entries, 923 of them identical in both profiles. With 188 native entries they form rules_windows_all.json: 7,343 entries, 4,687 unique detections, 0 duplicates across sources removed. Linux: 302 entries in 5 files. Experimental correlations: 87 entries in 12 files.</desc>
+<desc id="desc">From profiles to files: 4,534 Sysmon entries in 12 files and 3,544 Generic entries in 11 files merge per source into 7,149 entries, 923 of them identical in both profiles. With 188 native entries they form rules_windows_all.json: 7,343 entries, 4,687 unique detections, 0 duplicates across sources removed. Linux: 304 entries in 5 files. Experimental correlations: 87 entries in 12 files.</desc>
 <style>
 text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #f0efec; }
 .secondary { fill: #c3c2b7; }
@@ -30,6 +30,6 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 <path class="draw" style="animation-delay:720ms" pathLength="1" d="M530.0 162.0L580.0 162.0L580.0 236.0L636.0 236.0" stroke="#898781" stroke-width="1.5" fill="none"/><path class="fade" style="animation-delay:1120ms" d="M636.0 236.0L629.0 232.0L629.0 240.0Z" fill="#898781"/>
 <path class="draw" style="animation-delay:760ms" pathLength="1" d="M224.0 294.0L600.0 294.0L600.0 260.0L636.0 260.0" stroke="#898781" stroke-width="1.5" fill="none"/><path class="fade" style="animation-delay:1160ms" d="M636.0 260.0L629.0 256.0L629.0 264.0Z" fill="#898781"/>
 <line x1="24" y1="352" x2="836" y2="352" stroke="#2c2c2a"/>
-<g class="rise" style="animation-delay:1000ms"><rect x="24" y="368" width="398" height="76" rx="8" fill="#1a1a19" stroke="#2c2c2a"/><text x="36" y="389" font-size="12" class="secondary">Linux · 5 files</text><text x="36" y="414" font-size="20" font-weight="600">302</text><text x="36" y="433" font-size="11" class="secondary">Sigma field names; never combined with Windows</text></g>
+<g class="rise" style="animation-delay:1000ms"><rect x="24" y="368" width="398" height="76" rx="8" fill="#1a1a19" stroke="#2c2c2a"/><text x="36" y="389" font-size="12" class="secondary">Linux · 5 files</text><text x="36" y="414" font-size="20" font-weight="600">304</text><text x="36" y="433" font-size="11" class="secondary">Sigma field names; never combined with Windows</text></g>
 <g class="rise" style="animation-delay:1100ms"><rect x="438" y="368" width="398" height="76" rx="8" fill="#1a1a19" stroke="#2c2c2a"/><text x="450" y="389" font-size="12" class="secondary">Experimental correlations · 12 files</text><text x="450" y="414" font-size="20" font-weight="600">87</text><text x="450" y="433" font-size="11" class="secondary">experimental/, for Zircolite 4.1 or newer</text></g>
 </svg>
