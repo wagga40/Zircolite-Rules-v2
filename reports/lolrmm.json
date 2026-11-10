@@ -2312,7 +2312,7 @@
       "rules_windows_sysmon.json": "7aed08b1bf9c00eb5120e7cae6843f7412e49d516f85afc680883b32062f112f"
     },
     "repository": "SigmaHQ/sigma",
-    "revision": "53b90df66c5b6d1b9be6ba9289c56fe49dd74a73"
+    "revision": "d7c9da10c170a6988d68ebdf2c9f7bd8782b7c55"
   },
   "official_duplicates_removed": {
     "generic/correlations": 0,
