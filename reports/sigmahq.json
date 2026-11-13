@@ -21627,7 +21627,7 @@
       "path": "rules/windows/builtin/security/win_security_petitpotam_susp_tgt_request.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "ef0befc88cb8a8b8d0408077e07e0e515701242b0b560a8efc9051ad712ff390"
+      "sha256": "fe209b5c7ec8e75bf1bf7c8592cf18e498aa0517ec85411ee3762651ef69fe17"
     },
     {
       "document": "0",
@@ -35809,7 +35809,7 @@
       "path": "rules/windows/registry/registry_event/registry_event_shell_open_keys_manipulation.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "4bb5305b90f36f0523ad614dc4d3a7df5bfc0d601f13d24cfd8c287736efd297"
+      "sha256": "f19fd481d5b2602524822ff3893adafc42422ff2e057938b8e9e47a2b9093ddf"
     },
     {
       "document": "0",
@@ -35914,7 +35914,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_amsi_com_hijack.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "44fc2faaf6471135e5dcabb9f976fd1f185561e9eb8db490314eec31b5ef51d1"
+      "sha256": "ba9113030edb44a3a70b778ad703d04b4e5e70222ba6afb70b2f9f506a9c2b98"
     },
     {
       "document": "0",
@@ -36061,7 +36061,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_change_rdp_port.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "8fd6641680a3a22f1bf2bb0daaa0b7ea2e836aa322006a998a4240dc68cdcaab"
+      "sha256": "12c653a299b0ec0c7fdb2f3a98ad1391b2512b63d8bcaaddd4957025f1a74153"
     },
     {
       "document": "0",
@@ -36439,7 +36439,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_hhctrl_persistence.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "d3129012515ab09f0ca59e366d8801ad079b01a8b5fe9f0e567446c10f6b2f42"
+      "sha256": "25c01b4c763ce563d4b43eedb7ff9122c8bc6dcc75ab1d29b7a1d6156f40c80b"
     },
     {
       "document": "0",
@@ -36733,7 +36733,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_persistence_comhijack_psfactorybuffer.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "04430e88a394e4b38ec128b3b8f4cdba13a59c1be641180b18e34e864b72b61f"
+      "sha256": "88904ccd5fded0d39c50c0c6fb4717e9c6c082e64caa41331bfaffa340381362"
     },
     {
       "document": "0",
@@ -37146,7 +37146,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_taskcache_entry.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "c71c0b04d43485188716bcd426376e2c1017009040241c4a76777b87322d16d9"
+      "sha256": "1c3e3117fa1e36a0c43ee37cbb63409b163bebb9e626ecb641decdd379b098fd"
     },
     {
       "document": "0",
@@ -37167,7 +37167,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_terminal_server_tampering.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "f8287c587702f5f7305e318b816c4bda2e0cc1907a090b045eda90bb6bda5994"
+      "sha256": "c1b434f0bdc08ca36359d1646c732b221d9c2f74d3928d9b2277cf1f7e6c1be7"
     },
     {
       "document": "0",
@@ -37209,7 +37209,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_uac_bypass_sdclt.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "08d3e303615be9b2cc2d029d2fcd32f6cc67863e682b91a045b7e4eae569a2cb"
+      "sha256": "147b5c42ef26892c353cc51bbdbe4fe5cb35ae3290d4f3bdcbd9f2ca91966573"
     },
     {
       "document": "0",
@@ -48472,7 +48472,7 @@
       "document": "0",
       "id": "6a53d871-682d-40b6-83e0-b7c1a6c4e3a5",
       "path": "rules/windows/builtin/security/win_security_petitpotam_susp_tgt_request.yml",
-      "sha256": "ef0befc88cb8a8b8d0408077e07e0e515701242b0b560a8efc9051ad712ff390"
+      "sha256": "fe209b5c7ec8e75bf1bf7c8592cf18e498aa0517ec85411ee3762651ef69fe17"
     },
     {
       "adaptations": {},
@@ -62654,7 +62654,7 @@
       "document": "0",
       "id": "152f3630-77c1-4284-bcc0-4cc68ab2f6e7",
       "path": "rules/windows/registry/registry_event/registry_event_shell_open_keys_manipulation.yml",
-      "sha256": "4bb5305b90f36f0523ad614dc4d3a7df5bfc0d601f13d24cfd8c287736efd297"
+      "sha256": "f19fd481d5b2602524822ff3893adafc42422ff2e057938b8e9e47a2b9093ddf"
     },
     {
       "adaptations": {},
@@ -62759,7 +62759,7 @@
       "document": "0",
       "id": "160d2780-31f7-4922-8b3a-efce30e63e96",
       "path": "rules/windows/registry/registry_set/registry_set_amsi_com_hijack.yml",
-      "sha256": "44fc2faaf6471135e5dcabb9f976fd1f185561e9eb8db490314eec31b5ef51d1"
+      "sha256": "ba9113030edb44a3a70b778ad703d04b4e5e70222ba6afb70b2f9f506a9c2b98"
     },
     {
       "adaptations": {},
@@ -62906,7 +62906,7 @@
       "document": "0",
       "id": "509e84b9-a71a-40e0-834f-05470369bd1e",
       "path": "rules/windows/registry/registry_set/registry_set_change_rdp_port.yml",
-      "sha256": "8fd6641680a3a22f1bf2bb0daaa0b7ea2e836aa322006a998a4240dc68cdcaab"
+      "sha256": "12c653a299b0ec0c7fdb2f3a98ad1391b2512b63d8bcaaddd4957025f1a74153"
     },
     {
       "adaptations": {},
@@ -63284,7 +63284,7 @@
       "document": "0",
       "id": "f10ed525-97fe-4fed-be7c-2feecca941b1",
       "path": "rules/windows/registry/registry_set/registry_set_hhctrl_persistence.yml",
-      "sha256": "d3129012515ab09f0ca59e366d8801ad079b01a8b5fe9f0e567446c10f6b2f42"
+      "sha256": "25c01b4c763ce563d4b43eedb7ff9122c8bc6dcc75ab1d29b7a1d6156f40c80b"
     },
     {
       "adaptations": {},
@@ -63578,7 +63578,7 @@
       "document": "0",
       "id": "243380fa-11eb-4141-af92-e14925e77c1b",
       "path": "rules/windows/registry/registry_set/registry_set_persistence_comhijack_psfactorybuffer.yml",
-      "sha256": "04430e88a394e4b38ec128b3b8f4cdba13a59c1be641180b18e34e864b72b61f"
+      "sha256": "88904ccd5fded0d39c50c0c6fb4717e9c6c082e64caa41331bfaffa340381362"
     },
     {
       "adaptations": {},
@@ -63991,7 +63991,7 @@
       "document": "0",
       "id": "4720b7df-40c3-48fd-bbdf-fd4b3c464f0d",
       "path": "rules/windows/registry/registry_set/registry_set_taskcache_entry.yml",
-      "sha256": "c71c0b04d43485188716bcd426376e2c1017009040241c4a76777b87322d16d9"
+      "sha256": "1c3e3117fa1e36a0c43ee37cbb63409b163bebb9e626ecb641decdd379b098fd"
     },
     {
       "adaptations": {},
@@ -64012,7 +64012,7 @@
       "document": "0",
       "id": "3f6b7b62-61aa-45db-96bd-9c31b36b653c",
       "path": "rules/windows/registry/registry_set/registry_set_terminal_server_tampering.yml",
-      "sha256": "f8287c587702f5f7305e318b816c4bda2e0cc1907a090b045eda90bb6bda5994"
+      "sha256": "c1b434f0bdc08ca36359d1646c732b221d9c2f74d3928d9b2277cf1f7e6c1be7"
     },
     {
       "adaptations": {},
@@ -64054,7 +64054,7 @@
       "document": "0",
       "id": "5b872a46-3b90-45c1-8419-f675db8053aa",
       "path": "rules/windows/registry/registry_set/registry_set_uac_bypass_sdclt.yml",
-      "sha256": "08d3e303615be9b2cc2d029d2fcd32f6cc67863e682b91a045b7e4eae569a2cb"
+      "sha256": "147b5c42ef26892c353cc51bbdbe4fe5cb35ae3290d4f3bdcbd9f2ca91966573"
     },
     {
       "adaptations": {},
@@ -68531,7 +68531,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "d7c9da10c170a6988d68ebdf2c9f7bd8782b7c55",
+  "revision": "570661d13547219831de58aa5ef0c715777549ff",
   "source": "sigmahq",
   "status": "validated",
   "tools": {

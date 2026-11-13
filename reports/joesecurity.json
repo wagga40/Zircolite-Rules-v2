@@ -93,11 +93,11 @@
   "official_baseline": {
     "artifacts": {
       "rules_linux.json": "d28e22b981c21100e647be961570471ceb40b1fde85cbe80a0c771f6d2a6fd92",
-      "rules_windows_generic.json": "44bab29217e0380d67deabb37081034e5410981272a316d4875a7d2b16a41f52",
-      "rules_windows_sysmon.json": "7aed08b1bf9c00eb5120e7cae6843f7412e49d516f85afc680883b32062f112f"
+      "rules_windows_generic.json": "034a7d28bf291ca56ee996bdac9e6e7e16f8fe48c511eea7b02c6250c0fa26ba",
+      "rules_windows_sysmon.json": "90725f48e0e3ea41eb0fe9623e8e3300ce5d40a06530a8883c1093ace051e674"
     },
     "repository": "SigmaHQ/sigma",
-    "revision": "d7c9da10c170a6988d68ebdf2c9f7bd8782b7c55"
+    "revision": "570661d13547219831de58aa5ef0c715777549ff"
   },
   "official_duplicates_removed": {
     "generic/correlations": 0,
