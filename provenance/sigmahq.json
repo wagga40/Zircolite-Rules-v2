@@ -32022,7 +32022,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_reg_dumping_sensitive_hives.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "ba93ca6e6c001483dba95a016bc2d73533822e7a772a9f1e4305be55ddc66323"
+      "sha256": "c95bfc4df5dd8ccd9573ed4e7a5c601abade4f6de640cb83e570e6292a066147"
     },
     {
       "document": "0",
@@ -58867,7 +58867,7 @@
       "document": "0",
       "id": "fd877b94-9bb5-4191-bb25-d79cbd93c167",
       "path": "rules/windows/process_creation/proc_creation_win_reg_dumping_sensitive_hives.yml",
-      "sha256": "ba93ca6e6c001483dba95a016bc2d73533822e7a772a9f1e4305be55ddc66323"
+      "sha256": "c95bfc4df5dd8ccd9573ed4e7a5c601abade4f6de640cb83e570e6292a066147"
     },
     {
       "adaptations": {},
@@ -68531,7 +68531,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "570661d13547219831de58aa5ef0c715777549ff",
+  "revision": "54967d64e6dda2b4daa81f47f7a8bf1f591b68a0",
   "source": "sigmahq",
   "status": "validated",
   "tools": {

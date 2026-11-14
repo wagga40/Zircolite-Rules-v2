@@ -4380,11 +4380,11 @@
   "official_baseline": {
     "artifacts": {
       "rules_linux.json": "d28e22b981c21100e647be961570471ceb40b1fde85cbe80a0c771f6d2a6fd92",
-      "rules_windows_generic.json": "034a7d28bf291ca56ee996bdac9e6e7e16f8fe48c511eea7b02c6250c0fa26ba",
-      "rules_windows_sysmon.json": "90725f48e0e3ea41eb0fe9623e8e3300ce5d40a06530a8883c1093ace051e674"
+      "rules_windows_generic.json": "d9dae8dd525482e94fa4e29531c256ca4498abe3397426fb628df67ef8c7c589",
+      "rules_windows_sysmon.json": "bed713ddce5f34fb303f20c48a5add7255448670aa7e9671d5f233f4888dac0f"
     },
     "repository": "SigmaHQ/sigma",
-    "revision": "570661d13547219831de58aa5ef0c715777549ff"
+    "revision": "54967d64e6dda2b4daa81f47f7a8bf1f591b68a0"
   },
   "official_duplicates_removed": {
     "generic/correlations": 0,

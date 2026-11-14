@@ -28,7 +28,7 @@
       },
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
-      "revision": "58f8f145c65ed0bc0dcf888efde4ca9ca87ba846",
+      "revision": "73f990fa5ab767a401515ad91b4ed297da9351fc",
       "status": "current"
     },
     "joesecurity": {
@@ -87,11 +87,11 @@
     },
     "sigmahq": {
       "artifacts": {
-        "rules_windows_merged.json": "644dc5db09e0dbcd26dd77d5c825dbe04c32774a6393d1348ad531c366a9b754"
+        "rules_windows_merged.json": "c33392acd88dc897fba233529955b3fa7d48fcfd2ccad4a39032c2c3d6b37e89"
       },
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
-      "revision": "570661d13547219831de58aa5ef0c715777549ff",
+      "revision": "54967d64e6dda2b4daa81f47f7a8bf1f591b68a0",
       "status": "current"
     },
     "tsale": {
