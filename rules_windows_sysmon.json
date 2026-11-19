@@ -2728,7 +2728,7 @@
       1
     ],
     "falsepositives": [
-      "Depending on the environement, many legitimate scripts will import modules inline. This rule is targeted for hunting purposes."
+      "Depending on the environment, many legitimate scripts will import modules inline. This rule is targeted for hunting purposes."
     ],
     "filename": "rules-threat-hunting/windows/process_creation/proc_creation_win_powershell_import_module.yml",
     "id": "4ad74d01-f48c-42d0-b88c-b31efa4d2262",
@@ -10114,7 +10114,7 @@
     "channel": [
       "Microsoft-Windows-Sysmon/Operational"
     ],
-    "description": "Detects \"RegAsm.exe\" initiating a network connection to public IP adresses",
+    "description": "Detects \"RegAsm.exe\" initiating a network connection to public IP addresses",
     "eventid": [
       3
     ],
@@ -12652,7 +12652,7 @@
     "channel": [
       "Microsoft-Windows-Sysmon/Operational"
     ],
-    "description": "Detects the creation of a file with the \".dll\" extension that has the name of a System DLL in uncommon or unsuspected locations. (Outisde of \"System32\", \"SysWOW64\", etc.).\nIt is highly recommended to perform an initial baseline before using this rule in production.\n",
+    "description": "Detects the creation of a file with the \".dll\" extension that has the name of a System DLL in uncommon or unsuspected locations. (Outside of \"System32\", \"SysWOW64\", etc.).\nIt is highly recommended to perform an initial baseline before using this rule in production.\n",
     "eventid": [
       11
     ],
@@ -13527,7 +13527,7 @@
     "channel": [
       "Microsoft-Windows-Sysmon/Operational"
     ],
-    "description": "Detects usage of the \"ms-appinstaller\" protocol handler via command line to potentially download arbitrary files via AppInstaller.EXE\nThe downloaded files are temporarly stored in \":\\Users\\%username%\\AppData\\Local\\Packages\\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\\AC\\INetCache\\<RANDOM-8-CHAR-DIRECTORY>\"\n",
+    "description": "Detects usage of the \"ms-appinstaller\" protocol handler via command line to potentially download arbitrary files via AppInstaller.EXE\nThe downloaded files are temporarily stored in \":\\Users\\%username%\\AppData\\Local\\Packages\\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\\AC\\INetCache\\<RANDOM-8-CHAR-DIRECTORY>\"\n",
     "eventid": [
       1
     ],
@@ -13955,7 +13955,7 @@
     "channel": [
       "Microsoft-Windows-Sysmon/Operational"
     ],
-    "description": "Detects the usage of curl.exe, KeyScramblerLogon, or other non-standard/suspicious processes used to create Autoit3.exe.\nThis activity has been associated with DarkGate malware, which uses Autoit3.exe to execute shellcode that performs\nprocess injection and connects to the DarkGate command-and-control server. Curl, KeyScramblerLogon, and these other\nprocesses consitute non-standard and suspicious ways to retrieve the Autoit3 executable.\n",
+    "description": "Detects the usage of curl.exe, KeyScramblerLogon, or other non-standard/suspicious processes used to create Autoit3.exe.\nThis activity has been associated with DarkGate malware, which uses Autoit3.exe to execute shellcode that performs\nprocess injection and connects to the DarkGate command-and-control server. Curl, KeyScramblerLogon, and these other\nprocesses constitute non-standard and suspicious ways to retrieve the Autoit3 executable.\n",
     "eventid": [
       11
     ],
@@ -16051,7 +16051,7 @@
       1
     ],
     "falsepositives": [
-      "False positives are expected in environement leveraging ClickOnce deployments. An initial baselining is required before using this rule in production."
+      "False positives are expected in environment leveraging ClickOnce deployments. An initial baselining is required before using this rule in production."
     ],
     "filename": "rules-threat-hunting/windows/process_creation/proc_creation_win_dfsvc_child_processes.yml",
     "id": "241d52b5-eee0-49d0-ac8a-8b9c15c7221c",
@@ -19966,7 +19966,7 @@
       3
     ],
     "falsepositives": [
-      "False positives are expected from ClickOnce manifests hosted on public IPs and domains. Apply additional filters for the accepted IPs in your environement as necessary"
+      "False positives are expected from ClickOnce manifests hosted on public IPs and domains. Apply additional filters for the accepted IPs in your environment as necessary"
     ],
     "filename": "rules-threat-hunting/windows/network_connection/net_connection_win_dfsvc_non_local_ip.yml",
     "id": "3c21219b-49b5-4268-bce6-c914ed50f09c",
@@ -60210,7 +60210,7 @@
     "channel": [
       "Microsoft-Windows-Sysmon/Operational"
     ],
-    "description": "Detects potential sideloading of malicious \"aclui.dll\" by OleView.This behavior was observed in Raspberry-Robin variants reported by chekpoint research on Feburary 2024.\n",
+    "description": "Detects potential sideloading of malicious \"aclui.dll\" by OleView.This behavior was observed in Raspberry-Robin variants reported by Check Point Research on February 2024.\n",
     "eventid": [
       7
     ],
@@ -68874,7 +68874,7 @@
     "channel": [
       "Microsoft-Windows-Sysmon/Operational"
     ],
-    "description": "Detects outbound network connection initiated by Microsoft Dialer.\nThe Microsoft Dialer, also known as Phone Dialer, is a built-in utility application included in various versions of the Microsoft Windows operating system. Its primary function is to provide users with a graphical interface for managing phone calls via a modem or a phone line connected to the computer.\nThis is an outdated process in the current conext of it's usage and is a common target for info stealers for process injection, and is used to make C2 connections, common example is \"Rhadamanthys\"\n",
+    "description": "Detects outbound network connection initiated by Microsoft Dialer.\nThe Microsoft Dialer, also known as Phone Dialer, is a built-in utility application included in various versions of the Microsoft Windows operating system. Its primary function is to provide users with a graphical interface for managing phone calls via a modem or a phone line connected to the computer.\nThis is an outdated process in the current context of it's usage and is a common target for info stealers for process injection, and is used to make C2 connections, common example is \"Rhadamanthys\"\n",
     "eventid": [
       3
     ],
@@ -71345,7 +71345,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=13 AND (TargetObject LIKE '%Classes\\\\.%' ESCAPE '\\' AND Details='exefile'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=13 AND ((TargetObject LIKE '%Classes\\\\.%' ESCAPE '\\' AND Details='exefile') AND (NOT COALESCE((TargetObject LIKE '%Classes\\\\.exe\\\\(Default)' ESCAPE '\\'), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -72312,12 +72312,13 @@
     },
     "required_fields": [
       "Channel",
+      "Details",
       "EventID",
       "TargetObject"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=13 AND (TargetObject LIKE '%\\\\Services\\\\%' ESCAPE '\\' AND TargetObject LIKE '%\\\\Instances\\\\Sysmon Instance\\\\Altitude' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=13 AND ((TargetObject LIKE '%\\\\Services\\\\%' ESCAPE '\\' AND TargetObject LIKE '%\\\\Instances\\\\Sysmon Instance\\\\Altitude' ESCAPE '\\') AND (NOT COALESCE((Details=385201), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -81166,7 +81167,7 @@
     "channel": [
       "Microsoft-Windows-Sysmon/Operational"
     ],
-    "description": "Detects the setting of the environement variable \"windir\" to a non default value.\nAttackers often abuse this variable in order to trigger a UAC bypass via the \"SilentCleanup\" task.\nThe SilentCleanup task located in %windir%\\system32\\cleanmgr.exe is an auto-elevated task that can be abused to elevate any file with administrator privileges without prompting UAC.\n",
+    "description": "Detects the setting of the environment variable \"windir\" to a non default value.\nAttackers often abuse this variable in order to trigger a UAC bypass via the \"SilentCleanup\" task.\nThe SilentCleanup task located in %windir%\\system32\\cleanmgr.exe is an auto-elevated task that can be abused to elevate any file with administrator privileges without prompting UAC.\n",
     "eventid": [
       13
     ],
@@ -88408,12 +88409,13 @@
     },
     "required_fields": [
       "Channel",
+      "Details",
       "EventID",
       "TargetObject"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=13 AND (TargetObject LIKE '%\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MyComputer%' ESCAPE '\\' AND TargetObject LIKE '%(Default)' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=13 AND ((TargetObject LIKE '%\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MyComputer%' ESCAPE '\\' AND TargetObject LIKE '%path\\\\(Default)' ESCAPE '\\') AND (NOT COALESCE(((Details LIKE '\\%\\%SystemRoot\\%\\%\\\\%' ESCAPE '\\' OR Details LIKE '\\%\\%Windir\\%\\%\\\\%' ESCAPE '\\' OR Details LIKE '\\%SystemRoot\\%\\\\%' ESCAPE '\\' OR Details LIKE '\\%Windir\\%\\\\%' ESCAPE '\\' OR Details LIKE 'C:\\\\Windows\\\\%' ESCAPE '\\') AND ((TargetObject LIKE '%\\\\MyComputer\\\\BackupPath\\\\(Default)' ESCAPE '\\' AND (Details LIKE '%\\\\System32\\\\sdclt.exe' ESCAPE '\\' OR Details LIKE '%\\\\SysWOW64\\\\sdclt.exe' ESCAPE '\\')) OR (TargetObject LIKE '%\\\\MyComputer\\\\cleanuppath\\\\(Default)' ESCAPE '\\' AND (Details LIKE '%\\\\System32\\\\cleanmgr.exe /D \\%c' ESCAPE '\\' OR Details LIKE '%\\\\SysWOW64\\\\cleanmgr.exe /D \\%c' ESCAPE '\\' OR Details LIKE '%\\\\System32\\\\cleanmgr.exe /D \\%\\%c' ESCAPE '\\' OR Details LIKE '%\\\\SysWOW64\\\\cleanmgr.exe /D \\%\\%c' ESCAPE '\\')) OR (TargetObject LIKE '%\\\\MyComputer\\\\DefragPath\\\\(Default)' ESCAPE '\\' AND (Details LIKE '%\\\\System32\\\\dfrgui.exe' ESCAPE '\\' OR Details LIKE '%\\\\SysWOW64\\\\dfrgui.exe' ESCAPE '\\')))), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -108302,12 +108304,13 @@
     },
     "required_fields": [
       "Channel",
+      "Details",
       "EventID",
       "TargetObject"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=13 AND TargetObject LIKE '%\\\\Services\\\\WinSock2\\\\Parameters\\\\AutodialDLL%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=13 AND (TargetObject LIKE '%\\\\Services\\\\WinSock2\\\\Parameters\\\\AutodialDLL%' ESCAPE '\\' AND (NOT COALESCE((Details LIKE '\\%\\%SystemRoot\\%\\%\\\\System32\\\\rasadhlp.dll' ESCAPE '\\' OR Details LIKE '\\%\\%SystemRoot\\%\\%\\\\SysWOW64\\\\rasadhlp.dll' ESCAPE '\\' OR Details LIKE '\\%\\%windir\\%\\%\\\\System32\\\\rasadhlp.dll' ESCAPE '\\' OR Details LIKE '\\%\\%windir\\%\\%\\\\SysWOW64\\\\rasadhlp.dll' ESCAPE '\\' OR Details LIKE '\\%SystemRoot\\%\\\\System32\\\\rasadhlp.dll' ESCAPE '\\' OR Details LIKE '\\%SystemRoot\\%\\\\SysWOW64\\\\rasadhlp.dll' ESCAPE '\\' OR Details LIKE '\\%windir\\%\\\\System32\\\\rasadhlp.dll' ESCAPE '\\' OR Details LIKE '\\%windir\\%\\\\SysWOW64\\\\rasadhlp.dll' ESCAPE '\\' OR Details LIKE 'C:\\\\Windows\\\\System32\\\\rasadhlp.dll' ESCAPE '\\' OR Details LIKE 'C:\\\\Windows\\\\SysWOW64\\\\rasadhlp.dll' ESCAPE '\\'), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -114209,7 +114212,7 @@
     "channel": [
       "Microsoft-Windows-Sysmon/Operational"
     ],
-    "description": "Detects cases in which an ISO files is opend within an archiver like 7Zip or Winrar, which is a sign of phishing as threat actors put small ISO files in archives as email attachments to bypass certain filters and protective measures (mark of web)",
+    "description": "Detects cases in which an ISO files is opened within an archiver like 7Zip or Winrar, which is a sign of phishing as threat actors put small ISO files in archives as email attachments to bypass certain filters and protective measures (mark of web)",
     "eventid": [
       1
     ],
@@ -117006,7 +117009,7 @@
       4663
     ],
     "falsepositives": [
-      "Searchprotocolhost.exe likes to query these registry keys. To avoid false postives, it's better to filter out those events before they reach the SIEM"
+      "Searchprotocolhost.exe likes to query these registry keys. To avoid false positives, it's better to filter out those events before they reach the SIEM"
     ],
     "filename": "rules-emerging-threats/2023/Exploits/CVE-2023-23397/win_security_exploit_cve_2023_23397_outlook_remote_file_query.yml",
     "id": "73c59189-6a6d-4b9f-a748-8f6f9bbed75c",
@@ -119680,7 +119683,7 @@
     "channel": [
       "Microsoft-Windows-Sysmon/Operational"
     ],
-    "description": "Detects potential Dridex acitvity via specific process patterns",
+    "description": "Detects potential Dridex activity via specific process patterns",
     "eventid": [
       1
     ],

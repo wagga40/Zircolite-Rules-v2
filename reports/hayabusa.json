@@ -50,12 +50,12 @@
   "input_documents": 199,
   "official_baseline": {
     "artifacts": {
-      "rules_linux.json": "d28e22b981c21100e647be961570471ceb40b1fde85cbe80a0c771f6d2a6fd92",
-      "rules_windows_generic.json": "d9dae8dd525482e94fa4e29531c256ca4498abe3397426fb628df67ef8c7c589",
-      "rules_windows_sysmon.json": "bed713ddce5f34fb303f20c48a5add7255448670aa7e9671d5f233f4888dac0f"
+      "rules_linux.json": "18449af76bc5ed5a17843e838743b403ae002f8f1195322a815d4ec743f8f910",
+      "rules_windows_generic.json": "fbb2c081bf075c5d01072976c3540a7ee6eef1054afc3f41db7f6176186f1394",
+      "rules_windows_sysmon.json": "8301337ffa7c1bf6a738f4ab20681132fc02a17d671d6214f8d290e69da681f1"
     },
     "repository": "SigmaHQ/sigma",
-    "revision": "088855f00b65a19e345b09c1619272b44f92fea4"
+    "revision": "698f0912f571d5fac3bf8c51f5421139834a011c"
   },
   "official_duplicates_removed": {
     "native/correlations": 0,
@@ -2400,7 +2400,7 @@
     }
   ],
   "repository": "Yamato-Security/hayabusa-rules",
-  "revision": "73f990fa5ab767a401515ad91b4ed297da9351fc",
+  "revision": "57743fd6a2fc46bdf330dac69619e68347e033b6",
   "source": "hayabusa",
   "status": "validated",
   "tools": {

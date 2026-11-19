@@ -3847,7 +3847,7 @@
       "path": "rules/linux/process_creation/proc_creation_lnx_susp_network_utilities_execution.yml",
       "profile": "sysmon",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "5fa056ac54b8a796dc558300c4ab277c2e559c87ed8e3d51413ee7313f3ece4c"
+      "sha256": "1f67631ceb28e27fa4bc9ebca508ffa93b92743ca5db9eaf06bb036323a45f8a"
     },
     {
       "document": "0",
@@ -4939,7 +4939,7 @@
       "path": "rules/web/proxy_generic/proxy_pua_advanced_ip_scanner_update_check.yml",
       "profile": "sysmon",
       "reason": "logsource product None is outside this profile",
-      "sha256": "6c3b1ff33588b273b4b19e934562e4a1d62bea279bc9a6bb25cf1fa413a0cecd"
+      "sha256": "d72dc49e7e1e5c38e573805b44673018abff15f2545e98be57c228101db25daf"
     },
     {
       "document": "0",
@@ -5373,7 +5373,7 @@
       "path": "rules-emerging-threats/2020/Exploits/CVE-2020-3452/web_cve_2020_3452_cisco_asa_ftd.yml",
       "profile": "sysmon",
       "reason": "logsource product None is outside this profile",
-      "sha256": "8d70f4130744f8a74a4babbd4744261040540febb7c53c9aa50afaf79116a9a5"
+      "sha256": "4de0e9d11884fdb82938952d97ffa4fbb00eb214ba6f29acec2182ededc7198e"
     },
     {
       "document": "0",
@@ -5954,7 +5954,7 @@
       "path": "rules-emerging-threats/2023/TA/Okta-Support-System-Breach/okta_apt_suspicious_user_creation.yml",
       "profile": "sysmon",
       "reason": "logsource product 'okta' is outside this profile",
-      "sha256": "8eddef7cd3fc59889db1e9e17a057d6886d8ab42bd97497dd84fab137f51cb0b"
+      "sha256": "24c658cb4d24c3b1dc11179fc5c8922c1abfcb77e95689174570a71a7a354811"
     },
     {
       "document": "0",
@@ -6297,7 +6297,7 @@
       "path": "rules-threat-hunting/cloud/m365/audit/microsoft365_susp_email_forwarding_activity.yml",
       "profile": "sysmon",
       "reason": "logsource product 'm365' is outside this profile",
-      "sha256": "87c053c36bf155c0176f4df7bb1772d8352dbd073fdbbf6b8f72b4549a0a283c"
+      "sha256": "45edf9d21343f61a9340ef9d38defe115148dcd2d1de36bd8894bb81dc9b2294"
     },
     {
       "document": "0",
@@ -6311,7 +6311,7 @@
       "path": "rules-threat-hunting/cloud/okta/okta_password_health_report_query.yml",
       "profile": "sysmon",
       "reason": "logsource product 'okta' is outside this profile",
-      "sha256": "8f9843fd12ce2adb7e7f4144ee5794260fdfc3a6af9149370e8d1ad66372db0b"
+      "sha256": "29bfd0687d0497e2704bbd6b8490bf90f6354083505135cdfc859e3b93ca8e16"
     },
     {
       "document": "0",
@@ -10259,7 +10259,7 @@
       "path": "rules/linux/process_creation/proc_creation_lnx_susp_network_utilities_execution.yml",
       "profile": "generic",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "5fa056ac54b8a796dc558300c4ab277c2e559c87ed8e3d51413ee7313f3ece4c"
+      "sha256": "1f67631ceb28e27fa4bc9ebca508ffa93b92743ca5db9eaf06bb036323a45f8a"
     },
     {
       "document": "0",
@@ -11351,7 +11351,7 @@
       "path": "rules/web/proxy_generic/proxy_pua_advanced_ip_scanner_update_check.yml",
       "profile": "generic",
       "reason": "logsource product None is outside this profile",
-      "sha256": "6c3b1ff33588b273b4b19e934562e4a1d62bea279bc9a6bb25cf1fa413a0cecd"
+      "sha256": "d72dc49e7e1e5c38e573805b44673018abff15f2545e98be57c228101db25daf"
     },
     {
       "document": "0",
@@ -11764,7 +11764,7 @@
       "path": "rules/windows/dns_query/dns_query_win_dns_server_discovery_via_ldap_query.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "ac4c207dbcfbd2b449d7397256cd4a279f1da27fa2e85cd6192c8f841eefb68e"
+      "sha256": "430d7684c84aea221d38623057f0a38c55ed57293c01c0b75d9c291b82b5bb99"
     },
     {
       "document": "0",
@@ -12191,14 +12191,14 @@
       "path": "rules/windows/file/file_event/file_event_win_creation_system_dll_files.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "7a6e900e83d5dea3c42aa1912f02d78d03c1349304240157140dc0bf76a386e5"
+      "sha256": "1a662f4e97d1989b5fdf5d8fec3a1aa39b959c382042f5f65061d86c0013ad2a"
     },
     {
       "document": "0",
       "path": "rules/windows/file/file_event/file_event_win_creation_system_file.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "27cee6df0f72f73c5f547d73a6f71bf689b0bd8a773bf753a05cefad553e7bee"
+      "sha256": "793f57096aa1fd9697241d7a734340d4bffc83e033ffb3409f596d1a403f2688"
     },
     {
       "document": "0",
@@ -14018,7 +14018,7 @@
       "path": "rules/windows/network_connection/net_connection_win_dialer_initiated_connection.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "9c13969b70c3bb98c5b6d722d491df90053e5eb685957bcc183b68e48d243f8f"
+      "sha256": "d0c1d3d063cf2270b6f55cc58920f051b051905eae0fb8cf732efceb763b5a33"
     },
     {
       "document": "0",
@@ -14214,7 +14214,7 @@
       "path": "rules/windows/network_connection/net_connection_win_regasm_network_activity.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "b14d03605e62155b97fa7e36ca22ab8e97c86637e8063d00bac65cf0f4d2e875"
+      "sha256": "da985769cc67999832e909e7c27ac2d6e64e13450e4394ec70bc467941338fd5"
     },
     {
       "document": "0",
@@ -14907,7 +14907,7 @@
       "path": "rules-emerging-threats/2020/Exploits/CVE-2020-3452/web_cve_2020_3452_cisco_asa_ftd.yml",
       "profile": "generic",
       "reason": "logsource product None is outside this profile",
-      "sha256": "8d70f4130744f8a74a4babbd4744261040540febb7c53c9aa50afaf79116a9a5"
+      "sha256": "4de0e9d11884fdb82938952d97ffa4fbb00eb214ba6f29acec2182ededc7198e"
     },
     {
       "document": "0",
@@ -15656,7 +15656,7 @@
       "path": "rules-emerging-threats/2023/Malware/DarkGate/file_event_win_malware_darkgate_autoit3_binary_creation.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "0d9b6c2c05385ce2c0ad9396e6043cce49628770ea1139fdfef6399dd8fba26b"
+      "sha256": "c01bcd609913ad6018d8b226b8262257bc20c04e55390626174396e84a8d756c"
     },
     {
       "document": "0",
@@ -15796,7 +15796,7 @@
       "path": "rules-emerging-threats/2023/TA/Okta-Support-System-Breach/okta_apt_suspicious_user_creation.yml",
       "profile": "generic",
       "reason": "logsource product 'okta' is outside this profile",
-      "sha256": "8eddef7cd3fc59889db1e9e17a057d6886d8ab42bd97497dd84fab137f51cb0b"
+      "sha256": "24c658cb4d24c3b1dc11179fc5c8922c1abfcb77e95689174570a71a7a354811"
     },
     {
       "document": "0",
@@ -15936,7 +15936,7 @@
       "path": "rules-emerging-threats/2024/Malware/Raspberry-Robin/image_load_malware_raspberry_robin_side_load_aclui_oleview.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "d3c42c8f6da959947619a2255e83fd4f5dd9bdf3d8f91dca603960bbe3243bc7"
+      "sha256": "74104cfd40e8e01e24c62704404f3ec2a72987941b4fc466a60001921ed2d1e5"
     },
     {
       "document": "0",
@@ -16328,7 +16328,7 @@
       "path": "rules-threat-hunting/cloud/m365/audit/microsoft365_susp_email_forwarding_activity.yml",
       "profile": "generic",
       "reason": "logsource product 'm365' is outside this profile",
-      "sha256": "87c053c36bf155c0176f4df7bb1772d8352dbd073fdbbf6b8f72b4549a0a283c"
+      "sha256": "45edf9d21343f61a9340ef9d38defe115148dcd2d1de36bd8894bb81dc9b2294"
     },
     {
       "document": "0",
@@ -16342,7 +16342,7 @@
       "path": "rules-threat-hunting/cloud/okta/okta_password_health_report_query.yml",
       "profile": "generic",
       "reason": "logsource product 'okta' is outside this profile",
-      "sha256": "8f9843fd12ce2adb7e7f4144ee5794260fdfc3a6af9149370e8d1ad66372db0b"
+      "sha256": "29bfd0687d0497e2704bbd6b8490bf90f6354083505135cdfc859e3b93ca8e16"
     },
     {
       "document": "0",
@@ -16622,7 +16622,7 @@
       "path": "rules-threat-hunting/windows/network_connection/net_connection_win_dfsvc_non_local_ip.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "4cdfe83eb0c166ae839b80a6975df7250c1d117eef61ac328d6ae450e0eb9181"
+      "sha256": "a2f7b8205792df8ae5958656f62b86077edf57ab25918dfd5570f1adcb3ec783"
     },
     {
       "document": "0",
@@ -20164,7 +20164,7 @@
       "path": "rules/web/proxy_generic/proxy_pua_advanced_ip_scanner_update_check.yml",
       "profile": "linux",
       "reason": "logsource product None is outside this profile",
-      "sha256": "6c3b1ff33588b273b4b19e934562e4a1d62bea279bc9a6bb25cf1fa413a0cecd"
+      "sha256": "d72dc49e7e1e5c38e573805b44673018abff15f2545e98be57c228101db25daf"
     },
     {
       "document": "0",
@@ -22866,7 +22866,7 @@
       "path": "rules/windows/dns_query/dns_query_win_dns_server_discovery_via_ldap_query.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "ac4c207dbcfbd2b449d7397256cd4a279f1da27fa2e85cd6192c8f841eefb68e"
+      "sha256": "430d7684c84aea221d38623057f0a38c55ed57293c01c0b75d9c291b82b5bb99"
     },
     {
       "document": "0",
@@ -23293,14 +23293,14 @@
       "path": "rules/windows/file/file_event/file_event_win_creation_system_dll_files.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "7a6e900e83d5dea3c42aa1912f02d78d03c1349304240157140dc0bf76a386e5"
+      "sha256": "1a662f4e97d1989b5fdf5d8fec3a1aa39b959c382042f5f65061d86c0013ad2a"
     },
     {
       "document": "0",
       "path": "rules/windows/file/file_event/file_event_win_creation_system_file.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "27cee6df0f72f73c5f547d73a6f71bf689b0bd8a773bf753a05cefad553e7bee"
+      "sha256": "793f57096aa1fd9697241d7a734340d4bffc83e033ffb3409f596d1a403f2688"
     },
     {
       "document": "0",
@@ -25120,7 +25120,7 @@
       "path": "rules/windows/network_connection/net_connection_win_dialer_initiated_connection.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "9c13969b70c3bb98c5b6d722d491df90053e5eb685957bcc183b68e48d243f8f"
+      "sha256": "d0c1d3d063cf2270b6f55cc58920f051b051905eae0fb8cf732efceb763b5a33"
     },
     {
       "document": "0",
@@ -25316,7 +25316,7 @@
       "path": "rules/windows/network_connection/net_connection_win_regasm_network_activity.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "b14d03605e62155b97fa7e36ca22ab8e97c86637e8063d00bac65cf0f4d2e875"
+      "sha256": "da985769cc67999832e909e7c27ac2d6e64e13450e4394ec70bc467941338fd5"
     },
     {
       "document": "0",
@@ -33555,7 +33555,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_susp_archiver_iso_phishing.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "ff6e430b340a9c56810363acc28e7f7761e9a784c630c8a1eadcf4bd48dc85fb"
+      "sha256": "b20359908e8a6947ea443f94083d98bbace8d02772958d3a81c9df04a0eb9ef4"
     },
     {
       "document": "0",
@@ -33926,7 +33926,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_susp_ms_appinstaller_download.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "a8bcf42c4d424979a71e856b69d04606ff24306c33edda01c350b1f41448ecd4"
+      "sha256": "ec493437e6cdecf54f12cb4a661a71a4a0cd6fae18370a0f8fcbf047351e5647"
     },
     {
       "document": "0",
@@ -36054,7 +36054,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_bypass_uac_using_silentcleanup_task.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "a08281aa43d30f511df06d3142677a2a14bd7fd1c5aefe99b13260e3b3d8c470"
+      "sha256": "386537e994c7b7e39172cc0bf7083cb6c6050e88011379adad6d9ba1b2b388ed"
     },
     {
       "document": "0",
@@ -36075,7 +36075,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_change_sysmon_driver_altitude.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "3c0ae9cb61a50dc9825d0a51aeb2bb5a0819a836ba237489283ccbeabe91da41"
+      "sha256": "c81767e53b8cda4a16e324104816f91bb201eb34888e33c966d024866ac2ef74"
     },
     {
       "document": "0",
@@ -36418,7 +36418,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_file_association_exefile.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "fcafc342b363710f51f6c8a20f66bcf50366e7054462a449a0ea057b7939c786"
+      "sha256": "949fc84eb53b04276d2cfa3eb2be051be02e7ddad2922385a0ccf9ea0b5d649c"
     },
     {
       "document": "0",
@@ -36705,7 +36705,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_persistence_autodial_dll.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "8a918df24626ba3fb4c9aad7b8873b33839dcb847710b19aa4d9f0a37efc220d"
+      "sha256": "178cd36a6b6acaa341bf4f23fcf5028729491fb8dc916aeedac5692d6933623e"
     },
     {
       "document": "0",
@@ -36796,7 +36796,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_persistence_mycomputer.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "8ed436ca91b005dd210b557efc501c883ba261189627d19fac2833b915ef6173"
+      "sha256": "1ef2b1ee87782206e5ba37750dea4136ec63418c51e19e85ce2b051acdc5e3a5"
     },
     {
       "document": "0",
@@ -37741,7 +37741,7 @@
       "path": "rules-emerging-threats/2019/Malware/Dridex/proc_creation_win_malware_dridex.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "219499fc86ee9a0c9e625dbaf30c144d31cf6ee820fd550ae70fdc272c6db247"
+      "sha256": "e960f6343f6ac8025e6843fd5e557b17c71ba3c195a2cb6f703a1ed9e109501b"
     },
     {
       "document": "0",
@@ -37958,7 +37958,7 @@
       "path": "rules-emerging-threats/2020/Exploits/CVE-2020-3452/web_cve_2020_3452_cisco_asa_ftd.yml",
       "profile": "linux",
       "reason": "logsource product None is outside this profile",
-      "sha256": "8d70f4130744f8a74a4babbd4744261040540febb7c53c9aa50afaf79116a9a5"
+      "sha256": "4de0e9d11884fdb82938952d97ffa4fbb00eb214ba6f29acec2182ededc7198e"
     },
     {
       "document": "0",
@@ -39008,7 +39008,7 @@
       "path": "rules-emerging-threats/2023/Exploits/CVE-2023-23397/win_security_exploit_cve_2023_23397_outlook_remote_file_query.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "dc9f9c866f9bedf796b710ef0e5ef6b020ce5fcd5907fd6522d615687581a5c3"
+      "sha256": "318226379fc8c335090730b0436bfd71c6173d79878d19b4661fea4e276b0774"
     },
     {
       "document": "0",
@@ -39302,7 +39302,7 @@
       "path": "rules-emerging-threats/2023/Malware/DarkGate/file_event_win_malware_darkgate_autoit3_binary_creation.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "0d9b6c2c05385ce2c0ad9396e6043cce49628770ea1139fdfef6399dd8fba26b"
+      "sha256": "c01bcd609913ad6018d8b226b8262257bc20c04e55390626174396e84a8d756c"
     },
     {
       "document": "0",
@@ -39736,7 +39736,7 @@
       "path": "rules-emerging-threats/2023/TA/Okta-Support-System-Breach/okta_apt_suspicious_user_creation.yml",
       "profile": "linux",
       "reason": "logsource product 'okta' is outside this profile",
-      "sha256": "8eddef7cd3fc59889db1e9e17a057d6886d8ab42bd97497dd84fab137f51cb0b"
+      "sha256": "24c658cb4d24c3b1dc11179fc5c8922c1abfcb77e95689174570a71a7a354811"
     },
     {
       "document": "0",
@@ -39918,7 +39918,7 @@
       "path": "rules-emerging-threats/2024/Malware/Raspberry-Robin/image_load_malware_raspberry_robin_side_load_aclui_oleview.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "d3c42c8f6da959947619a2255e83fd4f5dd9bdf3d8f91dca603960bbe3243bc7"
+      "sha256": "74104cfd40e8e01e24c62704404f3ec2a72987941b4fc466a60001921ed2d1e5"
     },
     {
       "document": "0",
@@ -40471,7 +40471,7 @@
       "path": "rules-threat-hunting/cloud/m365/audit/microsoft365_susp_email_forwarding_activity.yml",
       "profile": "linux",
       "reason": "logsource product 'm365' is outside this profile",
-      "sha256": "87c053c36bf155c0176f4df7bb1772d8352dbd073fdbbf6b8f72b4549a0a283c"
+      "sha256": "45edf9d21343f61a9340ef9d38defe115148dcd2d1de36bd8894bb81dc9b2294"
     },
     {
       "document": "0",
@@ -40485,7 +40485,7 @@
       "path": "rules-threat-hunting/cloud/okta/okta_password_health_report_query.yml",
       "profile": "linux",
       "reason": "logsource product 'okta' is outside this profile",
-      "sha256": "8f9843fd12ce2adb7e7f4144ee5794260fdfc3a6af9149370e8d1ad66372db0b"
+      "sha256": "29bfd0687d0497e2704bbd6b8490bf90f6354083505135cdfc859e3b93ca8e16"
     },
     {
       "document": "0",
@@ -40779,7 +40779,7 @@
       "path": "rules-threat-hunting/windows/network_connection/net_connection_win_dfsvc_non_local_ip.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "4cdfe83eb0c166ae839b80a6975df7250c1d117eef61ac328d6ae450e0eb9181"
+      "sha256": "a2f7b8205792df8ae5958656f62b86077edf57ab25918dfd5570f1adcb3ec783"
     },
     {
       "document": "0",
@@ -41052,7 +41052,7 @@
       "path": "rules-threat-hunting/windows/process_creation/proc_creation_win_dfsvc_child_processes.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "c5bdf655a14935d7dd00848fe05c792ef45d9ae784a5a4c4c1a9ded99a1a2296"
+      "sha256": "9501db90278cd5d82ce28ca446f08b21c9ea81bd8aa310b026b39999e479b0e6"
     },
     {
       "document": "0",
@@ -41150,7 +41150,7 @@
       "path": "rules-threat-hunting/windows/process_creation/proc_creation_win_powershell_import_module.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "615dd37fb828800cac8e37221f7f95eb49c4e7ada73b6ef1bc6f3671a324e656"
+      "sha256": "aa6266d57305c8874e8ec1bb7a873e95548b731204828046acbb15aa23d31a0c"
     },
     {
       "document": "0",
@@ -45917,7 +45917,7 @@
       "document": "0",
       "id": "3e102cd9-a70d-4a7a-9508-403963092f31",
       "path": "rules/linux/process_creation/proc_creation_lnx_susp_network_utilities_execution.yml",
-      "sha256": "5fa056ac54b8a796dc558300c4ab277c2e559c87ed8e3d51413ee7313f3ece4c"
+      "sha256": "1f67631ceb28e27fa4bc9ebca508ffa93b92743ca5db9eaf06bb036323a45f8a"
     },
     {
       "adaptations": {},
@@ -47009,7 +47009,7 @@
       "document": "0",
       "id": "1a9bb21a-1bb5-42d7-aa05-3219c7c8f47d",
       "path": "rules/web/proxy_generic/proxy_pua_advanced_ip_scanner_update_check.yml",
-      "sha256": "6c3b1ff33588b273b4b19e934562e4a1d62bea279bc9a6bb25cf1fa413a0cecd"
+      "sha256": "d72dc49e7e1e5c38e573805b44673018abff15f2545e98be57c228101db25daf"
     },
     {
       "adaptations": {},
@@ -49711,7 +49711,7 @@
       "document": "0",
       "id": "a21bcd7e-38ec-49ad-b69a-9ea17e69509e",
       "path": "rules/windows/dns_query/dns_query_win_dns_server_discovery_via_ldap_query.yml",
-      "sha256": "ac4c207dbcfbd2b449d7397256cd4a279f1da27fa2e85cd6192c8f841eefb68e"
+      "sha256": "430d7684c84aea221d38623057f0a38c55ed57293c01c0b75d9c291b82b5bb99"
     },
     {
       "adaptations": {},
@@ -50138,14 +50138,14 @@
       "document": "0",
       "id": "13c02350-4177-4e45-ac17-cf7ca628ff5e",
       "path": "rules/windows/file/file_event/file_event_win_creation_system_dll_files.yml",
-      "sha256": "7a6e900e83d5dea3c42aa1912f02d78d03c1349304240157140dc0bf76a386e5"
+      "sha256": "1a662f4e97d1989b5fdf5d8fec3a1aa39b959c382042f5f65061d86c0013ad2a"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "d5866ddf-ce8f-4aea-b28e-d96485a20d3d",
       "path": "rules/windows/file/file_event/file_event_win_creation_system_file.yml",
-      "sha256": "27cee6df0f72f73c5f547d73a6f71bf689b0bd8a773bf753a05cefad553e7bee"
+      "sha256": "793f57096aa1fd9697241d7a734340d4bffc83e033ffb3409f596d1a403f2688"
     },
     {
       "adaptations": {},
@@ -51965,7 +51965,7 @@
       "document": "0",
       "id": "37e4024a-6c80-4d8f-b95d-2e7e94f3a8d1",
       "path": "rules/windows/network_connection/net_connection_win_dialer_initiated_connection.yml",
-      "sha256": "9c13969b70c3bb98c5b6d722d491df90053e5eb685957bcc183b68e48d243f8f"
+      "sha256": "d0c1d3d063cf2270b6f55cc58920f051b051905eae0fb8cf732efceb763b5a33"
     },
     {
       "adaptations": {},
@@ -52161,7 +52161,7 @@
       "document": "0",
       "id": "0531e43a-d77d-47c2-b89f-5fe50321c805",
       "path": "rules/windows/network_connection/net_connection_win_regasm_network_activity.yml",
-      "sha256": "b14d03605e62155b97fa7e36ca22ab8e97c86637e8063d00bac65cf0f4d2e875"
+      "sha256": "da985769cc67999832e909e7c27ac2d6e64e13450e4394ec70bc467941338fd5"
     },
     {
       "adaptations": {},
@@ -60400,7 +60400,7 @@
       "document": "0",
       "id": "fcdf69e5-a3d3-452a-9724-26f2308bf2b1",
       "path": "rules/windows/process_creation/proc_creation_win_susp_archiver_iso_phishing.yml",
-      "sha256": "ff6e430b340a9c56810363acc28e7f7761e9a784c630c8a1eadcf4bd48dc85fb"
+      "sha256": "b20359908e8a6947ea443f94083d98bbace8d02772958d3a81c9df04a0eb9ef4"
     },
     {
       "adaptations": {},
@@ -60771,7 +60771,7 @@
       "document": "0",
       "id": "180c7c5c-d64b-4a63-86e9-68910451bc8b",
       "path": "rules/windows/process_creation/proc_creation_win_susp_ms_appinstaller_download.yml",
-      "sha256": "a8bcf42c4d424979a71e856b69d04606ff24306c33edda01c350b1f41448ecd4"
+      "sha256": "ec493437e6cdecf54f12cb4a661a71a4a0cd6fae18370a0f8fcbf047351e5647"
     },
     {
       "adaptations": {},
@@ -62899,7 +62899,7 @@
       "document": "0",
       "id": "724ea201-6514-4f38-9739-e5973c34f49a",
       "path": "rules/windows/registry/registry_set/registry_set_bypass_uac_using_silentcleanup_task.yml",
-      "sha256": "a08281aa43d30f511df06d3142677a2a14bd7fd1c5aefe99b13260e3b3d8c470"
+      "sha256": "386537e994c7b7e39172cc0bf7083cb6c6050e88011379adad6d9ba1b2b388ed"
     },
     {
       "adaptations": {},
@@ -62920,7 +62920,7 @@
       "document": "0",
       "id": "4916a35e-bfc4-47d0-8e25-a003d7067061",
       "path": "rules/windows/registry/registry_set/registry_set_change_sysmon_driver_altitude.yml",
-      "sha256": "3c0ae9cb61a50dc9825d0a51aeb2bb5a0819a836ba237489283ccbeabe91da41"
+      "sha256": "c81767e53b8cda4a16e324104816f91bb201eb34888e33c966d024866ac2ef74"
     },
     {
       "adaptations": {},
@@ -63263,7 +63263,7 @@
       "document": "0",
       "id": "44a22d59-b175-4f13-8c16-cbaef5b581ff",
       "path": "rules/windows/registry/registry_set/registry_set_file_association_exefile.yml",
-      "sha256": "fcafc342b363710f51f6c8a20f66bcf50366e7054462a449a0ea057b7939c786"
+      "sha256": "949fc84eb53b04276d2cfa3eb2be051be02e7ddad2922385a0ccf9ea0b5d649c"
     },
     {
       "adaptations": {},
@@ -63550,7 +63550,7 @@
       "document": "0",
       "id": "e6fe26ee-d063-4f5b-b007-39e90aaf50e3",
       "path": "rules/windows/registry/registry_set/registry_set_persistence_autodial_dll.yml",
-      "sha256": "8a918df24626ba3fb4c9aad7b8873b33839dcb847710b19aa4d9f0a37efc220d"
+      "sha256": "178cd36a6b6acaa341bf4f23fcf5028729491fb8dc916aeedac5692d6933623e"
     },
     {
       "adaptations": {},
@@ -63641,7 +63641,7 @@
       "document": "0",
       "id": "8fbe98a8-8f9d-44f8-aa71-8c572e29ef06",
       "path": "rules/windows/registry/registry_set/registry_set_persistence_mycomputer.yml",
-      "sha256": "8ed436ca91b005dd210b557efc501c883ba261189627d19fac2833b915ef6173"
+      "sha256": "1ef2b1ee87782206e5ba37750dea4136ec63418c51e19e85ce2b051acdc5e3a5"
     },
     {
       "adaptations": {},
@@ -64607,7 +64607,7 @@
       "document": "0",
       "id": "e6eb5a96-9e6f-4a18-9cdd-642cfda21c8e",
       "path": "rules-emerging-threats/2019/Malware/Dridex/proc_creation_win_malware_dridex.yml",
-      "sha256": "219499fc86ee9a0c9e625dbaf30c144d31cf6ee820fd550ae70fdc272c6db247"
+      "sha256": "e960f6343f6ac8025e6843fd5e557b17c71ba3c195a2cb6f703a1ed9e109501b"
     },
     {
       "adaptations": {},
@@ -64824,7 +64824,7 @@
       "document": "0",
       "id": "aba47adc-4847-4970-95c1-61dce62a8b29",
       "path": "rules-emerging-threats/2020/Exploits/CVE-2020-3452/web_cve_2020_3452_cisco_asa_ftd.yml",
-      "sha256": "8d70f4130744f8a74a4babbd4744261040540febb7c53c9aa50afaf79116a9a5"
+      "sha256": "4de0e9d11884fdb82938952d97ffa4fbb00eb214ba6f29acec2182ededc7198e"
     },
     {
       "adaptations": {},
@@ -65916,7 +65916,7 @@
       "document": "0",
       "id": "73c59189-6a6d-4b9f-a748-8f6f9bbed75c",
       "path": "rules-emerging-threats/2023/Exploits/CVE-2023-23397/win_security_exploit_cve_2023_23397_outlook_remote_file_query.yml",
-      "sha256": "dc9f9c866f9bedf796b710ef0e5ef6b020ce5fcd5907fd6522d615687581a5c3"
+      "sha256": "318226379fc8c335090730b0436bfd71c6173d79878d19b4661fea4e276b0774"
     },
     {
       "adaptations": {},
@@ -66210,7 +66210,7 @@
       "document": "0",
       "id": "1a433e1d-03d2-47a6-8063-ece992cf4e73",
       "path": "rules-emerging-threats/2023/Malware/DarkGate/file_event_win_malware_darkgate_autoit3_binary_creation.yml",
-      "sha256": "0d9b6c2c05385ce2c0ad9396e6043cce49628770ea1139fdfef6399dd8fba26b"
+      "sha256": "c01bcd609913ad6018d8b226b8262257bc20c04e55390626174396e84a8d756c"
     },
     {
       "adaptations": {},
@@ -66644,7 +66644,7 @@
       "document": "0",
       "id": "00a8e92a-776b-425f-80f2-82d8f8fab2e5",
       "path": "rules-emerging-threats/2023/TA/Okta-Support-System-Breach/okta_apt_suspicious_user_creation.yml",
-      "sha256": "8eddef7cd3fc59889db1e9e17a057d6886d8ab42bd97497dd84fab137f51cb0b"
+      "sha256": "24c658cb4d24c3b1dc11179fc5c8922c1abfcb77e95689174570a71a7a354811"
     },
     {
       "adaptations": {},
@@ -66875,7 +66875,7 @@
       "document": "0",
       "id": "0f3a9db2-c17a-480e-a723-d1f1c547ab6a",
       "path": "rules-emerging-threats/2024/Malware/Raspberry-Robin/image_load_malware_raspberry_robin_side_load_aclui_oleview.yml",
-      "sha256": "d3c42c8f6da959947619a2255e83fd4f5dd9bdf3d8f91dca603960bbe3243bc7"
+      "sha256": "74104cfd40e8e01e24c62704404f3ec2a72987941b4fc466a60001921ed2d1e5"
     },
     {
       "adaptations": {},
@@ -67554,7 +67554,7 @@
       "document": "0",
       "id": "c726e007-2cd0-4a55-abfb-79730fbedee5",
       "path": "rules-threat-hunting/cloud/m365/audit/microsoft365_susp_email_forwarding_activity.yml",
-      "sha256": "87c053c36bf155c0176f4df7bb1772d8352dbd073fdbbf6b8f72b4549a0a283c"
+      "sha256": "45edf9d21343f61a9340ef9d38defe115148dcd2d1de36bd8894bb81dc9b2294"
     },
     {
       "adaptations": {},
@@ -67568,7 +67568,7 @@
       "document": "0",
       "id": "0d58814b-1660-4d31-8c93-d1086ed24cba",
       "path": "rules-threat-hunting/cloud/okta/okta_password_health_report_query.yml",
-      "sha256": "8f9843fd12ce2adb7e7f4144ee5794260fdfc3a6af9149370e8d1ad66372db0b"
+      "sha256": "29bfd0687d0497e2704bbd6b8490bf90f6354083505135cdfc859e3b93ca8e16"
     },
     {
       "adaptations": {},
@@ -67890,7 +67890,7 @@
       "document": "0",
       "id": "3c21219b-49b5-4268-bce6-c914ed50f09c",
       "path": "rules-threat-hunting/windows/network_connection/net_connection_win_dfsvc_non_local_ip.yml",
-      "sha256": "4cdfe83eb0c166ae839b80a6975df7250c1d117eef61ac328d6ae450e0eb9181"
+      "sha256": "a2f7b8205792df8ae5958656f62b86077edf57ab25918dfd5570f1adcb3ec783"
     },
     {
       "adaptations": {},
@@ -68163,7 +68163,7 @@
       "document": "0",
       "id": "241d52b5-eee0-49d0-ac8a-8b9c15c7221c",
       "path": "rules-threat-hunting/windows/process_creation/proc_creation_win_dfsvc_child_processes.yml",
-      "sha256": "c5bdf655a14935d7dd00848fe05c792ef45d9ae784a5a4c4c1a9ded99a1a2296"
+      "sha256": "9501db90278cd5d82ce28ca446f08b21c9ea81bd8aa310b026b39999e479b0e6"
     },
     {
       "adaptations": {},
@@ -68261,7 +68261,7 @@
       "document": "0",
       "id": "4ad74d01-f48c-42d0-b88c-b31efa4d2262",
       "path": "rules-threat-hunting/windows/process_creation/proc_creation_win_powershell_import_module.yml",
-      "sha256": "615dd37fb828800cac8e37221f7f95eb49c4e7ada73b6ef1bc6f3671a324e656"
+      "sha256": "aa6266d57305c8874e8ec1bb7a873e95548b731204828046acbb15aa23d31a0c"
     },
     {
       "adaptations": {},
@@ -68531,7 +68531,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "088855f00b65a19e345b09c1619272b44f92fea4",
+  "revision": "698f0912f571d5fac3bf8c51f5421139834a011c",
   "source": "sigmahq",
   "status": "validated",
   "tools": {
