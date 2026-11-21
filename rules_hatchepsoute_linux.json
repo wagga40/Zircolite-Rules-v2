@@ -243,11 +243,13 @@
       "service": "syslog"
     },
     "required_fields": [
-      "message"
+      "message",
+      "process.name",
+      "service.name"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE (message LIKE '%php-fpm%' ESCAPE '\\' OR message LIKE '%php-cgi%' ESCAPE '\\' OR message LIKE '%php worker%' ESCAPE '\\' OR message LIKE '%php-fpm: pool%' ESCAPE '\\') AND (message LIKE '%child exited on signal%' ESCAPE '\\' OR message LIKE '%SIGSEGV%' ESCAPE '\\' OR message LIKE '%segmentation fault%' ESCAPE '\\' OR message LIKE '%core dumped%' ESCAPE '\\' OR message LIKE '%worker exited%' ESCAPE '\\' OR message LIKE '%restarting%' ESCAPE '\\' OR message LIKE '%respawn%' ESCAPE '\\' OR message LIKE '%failed to start%' ESCAPE '\\') AND (NOT COALESCE((message LIKE '%planned maintenance%' ESCAPE '\\' OR message LIKE '%configuration reload%' ESCAPE '\\'), 0))"
+      "SELECT * FROM logs WHERE ((message LIKE '%php-fpm%' ESCAPE '\\' OR message LIKE '%php-cgi%' ESCAPE '\\' OR message LIKE '%php worker%' ESCAPE '\\' OR message LIKE '%php-fpm: pool%' ESCAPE '\\') OR (`process.name` LIKE '%php-fpm%' ESCAPE '\\' OR `process.name` LIKE '%php-cgi%' ESCAPE '\\') OR (`service.name` LIKE '%php-fpm%' ESCAPE '\\' OR `service.name` LIKE '%php%' ESCAPE '\\')) AND (message LIKE '%child exited on signal%' ESCAPE '\\' OR message LIKE '%SIGSEGV%' ESCAPE '\\' OR message LIKE '%segmentation fault%' ESCAPE '\\' OR message LIKE '%core dumped%' ESCAPE '\\' OR message LIKE '%worker exited%' ESCAPE '\\' OR message LIKE '%restarting%' ESCAPE '\\' OR message LIKE '%respawn%' ESCAPE '\\' OR message LIKE '%failed to start%' ESCAPE '\\') AND (NOT COALESCE((message LIKE '%planned maintenance%' ESCAPE '\\' OR message LIKE '%configuration reload%' ESCAPE '\\'), 0))"
     ],
     "schema_version": 2,
     "source": "hatchepsoute",
@@ -257,7 +259,13 @@
       "attack.initial-access",
       "attack.t1190",
       "cve.2026-109618",
-      "cve.2026-109619"
+      "cve.2026-109619",
+      "cve.2026-115560",
+      "cve.2026-126714",
+      "cve.2026-129182",
+      "cve.2026-129474",
+      "cve.2026-129481",
+      "cve.2026-129496"
     ],
     "title": "PHP Worker Crash or Restart After Suspicious Web Request - BROAD"
   },
@@ -302,6 +310,45 @@
       "cve.2026-55200"
     ],
     "title": "Potential libssh2 CVE-2026-55200 Exploit Tooling Or Probe Execution - BROAD"
+  },
+  {
+    "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
+    "channel": [],
+    "description": "Detects a PHP or web-server worker writing a PHP session file in a standard session directory. This may be consistent with session upload-progress or partial-session-file abuse associated with CVE-2026-115560 and CVE-2026-126714, but normal session creation also matches; SOC L1 should correlate the event with an unusual multipart request, session serializer settings, worker errors, and child-process or webshell activity.\nD\u00e9tecte un worker PHP ou un serveur web qui \u00e9crit un fichier de session PHP dans un r\u00e9pertoire de sessions standard. Cela peut \u00eatre compatible avec un abus de session upload-progress ou de fichier de session partiellement \u00e9crit associ\u00e9 \u00e0 CVE-2026-115560 et CVE-2026-126714, mais la cr\u00e9ation normale de sessions correspond aussi ; le SOC L1 doit corr\u00e9ler l\u2019\u00e9v\u00e9nement avec une requ\u00eate multipart inhabituelle, la configuration du s\u00e9rialiseur, les erreurs du worker et une activit\u00e9 de processus enfant ou de webshell.\n",
+    "eventid": [],
+    "falsepositives": [
+      "Normal PHP session creation and rotation",
+      "Applications that use a documented shared file-session directory",
+      "Authorized testing of session upload-progress functionality"
+    ],
+    "filename": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_session_file_write_recent_php_broad.yml",
+    "id": "8b5f1d2c-6a74-4e90-b3c1-9d27f4a81652",
+    "level": "medium",
+    "license": "Apache-2.0",
+    "logsource": {
+      "category": "file_event",
+      "product": "linux"
+    },
+    "required_fields": [
+      "Action",
+      "Image",
+      "TargetFilename"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE (Image LIKE '%/php-fpm%' ESCAPE '\\' OR Image LIKE '%/php-cgi%' ESCAPE '\\' OR Image LIKE '%/apache2%' ESCAPE '\\' OR Image LIKE '%/httpd%' ESCAPE '\\' OR Image LIKE '%/lsphp%' ESCAPE '\\') AND (TargetFilename LIKE '%/var/lib/php/sessions/%' ESCAPE '\\' OR TargetFilename LIKE '%/var/lib/php/session/%' ESCAPE '\\' OR TargetFilename LIKE '%/var/cache/php/session/%' ESCAPE '\\' OR TargetFilename LIKE '%/run/php/sessions/%' ESCAPE '\\' OR TargetFilename LIKE '%/run/php/session/%' ESCAPE '\\' OR TargetFilename LIKE '%/usr/local/var/sessions/%' ESCAPE '\\' OR TargetFilename LIKE '%/tmp/sess\\_%' ESCAPE '\\' OR TargetFilename LIKE '%/var/tmp/sess\\_%' ESCAPE '\\') AND (`Action`='created' OR `Action`='modified' OR `Action`='write' OR `Action`='renamed')"
+    ],
+    "schema_version": 2,
+    "source": "hatchepsoute",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.persistence",
+      "attack.t1505.003",
+      "cve.2026-115560",
+      "cve.2026-126714"
+    ],
+    "title": "Potential PHP Session File Write by Web Worker - BROAD (CVE-2026-115560 / CVE-2026-126714)"
   },
   {
     "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
@@ -635,7 +682,13 @@
       "attack.t1059.004",
       "attack.t1505.003",
       "cve.2026-109618",
-      "cve.2026-109619"
+      "cve.2026-109619",
+      "cve.2026-115560",
+      "cve.2026-126714",
+      "cve.2026-129182",
+      "cve.2026-129474",
+      "cve.2026-129481",
+      "cve.2026-129496"
     ],
     "title": "PHP Worker Spawns Suspicious Child Process After PHP2Shell Exploitation - STRICT"
   },
@@ -680,6 +733,44 @@
       "cve.2026-55200"
     ],
     "title": "Suspicious Malicious SSH PoC Server Listening For libssh2 CVE-2026-55200 - STRICT"
+  },
+  {
+    "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
+    "channel": [],
+    "description": "Detects a Magento or Adobe Commerce web worker spawning a shell or network utility. In the context of a suspicious GraphQL template injection or dangerous upload, this is a high-confidence post-exploitation signal, but the process event alone does not identify the CVE; SOC L1 should correlate the host, HTTP request, file creation, source, and patch state.\nD\u00e9tecte un worker web Magento ou Adobe Commerce qui lance un shell ou un outil r\u00e9seau. Dans le contexte d\u2019une injection de template GraphQL ou d\u2019un upload dangereux, il s\u2019agit d\u2019un signal de post-exploitation \u00e0 haute confiance, mais l\u2019\u00e9v\u00e9nement de processus seul n\u2019identifie pas la CVE ; le SOC L1 doit corr\u00e9ler l\u2019h\u00f4te, la requ\u00eate HTTP, la cr\u00e9ation de fichier, la source et le niveau de correctif.\n",
+    "eventid": [],
+    "falsepositives": [
+      "Authorized Magento maintenance or deployment scripts",
+      "EDR or monitoring actions launched by a web worker in a controlled environment"
+    ],
+    "filename": "CVE-2026-75650_48356_Adobe_Commerce_Magento/rules/linux_magento_webworker_shell_spawn_cve_2026_75650_48356_strict.yml",
+    "id": "4b6cad32-8e53-4fb4-c794-a06e03030303",
+    "level": "high",
+    "license": "Apache-2.0",
+    "logsource": {
+      "category": "process_creation",
+      "product": "linux"
+    },
+    "required_fields": [
+      "Image",
+      "ParentImage"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE (ParentImage LIKE '%/php-fpm' ESCAPE '\\' OR ParentImage LIKE '%/php-fpm8.1' ESCAPE '\\' OR ParentImage LIKE '%/php-fpm8.2' ESCAPE '\\' OR ParentImage LIKE '%/php-fpm8.3' ESCAPE '\\' OR ParentImage LIKE '%/apache2' ESCAPE '\\' OR ParentImage LIKE '%/httpd' ESCAPE '\\' OR ParentImage LIKE '%/nginx' ESCAPE '\\') AND (Image LIKE '%/sh' ESCAPE '\\' OR Image LIKE '%/bash' ESCAPE '\\' OR Image LIKE '%/dash' ESCAPE '\\' OR Image LIKE '%/curl' ESCAPE '\\' OR Image LIKE '%/wget' ESCAPE '\\' OR Image LIKE '%/nc' ESCAPE '\\' OR Image LIKE '%/ncat' ESCAPE '\\' OR Image LIKE '%/socat' ESCAPE '\\' OR Image LIKE '%/nc.openbsd' ESCAPE '\\' OR Image LIKE '%/busybox' ESCAPE '\\' OR Image LIKE '%/openssl' ESCAPE '\\' OR Image LIKE '%/python' ESCAPE '\\' OR Image LIKE '%/python3' ESCAPE '\\' OR Image LIKE '%/perl' ESCAPE '\\' OR Image LIKE '%/php' ESCAPE '\\' OR Image LIKE '%/php-cgi' ESCAPE '\\' OR Image LIKE '%/telnet' ESCAPE '\\')"
+    ],
+    "schema_version": 2,
+    "source": "hatchepsoute",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.execution",
+      "attack.t1059",
+      "attack.t1105",
+      "cve.2026-75650",
+      "cve.2026-48356"
+    ],
+    "title": "Magento Web Worker Spawning Shell or Network Tool - STRICT (CVE-2026-75650 / CVE-2026-48356)"
   },
   {
     "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
@@ -803,7 +894,9 @@
       "attack.t1505.003",
       "attack.execution",
       "cve.2026-109618",
-      "cve.2026-109619"
+      "cve.2026-109619",
+      "cve.2026-115560",
+      "cve.2026-126714"
     ],
     "title": "PHP Worker Creates Web Executable File After PHP2Shell Activity - STRICT"
   },
@@ -1950,7 +2043,7 @@
   {
     "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
     "channel": [],
-    "description": "Detects the exact sudo indicator published by Cisco for CVE-2026-20316 exploitation, the low-privilege www account invoking package_info.pl as root against license.tmp on a Secure Firewall Management Center appliance. SOC L1 should verify the source, affected host, user, process or request fields, timing, and related activity.\nDetecte l'indicateur sudo exact publie par Cisco pour l'exploitation de CVE-2026-20316 : le compte bas-privilege www qui invoque package_info.pl en tant que root avec /var/tmp/license.tmp sur une appliance Secure Firewall Management Center. Cisco presente cette combinaison directement comme un indicateur de compromission dans son avis officiel : sa presence dans /var/log/messages ne correspond a aucun usage legitime documente. Le SOC L1 doit v\u00e9rifier la source, l\u2019h\u00f4te affect\u00e9, l\u2019utilisateur, les champs de processus ou de requ\u00eate, la chronologie et les activit\u00e9s associ\u00e9es.\n",
+    "description": "Detects the exact sudo indicator published by Cisco for active exploitation of CVE-2026-20079 and CVE-2026-20316: the low-privilege www account invoking package_info.pl as root against license.tmp on a Secure Firewall Management Center appliance. Cisco presents this combination as a compromise indicator; SOC L1 should verify the affected host, timestamp, FMC version, surrounding activity, and downstream managed-device exposure.\nD\u00e9tecte l\u2019indicateur sudo exact publi\u00e9 par Cisco pour l\u2019exploitation active de CVE-2026-20079 et CVE-2026-20316 : le compte bas-privil\u00e8ge www qui invoque package_info.pl en tant que root avec license.tmp sur une appliance Secure Firewall Management Center. Cisco pr\u00e9sente cette combinaison comme un indicateur de compromission ; le SOC L1 doit v\u00e9rifier l\u2019h\u00f4te affect\u00e9, l\u2019horodatage, la version FMC, les activit\u00e9s voisines et l\u2019exposition des \u00e9quipements g\u00e9r\u00e9s en aval.\n",
     "eventid": [],
     "falsepositives": [
       "None documented by Cisco; this exact command and account combination is presented in the vendor advisory as a compromise indicator rather than a normal administrative operation"
@@ -1982,8 +2075,9 @@
       "attack.privilege-escalation",
       "attack.t1078",
       "attack.t1548",
-      "cve.2026-20316"
+      "cve.2026-20316",
+      "cve.2026-20079"
     ],
-    "title": "Cisco FMC package_info.pl Root Execution Via license.tmp - STRICT"
+    "title": "Cisco FMC package_info.pl Root Execution Via license.tmp - STRICT (CVE-2026-20079 / CVE-2026-20316)"
   }
 ]

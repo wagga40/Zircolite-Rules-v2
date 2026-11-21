@@ -1,8 +1,8 @@
 {
   "deduplication": "Same ID and SQL; prefer SigmaHQ, then source name order. Distinct SQL variants remain.",
   "duplicates_removed": 0,
-  "entries": 7343,
-  "input_entries": 7343,
+  "entries": 7350,
+  "input_entries": 7350,
   "inputs": {
     "dragon": {
       "artifacts": {
@@ -15,11 +15,11 @@
     },
     "hatchepsoute": {
       "artifacts": {
-        "rules_hatchepsoute_windows_merged.json": "be983b503b951cdf8587bfa9914b75d8c0b1710472305428a69b78697ad8ff9e"
+        "rules_hatchepsoute_windows_merged.json": "16e6e5a0fefe9ee066db214159462d02ce652852c3a78fd1f7206ba519f99757"
       },
       "license": "Apache-2.0",
       "repository": "Hatchepsoute/sigma-rules",
-      "revision": "599b824020a269343501d19bd99a4da529df433a",
+      "revision": "679baa6acdab4053e2cacc02ed8f28ea683ed4fc",
       "status": "current"
     },
     "hayabusa": {

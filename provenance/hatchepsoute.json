@@ -2,10 +2,10 @@
   "artifacts": {
     "experimental/rules_hatchepsoute_windows_merged_correlation.json": 1,
     "experimental/rules_hatchepsoute_windows_sysmon_correlation.json": 1,
-    "rules_hatchepsoute_linux.json": 49,
-    "rules_hatchepsoute_windows_generic.json": 74,
-    "rules_hatchepsoute_windows_merged.json": 164,
-    "rules_hatchepsoute_windows_sysmon.json": 98
+    "rules_hatchepsoute_linux.json": 51,
+    "rules_hatchepsoute_windows_generic.json": 78,
+    "rules_hatchepsoute_windows_merged.json": 171,
+    "rules_hatchepsoute_windows_sysmon.json": 103
   },
   "exclusions": [
     {
@@ -17,10 +17,94 @@
     },
     {
       "document": "0",
+      "path": "CVE-2020-3452_Cisco_ASA_Path_Traversal/rules/web_cisco_asa_ciscoe_path_traversal_cve_2020_3452_strict.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "03ba5ba0796c875c359bedc45587aa0a964dc8a9eba60ea091efba4adb528646"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-2022_Confluence_OGNL_RCE/rules/web_confluence_ognl_expression_cve_2021_26084_2022_26134_strict.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "07aa49b54adb24cb45680ec0189cc8b5262d0f8f2dad6848cc429e799f4693d3"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-21985_VMware_vCenter_RCE/rules/web_vmware_vcenter_vrops_ova_upload_cve_2021_21985_strict.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "3922c9c2c1690c9acb968df33326d68225f357f060e0fc1637afffa9b3d90b1e"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-21985_VMware_vCenter_RCE/rules/web_vmware_vcenter_vrops_upload_endpoint_cve_2021_21985_broad.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "6ee7d38e1e702eca75739a016ed1ce86d6c00b7d871e43275ed260f2d1b1fefb"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-44228_Log4Shell/rules/web_log4j_jndi_lookup_cve_2021_44228_broad.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "071cc3e752beb547f9ab551eb8f9f203c306ff005fb33050c36f8856e88489fa"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-44228_Log4Shell/rules/web_log4j_jndi_remote_protocol_cve_2021_44228_strict.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "ffb4798d06b8bfc9b555428272d504deb5ed97681bf5d36c04de3f80bac6d794"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-Exchange_ProxyLogon_ProxyShell/rules/web_exchange_proxylogon_proxyshell_iis_exploit_cve_2021_chain_strict.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "12c07a2f3d879ce7abad1c14c41d4595355dff55974cee6bb5a294d82cb9c8d1"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2022-1388_F5_BIG-IP_iControl_RCE/rules/web_f5_bigip_icontrol_bash_access_cve_2022_1388_broad.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "815f3dc8ceb6bb454a4e23d72c679b3d8281759a654baf1622556a08fd70b302"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2022-1388_F5_BIG-IP_iControl_RCE/rules/web_f5_bigip_icontrol_bash_command_cve_2022_1388_strict.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "66beef80f472725497632d2470904c43e76c6a5d8e05413c4892619078a7f570"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2023-26360_Adobe_ColdFusion/rules/web_coldfusion_iedit_cve_2023_26360_strict.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "a46bca933e8356e6c79777f40f9c79ddff61cc86dfccb796bc66261d92993400"
+    },
+    {
+      "document": "0",
       "path": "CVE-2023-4966_Citrix_NetScaler_CitrixBleed/rules/web_netscaler_oidc_discovery_oversized_host_header_cve_2023_4966_strict.yml",
       "profile": "sysmon",
       "reason": "logsource product None is outside this profile",
       "sha256": "804c68de471a9f6b4407934d3b7e6c654178f2d24714cb693135e9d7b410af40"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2024-36401_GeoServer_RCE/rules/web_geoserver_expression_injection_cve_2024_36401_strict.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "cb4fea8f21c1cd50871fa68fa79d92c6c248d808db673052cf5578daf84d243c"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2024-36401_GeoServer_RCE/rules/web_geoserver_wfs_propertyname_access_cve_2024_36401_broad.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "75adc5af124dcedee1d0a87e4e8d1e1ae9c9ee192a5c5ce3b4a74b68cfbf2dee"
     },
     {
       "document": "0",
@@ -192,6 +276,13 @@
     },
     {
       "document": "0",
+      "path": "CVE-2025-59718_Fortigate_bypass/rules/web_fortinet_saml_bypass_exploitation_cve_2025_59718_strict.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "53f5a287d67d668c8a54f583d202a42894e4829a09391f658781123406f02c06"
+    },
+    {
+      "document": "0",
       "path": "CVE-2025-61932_Motex_Landscope_Endpoint_Manager/rules/motex_landscope_cve_2025_61932_web_probe_broad.yml",
       "profile": "sysmon",
       "reason": "logsource product None is outside this profile",
@@ -234,38 +325,52 @@
     },
     {
       "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_session_file_write_recent_php_broad.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "c44b138f5fc167825bf429d8d851f9e45749a3ea08dd9ebe24bfcd4cbb792436"
+    },
+    {
+      "document": "0",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_worker_child_process_php2shell_strict.yml",
       "profile": "sysmon",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "a142fd5e109e5d4a34612e79cfbfdd75f85e679e35e5d5146649840ad135196a"
+      "sha256": "bed0cd8d2e0ef248702c5eed91270f15367e9b2c1b36ddd8ce6667c0a6a2b4e5"
     },
     {
       "document": "0",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_worker_crash_restart_php2shell_broad.yml",
       "profile": "sysmon",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "7c95ea3bb1f218b5688808a582fbdc444ee8b5230c6e3c834d703737b58e4b96"
+      "sha256": "692b2928f792485fcd4b0143ab409feacb94a5e2428b29c1e3afe71d20878648"
     },
     {
       "document": "0",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_worker_webshell_creation_php2shell_strict.yml",
       "profile": "sysmon",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "e8e97d356a740424be7ed4e0f946f56210894ed98595a9660ad3957b566fb7b8"
+      "sha256": "881ba6ee7433237326844c85bc623df046f2b0116f1e7d47fa05917519beabb2"
     },
     {
       "document": "0",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_oom_probe_broad.yml",
       "profile": "sysmon",
       "reason": "logsource product None is outside this profile",
-      "sha256": "774b4b1fbaad786bd823981e26b8d73f67d42bd392a2ff01b95e4cf3c3ca3285"
+      "sha256": "4616c34f285e33bf18699200c6d5432ea5d45832fe6814876d88363eae797137"
     },
     {
       "document": "0",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_upload_progress_broad.yml",
       "profile": "sysmon",
       "reason": "logsource product None is outside this profile",
-      "sha256": "e6bcf6f628c13cf0426581667a940a283b729ae1bb5e0a8fbf523a9c0e3fb0a5"
+      "sha256": "c208a45589bf48d72304e37000a1cd898afc867d70b7b3ed06c83c66dd6b85b7"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_oversized_phpsessid_set_cookie_broad.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "2d4d83b1c80566e08ccbcbcf7d05982363bd65c91dd143fdfcf57c3276109cfa"
     },
     {
       "document": "0",
@@ -273,6 +378,20 @@
       "profile": "sysmon",
       "reason": "logsource product None is outside this profile",
       "sha256": "3e322d7c3a5a5b83bff0f327b861490fb823aef4b5417e6028f6f87973cfa224"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php_fpm_request_smuggling_anomaly_cve_2026_129289_broad.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "ab6651fab0e0258898fe572c1224881483f383640d6259929eb2b2e19881fe93"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php_session_upload_progress_serialized_object_cve_2026_115560_strict.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "efe125c66c6e8c8117eebd52e2db47e3efba1e2445d1554b7afe312d1956a566"
     },
     {
       "document": "0",
@@ -440,7 +559,7 @@
       "path": "CVE-2026-20316_Cisco_FMC_Static_Credential/rules/linux_cisco_fmc_package_info_license_sudo_cve_2026_20316_strict.yml",
       "profile": "sysmon",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "b1323381a0c3792375160063099600f7a487ff8cbd6e864a30aa8e47aac19d06"
+      "sha256": "03d2fd6e2473c54256be5cfa88056b9c622e3a9eb5b0fc7b10801f9525dc8c8b"
     },
     {
       "document": "0",
@@ -622,14 +741,14 @@
       "path": "CVE-2026-39113_SQLite_SQLAR/rules/linux_sqlite_sqlar_crash_correlation_cve_2026_39113_strict.yml",
       "profile": "sysmon",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "2eb291ef99073a5b60acc04fc0837a83a089055fc8c499ea1e5a9ce0e70dd04a"
+      "sha256": "29491425f6125af88e3147cdb0224c30b2b778f3086e1d3e9011b6b5f0e46ef0"
     },
     {
       "document": "1",
       "path": "CVE-2026-39113_SQLite_SQLAR/rules/linux_sqlite_sqlar_crash_correlation_cve_2026_39113_strict.yml",
       "profile": "sysmon",
       "reason": "correlation dependency outside profile: logsource product 'linux' is outside this profile",
-      "sha256": "2eb291ef99073a5b60acc04fc0837a83a089055fc8c499ea1e5a9ce0e70dd04a"
+      "sha256": "29491425f6125af88e3147cdb0224c30b2b778f3086e1d3e9011b6b5f0e46ef0"
     },
     {
       "document": "0",
@@ -990,6 +1109,27 @@
     },
     {
       "document": "0",
+      "path": "CVE-2026-75650_48356_Adobe_Commerce_Magento/rules/linux_magento_webworker_shell_spawn_cve_2026_75650_48356_strict.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "1b68206edacdba15f9c956eaa14db5d44d43f052d3ebe1fdc7464f2b7357882c"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-75650_48356_Adobe_Commerce_Magento/rules/web_magento_dangerous_file_upload_cve_2026_48356_strict.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "7dbaecf30c145e7802ba9539fa85ae5c1b748c1a2896b47ef708e9f73403dc73"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-75650_48356_Adobe_Commerce_Magento/rules/web_magento_graphql_template_injection_cve_2026_75650_broad.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "6bb3a9618cb19ac4f960bebc4c325b28cb07d24dbda8e5a8f488b61ed8dec002"
+    },
+    {
+      "document": "0",
       "path": "CVE-2026-8452_Citrix_NetScaler_SAML_Heap_Overflow/rules/file_netscaler_vpn_theme_php_creation_cve_2026_8452_strict.yml",
       "profile": "sysmon",
       "reason": "logsource product None is outside this profile",
@@ -1025,10 +1165,24 @@
     },
     {
       "document": "0",
+      "path": "CVE-2026-93616_Check_Point_Management_RCE/rules/web_checkpoint_upgradesvcremote_cve_2026_93616_broad.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "ae9142296f2748030ae6fc6b628f7e24553d5daea979e95a7b73696ccc92033f"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-93616_Check_Point_Management_RCE/rules/web_checkpoint_upgradesvcremote_path_traversal_cve_2026_93616_strict.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "7fe9a40d69d1d10405296003f719e44f062c22e4173ef9d9c5f769c9f5b41ff9"
+    },
+    {
+      "document": "0",
       "path": "CVE-2026-94127_F5_BIGIP_APM_RCE/rules/f5_bigip_apm_oauth_failure_cve_2026_94127_broad.yml",
       "profile": "sysmon",
       "reason": "logsource product 'f5' is outside this profile",
-      "sha256": "c872fe03cc846ebe0d7c07927e0799d5079ef9493aaf1e56077ac6c35ef6ea59"
+      "sha256": "a4afcd1ff8806003a961d57296c6d4ebd03d01db3e6c4985b93c706528a394b6"
     },
     {
       "document": "0",
@@ -1123,10 +1277,94 @@
     },
     {
       "document": "0",
+      "path": "CVE-2020-3452_Cisco_ASA_Path_Traversal/rules/web_cisco_asa_ciscoe_path_traversal_cve_2020_3452_strict.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "03ba5ba0796c875c359bedc45587aa0a964dc8a9eba60ea091efba4adb528646"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-2022_Confluence_OGNL_RCE/rules/web_confluence_ognl_expression_cve_2021_26084_2022_26134_strict.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "07aa49b54adb24cb45680ec0189cc8b5262d0f8f2dad6848cc429e799f4693d3"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-21985_VMware_vCenter_RCE/rules/web_vmware_vcenter_vrops_ova_upload_cve_2021_21985_strict.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "3922c9c2c1690c9acb968df33326d68225f357f060e0fc1637afffa9b3d90b1e"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-21985_VMware_vCenter_RCE/rules/web_vmware_vcenter_vrops_upload_endpoint_cve_2021_21985_broad.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "6ee7d38e1e702eca75739a016ed1ce86d6c00b7d871e43275ed260f2d1b1fefb"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-44228_Log4Shell/rules/web_log4j_jndi_lookup_cve_2021_44228_broad.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "071cc3e752beb547f9ab551eb8f9f203c306ff005fb33050c36f8856e88489fa"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-44228_Log4Shell/rules/web_log4j_jndi_remote_protocol_cve_2021_44228_strict.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "ffb4798d06b8bfc9b555428272d504deb5ed97681bf5d36c04de3f80bac6d794"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-Exchange_ProxyLogon_ProxyShell/rules/web_exchange_proxylogon_proxyshell_iis_exploit_cve_2021_chain_strict.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "12c07a2f3d879ce7abad1c14c41d4595355dff55974cee6bb5a294d82cb9c8d1"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2022-1388_F5_BIG-IP_iControl_RCE/rules/web_f5_bigip_icontrol_bash_access_cve_2022_1388_broad.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "815f3dc8ceb6bb454a4e23d72c679b3d8281759a654baf1622556a08fd70b302"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2022-1388_F5_BIG-IP_iControl_RCE/rules/web_f5_bigip_icontrol_bash_command_cve_2022_1388_strict.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "66beef80f472725497632d2470904c43e76c6a5d8e05413c4892619078a7f570"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2023-26360_Adobe_ColdFusion/rules/web_coldfusion_iedit_cve_2023_26360_strict.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "a46bca933e8356e6c79777f40f9c79ddff61cc86dfccb796bc66261d92993400"
+    },
+    {
+      "document": "0",
       "path": "CVE-2023-4966_Citrix_NetScaler_CitrixBleed/rules/web_netscaler_oidc_discovery_oversized_host_header_cve_2023_4966_strict.yml",
       "profile": "generic",
       "reason": "logsource product None is outside this profile",
       "sha256": "804c68de471a9f6b4407934d3b7e6c654178f2d24714cb693135e9d7b410af40"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2024-36401_GeoServer_RCE/rules/web_geoserver_expression_injection_cve_2024_36401_strict.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "cb4fea8f21c1cd50871fa68fa79d92c6c248d808db673052cf5578daf84d243c"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2024-36401_GeoServer_RCE/rules/web_geoserver_wfs_propertyname_access_cve_2024_36401_broad.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "75adc5af124dcedee1d0a87e4e8d1e1ae9c9ee192a5c5ce3b4a74b68cfbf2dee"
     },
     {
       "document": "0",
@@ -1305,6 +1543,13 @@
     },
     {
       "document": "0",
+      "path": "CVE-2025-59718_Fortigate_bypass/rules/web_fortinet_saml_bypass_exploitation_cve_2025_59718_strict.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "53f5a287d67d668c8a54f583d202a42894e4829a09391f658781123406f02c06"
+    },
+    {
+      "document": "0",
       "path": "CVE-2025-61932_Motex_Landscope_Endpoint_Manager/rules/motex_landscope_cve_2025_61932_web_probe_broad.yml",
       "profile": "generic",
       "reason": "logsource product None is outside this profile",
@@ -1361,38 +1606,52 @@
     },
     {
       "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_session_file_write_recent_php_broad.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "c44b138f5fc167825bf429d8d851f9e45749a3ea08dd9ebe24bfcd4cbb792436"
+    },
+    {
+      "document": "0",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_worker_child_process_php2shell_strict.yml",
       "profile": "generic",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "a142fd5e109e5d4a34612e79cfbfdd75f85e679e35e5d5146649840ad135196a"
+      "sha256": "bed0cd8d2e0ef248702c5eed91270f15367e9b2c1b36ddd8ce6667c0a6a2b4e5"
     },
     {
       "document": "0",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_worker_crash_restart_php2shell_broad.yml",
       "profile": "generic",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "7c95ea3bb1f218b5688808a582fbdc444ee8b5230c6e3c834d703737b58e4b96"
+      "sha256": "692b2928f792485fcd4b0143ab409feacb94a5e2428b29c1e3afe71d20878648"
     },
     {
       "document": "0",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_worker_webshell_creation_php2shell_strict.yml",
       "profile": "generic",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "e8e97d356a740424be7ed4e0f946f56210894ed98595a9660ad3957b566fb7b8"
+      "sha256": "881ba6ee7433237326844c85bc623df046f2b0116f1e7d47fa05917519beabb2"
     },
     {
       "document": "0",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_oom_probe_broad.yml",
       "profile": "generic",
       "reason": "logsource product None is outside this profile",
-      "sha256": "774b4b1fbaad786bd823981e26b8d73f67d42bd392a2ff01b95e4cf3c3ca3285"
+      "sha256": "4616c34f285e33bf18699200c6d5432ea5d45832fe6814876d88363eae797137"
     },
     {
       "document": "0",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_upload_progress_broad.yml",
       "profile": "generic",
       "reason": "logsource product None is outside this profile",
-      "sha256": "e6bcf6f628c13cf0426581667a940a283b729ae1bb5e0a8fbf523a9c0e3fb0a5"
+      "sha256": "c208a45589bf48d72304e37000a1cd898afc867d70b7b3ed06c83c66dd6b85b7"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_oversized_phpsessid_set_cookie_broad.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "2d4d83b1c80566e08ccbcbcf7d05982363bd65c91dd143fdfcf57c3276109cfa"
     },
     {
       "document": "0",
@@ -1400,6 +1659,27 @@
       "profile": "generic",
       "reason": "logsource product None is outside this profile",
       "sha256": "3e322d7c3a5a5b83bff0f327b861490fb823aef4b5417e6028f6f87973cfa224"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php_fpm_request_smuggling_anomaly_cve_2026_129289_broad.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "ab6651fab0e0258898fe572c1224881483f383640d6259929eb2b2e19881fe93"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php_session_upload_progress_serialized_object_cve_2026_115560_strict.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "efe125c66c6e8c8117eebd52e2db47e3efba1e2445d1554b7afe312d1956a566"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/windows_php_session_file_write_recent_php_broad.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "d487510905985a7ba3add6b6a86b8fa4b17cca9b9f83a73f0cb248ac77729ed6"
     },
     {
       "document": "0",
@@ -1567,7 +1847,7 @@
       "path": "CVE-2026-20316_Cisco_FMC_Static_Credential/rules/linux_cisco_fmc_package_info_license_sudo_cve_2026_20316_strict.yml",
       "profile": "generic",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "b1323381a0c3792375160063099600f7a487ff8cbd6e864a30aa8e47aac19d06"
+      "sha256": "03d2fd6e2473c54256be5cfa88056b9c622e3a9eb5b0fc7b10801f9525dc8c8b"
     },
     {
       "document": "0",
@@ -1763,14 +2043,14 @@
       "path": "CVE-2026-39113_SQLite_SQLAR/rules/linux_sqlite_sqlar_crash_correlation_cve_2026_39113_strict.yml",
       "profile": "generic",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "2eb291ef99073a5b60acc04fc0837a83a089055fc8c499ea1e5a9ce0e70dd04a"
+      "sha256": "29491425f6125af88e3147cdb0224c30b2b778f3086e1d3e9011b6b5f0e46ef0"
     },
     {
       "document": "1",
       "path": "CVE-2026-39113_SQLite_SQLAR/rules/linux_sqlite_sqlar_crash_correlation_cve_2026_39113_strict.yml",
       "profile": "generic",
       "reason": "correlation dependency outside profile: logsource product 'linux' is outside this profile",
-      "sha256": "2eb291ef99073a5b60acc04fc0837a83a089055fc8c499ea1e5a9ce0e70dd04a"
+      "sha256": "29491425f6125af88e3147cdb0224c30b2b778f3086e1d3e9011b6b5f0e46ef0"
     },
     {
       "document": "0",
@@ -2194,6 +2474,27 @@
     },
     {
       "document": "0",
+      "path": "CVE-2026-75650_48356_Adobe_Commerce_Magento/rules/linux_magento_webworker_shell_spawn_cve_2026_75650_48356_strict.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "1b68206edacdba15f9c956eaa14db5d44d43f052d3ebe1fdc7464f2b7357882c"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-75650_48356_Adobe_Commerce_Magento/rules/web_magento_dangerous_file_upload_cve_2026_48356_strict.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "7dbaecf30c145e7802ba9539fa85ae5c1b748c1a2896b47ef708e9f73403dc73"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-75650_48356_Adobe_Commerce_Magento/rules/web_magento_graphql_template_injection_cve_2026_75650_broad.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "6bb3a9618cb19ac4f960bebc4c325b28cb07d24dbda8e5a8f488b61ed8dec002"
+    },
+    {
+      "document": "0",
       "path": "CVE-2026-8452_Citrix_NetScaler_SAML_Heap_Overflow/rules/file_netscaler_vpn_theme_php_creation_cve_2026_8452_strict.yml",
       "profile": "generic",
       "reason": "logsource product None is outside this profile",
@@ -2229,10 +2530,24 @@
     },
     {
       "document": "0",
+      "path": "CVE-2026-93616_Check_Point_Management_RCE/rules/web_checkpoint_upgradesvcremote_cve_2026_93616_broad.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "ae9142296f2748030ae6fc6b628f7e24553d5daea979e95a7b73696ccc92033f"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-93616_Check_Point_Management_RCE/rules/web_checkpoint_upgradesvcremote_path_traversal_cve_2026_93616_strict.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "7fe9a40d69d1d10405296003f719e44f062c22e4173ef9d9c5f769c9f5b41ff9"
+    },
+    {
+      "document": "0",
       "path": "CVE-2026-94127_F5_BIGIP_APM_RCE/rules/f5_bigip_apm_oauth_failure_cve_2026_94127_broad.yml",
       "profile": "generic",
       "reason": "logsource product 'f5' is outside this profile",
-      "sha256": "c872fe03cc846ebe0d7c07927e0799d5079ef9493aaf1e56077ac6c35ef6ea59"
+      "sha256": "a4afcd1ff8806003a961d57296c6d4ebd03d01db3e6c4985b93c706528a394b6"
     },
     {
       "document": "0",
@@ -2390,10 +2705,101 @@
     },
     {
       "document": "0",
+      "path": "CVE-2020-3452_Cisco_ASA_Path_Traversal/rules/web_cisco_asa_ciscoe_path_traversal_cve_2020_3452_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "03ba5ba0796c875c359bedc45587aa0a964dc8a9eba60ea091efba4adb528646"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-2022_Confluence_OGNL_RCE/rules/web_confluence_ognl_expression_cve_2021_26084_2022_26134_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "07aa49b54adb24cb45680ec0189cc8b5262d0f8f2dad6848cc429e799f4693d3"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-21985_VMware_vCenter_RCE/rules/web_vmware_vcenter_vrops_ova_upload_cve_2021_21985_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "3922c9c2c1690c9acb968df33326d68225f357f060e0fc1637afffa9b3d90b1e"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-21985_VMware_vCenter_RCE/rules/web_vmware_vcenter_vrops_upload_endpoint_cve_2021_21985_broad.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "6ee7d38e1e702eca75739a016ed1ce86d6c00b7d871e43275ed260f2d1b1fefb"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-44228_Log4Shell/rules/web_log4j_jndi_lookup_cve_2021_44228_broad.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "071cc3e752beb547f9ab551eb8f9f203c306ff005fb33050c36f8856e88489fa"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-44228_Log4Shell/rules/web_log4j_jndi_remote_protocol_cve_2021_44228_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "ffb4798d06b8bfc9b555428272d504deb5ed97681bf5d36c04de3f80bac6d794"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-Exchange_ProxyLogon_ProxyShell/rules/web_exchange_proxylogon_proxyshell_iis_exploit_cve_2021_chain_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "12c07a2f3d879ce7abad1c14c41d4595355dff55974cee6bb5a294d82cb9c8d1"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2021-Exchange_ProxyLogon_ProxyShell/rules/windows_exchange_webshell_after_proxy_exploit_cve_2021_chain_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "c7ea59ee5a70a5827a0c3651fef8128a46bade6c2d8b32a59601781f2aefa619"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2022-1388_F5_BIG-IP_iControl_RCE/rules/web_f5_bigip_icontrol_bash_access_cve_2022_1388_broad.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "815f3dc8ceb6bb454a4e23d72c679b3d8281759a654baf1622556a08fd70b302"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2022-1388_F5_BIG-IP_iControl_RCE/rules/web_f5_bigip_icontrol_bash_command_cve_2022_1388_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "66beef80f472725497632d2470904c43e76c6a5d8e05413c4892619078a7f570"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2023-26360_Adobe_ColdFusion/rules/web_coldfusion_iedit_cve_2023_26360_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "a46bca933e8356e6c79777f40f9c79ddff61cc86dfccb796bc66261d92993400"
+    },
+    {
+      "document": "0",
       "path": "CVE-2023-4966_Citrix_NetScaler_CitrixBleed/rules/web_netscaler_oidc_discovery_oversized_host_header_cve_2023_4966_strict.yml",
       "profile": "linux",
       "reason": "logsource product None is outside this profile",
       "sha256": "804c68de471a9f6b4407934d3b7e6c654178f2d24714cb693135e9d7b410af40"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2024-36401_GeoServer_RCE/rules/web_geoserver_expression_injection_cve_2024_36401_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "cb4fea8f21c1cd50871fa68fa79d92c6c248d808db673052cf5578daf84d243c"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2024-36401_GeoServer_RCE/rules/web_geoserver_wfs_propertyname_access_cve_2024_36401_broad.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "75adc5af124dcedee1d0a87e4e8d1e1ae9c9ee192a5c5ce3b4a74b68cfbf2dee"
     },
     {
       "document": "0",
@@ -2471,6 +2877,13 @@
       "profile": "linux",
       "reason": "logsource product None is outside this profile",
       "sha256": "4a7b8527fa6c09737a690ce51e267bc0a014320fd1e03043cebffb97f0195aa4"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2025-24054_Windows_NTLM_Hash_Leak/rules/windows_ntlm_coercion_file_trigger_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "d742e02bd86eed9d5c2d09ab4d71dbe12453c60551fd9d872a7a1f81078ecb2b"
     },
     {
       "document": "0",
@@ -2607,6 +3020,13 @@
     },
     {
       "document": "0",
+      "path": "CVE-2025-59718_Fortigate_bypass/rules/web_fortinet_saml_bypass_exploitation_cve_2025_59718_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "53f5a287d67d668c8a54f583d202a42894e4829a09391f658781123406f02c06"
+    },
+    {
+      "document": "0",
       "path": "CVE-2025-61932_Motex_Landscope_Endpoint_Manager/rules/motex_landscope_cve_2025_61932_service_spawn_strict.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
@@ -2660,6 +3080,13 @@
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
       "sha256": "7fcb26174a9631e9668a8e2a2d99193d5291b86048ce2752a62b5ecf6b4ffed9"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2025-62550_AzurMonitorAgent/rules/cve_2025_62550_azure_monitor_agent_lolbin_download_execute_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "d93036469311064d7ce7f547bc8c710255dceff41dec343dd31f1ffcae716d6b"
     },
     {
       "document": "0",
@@ -2757,14 +3184,21 @@
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_oom_probe_broad.yml",
       "profile": "linux",
       "reason": "logsource product None is outside this profile",
-      "sha256": "774b4b1fbaad786bd823981e26b8d73f67d42bd392a2ff01b95e4cf3c3ca3285"
+      "sha256": "4616c34f285e33bf18699200c6d5432ea5d45832fe6814876d88363eae797137"
     },
     {
       "document": "0",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_upload_progress_broad.yml",
       "profile": "linux",
       "reason": "logsource product None is outside this profile",
-      "sha256": "e6bcf6f628c13cf0426581667a940a283b729ae1bb5e0a8fbf523a9c0e3fb0a5"
+      "sha256": "c208a45589bf48d72304e37000a1cd898afc867d70b7b3ed06c83c66dd6b85b7"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_oversized_phpsessid_set_cookie_broad.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "2d4d83b1c80566e08ccbcbcf7d05982363bd65c91dd143fdfcf57c3276109cfa"
     },
     {
       "document": "0",
@@ -2775,10 +3209,31 @@
     },
     {
       "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php_fpm_request_smuggling_anomaly_cve_2026_129289_broad.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "ab6651fab0e0258898fe572c1224881483f383640d6259929eb2b2e19881fe93"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php_session_upload_progress_serialized_object_cve_2026_115560_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "efe125c66c6e8c8117eebd52e2db47e3efba1e2445d1554b7afe312d1956a566"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/windows_php_session_file_write_recent_php_broad.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "d487510905985a7ba3add6b6a86b8fa4b17cca9b9f83a73f0cb248ac77729ed6"
+    },
+    {
+      "document": "0",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/windows_php_worker_child_process_php2shell_strict.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "5f84edbfdbcc92fc5b50b50e91875fe6c47fb4f308540bde04a8d1391f737c0b"
+      "sha256": "5e45d4bebb12a30edc85633c5c58c258a0cab0910090ec1f9eac128b172cbae5"
     },
     {
       "document": "0",
@@ -3191,7 +3646,7 @@
       "path": "CVE-2026-39113_SQLite_SQLAR/rules/linux_sqlite_sqlar_crash_correlation_cve_2026_39113_strict.yml",
       "profile": "linux",
       "reason": "correlation dependency outside profile: logsource product 'sql' is outside this profile",
-      "sha256": "2eb291ef99073a5b60acc04fc0837a83a089055fc8c499ea1e5a9ce0e70dd04a"
+      "sha256": "29491425f6125af88e3147cdb0224c30b2b778f3086e1d3e9011b6b5f0e46ef0"
     },
     {
       "document": "0",
@@ -3440,6 +3895,13 @@
     },
     {
       "document": "0",
+      "path": "CVE-2026-54121_ADCS_Certighost/rules/windows_adcs_certighost_certificate_issuance_cve_2026_54121_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product 'windows' is outside this profile",
+      "sha256": "17f7cb071e679238a58cc1fbec2a42a1b80ab05906d2266033f4da89f7bb81d3"
+    },
+    {
+      "document": "0",
       "path": "CVE-2026-55010_Minecraft_Bedrock_RCE/rules/windows_minecraft_bedrock_suspicious_child_cve_2026_55010_strict.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
@@ -3601,6 +4063,20 @@
     },
     {
       "document": "0",
+      "path": "CVE-2026-75650_48356_Adobe_Commerce_Magento/rules/web_magento_dangerous_file_upload_cve_2026_48356_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "7dbaecf30c145e7802ba9539fa85ae5c1b748c1a2896b47ef708e9f73403dc73"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-75650_48356_Adobe_Commerce_Magento/rules/web_magento_graphql_template_injection_cve_2026_75650_broad.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "6bb3a9618cb19ac4f960bebc4c325b28cb07d24dbda8e5a8f488b61ed8dec002"
+    },
+    {
+      "document": "0",
       "path": "CVE-2026-8452_Citrix_NetScaler_SAML_Heap_Overflow/rules/file_netscaler_vpn_theme_php_creation_cve_2026_8452_strict.yml",
       "profile": "linux",
       "reason": "logsource product None is outside this profile",
@@ -3629,10 +4105,24 @@
     },
     {
       "document": "0",
+      "path": "CVE-2026-93616_Check_Point_Management_RCE/rules/web_checkpoint_upgradesvcremote_cve_2026_93616_broad.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "ae9142296f2748030ae6fc6b628f7e24553d5daea979e95a7b73696ccc92033f"
+    },
+    {
+      "document": "0",
+      "path": "CVE-2026-93616_Check_Point_Management_RCE/rules/web_checkpoint_upgradesvcremote_path_traversal_cve_2026_93616_strict.yml",
+      "profile": "linux",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "7fe9a40d69d1d10405296003f719e44f062c22e4173ef9d9c5f769c9f5b41ff9"
+    },
+    {
+      "document": "0",
       "path": "CVE-2026-94127_F5_BIGIP_APM_RCE/rules/f5_bigip_apm_oauth_failure_cve_2026_94127_broad.yml",
       "profile": "linux",
       "reason": "logsource product 'f5' is outside this profile",
-      "sha256": "c872fe03cc846ebe0d7c07927e0799d5079ef9493aaf1e56077ac6c35ef6ea59"
+      "sha256": "a4afcd1ff8806003a961d57296c6d4ebd03d01db3e6c4985b93c706528a394b6"
     },
     {
       "document": "0",
@@ -3782,53 +4272,7 @@
       "sha256": "66020631325d5c85c563dde4597a64fa89cd5c96b760f72dfaf1360ca6e162f4"
     }
   ],
-  "failures": [
-    {
-      "approved": true,
-      "document": "0",
-      "error": "Regular expression '^(?!10\\.|172\\.(1[6-9]|2[0-9]|3[01])\\.|192\\.168\\.|127\\.|::1|fe80)[0-9]' is invalid: b'invalid perl operator: (?!'",
-      "path": "CVE-2025-24054_Windows_NTLM_Hash_Leak/rules/windows_ntlm_coercion_file_trigger_strict.yml",
-      "profile": "*",
-      "sha256": "2976f244594f53c1e404fad2108b2adf4bd6e1d9b6e8aa0802efed597f144c79",
-      "stage": "parse"
-    },
-    {
-      "approved": true,
-      "document": "0",
-      "error": "Regular expression '(?i)SAMLResponse(?:=|%3[dD])[A-Za-z0-9+/=%]{1500,}' is invalid: b'invalid repetition size: {1500,}'",
-      "path": "CVE-2025-59718_Fortigate_bypass/rules/web_fortinet_saml_bypass_exploitation_cve_2025_59718_strict.yml",
-      "profile": "*",
-      "sha256": "15a3262c1634f2c718d5ae57fc2cf9b68b84c9c85b0e9a891ae632d4547e8cc5",
-      "stage": "parse"
-    },
-    {
-      "approved": true,
-      "document": "0",
-      "error": "Regular expression '(?i)https?://(?!(?:www\\.)?microsoft\\.com|(?:www\\.)?windowsupdate\\.com|download\\.windows\\.net|update\\.microsoft\\.com)[^ ]+\\.(exe|dll|ps1|vbs|js)\\b' is invalid: b'invalid perl operator: (?!'",
-      "path": "CVE-2025-62550_AzurMonitorAgent/rules/cve_2025_62550_azure_monitor_agent_lolbin_download_execute_strict.yml",
-      "profile": "*",
-      "sha256": "079a9a74585ec3060b4e899ef862f475a2c20fe2059f6c06efa028c63642caeb",
-      "stage": "parse"
-    },
-    {
-      "approved": true,
-      "document": "0",
-      "error": "Regular expression '(?i)(?:^|,\\s*)PHPSESSID=[^;]{1024,}(?:;|,|$)' is invalid: b'invalid repetition size: {1024,}'",
-      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_oversized_phpsessid_set_cookie_broad.yml",
-      "profile": "*",
-      "sha256": "128442706eef8c7012bc2bc5b219a5662c76e89a0fdb0f9cced09b68a97afd35",
-      "stage": "parse"
-    },
-    {
-      "approved": true,
-      "document": "0",
-      "error": "Regular expression '(?i)(^|[\\r\\n;,\\s])\\s*cdc:\\s*(?:\\d{1,3}\\.){3}\\d{1,3}(?=$|[\\r\\n;,\\s])' is invalid: b'invalid perl operator: (?='",
-      "path": "CVE-2026-54121_ADCS_Certighost/rules/windows_adcs_certighost_certificate_issuance_cve_2026_54121_strict.yml",
-      "profile": "*",
-      "sha256": "655924344e43677e77a7b90edcb2b1102385d550825d7112488c967728252da8",
-      "stage": "parse"
-    }
-  ],
+  "failures": [],
   "ignored": [
     {
       "document": "*",
@@ -4191,7 +4635,7 @@
       "sha256": "bdcb1a687886e07613b25ceecc7c108822a502be44f8c82aa076258f8ca5f2b0"
     }
   ],
-  "input_documents": 259,
+  "input_documents": 281,
   "official_baseline": {
     "artifacts": {
       "rules_linux.json": "18449af76bc5ed5a17843e838743b403ae002f8f1195322a815d4ec743f8f910",
@@ -4211,24 +4655,24 @@
   },
   "profiles": {
     "generic": {
-      "converted": 74,
+      "converted": 78,
       "correlations": 0,
-      "eligible": 74,
-      "events": 74,
+      "eligible": 78,
+      "events": 78,
       "reference_only": 0
     },
     "linux": {
-      "converted": 49,
+      "converted": 51,
       "correlations": 0,
-      "eligible": 49,
-      "events": 49,
+      "eligible": 51,
+      "events": 51,
       "reference_only": 0
     },
     "sysmon": {
-      "converted": 100,
+      "converted": 105,
       "correlations": 1,
-      "eligible": 100,
-      "events": 98,
+      "eligible": 105,
+      "events": 103,
       "reference_only": 1
     }
   },
@@ -4285,9 +4729,100 @@
     {
       "adaptations": {},
       "document": "0",
+      "id": "6d3f8a20-5b74-4c91-a203-9e6705050505",
+      "path": "CVE-2020-3452_Cisco_ASA_Path_Traversal/rules/web_cisco_asa_ciscoe_path_traversal_cve_2020_3452_strict.yml",
+      "sha256": "03ba5ba0796c875c359bedc45587aa0a964dc8a9eba60ea091efba4adb528646"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2a7f4d91-6c30-4e85-b102-8d6604040404",
+      "path": "CVE-2021-2022_Confluence_OGNL_RCE/rules/web_confluence_ognl_expression_cve_2021_26084_2022_26134_strict.yml",
+      "sha256": "07aa49b54adb24cb45680ec0189cc8b5262d0f8f2dad6848cc429e799f4693d3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9a4c7e12-6d53-4f81-a2b9-3e7c54020402",
+      "path": "CVE-2021-21985_VMware_vCenter_RCE/rules/web_vmware_vcenter_vrops_ova_upload_cve_2021_21985_strict.yml",
+      "sha256": "3922c9c2c1690c9acb968df33326d68225f357f060e0fc1637afffa9b3d90b1e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5e9a3c71-2f64-4a8b-91d0-7c3e5b620301",
+      "path": "CVE-2021-21985_VMware_vCenter_RCE/rules/web_vmware_vcenter_vrops_upload_endpoint_cve_2021_21985_broad.yml",
+      "sha256": "6ee7d38e1e702eca75739a016ed1ce86d6c00b7d871e43275ed260f2d1b1fefb"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9c2e6a71-4d85-4f30-b102-7e6606060606",
+      "path": "CVE-2021-44228_Log4Shell/rules/web_log4j_jndi_lookup_cve_2021_44228_broad.yml",
+      "sha256": "071cc3e752beb547f9ab551eb8f9f203c306ff005fb33050c36f8856e88489fa"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1f7a4c92-6d30-4e85-b102-9c6607070707",
+      "path": "CVE-2021-44228_Log4Shell/rules/web_log4j_jndi_remote_protocol_cve_2021_44228_strict.yml",
+      "sha256": "ffb4798d06b8bfc9b555428272d504deb5ed97681bf5d36c04de3f80bac6d794"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4e8a1c72-5d30-4f96-9b21-7c6401010101",
+      "path": "CVE-2021-Exchange_ProxyLogon_ProxyShell/rules/web_exchange_proxylogon_proxyshell_iis_exploit_cve_2021_chain_strict.yml",
+      "sha256": "12c07a2f3d879ce7abad1c14c41d4595355dff55974cee6bb5a294d82cb9c8d1"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7f2c9a61-4d85-4b30-ae12-6c7502020202",
+      "path": "CVE-2021-Exchange_ProxyLogon_ProxyShell/rules/windows_exchange_webshell_after_proxy_exploit_cve_2021_chain_strict.yml",
+      "sha256": "c7ea59ee5a70a5827a0c3651fef8128a46bade6c2d8b32a59601781f2aefa619"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3d8d4f8b-6f54-4e95-9f6a-6c2f1d7a8101",
+      "path": "CVE-2022-1388_F5_BIG-IP_iControl_RCE/rules/web_f5_bigip_icontrol_bash_access_cve_2022_1388_broad.yml",
+      "sha256": "815f3dc8ceb6bb454a4e23d72c679b3d8281759a654baf1622556a08fd70b302"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c8f2a9e1-1b43-4c56-8d70-2e6f9a410202",
+      "path": "CVE-2022-1388_F5_BIG-IP_iControl_RCE/rules/web_f5_bigip_icontrol_bash_command_cve_2022_1388_strict.yml",
+      "sha256": "66beef80f472725497632d2470904c43e76c6a5d8e05413c4892619078a7f570"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8c4f2d71-6a90-4e35-b821-7d6503030303",
+      "path": "CVE-2023-26360_Adobe_ColdFusion/rules/web_coldfusion_iedit_cve_2023_26360_strict.yml",
+      "sha256": "a46bca933e8356e6c79777f40f9c79ddff61cc86dfccb796bc66261d92993400"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
       "id": "a9002b8f-fd5e-471e-a2f9-b29150ada58e",
       "path": "CVE-2023-4966_Citrix_NetScaler_CitrixBleed/rules/web_netscaler_oidc_discovery_oversized_host_header_cve_2023_4966_strict.yml",
       "sha256": "804c68de471a9f6b4407934d3b7e6c654178f2d24714cb693135e9d7b410af40"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6c9f2a74-8e51-4b03-a7d2-5f6408020202",
+      "path": "CVE-2024-36401_GeoServer_RCE/rules/web_geoserver_expression_injection_cve_2024_36401_strict.yml",
+      "sha256": "cb4fea8f21c1cd50871fa68fa79d92c6c248d808db673052cf5578daf84d243c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1b7e5c92-4d63-4a80-9f21-6c5e73050101",
+      "path": "CVE-2024-36401_GeoServer_RCE/rules/web_geoserver_wfs_propertyname_access_cve_2024_36401_broad.yml",
+      "sha256": "75adc5af124dcedee1d0a87e4e8d1e1ae9c9ee192a5c5ce3b4a74b68cfbf2dee"
     },
     {
       "adaptations": {},
@@ -4406,7 +4941,7 @@
       "document": "0",
       "id": "ad6fcbd0-db6c-4e53-8b04-c125f66a2246",
       "path": "CVE-2025-24054_Windows_NTLM_Hash_Leak/rules/windows_ntlm_coercion_file_trigger_strict.yml",
-      "sha256": "2976f244594f53c1e404fad2108b2adf4bd6e1d9b6e8aa0802efed597f144c79"
+      "sha256": "d742e02bd86eed9d5c2d09ab4d71dbe12453c60551fd9d872a7a1f81078ecb2b"
     },
     {
       "adaptations": {},
@@ -4567,7 +5102,7 @@
       "document": "0",
       "id": "e52cc04c-f8f0-11f0-ab35-1f3f3146335a",
       "path": "CVE-2025-59718_Fortigate_bypass/rules/web_fortinet_saml_bypass_exploitation_cve_2025_59718_strict.yml",
-      "sha256": "15a3262c1634f2c718d5ae57fc2cf9b68b84c9c85b0e9a891ae632d4547e8cc5"
+      "sha256": "53f5a287d67d668c8a54f583d202a42894e4829a09391f658781123406f02c06"
     },
     {
       "adaptations": {},
@@ -4630,7 +5165,7 @@
       "document": "0",
       "id": "2d9c1d3b-0e6d-41e8-9a49-7f5d8d7f7c19",
       "path": "CVE-2025-62550_AzurMonitorAgent/rules/cve_2025_62550_azure_monitor_agent_lolbin_download_execute_strict.yml",
-      "sha256": "079a9a74585ec3060b4e899ef862f475a2c20fe2059f6c06efa028c63642caeb"
+      "sha256": "d93036469311064d7ce7f547bc8c710255dceff41dec343dd31f1ffcae716d6b"
     },
     {
       "adaptations": {},
@@ -4726,44 +5261,51 @@
     {
       "adaptations": {},
       "document": "0",
+      "id": "8b5f1d2c-6a74-4e90-b3c1-9d27f4a81652",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_session_file_write_recent_php_broad.yml",
+      "sha256": "c44b138f5fc167825bf429d8d851f9e45749a3ea08dd9ebe24bfcd4cbb792436"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
       "id": "3d6f8b21-5a74-4c90-b1e3-7f2d9a6c5e48",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_worker_child_process_php2shell_strict.yml",
-      "sha256": "a142fd5e109e5d4a34612e79cfbfdd75f85e679e35e5d5146649840ad135196a"
+      "sha256": "bed0cd8d2e0ef248702c5eed91270f15367e9b2c1b36ddd8ce6667c0a6a2b4e5"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "7e2b4c91-6d35-4f80-a1b9-8c3e5d7f2046",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_worker_crash_restart_php2shell_broad.yml",
-      "sha256": "7c95ea3bb1f218b5688808a582fbdc444ee8b5230c6e3c834d703737b58e4b96"
+      "sha256": "692b2928f792485fcd4b0143ab409feacb94a5e2428b29c1e3afe71d20878648"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "5f8c2a14-9e63-4b70-a1d5-7c3f6e8b2049",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/linux_php_worker_webshell_creation_php2shell_strict.yml",
-      "sha256": "e8e97d356a740424be7ed4e0f946f56210894ed98595a9660ad3957b566fb7b8"
+      "sha256": "881ba6ee7433237326844c85bc623df046f2b0116f1e7d47fa05917519beabb2"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "4e7a2c91-6d35-4f80-a1b9-5c8e3d7f2046",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_oom_probe_broad.yml",
-      "sha256": "774b4b1fbaad786bd823981e26b8d73f67d42bd392a2ff01b95e4cf3c3ca3285"
+      "sha256": "4616c34f285e33bf18699200c6d5432ea5d45832fe6814876d88363eae797137"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "1b4d6f1e-7f3b-4e0d-9c2f-8d5b7a1e42c6",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_multipart_upload_progress_broad.yml",
-      "sha256": "e6bcf6f628c13cf0426581667a940a283b729ae1bb5e0a8fbf523a9c0e3fb0a5"
+      "sha256": "c208a45589bf48d72304e37000a1cd898afc867d70b7b3ed06c83c66dd6b85b7"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "9a6c2f71-4d8e-4b20-a135-7e9f2c6d1096",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php2shell_oversized_phpsessid_set_cookie_broad.yml",
-      "sha256": "128442706eef8c7012bc2bc5b219a5662c76e89a0fdb0f9cced09b68a97afd35"
+      "sha256": "2d4d83b1c80566e08ccbcbcf7d05982363bd65c91dd143fdfcf57c3276109cfa"
     },
     {
       "adaptations": {},
@@ -4775,9 +5317,30 @@
     {
       "adaptations": {},
       "document": "0",
+      "id": "c4e71a9b-2d63-4f80-a5c1-7b9e326d1480",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php_fpm_request_smuggling_anomaly_cve_2026_129289_broad.yml",
+      "sha256": "ab6651fab0e0258898fe572c1224881483f383640d6259929eb2b2e19881fe93"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6f2a9c41-7d85-4b30-ae16-5c903e1b2748",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/web_php_session_upload_progress_serialized_object_cve_2026_115560_strict.yml",
+      "sha256": "efe125c66c6e8c8117eebd52e2db47e3efba1e2445d1554b7afe312d1956a566"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5c9e2a71-4d83-46b0-a157-8f2c6d930741",
+      "path": "CVE-2026-109618_109619_PHP2Shell/rules/windows_php_session_file_write_recent_php_broad.yml",
+      "sha256": "d487510905985a7ba3add6b6a86b8fa4b17cca9b9f83a73f0cb248ac77729ed6"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
       "id": "6a1e4d93-7b52-4f80-9c21-5e8d3a6f2047",
       "path": "CVE-2026-109618_109619_PHP2Shell/rules/windows_php_worker_child_process_php2shell_strict.yml",
-      "sha256": "5f84edbfdbcc92fc5b50b50e91875fe6c47fb4f308540bde04a8d1391f737c0b"
+      "sha256": "5e45d4bebb12a30edc85633c5c58c258a0cab0910090ec1f9eac128b172cbae5"
     },
     {
       "adaptations": {},
@@ -4959,7 +5522,7 @@
       "document": "0",
       "id": "e08fa1ca-f980-4ac0-8fd4-2faad9e7ff10",
       "path": "CVE-2026-20316_Cisco_FMC_Static_Credential/rules/linux_cisco_fmc_package_info_license_sudo_cve_2026_20316_strict.yml",
-      "sha256": "b1323381a0c3792375160063099600f7a487ff8cbd6e864a30aa8e47aac19d06"
+      "sha256": "03d2fd6e2473c54256be5cfa88056b9c622e3a9eb5b0fc7b10801f9525dc8c8b"
     },
     {
       "adaptations": {},
@@ -5274,14 +5837,14 @@
       "document": "0",
       "id": "f2fff6fa-31d4-44f8-a38c-8db958e5de07",
       "path": "CVE-2026-39113_SQLite_SQLAR/rules/linux_sqlite_sqlar_crash_correlation_cve_2026_39113_strict.yml",
-      "sha256": "2eb291ef99073a5b60acc04fc0837a83a089055fc8c499ea1e5a9ce0e70dd04a"
+      "sha256": "29491425f6125af88e3147cdb0224c30b2b778f3086e1d3e9011b6b5f0e46ef0"
     },
     {
       "adaptations": {},
       "document": "1",
       "id": "b6dbcdf6-1bb3-4beb-85e4-b2efdb01d052",
       "path": "CVE-2026-39113_SQLite_SQLAR/rules/linux_sqlite_sqlar_crash_correlation_cve_2026_39113_strict.yml",
-      "sha256": "2eb291ef99073a5b60acc04fc0837a83a089055fc8c499ea1e5a9ce0e70dd04a"
+      "sha256": "29491425f6125af88e3147cdb0224c30b2b778f3086e1d3e9011b6b5f0e46ef0"
     },
     {
       "adaptations": {},
@@ -5589,7 +6152,7 @@
       "document": "0",
       "id": "22ee2d59-12df-4876-b70c-9881e24469e2",
       "path": "CVE-2026-54121_ADCS_Certighost/rules/windows_adcs_certighost_certificate_issuance_cve_2026_54121_strict.yml",
-      "sha256": "655924344e43677e77a7b90edcb2b1102385d550825d7112488c967728252da8"
+      "sha256": "17f7cb071e679238a58cc1fbec2a42a1b80ab05906d2266033f4da89f7bb81d3"
     },
     {
       "adaptations": {},
@@ -5818,6 +6381,27 @@
     {
       "adaptations": {},
       "document": "0",
+      "id": "4b6cad32-8e53-4fb4-c794-a06e03030303",
+      "path": "CVE-2026-75650_48356_Adobe_Commerce_Magento/rules/linux_magento_webworker_shell_spawn_cve_2026_75650_48356_strict.yml",
+      "sha256": "1b68206edacdba15f9c956eaa14db5d44d43f052d3ebe1fdc7464f2b7357882c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3a5b9c21-7d42-4eaf-b683-9f5d02020202",
+      "path": "CVE-2026-75650_48356_Adobe_Commerce_Magento/rules/web_magento_dangerous_file_upload_cve_2026_48356_strict.yml",
+      "sha256": "7dbaecf30c145e7802ba9539fa85ae5c1b748c1a2896b47ef708e9f73403dc73"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2f4a8b10-6c31-4d9e-a572-8e4c01010101",
+      "path": "CVE-2026-75650_48356_Adobe_Commerce_Magento/rules/web_magento_graphql_template_injection_cve_2026_75650_broad.yml",
+      "sha256": "6bb3a9618cb19ac4f960bebc4c325b28cb07d24dbda8e5a8f488b61ed8dec002"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
       "id": "c1d92f44-75ab-49e6-a3c8-6b1df8452003",
       "path": "CVE-2026-8452_Citrix_NetScaler_SAML_Heap_Overflow/rules/file_netscaler_vpn_theme_php_creation_cve_2026_8452_strict.yml",
       "sha256": "890bf943f2fdfb537245305800fb8664e056ce15d626b98933dfacc99bf9f46a"
@@ -5853,9 +6437,23 @@
     {
       "adaptations": {},
       "document": "0",
+      "id": "7f6af2c7-43a2-4a3b-9d7e-6f13b5c2a801",
+      "path": "CVE-2026-93616_Check_Point_Management_RCE/rules/web_checkpoint_upgradesvcremote_cve_2026_93616_broad.yml",
+      "sha256": "ae9142296f2748030ae6fc6b628f7e24553d5daea979e95a7b73696ccc92033f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b16b98d2-2c65-4e5d-8d7a-1f0c9b3e6402",
+      "path": "CVE-2026-93616_Check_Point_Management_RCE/rules/web_checkpoint_upgradesvcremote_path_traversal_cve_2026_93616_strict.yml",
+      "sha256": "7fe9a40d69d1d10405296003f719e44f062c22e4173ef9d9c5f769c9f5b41ff9"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
       "id": "9f8c2d73-4c2a-4d3e-9f7b-4d7a5cb8d6a1",
       "path": "CVE-2026-94127_F5_BIGIP_APM_RCE/rules/f5_bigip_apm_oauth_failure_cve_2026_94127_broad.yml",
-      "sha256": "c872fe03cc846ebe0d7c07927e0799d5079ef9493aaf1e56077ac6c35ef6ea59"
+      "sha256": "a4afcd1ff8806003a961d57296c6d4ebd03d01db3e6c4985b93c706528a394b6"
     },
     {
       "adaptations": {},
@@ -6048,7 +6646,7 @@
     }
   ],
   "repository": "Hatchepsoute/sigma-rules",
-  "revision": "599b824020a269343501d19bd99a4da529df433a",
+  "revision": "679baa6acdab4053e2cacc02ed8f28ea683ed4fc",
   "source": "hatchepsoute",
   "status": "validated",
   "tools": {

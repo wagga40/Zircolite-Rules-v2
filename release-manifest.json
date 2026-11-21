@@ -2,8 +2,8 @@
   "aggregates": {
     "windows_all": {
       "artifacts": {
-        "provenance/windows_all.json": "6e35e5ee3e90b89bfe8716711a9f8f93be99f366225cc9b7f8480439c39f5f7f",
-        "rules_windows_all.json": "9b6bff3a1bd93463a0564ce708242f087a1a0699f10508e74a6a4fe84762c6de"
+        "provenance/windows_all.json": "bb155211bab55eaed1502a6a1b42a5dd1050076554ad71721f91853169860366",
+        "rules_windows_all.json": "f8507f0d9bb51e022bcc0a1d5d51056b6263f6fd07f95d8e6fa3e4fd9248dea1"
       },
       "inputs": {
         "dragon": {
@@ -17,11 +17,11 @@
         },
         "hatchepsoute": {
           "artifacts": {
-            "rules_hatchepsoute_windows_merged.json": "be983b503b951cdf8587bfa9914b75d8c0b1710472305428a69b78697ad8ff9e"
+            "rules_hatchepsoute_windows_merged.json": "16e6e5a0fefe9ee066db214159462d02ce652852c3a78fd1f7206ba519f99757"
           },
           "license": "Apache-2.0",
           "repository": "Hatchepsoute/sigma-rules",
-          "revision": "599b824020a269343501d19bd99a4da529df433a",
+          "revision": "679baa6acdab4053e2cacc02ed8f28ea683ed4fc",
           "status": "current"
         },
         "hayabusa": {
@@ -125,7 +125,7 @@
         }
       },
       "rule_counts": {
-        "rules_windows_all.json": 7343
+        "rules_windows_all.json": 7350
       },
       "status": "current"
     }
@@ -166,23 +166,23 @@
         "experimental/rules_hatchepsoute_windows_merged_correlation.json": "5febb6704852f96b7cf0f3cd98d04c67ad4780d6f0e340414c9235cf3d6d74bd",
         "experimental/rules_hatchepsoute_windows_sysmon_correlation.json": "5febb6704852f96b7cf0f3cd98d04c67ad4780d6f0e340414c9235cf3d6d74bd",
         "licenses/hatchepsoute.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
-        "provenance/hatchepsoute.json": "cdc9b70a42bc31d560bdf3b532235d71c1e48c58b4a1455d98100eb8b4aaa356",
-        "rules_hatchepsoute_linux.json": "639664f6e41785f00703e02470aa0147ffdfcf67c843ad8683cf5d2e848b6147",
-        "rules_hatchepsoute_windows_generic.json": "384e23ec3f69472d205a383b0fe0a397fee00ec1d283d39664fe405e240fca83",
-        "rules_hatchepsoute_windows_merged.json": "be983b503b951cdf8587bfa9914b75d8c0b1710472305428a69b78697ad8ff9e",
-        "rules_hatchepsoute_windows_sysmon.json": "12274c94bdb9c8622be7264ad632b5c20e03ceccaff3d8f05e2e15095c0e66f4"
+        "provenance/hatchepsoute.json": "2985f5033860d2cd6b76b8f31c108935d1fedf8338c0ab66935020556360fa2b",
+        "rules_hatchepsoute_linux.json": "74c91aef8fdb7d6f4ca949580146637bf9af1adc2aa24b5f9239874dcb5105d5",
+        "rules_hatchepsoute_windows_generic.json": "347ef4b8fb10145118f745c8b773531a6399ebb3fe2f38b31c3071e676c62a30",
+        "rules_hatchepsoute_windows_merged.json": "16e6e5a0fefe9ee066db214159462d02ce652852c3a78fd1f7206ba519f99757",
+        "rules_hatchepsoute_windows_sysmon.json": "1aa0289043f68eebda0f055294f7635b1a8dd0d35122d1a6c0ba7f21edeb023c"
       },
-      "last_success": "2026-11-19T08:54:10+00:00",
+      "last_success": "2026-11-21T08:22:09+00:00",
       "license": "Apache-2.0",
       "repository": "Hatchepsoute/sigma-rules",
-      "revision": "599b824020a269343501d19bd99a4da529df433a",
+      "revision": "679baa6acdab4053e2cacc02ed8f28ea683ed4fc",
       "rule_counts": {
         "experimental/rules_hatchepsoute_windows_merged_correlation.json": 1,
         "experimental/rules_hatchepsoute_windows_sysmon_correlation.json": 1,
-        "rules_hatchepsoute_linux.json": 49,
-        "rules_hatchepsoute_windows_generic.json": 74,
-        "rules_hatchepsoute_windows_merged.json": 164,
-        "rules_hatchepsoute_windows_sysmon.json": 98
+        "rules_hatchepsoute_linux.json": 51,
+        "rules_hatchepsoute_windows_generic.json": 78,
+        "rules_hatchepsoute_windows_merged.json": 171,
+        "rules_hatchepsoute_windows_sysmon.json": 103
       },
       "status": "current",
       "tools": {
