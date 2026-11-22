@@ -8,8 +8,8 @@ authors = [
 dependencies = [
     "pysigma-backend-sqlite==2.1.1",
     "pysigma>=2.0.1,<3",
-    "pysigma-pipeline-windows==2.0.0",
-    "pysigma-pipeline-sysmon==2.0.0",
+    "pysigma-pipeline-windows==3.0.0",
+    "pysigma-pipeline-sysmon==3.0.0",
     "PyYAML>=6.0.3,<7",
     "requests>=2.32.5,<3",
 ]
@@ -34,13 +34,6 @@ baseline = {cmd = "python exclusion_baseline.py build/audit/reports", help = "Pr
 draft = {cmd = "python exclusion_baseline.py build/audit/reports --draft-new", help = "Draft records for the audit's new failures"}
 prune-cache = {cmd = "python gen_ruleset.py --prune-cache", help = "Remove cached snapshots the release no longer uses"}
 check = {composite = ["test", "verify"], help = "Run the tests, then verify the release"}
-
-# The Windows and Sysmon pipeline releases still declare pysigma<2 but work
-# unchanged on pySigma 2. Remove once these pull requests are released:
-# https://github.com/SigmaHQ/pySigma-pipeline-windows/pull/15
-# https://github.com/SigmaHQ/pySigma-pipeline-sysmon/pull/15
-[tool.pdm.resolution.overrides]
-pysigma = ">=2.0.1,<3"
 
 [dependency-groups]
 test = ["pytest>=9,<10"]

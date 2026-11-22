@@ -61,6 +61,30 @@ def test_profiles_exclude_unmapped_categories_and_wrong_platforms(tmp_path):
     assert report["exclusions"]
 
 
+def test_mapped_categories_convert_in_both_windows_profiles(tmp_path):
+    # Profile selection reads the pipelines' logsource conditions; a pipeline
+    # release that reshapes them would drop rules as unmapped without an error.
+    registry = detection(id=str(uuid.uuid4()), logsource={"product": "windows", "category": "registry_set"},
+                         detection={"selection": {"TargetObject|endswith": "\\Run\\evil"}, "condition": "selection"})
+    outputs, report = compile_source("test", SPEC, source(tmp_path, [detection(), registry]), [])
+    assert report["status"] == "validated"
+    assert len(outputs["sysmon"]["events"]) == len(outputs["generic"]["events"]) == 2
+    generic = " ".join(query for entry in outputs["generic"]["events"] for query in entry["rule"])
+    assert "EventID=4657" in generic and "ObjectName LIKE" in generic
+
+
+def test_audit_registry_fields_without_a_4657_counterpart_are_a_reviewed_class(tmp_path):
+    rule = detection(logsource={"product": "windows", "category": "registry_set"}, detection={
+        "selection": {"EventType": "SetValue", "TargetObject|endswith": "\\Run\\evil"}, "condition": "selection"})
+    exclusions = json.loads((gen_ruleset.ROOT / "exclusions.json").read_text())
+    outputs, report = compile_source("test", SPEC, source(tmp_path, [rule]), exclusions)
+    assert report["status"] == "validated"
+    assert len(outputs["sysmon"]["events"]) == 1 and outputs["generic"]["events"] == []
+    [failure] = report["failures"]
+    assert (failure["stage"], failure["profile"], failure["approved"]) == ("convert", "generic", True)
+    assert "no equivalent in Windows Security event 4657" in failure["error"]
+
+
 def test_metadata_adapter_has_stable_id_and_preserves_original():
     data = detection(id=123, tags=["sysmon", "attack.t1003"], references="https://example.org",
                      logsource={"product": "windows", "category": ["ps_script", "ps_module"]})

@@ -1,5 +1,13 @@
 [
   {
+    "class": "audit-4657-unmapped-fields",
+    "error_pattern": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+    "profile": "generic",
+    "reason": "pySigma-pipeline-windows 3.0 maps registry rules in the generic profile to Security event 4657, which has no counterpart for EventType, NewName or User. Converting them would compare a field 4657 never carries, so the rules could not match; the sysmon profile still publishes them.",
+    "source": "*",
+    "stage": "convert"
+  },
+  {
     "class": "fulltext-keywords",
     "error_pattern": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events\\.",
     "profile": "*",
