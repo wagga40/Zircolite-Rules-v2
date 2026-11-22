@@ -44,6 +44,13 @@ ATTACK_ALIASES = {
     # Ambiguous mixture of execution/escalation: retain the rule's technique
     # tags and record removal in provenance instead of inventing a tactic.
     "privilege_execution": None,
+    # Tactic IDs with one tactic name above. TA0005 (Defense Evasion) is left
+    # out: the list also has Stealth and Defense Impairment, so it is ambiguous.
+    "ta0001": "initial_access", "ta0002": "execution", "ta0003": "persistence",
+    "ta0004": "privilege_escalation", "ta0006": "credential_access", "ta0007": "discovery",
+    "ta0008": "lateral_movement", "ta0009": "collection", "ta0010": "exfiltration",
+    "ta0011": "command_and_control", "ta0040": "impact", "ta0042": "resource_development",
+    "ta0043": "reconnaissance",
 }
 
 

@@ -21,6 +21,8 @@ Status, revisions, and counts are on the [dashboard](dashboard.md). Each source 
 | wrg11 | [WRG-11/wrg-sigma-rules](https://github.com/WRG-11/wrg-sigma-rules) | Detections and correlations from `resources/examples/` | MIT |
 | tyrian | [zshguy/tyrian-detection-pack](https://github.com/zshguy/tyrian-detection-pack) | Windows and Linux hunting rules | MIT |
 | dragon | [frknaykc/Dragon-ThreatResearchHQ](https://github.com/frknaykc/Dragon-ThreatResearchHQ) | Threat-research detections | MIT |
+| huntress | [huntresslabs/threat-intel](https://github.com/huntresslabs/threat-intel) | Windows detections from Huntress threat reports; rules also contributed to SigmaHQ are dropped as duplicates | MIT |
+| adpack | [404SecNotFound/Active-Directory-Pentest-Detection-Pack](https://github.com/404SecNotFound/Active-Directory-Pentest-Detection-Pack) | Active Directory attack detections and correlations, mostly from the Security log; AI-assisted, all `experimental`, and some filters keep literal `PLACEHOLDER_*` values | MIT |
 
 ## What is adapted
 
@@ -29,7 +31,7 @@ Community rules get metadata fixes only; detection logic is never rewritten. Eac
 - Scalar references, list descriptions, nonstandard status labels, and the capitalization of Windows and Linux product names are normalized.
 - Missing or invalid IDs get deterministic UUIDv5 IDs.
 - List-valued logsources become separate variants with stable IDs.
-- ATT&CK tags are lowercased, known misspellings and technique-name aliases are corrected, and duplicates are removed. Unknown malformed ATT&CK tags fail validation.
+- ATT&CK tags are lowercased, known misspellings, technique-name aliases and tactic IDs such as `ta0001` are corrected, and duplicates are removed. Unknown malformed ATT&CK tags fail validation.
 - The Windows field aliases `EventXML.Address`, `EventXML.Param3`, and `New Value` map to Zircolite's `Address`, `Param3`, and `NewValue` columns.
 
 ## What is left out
