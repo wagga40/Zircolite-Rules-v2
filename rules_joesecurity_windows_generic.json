@@ -223,12 +223,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (EventID=13 AND TargetObject LIKE '%\\\\Software\\\\MDSLK%Self%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (EventID=13 AND ObjectName LIKE '%\\\\Software\\\\MDSLK%Self%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "joesecurity",
@@ -596,12 +596,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (EventID=13 AND TargetObject LIKE '%HKEY\\_CURRENT\\_USER\\\\vjw0rm%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (EventID=13 AND ObjectName LIKE '%HKEY\\_CURRENT\\_USER\\\\vjw0rm%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "joesecurity",
@@ -2167,12 +2167,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (EventID=13 AND TargetObject LIKE '%recfg%rnd\\_ext%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (EventID=13 AND ObjectName LIKE '%recfg%rnd\\_ext%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "joesecurity",

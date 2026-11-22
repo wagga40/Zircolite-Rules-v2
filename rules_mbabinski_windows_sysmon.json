@@ -532,7 +532,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND (Image LIKE '%\\\\services.exe' ESCAPE '\\' AND EventType='CreateKey' AND TargetObject LIKE 'HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\BTOBTO' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND EventType='CreateKey') AND (Image LIKE '%\\\\services.exe' ESCAPE '\\' AND EventType='CreateKey' AND TargetObject LIKE 'HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\BTOBTO' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "mbabinski",
@@ -5627,7 +5627,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND (EventType='CreateKey' AND Image LIKE '%\\\\svchost.exe' ESCAPE '\\' AND TargetObject REGEXP '^HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\ NT\\\\CurrentVersion\\\\Schedule\\\\TaskCache\\\\Tree\\\\[A-Za-z]{8}$'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND EventType='CreateKey') AND (EventType='CreateKey' AND Image LIKE '%\\\\svchost.exe' ESCAPE '\\' AND TargetObject REGEXP '^HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\ NT\\\\CurrentVersion\\\\Schedule\\\\TaskCache\\\\Tree\\\\[A-Za-z]{8}$'))"
     ],
     "schema_version": 2,
     "source": "mbabinski",
@@ -6147,7 +6147,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND (EventType='CreateKey' AND (TargetObject LIKE '%SOFTWARE\\\\Microsoft\\\\Phone\\\\%' ESCAPE '\\' OR TargetObject LIKE '%SOFTWARE\\\\Microsoft\\\\Personalization\\\\%' ESCAPE '\\') AND TargetObject LIKE '%0' ESCAPE '\\' AND Image LIKE '%\\\\wscript.exe' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND EventType='CreateKey') AND (EventType='CreateKey' AND (TargetObject LIKE '%SOFTWARE\\\\Microsoft\\\\Phone\\\\%' ESCAPE '\\' OR TargetObject LIKE '%SOFTWARE\\\\Microsoft\\\\Personalization\\\\%' ESCAPE '\\') AND TargetObject LIKE '%0' ESCAPE '\\' AND Image LIKE '%\\\\wscript.exe' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "mbabinski",
@@ -7684,7 +7684,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND (EventType='CreateKey' AND TargetObject LIKE 'SYSTEM\\\\CurrentControlSet\\\\Services\\\\LanmanServer\\\\Parameters' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND EventType='CreateKey') AND (EventType='CreateKey' AND TargetObject LIKE 'SYSTEM\\\\CurrentControlSet\\\\Services\\\\LanmanServer\\\\Parameters' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "mbabinski",

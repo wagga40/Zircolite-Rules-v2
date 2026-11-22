@@ -1310,12 +1310,12 @@
       "Channel",
       "EventID",
       "NewValue",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND (TargetObject LIKE '%\\\\SYSTEM\\\\CurrentControlSet\\\\%' ESCAPE '\\' AND TargetObject LIKE '%FltmgrDevDriveAllowAntivirusFilter' ESCAPE '\\' AND NewValue LIKE '%0' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND (ObjectName LIKE '%\\\\SYSTEM\\\\CurrentControlSet\\\\%' ESCAPE '\\' AND ObjectName LIKE '%FltmgrDevDriveAllowAntivirusFilter' ESCAPE '\\' AND NewValue LIKE '%0' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "tsale",

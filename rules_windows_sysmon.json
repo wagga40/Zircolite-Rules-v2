@@ -24139,11 +24139,12 @@
     "required_fields": [
       "Channel",
       "EventID",
+      "EventType",
       "TargetObject"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND (TargetObject LIKE '%\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Schedule\\\\TaskCache\\\\Tree\\\\%' ESCAPE '\\' AND TargetObject LIKE '%Index%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND (EventType='DeleteKey' OR EventType='DeleteValue')) AND (TargetObject LIKE '%\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Schedule\\\\TaskCache\\\\Tree\\\\%' ESCAPE '\\' AND TargetObject LIKE '%Index%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -26223,7 +26224,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND (EventType='DeleteValue' AND TargetObject LIKE '%\\\\Microsoft\\\\Windows\\\\WindowsAI\\\\DisableAIDataAnalysis' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND (EventType='DeleteKey' OR EventType='DeleteValue')) AND (EventType='DeleteValue' AND TargetObject LIKE '%\\\\Microsoft\\\\Windows\\\\WindowsAI\\\\DisableAIDataAnalysis' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -29184,12 +29185,13 @@
     "required_fields": [
       "Channel",
       "EventID",
+      "EventType",
       "Image",
       "TargetObject"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND (TargetObject LIKE '%shellex\\\\ContextMenuHandlers\\\\EPP%' ESCAPE '\\' AND (NOT COALESCE(((Image LIKE 'C:\\\\ProgramData\\\\Microsoft\\\\Windows Defender\\\\Platform\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files\\\\Windows Defender\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files (x86)\\\\Windows Defender\\\\%' ESCAPE '\\') AND Image LIKE '%\\\\MsMpEng.exe' ESCAPE '\\'), 0))))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND (EventType='DeleteKey' OR EventType='DeleteValue')) AND (TargetObject LIKE '%shellex\\\\ContextMenuHandlers\\\\EPP%' ESCAPE '\\' AND (NOT COALESCE(((Image LIKE 'C:\\\\ProgramData\\\\Microsoft\\\\Windows Defender\\\\Platform\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files\\\\Windows Defender\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files (x86)\\\\Windows Defender\\\\%' ESCAPE '\\') AND Image LIKE '%\\\\MsMpEng.exe' ESCAPE '\\'), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -36106,12 +36108,13 @@
     "required_fields": [
       "Channel",
       "EventID",
+      "EventType",
       "Image",
       "TargetObject"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND (TargetObject LIKE '%\\\\shell\\\\open\\\\command' ESCAPE '\\' AND (NOT COALESCE((Image LIKE '%C:\\\\Windows\\\\explorer.exe' ESCAPE '\\' OR Image LIKE 'C:\\\\Windows\\\\system32\\\\svchost.exe' ESCAPE '\\' OR (Image LIKE 'C:\\\\Windows\\\\System32\\\\msiexec.exe' ESCAPE '\\' OR Image LIKE 'C:\\\\Windows\\\\SysWOW64\\\\msiexec.exe' ESCAPE '\\') OR (Image LIKE 'C:\\\\Program Files\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files (x86)\\\\%' ESCAPE '\\') OR Image LIKE 'C:\\\\Windows\\\\System32\\\\OpenWith.exe' ESCAPE '\\'), 0)) AND (NOT COALESCE(((Image LIKE '%\\\\Dropbox.exe' ESCAPE '\\' AND TargetObject LIKE '%\\\\Dropbox.%' ESCAPE '\\') OR (Image LIKE '%\\\\AppData\\\\Local\\\\Temp\\\\Wireshark\\_uninstaller.exe' ESCAPE '\\' AND TargetObject LIKE '%\\\\wireshark-capture-file\\\\%' ESCAPE '\\') OR (Image LIKE '%peazip%' ESCAPE '\\' AND TargetObject LIKE '%\\\\PeaZip.%' ESCAPE '\\') OR (Image LIKE '%\\\\Everything.exe' ESCAPE '\\' AND TargetObject LIKE '%\\\\Everything.%' ESCAPE '\\') OR Image LIKE 'C:\\\\Windows\\\\Installer\\\\MSI%' ESCAPE '\\' OR (Image LIKE 'C:\\\\Program Files (x86)\\\\Java\\\\%' ESCAPE '\\' AND Image LIKE '%\\\\installer.exe' ESCAPE '\\' AND TargetObject LIKE '%\\\\Classes\\\\WOW6432Node\\\\CLSID\\\\{4299124F-F2C3-41b4-9C73-9236B2AD0E8F}%' ESCAPE '\\') OR Image LIKE '%\\\\Microsoft\\\\EdgeUpdate\\\\Install%' ESCAPE '\\' OR ((Image LIKE 'C:\\\\Program Files (x86)\\\\Avira\\\\Antivirus\\\\' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files\\\\Avira\\\\Antivirus\\\\' ESCAPE '\\') AND (TargetObject LIKE '%\\\\CLSID\\\\{305CA226-D286-468e-B848-2B2E8E697B74}\\\\Shell\\\\Open\\\\Command' ESCAPE '\\' OR TargetObject LIKE '%\\\\AntiVir.Keyfile\\\\shell\\\\open\\\\command' ESCAPE '\\')) OR ((Image LIKE '%AppData\\\\Local\\\\Temp%' ESCAPE '\\' AND Image LIKE '%\\\\setup.exe%' ESCAPE '\\') OR (Image LIKE '%\\\\Temp\\\\is-%' ESCAPE '\\' AND Image LIKE '%\\\\target.tmp%' ESCAPE '\\')) OR Image LIKE '%\\\\ninite.exe' ESCAPE '\\' OR (Image LIKE '%\\\\reg.exe' ESCAPE '\\' AND TargetObject LIKE '%\\\\Discord\\\\shell\\\\open\\\\command' ESCAPE '\\') OR (Image LIKE '%\\\\Spotify.exe' ESCAPE '\\' AND TargetObject LIKE '%\\\\Spotify\\\\shell\\\\open\\\\command' ESCAPE '\\') OR (Image LIKE '%C:\\\\eclipse\\\\eclipse.exe' ESCAPE '\\' AND TargetObject LIKE '%\\_Classes\\\\eclipse+%' ESCAPE '\\') OR (Image LIKE '%\\\\Temp%' ESCAPE '\\' AND Image LIKE '%\\\\TeamViewer%' ESCAPE '\\')), 0))))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND (EventType='DeleteKey' OR EventType='DeleteValue')) AND (TargetObject LIKE '%\\\\shell\\\\open\\\\command' ESCAPE '\\' AND (NOT COALESCE((Image LIKE '%C:\\\\Windows\\\\explorer.exe' ESCAPE '\\' OR Image LIKE 'C:\\\\Windows\\\\system32\\\\svchost.exe' ESCAPE '\\' OR (Image LIKE 'C:\\\\Windows\\\\System32\\\\msiexec.exe' ESCAPE '\\' OR Image LIKE 'C:\\\\Windows\\\\SysWOW64\\\\msiexec.exe' ESCAPE '\\') OR (Image LIKE 'C:\\\\Program Files\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files (x86)\\\\%' ESCAPE '\\') OR Image LIKE 'C:\\\\Windows\\\\System32\\\\OpenWith.exe' ESCAPE '\\'), 0)) AND (NOT COALESCE(((Image LIKE '%\\\\Dropbox.exe' ESCAPE '\\' AND TargetObject LIKE '%\\\\Dropbox.%' ESCAPE '\\') OR (Image LIKE '%\\\\AppData\\\\Local\\\\Temp\\\\Wireshark\\_uninstaller.exe' ESCAPE '\\' AND TargetObject LIKE '%\\\\wireshark-capture-file\\\\%' ESCAPE '\\') OR (Image LIKE '%peazip%' ESCAPE '\\' AND TargetObject LIKE '%\\\\PeaZip.%' ESCAPE '\\') OR (Image LIKE '%\\\\Everything.exe' ESCAPE '\\' AND TargetObject LIKE '%\\\\Everything.%' ESCAPE '\\') OR Image LIKE 'C:\\\\Windows\\\\Installer\\\\MSI%' ESCAPE '\\' OR (Image LIKE 'C:\\\\Program Files (x86)\\\\Java\\\\%' ESCAPE '\\' AND Image LIKE '%\\\\installer.exe' ESCAPE '\\' AND TargetObject LIKE '%\\\\Classes\\\\WOW6432Node\\\\CLSID\\\\{4299124F-F2C3-41b4-9C73-9236B2AD0E8F}%' ESCAPE '\\') OR Image LIKE '%\\\\Microsoft\\\\EdgeUpdate\\\\Install%' ESCAPE '\\' OR ((Image LIKE 'C:\\\\Program Files (x86)\\\\Avira\\\\Antivirus\\\\' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files\\\\Avira\\\\Antivirus\\\\' ESCAPE '\\') AND (TargetObject LIKE '%\\\\CLSID\\\\{305CA226-D286-468e-B848-2B2E8E697B74}\\\\Shell\\\\Open\\\\Command' ESCAPE '\\' OR TargetObject LIKE '%\\\\AntiVir.Keyfile\\\\shell\\\\open\\\\command' ESCAPE '\\')) OR ((Image LIKE '%AppData\\\\Local\\\\Temp%' ESCAPE '\\' AND Image LIKE '%\\\\setup.exe%' ESCAPE '\\') OR (Image LIKE '%\\\\Temp\\\\is-%' ESCAPE '\\' AND Image LIKE '%\\\\target.tmp%' ESCAPE '\\')) OR Image LIKE '%\\\\ninite.exe' ESCAPE '\\' OR (Image LIKE '%\\\\reg.exe' ESCAPE '\\' AND TargetObject LIKE '%\\\\Discord\\\\shell\\\\open\\\\command' ESCAPE '\\') OR (Image LIKE '%\\\\Spotify.exe' ESCAPE '\\' AND TargetObject LIKE '%\\\\Spotify\\\\shell\\\\open\\\\command' ESCAPE '\\') OR (Image LIKE '%C:\\\\eclipse\\\\eclipse.exe' ESCAPE '\\' AND TargetObject LIKE '%\\_Classes\\\\eclipse+%' ESCAPE '\\') OR (Image LIKE '%\\\\Temp%' ESCAPE '\\' AND Image LIKE '%\\\\TeamViewer%' ESCAPE '\\')), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -41155,11 +41158,12 @@
     "required_fields": [
       "Channel",
       "EventID",
+      "EventType",
       "TargetObject"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND (TargetObject LIKE '%\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Schedule\\\\TaskCache\\\\Tree\\\\%' ESCAPE '\\' AND TargetObject LIKE '%SD%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND (EventType='DeleteKey' OR EventType='DeleteValue')) AND (TargetObject LIKE '%\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Schedule\\\\TaskCache\\\\Tree\\\\%' ESCAPE '\\' AND TargetObject LIKE '%SD%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -48983,7 +48987,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND ((EventType='CreateKey' AND TargetObject LIKE '%\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\VolumeCaches\\\\%' ESCAPE '\\') AND (NOT COALESCE((TargetObject LIKE '%\\\\Active Setup Temp Folders' ESCAPE '\\' OR TargetObject LIKE '%\\\\BranchCache' ESCAPE '\\' OR TargetObject LIKE '%\\\\Content Indexer Cleaner' ESCAPE '\\' OR TargetObject LIKE '%\\\\D3D Shader Cache' ESCAPE '\\' OR TargetObject LIKE '%\\\\Delivery Optimization Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Device Driver Packages' ESCAPE '\\' OR TargetObject LIKE '%\\\\Diagnostic Data Viewer database files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Downloaded Program Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\DownloadsFolder' ESCAPE '\\' OR TargetObject LIKE '%\\\\Feedback Hub Archive log files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Internet Cache Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Language Pack' ESCAPE '\\' OR TargetObject LIKE '%\\\\Microsoft Office Temp Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Offline Pages Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Old ChkDsk Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Previous Installations' ESCAPE '\\' OR TargetObject LIKE '%\\\\Recycle Bin' ESCAPE '\\' OR TargetObject LIKE '%\\\\RetailDemo Offline Content' ESCAPE '\\' OR TargetObject LIKE '%\\\\Setup Log Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\System error memory dump files' ESCAPE '\\' OR TargetObject LIKE '%\\\\System error minidump files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Temporary Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Temporary Setup Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Temporary Sync Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Thumbnail Cache' ESCAPE '\\' OR TargetObject LIKE '%\\\\Update Cleanup' ESCAPE '\\' OR TargetObject LIKE '%\\\\Upgrade Discarded Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\User file versions' ESCAPE '\\' OR TargetObject LIKE '%\\\\Windows Defender' ESCAPE '\\' OR TargetObject LIKE '%\\\\Windows Error Reporting Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Windows ESD installation files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Windows Upgrade Log Files' ESCAPE '\\'), 0))))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND EventType='CreateKey') AND ((EventType='CreateKey' AND TargetObject LIKE '%\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\VolumeCaches\\\\%' ESCAPE '\\') AND (NOT COALESCE((TargetObject LIKE '%\\\\Active Setup Temp Folders' ESCAPE '\\' OR TargetObject LIKE '%\\\\BranchCache' ESCAPE '\\' OR TargetObject LIKE '%\\\\Content Indexer Cleaner' ESCAPE '\\' OR TargetObject LIKE '%\\\\D3D Shader Cache' ESCAPE '\\' OR TargetObject LIKE '%\\\\Delivery Optimization Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Device Driver Packages' ESCAPE '\\' OR TargetObject LIKE '%\\\\Diagnostic Data Viewer database files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Downloaded Program Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\DownloadsFolder' ESCAPE '\\' OR TargetObject LIKE '%\\\\Feedback Hub Archive log files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Internet Cache Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Language Pack' ESCAPE '\\' OR TargetObject LIKE '%\\\\Microsoft Office Temp Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Offline Pages Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Old ChkDsk Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Previous Installations' ESCAPE '\\' OR TargetObject LIKE '%\\\\Recycle Bin' ESCAPE '\\' OR TargetObject LIKE '%\\\\RetailDemo Offline Content' ESCAPE '\\' OR TargetObject LIKE '%\\\\Setup Log Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\System error memory dump files' ESCAPE '\\' OR TargetObject LIKE '%\\\\System error minidump files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Temporary Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Temporary Setup Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Temporary Sync Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Thumbnail Cache' ESCAPE '\\' OR TargetObject LIKE '%\\\\Update Cleanup' ESCAPE '\\' OR TargetObject LIKE '%\\\\Upgrade Discarded Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\User file versions' ESCAPE '\\' OR TargetObject LIKE '%\\\\Windows Defender' ESCAPE '\\' OR TargetObject LIKE '%\\\\Windows Error Reporting Files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Windows ESD installation files' ESCAPE '\\' OR TargetObject LIKE '%\\\\Windows Upgrade Log Files' ESCAPE '\\'), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -58288,7 +58292,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND ((EventType='DeleteValue' AND TargetObject LIKE '%\\\\Microsoft\\\\Terminal Server Client\\\\Default\\\\MRU%' ESCAPE '\\') OR (EventType='DeleteKey' AND TargetObject LIKE '%\\\\Microsoft\\\\Terminal Server Client\\\\Servers\\\\%' ESCAPE '\\')))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND (EventType='DeleteKey' OR EventType='DeleteValue')) AND ((EventType='DeleteValue' AND TargetObject LIKE '%\\\\Microsoft\\\\Terminal Server Client\\\\Default\\\\MRU%' ESCAPE '\\') OR (EventType='DeleteKey' AND TargetObject LIKE '%\\\\Microsoft\\\\Terminal Server Client\\\\Servers\\\\%' ESCAPE '\\')))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -63473,11 +63477,12 @@
     "required_fields": [
       "Channel",
       "EventID",
+      "EventType",
       "TargetObject"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND TargetObject LIKE '%\\\\software\\\\NetWire%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND EventType='CreateKey') AND TargetObject LIKE '%\\\\software\\\\NetWire%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -64351,11 +64356,12 @@
     "required_fields": [
       "Channel",
       "EventID",
+      "EventType",
       "TargetObject"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND TargetObject LIKE '%\\\\Software\\\\AppDataLow\\\\Software\\\\Microsoft\\\\3A861D62-51E0-7C9D-AB0E-15700F2219A4' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND EventType='CreateKey') AND TargetObject LIKE '%\\\\Software\\\\AppDataLow\\\\Software\\\\Microsoft\\\\3A861D62-51E0-7C9D-AB0E-15700F2219A4' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -65521,7 +65527,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND (EventType='DeleteValue' AND TargetObject LIKE '%SOFTWARE\\\\Microsoft\\\\Windows Defender\\\\Windows Defender Exploit Guard\\\\Controlled Folder Access\\\\ProtectedFolders%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND (EventType='DeleteKey' OR EventType='DeleteValue')) AND (EventType='DeleteValue' AND TargetObject LIKE '%SOFTWARE\\\\Microsoft\\\\Windows Defender\\\\Windows Defender Exploit Guard\\\\Controlled Folder Access\\\\ProtectedFolders%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -69573,11 +69579,12 @@
     "required_fields": [
       "Channel",
       "EventID",
+      "EventType",
       "TargetObject"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND TargetObject LIKE '%\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\RunMRU' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND (EventType='DeleteKey' OR EventType='DeleteValue')) AND TargetObject LIKE '%\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\RunMRU' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -70784,12 +70791,13 @@
     "required_fields": [
       "Channel",
       "EventID",
+      "EventType",
       "Image",
       "TargetObject"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND ((TargetObject LIKE '%{2781761E-28E0-4109-99FE-B9D127C57AFE}' ESCAPE '\\' OR TargetObject LIKE '%{A7C452EF-8E9F-42EB-9F2B-245613CA0DC9}' ESCAPE '\\') AND (NOT COALESCE(((Image LIKE 'C:\\\\ProgramData\\\\Microsoft\\\\Windows Defender\\\\Platform\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files\\\\Windows Defender\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files (x86)\\\\Windows Defender\\\\%' ESCAPE '\\') AND Image LIKE '%\\\\MsMpEng.exe' ESCAPE '\\'), 0))))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND (EventType='DeleteKey' OR EventType='DeleteValue')) AND ((TargetObject LIKE '%{2781761E-28E0-4109-99FE-B9D127C57AFE}' ESCAPE '\\' OR TargetObject LIKE '%{A7C452EF-8E9F-42EB-9F2B-245613CA0DC9}' ESCAPE '\\') AND (NOT COALESCE(((Image LIKE 'C:\\\\ProgramData\\\\Microsoft\\\\Windows Defender\\\\Platform\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files\\\\Windows Defender\\\\%' ESCAPE '\\' OR Image LIKE 'C:\\\\Program Files (x86)\\\\Windows Defender\\\\%' ESCAPE '\\') AND Image LIKE '%\\\\MsMpEng.exe' ESCAPE '\\'), 0))))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -104872,11 +104880,12 @@
     "required_fields": [
       "Channel",
       "EventID",
+      "EventType",
       "TargetObject"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND (TargetObject LIKE '%\\\\DeviceGuard\\\\EnableVirtualizationBasedSecurity' ESCAPE '\\' OR TargetObject LIKE '%\\\\DeviceGuard\\\\LsaCfgFlags' ESCAPE '\\' OR TargetObject LIKE '%\\\\DeviceGuard\\\\RequirePlatformSecurityFeatures' ESCAPE '\\' OR TargetObject LIKE '%\\\\Lsa\\\\LsaCfgFlags' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND (EventType='DeleteKey' OR EventType='DeleteValue')) AND (TargetObject LIKE '%\\\\DeviceGuard\\\\EnableVirtualizationBasedSecurity' ESCAPE '\\' OR TargetObject LIKE '%\\\\DeviceGuard\\\\LsaCfgFlags' ESCAPE '\\' OR TargetObject LIKE '%\\\\DeviceGuard\\\\RequirePlatformSecurityFeatures' ESCAPE '\\' OR TargetObject LIKE '%\\\\Lsa\\\\LsaCfgFlags' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "sigmahq",

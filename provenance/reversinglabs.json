@@ -1,7 +1,7 @@
 {
   "artifacts": {
-    "rules_reversinglabs_windows_generic.json": 6,
-    "rules_reversinglabs_windows_merged.json": 12,
+    "rules_reversinglabs_windows_generic.json": 3,
+    "rules_reversinglabs_windows_merged.json": 9,
     "rules_reversinglabs_windows_sysmon.json": 7
   },
   "exclusions": [
@@ -107,6 +107,33 @@
       "profile": "generic",
       "sha256": "0388b35900972bb745dbf742bd6d7d99aeca2bc870188e1bd723ff67066622a6",
       "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "Ransomware/BlackBasta/Sigma/registry_set_blackbasta_default_icon.yml",
+      "profile": "generic",
+      "sha256": "4e2a6a5824938246eae048b57f97bff5809dd965334cd59c14086ea0be5f2dd8",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "Ransomware/BlackBasta/Sigma/registry_set_blackbasta_wallpaper.yml",
+      "profile": "generic",
+      "sha256": "45b9f34e12cdd98a6e51256516c9850bdcfdafcc7b6e4397eac3f5d9052b8c6b",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "Ransomware/QuantumLocker/Sigma/registry_set_quantumlocker_extension.yml",
+      "profile": "generic",
+      "sha256": "7adf967f5b7ef7d4bc15888fcab9fe9cd40fa0c7e0d2c1375127ef4c8d3c152d",
+      "stage": "convert"
     }
   ],
   "ignored": [],
@@ -114,8 +141,8 @@
   "official_baseline": {
     "artifacts": {
       "rules_linux.json": "18449af76bc5ed5a17843e838743b403ae002f8f1195322a815d4ec743f8f910",
-      "rules_windows_generic.json": "fbb2c081bf075c5d01072976c3540a7ee6eef1054afc3f41db7f6176186f1394",
-      "rules_windows_sysmon.json": "8301337ffa7c1bf6a738f4ab20681132fc02a17d671d6214f8d290e69da681f1"
+      "rules_windows_generic.json": "562d70873c5b8ddbc5478cc26e0fdba469be3418b88a6c980640dd07aa6415a3",
+      "rules_windows_sysmon.json": "c5f58f60c8ddcfe0768c866c7fb6db013957ac9f76f487e02cbcc2a2f6525197"
     },
     "repository": "SigmaHQ/sigma",
     "revision": "698f0912f571d5fac3bf8c51f5421139834a011c"
@@ -128,10 +155,10 @@
   },
   "profiles": {
     "generic": {
-      "converted": 6,
+      "converted": 3,
       "correlations": 0,
       "eligible": 7,
-      "events": 6,
+      "events": 3,
       "reference_only": 0
     },
     "sysmon": {
@@ -242,8 +269,8 @@
   "tools": {
     "pysigma": "2.0.1",
     "pysigma-backend-sqlite": "2.1.1",
-    "pysigma-pipeline-sysmon": "2.0.0",
-    "pysigma-pipeline-windows": "2.0.0",
+    "pysigma-pipeline-sysmon": "3.0.0",
+    "pysigma-pipeline-windows": "3.0.0",
     "python": "3.14.10",
     "sqlite": "3.46.1"
   }

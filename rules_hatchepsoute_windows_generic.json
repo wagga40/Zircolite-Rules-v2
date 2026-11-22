@@ -113,13 +113,13 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "NewProcessName",
+      "ObjectName",
       "OperationType",
-      "TargetObject"
+      "ProcessName"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ((TargetObject LIKE '%\\\\Software\\\\Classes\\\\CLSID\\\\%' ESCAPE '\\' OR TargetObject LIKE '%\\\\Software\\\\Classes\\\\Wow6432Node\\\\CLSID\\\\%' ESCAPE '\\' OR TargetObject LIKE '%\\\\Software\\\\Classes\\\\Interface\\\\%' ESCAPE '\\' OR TargetObject LIKE '%\\\\Software\\\\Classes\\\\TypeLib\\\\%' ESCAPE '\\' OR TargetObject LIKE '%\\\\Software\\\\Microsoft\\\\Office\\\\%' ESCAPE '\\') AND (TargetObject LIKE '%EAB22AC3-30C1-11CF-A7EB-0000C05BAE0B%' ESCAPE '\\' OR TargetObject LIKE '%ActiveX%' ESCAPE '\\' OR TargetObject LIKE '%HTMLDocument%' ESCAPE '\\' OR TargetObject LIKE '%Scriptlet%' ESCAPE '\\' OR TargetObject LIKE '%WebBrowser%' ESCAPE '\\' OR TargetObject LIKE '%Compatibility Flags%' ESCAPE '\\') AND (NewProcessName LIKE '%\\\\reg.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\powershell.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\pwsh.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\wscript.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\cscript.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\mshta.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\rundll32.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\regsvr32.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\winword.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\excel.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\powerpnt.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\outlook.exe' ESCAPE '\\') AND (NOT COALESCE((NewProcessName LIKE '%\\\\Program Files\\\\Tenable\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files\\\\Qualys\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files\\\\Rapid7\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files\\\\CrowdStrike\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files\\\\SentinelOne\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files (x86)\\\\Tenable\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files (x86)\\\\Qualys\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files (x86)\\\\Rapid7\\\\%' ESCAPE '\\'), 0))))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ((ObjectName LIKE '%\\\\Software\\\\Classes\\\\CLSID\\\\%' ESCAPE '\\' OR ObjectName LIKE '%\\\\Software\\\\Classes\\\\Wow6432Node\\\\CLSID\\\\%' ESCAPE '\\' OR ObjectName LIKE '%\\\\Software\\\\Classes\\\\Interface\\\\%' ESCAPE '\\' OR ObjectName LIKE '%\\\\Software\\\\Classes\\\\TypeLib\\\\%' ESCAPE '\\' OR ObjectName LIKE '%\\\\Software\\\\Microsoft\\\\Office\\\\%' ESCAPE '\\') AND (ObjectName LIKE '%EAB22AC3-30C1-11CF-A7EB-0000C05BAE0B%' ESCAPE '\\' OR ObjectName LIKE '%ActiveX%' ESCAPE '\\' OR ObjectName LIKE '%HTMLDocument%' ESCAPE '\\' OR ObjectName LIKE '%Scriptlet%' ESCAPE '\\' OR ObjectName LIKE '%WebBrowser%' ESCAPE '\\' OR ObjectName LIKE '%Compatibility Flags%' ESCAPE '\\') AND (ProcessName LIKE '%\\\\reg.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\powershell.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\pwsh.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\wscript.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\cscript.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\mshta.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\rundll32.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\regsvr32.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\winword.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\excel.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\powerpnt.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\outlook.exe' ESCAPE '\\') AND (NOT COALESCE((ProcessName LIKE '%\\\\Program Files\\\\Tenable\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files\\\\Qualys\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files\\\\Rapid7\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files\\\\CrowdStrike\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files\\\\SentinelOne\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files (x86)\\\\Tenable\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files (x86)\\\\Qualys\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files (x86)\\\\Rapid7\\\\%' ESCAPE '\\'), 0))))"
     ],
     "schema_version": 2,
     "source": "hatchepsoute",
@@ -1439,6 +1439,48 @@
   },
   {
     "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
+    "channel": [],
+    "description": "Detects the WSUS IIS worker launching a shell, script interpreter, download utility, or writing a server-side script under WSUS/IIS paths, consistent with post-exploitation after CVE-2025-59287. The endpoint signal does not identify the initial request; SOC L1 should correlate it with IIS logs, the WSUS role, file content, source IP, and outbound traffic.\nD\u00e9tecte le worker IIS de WSUS lan\u00e7ant un shell, un interpr\u00e9teur, un outil de t\u00e9l\u00e9chargement ou \u00e9crivant un script serveur dans des chemins WSUS/IIS, comportement compatible avec une post-exploitation apr\u00e8s CVE-2025-59287. Le signal endpoint n\u2019identifie pas la requ\u00eate initiale ; le SOC L1 doit le corr\u00e9ler aux journaux IIS, au r\u00f4le WSUS, au contenu du fichier, \u00e0 l\u2019IP source et au trafic sortant.\n",
+    "eventid": [
+      1,
+      11
+    ],
+    "falsepositives": [
+      "Approved WSUS/IIS deployment or diagnostics; allowlist the exact signed job and maintenance window"
+    ],
+    "filename": "CVE-2025-59287_Windows_WSUS/rules/wsus_cve_2025_59287_w3wp_post_exploitation_strict.yml",
+    "id": "37e949f4-7b92-4a7e-9b98-68c4bff10fe7",
+    "level": "high",
+    "license": "Apache-2.0",
+    "logsource": {
+      "product": "windows"
+    },
+    "required_fields": [
+      "EventID",
+      "Image",
+      "ParentCommandLine",
+      "ParentImage",
+      "TargetFilename"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE (EventID=1 AND (ParentImage LIKE '%\\\\w3wp.exe' ESCAPE '\\' AND (ParentCommandLine LIKE '%WSUS%' ESCAPE '\\' OR ParentCommandLine LIKE '%Update Services%' ESCAPE '\\' OR ParentCommandLine LIKE '%WsusPool%' ESCAPE '\\')) AND (Image LIKE '%\\\\cmd.exe' ESCAPE '\\' OR Image LIKE '%\\\\powershell.exe' ESCAPE '\\' OR Image LIKE '%\\\\pwsh.exe' ESCAPE '\\' OR Image LIKE '%\\\\wscript.exe' ESCAPE '\\' OR Image LIKE '%\\\\cscript.exe' ESCAPE '\\' OR Image LIKE '%\\\\mshta.exe' ESCAPE '\\' OR Image LIKE '%\\\\certutil.exe' ESCAPE '\\' OR Image LIKE '%\\\\bitsadmin.exe' ESCAPE '\\' OR Image LIKE '%\\\\curl.exe' ESCAPE '\\')) OR (EventID=11 AND Image LIKE '%\\\\w3wp.exe' ESCAPE '\\' AND (TargetFilename LIKE '%\\\\Update Services\\\\WebServices\\\\%' ESCAPE '\\' OR TargetFilename LIKE '%\\\\inetpub\\\\wwwroot\\\\%' ESCAPE '\\') AND (TargetFilename LIKE '%.aspx' ESCAPE '\\' OR TargetFilename LIKE '%.asmx' ESCAPE '\\' OR TargetFilename LIKE '%.ashx' ESCAPE '\\' OR TargetFilename LIKE '%.config' ESCAPE '\\'))"
+    ],
+    "schema_version": 2,
+    "source": "hatchepsoute",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.execution",
+      "attack.t1059",
+      "attack.persistence",
+      "attack.t1505.003",
+      "cve.2025-59287"
+    ],
+    "title": "Windows WSUS IIS Worker Post-Exploitation - STRICT"
+  },
+  {
+    "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
     "channel": [
       "Security"
     ],
@@ -1537,6 +1579,48 @@
       "cve.2025-29824"
     ],
     "title": "Windows Kernel LPE - User Context to SYSTEM Without Standard Elevation (STRICT)"
+  },
+  {
+    "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
+    "channel": [
+      "Security"
+    ],
+    "description": "Detects php-cgi.exe or php.exe spawning a command interpreter or download utility, a high-confidence post-exploitation signal for a web-exposed PHP-CGI service. The event alone does not identify the CVE or prove remote exploitation; SOC L1 should correlate the web request, parent command line, account, file writes, and destination. Application maintenance is the main legitimate explanation.\nD\u00e9tecte php-cgi.exe ou php.exe lan\u00e7ant un interpr\u00e9teur de commandes ou un outil de t\u00e9l\u00e9chargement, un signal post-exploitation \u00e0 forte confiance pour un service PHP-CGI expos\u00e9 sur le web. L'\u00e9v\u00e9nement seul n'identifie pas la CVE et ne prouve pas une exploitation distante ; le SOC L1 doit corr\u00e9ler la requ\u00eate web, la ligne de commande parente, le compte, les \u00e9critures de fichiers et la destination. La maintenance applicative est la principale explication l\u00e9gitime.\n",
+    "eventid": [
+      4688
+    ],
+    "falsepositives": [
+      "Approved PHP maintenance or diagnostics"
+    ],
+    "filename": "CVE-2024-4577_PHP_CGI/rules/php_cgi_cve-2024-4577_child_process_strict.yml",
+    "id": "3d4e2d9f-2b0d-4f72-97b3-6d881a7c78c1",
+    "level": "high",
+    "license": "Apache-2.0",
+    "logsource": {
+      "product": "windows",
+      "service": "security"
+    },
+    "required_fields": [
+      "Channel",
+      "EventID",
+      "NewProcessName",
+      "ParentCommandLine",
+      "ParentProcessName"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND (ParentProcessName LIKE '%\\\\php-cgi.exe' ESCAPE '\\' AND (NewProcessName LIKE '%\\\\cmd.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\powershell.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\wscript.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\cscript.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\certutil.exe' ESCAPE '\\') AND (NOT COALESCE((ParentCommandLine LIKE '%diagnostic%' ESCAPE '\\' OR ParentCommandLine LIKE '%maintenance%' ESCAPE '\\'), 0))))"
+    ],
+    "schema_version": 2,
+    "source": "hatchepsoute",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.execution",
+      "attack.t1059",
+      "cve.2024-4577"
+    ],
+    "title": "PHP-CGI Spawning Command Interpreter - STRICT"
   },
   {
     "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
@@ -1727,6 +1811,54 @@
   },
   {
     "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
+    "channel": [],
+    "description": "Detects either the SharePoint IIS worker spawning a command interpreter or writing a server-side script into a web-accessible SharePoint directory, two high-confidence post-exploitation signals associated with the 2025 SharePoint chain. Neither event identifies the original request or proves compromise alone; SOC L1 should correlate the Event ID, host, account, command line, target file, triggering HTTP request, patch state, and subsequent network activity. Approved deployment and maintenance are the main legitimate explanations.\nD\u00e9tecte soit le worker IIS SharePoint lan\u00e7ant un interpr\u00e9teur de commandes, soit \u00e9crivant un script serveur dans un r\u00e9pertoire SharePoint accessible par le web, deux signaux post-exploitation \u00e0 forte confiance associ\u00e9s \u00e0 la cha\u00eene SharePoint 2025. Aucun \u00e9v\u00e9nement n'identifie seul la requ\u00eate d'origine ni ne prouve une compromission ; le SOC L1 doit corr\u00e9ler l'Event ID, l'h\u00f4te, le compte, la ligne de commande, le fichier cible, la requ\u00eate HTTP d\u00e9clencheuse, l'\u00e9tat des correctifs et l'activit\u00e9 r\u00e9seau suivante. Un d\u00e9ploiement ou une maintenance approuv\u00e9s sont les principales explications l\u00e9gitimes.\n",
+    "eventid": [
+      1,
+      11
+    ],
+    "falsepositives": [
+      "Approved SharePoint solution deployment or emergency maintenance",
+      "Security, monitoring, backup, or administration automation with documented change context"
+    ],
+    "filename": "CVE-2025-53770_SharePoint_ToolShell/rules/windows/sharepoint_toolshell_cve-2025-53770_endpoint_strict.yml",
+    "id": "52a39dc0-8d76-4d7e-93c3-b2e2f6b756ab",
+    "level": "high",
+    "license": "Apache-2.0",
+    "logsource": {
+      "product": "windows"
+    },
+    "required_fields": [
+      "CommandLine",
+      "EventID",
+      "Image",
+      "ParentCommandLine",
+      "ParentImage",
+      "TargetFilename"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE (EventID=1 AND ParentImage LIKE '%\\\\w3wp.exe' ESCAPE '\\' AND ((Image LIKE '%\\\\cmd.exe' ESCAPE '\\' OR Image LIKE '%\\\\powershell.exe' ESCAPE '\\' OR Image LIKE '%\\\\pwsh.exe' ESCAPE '\\' OR Image LIKE '%\\\\cscript.exe' ESCAPE '\\' OR Image LIKE '%\\\\wscript.exe' ESCAPE '\\' OR Image LIKE '%\\\\mshta.exe' ESCAPE '\\') OR ((Image LIKE '%\\\\rundll32.exe' ESCAPE '\\' OR Image LIKE '%\\\\certutil.exe' ESCAPE '\\') AND (CommandLine LIKE '%http:%' ESCAPE '\\' OR CommandLine LIKE '%https:%' ESCAPE '\\' OR CommandLine LIKE '%-urlcache%' ESCAPE '\\' OR CommandLine LIKE '%-decode%' ESCAPE '\\' OR CommandLine LIKE '%javascript:%' ESCAPE '\\' OR CommandLine LIKE '%shell32.dll%' ESCAPE '\\'))) AND (NOT COALESCE((ParentCommandLine LIKE '%HealthAnalyzer%' ESCAPE '\\' OR ParentCommandLine LIKE '%Monitoring%' ESCAPE '\\'), 0))) OR (EventID=11 AND Image LIKE '%\\\\w3wp.exe' ESCAPE '\\' AND (TargetFilename LIKE '%\\\\TEMPLATE\\\\LAYOUTS\\\\%' ESCAPE '\\' OR TargetFilename LIKE '%\\\\TEMPLATE\\\\ADMIN\\\\%' ESCAPE '\\' OR TargetFilename LIKE '%\\\\wwwroot\\\\\\_vti\\_bin\\\\%' ESCAPE '\\' OR TargetFilename LIKE '%\\\\wwwroot\\\\\\_layouts\\\\%' ESCAPE '\\' OR TargetFilename LIKE '%\\\\ISAPI\\\\%' ESCAPE '\\') AND (TargetFilename LIKE '%.aspx' ESCAPE '\\' OR TargetFilename LIKE '%.ashx' ESCAPE '\\' OR TargetFilename LIKE '%.asmx' ESCAPE '\\' OR TargetFilename LIKE '%.asax' ESCAPE '\\') AND (NOT COALESCE((TargetFilename LIKE '%\\\\SolutionStaging\\\\%' ESCAPE '\\' OR TargetFilename LIKE '%\\\\AppData\\\\Local\\\\Temp\\\\%' ESCAPE '\\'), 0)))"
+    ],
+    "schema_version": 2,
+    "source": "hatchepsoute",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.execution",
+      "attack.t1059",
+      "attack.t1059.001",
+      "attack.persistence",
+      "attack.t1505.003",
+      "cve.2025-53770",
+      "cve.2025-49704",
+      "cve.2025-49706",
+      "cve.2025-53771"
+    ],
+    "title": "SharePoint IIS Worker Post-Exploitation Activity - 2025 Chain STRICT"
+  },
+  {
+    "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
     "channel": [
       "System"
     ],
@@ -1892,13 +2024,13 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "NewProcessName",
+      "ObjectName",
       "OperationType",
-      "TargetObject"
+      "ProcessName"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%\\\\CLSID\\\\{EAB22AC3-30C1-11CF-A7EB-0000C05BAE0B}%' ESCAPE '\\' AND (NOT COALESCE(((NewProcessName LIKE '%\\\\Program Files\\\\Tenable\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files\\\\Qualys\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files\\\\Rapid7\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files (x86)\\\\Tenable\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files (x86)\\\\Qualys\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files (x86)\\\\Rapid7\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files\\\\CrowdStrike\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files\\\\SentinelOne\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files\\\\Sophos\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files\\\\Carbon Black\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files\\\\Cylance\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files\\\\ESET\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files\\\\Symantec\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files\\\\McAfee\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files (x86)\\\\CrowdStrike\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files (x86)\\\\SentinelOne\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files (x86)\\\\Sophos\\\\%' ESCAPE '\\' OR NewProcessName LIKE '%\\\\Program Files (x86)\\\\Carbon Black\\\\%' ESCAPE '\\') OR (NewProcessName LIKE '%\\\\winword.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\excel.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\powerpnt.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\outlook.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\msaccess.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\onenote.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\mspub.exe' ESCAPE '\\') OR (NewProcessName LIKE '%\\\\dllhost.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\svchost.exe' ESCAPE '\\' OR NewProcessName LIKE '%\\\\msiexec.exe' ESCAPE '\\')), 0))))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%\\\\CLSID\\\\{EAB22AC3-30C1-11CF-A7EB-0000C05BAE0B}%' ESCAPE '\\' AND (NOT COALESCE(((ProcessName LIKE '%\\\\Program Files\\\\Tenable\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files\\\\Qualys\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files\\\\Rapid7\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files (x86)\\\\Tenable\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files (x86)\\\\Qualys\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files (x86)\\\\Rapid7\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files\\\\CrowdStrike\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files\\\\SentinelOne\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files\\\\Sophos\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files\\\\Carbon Black\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files\\\\Cylance\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files\\\\ESET\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files\\\\Symantec\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files\\\\McAfee\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files (x86)\\\\CrowdStrike\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files (x86)\\\\SentinelOne\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files (x86)\\\\Sophos\\\\%' ESCAPE '\\' OR ProcessName LIKE '%\\\\Program Files (x86)\\\\Carbon Black\\\\%' ESCAPE '\\') OR (ProcessName LIKE '%\\\\winword.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\excel.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\powerpnt.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\outlook.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\msaccess.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\onenote.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\mspub.exe' ESCAPE '\\') OR (ProcessName LIKE '%\\\\dllhost.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\svchost.exe' ESCAPE '\\' OR ProcessName LIKE '%\\\\msiexec.exe' ESCAPE '\\')), 0))))"
     ],
     "schema_version": 2,
     "source": "hatchepsoute",

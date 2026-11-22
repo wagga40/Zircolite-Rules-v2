@@ -816,7 +816,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND (Image LIKE '%\\\\services.exe' ESCAPE '\\' AND EventType='CreateKey' AND TargetObject LIKE 'HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\BTOBTO' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND EventType='CreateKey') AND (Image LIKE '%\\\\services.exe' ESCAPE '\\' AND EventType='CreateKey' AND TargetObject LIKE 'HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\BTOBTO' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "mbabinski",
@@ -826,49 +826,7 @@
       "attack.lateral_movement",
       "attack.t1021.002"
     ],
-    "title": "Default Impacket Service Creation Via Registry Keys (RedCanary Threat Detection Report) - Sysmon"
-  },
-  {
-    "author": "RedCanary, Sigma formatting by Micah Babinski",
-    "channel": [
-      "Security"
-    ],
-    "description": "Detects registry key creation matching default Impacket default naming convention. Part of the RedCanary 2023 Threat Detection Report.",
-    "eventid": [
-      4657
-    ],
-    "falsepositives": [
-      "Unknown"
-    ],
-    "filename": "2023_RedCanary_ThreatDetectionReport/technique_smb_win_admin_shares_impacket_svc_via_registry.yml",
-    "id": "187ac7b5-f919-446b-93b3-cde8a6506d64",
-    "level": "low",
-    "license": "GPL-3.0",
-    "logsource": {
-      "product": "windows",
-      "service": "security"
-    },
-    "required_fields": [
-      "Channel",
-      "EventID",
-      "EventType",
-      "NewProcessName",
-      "OperationType",
-      "TargetObject"
-    ],
-    "result_type": "event",
-    "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='New registry value created') AND (NewProcessName LIKE '%\\\\services.exe' ESCAPE '\\' AND EventType='CreateKey' AND TargetObject LIKE 'HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\BTOBTO' ESCAPE '\\'))"
-    ],
-    "schema_version": 2,
-    "source": "mbabinski",
-    "source_table": "logs",
-    "status": "experimental",
-    "tags": [
-      "attack.lateral_movement",
-      "attack.t1021.002"
-    ],
-    "title": "Default Impacket Service Creation Via Registry Keys (RedCanary Threat Detection Report) - Generic"
+    "title": "Default Impacket Service Creation Via Registry Keys (RedCanary Threat Detection Report)"
   },
   {
     "author": "RedCanary, Sigma formatting by Micah Babinski",
@@ -9578,7 +9536,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND (EventType='CreateKey' AND Image LIKE '%\\\\svchost.exe' ESCAPE '\\' AND TargetObject REGEXP '^HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\ NT\\\\CurrentVersion\\\\Schedule\\\\TaskCache\\\\Tree\\\\[A-Za-z]{8}$'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND EventType='CreateKey') AND (EventType='CreateKey' AND Image LIKE '%\\\\svchost.exe' ESCAPE '\\' AND TargetObject REGEXP '^HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\ NT\\\\CurrentVersion\\\\Schedule\\\\TaskCache\\\\Tree\\\\[A-Za-z]{8}$'))"
     ],
     "schema_version": 2,
     "source": "mbabinski",
@@ -9590,51 +9548,7 @@
       "attack.t1053",
       "attack.t1053.002"
     ],
-    "title": "Impacket AtExec Suspicious Registry Modification - Sysmon"
-  },
-  {
-    "author": "Micah Babinski",
-    "channel": [
-      "Security"
-    ],
-    "description": "Detects Atexec.py (Impacket) suspicious registry key addition.",
-    "eventid": [
-      4657
-    ],
-    "falsepositives": [
-      "Unknown"
-    ],
-    "filename": "2023_Impacket/atexec/win_registry_events_impacket_atexec.yml",
-    "id": "be577827-db17-4786-b00a-347c93973662",
-    "level": "medium",
-    "license": "GPL-3.0",
-    "logsource": {
-      "product": "windows",
-      "service": "security"
-    },
-    "required_fields": [
-      "Channel",
-      "EventID",
-      "EventType",
-      "NewProcessName",
-      "OperationType",
-      "TargetObject"
-    ],
-    "result_type": "event",
-    "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='New registry value created') AND (EventType='CreateKey' AND NewProcessName LIKE '%\\\\svchost.exe' ESCAPE '\\' AND TargetObject REGEXP '^HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\ NT\\\\CurrentVersion\\\\Schedule\\\\TaskCache\\\\Tree\\\\[A-Za-z]{8}$'))"
-    ],
-    "schema_version": 2,
-    "source": "mbabinski",
-    "source_table": "logs",
-    "status": "experimental",
-    "tags": [
-      "attack.s0357",
-      "attack.execution",
-      "attack.t1053",
-      "attack.t1053.002"
-    ],
-    "title": "Impacket AtExec Suspicious Registry Modification - Generic"
+    "title": "Impacket AtExec Suspicious Registry Modification"
   },
   {
     "author": "Micah Babinski",
@@ -10479,7 +10393,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND (EventType='CreateKey' AND (TargetObject LIKE '%SOFTWARE\\\\Microsoft\\\\Phone\\\\%' ESCAPE '\\' OR TargetObject LIKE '%SOFTWARE\\\\Microsoft\\\\Personalization\\\\%' ESCAPE '\\') AND TargetObject LIKE '%0' ESCAPE '\\' AND Image LIKE '%\\\\wscript.exe' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND EventType='CreateKey') AND (EventType='CreateKey' AND (TargetObject LIKE '%SOFTWARE\\\\Microsoft\\\\Phone\\\\%' ESCAPE '\\' OR TargetObject LIKE '%SOFTWARE\\\\Microsoft\\\\Personalization\\\\%' ESCAPE '\\') AND TargetObject LIKE '%0' ESCAPE '\\' AND Image LIKE '%\\\\wscript.exe' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "mbabinski",
@@ -10490,50 +10404,7 @@
       "attack.defense_evasion",
       "attack.t1620"
     ],
-    "title": "Gootloader Stage 2 Registry Key Creation - Sysmon"
-  },
-  {
-    "author": "Micah Babinski",
-    "channel": [
-      "Security"
-    ],
-    "description": "Detects potential stage 2 Gootloader registry key creation.",
-    "eventid": [
-      4657
-    ],
-    "falsepositives": [
-      "Unknown"
-    ],
-    "filename": "2022_Gootloader/registry_key_creation_gootloader.yml",
-    "id": "10ad1627-1a0a-4323-b3da-3a9394b9535a",
-    "level": "high",
-    "license": "GPL-3.0",
-    "logsource": {
-      "product": "windows",
-      "service": "security"
-    },
-    "required_fields": [
-      "Channel",
-      "EventID",
-      "EventType",
-      "NewProcessName",
-      "OperationType",
-      "TargetObject"
-    ],
-    "result_type": "event",
-    "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='New registry value created') AND (EventType='CreateKey' AND (TargetObject LIKE '%SOFTWARE\\\\Microsoft\\\\Phone\\\\%' ESCAPE '\\' OR TargetObject LIKE '%SOFTWARE\\\\Microsoft\\\\Personalization\\\\%' ESCAPE '\\') AND TargetObject LIKE '%0' ESCAPE '\\' AND NewProcessName LIKE '%\\\\wscript.exe' ESCAPE '\\'))"
-    ],
-    "schema_version": 2,
-    "source": "mbabinski",
-    "source_table": "logs",
-    "status": "experimental",
-    "tags": [
-      "attack.execution",
-      "attack.defense_evasion",
-      "attack.t1620"
-    ],
-    "title": "Gootloader Stage 2 Registry Key Creation - Generic"
+    "title": "Gootloader Stage 2 Registry Key Creation"
   },
   {
     "author": "Micah Babinski",
@@ -11679,51 +11550,7 @@
       "attack.t1105",
       "attack.t1562"
     ],
-    "title": "Suspicious Registry Key Set (MaxMpxCt) - Sysmon"
-  },
-  {
-    "author": "Micah Babinski",
-    "channel": [
-      "Security"
-    ],
-    "description": "Detects registry value set to change MaxMpxCt settings. BlackCat does this to increase the number of outstanding requests allowed, such as SMB requests to distribute ransomware through an environment.",
-    "eventid": [
-      4657
-    ],
-    "falsepositives": [
-      "Unknown"
-    ],
-    "filename": "2022_BlackCat_Ransomware/win_susp_reg_set_maxmpxct_sysmon.yml",
-    "id": "4bd730d9-37d6-4a87-b392-ffb9ab52bf21",
-    "level": "high",
-    "license": "GPL-3.0",
-    "logsource": {
-      "product": "windows",
-      "service": "security"
-    },
-    "required_fields": [
-      "Channel",
-      "EventID",
-      "EventType",
-      "NewValue",
-      "OperationType",
-      "TargetObject"
-    ],
-    "result_type": "event",
-    "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND (EventType='SetValue' AND TargetObject LIKE 'HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\LanmanServer\\\\Parameters\\\\MaxMpxCt' ESCAPE '\\' AND NewValue='DWORD (0x0000ffff)'))"
-    ],
-    "schema_version": 2,
-    "source": "mbabinski",
-    "source_table": "logs",
-    "status": "experimental",
-    "tags": [
-      "attack.command_and_control",
-      "attack.defense_evasion",
-      "attack.t1105",
-      "attack.t1562"
-    ],
-    "title": "Suspicious Registry Key Set (MaxMpxCt) - Generic"
+    "title": "Suspicious Registry Key Set (MaxMpxCt)"
   },
   {
     "author": "Micah Babinski",
@@ -11849,50 +11676,7 @@
       "attack.defense_evasion",
       "attack.t1202"
     ],
-    "title": "Solarmarker File Extension Registry Key Set - Sysmon"
-  },
-  {
-    "author": "Micah Babinski",
-    "channel": [
-      "Security"
-    ],
-    "description": "Detects creation of suspicious file extension registry key. This extension is then registered with a custom file type (see Detail component of detection below) with a malicious powershell payload specified.",
-    "eventid": [
-      4657
-    ],
-    "falsepositives": [
-      "Unknown"
-    ],
-    "filename": "2022_Solarmarker/win_susp_file_ext_reg_key.yml",
-    "id": "57c4dca5-51cd-4cff-b835-d7eebe8e92f6",
-    "level": "high",
-    "license": "GPL-3.0",
-    "logsource": {
-      "product": "windows",
-      "service": "security"
-    },
-    "required_fields": [
-      "Channel",
-      "Detail",
-      "EventID",
-      "EventType",
-      "NewProcessName",
-      "OperationType",
-      "TargetObject"
-    ],
-    "result_type": "event",
-    "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND (NewProcessName LIKE '%\\\\powershell.exe' ESCAPE '\\' AND EventType='SetValue' AND TargetObject REGEXP '^.*\\\\.([a-zA-Z]){13,18}$' AND Detail REGEXP '^.*([a-z]){18,22}$'))"
-    ],
-    "schema_version": 2,
-    "source": "mbabinski",
-    "source_table": "logs",
-    "status": "experimental",
-    "tags": [
-      "attack.defense_evasion",
-      "attack.t1202"
-    ],
-    "title": "Solarmarker File Extension Registry Key Set - Generic"
+    "title": "Solarmarker File Extension Registry Key Set"
   },
   {
     "author": "Micah Babinski",
@@ -12986,49 +12770,7 @@
       "attack.t1490",
       "attack.g0092"
     ],
-    "title": "Boot Configuration Database (BCD) Manipulation - Registry Modification - Sysmon"
-  },
-  {
-    "author": "Micah Babinski",
-    "channel": [
-      "Security"
-    ],
-    "description": "Detects registry modifications occuring in tandem with disruption of boot processes with bcdedit (or as a method to evade detection)",
-    "eventid": [
-      4657
-    ],
-    "falsepositives": [
-      "WMI initiating BCD changes"
-    ],
-    "filename": "2022_Hive_Ransomware/win_bcd_registry_modification_hive.yml",
-    "id": "99a9fbb6-62bf-4cb7-8406-a363bc14cbf3",
-    "level": "high",
-    "license": "GPL-3.0",
-    "logsource": {
-      "product": "windows",
-      "service": "security"
-    },
-    "required_fields": [
-      "Channel",
-      "EventID",
-      "EventType",
-      "OperationType",
-      "TargetObject"
-    ],
-    "result_type": "event",
-    "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND ((EventType='SetValue' AND TargetObject LIKE '%elements%' ESCAPE '\\') AND (TargetObject LIKE '%16000009%' ESCAPE '\\' OR TargetObject LIKE '%250000e0%' ESCAPE '\\')))"
-    ],
-    "schema_version": 2,
-    "source": "mbabinski",
-    "source_table": "logs",
-    "status": "experimental",
-    "tags": [
-      "attack.impact",
-      "attack.t1490",
-      "attack.g0092"
-    ],
-    "title": "Boot Configuration Database (BCD) Manipulation - Registry Modification - Generic"
+    "title": "Boot Configuration Database (BCD) Manipulation - Registry Modification"
   },
   {
     "author": "Micah Babinski",
@@ -13103,7 +12845,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=12 AND (EventType='CreateKey' AND TargetObject LIKE 'SYSTEM\\\\CurrentControlSet\\\\Services\\\\LanmanServer\\\\Parameters' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND ((EventID=12 AND EventType='CreateKey') AND (EventType='CreateKey' AND TargetObject LIKE 'SYSTEM\\\\CurrentControlSet\\\\Services\\\\LanmanServer\\\\Parameters' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "mbabinski",
@@ -13115,50 +12857,7 @@
       "attack.t1105",
       "attack.t1562"
     ],
-    "title": "Suspicious Registry Key Added: LanmanServer Parameters - Sysmon"
-  },
-  {
-    "author": "Micah Babinski",
-    "channel": [
-      "Security"
-    ],
-    "description": "Detects registry addition for LanmanServer MaxMpxCt. BlackCat does this to increase the number of outstanding requests allowed, such as SMB requests to distribute ransomware through an environment.",
-    "eventid": [
-      4657
-    ],
-    "falsepositives": [
-      "Unknown"
-    ],
-    "filename": "2022_BlackCat_Ransomware/win_susp_reg_added_maxmpxct_sysmon.yml",
-    "id": "9c5df39b-0fe2-450b-bc90-a1b748dca8af",
-    "level": "high",
-    "license": "GPL-3.0",
-    "logsource": {
-      "product": "windows",
-      "service": "security"
-    },
-    "required_fields": [
-      "Channel",
-      "EventID",
-      "EventType",
-      "OperationType",
-      "TargetObject"
-    ],
-    "result_type": "event",
-    "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='New registry value created') AND (EventType='CreateKey' AND TargetObject LIKE 'SYSTEM\\\\CurrentControlSet\\\\Services\\\\LanmanServer\\\\Parameters' ESCAPE '\\'))"
-    ],
-    "schema_version": 2,
-    "source": "mbabinski",
-    "source_table": "logs",
-    "status": "experimental",
-    "tags": [
-      "attack.command_and_control",
-      "attack.defense_evasion",
-      "attack.t1105",
-      "attack.t1562"
-    ],
-    "title": "Suspicious Registry Key Added: LanmanServer Parameters - Generic"
+    "title": "Suspicious Registry Key Added: LanmanServer Parameters"
   },
   {
     "author": "Micah Babinski",

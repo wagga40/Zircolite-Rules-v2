@@ -479,6 +479,50 @@
   {
     "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
     "channel": [],
+    "description": "Detects an EPMM Tomcat or Java context creating a server-side script or spawning a shell or network utility, consistent with post-exploitation after CVE-2023-35078/35081. This endpoint signal is stronger than an isolated web request but does not establish the vulnerability as the cause; SOC L1 should correlate the host, preceding EPMM requests, file content, and outbound connections.\nD\u00e9tecte un contexte Tomcat ou Java d\u2019EPMM qui cr\u00e9e un script c\u00f4t\u00e9 serveur ou lance un shell ou un outil r\u00e9seau, ce qui est compatible avec une post-exploitation apr\u00e8s CVE-2023-35078/35081. Ce signal endpoint est plus fort qu\u2019une requ\u00eate web isol\u00e9e mais n\u2019\u00e9tablit pas que la vuln\u00e9rabilit\u00e9 en est la cause ; le SOC L1 doit corr\u00e9ler l\u2019h\u00f4te, les requ\u00eates EPMM pr\u00e9c\u00e9dentes, le contenu du fichier et les connexions sortantes.\n",
+    "eventid": [
+      1,
+      11
+    ],
+    "falsepositives": [
+      "Approved EPMM maintenance or vendor upgrade that launches a shell or writes a deployment artifact; allowlist the signed maintenance job and exact path",
+      "Normal Java compilation or deployment in a documented staging environment"
+    ],
+    "filename": "CVE-2023-35078_35081_Ivanti_EPMM/rules/ivanti_epmm_cve_2023_35078_35081_post_exploitation_strict.yml",
+    "id": "04e91a79-b0ed-43fc-a6af-1ce0e1c4a6cb",
+    "level": "high",
+    "license": "Apache-2.0",
+    "logsource": {
+      "product": "linux"
+    },
+    "required_fields": [
+      "EventID",
+      "Image",
+      "ParentCommandLine",
+      "ParentImage",
+      "TargetFilename"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE (EventID=1 AND ((ParentImage LIKE '%/java' ESCAPE '\\' OR ParentImage LIKE '%/java.real' ESCAPE '\\' OR ParentImage LIKE '%/tomcat' ESCAPE '\\' OR ParentImage LIKE '%/jsvc' ESCAPE '\\') AND (ParentCommandLine LIKE '%tomcat%' ESCAPE '\\' OR ParentCommandLine LIKE '%mifs%' ESCAPE '\\' OR ParentCommandLine LIKE '%mobileiron%' ESCAPE '\\' OR ParentCommandLine LIKE '%epmm%' ESCAPE '\\')) AND (Image LIKE '%/sh' ESCAPE '\\' OR Image LIKE '%/bash' ESCAPE '\\' OR Image LIKE '%/dash' ESCAPE '\\' OR Image LIKE '%/busybox' ESCAPE '\\' OR Image LIKE '%/curl' ESCAPE '\\' OR Image LIKE '%/wget' ESCAPE '\\' OR Image LIKE '%/nc' ESCAPE '\\' OR Image LIKE '%/ncat' ESCAPE '\\' OR Image LIKE '%/python' ESCAPE '\\' OR Image LIKE '%/python3' ESCAPE '\\')) OR (EventID=11 AND (Image LIKE '%/java' ESCAPE '\\' OR Image LIKE '%/java.real' ESCAPE '\\' OR Image LIKE '%/tomcat' ESCAPE '\\' OR Image LIKE '%/jsvc' ESCAPE '\\') AND ((TargetFilename LIKE '%/webapps/%' ESCAPE '\\' OR TargetFilename LIKE '%/mifs/%' ESCAPE '\\') AND (TargetFilename LIKE '%.jsp' ESCAPE '\\' OR TargetFilename LIKE '%.jspx' ESCAPE '\\' OR TargetFilename LIKE '%.war' ESCAPE '\\' OR TargetFilename LIKE '%.class' ESCAPE '\\' OR TargetFilename LIKE '%.jspf' ESCAPE '\\')) AND (NOT COALESCE((TargetFilename LIKE '%/work/Catalina/%' ESCAPE '\\' OR TargetFilename LIKE '%/temp/%' ESCAPE '\\'), 0)))"
+    ],
+    "schema_version": 2,
+    "source": "hatchepsoute",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.execution",
+      "attack.t1059",
+      "attack.persistence",
+      "attack.t1505.003",
+      "cve.2023-35078",
+      "cve.2023-35081"
+    ],
+    "title": "Ivanti EPMM Web Application Post-Exploitation Artifact or Child Process - STRICT"
+  },
+  {
+    "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
+    "channel": [],
     "description": "High-confidence CVE-2026-31431 Copy Fail LPE chain: interpreter process running from a temporary path spawns a SUID binary (su, sudo, pkexec), or a compiled binary from a temporary path invokes a SUID binary after a privilege transition signal. Previous condition required all kernel API names (AF_ALG, splice) simultaneously in a single CommandLine, which is structurally unreachable. Fixed to use observable parent-child process relationships instead. SOC L1 should verify the source, affected host, user, process or request fields, timing, and related activity.\nD\u00e9tecte la cha\u00eene d'exploitation haute confiance de CVE-2026-31431 (Copy Fail LPE) via les relations parent-enfant observables : un interpr\u00e9teur lanc\u00e9 depuis un r\u00e9pertoire temporaire spawne un binaire SUID, ou un binaire compil\u00e9 depuis /tmp invoque un binaire SUID avec transition de privil\u00e8ges. La condition pr\u00e9c\u00e9dente exigeait AF_ALG + splice + /etc/passwd dans la m\u00eame CommandLine - structurellement impossible. Corrig\u00e9. Le SOC L1 doit v\u00e9rifier la source, l\u2019h\u00f4te affect\u00e9, l\u2019utilisateur, les champs de processus ou de requ\u00eate, la chronologie et les activit\u00e9s associ\u00e9es.\n",
     "eventid": [],
     "falsepositives": [
@@ -605,6 +649,49 @@
       "cve.2025-49091"
     ],
     "title": "High Confidence Konsole Shell Fallback Execution (CVE-2025-49091) - STRICT"
+  },
+  {
+    "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
+    "channel": [],
+    "description": "Detects a SAP NetWeaver Java process creating a JSP or WAR artifact in a web application path, or spawning a shell or network utility, consistent with post-exploitation after CVE-2025-31324/CVE-2025-42999. This is a high-confidence endpoint signal but requires correlation with SAP HTTP logs and does not identify the vulnerability by itself; SOC L1 should preserve the file and process ancestry.\nD\u00e9tecte un processus Java SAP NetWeaver qui cr\u00e9e un artefact JSP ou WAR dans un chemin d\u2019application web, ou lance un shell ou un outil r\u00e9seau, ce qui est compatible avec une post-exploitation apr\u00e8s CVE-2025-31324/CVE-2025-42999. Il s\u2019agit d\u2019un signal endpoint de haute confiance mais il doit \u00eatre corr\u00e9l\u00e9 aux journaux HTTP SAP et n\u2019identifie pas \u00e0 lui seul la vuln\u00e9rabilit\u00e9 ; le SOC L1 doit pr\u00e9server le fichier et l\u2019ascendance du processus.\n",
+    "eventid": [
+      1,
+      11
+    ],
+    "falsepositives": [
+      "Approved SAP deployment or kernel maintenance; allowlist the exact signed deployment job and change window"
+    ],
+    "filename": "CVE-2025-31324_42999_SAP_NetWeaver/rules/sap_netweaver_java_webshell_post_exploitation_strict.yml",
+    "id": "394c3f3e-e45a-4f24-8d1f-7b0a15d0a8d8",
+    "level": "high",
+    "license": "Apache-2.0",
+    "logsource": {
+      "product": "linux"
+    },
+    "required_fields": [
+      "EventID",
+      "Image",
+      "ParentCommandLine",
+      "ParentImage",
+      "TargetFilename"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE (EventID=1 AND ((ParentImage LIKE '%/java' ESCAPE '\\' OR ParentImage LIKE '%/java.real' ESCAPE '\\') AND (ParentCommandLine LIKE '%sap%' ESCAPE '\\' OR ParentCommandLine LIKE '%netweaver%' ESCAPE '\\' OR ParentCommandLine LIKE '%j2ee%' ESCAPE '\\' OR ParentCommandLine LIKE '%jlaunch%' ESCAPE '\\')) AND (Image LIKE '%/sh' ESCAPE '\\' OR Image LIKE '%/bash' ESCAPE '\\' OR Image LIKE '%/dash' ESCAPE '\\' OR Image LIKE '%/curl' ESCAPE '\\' OR Image LIKE '%/wget' ESCAPE '\\' OR Image LIKE '%/nc' ESCAPE '\\' OR Image LIKE '%/python' ESCAPE '\\' OR Image LIKE '%/python3' ESCAPE '\\')) OR (EventID=11 AND (Image LIKE '%/java' ESCAPE '\\' OR Image LIKE '%/java.real' ESCAPE '\\') AND ((TargetFilename LIKE '%/j2ee/cluster/server%' ESCAPE '\\' OR TargetFilename LIKE '%/webapps/%' ESCAPE '\\' OR TargetFilename LIKE '%/sapmnt/%' ESCAPE '\\') AND (TargetFilename LIKE '%.jsp' ESCAPE '\\' OR TargetFilename LIKE '%.jspx' ESCAPE '\\' OR TargetFilename LIKE '%.war' ESCAPE '\\' OR TargetFilename LIKE '%.class' ESCAPE '\\')))"
+    ],
+    "schema_version": 2,
+    "source": "hatchepsoute",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.execution",
+      "attack.t1059",
+      "attack.persistence",
+      "attack.t1505.003",
+      "cve.2025-31324",
+      "cve.2025-42999"
+    ],
+    "title": "SAP NetWeaver Java Webshell or Suspicious Child Process - STRICT"
   },
   {
     "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
@@ -863,6 +950,45 @@
   {
     "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
     "channel": [],
+    "description": "Detects the Jenkins controller JVM or service spawning a shell, interpreter, or network utility, consistent with post-exploitation following CVE-2024-23897. The process event does not prove that the CLI vulnerability caused the activity; SOC L1 should correlate the CLI request, account, command line, file access, and network destination. Approved build steps and administration require documented context.\nD\u00e9tecte le JVM ou service contr\u00f4leur Jenkins lan\u00e7ant un shell, un interpr\u00e9teur ou un outil r\u00e9seau, comportement compatible avec une post-exploitation apr\u00e8s la CVE-2024-23897. L'\u00e9v\u00e9nement de processus ne prouve pas que la vuln\u00e9rabilit\u00e9 CLI est \u00e0 l'origine de l'activit\u00e9 ; le SOC L1 doit corr\u00e9ler la requ\u00eate CLI, le compte, la ligne de commande, l'acc\u00e8s aux fichiers et la destination r\u00e9seau. Les \u00e9tapes de build et l'administration approuv\u00e9es n\u00e9cessitent un contexte document\u00e9.\n",
+    "eventid": [],
+    "falsepositives": [
+      "Approved Jenkins pipeline steps running in a controller process",
+      "Documented administration or plugin maintenance"
+    ],
+    "filename": "CVE-2024-23897_Jenkins_CLI/rules/jenkins_cve-2024-23897_controller_child_process_strict.yml",
+    "id": "5c17af53-5524-45b1-9f56-6bc4c6a8f0c8",
+    "level": "high",
+    "license": "Apache-2.0",
+    "logsource": {
+      "category": "process_creation",
+      "product": "linux"
+    },
+    "required_fields": [
+      "CommandLine",
+      "Image",
+      "ParentCommandLine",
+      "ParentImage"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE (ParentImage LIKE '%/java' ESCAPE '\\' OR ParentImage LIKE '%/jenkins' ESCAPE '\\' OR ParentImage LIKE '%/jenkins.war' ESCAPE '\\') AND (ParentCommandLine LIKE '%jenkins.war%' ESCAPE '\\' OR ParentCommandLine LIKE '%/jenkins/%' ESCAPE '\\' OR ParentCommandLine LIKE '%hudson.%' ESCAPE '\\') AND ((Image LIKE '%/sh' ESCAPE '\\' OR Image LIKE '%/bash' ESCAPE '\\' OR Image LIKE '%/python' ESCAPE '\\' OR Image LIKE '%/perl' ESCAPE '\\') OR ((Image LIKE '%/curl' ESCAPE '\\' OR Image LIKE '%/wget' ESCAPE '\\' OR Image LIKE '%/nc' ESCAPE '\\') AND (CommandLine LIKE '%/tmp/%' ESCAPE '\\' OR CommandLine LIKE '%http://%' ESCAPE '\\' OR CommandLine LIKE '%https://%' ESCAPE '\\' OR CommandLine LIKE '%bash -c%' ESCAPE '\\' OR CommandLine LIKE '%sh -c%' ESCAPE '\\'))) AND (NOT COALESCE((ParentCommandLine LIKE '%/workspace/%' ESCAPE '\\'), 0))"
+    ],
+    "schema_version": 2,
+    "source": "hatchepsoute",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.execution",
+      "attack.t1059",
+      "attack.t1105",
+      "cve.2024-23897"
+    ],
+    "title": "Jenkins Controller Spawning Shell or Network Tool After CLI Activity - STRICT"
+  },
+  {
+    "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
+    "channel": [],
     "description": "Detects a PHP or web-server worker creating a PHP-family executable file in a web root or temporary directory. This is a high-confidence post-exploitation signal consistent with a PHP webshell drop after PHP2Shell, but it does not identify the initial vulnerability; SOC L1 should verify deployment activity, file content and hash, owner, process lineage, and preceding web requests.\nD\u00e9tecte un worker PHP ou un serveur web qui cr\u00e9e un fichier ex\u00e9cutable de la famille PHP dans un web root ou un r\u00e9pertoire temporaire. Il s\u2019agit d\u2019un signal post-exploitation \u00e0 haute confiance coh\u00e9rent avec le d\u00e9p\u00f4t d\u2019un webshell PHP apr\u00e8s PHP2Shell, mais il n\u2019identifie pas la vuln\u00e9rabilit\u00e9 initiale ; le SOC L1 doit v\u00e9rifier les d\u00e9ploiements, le contenu et le hash du fichier, son propri\u00e9taire, la cha\u00eene de processus et les requ\u00eates web pr\u00e9c\u00e9dentes.\n",
     "eventid": [],
     "falsepositives": [
@@ -899,6 +1025,45 @@
       "cve.2026-126714"
     ],
     "title": "PHP Worker Creates Web Executable File After PHP2Shell Activity - STRICT"
+  },
+  {
+    "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
+    "channel": [],
+    "description": "Detects an Apache ActiveMQ broker JVM spawning a shell, interpreter, or network utility, consistent with post-exploitation following CVE-2023-46604 OpenWire deserialization RCE. The process event does not prove the protocol exploit was the cause; SOC L1 should correlate the source connection, broker port, command line, file writes, and Java process ancestry. Approved broker administration and maintenance require documented context.\nD\u00e9tecte le JVM broker Apache ActiveMQ lan\u00e7ant un shell, un interpr\u00e9teur ou un outil r\u00e9seau, comportement compatible avec une post-exploitation apr\u00e8s la RCE par d\u00e9s\u00e9rialisation OpenWire CVE-2023-46604. L'\u00e9v\u00e9nement de processus ne prouve pas que l'exploitation du protocole est la cause ; le SOC L1 doit corr\u00e9ler la connexion source, le port du broker, la ligne de commande, les \u00e9critures de fichiers et l'ascendance Java. L'administration et la maintenance approuv\u00e9es n\u00e9cessitent un contexte document\u00e9.\n",
+    "eventid": [],
+    "falsepositives": [
+      "Approved broker maintenance or diagnostics",
+      "Container health checks with an explicit allowlist"
+    ],
+    "filename": "CVE-2023-46604_Apache_ActiveMQ/rules/activemq_cve-2023-46604_broker_child_process_strict.yml",
+    "id": "6f43a4fd-5d9a-4cb8-a2b5-1a1e96e2a50c",
+    "level": "high",
+    "license": "Apache-2.0",
+    "logsource": {
+      "category": "process_creation",
+      "product": "linux"
+    },
+    "required_fields": [
+      "CommandLine",
+      "Image",
+      "ParentCommandLine",
+      "ParentImage"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE (ParentImage LIKE '%/java' ESCAPE '\\' OR ParentImage LIKE '%/activemq' ESCAPE '\\') AND (ParentCommandLine LIKE '%activemq%' ESCAPE '\\' OR ParentCommandLine LIKE '%activemq.jar%' ESCAPE '\\') AND ((Image LIKE '%/sh' ESCAPE '\\' OR Image LIKE '%/bash' ESCAPE '\\' OR Image LIKE '%/python' ESCAPE '\\' OR Image LIKE '%/perl' ESCAPE '\\') OR ((Image LIKE '%/curl' ESCAPE '\\' OR Image LIKE '%/wget' ESCAPE '\\' OR Image LIKE '%/nc' ESCAPE '\\') AND (CommandLine LIKE '%/tmp/%' ESCAPE '\\' OR CommandLine LIKE '%http://%' ESCAPE '\\' OR CommandLine LIKE '%https://%' ESCAPE '\\' OR CommandLine LIKE '%bash -c%' ESCAPE '\\' OR CommandLine LIKE '%sh -c%' ESCAPE '\\'))) AND (NOT COALESCE((ParentCommandLine LIKE '%backup%' ESCAPE '\\' OR ParentCommandLine LIKE '%health-check%' ESCAPE '\\'), 0))"
+    ],
+    "schema_version": 2,
+    "source": "hatchepsoute",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.execution",
+      "attack.t1059",
+      "attack.t1105",
+      "cve.2023-46604"
+    ],
+    "title": "Apache ActiveMQ Broker Spawning Shell or Network Tool - STRICT"
   },
   {
     "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
@@ -1511,6 +1676,48 @@
   {
     "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
     "channel": [],
+    "description": "Detects a Roundcube PHP or web-server worker spawning a shell or network utility, or writing a PHP file under the webroot, consistent with post-exploitation after CVE-2025-49113. The endpoint signal does not prove Roundcube was the initial vector; SOC L1 should correlate it with upload.php requests, the authenticated account, file content, and outbound traffic.\nD\u00e9tecte un worker PHP ou serveur web Roundcube qui lance un shell ou un outil r\u00e9seau, ou \u00e9crit un fichier PHP sous le webroot, ce qui est compatible avec une post-exploitation apr\u00e8s CVE-2025-49113. Le signal endpoint ne prouve pas que Roundcube est le vecteur initial ; le SOC L1 doit le corr\u00e9ler aux requ\u00eates upload.php, au compte authentifi\u00e9, au contenu du fichier et au trafic sortant.\n",
+    "eventid": [
+      1,
+      11
+    ],
+    "falsepositives": [
+      "Approved web deployment or package update; allowlist the exact deployment process and path"
+    ],
+    "filename": "CVE-2025-49113_Roundcube/rules/roundcube_php_post_exploitation_strict.yml",
+    "id": "f39a55cd-7722-4a12-97ea-2e7b7f1b1d28",
+    "level": "high",
+    "license": "Apache-2.0",
+    "logsource": {
+      "product": "linux"
+    },
+    "required_fields": [
+      "EventID",
+      "Image",
+      "ParentCommandLine",
+      "ParentImage",
+      "TargetFilename"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE (EventID=1 AND ((ParentImage LIKE '%/php-fpm' ESCAPE '\\' OR ParentImage LIKE '%/php-cgi' ESCAPE '\\' OR ParentImage LIKE '%/apache2' ESCAPE '\\' OR ParentImage LIKE '%/httpd' ESCAPE '\\' OR ParentImage LIKE '%/nginx' ESCAPE '\\') AND (ParentCommandLine LIKE '%roundcube%' ESCAPE '\\' OR ParentCommandLine LIKE '%www/roundcube%' ESCAPE '\\' OR ParentCommandLine LIKE '%roundcubemail%' ESCAPE '\\')) AND (Image LIKE '%/sh' ESCAPE '\\' OR Image LIKE '%/bash' ESCAPE '\\' OR Image LIKE '%/dash' ESCAPE '\\' OR Image LIKE '%/curl' ESCAPE '\\' OR Image LIKE '%/wget' ESCAPE '\\' OR Image LIKE '%/nc' ESCAPE '\\' OR Image LIKE '%/python' ESCAPE '\\' OR Image LIKE '%/python3' ESCAPE '\\')) OR (EventID=11 AND (Image LIKE '%/php-fpm' ESCAPE '\\' OR Image LIKE '%/php-cgi' ESCAPE '\\' OR Image LIKE '%/apache2' ESCAPE '\\' OR Image LIKE '%/httpd' ESCAPE '\\') AND ((TargetFilename LIKE '%/roundcube/%' ESCAPE '\\' OR TargetFilename LIKE '%/webmail/%' ESCAPE '\\' OR TargetFilename LIKE '%/htdocs/%' ESCAPE '\\') AND (TargetFilename LIKE '%.php' ESCAPE '\\' OR TargetFilename LIKE '%.phtml' ESCAPE '\\' OR TargetFilename LIKE '%.php5' ESCAPE '\\')))"
+    ],
+    "schema_version": 2,
+    "source": "hatchepsoute",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.execution",
+      "attack.t1059",
+      "attack.persistence",
+      "attack.t1505.003",
+      "cve.2025-49113"
+    ],
+    "title": "Roundcube PHP Worker Suspicious Child Process or Webshell - STRICT"
+  },
+  {
+    "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
+    "channel": [],
     "description": "Detects PHP-family file creation in common Joomla web-exposed or writable directories by web server or PHP runtime processes, covering CVE-2026-48909 cases where the exploit writes a webshell but no command has been executed yet. SOC L1 should verify the source, affected host, user, process or request fields, timing, and related activity.\nD\u00e9tecte la cr\u00e9ation de fichiers PHP dans des r\u00e9pertoires Joomla expos\u00e9s ou inscriptibles par un processus web/PHP. Cette r\u00e8gle couvre l'angle mort o\u00f9 CVE-2026-48909 \u00e9crit un webshell mais ne d\u00e9clenche pas encore d'ex\u00e9cution de commande observable. Le SOC L1 doit v\u00e9rifier la source, l\u2019h\u00f4te affect\u00e9, l\u2019utilisateur, les champs de processus ou de requ\u00eate, la chronologie et les activit\u00e9s associ\u00e9es.\n",
     "eventid": [],
     "falsepositives": [
@@ -1674,6 +1881,45 @@
       "cve.2026-48909"
     ],
     "title": "Web Server PHP Process Spawning Shell After Joomla SP LMS Exploitation (CVE-2026-48909)"
+  },
+  {
+    "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",
+    "channel": [],
+    "description": "Detects an Ivanti Connect Secure web process spawning a shell, interpreter, or network utility, consistent with post-exploitation after CVE-2024-21887. This signal does not identify the initial request or prove the CVE was the cause; SOC L1 should inspect the command line, volatile paths, account, outbound connection, and appliance support files. Approved maintenance automation must be explicitly documented.\nD\u00e9tecte un processus web Ivanti Connect Secure lan\u00e7ant un shell, un interpr\u00e9teur ou un outil r\u00e9seau, comportement compatible avec une post-exploitation apr\u00e8s la CVE-2024-21887. Ce signal n'identifie pas la requ\u00eate initiale et ne prouve pas que la CVE est la cause ; le SOC L1 doit examiner la ligne de commande, les chemins volatils, le compte, la connexion sortante et les fichiers de support de l'appliance. Une automatisation de maintenance approuv\u00e9e doit \u00eatre explicitement document\u00e9e.\n",
+    "eventid": [],
+    "falsepositives": [
+      "Vendor maintenance or support session with change approval",
+      "Backup or monitoring agent running under the appliance service context"
+    ],
+    "filename": "CVE-2024-21887_Ivanti_Connect_Secure/rules/ivanti_connect_secure_cve-2024-21887_post_exploitation_strict.yml",
+    "id": "2aef9ef6-3c69-4e5f-b7b3-2dd36d9f8c19",
+    "level": "critical",
+    "license": "Apache-2.0",
+    "logsource": {
+      "category": "process_creation",
+      "product": "linux"
+    },
+    "required_fields": [
+      "CommandLine",
+      "Image",
+      "ParentCommandLine",
+      "ParentImage"
+    ],
+    "result_type": "event",
+    "rule": [
+      "SELECT * FROM logs WHERE (ParentImage LIKE '%/home/bin/web' ESCAPE '\\' OR ParentImage LIKE '%/home/bin/dsagent' ESCAPE '\\' OR ParentImage LIKE '%/home/bin/dsmc' ESCAPE '\\') AND ((Image LIKE '%/sh' ESCAPE '\\' OR Image LIKE '%/bash' ESCAPE '\\' OR Image LIKE '%/perl' ESCAPE '\\' OR Image LIKE '%/python' ESCAPE '\\') OR ((Image LIKE '%/curl' ESCAPE '\\' OR Image LIKE '%/wget' ESCAPE '\\' OR Image LIKE '%/nc' ESCAPE '\\') AND (CommandLine LIKE '%/tmp/%' ESCAPE '\\' OR CommandLine LIKE '%/dev/shm/%' ESCAPE '\\' OR CommandLine LIKE '%http://%' ESCAPE '\\' OR CommandLine LIKE '%https://%' ESCAPE '\\' OR CommandLine LIKE '%bash -c%' ESCAPE '\\' OR CommandLine LIKE '%sh -c%' ESCAPE '\\' OR CommandLine LIKE '%base64 -d%' ESCAPE '\\'))) AND (NOT COALESCE((ParentCommandLine LIKE '%health-check%' ESCAPE '\\' OR ParentCommandLine LIKE '%maintenance%' ESCAPE '\\'), 0))"
+    ],
+    "schema_version": 2,
+    "source": "hatchepsoute",
+    "source_table": "logs",
+    "status": "experimental",
+    "tags": [
+      "attack.execution",
+      "attack.t1059",
+      "attack.t1105",
+      "cve.2024-21887"
+    ],
+    "title": "Ivanti Connect Secure Web Process Spawning Shell or Network Tool - STRICT"
   },
   {
     "author": "Adama ASSIONGBON (SOC & CTI Consultant), https://linkedin.com/in/adama-assiongbon-9029893a",

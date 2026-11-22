@@ -3,8 +3,8 @@
     "experimental/rules_mbabinski_windows_generic_correlation.json": 2,
     "experimental/rules_mbabinski_windows_merged_correlation.json": 3,
     "experimental/rules_mbabinski_windows_sysmon_correlation.json": 2,
-    "rules_mbabinski_windows_generic.json": 165,
-    "rules_mbabinski_windows_merged.json": 364,
+    "rules_mbabinski_windows_generic.json": 158,
+    "rules_mbabinski_windows_merged.json": 357,
     "rules_mbabinski_windows_sysmon.json": 209
   },
   "exclusions": [
@@ -522,6 +522,69 @@
       "profile": "*",
       "sha256": "5a866eeb502668fb7ec0ece96050f113ddb227783aed7b4cc8688a406ddc3932",
       "stage": "discovery"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "2022_BlackCat_Ransomware/win_susp_reg_added_maxmpxct_sysmon.yml",
+      "profile": "generic",
+      "sha256": "d5e342553f4a3979cc136388b2345b62a70e413427aaa4e3ee847869eb961c3f",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "2022_BlackCat_Ransomware/win_susp_reg_set_maxmpxct_sysmon.yml",
+      "profile": "generic",
+      "sha256": "415b09c3f7173b5ada0242fb0f6ff64338126f0aab30e54b162e0c351fa4b818",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "2022_Gootloader/registry_key_creation_gootloader.yml",
+      "profile": "generic",
+      "sha256": "1d7934715d63c0ca05dfcdaed9c92d4831f70dde3c704fc76ce71ca579ec05c7",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "2022_Hive_Ransomware/win_bcd_registry_modification_hive.yml",
+      "profile": "generic",
+      "sha256": "cab89e4ecb9fe46ec3f3d082608463727ec857ba9d8fb2615f9c192396ef690e",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "2022_Solarmarker/win_susp_file_ext_reg_key.yml",
+      "profile": "generic",
+      "sha256": "2a6afc0108b520713ff8b20dc2bd5aabcda0e7c8f5af2aa75941129d5c5a9318",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "2023_Impacket/atexec/win_registry_events_impacket_atexec.yml",
+      "profile": "generic",
+      "sha256": "68a91bebf130c6bdb591db92e0c68c73cb587109004732350e32104d5cb9446b",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "2023_RedCanary_ThreatDetectionReport/technique_smb_win_admin_shares_impacket_svc_via_registry.yml",
+      "profile": "generic",
+      "sha256": "0c8757cb308af70f82dbed6f975fc7ba8c7136b8ba604ad473f09e43bd2a4432",
+      "stage": "convert"
     }
   ],
   "ignored": [],
@@ -529,8 +592,8 @@
   "official_baseline": {
     "artifacts": {
       "rules_linux.json": "18449af76bc5ed5a17843e838743b403ae002f8f1195322a815d4ec743f8f910",
-      "rules_windows_generic.json": "fbb2c081bf075c5d01072976c3540a7ee6eef1054afc3f41db7f6176186f1394",
-      "rules_windows_sysmon.json": "8301337ffa7c1bf6a738f4ab20681132fc02a17d671d6214f8d290e69da681f1"
+      "rules_windows_generic.json": "562d70873c5b8ddbc5478cc26e0fdba469be3418b88a6c980640dd07aa6415a3",
+      "rules_windows_sysmon.json": "c5f58f60c8ddcfe0768c866c7fb6db013957ac9f76f487e02cbcc2a2f6525197"
     },
     "repository": "SigmaHQ/sigma",
     "revision": "698f0912f571d5fac3bf8c51f5421139834a011c"
@@ -543,10 +606,10 @@
   },
   "profiles": {
     "generic": {
-      "converted": 169,
+      "converted": 162,
       "correlations": 2,
       "eligible": 169,
-      "events": 165,
+      "events": 158,
       "reference_only": 2
     },
     "sysmon": {
@@ -2166,8 +2229,8 @@
   "tools": {
     "pysigma": "2.0.1",
     "pysigma-backend-sqlite": "2.1.1",
-    "pysigma-pipeline-sysmon": "2.0.0",
-    "pysigma-pipeline-windows": "2.0.0",
+    "pysigma-pipeline-sysmon": "3.0.0",
+    "pysigma-pipeline-windows": "3.0.0",
     "python": "3.14.10",
     "sqlite": "3.46.1"
   }

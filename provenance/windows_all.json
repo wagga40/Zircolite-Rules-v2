@@ -1,8 +1,8 @@
 {
   "deduplication": "Same ID and SQL; prefer SigmaHQ, then source name order. Distinct SQL variants remain.",
   "duplicates_removed": 0,
-  "entries": 7350,
-  "input_entries": 7350,
+  "entries": 7333,
+  "input_entries": 7333,
   "inputs": {
     "dragon": {
       "artifacts": {
@@ -15,11 +15,11 @@
     },
     "hatchepsoute": {
       "artifacts": {
-        "rules_hatchepsoute_windows_merged.json": "16e6e5a0fefe9ee066db214159462d02ce652852c3a78fd1f7206ba519f99757"
+        "rules_hatchepsoute_windows_merged.json": "7665c0d36b3d988e07b619c02ce79ede2dc2a2bfbabc437ea7ed7cf6658fbb77"
       },
       "license": "Apache-2.0",
       "repository": "Hatchepsoute/sigma-rules",
-      "revision": "679baa6acdab4053e2cacc02ed8f28ea683ed4fc",
+      "revision": "3dd7e7075865be60d307aeb13deb33352e5429a5",
       "status": "current"
     },
     "hayabusa": {
@@ -33,7 +33,7 @@
     },
     "joesecurity": {
       "artifacts": {
-        "rules_joesecurity_windows_merged.json": "ddae4034d06e16e3fd7ea7ae56de6317afd8c9644456eb8f40559ea5ea63a14a"
+        "rules_joesecurity_windows_merged.json": "644f36e4f4ca9e7c3b1a5964cba6ea48c3ee7185061112cccc18792dab6c551a"
       },
       "license": "GPL-3.0",
       "repository": "joesecurity/sigma-rules",
@@ -51,7 +51,7 @@
     },
     "lolrmm": {
       "artifacts": {
-        "rules_lolrmm_windows_merged.json": "ba7a845fcb7f162b76edb24d6e1e51934b554c09ff3f6fcabd870500740f180a"
+        "rules_lolrmm_windows_merged.json": "cf24922c74d6108aec8ce87420465789d68f4ea3462843be2132bba2db724277"
       },
       "license": "Apache-2.0",
       "repository": "magicsword-io/LOLRMM",
@@ -60,7 +60,7 @@
     },
     "mbabinski": {
       "artifacts": {
-        "rules_mbabinski_windows_merged.json": "13b7404fde4871468094edd652dfcad7a6708c97cdec9c1d57ca3f061b0c2687"
+        "rules_mbabinski_windows_merged.json": "28d8ffca0a15c16d2ca273d06ed75e3e88ce386d94d56239f9bee616faf1a79d"
       },
       "license": "GPL-3.0",
       "repository": "mbabinski/Sigma-Rules",
@@ -69,7 +69,7 @@
     },
     "mdecrevoisier": {
       "artifacts": {
-        "rules_mdecrevoisier_windows_merged.json": "1fbceb54598827c0b12e727d5df662049b28c9179e7a329459c750db2fa2e248"
+        "rules_mdecrevoisier_windows_merged.json": "9240f56574693f4471f1b9cfd265003f0045395780cf309f41ef3c98bef84a96"
       },
       "license": "CC0-1.0",
       "repository": "mdecrevoisier/SIGMA-detection-rules",
@@ -78,7 +78,7 @@
     },
     "reversinglabs": {
       "artifacts": {
-        "rules_reversinglabs_windows_merged.json": "caa8aee3df8f1d52005e02df0a8df5e9fb8a9398c51e0b94cf65f58d30a20796"
+        "rules_reversinglabs_windows_merged.json": "abc203efcf994a92c49798d29ac83d6d4551c4b96a9fbbb1cdaa17e10e1725e9"
       },
       "license": "MIT",
       "repository": "reversinglabs/reversinglabs-siem-rules",
@@ -87,7 +87,7 @@
     },
     "sigmahq": {
       "artifacts": {
-        "rules_windows_merged.json": "eae13c44659a57c248eeab260b4555029dd8d3311efeaa09ac1bf3232f0f8e39"
+        "rules_windows_merged.json": "6f633f58c738db5b9bf6e30da5c6455ab27a91992c48ef3efdf8b581fc59e5d3"
       },
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
@@ -96,7 +96,7 @@
     },
     "tsale": {
       "artifacts": {
-        "rules_tsale_windows_merged.json": "f8208acb83742ba4ebb362030c2561d527f9b8c17ab7b714a84790452693ce09"
+        "rules_tsale_windows_merged.json": "0a46dfa82a579a58134241e756da85cffed98a58fc42cdf4c15fe3e1ec1e4c52"
       },
       "license": "GPL-3.0",
       "repository": "tsale/Sigma_rules",
@@ -114,7 +114,7 @@
     },
     "wrg11": {
       "artifacts": {
-        "rules_wrg11_windows_merged.json": "af6179590238859513801492eacefd20343201c64540700810026ab4770f6b3f"
+        "rules_wrg11_windows_merged.json": "3dbd0c0b40ddf87aa6c0efb1fcac4fa1c8232bf97e57491bddf6ae1e8762a2c7"
       },
       "license": "MIT",
       "repository": "WRG-11/wrg-sigma-rules",

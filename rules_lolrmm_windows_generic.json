@@ -62,12 +62,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\Opale-Agent%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\Opale-Agent%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -262,12 +262,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\MiniRMMAgent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\MiniRmmAgent%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\MiniRMMAgent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\MiniRmmAgent%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -701,12 +701,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\komari-agent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\Windows Update Service%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\komari-agent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\Windows Update Service%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -901,12 +901,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\GoTo Resolve Unattended\\\\%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\GoTo Resolve Unattended\\\\%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -981,12 +981,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\netmaster%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\netmaster%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -1021,12 +1021,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKEY\\_LOCAL\\_MACHINE\\\\SOFTWARE\\\\IDrive*%' ESCAPE '\\' OR TargetObject LIKE '%HKEY\\_CURRENT\\_USER\\\\SOFTWARE\\\\IDrive*%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKEY\\_LOCAL\\_MACHINE\\\\SOFTWARE\\\\IDrive*%' ESCAPE '\\' OR ObjectName LIKE '%HKEY\\_CURRENT\\_USER\\\\SOFTWARE\\\\IDrive*%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -1181,12 +1181,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\RdClient%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\RdClient%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -1381,12 +1381,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\RMMAgent%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\RMMAgent%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -1580,12 +1580,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\Rd\\_Service%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\Rd\\_Service%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -1898,12 +1898,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\TiService%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\TiService\\\\ImagePath%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\TiService\\\\Start%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\TiFLUX*%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\TiFLUX*%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\TiFLUX\\\\org\\_id%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\TiAgent%' ESCAPE '\\' OR TargetObject LIKE '%HKCU\\\\SOFTWARE\\\\TiFlux%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\TiService%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\TiService\\\\ImagePath%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\TiService\\\\Start%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\TiFLUX*%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\TiFLUX*%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\TiFLUX\\\\org\\_id%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\TiAgent%' ESCAPE '\\' OR ObjectName LIKE '%HKCU\\\\SOFTWARE\\\\TiFlux%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -2696,12 +2696,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Clients\\\\Media\\\\AnyDesk%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Clients\\\\Media\\\\AnyDesk-%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\AnyDesk%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\AnyDesk-%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\.anydesk\\\\shell\\\\open\\\\command%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\AnyDesk\\\\shell\\\\open\\\\command%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\AnyDesk-%\\\\shell\\\\open\\\\command%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Print\\\\Printers\\\\AnyDesk Printer*%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\DRIVERS\\\\DriverDatabase\\\\DeviceIds\\\\USBPRINT\\\\AnyDesk%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\DRIVERS\\\\DriverDatabase\\\\DeviceIds\\\\WSDPRINT\\\\AnyDesk%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\AnyDesk%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\AnyDesk-%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Clients\\\\Media\\\\AnyDesk%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Clients\\\\Media\\\\AnyDesk-%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\AnyDesk%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\AnyDesk-%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\.anydesk\\\\shell\\\\open\\\\command%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\AnyDesk\\\\shell\\\\open\\\\command%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\AnyDesk-%\\\\shell\\\\open\\\\command%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Print\\\\Printers\\\\AnyDesk Printer*%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\DRIVERS\\\\DriverDatabase\\\\DeviceIds\\\\USBPRINT\\\\AnyDesk%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\DRIVERS\\\\DriverDatabase\\\\DeviceIds\\\\WSDPRINT\\\\AnyDesk%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\AnyDesk%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\AnyDesk-%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -2894,12 +2894,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\MremoteAgent%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\MremoteAgent%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -2934,12 +2934,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\InvClient%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\InvClient\\\\ImagePath%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{41F5BB80-6416-4AF4-B67B-FA36C29DB4C4}%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{F0076285-D0E2-4B49-92BD-25E0B7B27DF6}%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\Installer\\\\Products\\\\08BB5F1461464FA46BB7AF632CD94B4C%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{41F5BB80-6416-4AF4-B67B-FA36C29DB4C4}%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\InvClient%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\InvClient\\\\ImagePath%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{41F5BB80-6416-4AF4-B67B-FA36C29DB4C4}%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{F0076285-D0E2-4B49-92BD-25E0B7B27DF6}%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\Installer\\\\Products\\\\08BB5F1461464FA46BB7AF632CD94B4C%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{41F5BB80-6416-4AF4-B67B-FA36C29DB4C4}%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -3093,12 +3093,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Faronics\\\\Deep Freeze%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Faronics%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\DFServ%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Faronics\\\\Deep Freeze%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Faronics%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\DFServ%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -3452,12 +3452,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\RMMmax\\\\AgentService%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\RMMmaxAgentService%' ESCAPE '\\' OR TargetObject LIKE '%HKCU\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\RMMmaxAgentService%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\RMMmax\\\\AgentService%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\RMMmaxAgentService%' ESCAPE '\\' OR ObjectName LIKE '%HKCU\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\RMMmaxAgentService%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -3572,12 +3572,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\tsvchst%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\tsvchst\\\\ImagePath%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\tsvchst\\\\Start%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\tsvchst%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\tsvchst\\\\ImagePath%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\tsvchst\\\\Start%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -4292,12 +4292,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\LunixarRMM%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\LunixarRMM%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -4770,12 +4770,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\LightRmmAgent%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\LightRmmAgent%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -4890,12 +4890,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\NSecsoft\\\\Debug%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\NSecsoft\\\\NSecAgent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\NSecsoft\\\\NSecAgent%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\NSecsoft\\\\Debug%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\NSecsoft\\\\NSecAgent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\NSecsoft\\\\NSecAgent%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -5010,12 +5010,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKEY\\_CURRENT\\_USER\\\\Software\\\\Classes\\\\HopToDesk\\\\shell\\\\open\\\\command%' ESCAPE '\\' OR TargetObject LIKE '%HKEY\\_LOCAL\\_MACHINE\\\\Software\\\\Wow6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\HopToDesk%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKEY\\_CURRENT\\_USER\\\\Software\\\\Classes\\\\HopToDesk\\\\shell\\\\open\\\\command%' ESCAPE '\\' OR ObjectName LIKE '%HKEY\\_LOCAL\\_MACHINE\\\\Software\\\\Wow6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\HopToDesk%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -5409,12 +5409,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{04821777-1FD1-4C1A-AC4D-BF5D4D53C34C}%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{A40A237D-C090-4C05-8580-9DBECFE3602B}%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{04821777-1FD1-4C1A-AC4D-BF5D4D53C34C}%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Metaquest%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{04821777-1FD1-4C1A-AC4D-BF5D4D53C34C}%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{A40A237D-C090-4C05-8580-9DBECFE3602B}%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{04821777-1FD1-4C1A-AC4D-BF5D4D53C34C}%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Metaquest%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -5489,12 +5489,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\FaronicsCoreAgent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Faronics\\\\Faronics Core 3%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Faronics\\\\Faronics Core 3%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Faronics%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\FaronicsCoreAgent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Faronics\\\\Faronics Core 3%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Faronics\\\\Faronics Core 3%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Faronics%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -5770,12 +5770,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\A1Agent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\Windows Error Reporting\\\\LocalDumps\\\\action1\\_agent.exe%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Action1%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\Software\\\\Action1\\\\Agent%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\A1Agent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\Windows Error Reporting\\\\LocalDumps\\\\action1\\_agent.exe%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Action1%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\Software\\\\Action1\\\\Agent%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -5810,12 +5810,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\OpsBridgeAgent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Schedule\\\\TaskCache\\\\Tree\\\\OpsBridge Agent%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\OpsBridgeAgent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Schedule\\\\TaskCache\\\\Tree\\\\OpsBridge Agent%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -5930,12 +5930,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\TeamViewer*%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\TeamViewer*%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\TeamViewer\\\\ConnectionHistory%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\TeamViewer*%' ESCAPE '\\' OR TargetObject LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\MainWindowHandle%' ESCAPE '\\' OR TargetObject LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\DesktopWallpaperSingleImage%' ESCAPE '\\' OR TargetObject LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\DesktopWallpaperSingleImagePath%' ESCAPE '\\' OR TargetObject LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\DesktopWallpaperSingleImagePosition%' ESCAPE '\\' OR TargetObject LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\MinimizeToTray%' ESCAPE '\\' OR TargetObject LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\MultiMedia\\\\AudioUserSelectedCapturingEndpoint%' ESCAPE '\\' OR TargetObject LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\MultiMedia\\\\AudioSendingVolumeV2%' ESCAPE '\\' OR TargetObject LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\MultiMedia\\\\AudioUserSelectedRenderingEndpoint%' ESCAPE '\\' OR TargetObject LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\ClientWindow\\_Mode%' ESCAPE '\\' OR TargetObject LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\ClientWindowPositions%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\TeamViewer*%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\TeamViewer*%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\TeamViewer\\\\ConnectionHistory%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\TeamViewer*%' ESCAPE '\\' OR ObjectName LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\MainWindowHandle%' ESCAPE '\\' OR ObjectName LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\DesktopWallpaperSingleImage%' ESCAPE '\\' OR ObjectName LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\DesktopWallpaperSingleImagePath%' ESCAPE '\\' OR ObjectName LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\DesktopWallpaperSingleImagePosition%' ESCAPE '\\' OR ObjectName LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\MinimizeToTray%' ESCAPE '\\' OR ObjectName LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\MultiMedia\\\\AudioUserSelectedCapturingEndpoint%' ESCAPE '\\' OR ObjectName LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\MultiMedia\\\\AudioSendingVolumeV2%' ESCAPE '\\' OR ObjectName LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\MultiMedia\\\\AudioUserSelectedRenderingEndpoint%' ESCAPE '\\' OR ObjectName LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\ClientWindow\\_Mode%' ESCAPE '\\' OR ObjectName LIKE '%HKU\\\\SID\\\\SOFTWARE\\\\TeamViewer\\\\ClientWindowPositions%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -6329,12 +6329,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Winlogon\\\\SpecialAccounts\\\\UserList\\\\user%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\Netbird%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Winlogon\\\\SpecialAccounts\\\\UserList\\\\user%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\Netbird%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -6369,12 +6369,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\TrustConnect Agent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\TrustConnect Agent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\TrustConnectAgent\\_%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\AppID\\\\TrustConnectAgent.exe%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\TrustConnect Agent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\TrustConnect Agent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\TrustConnectAgent\\_%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\AppID\\\\TrustConnectAgent.exe%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -6766,12 +6766,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\tinClientSessionManager-%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\SafeBoot\\\\Network\\\\tinClientSessionManager-%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\tinClientSessionManager-%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\SafeBoot\\\\Network\\\\tinClientSessionManager-%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -7443,12 +7443,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\ControlR%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\ControlR (%)%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\ControlR%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\ControlR (%)%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -7523,12 +7523,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKU\\\\{SID}\\\\Software\\\\GetScreen%' ESCAPE '\\' OR TargetObject LIKE '%HKU\\\\{SID}\\\\Software\\\\GetScreen\\\\Getscreen.me%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\GetscreenSV%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKU\\\\{SID}\\\\Software\\\\GetScreen%' ESCAPE '\\' OR ObjectName LIKE '%HKU\\\\{SID}\\\\Software\\\\GetScreen\\\\Getscreen.me%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\GetscreenSV%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -7842,12 +7842,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Faronics%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\FIStudentSvc%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Faronics%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\FIStudentSvc%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -8002,12 +8002,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%KLM\\\\SOFTWARE\\\\WOW6432Node\\\\Splashtop Inc.*%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\Splashtop Software Updater%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\SplashtopRemoteService%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\WINEVT\\\\Channels\\\\Splashtop-Splashtop Streamer-Remote Session/Operational%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\WINEVT\\\\Channels\\\\Splashtop-Splashtop Streamer-Status/Operational%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\Splashtop Software Updater\\\\InstallRefCount%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\SafeBoot\\\\Network\\\\SplashtopRemoteService%' ESCAPE '\\' OR TargetObject LIKE '%HKU\\\\.DEFAULT\\\\Software\\\\Splashtop Inc.*%' ESCAPE '\\' OR TargetObject LIKE '%HKU\\\\SID\\\\Software\\\\Splashtop Inc.*%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Print\\\\Printers\\\\Splashtop PDF Remote Printer%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Splashtop Inc.\\\\Splashtop Remote Server\\\\ClientInfo*%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%KLM\\\\SOFTWARE\\\\WOW6432Node\\\\Splashtop Inc.*%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\Splashtop Software Updater%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\SplashtopRemoteService%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\WINEVT\\\\Channels\\\\Splashtop-Splashtop Streamer-Remote Session/Operational%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\WINEVT\\\\Channels\\\\Splashtop-Splashtop Streamer-Status/Operational%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\Splashtop Software Updater\\\\InstallRefCount%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\SafeBoot\\\\Network\\\\SplashtopRemoteService%' ESCAPE '\\' OR ObjectName LIKE '%HKU\\\\.DEFAULT\\\\Software\\\\Splashtop Inc.*%' ESCAPE '\\' OR ObjectName LIKE '%HKU\\\\SID\\\\Software\\\\Splashtop Inc.*%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Print\\\\Printers\\\\Splashtop PDF Remote Printer%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Splashtop Inc.\\\\Splashtop Remote Server\\\\ClientInfo*%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -8082,12 +8082,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\FleetDeck Agent Service%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\FleetDeck Agent Service%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -8122,12 +8122,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\RustDesk%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\RustDesk%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\RustDesk%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\RustDesk%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -8162,12 +8162,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\OverlordAgent-%' ESCAPE '\\' OR TargetObject LIKE '%HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\OverlordAgent%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\OverlordAgent-%' ESCAPE '\\' OR ObjectName LIKE '%HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\OverlordAgent%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -8482,12 +8482,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Policies\\\\Teleport\\\\TeleportConnect%' ESCAPE '\\' OR TargetObject LIKE '%HKCU\\\\SOFTWARE\\\\Policies\\\\Teleport\\\\TeleportConnect%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Policies\\\\Teleport\\\\TeleportConnect%' ESCAPE '\\' OR ObjectName LIKE '%HKCU\\\\SOFTWARE\\\\Policies\\\\Teleport\\\\TeleportConnect%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -8722,12 +8722,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Veyon Solutions%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\VeyonService%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Veyon Solutions%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\VeyonService%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -8802,12 +8802,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\OblianceAgent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\OblianceTray%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\SafeBoot\\\\Network\\\\OblianceAgent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\OblianceAgent%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\OblianceAgent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\OblianceTray%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\SafeBoot\\\\Network\\\\OblianceAgent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\OblianceAgent%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -9042,12 +9042,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\GxMAgent%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\GxMAgent%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -9202,12 +9202,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\BlackCryptAgent%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKCU\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\BlackCryptAgent%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -9322,12 +9322,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\ScreenConnect Client (%)\\\\ImagePath%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\Lsa\\\\Authentication Packages%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\CLSID\\\\{6FF59A85-BC37-4CD4-C175-070CC4814204}%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\SafeBoot\\\\Network\\\\ScreenConnect Client (%)%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\System\\\\CurrentControlSet\\\\Services\\\\ScreenConnect Client (%)\\\\ImagePath%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\Lsa\\\\Authentication Packages%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\CLSID\\\\{6FF59A85-BC37-4CD4-C175-070CC4814204}%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\SafeBoot\\\\Network\\\\ScreenConnect Client (%)%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -10080,12 +10080,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKU\\\\.DEFAULT\\\\Software\\\\Ammyy\\\\Admin%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\ControlSet001\\\\Control\\\\SafeBoot\\\\Network\\\\AmmyyAdmin%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKU\\\\.DEFAULT\\\\Software\\\\Ammyy\\\\Admin%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\ControlSet001\\\\Control\\\\SafeBoot\\\\Network\\\\AmmyyAdmin%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -10360,12 +10360,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\StifleRClient%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\StifleRClient%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -10400,12 +10400,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\ATERA Networks\\\\AlphaAgent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\AteraAgent%' ESCAPE '\\' OR TargetObject LIKE '%KLM\\\\SOFTWARE\\\\WOW6432Node\\\\Splashtop Inc.%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\Splashtop Software Updater%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\ControlSet\\\\Services\\\\EventLog\\\\Application\\\\AlphaAgent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\ControlSet\\\\Services\\\\EventLog\\\\Application\\\\AteraAgent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Tracing\\\\AteraAgent\\_RASAPI32%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Tracing\\\\AteraAgent\\_RASMANCS%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\ATERA Networks*%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\ATERA Networks\\\\AlphaAgent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\AteraAgent%' ESCAPE '\\' OR ObjectName LIKE '%KLM\\\\SOFTWARE\\\\WOW6432Node\\\\Splashtop Inc.%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\Splashtop Software Updater%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\ControlSet\\\\Services\\\\EventLog\\\\Application\\\\AlphaAgent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\ControlSet\\\\Services\\\\EventLog\\\\Application\\\\AteraAgent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Tracing\\\\AteraAgent\\_RASAPI32%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Tracing\\\\AteraAgent\\_RASMANCS%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\ATERA Networks*%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -10639,12 +10639,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\RG Systemes\\\\RG Supervision%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\RG Systemes\\\\RG Supervision%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\RG-Supervision%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\RG Systemes\\\\RG Supervision%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\RG Systemes\\\\RG Supervision%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\RG-Supervision%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -10878,12 +10878,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\FSAgentService%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\FreshServiceScan%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Freshdesk\\\\FSAgent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Freshdesk\\\\FSAgent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Freshworks\\\\FreshServiceProbe%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Freshworks\\\\FreshServiceProbe%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\FreshService Probe%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\FreshService Probe%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{8BE075F9-36C7-4145-8BC0-35D420223576}%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{892D2C60-AFC1-48C0-8C5D-A2DC856A3605}%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\FSAgentService%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\FreshServiceScan%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Freshdesk\\\\FSAgent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Freshdesk\\\\FSAgent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Freshworks\\\\FreshServiceProbe%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Freshworks\\\\FreshServiceProbe%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\FreshService Probe%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\FreshService Probe%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{8BE075F9-36C7-4145-8BC0-35D420223576}%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{892D2C60-AFC1-48C0-8C5D-A2DC856A3605}%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -10958,12 +10958,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\AlpemixSrvcx%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\AlpemixSrvcx%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -11078,12 +11078,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKEY\\_LOCAL\\_MACHINE\\\\WOW6432Node\\\\Citrix\\\\GoToMyPc%' ESCAPE '\\' OR TargetObject LIKE '%HKEY\\_LOCAL\\_MACHINE\\\\WOW6432Node\\\\Citrix\\\\GoToMyPc\\\\GuestInvite%' ESCAPE '\\' OR TargetObject LIKE '%HKEY\\_CURRENT\\_USER\\\\SOFTWARE\\\\Citrix\\\\GoToMyPc\\\\FileTransfer\\\\history%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKEY\\_LOCAL\\_MACHINE\\\\WOW6432Node\\\\Citrix\\\\GoToMyPc%' ESCAPE '\\' OR ObjectName LIKE '%HKEY\\_LOCAL\\_MACHINE\\\\WOW6432Node\\\\Citrix\\\\GoToMyPc\\\\GuestInvite%' ESCAPE '\\' OR ObjectName LIKE '%HKEY\\_CURRENT\\_USER\\\\SOFTWARE\\\\Citrix\\\\GoToMyPc\\\\FileTransfer\\\\history%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -11118,12 +11118,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{%}%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{%}%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -11558,12 +11558,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\nezha-agent%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\nezha-agent%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -11678,12 +11678,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\Cloudflared%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\EventLog\\\\Application\\\\Cloudflared%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\Cloudflared%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\EventLog\\\\Application\\\\Cloudflared%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -11918,12 +11918,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Allocentra\\\\Agent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\AllocentraAgent%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Allocentra\\\\Agent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\AllocentraAgent%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -12117,12 +12117,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Faronics%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Faronics\\\\Faronics Core 3\\\\Storage Spaces\\\\Spaces\\\\FWA%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\AppID\\\\FWAService.exe%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\{359C24F1-51B5-44CE-8F2D-2FBB1A0FE4EA}\\\\FWA\\_GUI\\_Agent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{581F69E6-A5D1-48C7-9F6F-CC333007F7EB}%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Faronics%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Faronics\\\\Faronics Core 3\\\\Storage Spaces\\\\Spaces\\\\FWA%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\AppID\\\\FWAService.exe%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Classes\\\\{359C24F1-51B5-44CE-8F2D-2FBB1A0FE4EA}\\\\FWA\\_GUI\\_Agent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\{581F69E6-A5D1-48C7-9F6F-CC333007F7EB}%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -12357,12 +12357,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Zecurit\\\\Agent%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Zecurit\\\\Agent%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -12517,12 +12517,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKCU\\\\Software\\\\99ac595d-36d0-5122-a860-22a3443073cb%' ESCAPE '\\' OR TargetObject LIKE '%HKCU\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\99ac595d-36d0-5122-a860-22a3443073cb%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKCU\\\\Software\\\\99ac595d-36d0-5122-a860-22a3443073cb%' ESCAPE '\\' OR ObjectName LIKE '%HKCU\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\99ac595d-36d0-5122-a860-22a3443073cb%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -12597,12 +12597,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKEY\\_LOCAL\\_MACHINE\\\\SOFTWARE\\\\WOW6432Node\\\\Radmin\\\\v3.0\\\\Server\\\\Parameters\\\\Radmin Security%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKEY\\_LOCAL\\_MACHINE\\\\SOFTWARE\\\\WOW6432Node\\\\Radmin\\\\v3.0\\\\Server\\\\Parameters\\\\Radmin Security%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -12756,12 +12756,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\LS RMM%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\LSRMMWorker%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\LS RMM%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\LSRMMWorker%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -12996,12 +12996,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\SimpleSetup%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\SimpleSetup%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -13395,12 +13395,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Schedule\\\\TaskCache\\\\Tree\\\\SentinelAgent%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\Schedule\\\\TaskCache\\\\Tree\\\\SentinelAgent%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -14232,12 +14232,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKCU\\\\Software\\\\Microsoft\\\\Terminal Server Client\\\\Default%' ESCAPE '\\' OR TargetObject LIKE '%HKCU\\\\Software\\\\Microsoft\\\\Terminal Server Client\\\\Servers%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKCU\\\\Software\\\\Microsoft\\\\Terminal Server Client\\\\Default%' ESCAPE '\\' OR ObjectName LIKE '%HKCU\\\\Software\\\\Microsoft\\\\Terminal Server Client\\\\Servers%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -14592,12 +14592,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\proxiport%' ESCAPE '\\')"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\proxiport%' ESCAPE '\\')"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -14752,12 +14752,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\GLPI-Agent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\Installer%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\Installer\\\\Version%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\GLPI-Agent\\\\Installer\\\\Version%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\Monitor%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\server%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\httpd-port%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\httpd-ip%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\httpd-trust%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\tag%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\tasks%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\GLPI-Agent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\Installer%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\Installer\\\\Version%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\GLPI-Agent\\\\Installer\\\\Version%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\Monitor%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\server%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\httpd-port%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\httpd-ip%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\httpd-trust%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\tag%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\GLPI-Agent\\\\tasks%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",
@@ -14792,12 +14792,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (TargetObject LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\LavaWall\\\\Agent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\Lavawall Support Agent%' ESCAPE '\\' OR TargetObject LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\LavaWallRemoteAgent%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND (OperationType='New registry value created' OR OperationType='Existing registry value modified')) AND (ObjectName LIKE '%HKLM\\\\SOFTWARE\\\\WOW6432Node\\\\LavaWall\\\\Agent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\Lavawall Support Agent%' ESCAPE '\\' OR ObjectName LIKE '%HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\LavaWallRemoteAgent%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "lolrmm",

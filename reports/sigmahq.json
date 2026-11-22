@@ -1,8 +1,8 @@
 {
   "artifacts": {
     "rules_linux.json": 217,
-    "rules_windows_generic.json": 2291,
-    "rules_windows_merged.json": 4540,
+    "rules_windows_generic.json": 2280,
+    "rules_windows_merged.json": 4529,
     "rules_windows_sysmon.json": 2844
   },
   "exclusions": [
@@ -41693,6 +41693,105 @@
     {
       "approved": true,
       "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "rules/windows/registry/registry_add/registry_add_persistence_disk_cleanup_handler_entry.yml",
+      "profile": "generic",
+      "sha256": "499eb5f652fa243b6bcef8687a70beef6b2c5bdfbe460f982e8e95167ff1c767",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "rules/windows/registry/registry_event/registry_event_disable_security_events_logging_adding_reg_key_minint.yml",
+      "profile": "generic",
+      "sha256": "bfbea47b6211e3ae684472b9570191ea22c760857f88d5f8649f0a9e5c106ebe",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "rules/windows/registry/registry_event/registry_event_hybridconnectionmgr_svc_installation.yml",
+      "profile": "generic",
+      "sha256": "2c0d2351387af74992686341859c5819a5f239f3b7d66a6134bff31e898a4011",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "rules/windows/registry/registry_event/registry_event_narrator_feedback_persistance.yml",
+      "profile": "generic",
+      "sha256": "e9bf918bfc0295cf97499ab8308d04580f6636b13b4343d67e63595362799aa6",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "rules/windows/registry/registry_event/registry_event_new_dll_added_to_appcertdlls_registry_key.yml",
+      "profile": "generic",
+      "sha256": "d8cd70d91298ae705e0d4cc04e920f740a68ff06a402e747bdec8195213a1c6f",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "rules/windows/registry/registry_event/registry_event_new_dll_added_to_appinit_dlls_registry_key.yml",
+      "profile": "generic",
+      "sha256": "681216dd8a18ac1c1a39a097260133b08e11788403f75f540f389b8df4fe5b35",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "rules/windows/registry/registry_event/registry_event_persistence_recycle_bin.yml",
+      "profile": "generic",
+      "sha256": "2f736f148b7faebdfc7ec60f4cc7e4775aa604afd24de43cd97add403171f06e",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "rules/windows/registry/registry_event/registry_event_shell_open_keys_manipulation.yml",
+      "profile": "generic",
+      "sha256": "f19fd481d5b2602524822ff3893adafc42422ff2e057938b8e9e47a2b9093ddf",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "rules/windows/registry/registry_set/registry_set_add_port_monitor.yml",
+      "profile": "generic",
+      "sha256": "2ca72e54922ee915882348af50a0fe1ada94516e0d142e8015520087c2ef5e99",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "rules/windows/registry/registry_set/registry_set_asep_reg_keys_modification_currentcontrolset.yml",
+      "profile": "generic",
+      "sha256": "7c8957c2c5df9321632e857a604d83747dea2b8aaaf236281712a5ddb9a058bd",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
+      "path": "rules/windows/registry/registry_set/registry_set_taskcache_entry.yml",
+      "profile": "generic",
+      "sha256": "1c3e3117fa1e36a0c43ee37cbb63409b163bebb9e626ecb641decdd379b098fd",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "0",
       "error": "Keyword search requires fulltext_field and a populated TEXT column; configure fulltext_field and re-ingest old events.",
       "path": "rules-emerging-threats/2017/Malware/NotPetya/proc_creation_win_malware_notpetya.yml",
       "profile": "generic",
@@ -42054,10 +42153,10 @@
   },
   "profiles": {
     "generic": {
-      "converted": 2291,
+      "converted": 2280,
       "correlations": 0,
       "eligible": 2309,
-      "events": 2291,
+      "events": 2280,
       "reference_only": 0
     },
     "linux": {
@@ -68537,8 +68636,8 @@
   "tools": {
     "pysigma": "2.0.1",
     "pysigma-backend-sqlite": "2.1.1",
-    "pysigma-pipeline-sysmon": "2.0.0",
-    "pysigma-pipeline-windows": "2.0.0",
+    "pysigma-pipeline-sysmon": "3.0.0",
+    "pysigma-pipeline-windows": "3.0.0",
     "python": "3.14.10",
     "sqlite": "3.46.1"
   }

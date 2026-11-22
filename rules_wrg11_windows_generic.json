@@ -1345,12 +1345,12 @@
     "required_fields": [
       "Channel",
       "EventID",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND (TargetObject LIKE '%\\\\Image File Execution Options\\\\%' ESCAPE '\\' AND TargetObject LIKE '%\\\\Debugger' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND (ObjectName LIKE '%\\\\Image File Execution Options\\\\%' ESCAPE '\\' AND ObjectName LIKE '%\\\\Debugger' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "wrg11",
@@ -2116,12 +2116,12 @@
       "Channel",
       "EventID",
       "NewValue",
-      "OperationType",
-      "TargetObject"
+      "ObjectName",
+      "OperationType"
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND ((TargetObject LIKE '%\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\%' ESCAPE '\\' OR TargetObject LIKE '%\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\RunOnce\\\\%' ESCAPE '\\') AND (NewValue LIKE '%\\\\AppData\\\\Local\\\\Nodejs\\\\%' ESCAPE '\\' OR NewValue LIKE '%node.exe%' ESCAPE '\\')))"
+      "SELECT * FROM logs WHERE Channel='Security' AND ((EventID=4657 AND OperationType='Existing registry value modified') AND ((ObjectName LIKE '%\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\%' ESCAPE '\\' OR ObjectName LIKE '%\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\RunOnce\\\\%' ESCAPE '\\') AND (NewValue LIKE '%\\\\AppData\\\\Local\\\\Nodejs\\\\%' ESCAPE '\\' OR NewValue LIKE '%node.exe%' ESCAPE '\\')))"
     ],
     "schema_version": 2,
     "source": "wrg11",
