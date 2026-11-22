@@ -210,7 +210,9 @@
       "Security"
     ],
     "description": "MedusaLocker key",
-    "eventid": [],
+    "eventid": [
+      4657
+    ],
     "falsepositives": [],
     "filename": "rules/medusalocker.yml",
     "id": "07f5619d-9387-5b84-b667-f69b2eb39a0e",
@@ -583,7 +585,9 @@
       "Security"
     ],
     "description": "VjW0rm Registry key",
-    "eventid": [],
+    "eventid": [
+      4657
+    ],
     "falsepositives": [],
     "filename": "rules/vjw0rm.yml",
     "id": "17e28344-dec3-5a7e-83c0-acd0bb628d0f",
@@ -2154,7 +2158,9 @@
       "Security"
     ],
     "description": "Sodinokibi random extension key",
-    "eventid": [],
+    "eventid": [
+      4657
+    ],
     "falsepositives": [],
     "filename": "rules/sodinokibi.yml",
     "id": "795712d2-a4ea-59a7-851c-166d0533f299",

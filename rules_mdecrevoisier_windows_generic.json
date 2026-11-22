@@ -599,7 +599,9 @@
       "Security"
     ],
     "description": "Detects scenarios where attack attempts to elevate privileges via the command runas.",
-    "eventid": [],
+    "eventid": [
+      4624
+    ],
     "falsepositives": [
       "Administrator activity"
     ],
@@ -1228,7 +1230,9 @@
   },
   {
     "author": "mdecrevoisier",
-    "channel": [],
+    "channel": [
+      "Security"
+    ],
     "description": "Detects scenarios where an attacker attempts to enable insecure guest authentication in order to access a remote storage device (NAS) in order to perform some data exfiltration or lateral movement.",
     "eventid": [
       31018
@@ -1899,7 +1903,9 @@
       "Security"
     ],
     "description": "Detects scenarios where an attacker attempts to create a hard link.",
-    "eventid": [],
+    "eventid": [
+      4688
+    ],
     "falsepositives": [
       "admin activity on file server"
     ],
@@ -2972,7 +2978,9 @@
       "Windows PowerShell"
     ],
     "description": "Detects scenarios where an attacker enables the WSL to cary out malicious activities in a virtual instance to avoid detection.",
-    "eventid": [],
+    "eventid": [
+      800
+    ],
     "falsepositives": [
       "developer computer (with Visual Studio Code)",
       "administrator activity"
@@ -6106,7 +6114,9 @@
       "Security"
     ],
     "description": "Detects scenarios where an attacker attempts to disable Defender security features by modifying service configuration in registry.",
-    "eventid": [],
+    "eventid": [
+      4688
+    ],
     "falsepositives": [
       "None"
     ],
@@ -7244,7 +7254,9 @@
       "Security"
     ],
     "description": "Detects scenarios where an attacker perform a password reset event. This does not require any knowledge of a user\u2019s current password, but it does require to have the \"Reset Password\" right. Correlate the event ID 4724, 4624 and 5145 using the \"SubjectLogonId\" field to identify the source of the reset.",
-    "eventid": [],
+    "eventid": [
+      4724
+    ],
     "falsepositives": [
       "None"
     ],
@@ -8579,7 +8591,9 @@
       "PowerShellCore/Operational"
     ],
     "description": "Detects if a member is added to a local group via PowerShell.",
-    "eventid": [],
+    "eventid": [
+      4103
+    ],
     "falsepositives": [
       "Pentest",
       "Administrator activity",
@@ -9200,7 +9214,9 @@
       "Security"
     ],
     "description": "Detects scenarios where an attacker abuse RPC, NTLM relay and others components to escalate privileges.",
-    "eventid": [],
+    "eventid": [
+      4624
+    ],
     "falsepositives": [
       "None"
     ],
@@ -11031,7 +11047,9 @@
       "PowerShellCore/Operational"
     ],
     "description": "Detects if a member is added to a domain group via PowerShell.",
-    "eventid": [],
+    "eventid": [
+      4103
+    ],
     "falsepositives": [
       "Pentest",
       "Administrator activity",
@@ -12530,7 +12548,9 @@
       "Security"
     ],
     "description": "Detects scenarios where an attacker calls the stickey key and execute CMD.",
-    "eventid": [],
+    "eventid": [
+      4688
+    ],
     "falsepositives": [
       "None"
     ],
