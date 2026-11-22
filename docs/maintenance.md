@@ -2,7 +2,7 @@
 
 ## Toolchain
 
-Conversion uses pySigma-backend-sqlite 2.1.1 on pySigma 2.0.1, with the Windows and Sysmon pipelines 3.0.0, and Python 3.14. Versions are locked in `pdm.lock`, and the versions behind each source are recorded in `release-manifest.json`.
+Conversion uses pySigma-backend-sqlite 2.2.0 on pySigma 2.1.1, with the Windows and Sysmon pipelines 3.0.0, and Python 3.14. Versions are locked in `pdm.lock`, and the versions behind each source are recorded in `release-manifest.json`.
 
 In the generic profile, pipeline-windows 3.0 maps registry rules to Security event 4657. A rule that needs `EventType`, `NewName` or `User`, which 4657 lacks, is excluded there by the `audit-4657-unmapped-fields` class record and still publishes in the Sysmon profile.
 

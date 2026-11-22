@@ -61,6 +61,15 @@ def test_profiles_exclude_unmapped_categories_and_wrong_platforms(tmp_path):
     assert report["exclusions"]
 
 
+def test_metadata_line_breaks_become_single_spaces(tmp_path):
+    rule = detection(description="Detects one thing\nand  another.\n", falsepositives=["Admin\r\n  activity"])
+    outputs, report = compile_source("test", SPEC, source(tmp_path, [rule]), [])
+    entry = outputs["sysmon"]["events"][0]
+    assert entry["description"] == "Detects one thing and  another."
+    assert entry["falsepositives"] == ["Admin activity"]
+    assert not report["provenance"][0]["adaptations"]
+
+
 def test_mapped_categories_convert_in_both_windows_profiles(tmp_path):
     # Profile selection reads the pipelines' logsource conditions; a pipeline
     # release that reshapes them would drop rules as unmapped without an error.
@@ -583,3 +592,4 @@ def test_re_pinning_a_drifted_record_publishes_identical_provenance(tmp_path):
     drifted = (output / "provenance" / "test.json").read_bytes()
     assert not gen_ruleset.generate(*args, reviewed, {"test": root})
     assert (output / "provenance" / "test.json").read_bytes() == drifted
+

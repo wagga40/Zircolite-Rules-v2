@@ -9,4 +9,4 @@ What these files are, and what Zircolite and SQLite versions they need: [Ruleset
 - Events with a missing group key or an invalid timestamp are excluded, and an incomplete absence window raises no alert. Keep these diagnostics.
 - Each source and profile has one file with every severity. Dependencies, including low-severity reference-only rules, are embedded at conversion, so a filter must keep whole entries and their plans.
 
-For the result contract, see the [backend migration guide](https://github.com/SigmaHQ/pySigma-backend-sqlite/blob/v2.1.1/docs/migration-v2.md). Source revisions, licenses, and counts are in [the release manifest](../release-manifest.json).
+For the result contract, see the [backend migration guide](https://github.com/SigmaHQ/pySigma-backend-sqlite/blob/v2.2.0/docs/migration-v2.md). Source revisions, licenses, and counts are in [the release manifest](../release-manifest.json).
