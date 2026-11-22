@@ -1,9 +1,18 @@
 {
   "deduplication": "Same ID and SQL; prefer SigmaHQ, then source name order. Distinct SQL variants remain.",
   "duplicates_removed": 0,
-  "entries": 7333,
-  "input_entries": 7333,
+  "entries": 7676,
+  "input_entries": 7676,
   "inputs": {
+    "adpack": {
+      "artifacts": {
+        "rules_adpack_windows_merged.json": "19cb3083450cbe74c4080e22836235a3f7c4e485e32a08d2e3a4d88f57f54e1a"
+      },
+      "license": "MIT",
+      "repository": "404SecNotFound/Active-Directory-Pentest-Detection-Pack",
+      "revision": "00bfe53ad2da9074cf2207d8473fc2e893d64e56",
+      "status": "current"
+    },
     "dragon": {
       "artifacts": {
         "rules_dragon_windows_merged.json": "5586583b2d9ac986481cf07aa4c0d6fbb0c151c72f650e244e4f5ff527f6f316"
@@ -29,6 +38,15 @@
       "license": "DRL-1.1",
       "repository": "Yamato-Security/hayabusa-rules",
       "revision": "57743fd6a2fc46bdf330dac69619e68347e033b6",
+      "status": "current"
+    },
+    "huntress": {
+      "artifacts": {
+        "rules_huntress_windows_merged.json": "8f0a1de0609456df3f91a9b52e81800270aa9982438e17cd1f8d42514a480557"
+      },
+      "license": "MIT",
+      "repository": "huntresslabs/threat-intel",
+      "revision": "bf913c1e770b39274c66d5720299410daec13ecb",
       "status": "current"
     },
     "joesecurity": {

@@ -1,0 +1,789 @@
+{
+  "artifacts": {
+    "rules_huntress_windows_generic.json": 42,
+    "rules_huntress_windows_merged.json": 83,
+    "rules_huntress_windows_sysmon.json": 46
+  },
+  "exclusions": [
+    {
+      "document": "0",
+      "path": "2024/2024-02/connectwise/sigma/web_exploit_cve_2024_1709_screenconnect.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "c76075a00d80a74c25ca323ec100d19ebb1e727968fe8b1719f1a14f729bb5d6"
+    },
+    {
+      "document": "0",
+      "path": "2024/2024-04/macos-lightspy/sigma/lightspy_macos_proc_create_shared.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'macos' is outside this profile",
+      "sha256": "8f4f511c2343731b52697ece3b32eed934adda89ec69db8ecbb9f04c43cd7dfb"
+    },
+    {
+      "document": "0",
+      "path": "2025/2025-12/react_CVE-2025-55182/susp_shell_proc_from_next_proc.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "b04ae382f12997a243453083dcf110e3a825a8dc51351271b2be357cd36ec8fc"
+    },
+    {
+      "document": "0",
+      "path": "2024/2024-02/connectwise/sigma/file_event_win_sysmon_cve_2024_1709_database_modification_screenconnect.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "0e2cb33c90b826908d9e0c1b0aaa732da8d0a3c97a1c302d02899f7fe7a59d83"
+    },
+    {
+      "document": "0",
+      "path": "2024/2024-02/connectwise/sigma/web_exploit_cve_2024_1709_screenconnect.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "c76075a00d80a74c25ca323ec100d19ebb1e727968fe8b1719f1a14f729bb5d6"
+    },
+    {
+      "document": "0",
+      "path": "2024/2024-04/macos-lightspy/sigma/lightspy_macos_proc_create_shared.yml",
+      "profile": "generic",
+      "reason": "logsource product 'macos' is outside this profile",
+      "sha256": "8f4f511c2343731b52697ece3b32eed934adda89ec69db8ecbb9f04c43cd7dfb"
+    },
+    {
+      "document": "0",
+      "path": "2025/2025-05/defendnot/sigma/win_image_load_defendnot_dll_taskmgr.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "139d98f4d87c250e5d4d5e4dc290aad4a0a44b2a2c23f531256d0c7712f3fec9"
+    },
+    {
+      "document": "0",
+      "path": "2025/2025-05/defendnot/sigma/win_security_defendnot_file_creation.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "9ecc392720e06cee3b4424d96bdede0b6b6732e58605a2f8bacb6270441f5ef7"
+    },
+    {
+      "document": "0",
+      "path": "2025/2025-07/defense_evasion/sigma/registry_delete_defender_context_menu.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "317b91d19b96bbdcef11a07fd6c2bbcc9129bba01205f425cd58e704f2d8337d"
+    },
+    {
+      "document": "0",
+      "path": "2025/2025-12/react_CVE-2025-55182/susp_shell_proc_from_next_proc.yml",
+      "profile": "generic",
+      "reason": "logsource product 'linux' is outside this profile",
+      "sha256": "b04ae382f12997a243453083dcf110e3a825a8dc51351271b2be357cd36ec8fc"
+    }
+  ],
+  "failures": [
+    {
+      "approved": true,
+      "document": "0",
+      "error": "Sigma rule must have a title",
+      "path": "2022/2022-12/29-OWASSRF/detections/sigma/pwsh-spawned-from-w3wp.yml",
+      "profile": "*",
+      "sha256": "6c9cf5b852f787a5326d008112d591f9d086a895bcaaab68c4b387f93c9ce188",
+      "stage": "parse"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "Unsupported type: <class 'dict'>",
+      "path": "2025/2025-05/defendnot/sigma/win_security_modifiy_security_center_registry_key.yml",
+      "profile": "*",
+      "sha256": "216a4d8a8bda91d35bb5d8467f99e9951478bcff03326b412c42efcb587c2ce0",
+      "stage": "parse"
+    },
+    {
+      "approved": true,
+      "document": "1",
+      "error": "Correlation reference 'defendnot Windows Defender State Toggle Events' has 0 definitions",
+      "path": "2025/2025-05/defendnot/sigma/win_security_defendnot_defender_state_correlation.yml",
+      "profile": "sysmon",
+      "sha256": "99a141ce04f65520f6c3acdcf0e03ce38f1b9864c0c309355717865a8ca78e65",
+      "stage": "references"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "Detection 'Selection1' not defined in detections",
+      "path": "2023/2023-11/suspicious_child_process_from_activemq.yml",
+      "profile": "sysmon",
+      "sha256": "9cdb622725a81aae99ee6e32e66e1136697463eb907d0b125fb1f99bb651ceee",
+      "stage": "convert"
+    },
+    {
+      "approved": true,
+      "document": "1",
+      "error": "Correlation reference 'defendnot Windows Defender State Toggle Events' has 0 definitions",
+      "path": "2025/2025-05/defendnot/sigma/win_security_defendnot_defender_state_correlation.yml",
+      "profile": "generic",
+      "sha256": "99a141ce04f65520f6c3acdcf0e03ce38f1b9864c0c309355717865a8ca78e65",
+      "stage": "references"
+    },
+    {
+      "approved": true,
+      "document": "0",
+      "error": "Detection 'Selection1' not defined in detections",
+      "path": "2023/2023-11/suspicious_child_process_from_activemq.yml",
+      "profile": "generic",
+      "sha256": "9cdb622725a81aae99ee6e32e66e1136697463eb907d0b125fb1f99bb651ceee",
+      "stage": "convert"
+    }
+  ],
+  "ignored": [
+    {
+      "document": "*",
+      "path": "2025/2025-04/CentreStack_CVE-2025-30406/chainsaw/cve-2025-30406_chainsaw_rule.yml",
+      "reason": "excluded by source configuration",
+      "sha256": "5f7983ee14c1e886c96849c83076cb7622476de759e7e696fc4f74352b0d8b1b"
+    }
+  ],
+  "input_documents": 61,
+  "official_baseline": {
+    "artifacts": {
+      "rules_linux.json": "b4e82e339a3471a96ccccf0812f16cb27aa7b893e8db9c46ea500b41ac1b5d96",
+      "rules_windows_generic.json": "a62928f6b18cafb6a4091ac05cb39c164c7e0d4401dcd11d6463279faf0b0cef",
+      "rules_windows_sysmon.json": "3f0bf88bfb26e8cd5d52fe644b921a6f98e762e413ed8a6ba46dfe212419e795"
+    },
+    "repository": "SigmaHQ/sigma",
+    "revision": "698f0912f571d5fac3bf8c51f5421139834a011c"
+  },
+  "official_duplicates_removed": {
+    "generic/correlations": 0,
+    "generic/events": 8,
+    "sysmon/correlations": 0,
+    "sysmon/events": 8
+  },
+  "profiles": {
+    "generic": {
+      "converted": 50,
+      "correlations": 0,
+      "eligible": 51,
+      "events": 50,
+      "reference_only": 0
+    },
+    "sysmon": {
+      "converted": 54,
+      "correlations": 0,
+      "eligible": 55,
+      "events": 54,
+      "reference_only": 0
+    }
+  },
+  "provenance": [
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "19bab1e3-73a8-4330-86a5-cc339c511c18",
+      "path": "2022/2022-12/29-OWASSRF/detections/sigma/pwsh-reverse-shell.yml",
+      "sha256": "decdea13ebaa207ce18bba6831230e144a1942ec26ac8602fa799172fddc28c8"
+    },
+    {
+      "adaptations": {
+        "description": {
+          "adapted": "",
+          "original": null
+        },
+        "id": {
+          "adapted": "5b215463-b168-5504-b777-ce20899d0c21",
+          "original": null
+        },
+        "level": {
+          "adapted": "informational",
+          "original": null
+        }
+      },
+      "document": "0",
+      "id": "5b215463-b168-5504-b777-ce20899d0c21",
+      "path": "2022/2022-12/29-OWASSRF/detections/sigma/pwsh-spawned-from-w3wp.yml",
+      "sha256": "6c9cf5b852f787a5326d008112d591f9d086a895bcaaab68c4b387f93c9ce188"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3667b97f-e86c-434b-b70d-88ccaee6854b",
+      "path": "2023/2023-02/07-GoAnywhere/detections/sigma/process-spawned-from-goanywhere-tomcat.yml",
+      "sha256": "6708cf00d72ec043b0aa02ebf0cba6c3d32b11f44910918ea46da8ffc02f029e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "848b7a9b-e509-4817-bf43-acffa1eec4d2",
+      "path": "2023/2023-02/2023-02-09-Qakbot-execution.yml",
+      "sha256": "a9e231dffdc93249a821d7c54378b953bc812af6b61674ea3cca6eabf77b82ef"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "00c2ad6a-fb88-42c9-bc48-57450e33ea0f",
+      "path": "2023/2023-03/cve-23397/win_cve_23397_davclnt_wav.yml",
+      "sha256": "7c0a5537850222f7ca96f957cfbf5c8b19390bb8de571083fbf656ad8054b5cc"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4f315700-6fb5-4284-bfd6-eb8dc9f0928f",
+      "path": "2023/2023-04/20-PaperCut/win_susp_papercut_code_execution.yml",
+      "sha256": "288c02ac5ec67248dc68278739319642982693a91c3b89c8482e87a3cb92db12"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a5d2c153-c3b9-4e95-a611-d54b3c12c16f",
+      "path": "2023/2023-06/1-MOVEit/sigma/cve_2023_34362_exploitation.yml",
+      "sha256": "923207c76c636448bb5c3ab0821dac677fa18e087954559768f19e01999b19f9"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "73eff0f0-e0fa-4a28-8b71-6287391cf0a2",
+      "path": "2023/2023-11/suspicious_child_process_from_activemq.yml",
+      "sha256": "9cdb622725a81aae99ee6e32e66e1136697463eb907d0b125fb1f99bb651ceee"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4c198a60-7d05-4daf-8bf7-4136fb6f5c62",
+      "path": "2024/2024-02/connectwise/sigma/file_event_exploit_cve_2024_1708_screenconnect_.yml",
+      "sha256": "a8fb030724bb5443650f9eef46bc7e8f16d740f939ef749b01cbd29fe894bca7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4109cb6a-a4af-438a-9f0c-056abba41c6f",
+      "path": "2024/2024-02/connectwise/sigma/file_event_win_exploit_cve_2024_1709_database_modification_screenconnect.yml",
+      "sha256": "4a28a240507f3f558a65d47e712f397f530ecc98e8faa5ff75735c59e1eb9b75"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1a821580-588b-4323-9422-660f7e131020",
+      "path": "2024/2024-02/connectwise/sigma/file_event_win_sysmon_cve_2024_1709_database_modification_screenconnect.yml",
+      "sha256": "0e2cb33c90b826908d9e0c1b0aaa732da8d0a3c97a1c302d02899f7fe7a59d83"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d27eabad-9068-401a-b0d6-9eac744d6e67",
+      "path": "2024/2024-02/connectwise/sigma/web_exploit_cve_2024_1709_screenconnect.yml",
+      "sha256": "c76075a00d80a74c25ca323ec100d19ebb1e727968fe8b1719f1a14f729bb5d6"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "75d6d6fc-026f-11ef-aa62-f23ada0a3aed",
+      "path": "2024/2024-04/macos-lightspy/sigma/lightspy_macos_proc_create_shared.yml",
+      "sha256": "8f4f511c2343731b52697ece3b32eed934adda89ec69db8ecbb9f04c43cd7dfb"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0090b851-3543-42db-828c-02fee986ff0b",
+      "path": "2024/2024-07/boinc/sigma/boinc_signature.yml",
+      "sha256": "97f80579df3da92eef3d921176fde7b9d9f25cf374ca60e817900c82b1bba1b8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "056c7317-9a09-4bd4-9067-d051312752ea",
+      "path": "2024/2024-07/boinc/sigma/powershell_from_headless_conhost.yml",
+      "sha256": "216980957fc73c8c6d51a2e8541d98ef64e8cbeb9d195c021458e3f6899bd6fd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f208d6d8-d83a-4c2c-960d-877c37da84e5",
+      "path": "2024/2024-07/boinc/sigma/process_no_name.yml",
+      "sha256": "216c195774bc409b1f6f86368cf49eab83238e8c79d79bced5b82b431c281f26"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "30d07da2-83ab-45d8-ae75-ec7c0edcaffc",
+      "path": "2024/2024-07/boinc/sigma/renamed_boinc.yml",
+      "sha256": "3eb2cc523acaa9924abc876f2ad388d6ebdcf9ac79b8e606487188b922568099"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "87c21d4e-e312-4f0b-ab86-f9b8e60dd68e",
+      "path": "2024/2024-11/safepay/sigma/proc_creation_win_disable_defender_systemsettings_gui.yml",
+      "sha256": "c4f2cf144afb24d7aff0f4c4a5f8498e7c293e020a6281d9e8206e4ddc135ac4"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ad44351e-89c4-4b1c-8cb0-676c55bf11ce",
+      "path": "2024/2024-11/safepay/sigma/proc_creation_win_disable_defender_threat_protection_settings.yml",
+      "sha256": "f8c14db4178744b7095fb6dbf1004105ab435fe5fb3cc97842586be43123652a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b77542ea-151a-4c9d-b2eb-8b39adfbadea",
+      "path": "2024/2024-11/safepay/sigma/proc_creation_win_proxy_exection_cmstplua_interface.yml",
+      "sha256": "674dbe09fac550af5b75e66dd25abd3e7db9f57d0c6048d9a26de901b653707d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d4e9ed08-5356-4cb4-884f-a024d6ac3704",
+      "path": "2024/2024-11/safepay/sigma/proc_creation_win_scripting_interpreter_cmstplua_interface.yml",
+      "sha256": "dd74f73cb61e6bb678e7048ffd9a6fb29f6f8da6112eb6621f8d22ff94b88331"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "116f209c-43a5-4581-a491-86dbdd3f57ec",
+      "path": "2024/2024-11/safepay/sigma/proc_creation_win_winrar_archive_create_recursive.yml",
+      "sha256": "079306639323f00701de6fc48decdb6735019e6ae8738fcc91e5c8694e71af0e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "70580f07-a998-419f-bb5d-2a2fc4a87f7b",
+      "path": "2024/2024-11/safepay/sigma/proc_creation_win_winrar_archive_create_volume_size.yml",
+      "sha256": "8e7896ed7584288da790b0c22081cc0275175dba124fbbf61f5a7b3718458628"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f007b877-02e3-45b7-8501-1b78c2864029",
+      "path": "2024/2024-12/Cleo/sigma/win_proc_creation_cleo_exploitation_2024.yml",
+      "sha256": "837694a8fd84ff953687b7fd8766df69d5b558dfdd8e0fb888e6362c9cee0e5c"
+    },
+    {
+      "adaptations": {
+        "level": {
+          "adapted": "informational",
+          "original": null
+        }
+      },
+      "document": "0",
+      "id": "a0ec945f-2328-40e9-96f6-27dadf72861b",
+      "path": "2024/2024-12/Cleo/sigma/win_proc_creation_suspicious_powershell_from_javaw.yml",
+      "sha256": "c82586f37f061d4303d74bb3d069b8476d5b3dfe09452cbb35dd99e394de71ba"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.initial_access",
+            "attack.execution",
+            "attack.t1059.001",
+            "attack.t1059.003",
+            "attack.t1190"
+          ],
+          "original": [
+            "attack.initial_access",
+            "attack.execution",
+            "attack.t1059.001",
+            "attack.t1059.003",
+            "attack.t1190",
+            "attack.ta0001",
+            "attack.ta0002"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "459628e3-1b00-4e9b-9e5b-7da8961aea35",
+      "path": "2025/2025-03/CrushFTP/sigma/win_proc_creation_shell_child_process_crushftp.yml",
+      "sha256": "abc1e64faa1523886046e5051e83d0f9b6e19c919b27a382d5e5e064c69ddd4b"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.initial_access",
+            "attack.execution",
+            "attack.t1059.001",
+            "attack.t1059.003",
+            "attack.t1190"
+          ],
+          "original": [
+            "attack.initial_access",
+            "attack.execution",
+            "attack.t1059.001",
+            "attack.t1059.003",
+            "attack.t1190",
+            "attack.ta0001",
+            "attack.ta0002"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "6a3be0d6-2305-4fa3-a5bc-b4d35c0b5f12",
+      "path": "2025/2025-04/CentreStack_CVE-2025-30406/sigma/windows_susp_exec_from_centrastack_or_triofox.yml",
+      "sha256": "2cda9cb37b0d85473a2de8901f1fcf422586dd988b96ff247ba618c3be6e3af7"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.command_and_control",
+            "attack.t1219"
+          ],
+          "original": [
+            "attack.command_and_control",
+            "attack.T1219"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "753d9010-fed7-425e-9d3a-0a5510024840",
+      "path": "2025/2025-05/Advanced_Critical_Marketing_Research_Intrusion/windows_mesh_agent_execution.yml",
+      "sha256": "4ea896f0bf7b855e9237dbe4491b8e41f0e6945fdafdcff900b98e4a1df8d436"
+    },
+    {
+      "adaptations": {
+        "id": {
+          "adapted": "1c1fdf59-f501-5177-8415-fc6118076974",
+          "original": "11b8251d3-6267-4817-8d70-f001b6952c4b"
+        },
+        "tags": {
+          "adapted": [
+            "attack.discovery",
+            "attack.t1016"
+          ],
+          "original": [
+            "attack.discovery",
+            "attack.T1016"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "1c1fdf59-f501-5177-8415-fc6118076974",
+      "path": "2025/2025-05/Advanced_Critical_Marketing_Research_Intrusion/windows_susp_mail_exchanger_enumeration_with_shortened_query_paramter_via_nslookup.yml",
+      "sha256": "88c4170eaa96b736d581b73359dd91cdb51da6e5db245646200ee1fd70bbbf32"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "657104f9-6995-4f73-ae33-34e3bf01e051",
+      "path": "2025/2025-05/defendnot/sigma/win_image_load_defendnot_dll_taskmgr.yml",
+      "sha256": "139d98f4d87c250e5d4d5e4dc290aad4a0a44b2a2c23f531256d0c7712f3fec9"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b8f4e2c1-9a2d-4c7b-a1f8-3e4b7c9d2f3a",
+      "path": "2025/2025-05/defendnot/sigma/win_image_load_taskmgr_unsigned.yml",
+      "sha256": "dc5faa0feaaec7277a780ed37de6ad1194b9c0363fff92bdf79041acf80a2980"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d4ce1024-710e-41ab-8de5-aad408bac1a8",
+      "path": "2025/2025-05/defendnot/sigma/win_security_defendnot_child_process_taskmgr.yml",
+      "sha256": "da16fdf77c07cde957e09b15d7b504475a44ee4c827acc460b7a2f9af0768e4c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3156aabd-474b-408e-8fc5-f9a92e026cd1",
+      "path": "2025/2025-05/defendnot/sigma/win_security_defendnot_default_scheduled_task_creation.yml",
+      "sha256": "b3cb68c677536ea4764d3c90253313474e10a8d2b9630aac9658ee3eb40a1830"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "833017cc-0fec-4e3c-8d62-19541d09d462",
+      "path": "2025/2025-05/defendnot/sigma/win_security_defendnot_defender_state_correlation.yml",
+      "sha256": "99a141ce04f65520f6c3acdcf0e03ce38f1b9864c0c309355717865a8ca78e65"
+    },
+    {
+      "adaptations": {
+        "description": {
+          "adapted": "",
+          "original": null
+        },
+        "id": {
+          "adapted": "52f16d91-4ef2-5cc8-9f9b-47d03b27eb12",
+          "original": null
+        }
+      },
+      "document": "1",
+      "id": "52f16d91-4ef2-5cc8-9f9b-47d03b27eb12",
+      "path": "2025/2025-05/defendnot/sigma/win_security_defendnot_defender_state_correlation.yml",
+      "sha256": "99a141ce04f65520f6c3acdcf0e03ce38f1b9864c0c309355717865a8ca78e65"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "029fe628-7ebc-4db9-812d-b38e5a7f173c",
+      "path": "2025/2025-05/defendnot/sigma/win_security_defendnot_file_creation.yml",
+      "sha256": "9ecc392720e06cee3b4424d96bdede0b6b6732e58605a2f8bacb6270441f5ef7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1d1b35be-128d-434d-b9fd-54b77ec849c6",
+      "path": "2025/2025-05/defendnot/sigma/win_security_defendnot_process_creation.yml",
+      "sha256": "0217641cb047a99e8fd65b35bbc54477e6d4b0ec8ac9bd5c15325fddf9a23d48"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "803a67d4-7945-4cbe-b8cd-ce8c334da4c0",
+      "path": "2025/2025-05/defendnot/sigma/win_security_defendnot_updated_scheduled_task.yml",
+      "sha256": "087da13c3fd6b525eff1950ddaf7c30f0bce4b725054d4219fcdc298cb704112"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7b8f9c3a-4e6d-4f8b-9a2e-5c3b7d9e2f1a",
+      "path": "2025/2025-05/defendnot/sigma/win_security_modifiy_security_center_registry_key.yml",
+      "sha256": "216a4d8a8bda91d35bb5d8467f99e9951478bcff03326b412c42efcb587c2ce0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5d80958a-e7ec-4b0b-b597-a1d1b69f1562",
+      "path": "2025/2025-05/defendnot/sigma/win_security_process_access_defendnot.yml",
+      "sha256": "f17a4fc430f5c9140211dcaccad5543309e9d8b93d932e08c1aceda440a44632"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.initial_access",
+            "attack.execution",
+            "attack.t1059.001",
+            "attack.t1059.003",
+            "attack.t1190"
+          ],
+          "original": [
+            "attack.initial_access",
+            "attack.execution",
+            "attack.t1059.001",
+            "attack.t1059.003",
+            "attack.t1190",
+            "attack.ta0001",
+            "attack.ta0002"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "4dbc580c-f70d-4285-aaa7-bec4bebdccde",
+      "path": "2025/2025-07/WingFTP_CVE-2025-47812/sigma/windows_susp_command_shell_from_wingftp_process.yml",
+      "sha256": "752308ddd08a22298a6e54b9e49ac35c466ff958a1c55c14f6c4737427cc5abe"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0aa12a68-f55a-4b93-ba80-4c1627426b3c",
+      "path": "2025/2025-07/defense_evasion/sigma/proc_creation_win_bcdedit_disable_elam_drivers.yml",
+      "sha256": "82093c1733afbab262a95198175d7ca7d9d593d717b267de3fe75522d89616f3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b9e8c7d6-a5f4-4e3d-8b1a-9f0c8d7e6a5b",
+      "path": "2025/2025-07/defense_evasion/sigma/proc_creation_win_defender_remove_context_menu.yml",
+      "sha256": "70a31478b6ad21b47d273c7b5ae665e27ea587a0bb6e06ac0a702c63a3db2d19"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1e8a9b4d-3c2a-4f9b-8d1e-7c6a5b4f3d2e",
+      "path": "2025/2025-07/defense_evasion/sigma/proc_creation_win_defender_threat_severity_default_action_modified.yml",
+      "sha256": "7856ce9fa2fbf4f34b9350c0cb4890be124b9389b29ea9f089a25556537a4022"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a1b2c3d4-e5f6-a7b8-c9d0-e1f2a3b4c5d6",
+      "path": "2025/2025-07/defense_evasion/sigma/proc_creation_win_reg_disable_defender_wmi_autologger.yml",
+      "sha256": "8d1659342c3fb9227dabe8a73d1763116148b800d53a0adc7314d075724320c1"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "72a0369a-2576-4aaf-bfc9-6bb24a574ac6",
+      "path": "2025/2025-07/defense_evasion/sigma/registry_delete_defender_context_menu.yml",
+      "sha256": "317b91d19b96bbdcef11a07fd6c2bbcc9129bba01205f425cd58e704f2d8337d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5a9e1b2c-8f7d-4a1e-9b3c-0f6d7e5a4b1f",
+      "path": "2025/2025-07/defense_evasion/sigma/registry_event_defender_threat_severity_default_action_modified.yml",
+      "sha256": "2e7f9b5f2a034f07643ef1a228ab068dde70bd2b6caf927e94ed170f9474528a"
+    },
+    {
+      "adaptations": {
+        "level": {
+          "adapted": "informational",
+          "original": null
+        },
+        "references": {
+          "adapted": [
+            "https://huntress.com/blog/exploitation-of-windows-server-update-services-remote-code-execution-vulnerability"
+          ],
+          "original": "https://huntress.com/blog/exploitation-of-windows-server-update-services-remote-code-execution-vulnerability"
+        }
+      },
+      "document": "0",
+      "id": "622c4f64-c277-424a-9a1c-80c73d7243a0",
+      "path": "2025/2025-10/WSUS_RCE_CVE-2025-59287/susp_wsusservice_child.yml",
+      "sha256": "22d19a84adc541125c7f4964f993a4b47b4dd28ec070c931c75807034e59788c"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.initial_access",
+            "attack.execution",
+            "attack.discovery",
+            "attack.t1059.003",
+            "attack.t1190",
+            "attack.t1082",
+            "attack.t1033"
+          ],
+          "original": [
+            "attack.initial_access",
+            "attack.execution",
+            "attack.discovery",
+            "attack.t1059.003",
+            "attack.t1190",
+            "attack.t1082",
+            "attack.t1033",
+            "attack.ta0001",
+            "attack.ta0002",
+            "attack.ta0007"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "a805d365-a3fc-485b-ac64-262cd9568538",
+      "path": "2025/2025-12/react_CVE-2025-55182/susp_command_line_child_proc_node.yml",
+      "sha256": "b8d77876455169504cc9df3674f2f4b8d81733df3ec3c106546166b3f068cfc3"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "attack.initial_access",
+            "attack.execution",
+            "attack.t1059.004",
+            "attack.t1190"
+          ],
+          "original": [
+            "attack.initial_access",
+            "attack.execution",
+            "attack.t1059.004",
+            "attack.t1190",
+            "attack.ta0001",
+            "attack.ta0002"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "1deb7d17-0d66-4fe2-8b0e-82b585e58212",
+      "path": "2025/2025-12/react_CVE-2025-55182/susp_shell_proc_from_next_proc.yml",
+      "sha256": "b04ae382f12997a243453083dcf110e3a825a8dc51351271b2be357cd36ec8fc"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+      "path": "2026/2026-01/vm_escape/sigma/proc_creation_win_devcon_disable_vmci_driver.yml",
+      "sha256": "a6fb16087e3741cb05e8fe6ea68302ffb490605df8ae7e3767f6bcc422a966c2"
+    },
+    {
+      "adaptations": {
+        "tags": {
+          "adapted": [
+            "t1543.003"
+          ],
+          "original": [
+            "defense_evasion",
+            "persistence",
+            "t1543.003"
+          ]
+        }
+      },
+      "document": "0",
+      "id": "e76ca062-4de0-4d79-8d90-160a0d335eca",
+      "path": "2026/2026-01/vm_escape/sigma/proc_creation_win_kdu_driver_tool_execution.yml",
+      "sha256": "83f606043077d4b97311f07c6350c7c2da1a27d32dc7c32276b6ba74611782a3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ed26d612-bb1b-46d1-92f5-c7d51dc81080",
+      "path": "2026/2026-02/Exorcising_Demons/proc_creation_win_susp_adnotificationmanager_sideloading.yml",
+      "sha256": "b0b886e67e526ad16302eb5612a8efe9c6b00941aab716a7ffae13ec27124e7d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "26a153b1-e5e8-4288-b1d1-d4ed6fc1c596",
+      "path": "2026/2026-02/Exorcising_Demons/proc_creation_win_susp_dlpuseragent_sideloading.yml",
+      "sha256": "6e6571b08e0e3ec10689bb98f35e99faff933fe46b8aeb79191c156291163919"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b45cebcf-96a8-402c-a369-eb48c608fe00",
+      "path": "2026/2026-02/Exorcising_Demons/susp_tar_extract.yml",
+      "sha256": "48c2d917bf0b77561befd338c9b304733ee8e57b4f05334e389a815a7c563f4c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8c7f4a2d-3b9e-4f1c-9a6d-2e8f5c3d9a1b",
+      "path": "2026/2026-02/SolarWinds_WHD/solarwinds_web_help_desk_exploitation_uncommon_process_activity.yml",
+      "sha256": "524f29224a41434c26641e16130b85527400a5bcfa12b1ce16a0001bb7688009"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9d8e5b3f-4c2a-5e7d-8b9c-3f6e7d8a2c1d",
+      "path": "2026/2026-02/SolarWinds_WHD/solarwinds_web_help_desk_exploitation_zoho_manageengine_rmm_deployment.yml",
+      "sha256": "8bbeea36edfb9c86b20e026558b702716b51b162cb2df1affb37bc17bff01bdd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7a3e9c52-4d1b-4f86-9b0e-5c2d8a61f4e3",
+      "path": "2026/2026-10/AhsayCBS_XMRig_Miner/posh_ps_susp_taskmgr_aware_service_control.yml",
+      "sha256": "59eb40b438454bde08bf4886bc4f5290f4d69fe9dc66a2487f7080cf18f79aaa"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c9dd3dd5-c59e-4cdb-a3bc-e17550ff40c0",
+      "path": "2026/2026-10/AhsayCBS_XMRig_Miner/proc_creation_win_susp_ahsaycbs_unexpected_child_process.yml",
+      "sha256": "deb5ab211c7e198be70e716bd4dd606712c24d21a1005c50a61d370aac5daf57"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d4842d27-ec2c-43a7-a5d3-e5a174010482",
+      "path": "2026/2026-10/AhsayCBS_XMRig_Miner/proc_creation_win_susp_fake_edge_daemonized_miner.yml",
+      "sha256": "6d5d33a9125c6e6062ab0a28afbcfd258acb17166fdd07c11169d7c4ee81d454"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "56d828d5-f28b-48b5-aba7-531351f184f7",
+      "path": "2026/2026-10/AhsayCBS_XMRig_Miner/proc_creation_win_susp_winring0_driver_download_cli.yml",
+      "sha256": "c9458faaff5f63e4c5285f568f7ed84da3a0ffc53d2be0a46549b4e261c5a082"
+    }
+  ],
+  "repository": "huntresslabs/threat-intel",
+  "revision": "bf913c1e770b39274c66d5720299410daec13ecb",
+  "source": "huntress",
+  "status": "validated",
+  "tools": {
+    "pysigma": "2.1.1",
+    "pysigma-backend-sqlite": "2.2.0",
+    "pysigma-pipeline-sysmon": "3.0.0",
+    "pysigma-pipeline-windows": "3.0.0",
+    "python": "3.14.10",
+    "sqlite": "3.46.1"
+  }
+}

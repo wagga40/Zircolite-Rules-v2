@@ -1,0 +1,2270 @@
+{
+  "artifacts": {
+    "experimental/rules_adpack_windows_generic_correlation.json": 19,
+    "experimental/rules_adpack_windows_merged_correlation.json": 20,
+    "experimental/rules_adpack_windows_sysmon_correlation.json": 19,
+    "rules_adpack_windows_generic.json": 175,
+    "rules_adpack_windows_merged.json": 260,
+    "rules_adpack_windows_sysmon.json": 208
+  },
+  "exclusions": [
+    {
+      "document": "0",
+      "path": "coercion_relay/ldap_unsigned_bind_or_channel_binding_failure.yml",
+      "profile": "sysmon",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "bff88e6566d81c4702f219308402e426bcd757c3a33956c1fbd27a9102abdb28"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/adcs_esc8_iis_certfnsh_machine_account.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'iis' is outside this profile",
+      "sha256": "49d9dc7a47215889bdcce78cf59fda2c6f98bb3f6145d43e5a6ab546a617e6d0"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/eternalblue_ms17_010.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "d8e0dd74be8e0f7093eb75de52618ff6a34fa73fbb24f13de44116e85a770246"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/java_rmi_deserialization.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "50c88d805a612e2df0de0ec09b8ed213192fa11a57a312e687f53d1ad9230a9c"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/privexchange_ews_push_subscription.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'iis' is outside this profile",
+      "sha256": "d55e2bbaa1f6ce54d3af7f576099cb6e957aaa88f8cfb5154114f5087b65e6ca"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/proxylogon_proxyshell_exchange.yml",
+      "profile": "sysmon",
+      "reason": "logsource product 'iis' is outside this profile",
+      "sha256": "fd32a78e893daf58994bfd51dce51e42ecd25a2a1f366796ba67e198c9ceb4ca"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/smbghost_cve_2020_0796.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "5438e2a7fe19079e23ca0387728634fe384205178b279a6b64fb47ec64cc9500"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/tomcat_manager_deploy.yml",
+      "profile": "sysmon",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "9dd4ffa760e142ecbb3d5d5649edb6cb1782f2cf6efa1a49553dc5a9c1183464"
+    },
+    {
+      "document": "0",
+      "path": "lateral_movement/winrm_remote_shell_created_event_91.yml",
+      "profile": "sysmon",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "a5985a4634bcca885a8c3d37d361282ab7dd922a35de39a086cb3182ad340f5b"
+    },
+    {
+      "document": "0",
+      "path": "recon_discovery/ldap_anonymous_bind_and_recon.yml",
+      "profile": "sysmon",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "9eaaa8866915a8efe1ebbf0e403fe1ff2f518f0e72a59164d15345ecfd8e48c5"
+    },
+    {
+      "document": "0",
+      "path": "recon_discovery/ldap_high_volume_query_burst.yml",
+      "profile": "sysmon",
+      "reason": "correlation dependency outside profile: no mapping for logsource in this profile",
+      "sha256": "5a0ab6d3a8f09c13516599c5823da12417508d131a8eefff9a778a034278546b"
+    },
+    {
+      "document": "0",
+      "path": "recon_discovery/ldap_recon_filter_keywords.yml",
+      "profile": "sysmon",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "e6ed1649756e973767ae5df35a42d3d64e66b9271b5e4940a6cbfb48cd658c4a"
+    },
+    {
+      "document": "0",
+      "path": "recon_discovery/ldap_search_base.yml",
+      "profile": "sysmon",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "0232133c46fb2e3d590f6cdeb3b20ca6c2359389a51ef914660f58f05e9c24f0"
+    },
+    {
+      "document": "0",
+      "path": "trust_abuse/dmsa_authentication_directory_service_2946.yml",
+      "profile": "sysmon",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "18c394f3dbf306a2f139a08a9d36dfe7dd514e9fc46c421fab568fec0ce6933e"
+    },
+    {
+      "document": "0",
+      "path": "coercion_relay/dhcpv6_reply_from_unexpected_server.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "1d14d9b6e6546060fcaf3055d7d5b733ff622ccd1a4784091b91eb5fef963683"
+    },
+    {
+      "document": "0",
+      "path": "coercion_relay/ldap_unsigned_bind_or_channel_binding_failure.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "bff88e6566d81c4702f219308402e426bcd757c3a33956c1fbd27a9102abdb28"
+    },
+    {
+      "document": "0",
+      "path": "coercion_relay/llmnr_nbtns_listener_anomaly.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "6719422e6e6dd5f3896f1fdbfb973aaa7e3c6f1120bd844014b2edf76b8dc6b2"
+    },
+    {
+      "document": "0",
+      "path": "coercion_relay/llmnr_response_from_unexpected_host.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "02f70403ce47b6d6bd19e97d0a3e09ad5b69e992aece383733935fa625151fc5"
+    },
+    {
+      "document": "0",
+      "path": "coercion_relay/responder_llmnr_nbtns_poisoning.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "71733f481d39e644bda2bc37abf92ed43413e7f238d322c074fd903f691e1ef6"
+    },
+    {
+      "document": "0",
+      "path": "credential_access/defender_asr_lsass_rule_deleted.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "9954116bf237ee5f7b97aa716c3bfc2eac63803c7db485dc7c12a5cd85fe84ca"
+    },
+    {
+      "document": "0",
+      "path": "credential_access/lsa_protection_runasppl_deleted.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "0a909b28c4f6329ad999788d182ae830ffeaa998c88062c0cb4c064ff770ab86"
+    },
+    {
+      "document": "0",
+      "path": "credential_access/lsass_minidump_file_drop.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "a7b38297becc2b13adf565e32b20f90391d7d26e27783076a8adbd08fe6c36a1"
+    },
+    {
+      "document": "0",
+      "path": "credential_access/lsass_process_access_credential_dump.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "5a3a16b4c291896c8f1b1337ae2e6e29dd61d6cae72d7571b911023240743576"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/adcs_ca_key_file_written.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "e223d8dd1ccebd034136423f6f6c45177847be2b8ff1f3c8899fc5d430da6501"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/adcs_esc8_iis_certfnsh_machine_account.yml",
+      "profile": "generic",
+      "reason": "logsource product 'iis' is outside this profile",
+      "sha256": "49d9dc7a47215889bdcce78cf59fda2c6f98bb3f6145d43e5a6ab546a617e6d0"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/eternalblue_ms17_010.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "d8e0dd74be8e0f7093eb75de52618ff6a34fa73fbb24f13de44116e85a770246"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/exchange_webshell_drop.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "62f51f9224d57f78a65c4a4cefeb1b2267cafac1467d99787daa64e683af12d4"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/java_rmi_deserialization.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "50c88d805a612e2df0de0ec09b8ed213192fa11a57a312e687f53d1ad9230a9c"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/printer_bug_spooler_coercion.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "2d75cceeb823b84ac6f0efd9e2c87472e8c30abb67e80b2cfeff5cc40c3a3359"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/printnightmare_driver_dll_written.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "17fdf050cb03b409106a3c2f50543679782fbd769a6e2fa99797ab54aa3d9b5e"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/printnightmare_spoolsv_dll_load.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "141a5fcb25e13664aa03c67e55d44ce682942eb9fe94f5f2bdaef2f935c37638"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/privexchange_ews_push_subscription.yml",
+      "profile": "generic",
+      "reason": "logsource product 'iis' is outside this profile",
+      "sha256": "d55e2bbaa1f6ce54d3af7f576099cb6e957aaa88f8cfb5154114f5087b65e6ca"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/proxylogon_proxyshell_exchange.yml",
+      "profile": "generic",
+      "reason": "logsource product 'iis' is outside this profile",
+      "sha256": "fd32a78e893daf58994bfd51dce51e42ecd25a2a1f366796ba67e198c9ceb4ca"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/seimpersonate_potato_named_pipe.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "5b142457862783ca31a5189f207e5af1625b769d8409dac29ee73da5ff75630a"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/smbghost_cve_2020_0796.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "5438e2a7fe19079e23ca0387728634fe384205178b279a6b64fb47ec64cc9500"
+    },
+    {
+      "document": "0",
+      "path": "exploitation/tomcat_manager_deploy.yml",
+      "profile": "generic",
+      "reason": "logsource product None is outside this profile",
+      "sha256": "9dd4ffa760e142ecbb3d5d5649edb6cb1782f2cf6efa1a49553dc5a9c1183464"
+    },
+    {
+      "document": "0",
+      "path": "lateral_movement/ticket_export_to_kirbi.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "74c90139d04a5fac861b421258ab3099d045b5c2da8635185010f6d6a0a05359"
+    },
+    {
+      "document": "0",
+      "path": "lateral_movement/winrm_remote_shell_created_event_91.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "a5985a4634bcca885a8c3d37d361282ab7dd922a35de39a086cb3182ad340f5b"
+    },
+    {
+      "document": "0",
+      "path": "recon_discovery/azurehound_graph_api_burst.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "4083fd207487a563c028b4c5f1414cb2225cac9198e98a0cb53c3c18e7762165"
+    },
+    {
+      "document": "0",
+      "path": "recon_discovery/dns_srv_record_ad_discovery.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "55b6827715922e536b7e445b2aacea240ca40138c5d97ccacf61cb19fffcc031"
+    },
+    {
+      "document": "0",
+      "path": "recon_discovery/ldap_anonymous_bind_and_recon.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "9eaaa8866915a8efe1ebbf0e403fe1ff2f518f0e72a59164d15345ecfd8e48c5"
+    },
+    {
+      "document": "0",
+      "path": "recon_discovery/ldap_connection_non_standard_process.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "eedb4ddcfd9089648b858bb98c8699bb44c675926f4945c0cda53a7dd513c8a9"
+    },
+    {
+      "document": "0",
+      "path": "recon_discovery/ldap_high_volume_query_burst.yml",
+      "profile": "generic",
+      "reason": "correlation dependency outside profile: no mapping for logsource in this profile",
+      "sha256": "5a0ab6d3a8f09c13516599c5823da12417508d131a8eefff9a778a034278546b"
+    },
+    {
+      "document": "0",
+      "path": "recon_discovery/ldap_recon_filter_keywords.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "e6ed1649756e973767ae5df35a42d3d64e66b9271b5e4940a6cbfb48cd658c4a"
+    },
+    {
+      "document": "0",
+      "path": "recon_discovery/ldap_search_base.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "0232133c46fb2e3d590f6cdeb3b20ca6c2359389a51ef914660f58f05e9c24f0"
+    },
+    {
+      "document": "0",
+      "path": "sysmon_enriched/createremotethread_injection_into_sensitive.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "d6b369ec2004f5c91328792005b8f39df57909f8342cc7e87be70471cf8e2327"
+    },
+    {
+      "document": "0",
+      "path": "sysmon_enriched/dbghelp_loaded_by_non_wer_process.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "8708d8c7880ffe39902db7b8297a2e8c34fbabb55b62abc869b58410e2fca4b7"
+    },
+    {
+      "document": "0",
+      "path": "sysmon_enriched/dbghelp_loaded_from_temp_or_user_path.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "6b181cb895cb86e9207e65dedeb778db946916e386a2737f33f89cba609497de"
+    },
+    {
+      "document": "0",
+      "path": "sysmon_enriched/lsass_access_from_user_writable_path.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "34c25c474411006fa5db386718705100ba740b0dea0884143225041a0431588c"
+    },
+    {
+      "document": "0",
+      "path": "sysmon_enriched/lsass_or_wmi_dns_anomaly.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "8056e5ed9a3fcd291a6ece828be453d7f0fc5a4f402795cc473128caaeab2119"
+    },
+    {
+      "document": "0",
+      "path": "sysmon_enriched/lsass_outbound_network_anomaly.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "2241fd5db5a46322cf76647479e82ed8c7e077d7e27b58a3f53f9312c09c85ae"
+    },
+    {
+      "document": "0",
+      "path": "sysmon_enriched/lsass_unsigned_dll_image_load.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "1b664faa92e275005084f2ee14356fad1473857f2e0146c092c022efc100129c"
+    },
+    {
+      "document": "0",
+      "path": "sysmon_enriched/malseclogon_seclogon_lsass_access.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "2e70b50eadef0fd50d689f64bd8a44ee3ce00265055fb9e8452dd2429372c91a"
+    },
+    {
+      "document": "0",
+      "path": "sysmon_enriched/mimikatz_dll_image_load_lsass.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "250da24ccfc9a07622d40a8e6b611daeaab7a0881c5d4c9db5d471861cadcd64"
+    },
+    {
+      "document": "0",
+      "path": "sysmon_enriched/mimikatz_driver_or_ssp_dll_drop.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "df340ffcd7fd9cb229d8567ff839bd68a22a1c68ae16ac484a6637070f4ef278"
+    },
+    {
+      "document": "0",
+      "path": "sysmon_enriched/ntds_dit_or_system_hive_written_outside_ntds_path.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "f105609fb02474e6e8450c346598cb7a78cd2d29920167eb286ac9b2947e001d"
+    },
+    {
+      "document": "0",
+      "path": "sysmon_enriched/psexec_named_pipe_creation.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "f8146f06c02c1e1644905a191e283ec656f4f5935ca2d14cc4f1c9827ff7db5f"
+    },
+    {
+      "document": "0",
+      "path": "sysmon_enriched/secretsdump_remote_hive_save_tmp_file.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "488214672a56bb64ccaf73b0ad94484958041864cd1687f55956e2c0c96f52e3"
+    },
+    {
+      "document": "0",
+      "path": "sysmon_enriched/sysmon_process_tampering_hollowing.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "f77d3731b7dff7750ecbbbcf50811ed90680d60cc2c0c8ad4a0e7c6e82379e17"
+    },
+    {
+      "document": "0",
+      "path": "sysmon_enriched/wmi_persistence_subscription.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "382370864c7286ea2015edb87915e9bba341215c38f4c1ed33e08ab72862189b"
+    },
+    {
+      "document": "0",
+      "path": "trust_abuse/dmsa_authentication_directory_service_2946.yml",
+      "profile": "generic",
+      "reason": "no mapping for logsource in this profile",
+      "sha256": "18c394f3dbf306a2f139a08a9d36dfe7dd514e9fc46c421fab568fec0ce6933e"
+    }
+  ],
+  "failures": [],
+  "ignored": [
+    {
+      "document": "*",
+      "path": ".github/workflows/validate.yml",
+      "reason": "excluded by source configuration",
+      "sha256": "bbe8ad3299dc636136e5dca66d22607b610569c31e6ac2134d77950c635c28a5"
+    },
+    {
+      "document": "*",
+      "path": ".sigma-validation.yml",
+      "reason": "excluded by source configuration",
+      "sha256": "49da0fe2488fdc15299d76738ed08e409756aa719636ef4d0379d10bfdf385c1"
+    },
+    {
+      "document": "*",
+      "path": "placeholders.yml",
+      "reason": "excluded by source configuration",
+      "sha256": "63ee685d7f3bafca3dba36de13e90c4514bc7096326eb36cbde1f973f4bd9c66"
+    }
+  ],
+  "input_documents": 252,
+  "official_baseline": {
+    "artifacts": {
+      "rules_linux.json": "b4e82e339a3471a96ccccf0812f16cb27aa7b893e8db9c46ea500b41ac1b5d96",
+      "rules_windows_generic.json": "a62928f6b18cafb6a4091ac05cb39c164c7e0d4401dcd11d6463279faf0b0cef",
+      "rules_windows_sysmon.json": "3f0bf88bfb26e8cd5d52fe644b921a6f98e762e413ed8a6ba46dfe212419e795"
+    },
+    "repository": "SigmaHQ/sigma",
+    "revision": "698f0912f571d5fac3bf8c51f5421139834a011c"
+  },
+  "official_duplicates_removed": {
+    "generic/correlations": 0,
+    "generic/events": 0,
+    "sysmon/correlations": 0,
+    "sysmon/events": 0
+  },
+  "profiles": {
+    "generic": {
+      "converted": 205,
+      "correlations": 19,
+      "eligible": 205,
+      "events": 175,
+      "reference_only": 11
+    },
+    "sysmon": {
+      "converted": 238,
+      "correlations": 19,
+      "eligible": 238,
+      "events": 208,
+      "reference_only": 11
+    }
+  },
+  "provenance": [
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7a1bdb42-5eda-453d-9f23-481cfaa786b5",
+      "path": "acl_dacl_abuse/dacl_modification_privileged_object.yml",
+      "sha256": "33f96ba4de698ea0ee58de8582cf3a626aa26923764bf0132d45d95fe4df520c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "21811d82-db02-43c0-b981-cb2c910871e8",
+      "path": "acl_dacl_abuse/force_change_password_user.yml",
+      "sha256": "88cdaef2189cab14c60f0641419dde30a3e4265ccc9406807ccc0fc700f0ad21"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9dca017c-f2d4-471b-89c2-8a40ee6f35c1",
+      "path": "acl_dacl_abuse/generic_all_write_owner_change.yml",
+      "sha256": "82915e4f8c384c950aeb95a90d0baef63df5d5b39f71aeba4665e4f069884523"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "971a7f8f-1b55-4066-bf97-9f17bd7491d3",
+      "path": "acl_dacl_abuse/gpo_delegation_modification.yml",
+      "sha256": "1a4dea4418e39af9a6c8d1421871ddc7d49d6210a79bc16ff51a4bbc9cc9636a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "bbe7215d-9698-48b3-a4fc-4e39ef3f5e05",
+      "path": "coercion_relay/coercion_multi_vector_named_pipes.yml",
+      "sha256": "81e11ea97ec641493b0259a6074339978289b14cba0445f637deeadaf07de9f3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f064e9aa-5870-40e9-92cd-061c600a9c85",
+      "path": "coercion_relay/dhcpv6_reply_from_unexpected_server.yml",
+      "sha256": "1d14d9b6e6546060fcaf3055d7d5b733ff622ccd1a4784091b91eb5fef963683"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "33be0ea2-3924-430f-8e0d-4cc56e171a28",
+      "path": "coercion_relay/dns_client_name_error_llmnr_fallback.yml",
+      "sha256": "fc6cb9790b1a924ccf517934c959c3aca0f8d1198b7711a336a5a1e8240f0937"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "96f1d2e3-bc15-408e-be2b-0ae7ec577107",
+      "path": "coercion_relay/inveigh_responder_process_execution.yml",
+      "sha256": "56331097b589fd6a60bc7db7fdb43dc3f3d0c1e08208d2ba4fe9d85a7de883d3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8bb562c7-187f-44ca-a253-08664b905d51",
+      "path": "coercion_relay/ldap_unsigned_bind_or_channel_binding_failure.yml",
+      "sha256": "bff88e6566d81c4702f219308402e426bcd757c3a33956c1fbd27a9102abdb28"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2f82f987-de4c-48d5-ae93-478866000237",
+      "path": "coercion_relay/llmnr_nbtns_listener_anomaly.yml",
+      "sha256": "6719422e6e6dd5f3896f1fdbfb973aaa7e3c6f1120bd844014b2edf76b8dc6b2"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "056a4eda-33c5-492a-b9e5-5f783de541e0",
+      "path": "coercion_relay/llmnr_response_from_unexpected_host.yml",
+      "sha256": "02f70403ce47b6d6bd19e97d0a3e09ad5b69e992aece383733935fa625151fc5"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "04b9f8d2-7c14-4a3e-9d6c-2f5b8e1a44c7",
+      "path": "coercion_relay/mitm6_wpad_dns_injection.yml",
+      "sha256": "a05f58446c4bf944429308c349ba2553e1968a96a7676fe8d8207d9f3fb4091c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1f8ad37a-cfaf-4261-b6ab-07c6cd898d48",
+      "path": "coercion_relay/ntlm_dc_account_passthrough_non_dc_8004.yml",
+      "sha256": "bdd7adefb20de8977b8eeb2858e166c6164a859307fc6f10c11faf36109fcd3f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f9b92df4-aae9-4beb-b494-934cabf9c263",
+      "path": "coercion_relay/ntlmrelayx_ldap_relay.yml",
+      "sha256": "5f03a8509842ddd907aeed160500a193975119eecf77a1fc51302cd22190c3b7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a5280d1c-30ee-417d-9284-fdf49e5ac812",
+      "path": "coercion_relay/ntlmv1_authentication_logon.yml",
+      "sha256": "91fed72fdfe25c236c02d0562878ba134d57ad8a94913fa268a4179531174303"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f78dd86b-5a1a-4c15-b446-3e203d8487b7",
+      "path": "coercion_relay/petitpotam_efsrpc_coercion.yml",
+      "sha256": "30fd5374d5068825747e7f23028fa522e9af214511ab923aab9b44c5e9fab44e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2a93129d-6153-440c-9726-7a57f69587c6",
+      "path": "coercion_relay/responder_llmnr_nbtns_poisoning.yml",
+      "sha256": "71733f481d39e644bda2bc37abf92ed43413e7f238d322c074fd903f691e1ef6"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "285cd78c-4ff3-44ad-b806-9d235177efde",
+      "path": "coercion_relay/smb_signing_disabled_scan.yml",
+      "sha256": "fc56fc52b0dc86e8cda66c7b653fe4c2a2696b5e7e4a7680e99c98eaec20ed43"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b128bd3b-fb4d-444c-8015-cbfa5cd832c6",
+      "path": "credential_access/account_lockout_base.yml",
+      "sha256": "06bc7fed664698b98e9c139d0fd83f148cd911a87047b0668b71a0a872fc459b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "da9779e6-18b5-4465-b6ac-489c4e30059a",
+      "path": "credential_access/account_lockout_storm_4740.yml",
+      "sha256": "578cba2cde5428472fbcb97cbcc444b6477bc3c3daf037061b70e98380eb01b8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8c2445ed-463a-4301-96bf-a807568933d9",
+      "path": "credential_access/adfs_dkm_key_read.yml",
+      "sha256": "51a5a05432c5823e7cb795acacc21b7ad30624a678d99b5531671978cd4fe6fe"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9499e14d-029c-4840-8d6f-484b87e20c61",
+      "path": "credential_access/asrep_roast_preauth_disabled_set.yml",
+      "sha256": "496ceeac4a794e2585137d185f06f07f8c9b1aee1d8cabab626b4f1597be3b29"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "fbad9f41-af99-4257-9055-aebac62a8c85",
+      "path": "credential_access/asrep_roasting_4768_aes.yml",
+      "sha256": "5a237e6f3fcecbb960d3cc75338fe88243a31ea0cb001fad7dc569d476f9dff7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ba349c7b-087e-4e52-961c-bc191a6a5c94",
+      "path": "credential_access/asrep_roasting_4768_preauth.yml",
+      "sha256": "a6be4109a9e73ca1b678ea91629dc4e8b0aec3a23ff67b2643d89141ef8dbe56"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "122ff9b9-5787-4aca-b7b2-122d36d9a101",
+      "path": "credential_access/azureadssoacc_account_authentication.yml",
+      "sha256": "e03c3be7691d68c76585b903a8cc566a53717384d2e035732e6a78cf0fe95d3c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3f3c1e49-0474-4286-8d51-269568bf892a",
+      "path": "credential_access/azureadssoacc_key_reset.yml",
+      "sha256": "bdafde1393be2076f9d276bedfa8f7b60bdff141a8dbbf5ec2b77a39cc6268c2"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8cc62a80-4714-43cd-b1ab-6ae3696887e4",
+      "path": "credential_access/comsvcs_minidump_lolbin.yml",
+      "sha256": "92adbadaa1a52184d578cfca84aa79997d92a04ea6fc7c6b1a533dc78b011794"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ee136ecc-fc7d-41d9-8cb6-537b43b52ad2",
+      "path": "credential_access/credential_manager_vault_enumeration.yml",
+      "sha256": "3bc1d40732b2de668cc45ac85c3c3adcf372af51c1c5e4dd6088e00ab1e5a07e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c9810fb7-2d3d-4ba3-a0e8-b23f1768365a",
+      "path": "credential_access/credential_tool_imphash_low_robustness.yml",
+      "sha256": "e1a350df8303a5e86a06c05361da845a837d53ede1e9759f9cfe3768b837f00d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5957e8dc-0a1d-4fef-b041-7e30ac89d7c3",
+      "path": "credential_access/dcsync_drsuapi_replication.yml",
+      "sha256": "6877d65816b3ac0fcbd32a7fbbd829a8e7504bbaedd9a70705c3a43a94726c4b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "748149ff-a5b5-4fbf-949c-5127ec980a4b",
+      "path": "credential_access/dcsync_filtered_set_replication.yml",
+      "sha256": "6df6ac0f7bfe0383724eddd7fdc009638ff2f6d7f23491277ee47bfb45165f31"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5de3342a-7735-43ca-8875-fb9616b80851",
+      "path": "credential_access/dcsync_relay_dc_account_logon.yml",
+      "sha256": "bcdf2fb0a2fd24a8edb322fa016fd979793a834c2266bbdf522fd182f047bc56"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "26a5c3d3-5415-4fc3-a8fd-19c73e1e9431",
+      "path": "credential_access/defender_asr_lsass_rule_deleted.yml",
+      "sha256": "9954116bf237ee5f7b97aa716c3bfc2eac63803c7db485dc7c12a5cd85fe84ca"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "56a236a9-7b1d-4537-899c-dc0e446f6948",
+      "path": "credential_access/defender_asr_lsass_rule_disabled.yml",
+      "sha256": "4905c9f023e4186540a1c1a0b30a8065906f78f152ce5452175d9e09214e10ca"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9a92e891-42e5-4d8b-b778-cb4239c23a13",
+      "path": "credential_access/defender_asr_lsass_rule_disabled_5007.yml",
+      "sha256": "ec5c75c1eaf88e65e337a0680acad303a4b3493825c132206df22697378971ec"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b6ba1bfe-b9e2-4628-9cd8-8aa93c3e6ca5",
+      "path": "credential_access/defender_asr_lsass_rule_disabled_powershell.yml",
+      "sha256": "5acc6f10a6677fbc4527186af3c298c5200ba05c7b913a06dc8a3572e2c1d015"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ed04b4d3-6b6b-4539-957e-eb569cc440e3",
+      "path": "credential_access/defender_asr_lsass_rule_overwritten_powershell.yml",
+      "sha256": "dce25c931480c3b1641ff9ed504099b9ecd824109c215b454e6c7cf14fa15119"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9c926887-09d6-473a-9d24-cb398359d360",
+      "path": "credential_access/dpapi_domain_backup_key_read.yml",
+      "sha256": "b4f967ba1fd6b64b89bfb4839f3613b77ec12da8f1224858d6252b094c797413"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "10d5c44c-347f-413e-a141-d5e003c3368b",
+      "path": "credential_access/dpapi_masterkey_decryption.yml",
+      "sha256": "20d08e647a600d0ecef9a49b92bc3432fc6243f2655480ad3fe9300d0ba9b0d6"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d85cdf7e-6bf4-48a0-a680-099e4411cb17",
+      "path": "credential_access/dsrm_admin_logon_backdoor.yml",
+      "sha256": "c1fd33555b41b5cc246beef3e4b176a627fe88ecbdec431e1f9d0a04584ed701"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "753afa66-4aa0-417f-b306-f4f09a51d909",
+      "path": "credential_access/dsrm_password_set_4794.yml",
+      "sha256": "0aee6045ee84729b870751ddc42a1a32371d718916d2b1329fb0c0901e06f962"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ce31b0ee-a41d-4ab9-903f-7c77fef83d7a",
+      "path": "credential_access/dsrm_password_sync.yml",
+      "sha256": "c24b56dd91d0952f15eea92f3a64a1eafe6faf6b5fc6db9f15f6752c18d8e722"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "88afa7f5-b62c-41af-abe4-ea6069176012",
+      "path": "credential_access/entra_connect_sync_account_abuse.yml",
+      "sha256": "2b216961bb671f6e0370e77dd3fbcba2e800cefb19f25e310a05b87cc921a093"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7081b12d-9a3f-4bca-91af-17ed52571515",
+      "path": "credential_access/gmsa_kds_root_key_read.yml",
+      "sha256": "06e3e16c4fe18edffa9cd3daa7694a56240d82c58095b332b80753c850d2ac8a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f6e3d2f7-3866-43bb-8a24-c35ba611e54a",
+      "path": "credential_access/gmsa_managed_password_read.yml",
+      "sha256": "83207b2ad49db26b1cbb17c42715917ea50d5396aa1f12b344b512e9988c4427"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c39727d0-d65b-4a15-9443-a1f020e69ead",
+      "path": "credential_access/kerberoast_distinct_spn_burst.yml",
+      "sha256": "dba8ad6e58eda9e8c1a16758375aa5834c7a18805893c8a27237c43f5c1abc04"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "edb732cc-4d50-43c7-9c6c-4d2c080052f2",
+      "path": "credential_access/kerberoast_powershell_fileless.yml",
+      "sha256": "4e6045f9c694109064f98c99a83aaddce43fcfb3c25c98f7743ce49a306c796d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "50e37bdc-4c01-4262-b6fc-e8c18b036117",
+      "path": "credential_access/kerberoasting_4769_rc4.yml",
+      "sha256": "02cfd7b3363d254991b2c69c9fa89ae98d2a3e6b05b37dafa18bcefc500fe9bd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "531561de-3af3-434c-8a84-b697defe31fc",
+      "path": "credential_access/kerberos_password_spray_4771.yml",
+      "sha256": "40b914774bae33838d8cb6cf47f9907bee21a91cbe40e3eb96ca1ece92026081"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c71d1b6b-1ac1-4236-9039-eb5462f53905",
+      "path": "credential_access/kerberos_password_spray_4771_slow.yml",
+      "sha256": "1d7a91983cce3184dcedd09c63f2020d463b8166803f57adbdd79bd1d568666e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8606766f-5603-4687-b6f2-5689fac81be0",
+      "path": "credential_access/lazagne_password_extraction.yml",
+      "sha256": "aa3fea511c8c372639787684576b001e29fed5f922503c0f74aeb6fa0232c7b5"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "49cc29dc-33b0-4ce0-9dfc-15560d9b841a",
+      "path": "credential_access/lsa_protection_or_credential_guard_disabled.yml",
+      "sha256": "edd73a9eb85bb336a41dd00139596e7d2d68e406079c199885a15c642497f98a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "fceafbce-ec8d-450d-852d-340482003634",
+      "path": "credential_access/lsa_protection_runasppl_deleted.yml",
+      "sha256": "0a909b28c4f6329ad999788d182ae830ffeaa998c88062c0cb4c064ff770ab86"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0cc0fe2a-3585-44c1-b0d1-4a7901302cd3",
+      "path": "credential_access/lsass_minidump_file_drop.yml",
+      "sha256": "a7b38297becc2b13adf565e32b20f90391d7d26e27783076a8adbd08fe6c36a1"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "91b57c0f-f032-48b9-8c9c-84b8f9e8047a",
+      "path": "credential_access/lsass_process_access_credential_dump.yml",
+      "sha256": "5a3a16b4c291896c8f1b1337ae2e6e29dd61d6cae72d7571b911023240743576"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "22d64f16-345f-45b6-8cf8-d8e71267799f",
+      "path": "credential_access/lsass_silentprocessexit_dump.yml",
+      "sha256": "8ffd50e1c04050114c92b4de4822b657f9ca1028c7d70dd0604584117065b5e4"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "78337886-2e3d-4d29-9646-ba7de1413ccd",
+      "path": "credential_access/mimikatz_indicators.yml",
+      "sha256": "aa67d2be88ee6aa1dd894252f8e781a62feb027563a34f24e6a133ba8f5bd06d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "40057ecb-f3f8-450f-8623-b1674ed8e989",
+      "path": "credential_access/ms14_068_goldenpac.yml",
+      "sha256": "bb3f31c56e746ee99c37697ccfd79678193f9982980e32259078c4a41273faa8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6976ea83-bcc3-4324-af3c-9c2e79e7926f",
+      "path": "credential_access/ntds_dit_esent_database_outside_ntds_path.yml",
+      "sha256": "2e89b5fc24f7b924b3aa383903c210ce5ea48d8d46532edff060c87720d6bb4a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ab8e5baf-903e-449e-aade-42b3d757983c",
+      "path": "credential_access/ntds_dit_file_read_4663.yml",
+      "sha256": "23b9ace56eeaa5491f8d0be623919182a9bb5c936f5c51895333b1abb2fdfd48"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ad32c5e5-1d18-4c79-98e5-eb71a0056a0b",
+      "path": "credential_access/ntds_dit_ifm_extraction.yml",
+      "sha256": "88b28fbaa2c4b1957756c5e03db42357ad7668f9dab06c0f0f24fbfc79c64608"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a8b1b122-5eff-4981-80de-e34b7786f21d",
+      "path": "credential_access/ntlm_dc_bad_password_base.yml",
+      "sha256": "08d2b88b87748e531f9ba99a7d52beb2dec0b1463822a603531d27bf47d47323"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6bac1fc7-b741-4503-9c5d-c1cbc1903db4",
+      "path": "credential_access/password_spray_4625_distributed.yml",
+      "sha256": "1bda1ecdb5958c2d2728b5864decce5856ed4b18b1a209124b543f847c2ee81a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "effafe3c-27b1-4ee6-9f23-81377e229b4c",
+      "path": "credential_access/password_spray_4625_slow.yml",
+      "sha256": "c0ce36c094ef396faed2d48a74ae341a9da1eb52d46651ccfd022203edbc5e5c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "da68adde-15f3-449b-8354-cac65f6301c4",
+      "path": "credential_access/password_spray_4776_ntlm_dc.yml",
+      "sha256": "085e2110cbb13fa5435db0178f90e966b38cec8791a4eb3e6f9e675d13fb62a2"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d398dc0c-822a-4951-be20-02dcef30e674",
+      "path": "credential_access/password_spray_base.yml",
+      "sha256": "24a3d57065a842e172e206032abe79796784e4403c8e5bcc9a49e1af29056f11"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d3a1f418-aba9-4a6b-921c-433770f5cd22",
+      "path": "credential_access/remote_registry_service_start_type_changed.yml",
+      "sha256": "ae216b43e8c36b32e4cbbc5c9d543283192daa33ad11359d2e9c9aa34f567d68"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "39969970-4cf8-441f-8cae-14a2b51f7ddc",
+      "path": "credential_access/remote_registry_winreg_pipe_access.yml",
+      "sha256": "0b417d6c04ab3eab196329275424f374b303ae5c389a785cf0debdee8166504a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3cc9e13f-ceca-40fe-ac29-8d883665f4b2",
+      "path": "credential_access/renamed_tool_pe_metadata_mismatch.yml",
+      "sha256": "c3ceb6ade94ca2a2dc6626f87383d7e4b4a89d1de4c138e98141ea3038ece239"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e10de020-016c-4b3c-adfa-59aa15ec541d",
+      "path": "credential_access/sam_hive_copy_secretsdump.yml",
+      "sha256": "06034013fe1d7b65f8c1b36538e13638308f279519e8a3b029396de3f90bb3bd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "24a4339a-bb09-42ef-800f-3fdf880b8422",
+      "path": "credential_access/secretsdump_impacket.yml",
+      "sha256": "734469eb0fb838046a3eeb6928c3bcbef0f98fcf9f7dd4b3286e40cbf6f14f15"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9ad4cdf9-11d4-4e7c-89d1-5d3c71e65948",
+      "path": "credential_access/shadow_copy_then_ntds_dit_read.yml",
+      "sha256": "ef1adf71c7b9bdf3ad5d433d35bbe79720e4f5491b8bc32d4a9daa6aeb62811e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0f7e62a0-a6aa-4c88-9580-5cae343de19a",
+      "path": "credential_access/targeted_kerberoast_spn_write.yml",
+      "sha256": "60ce954a9ad7e8b1958a3b1e3c1d0cfd97373b75d6eba9951965e3711c0f6bbd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "61aa389f-7d94-45ba-81ca-b48da9a6419d",
+      "path": "credential_access/tgs_request_base.yml",
+      "sha256": "5707a3adc5f437c960b44a615d9e42e03d1c8d1e6be7eca277d5dcc99d109e86"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7456ae87-283b-4a56-a5fb-a5e5f46cf5a3",
+      "path": "credential_access/volume_shadow_copy_abuse.yml",
+      "sha256": "9b19a2d7e2e0445a93626af5e3074f3eeae644a5f21dfa1c3a65a7c0fc86ee0e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "bcd3e354-1f42-49c9-bbfd-6afcd9248956",
+      "path": "credential_access/vss_service_idle_shutdown_8224.yml",
+      "sha256": "7b146b52ae7db628ac9ffeb2a7f7d6ae33fdeb7606a5c7d29b2af8dc88bf7f84"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b3921b0d-e785-426f-9d9b-0f26d3e93824",
+      "path": "credential_access/zerologon_cve_2020_1472.yml",
+      "sha256": "d8e88324fd56a451e08092347a7f30ac87feccda70491df78e0679ee5dbf8d29"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4a41bc97-0b1d-4b77-bf67-d9d03a8f8566",
+      "path": "credential_access/zerologon_dc_account_password_null.yml",
+      "sha256": "07ae9400375c807647fa50ea05589a7560d868590cff8f55b9d0f986557066a5"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6e2a9c47-1f8b-4d03-a5c6-9b7e3d2f1a84",
+      "path": "credential_access/zerologon_netlogon_denied_or_allowed_by_policy.yml",
+      "sha256": "d9f6eac1a4ec464158c5ef42ba077d44a8206f6a3261a0fe864bbbae0ab909b4"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ccb2fee4-b1b1-4a86-8ce1-7dc0ce477baa",
+      "path": "deception/honey_asrep_account_tgt_without_preauth.yml",
+      "sha256": "2370b02b5bcdb5c213fa8a3dfb161825891eac860eb6de83fafc9fe7c3ef724d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "16e1779f-2ec9-4157-90c6-33ba1715bbee",
+      "path": "deception/honey_computer_authentication_or_takeover_write.yml",
+      "sha256": "615f68625d4a58df86e5b458f34ae7458eaeadd5cc08682ff92f83fa6e622881"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "36c8899f-d9e2-452b-b406-e00646309d17",
+      "path": "deception/honey_gpp_file_access.yml",
+      "sha256": "10bfe28d944da31e778844f7dd7bdb99d23abfbfbc79a07ae6e0879af80a476e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e7652a93-9b8e-45f1-b690-6b3f43e7489b",
+      "path": "deception/honey_object_read_4662.yml",
+      "sha256": "70bd9cf724520c87fbb6091df82ade38ed4c7f299711bbe6e56f2bcae0e20e6e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4410d329-4380-4972-960f-298c7bc13aff",
+      "path": "deception/honey_share_access.yml",
+      "sha256": "c9f3c25e9c437f61806d52d93c9826a3531e68fac13d4b35a5f1a92eeff27d79"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1f05b668-410e-41fb-a3cb-0c283e40c38f",
+      "path": "deception/honey_spn_service_ticket_request.yml",
+      "sha256": "f462089288e702108234168524f2c07681f609ff3342f94a4884a675c3ed7103"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "db3f177f-4b0e-4a6a-b7d2-6f7143b2583e",
+      "path": "deception/honey_user_authentication.yml",
+      "sha256": "30ecf989f4ef24cf6ba4cb16dca1a16f5dfe7a66ebecaec2ee2feed4d86edd4f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "11bf5ce0-7aba-40a4-8c6a-a873ad8e1038",
+      "path": "exploitation/adcs_ca_backup_or_key_export.yml",
+      "sha256": "c59277dc66de917f8dc0f1d0d1a217091139010e2b7fc4b652236b9570c0dab7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6ea40771-1cb8-495b-a5bf-cd4b7abfd3d4",
+      "path": "exploitation/adcs_ca_config_tamper.yml",
+      "sha256": "a8a0283d92d725d21f068894853835fc0d86a8e7684b0eb7ee882987d71fcaca"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "911c07b3-8979-4920-8a83-b2cf8dd5c814",
+      "path": "exploitation/adcs_ca_config_tamper_certutil.yml",
+      "sha256": "cf7b1d5568b6150b47704eac3194f02028de457f1c2a8cf584ff855f61e0c714"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f16526a3-76de-4410-b873-a81d8645446f",
+      "path": "exploitation/adcs_ca_config_tamper_registry.yml",
+      "sha256": "a18fe584ba44f62a9d039c505f890a48660d9efb03226a70095a08fb498a7c6c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "444614ac-65df-4d59-9392-f2ff5de2a4c4",
+      "path": "exploitation/adcs_ca_host_dc_ntlm_logon_base.yml",
+      "sha256": "034f5594e05d7a48837048bf62bc9ee7db07e70c31c8a51064ffcc4be35f7bab"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "44aea2cb-97a4-483a-ab27-41f218e6dd20",
+      "path": "exploitation/adcs_ca_key_export_process.yml",
+      "sha256": "6a7a57105e35dfdd2fe40ccdf042c8640118486642a1790711f2366ba2ff74cd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f9facf93-ea79-41c5-986c-a8735e789a9a",
+      "path": "exploitation/adcs_ca_key_file_written.yml",
+      "sha256": "e223d8dd1ccebd034136423f6f6c45177847be2b8ff1f3c8899fc5d430da6501"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a57409f1-aacf-4ce4-a618-23c873061b7b",
+      "path": "exploitation/adcs_cert_request_dc_requester_base.yml",
+      "sha256": "c77e863c5c07ad60fa974ac9f5eb129b67814f9e1b97665a1d0f6827db098fc1"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "faf98f1a-c623-4ab7-bb2f-b2cca36e071c",
+      "path": "exploitation/adcs_certificate_abuse.yml",
+      "sha256": "e418e7db579b064aee03720166ddb55fbb08cd8dffe9fa132bb95e48935acb3f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "33c1b64a-b69e-4626-8efd-eff6194cc23f",
+      "path": "exploitation/adcs_esc3_enrollment_agent_request.yml",
+      "sha256": "b2f2396698072cfba283ca79cede9c240f12be1d21bb3682f011abfbd29fc49e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6a2c6bd7-a234-4e97-b38e-5d9b3115f17f",
+      "path": "exploitation/adcs_esc8_coercion_pipe_on_dc_base.yml",
+      "sha256": "f9f89c04ebc3a9764edf1e44e3e6cb012dfccc9057b32cfeef7532c61dc081c6"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "dd1c28c6-526f-49bc-a350-ea8e1036eacd",
+      "path": "exploitation/adcs_esc8_iis_certfnsh_machine_account.yml",
+      "sha256": "49d9dc7a47215889bdcce78cf59fda2c6f98bb3f6145d43e5a6ab546a617e6d0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b714a290-3d60-4998-b62e-45af9cca3987",
+      "path": "exploitation/adcs_esc8_web_enrollment_relay.yml",
+      "sha256": "098112a6412b073d08e4e18a50eae9b28af5ba856573f43c544fc7827260f84c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7d4f3908-1d64-4faf-8628-afe8da87a7bf",
+      "path": "exploitation/adcs_kdc_certificate_sid_mismatch.yml",
+      "sha256": "c0618ffbee35a0c21672718356fe6ee0fb6bea65646874397d1fe9d5a660594f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "289fdeaa-1b45-435a-afbb-9c9e9e32aa03",
+      "path": "exploitation/adcs_kdc_certificate_weak_mapping.yml",
+      "sha256": "2ddd46eceab3dc34ae14993b2df4e5b395ea9cc9a5877ef0303d53b2e9fa07d7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "069055e1-5d14-48f4-b5a8-c457c53468d8",
+      "path": "exploitation/adcs_pkinit_san_requester_mismatch.yml",
+      "sha256": "e4ec92ba19dc8c9e98d81af344307bf3052a6130b5a79b772765784dc6d37619"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5e84ee0e-32a9-4944-9942-385ecdfb7d95",
+      "path": "exploitation/adcs_san_upn_anomaly.yml",
+      "sha256": "ad0c0b204821a390a7fc01edcfca8be149871f9c542234f69a5e947ae82b912e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "48f4958e-e3df-419e-b3fd-112abdfee70e",
+      "path": "exploitation/adcs_template_acl_modification.yml",
+      "sha256": "3fe6ec9f1f0addc9ec5fe19de8f94416b9eab0a2e407a2337c04192c1a56b6d0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5286b246-6632-4140-b92a-625dbe3c630f",
+      "path": "exploitation/adcs_template_updated_ca_side.yml",
+      "sha256": "c1b2b54718074494310f2bfeb53089ddd40f7fef0044d5540ddea6bf4d0999ea"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "669b78e5-4ae5-4d27-a93a-feebf28c811e",
+      "path": "exploitation/adcs_tooling_process.yml",
+      "sha256": "829f51d28346aef4b762bdfdd53d4a06fc87ef48b2dd706930f68faa1f48257f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "82dca3c8-1b00-4fef-be2c-bce7abaef46f",
+      "path": "exploitation/adidns_spoofing_record_dns_audit.yml",
+      "sha256": "9d6238742332e3ea603a358a72572aedf2f48b79da27eb30409561cf639a1092"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "89e3102a-abd2-4674-8d84-196e89c2e86c",
+      "path": "exploitation/adidns_spoofing_record_ldap.yml",
+      "sha256": "e71a24c25091848625e2a2c0f3882efdb9bba7e956959e088e8725d71e882f12"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9ae3ebfb-63eb-4e3c-8109-2e2e9efdcee5",
+      "path": "exploitation/dns_admin_serverlevel_plugin_dll.yml",
+      "sha256": "f2b790f56069052b1c2f46d596f980852cc092937d28597922d14286a5b234be"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3b7d2c1a-6f4e-4c8b-9a21-5e0d7f8c2b41",
+      "path": "exploitation/dns_admin_serverlevel_plugin_dll_registry.yml",
+      "sha256": "0fa6a779658287797168b94e4f637b7de08cb66f36231d7efb160e366f211179"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "51b220bd-ebe9-40ef-aa64-69a072f5db82",
+      "path": "exploitation/eternalblue_ms17_010.yml",
+      "sha256": "d8e0dd74be8e0f7093eb75de52618ff6a34fa73fbb24f13de44116e85a770246"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "952baea3-a418-48bc-98b6-7b900d8b5767",
+      "path": "exploitation/exchange_webshell_drop.yml",
+      "sha256": "62f51f9224d57f78a65c4a4cefeb1b2267cafac1467d99787daa64e683af12d4"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b9695561-42f7-4e24-a120-198f2a01f702",
+      "path": "exploitation/gpo_scheduled_task_cse_added.yml",
+      "sha256": "77ed01de53f33f77b454603a7aed55771eab49add5d88a6afee0f830266b95e7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "fa3c55b2-f85c-49ec-b88e-24a6c9db9289",
+      "path": "exploitation/gpp_cpassword_sysvol_access.yml",
+      "sha256": "ec7b8c967edb41011ee1f45300d5b1659b668da876795a16e0f5f360d2aee975"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d175e442-8986-490c-88d1-a6c86660cda2",
+      "path": "exploitation/gpp_preference_xml_bulk_read.yml",
+      "sha256": "40ec56ec708464f19adc73f131ceccf79dac5c43bd1cec9e1d49592574b28eb1"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "46d2009e-fa34-4998-bd00-2e918e197b3a",
+      "path": "exploitation/gpp_preference_xml_sysvol_read_base.yml",
+      "sha256": "910200caa73f0b835624d3336de681bdf9a7be4a192a7cd4ed5011be4ff4f8c3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ca66f077-1484-4d7c-8ecd-2b50d1becd06",
+      "path": "exploitation/hive_nightmare_serioussam.yml",
+      "sha256": "60852f96f501d378051d06d4183bafdcdf489b87e5f332b3e0c763aafde6dc71"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5e30f1e4-165a-4ef2-a78f-387fe799f8da",
+      "path": "exploitation/java_rmi_deserialization.yml",
+      "sha256": "50c88d805a612e2df0de0ec09b8ed213192fa11a57a312e687f53d1ad9230a9c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0bf2991d-8acf-4b63-ba34-e4c8ddd8391c",
+      "path": "exploitation/laps_password_retrieval.yml",
+      "sha256": "1041ceb3cdd4efcd6921a4d7e5f54e8647734d5960fcccd298582b23045ca410"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c5a4c3b7-4e10-4716-9243-02268477fcae",
+      "path": "exploitation/mssql_linked_server_impersonation.yml",
+      "sha256": "54aa0a6e2ea7aecc0317ad2d29863ab086caaf6d45cf94874a8e885f563ba616"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "451d0482-bf12-402b-a65b-ede23a0cedf6",
+      "path": "exploitation/mssql_trusted_links_pivot.yml",
+      "sha256": "991091d75c21df38fd73dad481ae0a0690b1482a475171956da1d25730ec00d8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f3699a26-aec0-42cb-983a-e51513452c9f",
+      "path": "exploitation/printer_bug_spooler_coercion.yml",
+      "sha256": "2d75cceeb823b84ac6f0efd9e2c87472e8c30abb67e80b2cfeff5cc40c3a3359"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d5b4821a-3250-4f47-90e0-d2ce1978d65b",
+      "path": "exploitation/printnightmare_driver_dll_written.yml",
+      "sha256": "17fdf050cb03b409106a3c2f50543679782fbd769a6e2fa99797ab54aa3d9b5e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6658c952-5c8f-400b-b077-d5d9091ef7ec",
+      "path": "exploitation/printnightmare_driver_install.yml",
+      "sha256": "2622aefda373db73acd8e93448cf20adef1930df3312605f968e6423f96ea8ff"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9f8b5a9d-1133-4033-bac6-6f0826274c9a",
+      "path": "exploitation/printnightmare_service_install.yml",
+      "sha256": "e803818354aeaf081c8dbce7ee2d82705cdacf16188777a0761341e4195b0858"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "dcaabd79-c650-482c-9c4b-5db384d891ec",
+      "path": "exploitation/printnightmare_service_install_security.yml",
+      "sha256": "630476121b604685c25ba6fc0c1db69e4207f29ebd38df4e0a9ee6810ec69af2"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5804434b-2315-4365-9dd6-e74bb6608d5e",
+      "path": "exploitation/printnightmare_spoolsv_dll_load.yml",
+      "sha256": "141a5fcb25e13664aa03c67e55d44ce682942eb9fe94f5f2bdaef2f935c37638"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2d8f6a4b-9c3e-4f71-b5a2-8e1d0c7f6a93",
+      "path": "exploitation/privexchange_ews_push_subscription.yml",
+      "sha256": "d55e2bbaa1f6ce54d3af7f576099cb6e957aaa88f8cfb5154114f5087b65e6ca"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ef3f8721-c272-4213-b14c-04c26c39400b",
+      "path": "exploitation/privexchange_ntlmrelay_to_ldap.yml",
+      "sha256": "c4b37f649edfc87b35440d9b1098722f37e9f2e3de15a0a90a05e49a29108c8a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c13c6335-8055-4161-b0f9-b2cd8d02975f",
+      "path": "exploitation/proxylogon_proxyshell_exchange.yml",
+      "sha256": "fd32a78e893daf58994bfd51dce51e42ecd25a2a1f366796ba67e198c9ceb4ca"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "72331f98-b74c-41f9-bd31-dfa67a2c13f0",
+      "path": "exploitation/sccm_cmpivot_abuse.yml",
+      "sha256": "f5422155fece968dacd2de06902ef28f916d12afdf3a3b19a87c7e5405618e07"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "fbe3b781-3949-4c4a-a5a1-e583db8faa5c",
+      "path": "exploitation/sccm_run_scripts_client_execution.yml",
+      "sha256": "ae879421ee6057c7ba3e789fe2b18286027cdbf117f9bca0df82161351bc91eb"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "57445d90-fd00-4bb3-85e0-5f22f36d5980",
+      "path": "exploitation/seimpersonate_potato_named_pipe.yml",
+      "sha256": "5b142457862783ca31a5189f207e5af1625b769d8409dac29ee73da5ff75630a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d9f3f89d-dfa5-4719-b6ef-b8a8b0db98d6",
+      "path": "exploitation/seimpersonate_potato_printspoofer.yml",
+      "sha256": "f8ee804577fec2be81ed141430b4f8dbbdf713b698f2de42fb605654439d51b1"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f89534c4-7629-4674-ae97-44cf871c1570",
+      "path": "exploitation/seimpersonate_service_to_system_4688.yml",
+      "sha256": "0efb87d814c9c4520d3c1019f08a4875c7f21dd0857cc0d343ba651289078ee2"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5d5e93df-f643-49b1-b896-a5da8591a64a",
+      "path": "exploitation/smbghost_cve_2020_0796.yml",
+      "sha256": "5438e2a7fe19079e23ca0387728634fe384205178b279a6b64fb47ec64cc9500"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "de0d624c-8c5e-4143-ba95-e5c27b4fb7fe",
+      "path": "exploitation/sysvol_netlogon_write_non_gpo_admin.yml",
+      "sha256": "5197a23c4783efe5e71fa4d86683dd4cff736fe16d3c9b1cf9d1b0532319e592"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "535811a0-c83a-4bc6-b647-0c8ba5c89798",
+      "path": "exploitation/tomcat_manager_deploy.yml",
+      "sha256": "9dd4ffa760e142ecbb3d5d5649edb6cb1782f2cf6efa1a49553dc5a9c1183464"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "1bff0b15-e557-43e8-b2b7-167faf98882b",
+      "path": "exploitation/winpeas_privesc_enum.yml",
+      "sha256": "c80483eeaf75725c27e8c7082639384fe951d43234ae737c234e241ac155ce5b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5e0ba4d8-4da1-4158-a492-31459741d7a3",
+      "path": "exploitation/wsus_wsuspect_abuse.yml",
+      "sha256": "9b69f6b5047ed722e6f6a2ac15a1d0e032302a69fe96221f04f938a0df8635d4"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7c4e9f21-3d8a-4b6e-8f15-2a9c6d1e7b30",
+      "path": "exploitation/wsus_wsuspendu_tooling.yml",
+      "sha256": "5f6cb9d20ffe18188f0aa177818e66513b84e4fba3359ca8fb690e3b36358819"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5c2e6637-bcef-47b4-a726-85a2c24b58f8",
+      "path": "lateral_movement/atexec_remote_scheduled_task.yml",
+      "sha256": "2fefe477e3366294b3001dafe7354919ae29da69f421f39d1043c71ec7de9eef"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "113bc4d3-f52d-4d69-a9a7-efa3f8a5d36a",
+      "path": "lateral_movement/c2_random_service_install.yml",
+      "sha256": "e376e192e40e03eb25e931c8e69e734e7ffeacbe3988f1446cadc780ca320635"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "768e9306-2736-48bb-8a0c-84ca54473fcc",
+      "path": "lateral_movement/credential_switch_explicit_then_network_logon.yml",
+      "sha256": "18c80c8f46d426a54e8969c91d1263235e914c16827ab42796536ea6fbcab1b8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b4ffa92b-540e-40c8-9e27-e1745edd20de",
+      "path": "lateral_movement/credential_switch_newcredentials_then_network_logon.yml",
+      "sha256": "467c28086b1616646a829298651a1f8e7c90a691da642336d4ddc7b6753b38b3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ccbc3ea7-5d2f-4dce-b61d-0139566214b2",
+      "path": "lateral_movement/evil_winrm_lateral_movement.yml",
+      "sha256": "40049d6f0971bd918d05ed8f78c4355d92087cc35cb0da686d5dfaf3ce49fa38"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "71153d13-5f04-4cc7-ab29-0e909926aa04",
+      "path": "lateral_movement/evil_winrm_powershell_function_names.yml",
+      "sha256": "2bf72b1cd5bdfc5849956d3fcf16483d03b67765be41b32d201c72fb6b771b74"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3d2fda75-9e9e-4cd5-b852-3304090327c5",
+      "path": "lateral_movement/explicit_credential_logon_base.yml",
+      "sha256": "130abaee8a17c86350d57085a6ac538b171543dccca51548f9f994accb8a22b8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "899240a1-5871-4110-b937-37258414725c",
+      "path": "lateral_movement/impacket_output_file_share_access.yml",
+      "sha256": "f6599f4296bbd6c2ec11d6bcdf5390c76ce606dc3746b1166f122077f8d48355"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c03e4b75-8d6a-4d6d-bae1-66d8d6b0765e",
+      "path": "lateral_movement/incognito_token_impersonation.yml",
+      "sha256": "931e46d47793498a1ff82de0222350d4eaab6fda9b5bc299bf2fb8e911d2c991"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f0f82f07-5793-4bf1-9abb-32f1a44a4b95",
+      "path": "lateral_movement/network_logon_base.yml",
+      "sha256": "12ae5394b79bdb3fd3cd5c6de69f17a98b51e184c97a18b170bb34be9dffa267"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "12be92bb-fdc2-4fcc-a9ac-39553f1d1ee6",
+      "path": "lateral_movement/overpass_newcredentials_then_tgt_request.yml",
+      "sha256": "0f14c15a5f14e5ca56be52fcfafa03e86c9ef32d5104b4b2ba8bedac0b6587b7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "be4f2a2a-9ecc-42a4-87f0-00601020be73",
+      "path": "lateral_movement/overpass_the_hash_aes_cert_only_account.yml",
+      "sha256": "7f67a5f3e2cecab3364d96a90b4bb969b86a8d31d51a9d4f8574dad57d915322"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b8eaca04-1c98-4eb0-896c-f62f00842e04",
+      "path": "lateral_movement/overpass_the_hash_rc4_anomaly.yml",
+      "sha256": "42024a6aef728093e1a4f9f739623d7ece36de94b66a430f3abf389c952332d3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c844546c-f1b3-4932-a732-52ebc4a0e50b",
+      "path": "lateral_movement/psexec_service_install.yml",
+      "sha256": "a3620c9e1f8e880373d837bfe3cda37a1c6a96302721536af90132670c836dfc"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "023634b9-80b5-4963-85f8-ac1374a53ea8",
+      "path": "lateral_movement/pth_xfreerdp_or_mimikatz.yml",
+      "sha256": "ff38016e61aa7a2e0a94a35463902681c5b1411c6a1eadf0369d06ce704fc7f7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9b2f7e13-4a6c-4d85-b7e9-3c1f8d2a6e54",
+      "path": "lateral_movement/remote_scheduled_task_creation_cli.yml",
+      "sha256": "76ae73a5e6179677634ea834416e8573a58f02813fad8559d09b57d988b2eef5"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2477924f-885a-4067-9498-b5ba7146bad5",
+      "path": "lateral_movement/rubeus_pass_the_ticket.yml",
+      "sha256": "264515c962e3e71476cbce5981a3175aacfc829b1fbfd57deea1b1a698a4599b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "de1c17b4-7eb8-42bf-8161-ac84c0b13f51",
+      "path": "lateral_movement/service_binpath_modification.yml",
+      "sha256": "d9eff22bc6eaaa2e2bc46a2cb9fd91a49316bf1a7ea0408c50f458ffaa7e5ad0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e8d6045c-98aa-4c65-a03b-9d5311fa62ee",
+      "path": "lateral_movement/service_imagepath_registry_interpreter.yml",
+      "sha256": "f346f70c627716418f49aaa747c399a3d468ce158c6eb7b1846a61b5a5e57101"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2fba1d5b-0d23-4e78-bd9e-e55a8a51bd34",
+      "path": "lateral_movement/smbexec_service_command_execution.yml",
+      "sha256": "ba332667dda5000a1b83f65a1452db4accbb7cabc0b103d885ae5174d624e1d0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "79ae9118-2faa-4894-a022-111486d3ebfc",
+      "path": "lateral_movement/ticket_export_to_kirbi.yml",
+      "sha256": "74c90139d04a5fac861b421258ab3099d045b5c2da8635185010f6d6a0a05359"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "41f12a6e-a669-4100-b02e-eaba0a2cdf5c",
+      "path": "lateral_movement/tier0_interactive_logon_from_non_paw.yml",
+      "sha256": "9babf89a9a948926711db8aed226ff1d5e94d595f1767ddf39ca20d98b2a2c0f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9dc566f3-b851-4b3f-8542-723a19c16060",
+      "path": "lateral_movement/winrm_remote_shell_created_event_91.yml",
+      "sha256": "a5985a4634bcca885a8c3d37d361282ab7dd922a35de39a086cb3182ad340f5b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8750592f-a2d0-4997-bdd3-81254fc9d38c",
+      "path": "lateral_movement/wmi_process_creation_execution.yml",
+      "sha256": "812c8dffd049406081a651a3f2a1a79b6fd1db04e945f519888f60c016c7946f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "df222ccc-ded5-4831-940f-2d60a8d65923",
+      "path": "lateral_movement/wmiexec_remote_command.yml",
+      "sha256": "f8b04b3e6f7ed46e8d1c51366251d52ee323bda967fd9fb5f7d4139bbd62198e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a0008a5f-8b61-41e7-97a5-21ce84b5b1d0",
+      "path": "lateral_movement/wmiprvse_shell_output_redirect.yml",
+      "sha256": "7007dfc3c7400a7771c824418f3a6092f6f13235b88143bdccba95b2a091e915"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5bda7e6e-b8e4-44e8-866d-27241abf0ff3",
+      "path": "lateral_movement/wmiprvse_shell_spawn_user_context.yml",
+      "sha256": "0f0084f073ba3fee0e86a1eaabfb95f51c412495f0f3a8f5de43f1faefbeeda4"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b71e3e85-82ed-4b52-af1d-6305b09a2f0a",
+      "path": "persistence/account_password_never_expires_or_reversible.yml",
+      "sha256": "ea4a785b7ca191ae20cb2c4acf9f25b33d9450a425ca45487e148c3d2ce23a77"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7e8345ce-9f76-44ce-906d-d6277e1f4f3c",
+      "path": "persistence/admincount_set_on_object.yml",
+      "sha256": "69abea1f628c4df9c63d516ee6756fe13318f37600e9b59de289c5faeb66ba10"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "20200ea0-6bbf-42bf-b459-e4e366051ebd",
+      "path": "persistence/adminsdholder_attribute_write.yml",
+      "sha256": "83013b6859181ffefa23556196b9c4c72487c219f5b673a9ee0d00c8827b3411"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "bde5c407-9979-46c3-a6f6-7feaced34c43",
+      "path": "persistence/adminsdholder_sdprop_acl_reset_4780.yml",
+      "sha256": "ab5e0bd1935368e3870ec018a73fb7ee818e4b98fd18841e53bf4c792d830ba8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2b1fd508-e35a-4387-b50f-072e8ffa49f4",
+      "path": "persistence/builtin_admin_group_addition.yml",
+      "sha256": "de92cb8204e34622fa43c3b439b982f1cf6484cdf395597fff33a3d82bcf4ad5"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d2f61431-d40b-4719-80c3-b29cfff94b73",
+      "path": "persistence/custom_ssp_install.yml",
+      "sha256": "db023d79b42f4852bff56120c8a92ffd3795f6ecc1e39e8ef1668cdd8739f392"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ea963442-2375-4a4b-bc8e-147939a92211",
+      "path": "persistence/dc_safeboot_dsrepair.yml",
+      "sha256": "726ebc7c731f078fe5e85a5dcb8b27949d08d6a55d1d8060ec18ce89c89fc46c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "05cf2a8f-6c0d-4b31-b332-b91491dd880b",
+      "path": "persistence/dcshadow_replication_rpcserver.yml",
+      "sha256": "e91f7c8985c0dc215442fcc64ab94633654d9318db0b0e7b6a681d7d309b5edd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ff10ca8e-409d-477b-9cb5-8239623f6cb4",
+      "path": "persistence/diamond_sapphire_ticket_pac_anomaly.yml",
+      "sha256": "00cf1c67d8bd7d0dc709e7cd90ea9a09694079110db68ab45df2381b27ff9fdc"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c7222930-0612-4ccc-a257-1d1c610cf491",
+      "path": "persistence/domain_admin_group_addition.yml",
+      "sha256": "ecc9357b4f1e22984c37b45fe9653a0fb24081f7fb4a5e9b79d0695cc4d11451"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0b2e0b1b-63b8-4096-a3cf-49aa551df167",
+      "path": "persistence/domain_policy_weakened.yml",
+      "sha256": "232a03fa81150110ed538ccc603b436bdbbcce76d0aa237a825783c172aa9831"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "720490a4-bb37-42f9-9e2a-d1c9ba38468b",
+      "path": "persistence/forged_ticket_domain_field_anomaly.yml",
+      "sha256": "0e78a08d5735ce7b40f34b96ba5e78a0443c84659aa753fd53ec4b22d03de58f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "647f63e3-8dde-43a8-ac8e-7be020414449",
+      "path": "persistence/golden_ticket_4769_anomaly.yml",
+      "sha256": "cdd5056fdb4488cba49ab546e7d77f459ea2beed29922081ed9d7e884ff6f463"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "694d0fe0-a323-44f8-9cff-f079f4df2db6",
+      "path": "persistence/krbtgt_dc_encryption_types_change.yml",
+      "sha256": "1701f9261bc42b5b5c21abde85f45201e09c3405ee7461c3959dcf6d0214fb24"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c9e9ac3c-fb21-4a6a-b7e7-bb4f3eb31c88",
+      "path": "persistence/krbtgt_password_reset.yml",
+      "sha256": "20a9e1ba1d853f5e6df76d261e1c3815770660f2f8b13b69551fb0890ab907c3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "85dc5cbd-e1bc-4e18-bfdb-f3f767042803",
+      "path": "persistence/safeboot_bcd_element_registry.yml",
+      "sha256": "f5bd5fbefe78c08d8bb6b51e264b077c4f8d1705ebf0a1cda5f5a9979af74377"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2a3db762-95ef-45f8-8b3c-139c789effe0",
+      "path": "persistence/silver_ticket_anomaly.yml",
+      "sha256": "01eb706f90115d1a22ae8cbece8a277d58edaa153239396a42d7a7413f5e2fbe"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "383e00f7-0874-40d5-bbca-2c1561790bda",
+      "path": "persistence/skeleton_key_mimikatz.yml",
+      "sha256": "3f6e4fdc3116c8a9acfb72efd791ff0354d88a52841fd83f007dc2fc1d014632"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "fe514a36-2f95-48af-b3ed-daecd9f9faa1",
+      "path": "recon_discovery/azurehound_graph_api_burst.yml",
+      "sha256": "4083fd207487a563c028b4c5f1414cb2225cac9198e98a0cb53c3c18e7762165"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "83b22408-07a4-40c8-8404-75939e3a1634",
+      "path": "recon_discovery/azurehound_graph_enumeration.yml",
+      "sha256": "7169cdb705d4f05eaf74c4027ee6696cf04005a94317cc8de719df2804a2c222"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8501b86d-0352-4c4d-b71f-f6f9f5ac2f8d",
+      "path": "recon_discovery/bloodhound_sharphound_collection.yml",
+      "sha256": "381237a77a7121f4d77ef14cc9c2119e4686fd3ca122ff26f22eea0791c480ff"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "84a8b88b-f708-4808-932a-fc4f79bed104",
+      "path": "recon_discovery/dns_srv_record_ad_discovery.yml",
+      "sha256": "55b6827715922e536b7e445b2aacea240ca40138c5d97ccacf61cb19fffcc031"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "62b3007f-692b-444e-8979-3b342ccda1d5",
+      "path": "recon_discovery/dns_zone_transfer_analytic.yml",
+      "sha256": "74f89207b1c2df954b440a37455d01c3801d72734bcd1bb2345e32f59ecd44ed"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d8645eb0-39ee-46aa-bf41-ee860b99f9fe",
+      "path": "recon_discovery/dns_zone_transfer_attempt.yml",
+      "sha256": "cd02db7902ef2c4abf24b6d56deb1050738cac3576aea0a31276d1ca85d7a180"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6abfc7d0-a3f9-46b1-a45e-1d914b93c420",
+      "path": "recon_discovery/impacket_get_users_spn_recon.yml",
+      "sha256": "1946225e3768227f74f00bafb1ff4fa35d4ed406d1f3a7aa4af2515ba8aa7c38"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5b3a2e1d-7c91-4f5a-9c2a-1d8f3a4b5c6e",
+      "path": "recon_discovery/ipc_share_access_base.yml",
+      "sha256": "997eef10287b1a91a741d1e1fb6e5a8e5da8e6bee3ff55769081f4b153691c0d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "00b86690-aa8c-467a-80a9-cb61ee2c3934",
+      "path": "recon_discovery/kerberos_preauth_failure_base.yml",
+      "sha256": "de391aa21b640fb68bbc9a27d90dd175d532776409f719f30a17ad34c27bb456"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4f6c2d8e-9a1b-4e37-8c5d-2b7f0e9a3c61",
+      "path": "recon_discovery/kerberos_unknown_principal_base.yml",
+      "sha256": "81d333491cd4cc3c0ec74e5306b921919e27e5041000eb10d84cc8422e3623c8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e713c223-ffdd-4602-b48e-03b6bb401e79",
+      "path": "recon_discovery/kerberos_user_enumeration_krb5enum.yml",
+      "sha256": "83337936d6d91e69589a645abc93d8cd690ca5bc9f3248145246b27152551629"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "74ea05a6-4a9e-42df-b649-ec3db73eb9a5",
+      "path": "recon_discovery/ldap_anonymous_bind_and_recon.yml",
+      "sha256": "9eaaa8866915a8efe1ebbf0e403fe1ff2f518f0e72a59164d15345ecfd8e48c5"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b4d232f8-ca26-4579-b5da-318fba456dce",
+      "path": "recon_discovery/ldap_connection_non_standard_process.yml",
+      "sha256": "eedb4ddcfd9089648b858bb98c8699bb44c675926f4945c0cda53a7dd513c8a9"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "706d7a0d-e48d-483f-b8dc-2661246001cc",
+      "path": "recon_discovery/ldap_high_volume_query_burst.yml",
+      "sha256": "5a0ab6d3a8f09c13516599c5823da12417508d131a8eefff9a778a034278546b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e48036c5-f4a8-4edc-9a32-ca9bf1f6c9ea",
+      "path": "recon_discovery/ldap_recon_filter_keywords.yml",
+      "sha256": "e6ed1649756e973767ae5df35a42d3d64e66b9271b5e4940a6cbfb48cd658c4a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "536504a4-adfc-49d4-bca6-787ff1fe7b97",
+      "path": "recon_discovery/ldap_search_base.yml",
+      "sha256": "0232133c46fb2e3d590f6cdeb3b20ca6c2359389a51ef914660f58f05e9c24f0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f1380dcf-4f57-4af2-a757-d7cef16894fb",
+      "path": "recon_discovery/net_session_enum_anonymous.yml",
+      "sha256": "4f1dc2c9ef40c8274db2380b4cbae58b1cdae3845f0eb80c21cbfe564c67952e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a4331458-f3b6-4570-a61b-4fe2b528f539",
+      "path": "recon_discovery/powerview_pyview_recon.yml",
+      "sha256": "346789ac5066ca916cf03fc42fad15d55918d5f7f180d7e2f690125eef51b6a0"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ee7f274f-0997-4dde-b56c-470f107a3103",
+      "path": "recon_discovery/pre2k_passwd_notreqd_account.yml",
+      "sha256": "bce6b94cccb0493c761c5a9ff80a56aaf1d77bf5dcd60810a5108560c5000a60"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b42e6e0e-b1dc-493f-ab29-fd79efa28f97",
+      "path": "recon_discovery/samr_object_access_base.yml",
+      "sha256": "7508d8c9c18cd546a81215b62248f82aad9b00fd218c050b9d83ad99bf67c15c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "51c17134-ab01-479f-bca1-299a85e25146",
+      "path": "recon_discovery/samr_rid_enumeration.yml",
+      "sha256": "8371739cead475397dbc1bc1dc0b5ebd87553f221bd7ceb7f8cd6d882dd1f1fc"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "2ee991e4-4178-4f2c-86a5-8c76a5c509bb",
+      "path": "recon_discovery/smb_anonymous_ipc_pipe_access.yml",
+      "sha256": "5d83461561250d7a855706105cea54b0a0c70be04d7efa3642e16cef9f7f8577"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0f30d503-41ff-4574-ac1f-d746ae3bd3d1",
+      "path": "recon_discovery/smb_null_anonymous_session_enumeration.yml",
+      "sha256": "ea7f69ac3c8bece1db8ed3560402b51541dddf019b7a89b57ee1fd71d71a2d24"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3015709f-85c3-4888-962d-4850b34efc69",
+      "path": "sysmon_enriched/createremotethread_injection_into_sensitive.yml",
+      "sha256": "d6b369ec2004f5c91328792005b8f39df57909f8342cc7e87be70471cf8e2327"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a2b1fdd1-921e-46e6-a354-15617c4d7b8b",
+      "path": "sysmon_enriched/dbghelp_loaded_by_non_wer_process.yml",
+      "sha256": "8708d8c7880ffe39902db7b8297a2e8c34fbabb55b62abc869b58410e2fca4b7"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "54fddbb2-48aa-4e7c-8dfe-3451ca3ad2c4",
+      "path": "sysmon_enriched/dbghelp_loaded_from_temp_or_user_path.yml",
+      "sha256": "6b181cb895cb86e9207e65dedeb778db946916e386a2737f33f89cba609497de"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c143010c-3673-43b0-8f8c-59ea9511c2df",
+      "path": "sysmon_enriched/lsass_access_from_user_writable_path.yml",
+      "sha256": "34c25c474411006fa5db386718705100ba740b0dea0884143225041a0431588c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8587c5b7-bafd-4175-b3e7-2423ee12ebe2",
+      "path": "sysmon_enriched/lsass_anomalous_child_process.yml",
+      "sha256": "80b35759c3b10b3c46cb1fdc3fbf11c5cdedc2ddb2019fd1949b0d83beb2315f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "42e10413-90cf-45ff-8282-761ea540fb56",
+      "path": "sysmon_enriched/lsass_anomalous_child_process_4688.yml",
+      "sha256": "0efa607ce89dd43d23dcf9b37a02aa42e812d013c4f9c8f18de70e3a9cf7d2d2"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "04533838-e998-427a-be5e-fcfc0e4c6a47",
+      "path": "sysmon_enriched/lsass_or_wmi_dns_anomaly.yml",
+      "sha256": "8056e5ed9a3fcd291a6ece828be453d7f0fc5a4f402795cc473128caaeab2119"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d2860dcc-f35c-4276-859a-03a20c1ea1b5",
+      "path": "sysmon_enriched/lsass_outbound_network_anomaly.yml",
+      "sha256": "2241fd5db5a46322cf76647479e82ed8c7e077d7e27b58a3f53f9312c09c85ae"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d161c917-af34-4268-a1be-b0f223932f44",
+      "path": "sysmon_enriched/lsass_unsigned_dll_image_load.yml",
+      "sha256": "1b664faa92e275005084f2ee14356fad1473857f2e0146c092c022efc100129c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9f17f2a4-4205-45a4-8149-303efc005ab2",
+      "path": "sysmon_enriched/malseclogon_seclogon_lsass_access.yml",
+      "sha256": "2e70b50eadef0fd50d689f64bd8a44ee3ce00265055fb9e8452dd2429372c91a"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0169cf3c-037e-4285-826d-686be1a31b2e",
+      "path": "sysmon_enriched/mimikatz_dll_image_load_lsass.yml",
+      "sha256": "250da24ccfc9a07622d40a8e6b611daeaab7a0881c5d4c9db5d471861cadcd64"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b6ef9fa3-da07-4909-9259-e448e31897e5",
+      "path": "sysmon_enriched/mimikatz_driver_or_ssp_dll_drop.yml",
+      "sha256": "df340ffcd7fd9cb229d8567ff839bd68a22a1c68ae16ac484a6637070f4ef278"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "0ddb05d8-515e-4151-b76e-b94c763e54ef",
+      "path": "sysmon_enriched/ntds_dit_or_system_hive_written_outside_ntds_path.yml",
+      "sha256": "f105609fb02474e6e8450c346598cb7a78cd2d29920167eb286ac9b2947e001d"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "e5749cde-c27f-4675-9124-e99e525a0b86",
+      "path": "sysmon_enriched/psexec_named_pipe_creation.yml",
+      "sha256": "f8146f06c02c1e1644905a191e283ec656f4f5935ca2d14cc4f1c9827ff7db5f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7a2bc845-5862-4cd8-9b62-a3c0e6f4c155",
+      "path": "sysmon_enriched/secretsdump_remote_hive_save_tmp_file.yml",
+      "sha256": "488214672a56bb64ccaf73b0ad94484958041864cd1687f55956e2c0c96f52e3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a70f3cfd-a446-43d7-b0fd-9165f710124a",
+      "path": "sysmon_enriched/sysmon_process_tampering_hollowing.yml",
+      "sha256": "f77d3731b7dff7750ecbbbcf50811ed90680d60cc2c0c8ad4a0e7c6e82379e17"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "b4b03931-a2cf-4ff3-b547-0d9e0c6ab200",
+      "path": "sysmon_enriched/wmi_persistence_binding_5861.yml",
+      "sha256": "5bffbaf61ab2fae8d1402bc8aea76b1ca8be68e481e29d1b0a1c1a33d3338d01"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c0ca05f5-7cdb-41b9-9fca-e145b402b2df",
+      "path": "sysmon_enriched/wmi_persistence_subscription.yml",
+      "sha256": "382370864c7286ea2015edb87915e9bba341215c38f4c1ed33e08ab72862189b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4a24e617-a9ea-4bd4-983f-c86cbdfb55ba",
+      "path": "trust_abuse/delegation_configured_on_account.yml",
+      "sha256": "3a9d326230f74ca2e52b94c9f9601cdcfe4f5e999952c5a8d064a691d2a219de"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "6e9d9d7f-df4c-40dc-b05e-44f85d5d2868",
+      "path": "trust_abuse/dmsa_authentication_directory_service_2946.yml",
+      "sha256": "18c394f3dbf306a2f139a08a9d36dfe7dd514e9fc46c421fab568fec0ce6933e"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d225522a-ec9b-4ba8-af0d-e309f2970b5f",
+      "path": "trust_abuse/dmsa_authentication_unexpected_host.yml",
+      "sha256": "1d431b863a498c48e35ad9815afbfcf941bf490a30e9169f9d59368934b004f8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f5732ff2-5be1-4d3b-ad7b-ad5b50fb2d23",
+      "path": "trust_abuse/dmsa_badsuccessor_abuse.yml",
+      "sha256": "f0ae16a73280f9898a2614090388af9afce6613d3fd63a9919a7b33348d826a3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5d4b346b-231d-48a3-81a3-e5eb1d052d28",
+      "path": "trust_abuse/dmsa_managed_password_read.yml",
+      "sha256": "9553ba77333997a3c89886abac7c39fd50fc52507130b49fb424d1cb8196d928"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "9e484621-97f4-4b8b-b69b-d5c76111b716",
+      "path": "trust_abuse/kerberos_tgt_request_base.yml",
+      "sha256": "c19d8fcb219e16109244010866286531d2eea3c62185c9a61516acd7fb6fe094"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8f355792-f635-40d1-a69c-ec99dd3fe48d",
+      "path": "trust_abuse/machine_account_quota_abuse.yml",
+      "sha256": "589ea9b5a7905c78cc74a0a6b89792d9fbef0aa68102116115b27a73af05b277"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4643659a-e5e5-4bca-abf6-4c98262ac6e8",
+      "path": "trust_abuse/nopac_computer_account_rename.yml",
+      "sha256": "2955c951a4fdd786e239984dffd10c24a48c9ec53ca20647c8f4c05c84af6157"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "3c19fe07-9537-4ef3-94f3-a39cb67732f7",
+      "path": "trust_abuse/nopac_computer_account_restore_base.yml",
+      "sha256": "9e3792722a482f827ebb142b14c425aac7a22b4209dd2b9f9ed0cff8efe8f1e3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "5cddca73-d009-42aa-bfc9-372bfa0b72a9",
+      "path": "trust_abuse/nopac_samaccountname_spoofing_chain.yml",
+      "sha256": "7a55d24719037a464a66badbff432052b1fdf585e4dea5220b6f8f1ae7f86ed1"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "ed18c1dd-166a-47f5-b43b-bc92d0aea8bb",
+      "path": "trust_abuse/pkinit_logon_base.yml",
+      "sha256": "e8a12f06b1a568c51f34c781c81bb0c9cc562f2a2139b0013f4915758c01ac90"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "4013b6ce-46c8-4403-99a1-da28928b71d2",
+      "path": "trust_abuse/pkinit_non_enterprise_ca_issuer.yml",
+      "sha256": "aeb788ed6c01556ce2968156e2e9e16a19c6ae2e209a6d28b2584732e8ccec4f"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "87b37998-e113-4871-8795-6d7feae1a5b5",
+      "path": "trust_abuse/rbcd_krbrelayup_chain_correlation.yml",
+      "sha256": "9839ef6bc2bd8e41f669ad8012159997dd6bb21ce20708e30af8e4820c2b1297"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f408f309-fe7b-4296-b39f-bf1f7d541c4f",
+      "path": "trust_abuse/rbcd_msds_allowedtoactonbehalf_modification.yml",
+      "sha256": "51ac14279020e6188b658557e8f16af908cf68a2c9f13ddf07e39c830a3c81f8"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7eb5214b-4fde-4eef-8ef7-522de6fc7f91",
+      "path": "trust_abuse/s4u_constrained_delegation_abuse.yml",
+      "sha256": "e98901d519e5ce5d638c542d2b1e1b9725985b8d955c346f5f2fdac9f2a460ba"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "d316581b-9d39-4395-8265-805ce2cadd5a",
+      "path": "trust_abuse/shadow_credentials_keycredentiallink.yml",
+      "sha256": "25d9924cc170787a3a5a7a289c11b1318d670ead5aab763a4844ddd709d122db"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "27b84ec1-42ac-4e08-ac3d-6c9d67d54b64",
+      "path": "trust_abuse/shadow_credentials_pkinit_use_correlation.yml",
+      "sha256": "b2ad9f3803ae52f9f7e5ba815741a10bd47b34ddc6d234264b84cfabdb54f2cd"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "854011ca-8ca6-4ebc-b3b7-0eeceae17d64",
+      "path": "trust_abuse/sid_history_attribute_write.yml",
+      "sha256": "3af8a84cb09993ec712e29fdab12f6c049d09f0500a704d63bd7b864b9c948c3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "af3f1660-38e5-4091-bbe3-7865aa353e5e",
+      "path": "trust_abuse/sid_history_injection.yml",
+      "sha256": "aee0d8a2ad209236eebb612ce20da3fe484b8319bf4c602b0bbc33e093c46943"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "a949fc99-3731-438c-afb3-f8306dd9bfb2",
+      "path": "trust_abuse/trust_account_automatic_password_reset.yml",
+      "sha256": "28d9765adab675bc5346c2e8f95e55c668f644d9ae92dcdc875505a4ffc3cd2c"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "8ed1e3ad-ffe1-4504-9113-96ca96175861",
+      "path": "trust_abuse/trust_account_password_reset.yml",
+      "sha256": "e4ee2d9324cb909d7608f59b92447dec71b7f75d6ad6cb3873a2b9378b72beb3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "c760f179-ab93-4449-b024-8f5c6d1f1934",
+      "path": "trust_abuse/trust_relationship_modification.yml",
+      "sha256": "d597a3620ebd797363e0dedd71a0b81b9938ab43bd67ac3ef98553ce49dde9b3"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "7481bfe5-5959-46b5-8a2b-6f5fe381aab5",
+      "path": "trust_abuse/trust_ticket_foreign_account_domain.yml",
+      "sha256": "0d525b75d13f12e2f05dc98ac5f8422d02d8ddd32698ea9f2c78d6f6d3fe9622"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "f1b86c9f-da96-4780-b180-27ac658b868a",
+      "path": "trust_abuse/trust_ticket_forging.yml",
+      "sha256": "7cd2b11023a56285f8eb26b886e2b1ac483f9365d4bb3262f82d39e963ae9e5b"
+    },
+    {
+      "adaptations": {},
+      "document": "0",
+      "id": "46fc8037-219a-4a7d-8af8-9bfea60501d7",
+      "path": "trust_abuse/unconstrained_delegation_compromise.yml",
+      "sha256": "e97ea352bb5fdad40a1aab6207dbd1fa75868305edf301ce5a091f07a4d45928"
+    }
+  ],
+  "repository": "404SecNotFound/Active-Directory-Pentest-Detection-Pack",
+  "revision": "00bfe53ad2da9074cf2207d8473fc2e893d64e56",
+  "source": "adpack",
+  "status": "validated",
+  "tools": {
+    "pysigma": "2.1.1",
+    "pysigma-backend-sqlite": "2.2.0",
+    "pysigma-pipeline-sysmon": "3.0.0",
+    "pysigma-pipeline-windows": "3.0.0",
+    "python": "3.14.10",
+    "sqlite": "3.46.1"
+  }
+}

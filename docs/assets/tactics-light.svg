@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="504" viewBox="0 0 860 504" role="img" aria-labelledby="title desc">
 <title id="title">ATT&amp;CK tactics</title>
-<desc id="desc">Unique detections in rules_windows_all.json per tactic; a rule can have several. Reconnaissance: 14; Resource Development: 28; Initial Access: 144; Execution: 1,135; Persistence: 817; Privilege Escalation: 663; Defense Evasion: 230; Defense Impairment: 343; Stealth: 933; Credential Access: 357; Discovery: 206; Lateral Movement: 206; Collection: 83; Command and Control: 942; Exfiltration: 68; Impact: 112; (no tactic tag): 358.</desc>
+<desc id="desc">Unique detections in rules_windows_all.json per tactic; a rule can have several. Reconnaissance: 14; Resource Development: 29; Initial Access: 150; Execution: 1,171; Persistence: 875; Privilege Escalation: 725; Defense Evasion: 290; Defense Impairment: 343; Stealth: 933; Credential Access: 472; Discovery: 224; Lateral Movement: 241; Collection: 93; Command and Control: 946; Exfiltration: 69; Impact: 116; (no tactic tag): 364.</desc>
 <style>
 text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #0b0b0b; }
 .secondary { fill: #52514e; }
@@ -22,54 +22,54 @@ text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans
 <text x="24" y="56" font-size="12" class="secondary">Unique detections in rules_windows_all.json per tactic; a rule can have several</text>
 <line x1="224" y1="76" x2="224" y2="486" stroke="#e1e0d9"/>
 <text x="214" y="93" font-size="12" text-anchor="end" class="secondary">Reconnaissance</text>
-<path class="grow" style="animation-delay:120ms" fill="#2a78d6" d="M224.0 82.0H227.0Q231.0 82.0 231.0 86.0V92.0Q231.0 96.0 227.0 96.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:700ms" x="239.0" y="93" font-size="12">14</text>
+<path class="grow" style="animation-delay:120ms" fill="#2a78d6" d="M224.0 82.0H226.7Q230.7 82.0 230.7 86.0V92.0Q230.7 96.0 226.7 96.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:700ms" x="238.7" y="93" font-size="12">14</text>
 <text x="214" y="117" font-size="12" text-anchor="end" class="secondary">Resource Development</text>
-<path class="grow" style="animation-delay:165ms" fill="#2a78d6" d="M224.0 106.0H233.9Q237.9 106.0 237.9 110.0V116.0Q237.9 120.0 233.9 120.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:745ms" x="245.9" y="117" font-size="12">28</text>
+<path class="grow" style="animation-delay:165ms" fill="#2a78d6" d="M224.0 106.0H234.0Q238.0 106.0 238.0 110.0V116.0Q238.0 120.0 234.0 120.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:745ms" x="246.0" y="117" font-size="12">29</text>
 <text x="214" y="141" font-size="12" text-anchor="end" class="secondary">Initial Access</text>
-<path class="grow" style="animation-delay:210ms" fill="#2a78d6" d="M224.0 130.0H291.6Q295.6 130.0 295.6 134.0V140.0Q295.6 144.0 291.6 144.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:790ms" x="303.6" y="141" font-size="12">144</text>
+<path class="grow" style="animation-delay:210ms" fill="#2a78d6" d="M224.0 130.0H292.2Q296.2 130.0 296.2 134.0V140.0Q296.2 144.0 292.2 144.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:790ms" x="304.2" y="141" font-size="12">150</text>
 <text x="214" y="165" font-size="12" text-anchor="end" class="secondary">Execution</text>
 <path class="grow" style="animation-delay:255ms" fill="#2a78d6" d="M224.0 154.0H784.0Q788.0 154.0 788.0 158.0V164.0Q788.0 168.0 784.0 168.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:835ms" x="796.0" y="165" font-size="12">1,135</text>
+<text class="fade secondary" style="animation-delay:835ms" x="796.0" y="165" font-size="12">1,171</text>
 <text x="214" y="189" font-size="12" text-anchor="end" class="secondary">Persistence</text>
-<path class="grow" style="animation-delay:300ms" fill="#2a78d6" d="M224.0 178.0H626.0Q630.0 178.0 630.0 182.0V188.0Q630.0 192.0 626.0 192.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:880ms" x="638.0" y="189" font-size="12">817</text>
+<path class="grow" style="animation-delay:300ms" fill="#2a78d6" d="M224.0 178.0H641.4Q645.4 178.0 645.4 182.0V188.0Q645.4 192.0 641.4 192.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:880ms" x="653.4" y="189" font-size="12">875</text>
 <text x="214" y="213" font-size="12" text-anchor="end" class="secondary">Privilege Escalation</text>
-<path class="grow" style="animation-delay:345ms" fill="#2a78d6" d="M224.0 202.0H549.5Q553.5 202.0 553.5 206.0V212.0Q553.5 216.0 549.5 216.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:925ms" x="561.5" y="213" font-size="12">663</text>
+<path class="grow" style="animation-delay:345ms" fill="#2a78d6" d="M224.0 202.0H569.2Q573.2 202.0 573.2 206.0V212.0Q573.2 216.0 569.2 216.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:925ms" x="581.2" y="213" font-size="12">725</text>
 <text x="214" y="237" font-size="12" text-anchor="end" class="secondary">Defense Evasion</text>
-<path class="grow" style="animation-delay:390ms" fill="#2a78d6" d="M224.0 226.0H334.3Q338.3 226.0 338.3 230.0V236.0Q338.3 240.0 334.3 240.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:970ms" x="346.3" y="237" font-size="12">230</text>
+<path class="grow" style="animation-delay:390ms" fill="#2a78d6" d="M224.0 226.0H359.7Q363.7 226.0 363.7 230.0V236.0Q363.7 240.0 359.7 240.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:970ms" x="371.7" y="237" font-size="12">290</text>
 <text x="214" y="261" font-size="12" text-anchor="end" class="secondary">Defense Impairment</text>
-<path class="grow" style="animation-delay:435ms" fill="#2a78d6" d="M224.0 250.0H390.4Q394.4 250.0 394.4 254.0V260.0Q394.4 264.0 390.4 264.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1015ms" x="402.4" y="261" font-size="12">343</text>
+<path class="grow" style="animation-delay:435ms" fill="#2a78d6" d="M224.0 250.0H385.2Q389.2 250.0 389.2 254.0V260.0Q389.2 264.0 385.2 264.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1015ms" x="397.2" y="261" font-size="12">343</text>
 <text x="214" y="285" font-size="12" text-anchor="end" class="secondary">Stealth</text>
-<path class="grow" style="animation-delay:480ms" fill="#2a78d6" d="M224.0 274.0H683.6Q687.6 274.0 687.6 278.0V284.0Q687.6 288.0 683.6 288.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1060ms" x="695.6" y="285" font-size="12">933</text>
+<path class="grow" style="animation-delay:480ms" fill="#2a78d6" d="M224.0 274.0H669.4Q673.4 274.0 673.4 278.0V284.0Q673.4 288.0 669.4 288.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1060ms" x="681.4" y="285" font-size="12">933</text>
 <text x="214" y="309" font-size="12" text-anchor="end" class="secondary">Credential Access</text>
-<path class="grow" style="animation-delay:525ms" fill="#2a78d6" d="M224.0 298.0H397.4Q401.4 298.0 401.4 302.0V308.0Q401.4 312.0 397.4 312.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1105ms" x="409.4" y="309" font-size="12">357</text>
+<path class="grow" style="animation-delay:525ms" fill="#2a78d6" d="M224.0 298.0H447.3Q451.3 298.0 451.3 302.0V308.0Q451.3 312.0 447.3 312.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1105ms" x="459.3" y="309" font-size="12">472</text>
 <text x="214" y="333" font-size="12" text-anchor="end" class="secondary">Discovery</text>
-<path class="grow" style="animation-delay:570ms" fill="#2a78d6" d="M224.0 322.0H322.4Q326.4 322.0 326.4 326.0V332.0Q326.4 336.0 322.4 336.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1150ms" x="334.4" y="333" font-size="12">206</text>
+<path class="grow" style="animation-delay:570ms" fill="#2a78d6" d="M224.0 322.0H327.9Q331.9 322.0 331.9 326.0V332.0Q331.9 336.0 327.9 336.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1150ms" x="339.9" y="333" font-size="12">224</text>
 <text x="214" y="357" font-size="12" text-anchor="end" class="secondary">Lateral Movement</text>
-<path class="grow" style="animation-delay:615ms" fill="#2a78d6" d="M224.0 346.0H322.4Q326.4 346.0 326.4 350.0V356.0Q326.4 360.0 322.4 360.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1195ms" x="334.4" y="357" font-size="12">206</text>
+<path class="grow" style="animation-delay:615ms" fill="#2a78d6" d="M224.0 346.0H336.1Q340.1 346.0 340.1 350.0V356.0Q340.1 360.0 336.1 360.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1195ms" x="348.1" y="357" font-size="12">241</text>
 <text x="214" y="381" font-size="12" text-anchor="end" class="secondary">Collection</text>
-<path class="grow" style="animation-delay:660ms" fill="#2a78d6" d="M224.0 370.0H261.2Q265.2 370.0 265.2 374.0V380.0Q265.2 384.0 261.2 384.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1240ms" x="273.2" y="381" font-size="12">83</text>
+<path class="grow" style="animation-delay:660ms" fill="#2a78d6" d="M224.0 370.0H264.8Q268.8 370.0 268.8 374.0V380.0Q268.8 384.0 264.8 384.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1240ms" x="276.8" y="381" font-size="12">93</text>
 <text x="214" y="405" font-size="12" text-anchor="end" class="secondary">Command and Control</text>
-<path class="grow" style="animation-delay:705ms" fill="#2a78d6" d="M224.0 394.0H688.1Q692.1 394.0 692.1 398.0V404.0Q692.1 408.0 688.1 408.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1285ms" x="700.1" y="405" font-size="12">942</text>
+<path class="grow" style="animation-delay:705ms" fill="#2a78d6" d="M224.0 394.0H675.6Q679.6 394.0 679.6 398.0V404.0Q679.6 408.0 675.6 408.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1285ms" x="687.6" y="405" font-size="12">946</text>
 <text x="214" y="429" font-size="12" text-anchor="end" class="secondary">Exfiltration</text>
-<path class="grow" style="animation-delay:750ms" fill="#2a78d6" d="M224.0 418.0H253.8Q257.8 418.0 257.8 422.0V428.0Q257.8 432.0 253.8 432.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1330ms" x="265.8" y="429" font-size="12">68</text>
+<path class="grow" style="animation-delay:750ms" fill="#2a78d6" d="M224.0 418.0H253.2Q257.2 418.0 257.2 422.0V428.0Q257.2 432.0 253.2 432.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1330ms" x="265.2" y="429" font-size="12">69</text>
 <text x="214" y="453" font-size="12" text-anchor="end" class="secondary">Impact</text>
-<path class="grow" style="animation-delay:795ms" fill="#2a78d6" d="M224.0 442.0H275.7Q279.7 442.0 279.7 446.0V452.0Q279.7 456.0 275.7 456.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1375ms" x="287.7" y="453" font-size="12">112</text>
+<path class="grow" style="animation-delay:795ms" fill="#2a78d6" d="M224.0 442.0H275.9Q279.9 442.0 279.9 446.0V452.0Q279.9 456.0 275.9 456.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1375ms" x="287.9" y="453" font-size="12">116</text>
 <text x="214" y="477" font-size="12" text-anchor="end" class="secondary">(no tactic tag)</text>
-<path class="grow" style="animation-delay:840ms" fill="#898781" d="M224.0 466.0H397.9Q401.9 466.0 401.9 470.0V476.0Q401.9 480.0 397.9 480.0H224.0Z"/>
-<text class="fade secondary" style="animation-delay:1420ms" x="409.9" y="477" font-size="12">358</text>
+<path class="grow" style="animation-delay:840ms" fill="#898781" d="M224.0 466.0H395.3Q399.3 466.0 399.3 470.0V476.0Q399.3 480.0 395.3 480.0H224.0Z"/>
+<text class="fade secondary" style="animation-delay:1420ms" x="407.3" y="477" font-size="12">364</text>
 </svg>
