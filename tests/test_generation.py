@@ -123,6 +123,8 @@ def test_metadata_adapter_has_stable_id_and_preserves_original():
     ("attack.hidden.users", "attack.t1564.002"),
     ("attack.Exploitation for Privilege Escalation", "attack.t1068"),
     ("attack.account_discovery", "attack.t1087"),
+    ("attack.TA0001", "attack.initial_access"),
+    ("attack.ta0011", "attack.command_and_control"),
     ("attack.credential_dumping", "attack.t1003"),
 ])
 def test_attack_tags_are_normalized_deduplicated_and_auditable(original, expected):
@@ -149,7 +151,7 @@ def test_valid_tag_forms_and_other_namespaces_are_preserved():
     assert variant.data["tags"] == tags
 
 
-@pytest.mark.parametrize("tag", ["attack.12345.001", "attack.Unknown Tactic", "attack.t123.1"])
+@pytest.mark.parametrize("tag", ["attack.12345.001", "attack.Unknown Tactic", "attack.t123.1", "attack.ta0005"])
 def test_unknown_malformed_tags_fail_source_validation(tmp_path, tag):
     _, report = compile_source("test", SPEC, source(tmp_path, [detection(tags=[tag])]), [])
     assert report["status"] == "failed"

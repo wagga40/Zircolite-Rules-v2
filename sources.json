@@ -116,5 +116,25 @@
     "profiles": ["sysmon", "generic", "linux"],
     "license": "MIT",
     "license_file": "LICENSE"
+  },
+  "huntress": {
+    "repository": "huntresslabs/threat-intel",
+    "branch": "main",
+    "directories": ["."],
+    "exclude": [".github/**", "**/chainsaw/**"],
+    "adapter": "community",
+    "profiles": ["sysmon", "generic"],
+    "license": "MIT",
+    "license_file": "LICENSE"
+  },
+  "adpack": {
+    "repository": "404SecNotFound/Active-Directory-Pentest-Detection-Pack",
+    "branch": "main",
+    "directories": ["."],
+    "exclude": [".github/**", "placeholders.yml", ".sigma-validation.yml"],
+    "adapter": "community",
+    "profiles": ["sysmon", "generic"],
+    "license": "MIT",
+    "license_file": "LICENSE"
   }
 }

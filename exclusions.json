@@ -78,6 +78,56 @@
     "stage": "parse"
   },
   {
+    "document": "0",
+    "error": "Sigma rule must have a title",
+    "path": "2022/2022-12/29-OWASSRF/detections/sigma/pwsh-spawned-from-w3wp.yml",
+    "profile": "*",
+    "reason": "The upstream rule has no title, which Sigma requires; it needs an upstream fix.",
+    "sha256": "6c9cf5b852f787a5326d008112d591f9d086a895bcaaab68c4b387f93c9ce188",
+    "source": "huntress",
+    "stage": "parse"
+  },
+  {
+    "document": "0",
+    "error": "Detection 'Selection1' not defined in detections",
+    "path": "2023/2023-11/suspicious_child_process_from_activemq.yml",
+    "profile": "*",
+    "reason": "The condition names Selection1, but the rule defines no such selection; it needs an upstream fix.",
+    "sha256": "9cdb622725a81aae99ee6e32e66e1136697463eb907d0b125fb1f99bb651ceee",
+    "source": "huntress",
+    "stage": "convert"
+  },
+  {
+    "document": "1",
+    "error": "Correlation reference 'defendnot Windows Defender State Toggle Events' has 0 definitions",
+    "path": "2025/2025-05/defendnot/sigma/win_security_defendnot_defender_state_correlation.yml",
+    "profile": "generic",
+    "reason": "The correlation references its base rule by title; Sigma references use a rule's name or id, so it has no definition.",
+    "sha256": "99a141ce04f65520f6c3acdcf0e03ce38f1b9864c0c309355717865a8ca78e65",
+    "source": "huntress",
+    "stage": "references"
+  },
+  {
+    "document": "1",
+    "error": "Correlation reference 'defendnot Windows Defender State Toggle Events' has 0 definitions",
+    "path": "2025/2025-05/defendnot/sigma/win_security_defendnot_defender_state_correlation.yml",
+    "profile": "sysmon",
+    "reason": "The correlation references its base rule by title; Sigma references use a rule's name or id, so it has no definition.",
+    "sha256": "99a141ce04f65520f6c3acdcf0e03ce38f1b9864c0c309355717865a8ca78e65",
+    "source": "huntress",
+    "stage": "references"
+  },
+  {
+    "document": "0",
+    "error": "Unsupported type: <class 'dict'>",
+    "path": "2025/2025-05/defendnot/sigma/win_security_modifiy_security_center_registry_key.yml",
+    "profile": "*",
+    "reason": "The filter value {D68DDC3A-831F-4fae-9E44-DA132C1ACF46} is unquoted, so YAML reads it as a mapping; it needs quoting upstream.",
+    "sha256": "216a4d8a8bda91d35bb5d8467f99e9951478bcff03326b412c42efcb587c2ce0",
+    "source": "huntress",
+    "stage": "parse"
+  },
+  {
     "document": "*",
     "error": "found undefined alias 'chcp'\n  in \"<byte string>\", line #, column #:\n                - *chcp 437 & schtasks /query /tn  ... \n                  ^",
     "path": "rules/koadicpostexploitationrootkit.yml",
