@@ -20,6 +20,30 @@ from exclusion_records import approval, matches
 from rule_sources import adapt, read_documents, template_reason, validate_attack_tags
 
 LEVELS = ["informational", "low", "medium", "high", "critical"]
+# pySigma deletes control characters from these fields, so "one\ntwo" would
+# become "onetwo"; folding the breaks first keeps the words apart.
+METADATA_FIELDS = ("title", "name", "taxonomy", "description", "license", "references", "author",
+                   "fields", "falsepositives", "scope")
+BREAKS = "\t\n\x0b\x0c\r\x85\u2028\u2029"
+EDGE_BREAKS = re.compile(rf"^\s*[{BREAKS}]\s*|\s*[{BREAKS}]\s*$")
+INNER_BREAKS = re.compile(rf"\s*[{BREAKS}]\s*")
+
+
+def fold_breaks(value):
+    if isinstance(value, str):
+        return INNER_BREAKS.sub(" ", EDGE_BREAKS.sub("", value))
+    if isinstance(value, list):
+        return [fold_breaks(item) for item in value]
+    return value
+
+
+def parseable(data):
+    """A copy of a rule document whose metadata line breaks are single spaces."""
+    data = deepcopy(data)
+    for key in METADATA_FIELDS:
+        if key in data:
+            data[key] = fold_breaks(data[key])
+    return data
 
 
 def artifact_name(source, profile, kind):
@@ -216,7 +240,7 @@ def compile_source(source, spec, root, exclusions):
                         excluded_references[reference] = reason
                 continue
             try:
-                rules = SigmaCollection.from_dicts([deepcopy(document.data)], resolve_references=False).rules
+                rules = SigmaCollection.from_dicts([parseable(document.data)], resolve_references=False).rules
                 if len(rules) != 1:
                     raise ValueError("Expected one rule per adapted document")
                 parsed.append((rules[0], document))

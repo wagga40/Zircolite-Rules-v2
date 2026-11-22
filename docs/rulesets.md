@@ -36,7 +36,9 @@ Entries use the SQLite backend's schema version 2:
 - `rule` holds the SQL queries.
 - `required_fields` lists the columns those queries use.
 - `result_type` is `event` or `correlation`.
-- The usual Sigma metadata comes along.
+- The usual Sigma metadata comes along. Line breaks in it become single spaces.
+
+Backend 2.2.0 follows the Sigma 2.1 specification for modifiers. `windash` tries every Windows dash spelling at each dash of a value. `gt`, `gte`, `lt` and `lte` compare numeric text by value. `re|startswith` and `re|endswith` stay within the field. `channel` and `eventid` list the shortest Channel and EventID values the query requires.
 
 This repository adds three fields:
 
