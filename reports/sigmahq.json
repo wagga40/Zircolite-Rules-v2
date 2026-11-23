@@ -14053,7 +14053,7 @@
       "path": "rules/windows/network_connection/net_connection_win_domain_dead_drop_resolvers.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "256dd94c7d9bac8bfeca7f8cae7b76b1a95e579022e456c0f5cac6dd0bf18f07"
+      "sha256": "c4bf7f3a81e14135d3d0d9f0b96b3a63b220b353955eb117b02c4b51f477eef3"
     },
     {
       "document": "0",
@@ -16664,7 +16664,7 @@
       "path": "rules-threat-hunting/windows/network_connection/net_connection_win_susp_azurefd_connection.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "318b6e1732ad3bd0956c5c1750162ce36bf2a216d5a586010454f04c43949b10"
+      "sha256": "7e8b251d4470c78c4d3227c50303e8a70267086a3f5cf3b7ce4dd70db73741f8"
     },
     {
       "document": "0",
@@ -25155,7 +25155,7 @@
       "path": "rules/windows/network_connection/net_connection_win_domain_dead_drop_resolvers.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "256dd94c7d9bac8bfeca7f8cae7b76b1a95e579022e456c0f5cac6dd0bf18f07"
+      "sha256": "c4bf7f3a81e14135d3d0d9f0b96b3a63b220b353955eb117b02c4b51f477eef3"
     },
     {
       "document": "0",
@@ -32239,7 +32239,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_registry_enumeration_for_credentials_cli.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "89b1fe5201771ebda9e0e95561e4d552a67bcd8adf9e92b062ff2373b281afdf"
+      "sha256": "3dd8c707b0725b1ab88169bc34ed112bab050fd1878c677cfc59b9f20903830c"
     },
     {
       "document": "0",
@@ -32778,7 +32778,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_renamed_vmnat.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "1cbd26c7915cec35fbb3b27bf8e137ef3799919661775255b30d6e0921377a45"
+      "sha256": "92b07529a1a1e95cf54067d9cfd7ea0aed0cb0d70de7f1f103c09d9d493efc89"
     },
     {
       "document": "0",
@@ -38259,7 +38259,7 @@
       "path": "rules-emerging-threats/2021/Exploits/CVE-2021-26857/proc_creation_win_exploit_cve_2021_26857_msexchange.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "354110168f5c99e4ba6e595258f5be18846cdc443ce10748109898a716f56428"
+      "sha256": "a4de4513029418b439155f85149f0c5bcd1a8cc3dd32a409df429406fbc9eb3c"
     },
     {
       "document": "0",
@@ -40821,7 +40821,7 @@
       "path": "rules-threat-hunting/windows/network_connection/net_connection_win_susp_azurefd_connection.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "318b6e1732ad3bd0956c5c1750162ce36bf2a216d5a586010454f04c43949b10"
+      "sha256": "7e8b251d4470c78c4d3227c50303e8a70267086a3f5cf3b7ce4dd70db73741f8"
     },
     {
       "document": "0",
@@ -52099,7 +52099,7 @@
       "document": "0",
       "id": "297ae038-edc2-4b2e-bb3e-7c5fc94dd5c7",
       "path": "rules/windows/network_connection/net_connection_win_domain_dead_drop_resolvers.yml",
-      "sha256": "256dd94c7d9bac8bfeca7f8cae7b76b1a95e579022e456c0f5cac6dd0bf18f07"
+      "sha256": "c4bf7f3a81e14135d3d0d9f0b96b3a63b220b353955eb117b02c4b51f477eef3"
     },
     {
       "adaptations": {},
@@ -59183,7 +59183,7 @@
       "document": "0",
       "id": "87a476dc-0079-4583-a985-dee7a20a03de",
       "path": "rules/windows/process_creation/proc_creation_win_registry_enumeration_for_credentials_cli.yml",
-      "sha256": "89b1fe5201771ebda9e0e95561e4d552a67bcd8adf9e92b062ff2373b281afdf"
+      "sha256": "3dd8c707b0725b1ab88169bc34ed112bab050fd1878c677cfc59b9f20903830c"
     },
     {
       "adaptations": {},
@@ -59722,7 +59722,7 @@
       "document": "0",
       "id": "7b4f794b-590a-4ad4-ba18-7964a2832205",
       "path": "rules/windows/process_creation/proc_creation_win_renamed_vmnat.yml",
-      "sha256": "1cbd26c7915cec35fbb3b27bf8e137ef3799919661775255b30d6e0921377a45"
+      "sha256": "92b07529a1a1e95cf54067d9cfd7ea0aed0cb0d70de7f1f103c09d9d493efc89"
     },
     {
       "adaptations": {},
@@ -65224,7 +65224,7 @@
       "document": "0",
       "id": "cd479ccc-d8f0-4c66-ba7d-e06286f3f887",
       "path": "rules-emerging-threats/2021/Exploits/CVE-2021-26857/proc_creation_win_exploit_cve_2021_26857_msexchange.yml",
-      "sha256": "354110168f5c99e4ba6e595258f5be18846cdc443ce10748109898a716f56428"
+      "sha256": "a4de4513029418b439155f85149f0c5bcd1a8cc3dd32a409df429406fbc9eb3c"
     },
     {
       "adaptations": {},
@@ -68031,7 +68031,7 @@
       "document": "0",
       "id": "8cb4d14e-776e-43c2-8fb9-91e7fcea32b4",
       "path": "rules-threat-hunting/windows/network_connection/net_connection_win_susp_azurefd_connection.yml",
-      "sha256": "318b6e1732ad3bd0956c5c1750162ce36bf2a216d5a586010454f04c43949b10"
+      "sha256": "7e8b251d4470c78c4d3227c50303e8a70267086a3f5cf3b7ce4dd70db73741f8"
     },
     {
       "adaptations": {},
@@ -68630,7 +68630,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "698f0912f571d5fac3bf8c51f5421139834a011c",
+  "revision": "cb38b6b2f8195dc27caf0b1d57020a59b977c67e",
   "source": "sigmahq",
   "status": "validated",
   "tools": {
