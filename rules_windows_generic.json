@@ -86728,7 +86728,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\wsl.exe' ESCAPE '\\' OR OriginalFileName='wsl') AND (CommandLine LIKE '% --install %' ESCAPE '\\' OR CommandLine LIKE '% -i %' ESCAPE '\\') AND CommandLine LIKE '%kali%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\wsl.exe' ESCAPE '\\' OR OriginalFileName='wsl.exe') AND (CommandLine LIKE '% --install %' ESCAPE '\\' OR CommandLine LIKE '% -i %' ESCAPE '\\') AND CommandLine LIKE '%kali%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "sigmahq",

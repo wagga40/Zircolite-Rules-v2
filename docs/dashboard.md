@@ -4,28 +4,28 @@ Generated from the verified release on every update; do not edit.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/overview-dark.svg">
-  <img alt="15 of 15 sources current; 4,943 unique Windows detections (7,676 entries in rules_windows_all.json); 312 Linux rules; 50 experimental correlations; rules last changed 2026-11-23. Severity of unique detections: informational 137, low 363, medium 2,123, high 2,005, critical 320." src="assets/overview-light.svg" width="100%">
+  <img alt="15 of 15 sources current; 4,943 unique Windows detections (7,676 entries in rules_windows_all.json); 312 Linux rules; 50 experimental correlations; rules last changed 2026-11-24. Severity of unique detections: informational 137, low 363, medium 2,123, high 2,005, critical 320." src="assets/overview-light.svg" width="100%">
 </picture>
 
 ## Sources
 
 | Source | Status | License | Revision | Last success (UTC) | Detection rules |
 |---|---|---|---|---|---:|
-| [sigmahq](https://github.com/SigmaHQ/sigma) | current | DRL-1.1 | [cb38b6b2f819](https://github.com/SigmaHQ/sigma/tree/cb38b6b2f8195dc27caf0b1d57020a59b977c67e) | 2026-11-23 09:12 | 3,061 |
-| [adpack](https://github.com/404SecNotFound/Active-Directory-Pentest-Detection-Pack) | current | MIT | [00bfe53ad2da](https://github.com/404SecNotFound/Active-Directory-Pentest-Detection-Pack/tree/00bfe53ad2da9074cf2207d8473fc2e893d64e56) | 2026-11-23 09:13 | 208 |
-| [dragon](https://github.com/frknaykc/Dragon-ThreatResearchHQ) | current | MIT | [47b5f65e6e65](https://github.com/frknaykc/Dragon-ThreatResearchHQ/tree/47b5f65e6e65dc9ce1a4829242cf61ff6e12eb98) | 2026-11-23 09:13 | 37 |
-| [hatchepsoute](https://github.com/Hatchepsoute/sigma-rules) | current | Apache-2.0 | [3dd7e7075865](https://github.com/Hatchepsoute/sigma-rules/tree/3dd7e7075865be60d307aeb13deb33352e5429a5) | 2026-11-23 09:13 | 165 |
-| [hayabusa](https://github.com/Yamato-Security/hayabusa-rules) | current | DRL-1.1 | [57743fd6a2fc](https://github.com/Yamato-Security/hayabusa-rules/tree/57743fd6a2fc46bdf330dac69619e68347e033b6) | 2026-11-23 09:13 | 188 |
-| [huntress](https://github.com/huntresslabs/threat-intel) | current | MIT | [bf913c1e770b](https://github.com/huntresslabs/threat-intel/tree/bf913c1e770b39274c66d5720299410daec13ecb) | 2026-11-23 09:13 | 46 |
-| [joesecurity](https://github.com/joesecurity/sigma-rules) | current | GPL-3.0 | [cb91be06c8c9](https://github.com/joesecurity/sigma-rules/tree/cb91be06c8c95ce63aa9aa5006a7835678136a96) | 2026-11-23 09:13 | 110 |
-| [loldrivers](https://github.com/magicsword-io/LOLDrivers) | current | Apache-2.0 | [39c70ca64ae9](https://github.com/magicsword-io/LOLDrivers/tree/39c70ca64ae9b66650e2c50e011eec6f7354e9cf) | 2026-11-23 09:13 | 6 |
-| [lolrmm](https://github.com/magicsword-io/LOLRMM) | current | Apache-2.0 | [0c2d56639673](https://github.com/magicsword-io/LOLRMM/tree/0c2d56639673a232ff9d2548e16c6d045d3a1217) | 2026-11-23 09:13 | 702 |
-| [mbabinski](https://github.com/mbabinski/Sigma-Rules) | current | GPL-3.0 | [9dea7a5c15cf](https://github.com/mbabinski/Sigma-Rules/tree/9dea7a5c15cfd422ec320e7fabd93f0c3634181d) | 2026-11-23 09:13 | 208 |
-| [mdecrevoisier](https://github.com/mdecrevoisier/SIGMA-detection-rules) | current | CC0-1.0 | [d61408af8769](https://github.com/mdecrevoisier/SIGMA-detection-rules/tree/d61408af8769c74c96296b7ccc92d4bc3abb15af) | 2026-11-23 09:13 | 330 |
-| [reversinglabs](https://github.com/reversinglabs/reversinglabs-siem-rules) | current | MIT | [23fc452b527f](https://github.com/reversinglabs/reversinglabs-siem-rules/tree/23fc452b527f2f8e08c26c6dffc0f734e750a2be) | 2026-11-23 09:13 | 7 |
-| [tsale](https://github.com/tsale/Sigma_rules) | current | GPL-3.0 | [f5190e6b6c5b](https://github.com/tsale/Sigma_rules/tree/f5190e6b6c5ba9e6729845f13ac916590e90b0d8) | 2026-11-23 09:13 | 47 |
-| [tyrian](https://github.com/zshguy/tyrian-detection-pack) | current | MIT | [b2cea417bcbd](https://github.com/zshguy/tyrian-detection-pack/tree/b2cea417bcbd1316ac571b29a5dc459ce387a7c2) | 2026-11-23 09:13 | 73 |
-| [wrg11](https://github.com/WRG-11/wrg-sigma-rules) | current | MIT | [41c54e3fd904](https://github.com/WRG-11/wrg-sigma-rules/tree/41c54e3fd9042b29ebe458f6c7388b14b8a62df1) | 2026-11-23 09:13 | 110 |
+| [sigmahq](https://github.com/SigmaHQ/sigma) | current | DRL-1.1 | [7228cccddc63](https://github.com/SigmaHQ/sigma/tree/7228cccddc63a771924ab585e072f4fbb63690fb) | 2026-11-24 11:05 | 3,061 |
+| [adpack](https://github.com/404SecNotFound/Active-Directory-Pentest-Detection-Pack) | current | MIT | [00bfe53ad2da](https://github.com/404SecNotFound/Active-Directory-Pentest-Detection-Pack/tree/00bfe53ad2da9074cf2207d8473fc2e893d64e56) | 2026-11-24 11:05 | 208 |
+| [dragon](https://github.com/frknaykc/Dragon-ThreatResearchHQ) | current | MIT | [47b5f65e6e65](https://github.com/frknaykc/Dragon-ThreatResearchHQ/tree/47b5f65e6e65dc9ce1a4829242cf61ff6e12eb98) | 2026-11-24 11:05 | 37 |
+| [hatchepsoute](https://github.com/Hatchepsoute/sigma-rules) | current | Apache-2.0 | [3dd7e7075865](https://github.com/Hatchepsoute/sigma-rules/tree/3dd7e7075865be60d307aeb13deb33352e5429a5) | 2026-11-24 11:05 | 165 |
+| [hayabusa](https://github.com/Yamato-Security/hayabusa-rules) | current | DRL-1.1 | [8cbe36bfed28](https://github.com/Yamato-Security/hayabusa-rules/tree/8cbe36bfed2891dd4262b6030a6d26a89d43da06) | 2026-11-24 11:05 | 188 |
+| [huntress](https://github.com/huntresslabs/threat-intel) | current | MIT | [bf913c1e770b](https://github.com/huntresslabs/threat-intel/tree/bf913c1e770b39274c66d5720299410daec13ecb) | 2026-11-24 11:06 | 46 |
+| [joesecurity](https://github.com/joesecurity/sigma-rules) | current | GPL-3.0 | [cb91be06c8c9](https://github.com/joesecurity/sigma-rules/tree/cb91be06c8c95ce63aa9aa5006a7835678136a96) | 2026-11-24 11:06 | 110 |
+| [loldrivers](https://github.com/magicsword-io/LOLDrivers) | current | Apache-2.0 | [39c70ca64ae9](https://github.com/magicsword-io/LOLDrivers/tree/39c70ca64ae9b66650e2c50e011eec6f7354e9cf) | 2026-11-24 11:06 | 6 |
+| [lolrmm](https://github.com/magicsword-io/LOLRMM) | current | Apache-2.0 | [0c2d56639673](https://github.com/magicsword-io/LOLRMM/tree/0c2d56639673a232ff9d2548e16c6d045d3a1217) | 2026-11-24 11:06 | 702 |
+| [mbabinski](https://github.com/mbabinski/Sigma-Rules) | current | GPL-3.0 | [9dea7a5c15cf](https://github.com/mbabinski/Sigma-Rules/tree/9dea7a5c15cfd422ec320e7fabd93f0c3634181d) | 2026-11-24 11:06 | 208 |
+| [mdecrevoisier](https://github.com/mdecrevoisier/SIGMA-detection-rules) | current | CC0-1.0 | [d61408af8769](https://github.com/mdecrevoisier/SIGMA-detection-rules/tree/d61408af8769c74c96296b7ccc92d4bc3abb15af) | 2026-11-24 11:06 | 330 |
+| [reversinglabs](https://github.com/reversinglabs/reversinglabs-siem-rules) | current | MIT | [23fc452b527f](https://github.com/reversinglabs/reversinglabs-siem-rules/tree/23fc452b527f2f8e08c26c6dffc0f734e750a2be) | 2026-11-24 11:06 | 7 |
+| [tsale](https://github.com/tsale/Sigma_rules) | current | GPL-3.0 | [f5190e6b6c5b](https://github.com/tsale/Sigma_rules/tree/f5190e6b6c5ba9e6729845f13ac916590e90b0d8) | 2026-11-24 11:06 | 47 |
+| [tyrian](https://github.com/zshguy/tyrian-detection-pack) | current | MIT | [b2cea417bcbd](https://github.com/zshguy/tyrian-detection-pack/tree/b2cea417bcbd1316ac571b29a5dc459ce387a7c2) | 2026-11-24 11:06 | 73 |
+| [wrg11](https://github.com/WRG-11/wrg-sigma-rules) | current | MIT | [41c54e3fd904](https://github.com/WRG-11/wrg-sigma-rules/tree/41c54e3fd9042b29ebe458f6c7388b14b8a62df1) | 2026-11-24 11:06 | 110 |
 
 ## Inside `rules_windows_all.json`
 

@@ -12786,7 +12786,7 @@
       "path": "rules/windows/file/file_event/file_event_win_shell_write_susp_files_extensions.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "a535e71be395ca18203fbedbbbae0520aaaab9ef3819ca32385a2f71ec4d0c08"
+      "sha256": "a984cb101cc93cfb3b18e070f6eba5780240d77db2ba877a18583d701987ab71"
     },
     {
       "document": "0",
@@ -23888,7 +23888,7 @@
       "path": "rules/windows/file/file_event/file_event_win_shell_write_susp_files_extensions.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "a535e71be395ca18203fbedbbbae0520aaaab9ef3819ca32385a2f71ec4d0c08"
+      "sha256": "a984cb101cc93cfb3b18e070f6eba5780240d77db2ba877a18583d701987ab71"
     },
     {
       "document": "0",
@@ -35480,7 +35480,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_wsl_kali_linux_installation.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "db9051ab6acbd9556849449451abfc7588b55efbc34aedef52c57338912fd482"
+      "sha256": "3f82c7143ec8ee5a457fc92e2988f18b34a8f6a95417f9c31348d008841780d4"
     },
     {
       "document": "0",
@@ -50832,7 +50832,7 @@
       "document": "0",
       "id": "b8fd0e93-ff58-4cbd-8f48-1c114e342e62",
       "path": "rules/windows/file/file_event/file_event_win_shell_write_susp_files_extensions.yml",
-      "sha256": "a535e71be395ca18203fbedbbbae0520aaaab9ef3819ca32385a2f71ec4d0c08"
+      "sha256": "a984cb101cc93cfb3b18e070f6eba5780240d77db2ba877a18583d701987ab71"
     },
     {
       "adaptations": {},
@@ -62424,7 +62424,7 @@
       "document": "0",
       "id": "eca8ae39-5c3c-4321-b538-9e64fe25822e",
       "path": "rules/windows/process_creation/proc_creation_win_wsl_kali_linux_installation.yml",
-      "sha256": "db9051ab6acbd9556849449451abfc7588b55efbc34aedef52c57338912fd482"
+      "sha256": "3f82c7143ec8ee5a457fc92e2988f18b34a8f6a95417f9c31348d008841780d4"
     },
     {
       "adaptations": {},
@@ -68630,7 +68630,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "cb38b6b2f8195dc27caf0b1d57020a59b977c67e",
+  "revision": "7228cccddc63a771924ab585e072f4fbb63690fb",
   "source": "sigmahq",
   "status": "validated",
   "tools": {
