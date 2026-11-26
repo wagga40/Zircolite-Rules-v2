@@ -234463,7 +234463,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((Image LIKE '%\\\\regsvr32.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\REGSVR32.EXE' ESCAPE '\\') AND CommandLine LIKE '% \\\\\\\\%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Microsoft-Windows-Sysmon/Operational' AND (EventID=1 AND ((Image LIKE '%\\\\regsvr32.exe' ESCAPE '\\' OR OriginalFileName='REGSVR32.EXE') AND CommandLine LIKE '% \\\\\\\\%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "sigmahq",
@@ -234504,7 +234504,7 @@
     ],
     "result_type": "event",
     "rule": [
-      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\regsvr32.exe' ESCAPE '\\' OR OriginalFileName LIKE '\\\\REGSVR32.EXE' ESCAPE '\\') AND CommandLine LIKE '% \\\\\\\\%' ESCAPE '\\'))"
+      "SELECT * FROM logs WHERE Channel='Security' AND (EventID=4688 AND ((NewProcessName LIKE '%\\\\regsvr32.exe' ESCAPE '\\' OR OriginalFileName='REGSVR32.EXE') AND CommandLine LIKE '% \\\\\\\\%' ESCAPE '\\'))"
     ],
     "schema_version": 2,
     "source": "sigmahq",

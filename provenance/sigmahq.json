@@ -830,14 +830,14 @@
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_new_acl_entries.yml",
       "profile": "sysmon",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "a3c463725ba9d81e216f6612a3dfcd8ea885f406a0c9904dad8540a5ffe87a69"
+      "sha256": "64f7adb83e77264cbb40e9eafba79610d11bf1501a5270e03872b3a4b7571423"
     },
     {
       "document": "0",
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_new_route_added.yml",
       "profile": "sysmon",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "ead44eb0d604bf80db74a28468da5241a803ab248299016c79a70544ec81a41c"
+      "sha256": "f679dcf89fe7fc3466b797d09495db08e4108e80cf4666566c57a36cdfd8f03c"
     },
     {
       "document": "0",
@@ -858,21 +858,21 @@
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_security_group_change_ingress_egress.yml",
       "profile": "sysmon",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "c23b903deb40fefbb02eb93410d5b6ee6c656beb09d11d14ef500692b60f0b40"
+      "sha256": "e3ee538993e7ab47604b2cb770473f0679b7d91735626a352db9acc755105223"
     },
     {
       "document": "0",
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_security_group_change_loadbalancer.yml",
       "profile": "sysmon",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "5e26345487b7466b63cb10d2f976461b6b6c6882ae2d791da54fe01a4fb2bc41"
+      "sha256": "1e5c63ef56a6088f6b3dee8132dd9d0a6e3a0c611097e80b8115424dce56dd17"
     },
     {
       "document": "0",
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_security_group_change_rds.yml",
       "profile": "sysmon",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "7d556a2914fb4c6ecc907a45b029d51084b05c26dfe00b0b610b99c92146fa72"
+      "sha256": "ff568a4ad7d1dc7039e25b59b022af655bbd5bf74dd545035c3fbca843e2917d"
     },
     {
       "document": "0",
@@ -977,7 +977,7 @@
       "path": "rules/cloud/aws/cloudtrail/aws_eks_cluster_created_or_deleted.yml",
       "profile": "sysmon",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "14feca5a239fb6ccf083ae7a8bf2ad68847565f8ebc192b3d037c5caca079a2f"
+      "sha256": "247d074a434acb6316225cca15ce9d5405e5a7b6142996b85de7b3512e665811"
     },
     {
       "document": "0",
@@ -2139,7 +2139,7 @@
       "path": "rules/cloud/gcp/audit/gcp_vpn_tunnel_modified_or_deleted.yml",
       "profile": "sysmon",
       "reason": "logsource product 'gcp' is outside this profile",
-      "sha256": "7dbd2c99f0db15f3a124eadf7f6e21ee88886f9e4fb2d1dabe77ab447367a986"
+      "sha256": "b457aac72d4005799eeb4e2f7a01d3d8fb0fad15b98926782be532e0213af400"
     },
     {
       "document": "0",
@@ -2230,7 +2230,7 @@
       "path": "rules/cloud/m365/audit/microsoft365_new_federated_domain_added_audit.yml",
       "profile": "sysmon",
       "reason": "logsource product 'm365' is outside this profile",
-      "sha256": "c1730f901e0095c8b548c90c747832329e08a2d15872400cb84abc6d727b89d7"
+      "sha256": "0cbcf3f55e6fadb142ffd5f271c938ee5d55cfb7d93e5244df5fd0579f735806"
     },
     {
       "document": "0",
@@ -2244,7 +2244,7 @@
       "path": "rules/cloud/m365/exchange/microsoft365_new_federated_domain_added_exchange.yml",
       "profile": "sysmon",
       "reason": "logsource product 'm365' is outside this profile",
-      "sha256": "a5d98ed4044c1ebc5e64590c90089c4c59ee108237adffacbc3311050804bbeb"
+      "sha256": "3d1dbfc7795970eaa90fcd883532b843b18ba95bf17c469f1d91d985b812ec3b"
     },
     {
       "document": "0",
@@ -2811,7 +2811,7 @@
       "path": "rules/linux/auditd/path/lnx_auditd_unix_shell_configuration_modification.yml",
       "profile": "sysmon",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "42c6895752245758d4c2dd68e6bece3876c73df418f9ee2d6b41f4ba411c7c9a"
+      "sha256": "551b881ca076058ca49e5ac18f805a54435f63750904e6e7d2100eff202935d4"
     },
     {
       "document": "0",
@@ -3105,7 +3105,7 @@
       "path": "rules/linux/network_connection/net_connection_lnx_crypto_mining_indicators.yml",
       "profile": "sysmon",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "3043ef5b176277a389aaf782fddda6aa15916fa0ef1657772cf079a5809ce976"
+      "sha256": "8ece7a57c3933a106c16966d0d37b4b5e9f5d36ea04b10ec84003c922f7bb597"
     },
     {
       "document": "0",
@@ -3308,7 +3308,7 @@
       "path": "rules/linux/process_creation/proc_creation_lnx_crypto_mining.yml",
       "profile": "sysmon",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "5e6041f1d175d91f877da25024205444fc725aff06dffa4f7312200a9c8b378a"
+      "sha256": "62f40984c1cb6abb6de6a3be07960821307706f4f3e8bbfdca328a5941bd06ea"
     },
     {
       "document": "0",
@@ -3336,7 +3336,7 @@
       "path": "rules/linux/process_creation/proc_creation_lnx_dd_process_injection.yml",
       "profile": "sysmon",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "b33a2caba571e7feeb84116a0e958d5ba9602cf800e3e9ea0375216f03feb3a8"
+      "sha256": "725d8b860a26c952df5ecf8a14ef8506212d5b4b1390b5fe9aeaaeaf328cf245"
     },
     {
       "document": "0",
@@ -3483,7 +3483,7 @@
       "path": "rules/linux/process_creation/proc_creation_lnx_install_root_certificate.yml",
       "profile": "sysmon",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "28a1e9b4a8af9500bcc356585906cb6cf91259883572a671de9428c7d20c0c10"
+      "sha256": "10fd9d80724df989f86ea7558013922d5a9aeb73bb7fc055242816ee0eac3e22"
     },
     {
       "document": "0",
@@ -3994,7 +3994,7 @@
       "path": "rules/macos/file_event/file_event_macos_emond_launch_daemon.yml",
       "profile": "sysmon",
       "reason": "logsource product 'macos' is outside this profile",
-      "sha256": "871b7f4de0eec009f3c2b86a4d0f9d189ef65a3b8493ec12737ba4538f89877a"
+      "sha256": "ed0abad85de89044c4936177edbf436ace02e51fa1d2762d1c5b91cf5a4f4eb7"
     },
     {
       "document": "0",
@@ -4883,7 +4883,7 @@
       "path": "rules/web/proxy_generic/proxy_download_susp_tlds_blacklist.yml",
       "profile": "sysmon",
       "reason": "logsource product None is outside this profile",
-      "sha256": "3f331d3bf8ea9d4a6e218b01379e033d39e3f5e0b4f873b4a92d0103eabac22a"
+      "sha256": "2df853d528466b2f09800165b0ba3bd69f097657f8031191114a7f189854ba06"
     },
     {
       "document": "0",
@@ -5037,7 +5037,7 @@
       "path": "rules/web/proxy_generic/proxy_ua_malware.yml",
       "profile": "sysmon",
       "reason": "logsource product None is outside this profile",
-      "sha256": "532035a4b8c7f1c588fc54f2981897adbf7f0bbf2a45a8372f137c15c9664e9f"
+      "sha256": "63b54fbd7abf53330887004a39be31266631e2847fbb7da56cd7b2448f5ad61e"
     },
     {
       "document": "0",
@@ -6101,7 +6101,7 @@
       "path": "rules-emerging-threats/2025/Exploits/CVE-2025-55182/proc_creation_lnx_exploit_cve_2025_55182_susp_nodejs_server_child_process.yml",
       "profile": "sysmon",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "2d2662f774ffba9f661c84cf85a4b6ba71df45c702baacdd3c2a8ee835b11bac"
+      "sha256": "a3d0595124d2fb0de958c2db7b99f906a6f303ebc6f7715bd4855dfd0263f92b"
     },
     {
       "document": "0",
@@ -7242,14 +7242,14 @@
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_new_acl_entries.yml",
       "profile": "generic",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "a3c463725ba9d81e216f6612a3dfcd8ea885f406a0c9904dad8540a5ffe87a69"
+      "sha256": "64f7adb83e77264cbb40e9eafba79610d11bf1501a5270e03872b3a4b7571423"
     },
     {
       "document": "0",
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_new_route_added.yml",
       "profile": "generic",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "ead44eb0d604bf80db74a28468da5241a803ab248299016c79a70544ec81a41c"
+      "sha256": "f679dcf89fe7fc3466b797d09495db08e4108e80cf4666566c57a36cdfd8f03c"
     },
     {
       "document": "0",
@@ -7270,21 +7270,21 @@
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_security_group_change_ingress_egress.yml",
       "profile": "generic",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "c23b903deb40fefbb02eb93410d5b6ee6c656beb09d11d14ef500692b60f0b40"
+      "sha256": "e3ee538993e7ab47604b2cb770473f0679b7d91735626a352db9acc755105223"
     },
     {
       "document": "0",
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_security_group_change_loadbalancer.yml",
       "profile": "generic",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "5e26345487b7466b63cb10d2f976461b6b6c6882ae2d791da54fe01a4fb2bc41"
+      "sha256": "1e5c63ef56a6088f6b3dee8132dd9d0a6e3a0c611097e80b8115424dce56dd17"
     },
     {
       "document": "0",
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_security_group_change_rds.yml",
       "profile": "generic",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "7d556a2914fb4c6ecc907a45b029d51084b05c26dfe00b0b610b99c92146fa72"
+      "sha256": "ff568a4ad7d1dc7039e25b59b022af655bbd5bf74dd545035c3fbca843e2917d"
     },
     {
       "document": "0",
@@ -7389,7 +7389,7 @@
       "path": "rules/cloud/aws/cloudtrail/aws_eks_cluster_created_or_deleted.yml",
       "profile": "generic",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "14feca5a239fb6ccf083ae7a8bf2ad68847565f8ebc192b3d037c5caca079a2f"
+      "sha256": "247d074a434acb6316225cca15ce9d5405e5a7b6142996b85de7b3512e665811"
     },
     {
       "document": "0",
@@ -8551,7 +8551,7 @@
       "path": "rules/cloud/gcp/audit/gcp_vpn_tunnel_modified_or_deleted.yml",
       "profile": "generic",
       "reason": "logsource product 'gcp' is outside this profile",
-      "sha256": "7dbd2c99f0db15f3a124eadf7f6e21ee88886f9e4fb2d1dabe77ab447367a986"
+      "sha256": "b457aac72d4005799eeb4e2f7a01d3d8fb0fad15b98926782be532e0213af400"
     },
     {
       "document": "0",
@@ -8642,7 +8642,7 @@
       "path": "rules/cloud/m365/audit/microsoft365_new_federated_domain_added_audit.yml",
       "profile": "generic",
       "reason": "logsource product 'm365' is outside this profile",
-      "sha256": "c1730f901e0095c8b548c90c747832329e08a2d15872400cb84abc6d727b89d7"
+      "sha256": "0cbcf3f55e6fadb142ffd5f271c938ee5d55cfb7d93e5244df5fd0579f735806"
     },
     {
       "document": "0",
@@ -8656,7 +8656,7 @@
       "path": "rules/cloud/m365/exchange/microsoft365_new_federated_domain_added_exchange.yml",
       "profile": "generic",
       "reason": "logsource product 'm365' is outside this profile",
-      "sha256": "a5d98ed4044c1ebc5e64590c90089c4c59ee108237adffacbc3311050804bbeb"
+      "sha256": "3d1dbfc7795970eaa90fcd883532b843b18ba95bf17c469f1d91d985b812ec3b"
     },
     {
       "document": "0",
@@ -9223,7 +9223,7 @@
       "path": "rules/linux/auditd/path/lnx_auditd_unix_shell_configuration_modification.yml",
       "profile": "generic",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "42c6895752245758d4c2dd68e6bece3876c73df418f9ee2d6b41f4ba411c7c9a"
+      "sha256": "551b881ca076058ca49e5ac18f805a54435f63750904e6e7d2100eff202935d4"
     },
     {
       "document": "0",
@@ -9517,7 +9517,7 @@
       "path": "rules/linux/network_connection/net_connection_lnx_crypto_mining_indicators.yml",
       "profile": "generic",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "3043ef5b176277a389aaf782fddda6aa15916fa0ef1657772cf079a5809ce976"
+      "sha256": "8ece7a57c3933a106c16966d0d37b4b5e9f5d36ea04b10ec84003c922f7bb597"
     },
     {
       "document": "0",
@@ -9720,7 +9720,7 @@
       "path": "rules/linux/process_creation/proc_creation_lnx_crypto_mining.yml",
       "profile": "generic",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "5e6041f1d175d91f877da25024205444fc725aff06dffa4f7312200a9c8b378a"
+      "sha256": "62f40984c1cb6abb6de6a3be07960821307706f4f3e8bbfdca328a5941bd06ea"
     },
     {
       "document": "0",
@@ -9748,7 +9748,7 @@
       "path": "rules/linux/process_creation/proc_creation_lnx_dd_process_injection.yml",
       "profile": "generic",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "b33a2caba571e7feeb84116a0e958d5ba9602cf800e3e9ea0375216f03feb3a8"
+      "sha256": "725d8b860a26c952df5ecf8a14ef8506212d5b4b1390b5fe9aeaaeaf328cf245"
     },
     {
       "document": "0",
@@ -9895,7 +9895,7 @@
       "path": "rules/linux/process_creation/proc_creation_lnx_install_root_certificate.yml",
       "profile": "generic",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "28a1e9b4a8af9500bcc356585906cb6cf91259883572a671de9428c7d20c0c10"
+      "sha256": "10fd9d80724df989f86ea7558013922d5a9aeb73bb7fc055242816ee0eac3e22"
     },
     {
       "document": "0",
@@ -10406,7 +10406,7 @@
       "path": "rules/macos/file_event/file_event_macos_emond_launch_daemon.yml",
       "profile": "generic",
       "reason": "logsource product 'macos' is outside this profile",
-      "sha256": "871b7f4de0eec009f3c2b86a4d0f9d189ef65a3b8493ec12737ba4538f89877a"
+      "sha256": "ed0abad85de89044c4936177edbf436ace02e51fa1d2762d1c5b91cf5a4f4eb7"
     },
     {
       "document": "0",
@@ -11295,7 +11295,7 @@
       "path": "rules/web/proxy_generic/proxy_download_susp_tlds_blacklist.yml",
       "profile": "generic",
       "reason": "logsource product None is outside this profile",
-      "sha256": "3f331d3bf8ea9d4a6e218b01379e033d39e3f5e0b4f873b4a92d0103eabac22a"
+      "sha256": "2df853d528466b2f09800165b0ba3bd69f097657f8031191114a7f189854ba06"
     },
     {
       "document": "0",
@@ -11449,7 +11449,7 @@
       "path": "rules/web/proxy_generic/proxy_ua_malware.yml",
       "profile": "generic",
       "reason": "logsource product None is outside this profile",
-      "sha256": "532035a4b8c7f1c588fc54f2981897adbf7f0bbf2a45a8372f137c15c9664e9f"
+      "sha256": "63b54fbd7abf53330887004a39be31266631e2847fbb7da56cd7b2448f5ad61e"
     },
     {
       "document": "0",
@@ -11589,7 +11589,7 @@
       "path": "rules/windows/create_remote_thread/create_remote_thread_win_hktl_cactustorch.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "b3b78153cd1372ce9d6d7c8b1c14c8318f58283d63c8cb4ec18cf5a87ad24050"
+      "sha256": "aaf11e3c8c27288c91b68f527a11f375d668009f41e0c43fee533a54f66bc3fb"
     },
     {
       "document": "0",
@@ -11694,7 +11694,7 @@
       "path": "rules/windows/create_stream_hash/create_stream_hash_hktl_generic_download.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "ff4c289e5f5a6f57b24945657baafbcab6989b0ef00bfc6eed81c004f571da61"
+      "sha256": "5c663a310400463ba347238f305cc1705584fc0df3b77cbdd4081517fa847e89"
     },
     {
       "document": "0",
@@ -11813,7 +11813,7 @@
       "path": "rules/windows/dns_query/dns_query_win_mega_nz.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "0044a476dc357cecfe489b58bd7f651608dd08e70f9a2e6fe7a9f67984ef49da"
+      "sha256": "21b6d345450aea4b209d0e113cbd5c73860cdb102aee837addf39838767f5b5f"
     },
     {
       "document": "0",
@@ -12163,7 +12163,7 @@
       "path": "rules/windows/file/file_event/file_event_win_create_non_existent_dlls.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "6bc6d5e5055ec3d520e60cf4b3017339ec2766336d7198f67347385abc8e3aa9"
+      "sha256": "fd6cc0f7980a5feb996f6736d8e8b437de2357d8531495a33f092f33cbbe920f"
     },
     {
       "document": "0",
@@ -12275,14 +12275,14 @@
       "path": "rules/windows/file/file_event/file_event_win_exchange_webshell_drop.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "6d0f05735186cd90ade6c6d33a677c66582a1d593df11abd551cb604b9acf1fc"
+      "sha256": "93fa0c7f9960c21ac9b7ae64321935357285249e65444a61ccd6b2afed58a1d9"
     },
     {
       "document": "0",
       "path": "rules/windows/file/file_event/file_event_win_exchange_webshell_drop_suspicious.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "4382699949ea9d9d8c850fe0cbffe0d0164f5372afa2f5611ca7f436a8648f02"
+      "sha256": "0f88de6f35c2df0518ea35a7ecb1b798846329c78423f85e7ed7041adf0d2f6f"
     },
     {
       "document": "0",
@@ -12394,7 +12394,7 @@
       "path": "rules/windows/file/file_event/file_event_win_initial_access_dll_search_order_hijacking.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "cbc75f89cbae90d8422b939f25a179a83fb40303bf61a0aad9d5cc6c7d69e60e"
+      "sha256": "067c10f11581f4968bcec4601a48a518b3a7f93978831bb4cb2fa42ff5e26e21"
     },
     {
       "document": "0",
@@ -12667,7 +12667,7 @@
       "path": "rules/windows/file/file_event/file_event_win_powershell_exploit_scripts.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "1e7bdc7dcc5e4d88787eb5d717511ca1f32f3b4b81befec6bf4b4b555c070c00"
+      "sha256": "f6b7f6b453b0000bb3d32bc3a9954632e079419dfa320472226db1bce05f6b20"
     },
     {
       "document": "0",
@@ -12709,7 +12709,7 @@
       "path": "rules/windows/file/file_event/file_event_win_rclone_config_files.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "0c4cc525d993fce4e91ead7b88b1d450b32db3c6846d9bb1f6fdec247495811c"
+      "sha256": "73200874737b15909d038b466bb2171cec69f95c61e6a4d58cce1180e479d098"
     },
     {
       "document": "0",
@@ -12884,7 +12884,7 @@
       "path": "rules/windows/file/file_event/file_event_win_susp_hidden_dir_index_allocation.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "6926a598d515ea2b76a448638a6fcf0c038a1624b7a5385f58eac4ddef592f05"
+      "sha256": "b660792c30d8cc9cbf7a088a22150f971e1f98c84dd2279745f35390a43c5b71"
     },
     {
       "document": "0",
@@ -13262,7 +13262,7 @@
       "path": "rules/windows/file/file_event/file_event_win_wsl_binary_modification.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "04674bea4adfd525cbb757840cd93938d2a603ef771bbcde2483fb9622a9028b"
+      "sha256": "788729fc6a378a5252951619fd96cbe607988a6b5f70d854294be54214e44ffb"
     },
     {
       "document": "0",
@@ -13710,7 +13710,7 @@
       "path": "rules/windows/image_load/image_load_side_load_non_existent_dlls.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "fcaa110cb2a0930551a2a0e9951e651eb0ecbb6f702be3885f77dc7b16fe9552"
+      "sha256": "1e86b41572059b6ecb79d51f19f38b41ffdf068c1c65864eb5d9c28143361bbb"
     },
     {
       "document": "0",
@@ -14046,7 +14046,7 @@
       "path": "rules/windows/network_connection/net_connection_win_domain_crypto_mining_pools.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "445d11c6a08def7973a41640381c34f303d64c9fecb686bfe03aade8a22c0de5"
+      "sha256": "1530609b07fa42aed94264d9ab53811c530f6d0d26a799a5fe873b9aad06554f"
     },
     {
       "document": "0",
@@ -14347,7 +14347,7 @@
       "path": "rules/windows/pipe_created/pipe_created_adfs_namedpipe_connection_uncommon_tool.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "f2f8221fc26b2daa9fd19ab04671aeda3e8aa02bb3536b3a9c752308aff58e9b"
+      "sha256": "ceca50156e3cd68d6a6a0f1376e6250dd6fbacc2de2e06e7def12330ca20ce8f"
     },
     {
       "document": "0",
@@ -14375,7 +14375,7 @@
       "path": "rules/windows/pipe_created/pipe_created_hktl_coercedpotato.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "388dcfdc6c6683eadee44feebb0a5e848620fa78cb64fd11e18c43a70c8be78e"
+      "sha256": "f0ecc428458e3aed4cf78bb87d1dd1f73c37949ed8fd9e5f1e8491f28225ec03"
     },
     {
       "document": "0",
@@ -16076,7 +16076,7 @@
       "path": "rules-emerging-threats/2025/Exploits/CVE-2025-55182/proc_creation_lnx_exploit_cve_2025_55182_susp_nodejs_server_child_process.yml",
       "profile": "generic",
       "reason": "logsource product 'linux' is outside this profile",
-      "sha256": "2d2662f774ffba9f661c84cf85a4b6ba71df45c702baacdd3c2a8ee835b11bac"
+      "sha256": "a3d0595124d2fb0de958c2db7b99f906a6f303ebc6f7715bd4855dfd0263f92b"
     },
     {
       "document": "0",
@@ -17532,14 +17532,14 @@
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_new_acl_entries.yml",
       "profile": "linux",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "a3c463725ba9d81e216f6612a3dfcd8ea885f406a0c9904dad8540a5ffe87a69"
+      "sha256": "64f7adb83e77264cbb40e9eafba79610d11bf1501a5270e03872b3a4b7571423"
     },
     {
       "document": "0",
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_new_route_added.yml",
       "profile": "linux",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "ead44eb0d604bf80db74a28468da5241a803ab248299016c79a70544ec81a41c"
+      "sha256": "f679dcf89fe7fc3466b797d09495db08e4108e80cf4666566c57a36cdfd8f03c"
     },
     {
       "document": "0",
@@ -17560,21 +17560,21 @@
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_security_group_change_ingress_egress.yml",
       "profile": "linux",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "c23b903deb40fefbb02eb93410d5b6ee6c656beb09d11d14ef500692b60f0b40"
+      "sha256": "e3ee538993e7ab47604b2cb770473f0679b7d91735626a352db9acc755105223"
     },
     {
       "document": "0",
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_security_group_change_loadbalancer.yml",
       "profile": "linux",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "5e26345487b7466b63cb10d2f976461b6b6c6882ae2d791da54fe01a4fb2bc41"
+      "sha256": "1e5c63ef56a6088f6b3dee8132dd9d0a6e3a0c611097e80b8115424dce56dd17"
     },
     {
       "document": "0",
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_security_group_change_rds.yml",
       "profile": "linux",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "7d556a2914fb4c6ecc907a45b029d51084b05c26dfe00b0b610b99c92146fa72"
+      "sha256": "ff568a4ad7d1dc7039e25b59b022af655bbd5bf74dd545035c3fbca843e2917d"
     },
     {
       "document": "0",
@@ -17679,7 +17679,7 @@
       "path": "rules/cloud/aws/cloudtrail/aws_eks_cluster_created_or_deleted.yml",
       "profile": "linux",
       "reason": "logsource product 'aws' is outside this profile",
-      "sha256": "14feca5a239fb6ccf083ae7a8bf2ad68847565f8ebc192b3d037c5caca079a2f"
+      "sha256": "247d074a434acb6316225cca15ce9d5405e5a7b6142996b85de7b3512e665811"
     },
     {
       "document": "0",
@@ -18841,7 +18841,7 @@
       "path": "rules/cloud/gcp/audit/gcp_vpn_tunnel_modified_or_deleted.yml",
       "profile": "linux",
       "reason": "logsource product 'gcp' is outside this profile",
-      "sha256": "7dbd2c99f0db15f3a124eadf7f6e21ee88886f9e4fb2d1dabe77ab447367a986"
+      "sha256": "b457aac72d4005799eeb4e2f7a01d3d8fb0fad15b98926782be532e0213af400"
     },
     {
       "document": "0",
@@ -18932,7 +18932,7 @@
       "path": "rules/cloud/m365/audit/microsoft365_new_federated_domain_added_audit.yml",
       "profile": "linux",
       "reason": "logsource product 'm365' is outside this profile",
-      "sha256": "c1730f901e0095c8b548c90c747832329e08a2d15872400cb84abc6d727b89d7"
+      "sha256": "0cbcf3f55e6fadb142ffd5f271c938ee5d55cfb7d93e5244df5fd0579f735806"
     },
     {
       "document": "0",
@@ -18946,7 +18946,7 @@
       "path": "rules/cloud/m365/exchange/microsoft365_new_federated_domain_added_exchange.yml",
       "profile": "linux",
       "reason": "logsource product 'm365' is outside this profile",
-      "sha256": "a5d98ed4044c1ebc5e64590c90089c4c59ee108237adffacbc3311050804bbeb"
+      "sha256": "3d1dbfc7795970eaa90fcd883532b843b18ba95bf17c469f1d91d985b812ec3b"
     },
     {
       "document": "0",
@@ -19219,7 +19219,7 @@
       "path": "rules/macos/file_event/file_event_macos_emond_launch_daemon.yml",
       "profile": "linux",
       "reason": "logsource product 'macos' is outside this profile",
-      "sha256": "871b7f4de0eec009f3c2b86a4d0f9d189ef65a3b8493ec12737ba4538f89877a"
+      "sha256": "ed0abad85de89044c4936177edbf436ace02e51fa1d2762d1c5b91cf5a4f4eb7"
     },
     {
       "document": "0",
@@ -20108,7 +20108,7 @@
       "path": "rules/web/proxy_generic/proxy_download_susp_tlds_blacklist.yml",
       "profile": "linux",
       "reason": "logsource product None is outside this profile",
-      "sha256": "3f331d3bf8ea9d4a6e218b01379e033d39e3f5e0b4f873b4a92d0103eabac22a"
+      "sha256": "2df853d528466b2f09800165b0ba3bd69f097657f8031191114a7f189854ba06"
     },
     {
       "document": "0",
@@ -20262,7 +20262,7 @@
       "path": "rules/web/proxy_generic/proxy_ua_malware.yml",
       "profile": "linux",
       "reason": "logsource product None is outside this profile",
-      "sha256": "532035a4b8c7f1c588fc54f2981897adbf7f0bbf2a45a8372f137c15c9664e9f"
+      "sha256": "63b54fbd7abf53330887004a39be31266631e2847fbb7da56cd7b2448f5ad61e"
     },
     {
       "document": "0",
@@ -20801,7 +20801,7 @@
       "path": "rules/windows/builtin/dns_client/win_dns_client_mega_nz.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "0b285b443c3c775f4a61de1bc790bca96be6db0d1ed7dc09e1cbaa0c93336282"
+      "sha256": "9d9948ff50b12f3d7aba989837d4f21ed7348a832f5ef9daf8afb114bc7411e7"
     },
     {
       "document": "0",
@@ -20829,7 +20829,7 @@
       "path": "rules/windows/builtin/dns_server/win_dns_server_failed_dns_zone_transfer.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "be0dae4a1ade3df0797c69035610b3d5f935693ea59e13321790087856801097"
+      "sha256": "ab87857b8c658dbff5f4b4474eaac4ba28cb2ae10fc8409d29cffce608b3ee39"
     },
     {
       "document": "0",
@@ -21144,14 +21144,14 @@
       "path": "rules/windows/builtin/security/win_security_aadhealth_mon_agent_regkey_access.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "62d903a8722813896742b39e5b81065be8638b2a2a189cb0e4847fe875fe6356"
+      "sha256": "7f5cee901b3497a69f174ba6f70510b1d4a619fef66c93c71b8dba27f670e41e"
     },
     {
       "document": "0",
       "path": "rules/windows/builtin/security/win_security_aadhealth_svc_agent_regkey_access.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "273195ca8fe7432de3f07d231f30fbad5229693a1a46e5dcfd25ab2bf1190c70"
+      "sha256": "85f30df69b680562833102b29331fe910c2964c93e315a0c226fc3f9be3cdbc7"
     },
     {
       "document": "0",
@@ -21956,7 +21956,7 @@
       "path": "rules/windows/builtin/security/win_security_teams_suspicious_objectaccess.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "2249d34fa404582464a43a7599048194e8f8af52ed560792d24bfb5f212458c7"
+      "sha256": "851ce7239797db29efca72806a84c1ee1c8ff4ab8fb27769bfb0171d52a9a69a"
     },
     {
       "document": "0",
@@ -21984,7 +21984,7 @@
       "path": "rules/windows/builtin/security/win_security_user_creation.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "07e4a4b8899f265946a0f17b524526e3350fb64e0a6751975272df84ef96df85"
+      "sha256": "c8d09b5cc6e9e39efb94fcae1e6e841ca53ceb37e78c2e4362b12774594e1457"
     },
     {
       "document": "0",
@@ -22691,7 +22691,7 @@
       "path": "rules/windows/create_remote_thread/create_remote_thread_win_hktl_cactustorch.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "b3b78153cd1372ce9d6d7c8b1c14c8318f58283d63c8cb4ec18cf5a87ad24050"
+      "sha256": "aaf11e3c8c27288c91b68f527a11f375d668009f41e0c43fee533a54f66bc3fb"
     },
     {
       "document": "0",
@@ -22796,7 +22796,7 @@
       "path": "rules/windows/create_stream_hash/create_stream_hash_hktl_generic_download.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "ff4c289e5f5a6f57b24945657baafbcab6989b0ef00bfc6eed81c004f571da61"
+      "sha256": "5c663a310400463ba347238f305cc1705584fc0df3b77cbdd4081517fa847e89"
     },
     {
       "document": "0",
@@ -22915,7 +22915,7 @@
       "path": "rules/windows/dns_query/dns_query_win_mega_nz.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "0044a476dc357cecfe489b58bd7f651608dd08e70f9a2e6fe7a9f67984ef49da"
+      "sha256": "21b6d345450aea4b209d0e113cbd5c73860cdb102aee837addf39838767f5b5f"
     },
     {
       "document": "0",
@@ -23265,7 +23265,7 @@
       "path": "rules/windows/file/file_event/file_event_win_create_non_existent_dlls.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "6bc6d5e5055ec3d520e60cf4b3017339ec2766336d7198f67347385abc8e3aa9"
+      "sha256": "fd6cc0f7980a5feb996f6736d8e8b437de2357d8531495a33f092f33cbbe920f"
     },
     {
       "document": "0",
@@ -23377,14 +23377,14 @@
       "path": "rules/windows/file/file_event/file_event_win_exchange_webshell_drop.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "6d0f05735186cd90ade6c6d33a677c66582a1d593df11abd551cb604b9acf1fc"
+      "sha256": "93fa0c7f9960c21ac9b7ae64321935357285249e65444a61ccd6b2afed58a1d9"
     },
     {
       "document": "0",
       "path": "rules/windows/file/file_event/file_event_win_exchange_webshell_drop_suspicious.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "4382699949ea9d9d8c850fe0cbffe0d0164f5372afa2f5611ca7f436a8648f02"
+      "sha256": "0f88de6f35c2df0518ea35a7ecb1b798846329c78423f85e7ed7041adf0d2f6f"
     },
     {
       "document": "0",
@@ -23496,7 +23496,7 @@
       "path": "rules/windows/file/file_event/file_event_win_initial_access_dll_search_order_hijacking.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "cbc75f89cbae90d8422b939f25a179a83fb40303bf61a0aad9d5cc6c7d69e60e"
+      "sha256": "067c10f11581f4968bcec4601a48a518b3a7f93978831bb4cb2fa42ff5e26e21"
     },
     {
       "document": "0",
@@ -23769,7 +23769,7 @@
       "path": "rules/windows/file/file_event/file_event_win_powershell_exploit_scripts.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "1e7bdc7dcc5e4d88787eb5d717511ca1f32f3b4b81befec6bf4b4b555c070c00"
+      "sha256": "f6b7f6b453b0000bb3d32bc3a9954632e079419dfa320472226db1bce05f6b20"
     },
     {
       "document": "0",
@@ -23811,7 +23811,7 @@
       "path": "rules/windows/file/file_event/file_event_win_rclone_config_files.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "0c4cc525d993fce4e91ead7b88b1d450b32db3c6846d9bb1f6fdec247495811c"
+      "sha256": "73200874737b15909d038b466bb2171cec69f95c61e6a4d58cce1180e479d098"
     },
     {
       "document": "0",
@@ -23986,7 +23986,7 @@
       "path": "rules/windows/file/file_event/file_event_win_susp_hidden_dir_index_allocation.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "6926a598d515ea2b76a448638a6fcf0c038a1624b7a5385f58eac4ddef592f05"
+      "sha256": "b660792c30d8cc9cbf7a088a22150f971e1f98c84dd2279745f35390a43c5b71"
     },
     {
       "document": "0",
@@ -24364,7 +24364,7 @@
       "path": "rules/windows/file/file_event/file_event_win_wsl_binary_modification.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "04674bea4adfd525cbb757840cd93938d2a603ef771bbcde2483fb9622a9028b"
+      "sha256": "788729fc6a378a5252951619fd96cbe607988a6b5f70d854294be54214e44ffb"
     },
     {
       "document": "0",
@@ -24812,7 +24812,7 @@
       "path": "rules/windows/image_load/image_load_side_load_non_existent_dlls.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "fcaa110cb2a0930551a2a0e9951e651eb0ecbb6f702be3885f77dc7b16fe9552"
+      "sha256": "1e86b41572059b6ecb79d51f19f38b41ffdf068c1c65864eb5d9c28143361bbb"
     },
     {
       "document": "0",
@@ -25148,7 +25148,7 @@
       "path": "rules/windows/network_connection/net_connection_win_domain_crypto_mining_pools.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "445d11c6a08def7973a41640381c34f303d64c9fecb686bfe03aade8a22c0de5"
+      "sha256": "1530609b07fa42aed94264d9ab53811c530f6d0d26a799a5fe873b9aad06554f"
     },
     {
       "document": "0",
@@ -25449,7 +25449,7 @@
       "path": "rules/windows/pipe_created/pipe_created_adfs_namedpipe_connection_uncommon_tool.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "f2f8221fc26b2daa9fd19ab04671aeda3e8aa02bb3536b3a9c752308aff58e9b"
+      "sha256": "ceca50156e3cd68d6a6a0f1376e6250dd6fbacc2de2e06e7def12330ca20ce8f"
     },
     {
       "document": "0",
@@ -25477,7 +25477,7 @@
       "path": "rules/windows/pipe_created/pipe_created_hktl_coercedpotato.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "388dcfdc6c6683eadee44feebb0a5e848620fa78cb64fd11e18c43a70c8be78e"
+      "sha256": "f0ecc428458e3aed4cf78bb87d1dd1f73c37949ed8fd9e5f1e8491f28225ec03"
     },
     {
       "document": "0",
@@ -25694,7 +25694,7 @@
       "path": "rules/windows/powershell/powershell_module/posh_pm_exploit_scripts.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "5f0b82e3b93b0a74d729713a5fcf46117c6567cae55975d5580b41ff2daeae15"
+      "sha256": "d2608810df13ebeee0abc95e79b3763d442aa646d6b537751a9b74ee0f3015b3"
     },
     {
       "document": "0",
@@ -25799,7 +25799,7 @@
       "path": "rules/windows/powershell/powershell_module/posh_pm_malicious_commandlets.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "0c420ad51761088a7e79747e03ba7399540744dc2a691615005b540b0afbfbad"
+      "sha256": "2792b243ee3a65f2c45e2d7f636606735810ed034d25ad8aa3cff53e2ca2a64e"
     },
     {
       "document": "0",
@@ -25890,7 +25890,7 @@
       "path": "rules/windows/powershell/powershell_script/posh_ps_aadinternals_cmdlets_execution.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "3b25182b87824ea6d96306257570b018a552749773d5bfe9eb869e89343f67a2"
+      "sha256": "7cdb0764ee56c3bab7ba4c8020debf233c1415e0d1b5c3d8f8c08f9badd160bd"
     },
     {
       "document": "0",
@@ -25995,7 +25995,7 @@
       "path": "rules/windows/powershell/powershell_script/posh_ps_clearing_windows_console_history.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "c61bc23013d8273293bd7321e6c64d62971d853b8bbf3477b7743ed7f2dc83fa"
+      "sha256": "d2ea9a715fbddaef763edb1e74801d01e6f99f9b5d6db005cd5a2b7d6d559db7"
     },
     {
       "document": "0",
@@ -26366,7 +26366,7 @@
       "path": "rules/windows/powershell/powershell_script/posh_ps_malicious_commandlets.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "4089336ebc222aef7b010c69f7e105aa84408feecaa7a46f34e0b6b66afcf4db"
+      "sha256": "bfc4196222c8649018233ebf1354e75b2d4f69a30fefe89ef1e48928c1be223a"
     },
     {
       "document": "0",
@@ -26737,7 +26737,7 @@
       "path": "rules/windows/powershell/powershell_script/posh_ps_susp_keywords.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "7c244db1a57ffbf421dafc586add2a1db765964d4fd6a08a99a9ce68da35b91e"
+      "sha256": "1fb16f72048804aaae35478cd2ca6b4de48ca68825e2a46fc4d47e21cc3144c0"
     },
     {
       "document": "0",
@@ -27409,7 +27409,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_bcp_export_data.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "f6fc174b80823deee95473161a12858551ddaeff279f4374290106a9680376c1"
+      "sha256": "1c891c67434e3a50e5c9e627f43fbf7c89e6faa9c18dfdd0cc172cd734034b8b"
     },
     {
       "document": "0",
@@ -27920,7 +27920,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_cmdkey_recon.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "10a8e786cde7411c5e3e15eec6f4996adb59840ada6dee6a7dfe0dba4faf5786"
+      "sha256": "6a77dd5a81537a8a8a4159cb1d8c7119fb89bf459303e86c1003704540bf2656"
     },
     {
       "document": "0",
@@ -28032,7 +28032,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_csc_susp_parent.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "2815016166e73f26df399c14b23d45124caa5a13659073df969bc8944177b53b"
+      "sha256": "d3fd2bf11d77faf8a6abca253ac6c06350700564def3ebf1d7a8048401e90b5a"
     },
     {
       "document": "0",
@@ -28795,14 +28795,14 @@
       "path": "rules/windows/process_creation/proc_creation_win_hktl_coercedpotato.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "9f8686c8b3d0dd472d64f9232902c9d31ce68135c18c26fae9be349bda645552"
+      "sha256": "8f37c7228beff73c469ae9ed0013839e9081dd7aae38fb1de5824db63ef4ecca"
     },
     {
       "document": "0",
       "path": "rules/windows/process_creation/proc_creation_win_hktl_covenant.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "a90c6c33d909a1e42b3cb9e6fa8fc1e6855ba33e26493f16917fe32d04a7be12"
+      "sha256": "2606bc69510beaaf9bcc2fcc0fb0cc6d89a82b0221755e93c826bb5340fe2dc5"
     },
     {
       "document": "0",
@@ -29495,7 +29495,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_ilasm_il_code_compilation.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "34e7ef61d405f0d343ce3e5c1ec89293b1f4f9709252b563aff5a2aad49a7016"
+      "sha256": "75cfb8c8b3a784a84ed801af955605cb35328a41ebf1337cfee7b4de0459d0f4"
     },
     {
       "document": "0",
@@ -29740,7 +29740,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_lolbin_mavinject_process_injection.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "81692bd1038aa6ab4414f2838f2b242ae0e71ea8632ff019f96a3a806a0c9fed"
+      "sha256": "90c01f217c4ec790138af9a126573e835dab96478c9f5fec771ca94fcde2ba36"
     },
     {
       "document": "0",
@@ -29971,7 +29971,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_lolbin_visualuiaverifynative.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "f91b23ef25685300b01b7c5f8807e5663e5935beb9b78439426e75d4556c063f"
+      "sha256": "a33ed7a3cb4b7a499bbeffb394f95482c1081527ffc7220ff98944fe6431c013"
     },
     {
       "document": "0",
@@ -30328,7 +30328,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_net_groups_and_accounts_recon.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "5b1ce27fd6adfc3120244c6fd121a8e8b908bbce682f7a6f940e685b81d26f93"
+      "sha256": "e65f7bf793af476601f1d04c7d4cca5fefdb8eb9d6095e3a09e27bfa8da56f2d"
     },
     {
       "document": "0",
@@ -30482,7 +30482,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_netsh_packet_capture.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "bf0d773fd9c8d0e0c9bc749a98df48a98f405982117776292bc983ddcb804f9a"
+      "sha256": "cc12396cfa7eacb9da45949f46daa24b44d0d20b27c7427ed45b9b38a07928f0"
     },
     {
       "document": "0",
@@ -30517,7 +30517,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_nltest_recon.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "a40330e4f631169523a802f3c943110077553471a6a717d3e2c3263adcd43059"
+      "sha256": "cfc600f13fb40bf8ddffedd8db10105818a5d59d843822be92555dbc9650aa06"
     },
     {
       "document": "0",
@@ -30594,7 +30594,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_odbcconf_exec_susp_locations.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "16d41440cd7294abf2da0565914bb4a0c0e66c7b7c69b5f6916de5fa380087e9"
+      "sha256": "95556b96706fe45d4f79ba1089d64967d0c07cd1a8493be6ab1e1ddf08f01152"
     },
     {
       "document": "0",
@@ -30790,7 +30790,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_powershell_aadinternals_cmdlets_execution.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "93a402a54da50a1a2395cc769b38285ac1ad86207edeb024cfc8381a73021337"
+      "sha256": "fcff867d8c7597a6a82d78a6f9a2f86f7f1bb05219e0dd3fbc91aae922ab2143"
     },
     {
       "document": "0",
@@ -31035,7 +31035,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_powershell_disable_defender_av_security_monitoring.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "02441fc165285c1cad57396befd36e0f7e5ea17e824c94f3fbfc48d96dc788ee"
+      "sha256": "053b459d63093b3aa6a5c7766ac66ffca3d9392653f4f78e2dce5981af662227"
     },
     {
       "document": "0",
@@ -31259,7 +31259,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_powershell_malicious_cmdlets.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "486c1a5bd7290e3a8438f689843263374eb5566dc2f342bd433d00421a3409e2"
+      "sha256": "52613cd3830c6f5c36d40321d2f0b6a7f0940de0c26e1188cdbf8625988e9f06"
     },
     {
       "document": "0",
@@ -31469,7 +31469,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_powershell_xor_commandline.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "b022bf266b5d8d52d047c488d01ac9b2bd3e5110c0603c3b44fc679a304e5af7"
+      "sha256": "6bd3e718a11fc63423471b93b5be7d2a831bc3f2bfcde409bc2283ac3edfeff9"
     },
     {
       "document": "0",
@@ -31686,7 +31686,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_pua_netscan.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "678f274ca377c843c7d69a1b59a1915adefeaf95b5c6d6f107d0e9bd8f0e27ba"
+      "sha256": "93c19cd1920f38ce5487ff844b8de2ebbd3737c7bd753baaf81991e9e9b91057"
     },
     {
       "document": "0",
@@ -31784,7 +31784,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_pua_rclone_execution.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "23109549e2a00d4e0ac3c0389d5fdc998ae3d7aa65832c38c8e4ad811919c418"
+      "sha256": "440d1946cabf546fb9a18822aaa50e99f5a80ce0a780d4abde719d3eac811ded"
     },
     {
       "document": "0",
@@ -32344,7 +32344,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_regsvr32_remote_share.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "545a62df8c65c9fca2650fac4aab9737d1e538fa3b5c92863e3dd9a559234177"
+      "sha256": "ff87c3b14c7c63995289ba8d8395482597ea346d9ce27363bd0a60f08942e338"
     },
     {
       "document": "0",
@@ -32491,7 +32491,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_remote_access_tools_screenconnect_installation_cli_param.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "f05c7052bfac504b7bb4e07318416c3241db04b8b850dbac32ed7002d218cd8f"
+      "sha256": "1013a04b6f9b706b55a49a1e1e44a8bf7e8ca67a06b95df94c19f4e815a0cda6"
     },
     {
       "document": "0",
@@ -32652,7 +32652,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_renamed_mavinject.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "5bd3b2497e30cc3a5b1a3485ad2d83a2bdbbea65be2635441f0d360e2fbd46bd"
+      "sha256": "33ddbf6250fa315c665ef2334ded7823e2342a641e51435c75572c22c62aa55f"
     },
     {
       "document": "0",
@@ -33051,7 +33051,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_sc_new_kernel_driver.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "de52f94de2be27c69d8b7953aabb3b2587739efa91bffbb57858dc240899c051"
+      "sha256": "6ac511fa9986fcf591fe736dcb353b0ccc85931e5577250c56513b72849e7993"
     },
     {
       "document": "0",
@@ -33275,7 +33275,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_scrcons_susp_child_process.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "f1fcc8aa9611f1d065bda98b1cbd899a5a9fd0cc0c9d02f0899d712e2e4d69a3"
+      "sha256": "5b43d86fc164c8257016b3fd80ec17d60f9cb87551d123bd3e7cde0590800f5e"
     },
     {
       "document": "0",
@@ -33667,7 +33667,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_susp_crypto_mining_monero.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "ab0e5bde99c33ca00ac32a3352a28caf821cd66a5a9e4e6972d82388b20636ab"
+      "sha256": "6acc3222579731e45e7ba1b5e44323120dcc4ddd6f9b16bc4b8d826e60249b61"
     },
     {
       "document": "0",
@@ -33793,7 +33793,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_susp_eventlog_clear.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "8e7219c92a73b60128a7192521879f97407d37c12a1c567a6975247340cb5624"
+      "sha256": "5bda69fd3427060fb4457490674e55cdf982b8cdb4c56e9e109b0dcfdb3634c6"
     },
     {
       "document": "0",
@@ -33842,7 +33842,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_susp_hidden_dir_index_allocation.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "98f49ce2975e2bf0cbf9e468b181aef3532d694f1d64bf43dbac7278bd3a9e76"
+      "sha256": "99671760bd609fa813dfba42234da6be3ef33c5368469435d6f0513311e4fbbf"
     },
     {
       "document": "0",
@@ -34150,7 +34150,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_susp_service_tamper.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "cbb6ed395a56c3ade9256afb7c4874bcd2bcc2e68e9dd37d56df521bdc60ba34"
+      "sha256": "517c41090180b1e5109cd98d7b08b0006f242591b0273c65fa4164e37408846a"
     },
     {
       "document": "0",
@@ -34206,7 +34206,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_susp_task_folder_evasion.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "00d55deb23cba59e2fdfde74b6009fcbff3ac0a3463f6a367606491ef1ba59c6"
+      "sha256": "86d25f4ad91ead81bd69d05f20341bdd61dfe6ddba08f7c4c1f7bfa52a9cd611"
     },
     {
       "document": "0",
@@ -34290,7 +34290,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_svchost_uncommon_command_line_flags.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "5b1e84748d3a00194f49526761a4c902dd7367c732f45b28ea1128375fcf562b"
+      "sha256": "157cca6e31f4f00400aa4ef42f70b2ca791d5662f6a3d3dc6495f59d5a688ce4"
     },
     {
       "document": "0",
@@ -34402,7 +34402,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_sysinternals_psloglist.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "3f1f82506ed3446df7911d53e26d7be418c7a095f2a0937e151a11d454b2ddd6"
+      "sha256": "bb68ec719bfbbc58aea53064c694d2a53dfe74c2739d973150c8803b28e4b915"
     },
     {
       "document": "0",
@@ -34549,7 +34549,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_teams_suspicious_command_line_cred_access.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "8d3023810f3564d8173669818d0e7072a9f6663ad5d2ba5ef4e57bc452a3dd35"
+      "sha256": "7500adeeb293c43306b514c65d2ae0815dd6a847d6c5858dc2e7f580dafb40d1"
     },
     {
       "document": "0",
@@ -35179,14 +35179,14 @@
       "path": "rules/windows/process_creation/proc_creation_win_winrs_local_command_execution.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "b8212e45f18402b929914eb9e16cab9ae79cb2d838e1aca98157ad3957833b9c"
+      "sha256": "7483d8c2e14958e25e9acc5954aee3d81f16ecdee7b5688ed7e4e616bc5930f1"
     },
     {
       "document": "0",
       "path": "rules/windows/process_creation/proc_creation_win_winrshost_command_execution.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "1c4f1f53bd36f0d4d17d12ad9018263c137fc928386d3e6be20f82d1090240e8"
+      "sha256": "5b994ef215ba382394cc0e78e49ba5713c8f1a6ee71118fe4ee7d3a7e919c56a"
     },
     {
       "document": "0",
@@ -35396,7 +35396,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_wmic_uninstall_security_products.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "1af18de13acec8ca16fe328ca0e9f342ba60f1aa2d238b46d79953ff95f40c9d"
+      "sha256": "43143249b37850d8cf07a8c5e010ea074c27065bfd8ea1a48ec1300c3ebb4ea5"
     },
     {
       "document": "0",
@@ -35459,7 +35459,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_wsl_binary_hijack_execution.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "696c85b2c4bee173c50a016555944ecb6a1c8825b97c269fff2db6f13c65db84"
+      "sha256": "b458602c8a08d6bbb2d4134306e49f6222ba5e199019ba771a6dd88316a8c738"
     },
     {
       "document": "0",
@@ -35473,7 +35473,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_wsl_installlocation_modification_via_cmdline.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "887fb330a4c85b9d915985915960e51dee211c7f84333f67394df062b069ac88"
+      "sha256": "9c66a68a13956375828e2b5cc2f3d793febc94779e8e7c4e672f874383a87243"
     },
     {
       "document": "0",
@@ -35494,7 +35494,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_wsl_masquerading.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "7932ad4a324eb147b71d745a6cd4cdfafe488ffedf09900c3a9181786e205a3f"
+      "sha256": "37c86c2fd15dc79cba2083a8b4278a186e026375799d66d70d0f4a08f9f3d230"
     },
     {
       "document": "0",
@@ -35809,7 +35809,7 @@
       "path": "rules/windows/registry/registry_event/registry_event_shell_open_keys_manipulation.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "f19fd481d5b2602524822ff3893adafc42422ff2e057938b8e9e47a2b9093ddf"
+      "sha256": "4f3511530d8c2acd286d641153d7f7cb4e9dc31fe58ae0068bf09626a8584618"
     },
     {
       "document": "0",
@@ -36264,7 +36264,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_disable_windows_defender_service.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "1d007c9754e29aca365a8d2512c0f48804a00f1d9c3cb60d0fc17d48ae1e3d6e"
+      "sha256": "1698ce1ab60360ad0cf0f218636387c71ecffce57920823d8aefbbf582912fd5"
     },
     {
       "document": "0",
@@ -36502,7 +36502,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_install_root_or_ca_certificat.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "de55a1b9e1d1fe04b10b611c9e4c38ef7938950118873620a8481565e1f799cd"
+      "sha256": "dd7f76d8d14f3ccca92063c4963e20c8f3b3bfd6aad080e4f58167d6f7e41511"
     },
     {
       "document": "0",
@@ -37279,7 +37279,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_windows_defender_tamper.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "b665ad075ee2deae687eab91fea7061a000371e8d35862e002cb354121ca6d5c"
+      "sha256": "922b1b39aa040b708b31c220f04f2e7c7e701a686193dc51cf36c628c6213286"
     },
     {
       "document": "0",
@@ -37314,7 +37314,7 @@
       "path": "rules/windows/registry/registry_set/registry_set_wsl_installlocation_registry_key_modification.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "bc8f6da86f87965759f507fda46d73cb2b32555f3309288871a0836c59a02b48"
+      "sha256": "da3db08d0de316b6ac33f6d8ad513802d4a8fbca152068b408d137c8328177c8"
     },
     {
       "document": "0",
@@ -41759,7 +41759,7 @@
       "error": "windows-audit: fields EventType, NewName, User have no equivalent in Windows Security event 4657",
       "path": "rules/windows/registry/registry_event/registry_event_shell_open_keys_manipulation.yml",
       "profile": "generic",
-      "sha256": "f19fd481d5b2602524822ff3893adafc42422ff2e057938b8e9e47a2b9093ddf",
+      "sha256": "4f3511530d8c2acd286d641153d7f7cb4e9dc31fe58ae0068bf09626a8584618",
       "stage": "convert"
     },
     {
@@ -42999,14 +42999,14 @@
       "document": "0",
       "id": "e1f7febb-7b94-4234-b5c6-00fb8500f5dd",
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_new_acl_entries.yml",
-      "sha256": "a3c463725ba9d81e216f6612a3dfcd8ea885f406a0c9904dad8540a5ffe87a69"
+      "sha256": "64f7adb83e77264cbb40e9eafba79610d11bf1501a5270e03872b3a4b7571423"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "c803b2ce-c4a2-4836-beae-b112010390b1",
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_new_route_added.yml",
-      "sha256": "ead44eb0d604bf80db74a28468da5241a803ab248299016c79a70544ec81a41c"
+      "sha256": "f679dcf89fe7fc3466b797d09495db08e4108e80cf4666566c57a36cdfd8f03c"
     },
     {
       "adaptations": {},
@@ -43027,21 +43027,21 @@
       "document": "0",
       "id": "6fb77778-040f-4015-9440-572aa9b6b580",
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_security_group_change_ingress_egress.yml",
-      "sha256": "c23b903deb40fefbb02eb93410d5b6ee6c656beb09d11d14ef500692b60f0b40"
+      "sha256": "e3ee538993e7ab47604b2cb770473f0679b7d91735626a352db9acc755105223"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "7a4409fc-f8ca-45f6-8006-127d779eaad9",
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_security_group_change_loadbalancer.yml",
-      "sha256": "5e26345487b7466b63cb10d2f976461b6b6c6882ae2d791da54fe01a4fb2bc41"
+      "sha256": "1e5c63ef56a6088f6b3dee8132dd9d0a6e3a0c611097e80b8115424dce56dd17"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "14f3f1c8-02d5-43a2-a191-91ffb52d3015",
       "path": "rules/cloud/aws/cloudtrail/aws_cloudtrail_security_group_change_rds.yml",
-      "sha256": "7d556a2914fb4c6ecc907a45b029d51084b05c26dfe00b0b610b99c92146fa72"
+      "sha256": "ff568a4ad7d1dc7039e25b59b022af655bbd5bf74dd545035c3fbca843e2917d"
     },
     {
       "adaptations": {},
@@ -43146,7 +43146,7 @@
       "document": "0",
       "id": "33d50d03-20ec-4b74-a74e-1e65a38af1c0",
       "path": "rules/cloud/aws/cloudtrail/aws_eks_cluster_created_or_deleted.yml",
-      "sha256": "14feca5a239fb6ccf083ae7a8bf2ad68847565f8ebc192b3d037c5caca079a2f"
+      "sha256": "247d074a434acb6316225cca15ce9d5405e5a7b6142996b85de7b3512e665811"
     },
     {
       "adaptations": {},
@@ -44308,7 +44308,7 @@
       "document": "0",
       "id": "99980a85-3a61-43d3-ac0f-b68d6b4797b1",
       "path": "rules/cloud/gcp/audit/gcp_vpn_tunnel_modified_or_deleted.yml",
-      "sha256": "7dbd2c99f0db15f3a124eadf7f6e21ee88886f9e4fb2d1dabe77ab447367a986"
+      "sha256": "b457aac72d4005799eeb4e2f7a01d3d8fb0fad15b98926782be532e0213af400"
     },
     {
       "adaptations": {},
@@ -44399,7 +44399,7 @@
       "document": "0",
       "id": "58f88172-a73d-442b-94c9-95eaed3cbb36",
       "path": "rules/cloud/m365/audit/microsoft365_new_federated_domain_added_audit.yml",
-      "sha256": "c1730f901e0095c8b548c90c747832329e08a2d15872400cb84abc6d727b89d7"
+      "sha256": "0cbcf3f55e6fadb142ffd5f271c938ee5d55cfb7d93e5244df5fd0579f735806"
     },
     {
       "adaptations": {},
@@ -44413,7 +44413,7 @@
       "document": "0",
       "id": "42127bdd-9133-474f-a6f1-97b6c08a4339",
       "path": "rules/cloud/m365/exchange/microsoft365_new_federated_domain_added_exchange.yml",
-      "sha256": "a5d98ed4044c1ebc5e64590c90089c4c59ee108237adffacbc3311050804bbeb"
+      "sha256": "3d1dbfc7795970eaa90fcd883532b843b18ba95bf17c469f1d91d985b812ec3b"
     },
     {
       "adaptations": {},
@@ -44980,7 +44980,7 @@
       "document": "0",
       "id": "a94cdd87-6c54-4678-a6cc-2814ffe5a13d",
       "path": "rules/linux/auditd/path/lnx_auditd_unix_shell_configuration_modification.yml",
-      "sha256": "42c6895752245758d4c2dd68e6bece3876c73df418f9ee2d6b41f4ba411c7c9a"
+      "sha256": "551b881ca076058ca49e5ac18f805a54435f63750904e6e7d2100eff202935d4"
     },
     {
       "adaptations": {},
@@ -45274,7 +45274,7 @@
       "document": "0",
       "id": "a46c93b7-55ed-4d27-a41b-c259456c4746",
       "path": "rules/linux/network_connection/net_connection_lnx_crypto_mining_indicators.yml",
-      "sha256": "3043ef5b176277a389aaf782fddda6aa15916fa0ef1657772cf079a5809ce976"
+      "sha256": "8ece7a57c3933a106c16966d0d37b4b5e9f5d36ea04b10ec84003c922f7bb597"
     },
     {
       "adaptations": {},
@@ -45477,7 +45477,7 @@
       "document": "0",
       "id": "9069ea3c-b213-4c52-be13-86506a227ab1",
       "path": "rules/linux/process_creation/proc_creation_lnx_crypto_mining.yml",
-      "sha256": "5e6041f1d175d91f877da25024205444fc725aff06dffa4f7312200a9c8b378a"
+      "sha256": "62f40984c1cb6abb6de6a3be07960821307706f4f3e8bbfdca328a5941bd06ea"
     },
     {
       "adaptations": {},
@@ -45505,7 +45505,7 @@
       "document": "0",
       "id": "4cad6c64-d6df-42d6-8dae-eb78defdc415",
       "path": "rules/linux/process_creation/proc_creation_lnx_dd_process_injection.yml",
-      "sha256": "b33a2caba571e7feeb84116a0e958d5ba9602cf800e3e9ea0375216f03feb3a8"
+      "sha256": "725d8b860a26c952df5ecf8a14ef8506212d5b4b1390b5fe9aeaaeaf328cf245"
     },
     {
       "adaptations": {},
@@ -45652,7 +45652,7 @@
       "document": "0",
       "id": "78a80655-a51e-4669-bc6b-e9d206a462ee",
       "path": "rules/linux/process_creation/proc_creation_lnx_install_root_certificate.yml",
-      "sha256": "28a1e9b4a8af9500bcc356585906cb6cf91259883572a671de9428c7d20c0c10"
+      "sha256": "10fd9d80724df989f86ea7558013922d5a9aeb73bb7fc055242816ee0eac3e22"
     },
     {
       "adaptations": {},
@@ -46163,7 +46163,7 @@
       "document": "0",
       "id": "23c43900-e732-45a4-8354-63e4a6c187ce",
       "path": "rules/macos/file_event/file_event_macos_emond_launch_daemon.yml",
-      "sha256": "871b7f4de0eec009f3c2b86a4d0f9d189ef65a3b8493ec12737ba4538f89877a"
+      "sha256": "ed0abad85de89044c4936177edbf436ace02e51fa1d2762d1c5b91cf5a4f4eb7"
     },
     {
       "adaptations": {},
@@ -47052,7 +47052,7 @@
       "document": "0",
       "id": "00d0b5ab-1f55-4120-8e83-487c0a7baf19",
       "path": "rules/web/proxy_generic/proxy_download_susp_tlds_blacklist.yml",
-      "sha256": "3f331d3bf8ea9d4a6e218b01379e033d39e3f5e0b4f873b4a92d0103eabac22a"
+      "sha256": "2df853d528466b2f09800165b0ba3bd69f097657f8031191114a7f189854ba06"
     },
     {
       "adaptations": {},
@@ -47206,7 +47206,7 @@
       "document": "0",
       "id": "5c84856b-55a5-45f1-826f-13f37250cf4e",
       "path": "rules/web/proxy_generic/proxy_ua_malware.yml",
-      "sha256": "532035a4b8c7f1c588fc54f2981897adbf7f0bbf2a45a8372f137c15c9664e9f"
+      "sha256": "63b54fbd7abf53330887004a39be31266631e2847fbb7da56cd7b2448f5ad61e"
     },
     {
       "adaptations": {},
@@ -47745,7 +47745,7 @@
       "document": "0",
       "id": "66474410-b883-415f-9f8d-75345a0a66a6",
       "path": "rules/windows/builtin/dns_client/win_dns_client_mega_nz.yml",
-      "sha256": "0b285b443c3c775f4a61de1bc790bca96be6db0d1ed7dc09e1cbaa0c93336282"
+      "sha256": "9d9948ff50b12f3d7aba989837d4f21ed7348a832f5ef9daf8afb114bc7411e7"
     },
     {
       "adaptations": {},
@@ -47773,7 +47773,7 @@
       "document": "0",
       "id": "6d444368-6da1-43fe-b2fc-44202430480e",
       "path": "rules/windows/builtin/dns_server/win_dns_server_failed_dns_zone_transfer.yml",
-      "sha256": "be0dae4a1ade3df0797c69035610b3d5f935693ea59e13321790087856801097"
+      "sha256": "ab87857b8c658dbff5f4b4474eaac4ba28cb2ae10fc8409d29cffce608b3ee39"
     },
     {
       "adaptations": {},
@@ -48088,14 +48088,14 @@
       "document": "0",
       "id": "ff151c33-45fa-475d-af4f-c2f93571f4fe",
       "path": "rules/windows/builtin/security/win_security_aadhealth_mon_agent_regkey_access.yml",
-      "sha256": "62d903a8722813896742b39e5b81065be8638b2a2a189cb0e4847fe875fe6356"
+      "sha256": "7f5cee901b3497a69f174ba6f70510b1d4a619fef66c93c71b8dba27f670e41e"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "1d2ab8ac-1a01-423b-9c39-001510eae8e8",
       "path": "rules/windows/builtin/security/win_security_aadhealth_svc_agent_regkey_access.yml",
-      "sha256": "273195ca8fe7432de3f07d231f30fbad5229693a1a46e5dcfd25ab2bf1190c70"
+      "sha256": "85f30df69b680562833102b29331fe910c2964c93e315a0c226fc3f9be3cdbc7"
     },
     {
       "adaptations": {},
@@ -48900,7 +48900,7 @@
       "document": "0",
       "id": "25cde13e-8e20-4c29-b949-4e795b76f16f",
       "path": "rules/windows/builtin/security/win_security_teams_suspicious_objectaccess.yml",
-      "sha256": "2249d34fa404582464a43a7599048194e8f8af52ed560792d24bfb5f212458c7"
+      "sha256": "851ce7239797db29efca72806a84c1ee1c8ff4ab8fb27769bfb0171d52a9a69a"
     },
     {
       "adaptations": {},
@@ -48928,7 +48928,7 @@
       "document": "0",
       "id": "66b6be3d-55d0-4f47-9855-d69df21740ea",
       "path": "rules/windows/builtin/security/win_security_user_creation.yml",
-      "sha256": "07e4a4b8899f265946a0f17b524526e3350fb64e0a6751975272df84ef96df85"
+      "sha256": "c8d09b5cc6e9e39efb94fcae1e6e841ca53ceb37e78c2e4362b12774594e1457"
     },
     {
       "adaptations": {},
@@ -49635,7 +49635,7 @@
       "document": "0",
       "id": "2e4e488a-6164-4811-9ea1-f960c7359c40",
       "path": "rules/windows/create_remote_thread/create_remote_thread_win_hktl_cactustorch.yml",
-      "sha256": "b3b78153cd1372ce9d6d7c8b1c14c8318f58283d63c8cb4ec18cf5a87ad24050"
+      "sha256": "aaf11e3c8c27288c91b68f527a11f375d668009f41e0c43fee533a54f66bc3fb"
     },
     {
       "adaptations": {},
@@ -49740,7 +49740,7 @@
       "document": "0",
       "id": "19b041f6-e583-40dc-b842-d6fa8011493f",
       "path": "rules/windows/create_stream_hash/create_stream_hash_hktl_generic_download.yml",
-      "sha256": "ff4c289e5f5a6f57b24945657baafbcab6989b0ef00bfc6eed81c004f571da61"
+      "sha256": "5c663a310400463ba347238f305cc1705584fc0df3b77cbdd4081517fa847e89"
     },
     {
       "adaptations": {},
@@ -49859,7 +49859,7 @@
       "document": "0",
       "id": "613c03ba-0779-4a53-8a1f-47f914a4ded3",
       "path": "rules/windows/dns_query/dns_query_win_mega_nz.yml",
-      "sha256": "0044a476dc357cecfe489b58bd7f651608dd08e70f9a2e6fe7a9f67984ef49da"
+      "sha256": "21b6d345450aea4b209d0e113cbd5c73860cdb102aee837addf39838767f5b5f"
     },
     {
       "adaptations": {},
@@ -50209,7 +50209,7 @@
       "document": "0",
       "id": "df6ecb8b-7822-4f4b-b412-08f524b4576c",
       "path": "rules/windows/file/file_event/file_event_win_create_non_existent_dlls.yml",
-      "sha256": "6bc6d5e5055ec3d520e60cf4b3017339ec2766336d7198f67347385abc8e3aa9"
+      "sha256": "fd6cc0f7980a5feb996f6736d8e8b437de2357d8531495a33f092f33cbbe920f"
     },
     {
       "adaptations": {},
@@ -50321,14 +50321,14 @@
       "document": "0",
       "id": "bd1212e5-78da-431e-95fa-c58e3237a8e6",
       "path": "rules/windows/file/file_event/file_event_win_exchange_webshell_drop.yml",
-      "sha256": "6d0f05735186cd90ade6c6d33a677c66582a1d593df11abd551cb604b9acf1fc"
+      "sha256": "93fa0c7f9960c21ac9b7ae64321935357285249e65444a61ccd6b2afed58a1d9"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "6b269392-9eba-40b5-acb6-55c882b20ba6",
       "path": "rules/windows/file/file_event/file_event_win_exchange_webshell_drop_suspicious.yml",
-      "sha256": "4382699949ea9d9d8c850fe0cbffe0d0164f5372afa2f5611ca7f436a8648f02"
+      "sha256": "0f88de6f35c2df0518ea35a7ecb1b798846329c78423f85e7ed7041adf0d2f6f"
     },
     {
       "adaptations": {},
@@ -50440,7 +50440,7 @@
       "document": "0",
       "id": "dbbd9f66-2ed3-4ca2-98a4-6ea985dd1a1c",
       "path": "rules/windows/file/file_event/file_event_win_initial_access_dll_search_order_hijacking.yml",
-      "sha256": "cbc75f89cbae90d8422b939f25a179a83fb40303bf61a0aad9d5cc6c7d69e60e"
+      "sha256": "067c10f11581f4968bcec4601a48a518b3a7f93978831bb4cb2fa42ff5e26e21"
     },
     {
       "adaptations": {},
@@ -50713,7 +50713,7 @@
       "document": "0",
       "id": "f331aa1f-8c53-4fc3-b083-cc159bc971cb",
       "path": "rules/windows/file/file_event/file_event_win_powershell_exploit_scripts.yml",
-      "sha256": "1e7bdc7dcc5e4d88787eb5d717511ca1f32f3b4b81befec6bf4b4b555c070c00"
+      "sha256": "f6b7f6b453b0000bb3d32bc3a9954632e079419dfa320472226db1bce05f6b20"
     },
     {
       "adaptations": {},
@@ -50755,7 +50755,7 @@
       "document": "0",
       "id": "34986307-b7f4-49be-92f3-e7a4d01ac5db",
       "path": "rules/windows/file/file_event/file_event_win_rclone_config_files.yml",
-      "sha256": "0c4cc525d993fce4e91ead7b88b1d450b32db3c6846d9bb1f6fdec247495811c"
+      "sha256": "73200874737b15909d038b466bb2171cec69f95c61e6a4d58cce1180e479d098"
     },
     {
       "adaptations": {},
@@ -50930,7 +50930,7 @@
       "document": "0",
       "id": "a8f866e1-bdd4-425e-a27a-37619238d9c7",
       "path": "rules/windows/file/file_event/file_event_win_susp_hidden_dir_index_allocation.yml",
-      "sha256": "6926a598d515ea2b76a448638a6fcf0c038a1624b7a5385f58eac4ddef592f05"
+      "sha256": "b660792c30d8cc9cbf7a088a22150f971e1f98c84dd2279745f35390a43c5b71"
     },
     {
       "adaptations": {},
@@ -51308,7 +51308,7 @@
       "document": "0",
       "id": "2f400434-01e1-416b-b52c-bb5bfbb9eb78",
       "path": "rules/windows/file/file_event/file_event_win_wsl_binary_modification.yml",
-      "sha256": "04674bea4adfd525cbb757840cd93938d2a603ef771bbcde2483fb9622a9028b"
+      "sha256": "788729fc6a378a5252951619fd96cbe607988a6b5f70d854294be54214e44ffb"
     },
     {
       "adaptations": {},
@@ -51756,7 +51756,7 @@
       "document": "0",
       "id": "6b98b92b-4f00-4f62-b4fe-4d1920215771",
       "path": "rules/windows/image_load/image_load_side_load_non_existent_dlls.yml",
-      "sha256": "fcaa110cb2a0930551a2a0e9951e651eb0ecbb6f702be3885f77dc7b16fe9552"
+      "sha256": "1e86b41572059b6ecb79d51f19f38b41ffdf068c1c65864eb5d9c28143361bbb"
     },
     {
       "adaptations": {},
@@ -52092,7 +52092,7 @@
       "document": "0",
       "id": "fa5b1358-b040-4403-9868-15f7d9ab6329",
       "path": "rules/windows/network_connection/net_connection_win_domain_crypto_mining_pools.yml",
-      "sha256": "445d11c6a08def7973a41640381c34f303d64c9fecb686bfe03aade8a22c0de5"
+      "sha256": "1530609b07fa42aed94264d9ab53811c530f6d0d26a799a5fe873b9aad06554f"
     },
     {
       "adaptations": {},
@@ -52393,7 +52393,7 @@
       "document": "0",
       "id": "1ea13e8c-03ea-409b-877d-ce5c3d2c1cb3",
       "path": "rules/windows/pipe_created/pipe_created_adfs_namedpipe_connection_uncommon_tool.yml",
-      "sha256": "f2f8221fc26b2daa9fd19ab04671aeda3e8aa02bb3536b3a9c752308aff58e9b"
+      "sha256": "ceca50156e3cd68d6a6a0f1376e6250dd6fbacc2de2e06e7def12330ca20ce8f"
     },
     {
       "adaptations": {},
@@ -52421,7 +52421,7 @@
       "document": "0",
       "id": "4d0083b3-580b-40da-9bba-626c19fe4033",
       "path": "rules/windows/pipe_created/pipe_created_hktl_coercedpotato.yml",
-      "sha256": "388dcfdc6c6683eadee44feebb0a5e848620fa78cb64fd11e18c43a70c8be78e"
+      "sha256": "f0ecc428458e3aed4cf78bb87d1dd1f73c37949ed8fd9e5f1e8491f28225ec03"
     },
     {
       "adaptations": {},
@@ -52638,7 +52638,7 @@
       "document": "0",
       "id": "41025fd7-0466-4650-a813-574aaacbe7f4",
       "path": "rules/windows/powershell/powershell_module/posh_pm_exploit_scripts.yml",
-      "sha256": "5f0b82e3b93b0a74d729713a5fcf46117c6567cae55975d5580b41ff2daeae15"
+      "sha256": "d2608810df13ebeee0abc95e79b3763d442aa646d6b537751a9b74ee0f3015b3"
     },
     {
       "adaptations": {},
@@ -52743,7 +52743,7 @@
       "document": "0",
       "id": "7d0d0329-0ef1-4e84-a9f5-49500f9d7c6c",
       "path": "rules/windows/powershell/powershell_module/posh_pm_malicious_commandlets.yml",
-      "sha256": "0c420ad51761088a7e79747e03ba7399540744dc2a691615005b540b0afbfbad"
+      "sha256": "2792b243ee3a65f2c45e2d7f636606735810ed034d25ad8aa3cff53e2ca2a64e"
     },
     {
       "adaptations": {},
@@ -52834,7 +52834,7 @@
       "document": "0",
       "id": "91e69562-2426-42ce-a647-711b8152ced6",
       "path": "rules/windows/powershell/powershell_script/posh_ps_aadinternals_cmdlets_execution.yml",
-      "sha256": "3b25182b87824ea6d96306257570b018a552749773d5bfe9eb869e89343f67a2"
+      "sha256": "7cdb0764ee56c3bab7ba4c8020debf233c1415e0d1b5c3d8f8c08f9badd160bd"
     },
     {
       "adaptations": {},
@@ -52939,7 +52939,7 @@
       "document": "0",
       "id": "bde47d4b-9987-405c-94c7-b080410e8ea7",
       "path": "rules/windows/powershell/powershell_script/posh_ps_clearing_windows_console_history.yml",
-      "sha256": "c61bc23013d8273293bd7321e6c64d62971d853b8bbf3477b7743ed7f2dc83fa"
+      "sha256": "d2ea9a715fbddaef763edb1e74801d01e6f99f9b5d6db005cd5a2b7d6d559db7"
     },
     {
       "adaptations": {},
@@ -53310,7 +53310,7 @@
       "document": "0",
       "id": "89819aa4-bbd6-46bc-88ec-c7f7fe30efa6",
       "path": "rules/windows/powershell/powershell_script/posh_ps_malicious_commandlets.yml",
-      "sha256": "4089336ebc222aef7b010c69f7e105aa84408feecaa7a46f34e0b6b66afcf4db"
+      "sha256": "bfc4196222c8649018233ebf1354e75b2d4f69a30fefe89ef1e48928c1be223a"
     },
     {
       "adaptations": {},
@@ -53681,7 +53681,7 @@
       "document": "0",
       "id": "1f49f2ab-26bc-48b3-96cc-dcffbc93eadf",
       "path": "rules/windows/powershell/powershell_script/posh_ps_susp_keywords.yml",
-      "sha256": "7c244db1a57ffbf421dafc586add2a1db765964d4fd6a08a99a9ce68da35b91e"
+      "sha256": "1fb16f72048804aaae35478cd2ca6b4de48ca68825e2a46fc4d47e21cc3144c0"
     },
     {
       "adaptations": {},
@@ -54353,7 +54353,7 @@
       "document": "0",
       "id": "c615d676-f655-46b9-b913-78729021e5d7",
       "path": "rules/windows/process_creation/proc_creation_win_bcp_export_data.yml",
-      "sha256": "f6fc174b80823deee95473161a12858551ddaeff279f4374290106a9680376c1"
+      "sha256": "1c891c67434e3a50e5c9e627f43fbf7c89e6faa9c18dfdd0cc172cd734034b8b"
     },
     {
       "adaptations": {},
@@ -54864,7 +54864,7 @@
       "document": "0",
       "id": "07f8bdc2-c9b3-472a-9817-5a670b872f53",
       "path": "rules/windows/process_creation/proc_creation_win_cmdkey_recon.yml",
-      "sha256": "10a8e786cde7411c5e3e15eec6f4996adb59840ada6dee6a7dfe0dba4faf5786"
+      "sha256": "6a77dd5a81537a8a8a4159cb1d8c7119fb89bf459303e86c1003704540bf2656"
     },
     {
       "adaptations": {},
@@ -54976,7 +54976,7 @@
       "document": "0",
       "id": "b730a276-6b63-41b8-bcf8-55930c8fc6ee",
       "path": "rules/windows/process_creation/proc_creation_win_csc_susp_parent.yml",
-      "sha256": "2815016166e73f26df399c14b23d45124caa5a13659073df969bc8944177b53b"
+      "sha256": "d3fd2bf11d77faf8a6abca253ac6c06350700564def3ebf1d7a8048401e90b5a"
     },
     {
       "adaptations": {},
@@ -55739,14 +55739,14 @@
       "document": "0",
       "id": "e8d34729-86a4-4140-adfd-0a29c2106307",
       "path": "rules/windows/process_creation/proc_creation_win_hktl_coercedpotato.yml",
-      "sha256": "9f8686c8b3d0dd472d64f9232902c9d31ce68135c18c26fae9be349bda645552"
+      "sha256": "8f37c7228beff73c469ae9ed0013839e9081dd7aae38fb1de5824db63ef4ecca"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "c260b6db-48ba-4b4a-a76f-2f67644e99d2",
       "path": "rules/windows/process_creation/proc_creation_win_hktl_covenant.yml",
-      "sha256": "a90c6c33d909a1e42b3cb9e6fa8fc1e6855ba33e26493f16917fe32d04a7be12"
+      "sha256": "2606bc69510beaaf9bcc2fcc0fb0cc6d89a82b0221755e93c826bb5340fe2dc5"
     },
     {
       "adaptations": {},
@@ -56439,7 +56439,7 @@
       "document": "0",
       "id": "850d55f9-6eeb-4492-ad69-a72338f65ba4",
       "path": "rules/windows/process_creation/proc_creation_win_ilasm_il_code_compilation.yml",
-      "sha256": "34e7ef61d405f0d343ce3e5c1ec89293b1f4f9709252b563aff5a2aad49a7016"
+      "sha256": "75cfb8c8b3a784a84ed801af955605cb35328a41ebf1337cfee7b4de0459d0f4"
     },
     {
       "adaptations": {},
@@ -56684,7 +56684,7 @@
       "document": "0",
       "id": "4f73421b-5a0b-4bbf-a892-5a7fb99bea66",
       "path": "rules/windows/process_creation/proc_creation_win_lolbin_mavinject_process_injection.yml",
-      "sha256": "81692bd1038aa6ab4414f2838f2b242ae0e71ea8632ff019f96a3a806a0c9fed"
+      "sha256": "90c01f217c4ec790138af9a126573e835dab96478c9f5fec771ca94fcde2ba36"
     },
     {
       "adaptations": {},
@@ -56915,7 +56915,7 @@
       "document": "0",
       "id": "b30a8bc5-e21b-4ca2-9420-0a94019ac56a",
       "path": "rules/windows/process_creation/proc_creation_win_lolbin_visualuiaverifynative.yml",
-      "sha256": "f91b23ef25685300b01b7c5f8807e5663e5935beb9b78439426e75d4556c063f"
+      "sha256": "a33ed7a3cb4b7a499bbeffb394f95482c1081527ffc7220ff98944fe6431c013"
     },
     {
       "adaptations": {},
@@ -57272,7 +57272,7 @@
       "document": "0",
       "id": "d95de845-b83c-4a9a-8a6a-4fc802ebf6c0",
       "path": "rules/windows/process_creation/proc_creation_win_net_groups_and_accounts_recon.yml",
-      "sha256": "5b1ce27fd6adfc3120244c6fd121a8e8b908bbce682f7a6f940e685b81d26f93"
+      "sha256": "e65f7bf793af476601f1d04c7d4cca5fefdb8eb9d6095e3a09e27bfa8da56f2d"
     },
     {
       "adaptations": {},
@@ -57426,7 +57426,7 @@
       "document": "0",
       "id": "d3c3861d-c504-4c77-ba55-224ba82d0118",
       "path": "rules/windows/process_creation/proc_creation_win_netsh_packet_capture.yml",
-      "sha256": "bf0d773fd9c8d0e0c9bc749a98df48a98f405982117776292bc983ddcb804f9a"
+      "sha256": "cc12396cfa7eacb9da45949f46daa24b44d0d20b27c7427ed45b9b38a07928f0"
     },
     {
       "adaptations": {},
@@ -57461,7 +57461,7 @@
       "document": "0",
       "id": "5cc90652-4cbd-4241-aa3b-4b462fa5a248",
       "path": "rules/windows/process_creation/proc_creation_win_nltest_recon.yml",
-      "sha256": "a40330e4f631169523a802f3c943110077553471a6a717d3e2c3263adcd43059"
+      "sha256": "cfc600f13fb40bf8ddffedd8db10105818a5d59d843822be92555dbc9650aa06"
     },
     {
       "adaptations": {},
@@ -57538,7 +57538,7 @@
       "document": "0",
       "id": "6b65c28e-11f3-46cb-902a-68f2cafaf474",
       "path": "rules/windows/process_creation/proc_creation_win_odbcconf_exec_susp_locations.yml",
-      "sha256": "16d41440cd7294abf2da0565914bb4a0c0e66c7b7c69b5f6916de5fa380087e9"
+      "sha256": "95556b96706fe45d4f79ba1089d64967d0c07cd1a8493be6ab1e1ddf08f01152"
     },
     {
       "adaptations": {},
@@ -57734,7 +57734,7 @@
       "document": "0",
       "id": "c86500e9-a645-4680-98d7-f882c70c1ea3",
       "path": "rules/windows/process_creation/proc_creation_win_powershell_aadinternals_cmdlets_execution.yml",
-      "sha256": "93a402a54da50a1a2395cc769b38285ac1ad86207edeb024cfc8381a73021337"
+      "sha256": "fcff867d8c7597a6a82d78a6f9a2f86f7f1bb05219e0dd3fbc91aae922ab2143"
     },
     {
       "adaptations": {},
@@ -57979,7 +57979,7 @@
       "document": "0",
       "id": "a7ee1722-c3c5-aeff-3212-c777e4733217",
       "path": "rules/windows/process_creation/proc_creation_win_powershell_disable_defender_av_security_monitoring.yml",
-      "sha256": "02441fc165285c1cad57396befd36e0f7e5ea17e824c94f3fbfc48d96dc788ee"
+      "sha256": "053b459d63093b3aa6a5c7766ac66ffca3d9392653f4f78e2dce5981af662227"
     },
     {
       "adaptations": {},
@@ -58203,7 +58203,7 @@
       "document": "0",
       "id": "02030f2f-6199-49ec-b258-ea71b07e03dc",
       "path": "rules/windows/process_creation/proc_creation_win_powershell_malicious_cmdlets.yml",
-      "sha256": "486c1a5bd7290e3a8438f689843263374eb5566dc2f342bd433d00421a3409e2"
+      "sha256": "52613cd3830c6f5c36d40321d2f0b6a7f0940de0c26e1188cdbf8625988e9f06"
     },
     {
       "adaptations": {},
@@ -58413,7 +58413,7 @@
       "document": "0",
       "id": "bb780e0c-16cf-4383-8383-1e5471db6cf9",
       "path": "rules/windows/process_creation/proc_creation_win_powershell_xor_commandline.yml",
-      "sha256": "b022bf266b5d8d52d047c488d01ac9b2bd3e5110c0603c3b44fc679a304e5af7"
+      "sha256": "6bd3e718a11fc63423471b93b5be7d2a831bc3f2bfcde409bc2283ac3edfeff9"
     },
     {
       "adaptations": {},
@@ -58630,7 +58630,7 @@
       "document": "0",
       "id": "ca387a8e-1c84-4da3-9993-028b45342d30",
       "path": "rules/windows/process_creation/proc_creation_win_pua_netscan.yml",
-      "sha256": "678f274ca377c843c7d69a1b59a1915adefeaf95b5c6d6f107d0e9bd8f0e27ba"
+      "sha256": "93c19cd1920f38ce5487ff844b8de2ebbd3737c7bd753baaf81991e9e9b91057"
     },
     {
       "adaptations": {},
@@ -58728,7 +58728,7 @@
       "document": "0",
       "id": "e37db05d-d1f9-49c8-b464-cee1a4b11638",
       "path": "rules/windows/process_creation/proc_creation_win_pua_rclone_execution.yml",
-      "sha256": "23109549e2a00d4e0ac3c0389d5fdc998ae3d7aa65832c38c8e4ad811919c418"
+      "sha256": "440d1946cabf546fb9a18822aaa50e99f5a80ce0a780d4abde719d3eac811ded"
     },
     {
       "adaptations": {},
@@ -59288,7 +59288,7 @@
       "document": "0",
       "id": "88a87a10-384b-4ad7-8871-2f9bf9259ce5",
       "path": "rules/windows/process_creation/proc_creation_win_regsvr32_remote_share.yml",
-      "sha256": "545a62df8c65c9fca2650fac4aab9737d1e538fa3b5c92863e3dd9a559234177"
+      "sha256": "ff87c3b14c7c63995289ba8d8395482597ea346d9ce27363bd0a60f08942e338"
     },
     {
       "adaptations": {},
@@ -59435,7 +59435,7 @@
       "document": "0",
       "id": "75bfe6e6-cd8e-429e-91d3-03921e1d7962",
       "path": "rules/windows/process_creation/proc_creation_win_remote_access_tools_screenconnect_installation_cli_param.yml",
-      "sha256": "f05c7052bfac504b7bb4e07318416c3241db04b8b850dbac32ed7002d218cd8f"
+      "sha256": "1013a04b6f9b706b55a49a1e1e44a8bf7e8ca67a06b95df94c19f4e815a0cda6"
     },
     {
       "adaptations": {},
@@ -59596,7 +59596,7 @@
       "document": "0",
       "id": "e6474a1b-5390-49cd-ab41-8d88655f7394",
       "path": "rules/windows/process_creation/proc_creation_win_renamed_mavinject.yml",
-      "sha256": "5bd3b2497e30cc3a5b1a3485ad2d83a2bdbbea65be2635441f0d360e2fbd46bd"
+      "sha256": "33ddbf6250fa315c665ef2334ded7823e2342a641e51435c75572c22c62aa55f"
     },
     {
       "adaptations": {},
@@ -59995,7 +59995,7 @@
       "document": "0",
       "id": "431a1fdb-4799-4f3b-91c3-a683b003fc49",
       "path": "rules/windows/process_creation/proc_creation_win_sc_new_kernel_driver.yml",
-      "sha256": "de52f94de2be27c69d8b7953aabb3b2587739efa91bffbb57858dc240899c051"
+      "sha256": "6ac511fa9986fcf591fe736dcb353b0ccc85931e5577250c56513b72849e7993"
     },
     {
       "adaptations": {},
@@ -60219,7 +60219,7 @@
       "document": "0",
       "id": "f6d1dd2f-b8ce-40ca-bc23-062efb686b34",
       "path": "rules/windows/process_creation/proc_creation_win_scrcons_susp_child_process.yml",
-      "sha256": "f1fcc8aa9611f1d065bda98b1cbd899a5a9fd0cc0c9d02f0899d712e2e4d69a3"
+      "sha256": "5b43d86fc164c8257016b3fd80ec17d60f9cb87551d123bd3e7cde0590800f5e"
     },
     {
       "adaptations": {},
@@ -60611,7 +60611,7 @@
       "document": "0",
       "id": "66c3b204-9f88-4d0a-a7f7-8a57d521ca55",
       "path": "rules/windows/process_creation/proc_creation_win_susp_crypto_mining_monero.yml",
-      "sha256": "ab0e5bde99c33ca00ac32a3352a28caf821cd66a5a9e4e6972d82388b20636ab"
+      "sha256": "6acc3222579731e45e7ba1b5e44323120dcc4ddd6f9b16bc4b8d826e60249b61"
     },
     {
       "adaptations": {},
@@ -60737,7 +60737,7 @@
       "document": "0",
       "id": "cc36992a-4671-4f21-a91d-6c2b72a2edf5",
       "path": "rules/windows/process_creation/proc_creation_win_susp_eventlog_clear.yml",
-      "sha256": "8e7219c92a73b60128a7192521879f97407d37c12a1c567a6975247340cb5624"
+      "sha256": "5bda69fd3427060fb4457490674e55cdf982b8cdb4c56e9e109b0dcfdb3634c6"
     },
     {
       "adaptations": {},
@@ -60786,7 +60786,7 @@
       "document": "0",
       "id": "0900463c-b33b-49a8-be1d-552a3b553dae",
       "path": "rules/windows/process_creation/proc_creation_win_susp_hidden_dir_index_allocation.yml",
-      "sha256": "98f49ce2975e2bf0cbf9e468b181aef3532d694f1d64bf43dbac7278bd3a9e76"
+      "sha256": "99671760bd609fa813dfba42234da6be3ef33c5368469435d6f0513311e4fbbf"
     },
     {
       "adaptations": {},
@@ -61094,7 +61094,7 @@
       "document": "0",
       "id": "ce72ef99-22f1-43d4-8695-419dcb5d9330",
       "path": "rules/windows/process_creation/proc_creation_win_susp_service_tamper.yml",
-      "sha256": "cbb6ed395a56c3ade9256afb7c4874bcd2bcc2e68e9dd37d56df521bdc60ba34"
+      "sha256": "517c41090180b1e5109cd98d7b08b0006f242591b0273c65fa4164e37408846a"
     },
     {
       "adaptations": {},
@@ -61150,7 +61150,7 @@
       "document": "0",
       "id": "cc4e02ba-9c06-48e2-b09e-2500cace9ae0",
       "path": "rules/windows/process_creation/proc_creation_win_susp_task_folder_evasion.yml",
-      "sha256": "00d55deb23cba59e2fdfde74b6009fcbff3ac0a3463f6a367606491ef1ba59c6"
+      "sha256": "86d25f4ad91ead81bd69d05f20341bdd61dfe6ddba08f7c4c1f7bfa52a9cd611"
     },
     {
       "adaptations": {},
@@ -61234,7 +61234,7 @@
       "document": "0",
       "id": "f17211f1-1f24-4d0c-829f-31e28dc93cdd",
       "path": "rules/windows/process_creation/proc_creation_win_svchost_uncommon_command_line_flags.yml",
-      "sha256": "5b1e84748d3a00194f49526761a4c902dd7367c732f45b28ea1128375fcf562b"
+      "sha256": "157cca6e31f4f00400aa4ef42f70b2ca791d5662f6a3d3dc6495f59d5a688ce4"
     },
     {
       "adaptations": {},
@@ -61346,7 +61346,7 @@
       "document": "0",
       "id": "aae1243f-d8af-40d8-ab20-33fc6d0c55bc",
       "path": "rules/windows/process_creation/proc_creation_win_sysinternals_psloglist.yml",
-      "sha256": "3f1f82506ed3446df7911d53e26d7be418c7a095f2a0937e151a11d454b2ddd6"
+      "sha256": "bb68ec719bfbbc58aea53064c694d2a53dfe74c2739d973150c8803b28e4b915"
     },
     {
       "adaptations": {},
@@ -61493,7 +61493,7 @@
       "document": "0",
       "id": "d2eb17db-1d39-41dc-b57f-301f6512fa75",
       "path": "rules/windows/process_creation/proc_creation_win_teams_suspicious_command_line_cred_access.yml",
-      "sha256": "8d3023810f3564d8173669818d0e7072a9f6663ad5d2ba5ef4e57bc452a3dd35"
+      "sha256": "7500adeeb293c43306b514c65d2ae0815dd6a847d6c5858dc2e7f580dafb40d1"
     },
     {
       "adaptations": {},
@@ -62123,14 +62123,14 @@
       "document": "0",
       "id": "bcfece3d-56fe-4545-9931-3b8e92927db1",
       "path": "rules/windows/process_creation/proc_creation_win_winrs_local_command_execution.yml",
-      "sha256": "b8212e45f18402b929914eb9e16cab9ae79cb2d838e1aca98157ad3957833b9c"
+      "sha256": "7483d8c2e14958e25e9acc5954aee3d81f16ecdee7b5688ed7e4e616bc5930f1"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "79df3f68-dccb-48e9-9171-b75cbc37c51d",
       "path": "rules/windows/process_creation/proc_creation_win_winrshost_command_execution.yml",
-      "sha256": "1c4f1f53bd36f0d4d17d12ad9018263c137fc928386d3e6be20f82d1090240e8"
+      "sha256": "5b994ef215ba382394cc0e78e49ba5713c8f1a6ee71118fe4ee7d3a7e919c56a"
     },
     {
       "adaptations": {},
@@ -62340,7 +62340,7 @@
       "document": "0",
       "id": "847d5ff3-8a31-4737-a970-aeae8fe21765",
       "path": "rules/windows/process_creation/proc_creation_win_wmic_uninstall_security_products.yml",
-      "sha256": "1af18de13acec8ca16fe328ca0e9f342ba60f1aa2d238b46d79953ff95f40c9d"
+      "sha256": "43143249b37850d8cf07a8c5e010ea074c27065bfd8ea1a48ec1300c3ebb4ea5"
     },
     {
       "adaptations": {},
@@ -62403,7 +62403,7 @@
       "document": "0",
       "id": "88d306e9-8e2d-4025-9768-28757d2732db",
       "path": "rules/windows/process_creation/proc_creation_win_wsl_binary_hijack_execution.yml",
-      "sha256": "696c85b2c4bee173c50a016555944ecb6a1c8825b97c269fff2db6f13c65db84"
+      "sha256": "b458602c8a08d6bbb2d4134306e49f6222ba5e199019ba771a6dd88316a8c738"
     },
     {
       "adaptations": {},
@@ -62417,7 +62417,7 @@
       "document": "0",
       "id": "f9f62824-de4e-40ca-afe7-8358f76a876d",
       "path": "rules/windows/process_creation/proc_creation_win_wsl_installlocation_modification_via_cmdline.yml",
-      "sha256": "887fb330a4c85b9d915985915960e51dee211c7f84333f67394df062b069ac88"
+      "sha256": "9c66a68a13956375828e2b5cc2f3d793febc94779e8e7c4e672f874383a87243"
     },
     {
       "adaptations": {},
@@ -62438,7 +62438,7 @@
       "document": "0",
       "id": "530576ee-3b62-4bce-9a03-9aac6c61788a",
       "path": "rules/windows/process_creation/proc_creation_win_wsl_masquerading.yml",
-      "sha256": "7932ad4a324eb147b71d745a6cd4cdfafe488ffedf09900c3a9181786e205a3f"
+      "sha256": "37c86c2fd15dc79cba2083a8b4278a186e026375799d66d70d0f4a08f9f3d230"
     },
     {
       "adaptations": {},
@@ -62753,7 +62753,7 @@
       "document": "0",
       "id": "152f3630-77c1-4284-bcc0-4cc68ab2f6e7",
       "path": "rules/windows/registry/registry_event/registry_event_shell_open_keys_manipulation.yml",
-      "sha256": "f19fd481d5b2602524822ff3893adafc42422ff2e057938b8e9e47a2b9093ddf"
+      "sha256": "4f3511530d8c2acd286d641153d7f7cb4e9dc31fe58ae0068bf09626a8584618"
     },
     {
       "adaptations": {},
@@ -63208,7 +63208,7 @@
       "document": "0",
       "id": "e1aa95de-610a-427d-b9e7-9b46cfafbe6a",
       "path": "rules/windows/registry/registry_set/registry_set_disable_windows_defender_service.yml",
-      "sha256": "1d007c9754e29aca365a8d2512c0f48804a00f1d9c3cb60d0fc17d48ae1e3d6e"
+      "sha256": "1698ce1ab60360ad0cf0f218636387c71ecffce57920823d8aefbbf582912fd5"
     },
     {
       "adaptations": {},
@@ -63446,7 +63446,7 @@
       "document": "0",
       "id": "d223b46b-5621-4037-88fe-fda32eead684",
       "path": "rules/windows/registry/registry_set/registry_set_install_root_or_ca_certificat.yml",
-      "sha256": "de55a1b9e1d1fe04b10b611c9e4c38ef7938950118873620a8481565e1f799cd"
+      "sha256": "dd7f76d8d14f3ccca92063c4963e20c8f3b3bfd6aad080e4f58167d6f7e41511"
     },
     {
       "adaptations": {},
@@ -64223,7 +64223,7 @@
       "document": "0",
       "id": "0eb46774-f1ab-4a74-8238-1155855f2263",
       "path": "rules/windows/registry/registry_set/registry_set_windows_defender_tamper.yml",
-      "sha256": "b665ad075ee2deae687eab91fea7061a000371e8d35862e002cb354121ca6d5c"
+      "sha256": "922b1b39aa040b708b31c220f04f2e7c7e701a686193dc51cf36c628c6213286"
     },
     {
       "adaptations": {},
@@ -64258,7 +64258,7 @@
       "document": "0",
       "id": "83475063-b1c8-4774-9568-69bbda71a539",
       "path": "rules/windows/registry/registry_set/registry_set_wsl_installlocation_registry_key_modification.yml",
-      "sha256": "bc8f6da86f87965759f507fda46d73cb2b32555f3309288871a0836c59a02b48"
+      "sha256": "da3db08d0de316b6ac33f6d8ad513802d4a8fbca152068b408d137c8328177c8"
     },
     {
       "adaptations": {},
@@ -67254,7 +67254,7 @@
       "document": "0",
       "id": "c70834fa-fb9d-4aa0-9e7d-45ceed36f3f7",
       "path": "rules-emerging-threats/2025/Exploits/CVE-2025-55182/proc_creation_lnx_exploit_cve_2025_55182_susp_nodejs_server_child_process.yml",
-      "sha256": "2d2662f774ffba9f661c84cf85a4b6ba71df45c702baacdd3c2a8ee835b11bac"
+      "sha256": "a3d0595124d2fb0de958c2db7b99f906a6f303ebc6f7715bd4855dfd0263f92b"
     },
     {
       "adaptations": {},
@@ -68630,7 +68630,7 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "7228cccddc63a771924ab585e072f4fbb63690fb",
+  "revision": "876eb7b8cfbcce4d690dff8c3439ecdc7dc8175f",
   "source": "sigmahq",
   "status": "validated",
   "tools": {

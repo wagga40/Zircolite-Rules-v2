@@ -143,12 +143,12 @@
   "input_documents": 61,
   "official_baseline": {
     "artifacts": {
-      "rules_linux.json": "b4e82e339a3471a96ccccf0812f16cb27aa7b893e8db9c46ea500b41ac1b5d96",
-      "rules_windows_generic.json": "600479e408e52704133b29606ef7c4668ff059be7e5618518af1eb8c78f80332",
-      "rules_windows_sysmon.json": "c3a07e189e47f12dbc8fc934fdedbe5271bf03f0ea0352cc08a9d03a4cba11b6"
+      "rules_linux.json": "e6e0b0cf82f352037a5e4bc271d089ca37ad3ebf10f34302e3cefd47a9898a7e",
+      "rules_windows_generic.json": "a39dbdb2aa3274eae907d823cc705dcc48dc56d580ebae62a9fea013d055790d",
+      "rules_windows_sysmon.json": "9d13572a9fae3af3cbfa61b84dd00f6ad4741bfebc51405882c0f18e4e772f85"
     },
     "repository": "SigmaHQ/sigma",
-    "revision": "7228cccddc63a771924ab585e072f4fbb63690fb"
+    "revision": "876eb7b8cfbcce4d690dff8c3439ecdc7dc8175f"
   },
   "official_duplicates_removed": {
     "generic/correlations": 0,
