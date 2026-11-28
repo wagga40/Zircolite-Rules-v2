@@ -9,6 +9,7 @@ on:
       - 'experimental/README.md'
       - 'licenses/README.md'
       - 'index.html'
+      - 'site.js'
       - '_sidebar.md'
       - '.github/workflows/pages.yml'
   # The publish job pushes its commit with the workflow token, which starts no
@@ -44,7 +45,7 @@ jobs:
           SITE: ${{ runner.temp }}/site
         run: |
           mkdir -p "$SITE/docs" "$SITE/experimental" "$SITE/licenses"
-          cp index.html _sidebar.md README.md "$SITE/"
+          cp index.html site.js _sidebar.md README.md "$SITE/"
           cp docs/*.md "$SITE/docs/"
           cp -R docs/assets "$SITE/docs/"
           cp experimental/README.md "$SITE/experimental/"

@@ -98,7 +98,7 @@ Do not commit regenerated rulesets: the daily update also commits them, and CI p
 
 ## Documentation site
 
-[wagga40.github.io/Zircolite-Rules-v2](https://wagga40.github.io/Zircolite-Rules-v2/) shows the README, `docs/`, `experimental/README.md`, and `licenses/README.md` with a sidebar and search. Docsify renders the markdown in the browser from `index.html`. `_sidebar.md` lists the pages by their path from the repository root. Links to other files open them on GitHub; the rulesets are not copied to the site.
+[wagga40.github.io/Zircolite-Rules-v2](https://wagga40.github.io/Zircolite-Rules-v2/) shows the README, `docs/`, `experimental/README.md`, and `licenses/README.md` with a sidebar and search. Docsify renders the markdown in the browser from `index.html`, configured in `site.js`. The page's Content-Security-Policy refuses inline scripts, because the dashboard carries upstream text that GitHub sanitizes and Docsify does not. `_sidebar.md` lists the pages by their path from the repository root. Links to other files open them on GitHub; the rulesets are not copied to the site.
 
 `pdm run preview` serves the repository at http://127.0.0.1:8000 to check a change. `pages.yml` deploys it on pushes to `main` that change these pages, and after every `Update.yml` run on `main`, because a commit pushed with the workflow token starts no workflow.
 

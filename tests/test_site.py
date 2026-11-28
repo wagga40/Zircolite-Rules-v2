@@ -43,9 +43,22 @@ def test_shell_loads_only_pinned_files_with_integrity():
         assert 'crossorigin="anonymous"' in tag, tag
 
 
+def test_shell_runs_no_inline_script_under_a_strict_policy():
+    # The dashboard carries upstream text: GitHub strips its HTML, Docsify inserts it as is.
+    html = (ROOT / "index.html").read_text()
+    content = re.search(r'<meta http-equiv="Content-Security-Policy" content="([^"]+)">', html).group(1)
+    policy = {name: values for name, *values in (d.split() for d in content.split(";") if d.strip())}
+    cdn = sorted(set(re.findall(r'<script\b[^>]*\bsrc="(https://cdn\.jsdelivr\.net/npm/[^/]+/)', html)))
+    assert policy["script-src"] == ["'self'", *cdn]
+    assert policy["object-src"] == ["'none'"] and policy["base-uri"] == ["'none'"]
+    assert not re.search(r"<script\b(?![^>]*\bsrc=)[^>]*>", html)
+
+
 def test_site_publishes_every_docs_page_and_resolves_its_links(tmp_path):
     site = assemble(tmp_path / "site")
     assert (site / "index.html").is_file() and (site / "_sidebar.md").is_file()
+    for ref in re.findall(r'(?:src|href)="(?![a-z]+:)([^"]+)"', (site / "index.html").read_text()):
+        assert (site / ref).is_file(), ref
     assert all((site / page).is_file() for page in sidebar_pages())
     assert {p.name for p in (site / "docs").glob("*.md")} == {p.name for p in (ROOT / "docs").glob("*.md")}
     for page in site.rglob("*.md"):
@@ -55,3 +68,8 @@ def test_site_publishes_every_docs_page_and_resolves_its_links(tmp_path):
         for link in re.findall(r"\]\((?![a-z]+:|#|/)([^)#]+\.md)(?:#[^)]*)?\)", text):
             assert (page.parent / link).is_file(), (page, link)
     assert not list(site.rglob("*.json"))
+
+
+def test_search_keeps_its_own_index_beside_the_zircolite_site():
+    # Both sites share the wagga40.github.io origin, where Docsify keeps one search database.
+    assert re.search(r"search: \{[^}]*\bnamespace: 'zircolite-rules'", (ROOT / "site.js").read_text())

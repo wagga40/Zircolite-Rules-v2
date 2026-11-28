@@ -53,7 +53,7 @@ def test_pages_deploys_main_after_each_publish_with_least_privilege():
     assert on["workflow_run"] == {"workflows": [workflow("Update.yml")["name"]],
                                   "types": ["completed"], "branches": ["main"]}
     assert on["push"]["branches"] == ["main"]
-    assert {"README.md", "docs/**", "index.html", "_sidebar.md",
+    assert {"README.md", "docs/**", "index.html", "site.js", "_sidebar.md",
             "experimental/README.md", "licenses/README.md"} <= set(on["push"]["paths"])
     assert pages["permissions"] == {}
     jobs = pages["jobs"]
