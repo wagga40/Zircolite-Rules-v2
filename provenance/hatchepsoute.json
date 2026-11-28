@@ -5150,11 +5150,11 @@
   "official_baseline": {
     "artifacts": {
       "rules_linux.json": "e6e0b0cf82f352037a5e4bc271d089ca37ad3ebf10f34302e3cefd47a9898a7e",
-      "rules_windows_generic.json": "a39dbdb2aa3274eae907d823cc705dcc48dc56d580ebae62a9fea013d055790d",
-      "rules_windows_sysmon.json": "9d13572a9fae3af3cbfa61b84dd00f6ad4741bfebc51405882c0f18e4e772f85"
+      "rules_windows_generic.json": "9d89593e17d6ed3cc3e4b548944a7754733bb2f8aa0ae3e0851e36542e6df9a8",
+      "rules_windows_sysmon.json": "4f42370999a6f24be9e8e41835ae4c45431eae2643e301123173b32a19db455e"
     },
     "repository": "SigmaHQ/sigma",
-    "revision": "876eb7b8cfbcce4d690dff8c3439ecdc7dc8175f"
+    "revision": "ddf1d4f87fd283513ac1dbf7e178c8a4064047df"
   },
   "official_duplicates_removed": {
     "generic/correlations": 0,
@@ -7364,8 +7364,8 @@
   "source": "hatchepsoute",
   "status": "validated",
   "tools": {
-    "pysigma": "2.1.1",
-    "pysigma-backend-sqlite": "2.2.0",
+    "pysigma": "2.1.2",
+    "pysigma-backend-sqlite": "2.3.0",
     "pysigma-pipeline-sysmon": "3.0.0",
     "pysigma-pipeline-windows": "3.0.0",
     "python": "3.14.10",

@@ -12275,14 +12275,14 @@
       "path": "rules/windows/file/file_event/file_event_win_exchange_webshell_drop.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "93fa0c7f9960c21ac9b7ae64321935357285249e65444a61ccd6b2afed58a1d9"
+      "sha256": "6aae2637d56667ecc6796b955b1480e16500530b08eeea9860f73d08a80fc1d5"
     },
     {
       "document": "0",
       "path": "rules/windows/file/file_event/file_event_win_exchange_webshell_drop_suspicious.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "0f88de6f35c2df0518ea35a7ecb1b798846329c78423f85e7ed7041adf0d2f6f"
+      "sha256": "7eb8037c002421c09d0350227d5b8bf11df8fcc6d7788dbb0cd9bfc8d3ba52fe"
     },
     {
       "document": "0",
@@ -13031,7 +13031,7 @@
       "path": "rules/windows/file/file_event/file_event_win_susp_winsxs_binary_creation.yml",
       "profile": "generic",
       "reason": "no mapping for logsource in this profile",
-      "sha256": "aa87bdbe41112f1148f9538cbf3dd394809362669c94005398701f512e2bb764"
+      "sha256": "946b68f75698699489b26095965e94a04ef3c53f23501193b45500bfc91aa563"
     },
     {
       "document": "0",
@@ -20598,7 +20598,7 @@
       "path": "rules/windows/builtin/appxdeployment_server/win_appxdeployment_server_appx_package_in_staging_directory.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "75d53b3f69d1e9be0e9b95cdc23b14f4da1fde44c8b012baa33da9ff709c6ec7"
+      "sha256": "b6b4f3c9f59f2fe2effe47bcafe0c22f4a74d72d4680cc28870dd482983bf602"
     },
     {
       "document": "0",
@@ -23377,14 +23377,14 @@
       "path": "rules/windows/file/file_event/file_event_win_exchange_webshell_drop.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "93fa0c7f9960c21ac9b7ae64321935357285249e65444a61ccd6b2afed58a1d9"
+      "sha256": "6aae2637d56667ecc6796b955b1480e16500530b08eeea9860f73d08a80fc1d5"
     },
     {
       "document": "0",
       "path": "rules/windows/file/file_event/file_event_win_exchange_webshell_drop_suspicious.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "0f88de6f35c2df0518ea35a7ecb1b798846329c78423f85e7ed7041adf0d2f6f"
+      "sha256": "7eb8037c002421c09d0350227d5b8bf11df8fcc6d7788dbb0cd9bfc8d3ba52fe"
     },
     {
       "document": "0",
@@ -24133,7 +24133,7 @@
       "path": "rules/windows/file/file_event/file_event_win_susp_winsxs_binary_creation.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "aa87bdbe41112f1148f9538cbf3dd394809362669c94005398701f512e2bb764"
+      "sha256": "946b68f75698699489b26095965e94a04ef3c53f23501193b45500bfc91aa563"
     },
     {
       "document": "0",
@@ -25666,7 +25666,7 @@
       "path": "rules/windows/powershell/powershell_module/posh_pm_alternate_powershell_hosts.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "d2fc7a4ec42798f920f4a6e4389154274e59884d4d3159237f3f2f782176d8b4"
+      "sha256": "73e620218cf9e6a6ce06096900a1b388bb291f9ccb25c8db767784d42acddbf7"
     },
     {
       "document": "0",
@@ -26142,7 +26142,7 @@
       "path": "rules/windows/powershell/powershell_script/posh_ps_etw_trace_evasion.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "4b13b8d2f8ac98b8142ca8af0e384f8ace2b5e0ace256f0fe9ae522bbf6aa5ed"
+      "sha256": "2552b36f027cbe9e77b0b69ba0461e14b4ecf93ebc7ff575ef782a6849689000"
     },
     {
       "document": "0",
@@ -31728,7 +31728,7 @@
       "path": "rules/windows/process_creation/proc_creation_win_pua_nmap_zenmap.yml",
       "profile": "linux",
       "reason": "logsource product 'windows' is outside this profile",
-      "sha256": "f8f921f6914c4b1844f682adc86eb48d21c13182a07419de48ce32cc14bd7630"
+      "sha256": "4d3a6bf4bb6cb2d534b816d2edd4704c4e7252cd6ebd2bd6248f60ecd9a0d9f6"
     },
     {
       "document": "0",
@@ -47542,7 +47542,7 @@
       "document": "0",
       "id": "5cdeaf3d-1489-477c-95ab-c318559fc051",
       "path": "rules/windows/builtin/appxdeployment_server/win_appxdeployment_server_appx_package_in_staging_directory.yml",
-      "sha256": "75d53b3f69d1e9be0e9b95cdc23b14f4da1fde44c8b012baa33da9ff709c6ec7"
+      "sha256": "b6b4f3c9f59f2fe2effe47bcafe0c22f4a74d72d4680cc28870dd482983bf602"
     },
     {
       "adaptations": {},
@@ -50321,14 +50321,14 @@
       "document": "0",
       "id": "bd1212e5-78da-431e-95fa-c58e3237a8e6",
       "path": "rules/windows/file/file_event/file_event_win_exchange_webshell_drop.yml",
-      "sha256": "93fa0c7f9960c21ac9b7ae64321935357285249e65444a61ccd6b2afed58a1d9"
+      "sha256": "6aae2637d56667ecc6796b955b1480e16500530b08eeea9860f73d08a80fc1d5"
     },
     {
       "adaptations": {},
       "document": "0",
       "id": "6b269392-9eba-40b5-acb6-55c882b20ba6",
       "path": "rules/windows/file/file_event/file_event_win_exchange_webshell_drop_suspicious.yml",
-      "sha256": "0f88de6f35c2df0518ea35a7ecb1b798846329c78423f85e7ed7041adf0d2f6f"
+      "sha256": "7eb8037c002421c09d0350227d5b8bf11df8fcc6d7788dbb0cd9bfc8d3ba52fe"
     },
     {
       "adaptations": {},
@@ -51077,7 +51077,7 @@
       "document": "0",
       "id": "34746e8c-5fb8-415a-b135-0abc167e912a",
       "path": "rules/windows/file/file_event/file_event_win_susp_winsxs_binary_creation.yml",
-      "sha256": "aa87bdbe41112f1148f9538cbf3dd394809362669c94005398701f512e2bb764"
+      "sha256": "946b68f75698699489b26095965e94a04ef3c53f23501193b45500bfc91aa563"
     },
     {
       "adaptations": {},
@@ -52610,7 +52610,7 @@
       "document": "0",
       "id": "64e8e417-c19a-475a-8d19-98ea705394cc",
       "path": "rules/windows/powershell/powershell_module/posh_pm_alternate_powershell_hosts.yml",
-      "sha256": "d2fc7a4ec42798f920f4a6e4389154274e59884d4d3159237f3f2f782176d8b4"
+      "sha256": "73e620218cf9e6a6ce06096900a1b388bb291f9ccb25c8db767784d42acddbf7"
     },
     {
       "adaptations": {},
@@ -53086,7 +53086,7 @@
       "document": "0",
       "id": "115fdba9-f017-42e6-84cf-d5573bf2ddf8",
       "path": "rules/windows/powershell/powershell_script/posh_ps_etw_trace_evasion.yml",
-      "sha256": "4b13b8d2f8ac98b8142ca8af0e384f8ace2b5e0ace256f0fe9ae522bbf6aa5ed"
+      "sha256": "2552b36f027cbe9e77b0b69ba0461e14b4ecf93ebc7ff575ef782a6849689000"
     },
     {
       "adaptations": {},
@@ -58672,7 +58672,7 @@
       "document": "0",
       "id": "f6ecd1cf-19b8-4488-97f6-00f0924991a3",
       "path": "rules/windows/process_creation/proc_creation_win_pua_nmap_zenmap.yml",
-      "sha256": "f8f921f6914c4b1844f682adc86eb48d21c13182a07419de48ce32cc14bd7630"
+      "sha256": "4d3a6bf4bb6cb2d534b816d2edd4704c4e7252cd6ebd2bd6248f60ecd9a0d9f6"
     },
     {
       "adaptations": {},
@@ -68630,12 +68630,12 @@
     }
   ],
   "repository": "SigmaHQ/sigma",
-  "revision": "876eb7b8cfbcce4d690dff8c3439ecdc7dc8175f",
+  "revision": "ddf1d4f87fd283513ac1dbf7e178c8a4064047df",
   "source": "sigmahq",
   "status": "validated",
   "tools": {
-    "pysigma": "2.1.1",
-    "pysigma-backend-sqlite": "2.2.0",
+    "pysigma": "2.1.2",
+    "pysigma-backend-sqlite": "2.3.0",
     "pysigma-pipeline-sysmon": "3.0.0",
     "pysigma-pipeline-windows": "3.0.0",
     "python": "3.14.10",

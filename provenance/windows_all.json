@@ -105,11 +105,11 @@
     },
     "sigmahq": {
       "artifacts": {
-        "rules_windows_merged.json": "f40f499f085ca201eba11e5b0375f89c6a56b400032d4784cb307d704c24f2f3"
+        "rules_windows_merged.json": "eff965c2ed9ab2d16605b2d4c4836fd5782ce46b6d4ba592fa30ce05970ed423"
       },
       "license": "DRL-1.1",
       "repository": "SigmaHQ/sigma",
-      "revision": "876eb7b8cfbcce4d690dff8c3439ecdc7dc8175f",
+      "revision": "ddf1d4f87fd283513ac1dbf7e178c8a4064047df",
       "status": "current"
     },
     "tsale": {
