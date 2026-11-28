@@ -264,8 +264,14 @@ def ruleset_table(rows, prefix):
     return lines
 
 
+def table_text(text):
+    """Upstream text as one literal table cell: no HTML, markdown link, emphasis, or extra column.
+    A bare URL still becomes a link, to the address it shows."""
+    return escape(re.sub(r"([\\`*\[\]|])", r"\\\1", text), quote=False)
+
+
 def count_table(title, items):
-    return [f"| {title} | Rules |", "|---|---:|", *(f"| {label} | {count:,} |" for label, count in items)]
+    return [f"| {title} | Rules |", "|---|---:|", *(f"| {table_text(label)} | {count:,} |" for label, count in items)]
 
 
 def tactic_rows(counts):
