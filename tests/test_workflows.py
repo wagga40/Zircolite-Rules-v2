@@ -45,3 +45,20 @@ def test_every_pdm_shortcut_runs_a_file_that_exists():
             continue
         files = re.findall(r"\S+\.py", script["cmd"])
         assert all((ROOT / path).exists() for path in files), name
+
+
+def test_pages_deploys_main_after_each_publish_with_least_privilege():
+    pages = workflow("pages.yml")
+    on = pages[True]  # PyYAML reads the `on` key as True
+    assert on["workflow_run"] == {"workflows": [workflow("Update.yml")["name"]],
+                                  "types": ["completed"], "branches": ["main"]}
+    assert on["push"]["branches"] == ["main"]
+    assert {"README.md", "docs/**", "index.html", "_sidebar.md",
+            "experimental/README.md", "licenses/README.md"} <= set(on["push"]["paths"])
+    assert pages["permissions"] == {}
+    jobs = pages["jobs"]
+    assert jobs["build"]["permissions"] == {"contents": "read"}
+    assert jobs["deploy"]["permissions"] == {"pages": "write", "id-token": "write"}
+    assert "github.event.workflow_run.event != 'pull_request'" in jobs["build"]["if"]
+    uses = [step["uses"] for job in jobs.values() for step in job["steps"] if "uses" in step]
+    assert uses and all(re.fullmatch(r"[\w./-]+@[0-9a-f]{40}", use) for use in uses)
