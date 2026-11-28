@@ -68,6 +68,8 @@ jq -r '.sources.sigmahq.artifacts["rules_linux.json"]' release-manifest.json   #
 
 ## Documentation
 
+Browse these pages with a sidebar and search at [wagga40.github.io/Zircolite-Rules-v2](https://wagga40.github.io/Zircolite-Rules-v2/).
+
 - [Dashboard](docs/dashboard.md): sources, freshness, counts, severities, ATT&CK tactics, and log sources, regenerated on every update.
 - [Rulesets](docs/rulesets.md): profiles, the combined file, rule fields, filtering, and correlations.
 - [Sources](docs/sources.md): repositories, licenses, and what is adapted or left out.

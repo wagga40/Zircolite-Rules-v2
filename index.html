@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- The dashboard carries upstream text, which GitHub sanitizes and Docsify does not:
+       no inline script or handler runs, and scripts load only from here and the pinned packages. -->
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.jsdelivr.net/npm/docsify@5.1.0/ https://cdn.jsdelivr.net/npm/mermaid@12.3.0/ https://cdn.jsdelivr.net/npm/prismjs@1.30.0/; object-src 'none'; base-uri 'none'">
+  <title>Zircolite rules</title>
+  <meta name="description" content="Validated Sigma rulesets for Zircolite">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@5.1.0/dist/themes/core.min.css" integrity="sha384-EHVG4GyaSD3YEuLBkKV9+uYAxVxDbhmNuPVXRdvHjrC0+eLbs8F7fFiR2aeuXY5S" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@5.1.0/dist/themes/addons/vue.min.css" integrity="sha384-7UrCrrJrgccq8N0pbtJyi5KxBhdfCP2BMFFGJmHJqlnmKGdPL1W82xz4a2eegGRU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@5.1.0/dist/themes/addons/core-dark.min.css" media="(prefers-color-scheme: dark)" integrity="sha384-0nrMf7u5/wUF0pWYWts1RzfUixk93lq2QuCgzLlH5YIAjqgIqoaZq4H4tuYp1k60" crossorigin="anonymous">
+  <style>
+    /* Keep prose and the full-width figures in one responsive column. */
+    :root {
+      --content-max-width: 960px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="site.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@5.1.0/dist/docsify.min.js" integrity="sha384-hx+mDRaRp2tw2tlDV9AVMMkU5zRLpaEIGGYt3k1ZiWSxGxIzCyP3FceVHUAMb1bI" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@5.1.0/dist/plugins/search.min.js" integrity="sha384-mkjQDRnwrfyRbChj7+qlTfCEvrsSsxs6VVslNDhuufsMKuF4STph3BezVwzTknga" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-bash.min.js" integrity="sha384-9WmlN8ABpoFSSHvBGGjhvB3E/D8UkNB9HpLJjBQFC2VSQsM1odiQDv4NbEo+7l15" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@12.3.0/dist/mermaid.min.js" integrity="sha384-HHW54r639fK42Ip0coGF3mz8oSiGn0eEoWNTLs75X7H63pLSDBa0Tqs0RwGmLlXE" crossorigin="anonymous"></script>
+</body>
+</html>

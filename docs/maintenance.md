@@ -96,6 +96,12 @@ The daily run never upgrades dependencies. The weekly canary opens a pull reques
 
 Do not commit regenerated rulesets: the daily update also commits them, and CI publishes after merge.
 
+## Documentation site
+
+[wagga40.github.io/Zircolite-Rules-v2](https://wagga40.github.io/Zircolite-Rules-v2/) shows the README, `docs/`, `experimental/README.md`, and `licenses/README.md` with a sidebar and search. Docsify renders the markdown in the browser from `index.html`, configured in `site.js`. The page's Content-Security-Policy refuses inline scripts, because the dashboard carries upstream text that GitHub sanitizes and Docsify does not. `_sidebar.md` lists the pages by their path from the repository root. Links to other files open them on GitHub; the rulesets are not copied to the site.
+
+`pdm run preview` serves the repository at http://127.0.0.1:8000 to check a change. `pages.yml` deploys it on pushes to `main` that change these pages, and after every `Update.yml` run on `main`, because a commit pushed with the workflow token starts no workflow.
+
 ## CI
 
 | Workflow | Runs | Does |
@@ -103,6 +109,7 @@ Do not commit regenerated rulesets: the daily update also commits them, and CI p
 | `Update.yml` | Daily at 01:23 UTC, on pushes that change generation files, and on demand | Tests in a read-only job, then publishes changed sources, re-pinned exclusions, the README summary, the dashboard, and its figures |
 | `Update.yml` | Pull requests, and runs on other branches | Tests and `--verify-release`; only `main` publishes |
 | `dependency-canary.yml` | Weekly and on demand | Regenerates the published revisions twice: with the locked dependencies as a control, then with the newest allowed ones. Keeps a *Dependency canary* issue open while versions, tests, exclusions, or rules differ from the control, and proposes a drop-in upgrade on the `deps/canary-upgrade` branch. |
+| `pages.yml` | Pushes to `main` that change the documentation, after every `Update.yml` run on `main`, and on demand | Copies the pages and figures and deploys the documentation site |
 
 A publish run:
 
