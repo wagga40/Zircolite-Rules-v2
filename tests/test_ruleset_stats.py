@@ -205,6 +205,17 @@ def test_dashboard_counts_distinct_rules_by_tactic_category_and_severity(tmp_pat
     assert "| process_creation | 2 |\n| service: security | 1 |" in section
 
 
+def test_dashboard_shows_upstream_log_source_labels_as_text(tmp_path):
+    # GitHub sanitizes HTML in the dashboard; the documentation site renders it as is. Any
+    # category passes selection beside a mapped service, and the table names rules by category.
+    label = "<img src=x onerror=alert(1)> | [link](https://example.com) *x*"
+    rule = detection(logsource={"product": "windows", "service": "security", "category": label},
+                     detection={"s": {"EventID": 4624}, "condition": "s"})
+    _, output, _ = release(tmp_path, [rule])
+    table = dashboard(output).split("<summary>Log source table</summary>")[1].split("</details>")[0]
+    assert r"| &lt;img src=x onerror=alert(1)&gt; \| \[link\](https://example.com) \*x\* | 1 |" in table
+    verify_release(output)
+
 def test_figures_are_valid_animated_svg_in_both_themes(tmp_path):
     import xml.etree.ElementTree as ET
     docs = [detection(id=str(uuid.uuid4()), level=level, tags=["attack.execution"]) for level in LEVELS]
