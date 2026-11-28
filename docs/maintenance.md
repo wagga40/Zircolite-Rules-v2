@@ -96,6 +96,12 @@ The daily run never upgrades dependencies. The weekly canary opens a pull reques
 
 Do not commit regenerated rulesets: the daily update also commits them, and CI publishes after merge.
 
+## Documentation site
+
+[wagga40.github.io/Zircolite-Rules-v2](https://wagga40.github.io/Zircolite-Rules-v2/) shows the README, `docs/`, `experimental/README.md`, and `licenses/README.md` with a sidebar and search. Docsify renders the markdown in the browser from `index.html`. `_sidebar.md` lists the pages by their path from the repository root. Links to other files open them on GitHub; the rulesets are not copied to the site.
+
+`pdm run preview` serves the repository at http://127.0.0.1:8000 to check a change.
+
 ## CI
 
 | Workflow | Runs | Does |

@@ -1,0 +1,7 @@
+- [Home](/)
+- [Dashboard](/docs/dashboard.md)
+- [Rulesets](/docs/rulesets.md)
+- [Sources](/docs/sources.md)
+- [Maintenance](/docs/maintenance.md)
+- [Experimental correlations](/experimental/README.md)
+- [Licenses](/licenses/README.md)
